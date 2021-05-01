@@ -1,0 +1,67 @@
+React Hooks consiste em uma api com UseState, UseEffect, UseMemo, UseCallback, nas quais:
+
+*UseState substitui o constructor na construção de estados; exemplo:
+
+constructor(props){
+    super(props);
+    this.state = {
+        state1: '',
+        state2: ''
+    }
+}
+
+===
+
+const [state1, setState1] = useState('')
+const [state2, setState2] = useState('')
+
+consiste no estado, e na função que altera este estado, no lugar de this.setState;
+Os valores podem ser, number, strings, booleans ou null.
+
+----------------------------------------------------------------------------------------------
+
+*UseEffect substitui os ciclos de vida, componentDidMount, willMount, UpDate, WillUnmount
+
+useEffect é uma função que recebe dois parametros, o primeiro uma funçao, que pode ser anonima, e o segundo um array, que é a state que ele fica monitorando;
+
+PARA componentDidMount deixe o array vazio;
+
+useEffect(() => {}, [])
+
+PARA componentDidUpdate
+toda vez que a state1 sofrer alterações ele é chamado;
+
+useEffect(() => {
+    Fazer alguma coisa dentro desta função toda vez que a state for alterada/atualizada
+}, [state1])
+
+PARA componentWillUnmount
+
+useEffect(() => {
+    Fazer alguma coisa dentro desta função toda vez que a state for alterada/atualizada
+
+    e adicionar um retorno com uma função
+
+    return () => {
+        Fazer Alguma coisa componentWillUnmount
+    }
+}, [state1])
+
+--------------------------------------------------------------------------------------------
+
+useMemmo é para poupar memoria
+
+
+
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+
+useCallback é para evitar processamentos excessivos;
