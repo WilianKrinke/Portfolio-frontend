@@ -16,7 +16,7 @@ export default class Apartamentos extends Component{
         this.moverleft = this.moverleft.bind(this);
     }
 
-    async buscar(){
+    async buscar(){        
         await firebase.firestore().collection('apartamentos').get().then((snapshot) => {
             let lista = [];
             snapshot.forEach((doc) => {
@@ -25,7 +25,8 @@ export default class Apartamentos extends Component{
                     nome_do_condominio: doc.data().nome_do_condominio,
                     andar: doc.data().andar,
                     apto: doc.data().apto,
-                    ref: doc.id
+                    ref: doc.id,
+                    imagemPrincipal: doc.data().imagemPrincipal
                     })
                 })
                 this.setState({
@@ -34,7 +35,7 @@ export default class Apartamentos extends Component{
         }).catch(err => {
             alert(err)
         })
-    }
+    }    
 
     componentDidMount(){        
         this.buscar()
@@ -118,8 +119,11 @@ export default class Apartamentos extends Component{
                                     <div className="container_carrousel">
                                         {this.state.datas.map(data => {
                                             return(
-                                                <div id={data.id} className="imob_cards">
+                                                <div key={data.id} className="imob_cards">
                                                     <h3>Edifício {data.nome_do_condominio}</h3>
+                                                    <div className="imov_pic">
+                                                        <span>{data.imagemPrincipal}</span>
+                                                    </div>
                                                     <div className="imov_resume">
                                                         <h3>Apto {data.apto}</h3>
                                                         <h4>{data.andar === 0 ? 'Piso' : `${data.andar}º andar`}</h4>

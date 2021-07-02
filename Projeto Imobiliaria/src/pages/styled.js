@@ -278,20 +278,26 @@ export const AllSections = styled.section`
             height: 445px;
             min-width: 350px;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             flex-direction:column;
             margin-left: 10px;
             margin-right: 10px;
             box-shadow: 0px 0px 5px 2px #000000;
             border: 3px outset rgba(0,0,0,0.51);
-            border-radius: 2px;
-            
+            border-radius: 2px;            
             z-index: 110;
 
             h3{
                 position: relative;
-                bottom: 65px;
+                top: 5px;
+            }
+
+            .imov_pic{
+                border: 1px solid;
+                height: 300px;
+                width: 100%;
+                background-color: #ccc ;
             }
 
             .imov_resume{
@@ -303,7 +309,6 @@ export const AllSections = styled.section`
                 justify-content: space-around;
                 align-items:center;
                 position: relative;
-                top: 78px;
 
                 h3{
                     position: relative;
