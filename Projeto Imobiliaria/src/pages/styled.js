@@ -215,16 +215,23 @@ export const AllSections = styled.section`
     flex-direction:row;
     overflow: hidden;
 
+    .container_links{
+        width: 200px;
+        position: absolute;
+        bottom: 20px;
+        right: 42px;    
+        z-index: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
     a{
         color: black;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 5px;
         font-size: ${patterns.font_size_links};
-        z-index: 20px;
-        position: absolute;
-        bottom: 20px;
-        right: 40px;
     }
 
     h1{
@@ -253,7 +260,7 @@ export const AllSections = styled.section`
         z-index: 90;
 
         span{
-            color:  rgba(0,0,0,0.03);
+            color:  rgba(0,0,0,0.08);
             font-size: 42em;
             position: absolute;
             top:-179.5px;
@@ -261,7 +268,7 @@ export const AllSections = styled.section`
         }
     }
 
-    .container_carrousel{
+    .container_showup{
         display: flex;
         justify-content: stretch;
         align-items: center;
@@ -275,7 +282,7 @@ export const AllSections = styled.section`
         z-index: 100;       
 
         .imob_cards{
-            height: 445px;
+            height: 447px;
             min-width: 350px;
             display: flex;
             justify-content: space-between;
@@ -284,9 +291,10 @@ export const AllSections = styled.section`
             margin-left: 10px;
             margin-right: 10px;
             box-shadow: 0px 0px 5px 2px #000000;
-            border: 3px outset rgba(0,0,0,0.51);
+            border: 1px outset rgba(0,0,0,0.51);
             border-radius: 2px;            
             z-index: 110;
+            cursor: pointer;
 
             h3{
                 position: relative;
@@ -294,14 +302,20 @@ export const AllSections = styled.section`
             }
 
             .imov_pic{
-                border: 1px solid;
+                border: 1px solid rgba(0,0,0,0.4);
                 height: 300px;
                 width: 100%;
-                background-color: #ccc ;
+                background-color: #ccc;
+                border-radius: 2px;
+
+                img{
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 2px;
+                }
             }
 
             .imov_resume{
-                border: 1px solid;
                 width: 100%;
                 height: 100px;
                 display: flex;
@@ -309,6 +323,7 @@ export const AllSections = styled.section`
                 justify-content: space-around;
                 align-items:center;
                 position: relative;
+                top: -5px;
 
                 h3{
                     position: relative;

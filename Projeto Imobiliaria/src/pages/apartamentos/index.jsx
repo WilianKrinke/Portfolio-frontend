@@ -14,6 +14,7 @@ export default class Apartamentos extends Component{
         this.buscar = this.buscar.bind(this);
         this.moveright = this.moveright.bind(this);
         this.moverleft = this.moverleft.bind(this);
+        this.toOtherPage = this.toOtherPage.bind(this);
     }
 
     async buscar(){        
@@ -35,14 +36,18 @@ export default class Apartamentos extends Component{
         }).catch(err => {
             alert(err)
         })
-    }    
+    }
+    
+    toOtherPage(e ,url){
+        this.props.history.push(url)
+    }
 
     componentDidMount(){        
         this.buscar()
     }
 
     moveright(){        
-        const carrousel = document.querySelector('.container_carrousel');
+        const carrousel = document.querySelector('.container_showup');
         const carrouselgiga = document.querySelector('.giga_Word');
 
         let move = setInterval((cont = 0) => {
@@ -72,7 +77,7 @@ export default class Apartamentos extends Component{
     }
 
     moverleft(){
-        const carrousel = document.querySelector('.container_carrousel');
+        const carrousel = document.querySelector('.container_showup');
         const carrouselgiga = document.querySelector('.giga_Word');
 
         let move = setInterval((cont = 0) => {
@@ -99,8 +104,7 @@ export default class Apartamentos extends Component{
         document.querySelector('.arrow_right').addEventListener('mouseleave', () => {
             clearInterval(movegiga)
         });
-    }
-    
+    }   
 
     render(){
         return(
@@ -116,24 +120,27 @@ export default class Apartamentos extends Component{
                                     <div className='giga_Word'>
                                         <span>WKV</span>
                                     </div>
-                                    <div className="container_carrousel">
+                                    <div className="container_showup">
                                         {this.state.datas.map(data => {
                                             return(
-                                                <div key={data.id} className="imob_cards">
+                                                <div key={data.id} className="imob_cards" onClick={e => this.toOtherPage(e, `apartamentos/${encodeURIComponent(data.ref)}`)}>
                                                     <h3>Edifício {data.nome_do_condominio}</h3>
                                                     <div className="imov_pic">
-                                                        <span>{data.imagemPrincipal}</span>
+                                                        <img src={data.imagemPrincipal} alt="imagem do imóvel"/>
                                                     </div>
                                                     <div className="imov_resume">
                                                         <h3>Apto {data.apto}</h3>
                                                         <h4>{data.andar === 0 ? 'Piso' : `${data.andar}º andar`}</h4>
-                                                        <h4><Link to={`apartamentos/${encodeURIComponent(data.ref)}`}>Ref: {data.ref}</Link></h4>
+                                                        <h4>Ref: {data.ref}</h4>
                                                     </div>
                                                 </div>
                                             )
                                         })}                           
-                                        </div>                                        
-                            <Link to="/">Home</Link>
+                                        </div> 
+                                        <div className="container_links">
+                                            <Link to="/contato">Contato</Link>
+                                            <Link to="/">Home</Link>
+                                        </div>                                       
                             <FlechaEsquerda onMouseEnter={e => this.moverleft()} className='arrow_left'>
                                 <div className="setup"></div>
                                 <div className="setdown"></div>
@@ -145,9 +152,4 @@ export default class Apartamentos extends Component{
         )
     }
 }
-
-
-
-
-
 
