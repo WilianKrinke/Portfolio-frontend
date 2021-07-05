@@ -24,23 +24,22 @@ export const AsideStyled = styled.aside`
         height: 100vh;
         z-index: 30;
         position: absolute;
-        top: 1px;
+        top: 0px;
         left: 0px;        
     }
     .colunadireita{
         height: 100vh;
         z-index: 30;
         position: absolute;
-        top:1px;
+        top:0px;
         right: 0px;        
     }
     
 `
 
-export const FooterStyled = styled.footer`
-    
+export const FooterStyled = styled.footer`    
     background-color: white;
-    min-height: 10vh;
+    min-height: 9vh;
     display: flex;
     align-items: center;
     flex-direction: row;

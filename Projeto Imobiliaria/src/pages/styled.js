@@ -22,35 +22,46 @@ export const HomeStyled = styled.main`
             padding: 0;
             margin: 0 auto;
             position: relative;
-            left:21.5px;
+            top: -10px;
+            left:27px;
             cursor:pointer;
         }
     }
 
     .containervideo{
+        height: 340px;
+        width: 76.5vw;
+        border-radius: 2px;
+        box-shadow: 0px 0px 5px 2px #000000;
         display: flex;
-        align-items: center;
         justify-content: center;
         flex-direction: column;
+        align-items: center;
         text-align: center;        
+        position: absolute;
+        left: 161px;
+        top: 225px;
+        overflow: hidden;
         z-index: 10;        
     }
 `
 
 export const DivMenu = styled.div`        
-        background-color:  rgba(0, 0, 0, 0.95);
+        height: ${props => (props.open ? '340px' : '0px')};
+        width: 76.5vw; /* 1044.99px  */ 
+        background-color: rgba(0, 0, 0, 0.95);
+        border-radius: 2px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
         text-align: center;
         transition: all .15s ease-in;
-        width: 76.5vw;
-        height: ${props => (props.open ? '332px' : '0px')};
         overflow: ${props => (props.open ? 'visible' : 'hidden')};
-        z-index: 20;
         position:absolute;
-        left: 10rem;
+        left: 161px;
+        top: 225px;
+        z-index: 20;
 
         ul{
             list-style-type: none;
@@ -61,7 +72,8 @@ export const DivMenu = styled.div`
 
         li{            
             margin-bottom: 30px;
-            position: relative;top:15px;
+            position: relative;
+            top:15px;
             z-index: 20;
 
             a{
@@ -76,14 +88,6 @@ export const DivMenu = styled.div`
                 z-index: 20;
             }
         }
-`
-
-export const VideoStyled = styled.video`
-    height: 587px;
-    width: 100vw;
-    position: absolute;
-    top: 220px;
-    z-index: -10;    
 `
 
 export const FormSecStyled = styled.section`
@@ -198,6 +202,24 @@ export const ApMain = styled.main`
 
     .colunaEsquerda{
         position: absolute;
+        left: 0px;
+        z-index: 110;
+    }
+`
+
+export const ApSubMain = styled.main`
+    img{
+        height: 100vh;
+    }
+
+    .colunaDireita{
+        position: fixed;
+        right: 0px;
+        z-index: 110;
+    }
+
+    .colunaEsquerda{
+        position: fixed;
         left: 0px;
         z-index: 110;
     }
@@ -337,7 +359,6 @@ export const AllSections = styled.section`
                     letter-spacing: 0px;
                 }
             }
-
         }
     }
 `
@@ -345,14 +366,37 @@ export const AllSections = styled.section`
 export const AllSubSections = styled.section`
     border: 1px solid;    
     min-height: 100vh;
-    min-width: 1080px;
+    width: 1080px;
     z-index: 9;
     position: absolute;
     left: 10.5%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    flex-direction:row;
+    flex-direction:column;
+
+    .carrousel_imagens{
+        border: 1px solid;
+        width: 80%;
+        height: 400px;
+    }
+
+    .container_info{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+
+        .container_descr{
+            display: flex;
+            justify-content: justify;
+            text-align: justify;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+        }
+    }
 `
 
 export const FlechaDireita = styled.span`   

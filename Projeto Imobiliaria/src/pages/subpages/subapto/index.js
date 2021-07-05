@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import Colunas from '../../../assets/Colunas-Corintia-Alpha.png'
-import {ApMain, AllSubSections} from '../../styled'
+import {ApSubMain, AllSubSections} from '../../styled'
 import firebase from '../../../firebase'
 
 class Subaptos extends Component {
@@ -31,13 +31,22 @@ class Subaptos extends Component {
         let data = this.state.datas;
         return (
             <Fragment>
-                <ApMain>
+                <ApSubMain>
                     <img className='colunaDireita' src={Colunas} alt='Colunas Corintias'></img>
                         <AllSubSections>
-                            <h1>{data.nome_do_condominio}</h1>
+                            <h1>Edifício {data.nome_do_condominio}</h1>
+                            <h6>Apartamento {data.apto}</h6>
+                            <p>{data.andar}º Andar</p>
+                            <span className="carrousel_imagens">Imagens do banco de dados</span>
+                            <div className="container_info">
+                                <div className="container_descr">
+                                    <p>{data.descricao}</p>
+                                </div>
+                                <p>{data.preco}</p>
+                            </div>
                         </AllSubSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
-                </ApMain>
+                </ApSubMain>
             </Fragment>            
         );
     }

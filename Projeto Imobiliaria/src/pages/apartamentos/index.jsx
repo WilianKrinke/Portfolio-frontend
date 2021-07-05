@@ -34,7 +34,7 @@ export default class Apartamentos extends Component{
                     datas: lista
             })
         }).catch(err => {
-            console.log(err)
+            alert(err)
         })
     }
     
@@ -137,10 +137,10 @@ export default class Apartamentos extends Component{
                                             )
                                         })}                           
                                         </div> 
-                                    <div className="container_links">
-                                        <Link to="/contato">Contato</Link>
-                                        <Link to="/">Home</Link>
-                                    </div>                                       
+                                        <div className="container_links">
+                                            <Link to="/contato">Contato</Link>
+                                            <Link to="/">Home</Link>
+                                        </div>                                       
                             <FlechaEsquerda onMouseEnter={e => this.moverleft()} className='arrow_left'>
                                 <div className="setup"></div>
                                 <div className="setdown"></div>
