@@ -375,27 +375,48 @@ export const AllSubSections = styled.section`
     align-items: center;
     flex-direction:column;
 
-    .carrousel_imagens{
-        border: 1px solid;
-        width: 80%;
-        height: 400px;
+    h1{
+        position: relative;
+        left: 15px;
+        font-size: 2.6em;
+        letter-spacing: 0.5em;
+        text-transform: uppercase;
+        font-family: ${patterns.font_titulos};
+        font-weight: 200;
+        margin-top: 25px;
     }
 
-    .container_info{
+    h6{
+        font-family: ${patterns.font_titulos};
+        font-weight: 200;
+        font-size: 1.6em;
+        text-transform: uppercase;
+        letter-spacing: 0.5em;
+        margin: 20px 0px;
+    }
+
+    .carrousel_imagens{
+        border: 1px solid;
+        width: 87%;
+        height: 350px;
+    }
+
+    .container_res_info{
         display: flex;
-        justify-content: center;
+        justify-content: justify;
+        text-align: justify;
         align-items: center;
         flex-direction: column;
-        width: 100%;
+        width: 70%;       
 
-        .container_descr{
-            display: flex;
-            justify-content: justify;
-            text-align: justify;
-            align-items: center;
-            flex-direction: column;
-            width: 100%;
+        p{
+            letter-spacing: 1px;
         }
+
+        &:first-child{
+            margin-top: 15px;
+        }
+
     }
 `
 

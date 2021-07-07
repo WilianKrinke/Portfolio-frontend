@@ -36,13 +36,15 @@ class Subaptos extends Component {
                         <AllSubSections>
                             <h1>Edifício {data.nome_do_condominio}</h1>
                             <h6>Apartamento {data.apto}</h6>
-                            <p>{data.andar}º Andar</p>
                             <span className="carrousel_imagens">Imagens do banco de dados</span>
-                            <div className="container_info">
-                                <div className="container_descr">
-                                    <p>{data.descricao}</p>
-                                </div>
-                                <p>{data.preco}</p>
+                            <div className="container_res_info">                                
+                                <p>{data.andar}º Andar</p>
+                                <p>Descrição do Imóvel {data.descricao}</p>
+                                <p>Área Total: {data.area_total}</p>
+                                <p>Área Útil: {data.area_util}</p>
+                                <p>IPTU: R$ {data.iptu}</p>
+                                <p>Condomínio: R$ {data.valor_condominio}/mês</p>                               
+                                <p>Valor: R$ {data.preco}</p>
                             </div>
                         </AllSubSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
