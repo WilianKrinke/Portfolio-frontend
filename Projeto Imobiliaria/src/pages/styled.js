@@ -241,7 +241,7 @@ export const AllSections = styled.section`
         width: 200px;
         position: absolute;
         bottom: 20px;
-        right: 42px;    
+        right: 430px;    
         z-index: 20px;
         display: flex;
         flex-direction: row;
@@ -412,27 +412,58 @@ export const AllSubSections = styled.section`
         p{
             letter-spacing: 1px;
         }
+    }
 
-        &:first-child{
-            margin-top: 15px;
+    .container_links{
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 15px;
+
+        a{
+            color: black;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-size: ${patterns.font_size_links};
         }
     }
 `
 
 export const DivDescription = styled.div`
-    border: 1px solid;
     width: 70%;
-    height: ${props => (props.showIt ? '935px' : '0px')};
+    height: ${props => (props.showIt ? '100%' : '0px')};
     overflow-y: ${props => (props.showIt ? 'visible' : 'hidden')};
     display: flex;
     justify-content: justify;
     text-align: justify;
     align-items: center;
     flex-direction: column;
+
+    .fa-angle-up{
+        font-size: 40px;
+    }
 `
 
 export const ButtonShowDescr = styled.button`
-    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70px;
+    width: 150px;
+
+    .fa-angle-down{
+        font-size: 30px;
+        position: relative;
+        top: 5px;
+    }
+`
+
+export const ButtonHideDescr = styled.button`
+    height: 70px;
     width: 150px;
 `
 

@@ -1,6 +1,7 @@
 import React, { Component,Fragment } from 'react';
+import {Link} from 'react-router-dom'
 import Colunas from '../../../assets/Colunas-Corintia-Alpha.png'
-import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription} from '../../styled'
+import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription, ButtonHideDescr} from '../../styled'
 import firebase from '../../../firebase'
 
 class Subaptos extends Component {
@@ -14,6 +15,7 @@ class Subaptos extends Component {
         };
         this.buscar = this.buscar.bind(this);
         this.showDescr = this.showDescr.bind(this);
+        this.hideInfo = this.hideInfo.bind(this);
     }
 
     async buscar(){
@@ -29,6 +31,11 @@ class Subaptos extends Component {
     showDescr(e){
         e.preventDefault();
         this.setState({showIt: true, showBtn: false})
+    }
+
+    hideInfo(e){
+        e.preventDefault();
+        this.setState({showIt: false, showBtn: true})
     }
 
     componentDidMount(){
@@ -53,11 +60,12 @@ class Subaptos extends Component {
                                 <p>IPTU: R$ {data.iptu}</p>
                                 <p>Condomínio: R$ {data.valor_condominio}/mês</p>                               
                                 <p>Valor: R$ {data.preco}</p>
+                                <p>Refêrencia: {data.ref}</p>
                             </div>
                             {this.state.showBtn && 
-                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa</ButtonShowDescr>                            
+                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa<i class="fas fa-angle-down"></i></ButtonShowDescr>                            
                             }
-                            <DivDescription className="container_info_compl" showIt={this.state.showIt}>
+                            <DivDescription showIt={this.state.showIt}>
                                 <p>Sala(s): {data.qtd_salas}</p>
                                 <p>Cozinha(s): {data.qtd_cozinhas}</p>
                                 <p>Quarto(s): {data.qtd_quartos}</p>
@@ -75,11 +83,17 @@ class Subaptos extends Component {
                                 {data.garagem && <p>Metragem da Vaga de garagem: {data.metragem_garagem}</p>}
                                 <p>Salão de Festas no Condomínio: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
                                 <p>Salão de Festas Privativo: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
-                                <p>Churrasqueira: {data.churrasqueira ? "Sim" : "Não"}</p>
+                                <p>Churrasqueira: {data.churrasqueira ? "Sim" : "Não"}</p>                               
+                                <ButtonHideDescr onClick={e => this.hideInfo(e)}><i class="fas fa-angle-up"></i></ButtonHideDescr>    
                             </DivDescription>
+                            <div className="container_links">
+                                <Link to="/contato">Contato</Link>
+                                <Link to="/">Home</Link>
+                            </div>                        
                         </AllSubSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
                 </ApSubMain>
+
             </Fragment>            
         );
     }
