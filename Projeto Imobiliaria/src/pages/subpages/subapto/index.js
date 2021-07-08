@@ -10,22 +10,28 @@ class Subaptos extends Component {
         this.state = {
             ref: decodeURIComponent(this.props.match.params.id),
             datas: [],
+            arrPhotos: [],
             showIt: false,
             showBtn: true
         };
         this.buscar = this.buscar.bind(this);
+        this.buscarFotos = this.buscarFotos.bind(this);
         this.showDescr = this.showDescr.bind(this);
         this.hideInfo = this.hideInfo.bind(this);
+    }
+    
+    async buscarFotos(){
+        await firebase.firestore().collection('apartamentos').doc(`${this.state.ref}`).collection('Fotos').doc('fotos').get().then(snapshot => {
+            this.state.arrPhotos.push(snapshot.data())
+            console.log(this.state.arrPhotos)
+        }).catch(err => console.log(err))
     }
 
     async buscar(){
         await firebase.firestore().collection('apartamentos').doc(`${this.state.ref}`).get()
         .then(snapshot => {
-            console.log(snapshot.data())
             this.setState({datas: snapshot.data()})
-        }).catch(err => {
-            console.log(err)
-        })
+        }).catch(err => console.log(err))
     }
 
     showDescr(e){
@@ -39,7 +45,9 @@ class Subaptos extends Component {
     }
 
     componentDidMount(){
+        this.buscarFotos();
         this.buscar();
+
     }
 
     render() {
@@ -51,7 +59,13 @@ class Subaptos extends Component {
                         <AllSubSections>
                             <h1>Edifício {data.nome_do_condominio}</h1>
                             <h6>Apartamento {data.apto}</h6>
-                            <span className="carrousel_imagens">Imagens do banco de dados</span>
+                            <div className="carrousel_imagens">
+                                {/* {this.state.arrPhotos.map(foto => {
+                                    return(
+                                        <img key={foto.id} src={foto} alt="Fotos de Imoveis" >{foto}</img>
+                                    )
+                                })} */}
+                            </div>
                             <div className="container_res_info">                                
                                 <p>{data.andar}º Andar</p>
                                 <p>Descrição do Imóvel {data.descricao}</p>
@@ -63,7 +77,7 @@ class Subaptos extends Component {
                                 <p>Refêrencia: {data.ref}</p>
                             </div>
                             {this.state.showBtn && 
-                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa<i class="fas fa-angle-down"></i></ButtonShowDescr>                            
+                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa<i className="fas fa-angle-down"></i></ButtonShowDescr>                            
                             }
                             <DivDescription showIt={this.state.showIt}>
                                 <p>Sala(s): {data.qtd_salas}</p>
@@ -84,7 +98,7 @@ class Subaptos extends Component {
                                 <p>Salão de Festas no Condomínio: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
                                 <p>Salão de Festas Privativo: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
                                 <p>Churrasqueira: {data.churrasqueira ? "Sim" : "Não"}</p>                               
-                                <ButtonHideDescr onClick={e => this.hideInfo(e)}><i class="fas fa-angle-up"></i></ButtonHideDescr>    
+                                <ButtonHideDescr onClick={e => this.hideInfo(e)}><i className="fas fa-angle-up"></i></ButtonHideDescr>    
                             </DivDescription>
                             <div className="container_links">
                                 <Link to="/contato">Contato</Link>
