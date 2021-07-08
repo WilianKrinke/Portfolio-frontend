@@ -1,6 +1,6 @@
 import React, { Component,Fragment } from 'react';
 import Colunas from '../../../assets/Colunas-Corintia-Alpha.png'
-import {ApSubMain, AllSubSections} from '../../styled'
+import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription} from '../../styled'
 import firebase from '../../../firebase'
 
 class Subaptos extends Component {
@@ -8,9 +8,12 @@ class Subaptos extends Component {
         super(props);
         this.state = {
             ref: decodeURIComponent(this.props.match.params.id),
-            datas: []
+            datas: [],
+            showIt: false,
+            showBtn: true
         };
         this.buscar = this.buscar.bind(this);
+        this.showDescr = this.showDescr.bind(this);
     }
 
     async buscar(){
@@ -21,6 +24,11 @@ class Subaptos extends Component {
         }).catch(err => {
             console.log(err)
         })
+    }
+
+    showDescr(e){
+        e.preventDefault();
+        this.setState({showIt: true, showBtn: false})
     }
 
     componentDidMount(){
@@ -46,6 +54,29 @@ class Subaptos extends Component {
                                 <p>Condomínio: R$ {data.valor_condominio}/mês</p>                               
                                 <p>Valor: R$ {data.preco}</p>
                             </div>
+                            {this.state.showBtn && 
+                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa</ButtonShowDescr>                            
+                            }
+                            <DivDescription className="container_info_compl" showIt={this.state.showIt}>
+                                <p>Sala(s): {data.qtd_salas}</p>
+                                <p>Cozinha(s): {data.qtd_cozinhas}</p>
+                                <p>Quarto(s): {data.qtd_quartos}</p>
+                                <p>Banheiro(s): {data.qtd_banheiro}</p>
+                                <p>Sacadas: {data.sacadas ? "Sim" : "Não"}</p>
+                                <p>Duplex: {data.duplex ? "Sim" : "Não"}</p>
+                                <p>Hidromassagem: {data.hidromassagem ? "Sim" : "Não"}</p>
+                                <p>Sauna: {data.sauna ? "Sim" : "Não"}</p>                               
+                                <p>Lavabo: {data.lavabo ? "Sim" : "Não"}</p>
+                                <p>Piscina Privativa: {data.piscina_privativa ? "Sim" : "Não"}</p>
+                                <p>Piscina Condomínio: {data.piscina_condominio ? "Sim" : "Não"}</p>
+                                <p>Pé-Direito: {data.pe_direito}</p>
+                                <p>Garagem: {data.garagem ? "Sim" : "Não"}</p>
+                                {data.garagem && <p>Quantidade de Vagas de garagem: {data.qtd_vagas_garagem}</p>}
+                                {data.garagem && <p>Metragem da Vaga de garagem: {data.metragem_garagem}</p>}
+                                <p>Salão de Festas no Condomínio: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
+                                <p>Salão de Festas Privativo: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
+                                <p>Churrasqueira: {data.churrasqueira ? "Sim" : "Não"}</p>
+                            </DivDescription>
                         </AllSubSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
                 </ApSubMain>

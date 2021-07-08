@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import {HomeStyled, DivMenu} from '../pages/styled';
-import Video from '../assets/NovoVideo3.mp4'
+import Video from '../assets/NovoVideo6.mp4'
 
 const Home = () => {    
     const [isOpen, setisOpen] = useState(false);

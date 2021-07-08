@@ -416,9 +416,26 @@ export const AllSubSections = styled.section`
         &:first-child{
             margin-top: 15px;
         }
-
     }
 `
+
+export const DivDescription = styled.div`
+    border: 1px solid;
+    width: 70%;
+    height: ${props => (props.showIt ? '935px' : '0px')};
+    overflow-y: ${props => (props.showIt ? 'visible' : 'hidden')};
+    display: flex;
+    justify-content: justify;
+    text-align: justify;
+    align-items: center;
+    flex-direction: column;
+`
+
+export const ButtonShowDescr = styled.button`
+    height: 50px;
+    width: 150px;
+`
+
 
 export const FlechaDireita = styled.span`   
     position: absolute;
