@@ -10,6 +10,7 @@ class Subaptos extends Component {
         this.state = {
             ref: decodeURIComponent(this.props.match.params.id),
             datas: [],
+            objPhotos: null,
             arrPhotos: [],
             showIt: false,
             showBtn: true
@@ -22,9 +23,15 @@ class Subaptos extends Component {
     
     async buscarFotos(){
         await firebase.firestore().collection('apartamentos').doc(`${this.state.ref}`).collection('Fotos').doc('fotos').get().then(snapshot => {
-            this.state.arrPhotos.push(snapshot.data())
-            console.log(this.state.arrPhotos)
+            this.setState({objPhotos: snapshot.data()})
+            console.log(this.state.objPhotos)
         }).catch(err => console.log(err))
+
+        let valores = Object.values(this.state.objPhotos);
+        valores.forEach(valor => {
+            this.state.arrPhotos.push(valor)
+        })      
+        console.log(this.state.arrPhotos)
     }
 
     async buscar(){
@@ -59,12 +66,18 @@ class Subaptos extends Component {
                         <AllSubSections>
                             <h1>Edifício {data.nome_do_condominio}</h1>
                             <h6>Apartamento {data.apto}</h6>
+                            
                             <div className="carrousel_imagens">
-                                {/* {this.state.arrPhotos.map(foto => {
-                                    return(
-                                        <img key={foto.id} src={foto} alt="Fotos de Imoveis" >{foto}</img>
-                                    )
-                                })} */}
+                               {
+                                   this.state.arrPhotos.map(foto => {
+                                       return(
+                                           <div className="fotoCard" key={foto}>
+                                               <img alt="fotos imoveis" src={foto} ></img>
+                                               <center></center>
+                                           </div>
+                                       )
+                                   })
+                               }
                             </div>
                             <div className="container_res_info">                                
                                 <p>{data.andar}º Andar</p>

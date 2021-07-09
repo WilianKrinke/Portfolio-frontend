@@ -398,7 +398,28 @@ export const AllSubSections = styled.section`
     .carrousel_imagens{
         border: 1px solid;
         width: 87%;
-        height: 350px;
+        height: 420px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction:row;
+        overflow: hidden;
+
+        .fotoCard{
+            min-width: 420px;
+            height: fit-content;
+            border: 1px solid;
+            margin: 0px 20px;
+            overflow: hidden;
+
+            &:first-child{
+                margin-left: 0px;
+            }
+
+            $:last-child{
+                margin-right: 0px;
+            }
+        }
     }
 
     .container_res_info{
@@ -466,7 +487,6 @@ export const ButtonHideDescr = styled.button`
     height: 70px;
     width: 150px;
 `
-
 
 export const FlechaDireita = styled.span`   
     position: absolute;
