@@ -1,7 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import {Link} from 'react-router-dom'
 import Colunas from '../../../assets/Colunas-Corintia-Alpha.png'
-import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription, ButtonHideDescr} from '../../styled'
+import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription, ButtonHideDescr, DivFullImg, Setas} from '../../styled'
 import firebase from '../../../firebase'
 
 class Subaptos extends Component {
@@ -13,12 +13,17 @@ class Subaptos extends Component {
             objPhotos: null,
             arrPhotos: [],
             showIt: false,
-            showBtn: true
+            showBtn: true,
+            imgOnBoard: false,
+            fullFoto: null
         };
         this.buscar = this.buscar.bind(this);
         this.buscarFotos = this.buscarFotos.bind(this);
         this.showDescr = this.showDescr.bind(this);
         this.hideInfo = this.hideInfo.bind(this);
+        this.toTheLeft = this.toTheLeft.bind(this);
+        this.toTheRight = this.toTheRight.bind(this);
+        this.fullImage = this.fullImage.bind(this);
     }
     
     async buscarFotos(){
@@ -51,6 +56,24 @@ class Subaptos extends Component {
         this.setState({showIt: false, showBtn: true})
     }
 
+
+    toTheLeft(e){
+        e.preventDefault();        
+        const divCarr = document.querySelector('.carrousel_imagens');
+        divCarr.scrollLeft -= 350; 
+    }
+
+    toTheRight(e){
+        e.preventDefault();     
+        const divCarr = document.querySelector('.carrousel_imagens');
+        divCarr.scrollLeft += 350;
+    }
+
+    fullImage(e, foto){
+        e.preventDefault();
+        this.setState({imgOnBoard: true, fullFoto: foto})
+    }
+
     componentDidMount(){
         this.buscarFotos();
         this.buscar();
@@ -64,21 +87,32 @@ class Subaptos extends Component {
                 <ApSubMain>
                     <img className='colunaDireita' src={Colunas} alt='Colunas Corintias'></img>
                         <AllSubSections>
+                            {
+                                this.state.imgOnBoard &&
+                                <DivFullImg imgOnBoard={this.state.imgOnBoard}>
+                                    <div className="container_contentimg">
+                                        <img alt="Foto" src={this.state.fullFoto}></img>
+                                    </div>
+
+                                    <Setas imgOnBoard={this.state.imgOnBoard}></Setas>
+                                </DivFullImg>
+                            }
                             <h1>Edifício {data.nome_do_condominio}</h1>
                             <h6>Apartamento {data.apto}</h6>
-                            
-                            <div className="carrousel_imagens">
-                               {
-                                   this.state.arrPhotos.map(foto => {
-                                       return(
-                                           <div className="fotoCard" key={foto}>
-                                               <img alt="fotos imoveis" src={foto} ></img>
-                                               <center></center>
-                                           </div>
-                                       )
-                                   })
-                               }
-                            </div>
+                                <i className="fas fa-angle-left" onClick={e => this.toTheLeft(e)}></i>                                
+                                <div className="carrousel_imagens">
+                                    {
+                                        this.state.arrPhotos.map(foto => {
+                                            return(
+                                                <div className="fotoCard" key={foto} onClick={e => this.fullImage(e, foto)}>
+                                                    <img alt="fotos imoveis" src={foto} loading="lazy"></img>
+                                                    <center></center>
+                                                </div>
+                                            )
+                                        })
+                                    }
+                                </div>
+                                <i className="fas fa-angle-right" onClick={e => this.toTheRight(e)}></i> 
                             <div className="container_res_info">                                
                                 <p>{data.andar}º Andar</p>
                                 <p>Descrição do Imóvel {data.descricao}</p>
@@ -120,7 +154,6 @@ class Subaptos extends Component {
                         </AllSubSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
                 </ApSubMain>
-
             </Fragment>            
         );
     }

@@ -375,6 +375,22 @@ export const AllSubSections = styled.section`
     align-items: center;
     flex-direction:column;
 
+    .fa-angle-left{
+        position: absolute;
+        top: 320px;
+        left: 20px;
+        font-size: 70px;
+        cursor: pointer;
+    }
+
+    .fa-angle-right{
+        position: absolute;
+        top: 320px;
+        right: 20px;
+        font-size: 70px;
+        cursor: pointer;
+    }
+
     h1{
         position: relative;
         left: 15px;
@@ -397,16 +413,18 @@ export const AllSubSections = styled.section`
 
     .carrousel_imagens{
         border: 1px solid;
-        width: 87%;
+        width: 85%;
         height: 420px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: stretch;
         align-items: center;
-        flex-direction:row;
-        overflow: hidden;
-
+        flex-direction: row;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
+        
         .fotoCard{
-            min-width: 420px;
+            min-width: 400px;
             height: fit-content;
             border: 1px solid;
             margin: 0px 20px;
@@ -416,7 +434,7 @@ export const AllSubSections = styled.section`
                 margin-left: 0px;
             }
 
-            $:last-child{
+            &:last-child{
                 margin-right: 0px;
             }
         }
@@ -451,6 +469,54 @@ export const AllSubSections = styled.section`
             font-size: ${patterns.font_size_links};
         }
     }
+`
+
+export const DivFullImg = styled.div`
+    display: ${props => props.imgOnBoard ? "flex" : "none"};
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.98);
+    z-index: 200;
+
+    .container_contentimg{
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content:center;
+        flex-direction: row;
+        
+
+        img{
+            max-width: 700px;
+            max-height: 500px;
+        }
+    }
+`
+
+export const Setas = styled.div`
+    display: ${props => props.imgOnBoard ? "flex" : "none"};
+    width: 100px;
+    height: 2px;
+    background-color: #fff;
+    position: fixed;
+    top: 50px;
+    right: 170px;
+
+        &:before{
+            position: fixed;
+            top: 50px;
+            right: 170px;
+            content: normal;
+            width: 100px;
+            height: 2px;
+            background-color: #fff;
+        }
 `
 
 export const DivDescription = styled.div`
