@@ -1,7 +1,7 @@
 import React, { Component,Fragment } from 'react';
 import {Link} from 'react-router-dom'
 import Colunas from '../../../assets/Colunas-Corintia-Alpha.png'
-import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription, ButtonHideDescr, DivFullImg, Setas} from '../../styled'
+import {ApSubMain, AllSubSections,ButtonShowDescr, DivDescription, ButtonHideDescr, DivFullImg, SetaUm, SetaDois} from '../../styled'
 import firebase from '../../../firebase'
 
 class Subaptos extends Component {
@@ -24,6 +24,7 @@ class Subaptos extends Component {
         this.toTheLeft = this.toTheLeft.bind(this);
         this.toTheRight = this.toTheRight.bind(this);
         this.fullImage = this.fullImage.bind(this);
+        this.imgOff = this.imgOff.bind(this);
     }
     
     async buscarFotos(){
@@ -74,6 +75,12 @@ class Subaptos extends Component {
         this.setState({imgOnBoard: true, fullFoto: foto})
     }
 
+    imgOff(e){
+        e.preventDefault();
+        this.setState({imgOnBoard: false})
+    }
+    
+
     componentDidMount(){
         this.buscarFotos();
         this.buscar();
@@ -94,7 +101,10 @@ class Subaptos extends Component {
                                         <img alt="Foto" src={this.state.fullFoto}></img>
                                     </div>
 
-                                    <Setas imgOnBoard={this.state.imgOnBoard}></Setas>
+                                    <div className="container_close" imgOnBoard={this.state.imgOnBoard} onClick={e => this.imgOff(e)}>
+                                        <SetaUm imgOnBoard={this.state.imgOnBoard}></SetaUm>
+                                        <SetaDois imgOnBoard={this.state.imgOnBoard}></SetaDois>
+                                    </div>
                                 </DivFullImg>
                             }
                             <h1>Edifício {data.nome_do_condominio}</h1>

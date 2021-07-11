@@ -484,6 +484,19 @@ export const DivFullImg = styled.div`
     background-color: rgba(0, 0, 0, 0.98);
     z-index: 200;
 
+    .container_close{
+        display: ${props => props.imgOnBoard ? "flex" : "none"};
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: fixed;
+        top: 10px;
+        right: 190px;
+        cursor: pointer;
+        height: 85px;
+        width: 85px;
+    }
+
     .container_contentimg{
         display: flex;
         position: fixed;
@@ -499,24 +512,20 @@ export const DivFullImg = styled.div`
     }
 `
 
-export const Setas = styled.div`
+export const SetaUm = styled.div`
     display: ${props => props.imgOnBoard ? "flex" : "none"};
-    width: 100px;
+    width: 80px;
     height: 2px;
     background-color: #fff;
-    position: fixed;
-    top: 50px;
-    right: 170px;
+    transform: rotateZ(50deg);
+`
 
-        &:before{
-            position: fixed;
-            top: 50px;
-            right: 170px;
-            content: normal;
-            width: 100px;
-            height: 2px;
-            background-color: #fff;
-        }
+export const SetaDois = styled.div`
+    display: ${props => props.imgOnBoard ? "flex" : "none"};
+    width: 80px;
+    height: 2px;
+    background-color: #fff;    
+    transform: rotateZ(-50deg);
 `
 
 export const DivDescription = styled.div`
