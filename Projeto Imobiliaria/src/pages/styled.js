@@ -185,7 +185,7 @@ export const Button = styled.button`
     letter-spacing:5px;
     border-radius: 5px;
     border: 1px solid #e7d8d8;
-    background-color: ${props => (props.doit ? '#fff' : '#9eff8b')};
+    background-color: ${props => (props.doit ? '#fff' : '#f7f7f7')};
     transition: background-color .7s ease;
 `
 
@@ -317,6 +317,11 @@ export const AllSections = styled.section`
             border-radius: 2px;            
             z-index: 110;
             cursor: pointer;
+            transition: all .1s ease-in-out;
+            
+            &:hover{
+                box-shadow: 0px 0px 5px 2px #b8b8b8;
+            }
 
             h3{
                 position: relative;
@@ -363,8 +368,7 @@ export const AllSections = styled.section`
     }
 `
 
-export const AllSubSections = styled.section`
-    border: 1px solid;    
+export const AllSubSections = styled.section`   
     min-height: 100vh;
     width: 1080px;
     z-index: 9;
@@ -376,19 +380,36 @@ export const AllSubSections = styled.section`
     flex-direction:column;
 
     .fa-angle-left{
+        color: #8f8f8f;
         position: absolute;
-        top: 320px;
+        top: 310px;
         left: 20px;
         font-size: 70px;
-        cursor: pointer;
+        cursor: pointer;        
+        transition: all 0.3s ease-in-out;        
+
+        &:hover{
+            color: #3d3d3d;
+            font-size: 80px;
+            
+            
+        }
     }
 
     .fa-angle-right{
+        color: #8f8f8f;
         position: absolute;
-        top: 320px;
+        top: 310px;
         right: 20px;
         font-size: 70px;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+
+        &:hover{
+            color: #3d3d3d;
+            font-size: 80px;    
+            
+        }
     }
 
     h1{
@@ -412,9 +433,9 @@ export const AllSubSections = styled.section`
     }
 
     .carrousel_imagens{
-        border: 1px solid;
         width: 85%;
         height: 420px;
+        padding: 15px;
         display: flex;
         justify-content: stretch;
         align-items: center;
@@ -425,10 +446,19 @@ export const AllSubSections = styled.section`
         
         .fotoCard{
             min-width: 400px;
-            height: fit-content;
+            height: 400px;
             border: 1px solid;
             margin: 0px 20px;
             overflow: hidden;
+            box-shadow: 0px 0px 5px 2px #000000;
+            border: 1px outset rgba(0,0,0,0.51);
+            border-radius: 2px;
+            transition: all .1s ease-in-out;
+            cursor: pointer;
+            
+            &:hover{
+                box-shadow: 0px 0px 5px 2px #b8b8b8;
+            }
 
             &:first-child{
                 margin-left: 0px;
@@ -450,14 +480,22 @@ export const AllSubSections = styled.section`
 
         p{
             letter-spacing: 1px;
+
+            &:first-child{
+                position: relative;
+                top: 11px;
+            }
         }
     }
 
     .container_links{
         width: 200px;
+        position: relative;
+        left: 4px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         margin-top: 30px;
         margin-bottom: 15px;
 
@@ -472,7 +510,9 @@ export const AllSubSections = styled.section`
 `
 
 export const DivFullImg = styled.div`
+    transition: opacity 1s ease-in-out;
     display: ${props => props.imgOnBoard ? "flex" : "none"};
+    opacity: ${props => props.imgOnBoard ? 1 : 0};
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -549,18 +589,76 @@ export const ButtonShowDescr = styled.button`
     align-items: center;
     flex-direction: column;
     height: 70px;
-    width: 150px;
+    width: 200px;
+    border-radius: 2px;
+    background: linear-gradient(145deg, #cfcfcf, #f6f6f6);
+    box-shadow:  5px 5px 24px #d9d9d9,
+             -5px -5px 24px #ffffff;
+    border: 1px outset rgba(0,0,0,0.1);
+    outline: none;
+    transition: all .5s ease-in-out;
 
-    .fa-angle-down{
-        font-size: 30px;
+    &:hover{
+        background: linear-gradient(145deg, #e6e6e6, #ffffff); 
+    }
+
+    .setadireita{
+        background-color: rgba(0, 0, 0, 0.35);
+        width: 85px;
+        height: 2px;
         position: relative;
-        top: 5px;
+        right: -41px;        
+        transform: rotateZ(-15deg);
+    }
+
+    .setaesquerda{
+        background-color: rgba(0, 0, 0, 0.35);
+        width: 85px;
+        height: 2px;
+        position: relative;
+        top: -2px;
+        left: -41px;        
+        transform: rotateZ(15deg);
     }
 `
 
 export const ButtonHideDescr = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     height: 70px;
-    width: 150px;
+    width: 200px;
+    border-radius: 2px;
+    background: linear-gradient(145deg, #cfcfcf, #f6f6f6);
+    box-shadow:  5px 5px 24px #d9d9d9,
+             -5px -5px 24px #ffffff;
+    border: 1px outset rgba(0,0,0,0.1);
+    outline: none;
+    transition: all .5s ease-in-out;
+
+    &:hover{
+        background: linear-gradient(145deg, #e6e6e6, #ffffff); 
+    }
+
+    .setadireita{
+        background-color: rgba(0, 0, 0, 0.35);
+        width: 85px;
+        height: 2px;
+        position: relative;
+        right: -41px;        
+        transform: rotateZ(15deg);
+    }
+
+    .setaesquerda{
+        background-color: rgba(0, 0, 0, 0.35);
+        width: 85px;
+        height: 2px;
+        position: relative;
+        top: -2px;
+        left: -41px;        
+        transform: rotateZ(-15deg);
+    }
 `
 
 export const FlechaDireita = styled.span`   

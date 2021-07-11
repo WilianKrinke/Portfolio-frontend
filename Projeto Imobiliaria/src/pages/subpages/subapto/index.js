@@ -84,7 +84,6 @@ class Subaptos extends Component {
     componentDidMount(){
         this.buscarFotos();
         this.buscar();
-
     }
 
     render() {
@@ -100,7 +99,6 @@ class Subaptos extends Component {
                                     <div className="container_contentimg">
                                         <img alt="Foto" src={this.state.fullFoto}></img>
                                     </div>
-
                                     <div className="container_close" imgOnBoard={this.state.imgOnBoard} onClick={e => this.imgOff(e)}>
                                         <SetaUm imgOnBoard={this.state.imgOnBoard}></SetaUm>
                                         <SetaDois imgOnBoard={this.state.imgOnBoard}></SetaDois>
@@ -134,7 +132,10 @@ class Subaptos extends Component {
                                 <p>Refêrencia: {data.ref}</p>
                             </div>
                             {this.state.showBtn && 
-                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>Descrição Completa<i className="fas fa-angle-down"></i></ButtonShowDescr>                            
+                            <ButtonShowDescr onClick={e => this.showDescr(e)} showIt={this.state.showIt}>
+                                <div className="setadireita"></div>
+                                <div className="setaesquerda"></div>
+                            </ButtonShowDescr>                            
                             }
                             <DivDescription showIt={this.state.showIt}>
                                 <p>Sala(s): {data.qtd_salas}</p>
@@ -155,7 +156,10 @@ class Subaptos extends Component {
                                 <p>Salão de Festas no Condomínio: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
                                 <p>Salão de Festas Privativo: {data.salao_de_festas_condominio ? "Sim" : "Não"}</p>
                                 <p>Churrasqueira: {data.churrasqueira ? "Sim" : "Não"}</p>                               
-                                <ButtonHideDescr onClick={e => this.hideInfo(e)}><i className="fas fa-angle-up"></i></ButtonHideDescr>    
+                                <ButtonHideDescr onClick={e => this.hideInfo(e)}>
+                                    <div className="setadireita"></div>
+                                    <div className="setaesquerda"></div>
+                                </ButtonHideDescr>    
                             </DivDescription>
                             <div className="container_links">
                                 <Link to="/contato">Contato</Link>
