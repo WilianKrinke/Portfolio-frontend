@@ -136,18 +136,27 @@ export default class Apartamentos extends Component{
                                                 </div>
                                             )
                                         })}                           
-                                        </div> 
+                                        </div>
+                                    <div className="container_links_menu">
+                                        <ul>
+                                            <li><Link to='/sobrados'>Sobrados</Link></li>
+                                            <li><Link to='/casas'>Casas</Link></li>
+                                            <li><Link to='/terrenos'>Terrenos</Link></li>
+                                            <li><Link to='/chacaras'>Chácaras/Fazendas</Link></li>
+                                        </ul>
+                                    </div>
                                     <div className="container_links">
                                         <Link to="/contato">Contato</Link>
                                         <Link to="/">Home</Link>
-                                    </div>                                       
+                                    </div>                                      
                             <FlechaEsquerda onMouseEnter={e => this.moverleft()} className='arrow_left'>
                                 <div className="setup"></div>
                                 <div className="setdown"></div>
                             </FlechaEsquerda>
                         </AllSections>
                     <img className='colunaEsquerda' src={Colunas} alt='Colunas Corintias'></img>
-                </ApMain>
+                        
+                </ApMain>                
             </Fragment>
         )
     }

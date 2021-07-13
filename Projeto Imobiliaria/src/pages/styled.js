@@ -13,7 +13,7 @@ export const HomeStyled = styled.main`
         background-color: white;
         cursor:pointer;
 
-        h3{
+        h1{
             font-size: 80px;
             font-family: ${patterns.font_titulos};
             font-weight: 200;
@@ -190,21 +190,24 @@ export const Button = styled.button`
 `
 
 export const ApMain = styled.main`
+
     img{
         height: 100vh;
     }
 
     .colunaDireita{
-        position: absolute;
+        position: fixed;
         right: 0px;
         z-index: 110;
     }
 
     .colunaEsquerda{
-        position: absolute;
+        position: fixed;
         left: 0px;
         z-index: 110;
     }
+
+    
 `
 
 export const ApSubMain = styled.main`
@@ -235,13 +238,12 @@ export const AllSections = styled.section`
     justify-content: space-around;
     align-items: center;
     flex-direction:row;
-    overflow: hidden;
 
     .container_links{
         width: 200px;
         position: absolute;
-        bottom: 20px;
-        right: 430px;    
+        bottom: -40px;
+        right: 450px;    
         z-index: 20px;
         display: flex;
         flex-direction: row;
@@ -249,11 +251,11 @@ export const AllSections = styled.section`
     }
 
     a{
-        color: black;
         text-decoration: none;
         text-transform: uppercase;
         letter-spacing: 5px;
         font-size: ${patterns.font_size_links};
+        margin: 20px 0px;
     }
 
     h1{
@@ -355,6 +357,7 @@ export const AllSections = styled.section`
                 h3{
                     position: relative;
                     bottom: 0px;
+                    
                 }
 
                 a{
@@ -362,6 +365,38 @@ export const AllSections = styled.section`
                     right: 0px;
                     top: 0px;
                     letter-spacing: 0px;
+                }
+            }
+        }
+    }
+
+    .container_links_menu{
+        width: 1080px;
+        height: 50px;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;    
+        z-index: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+
+        ul{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            
+            li{
+                display: inline-block;
+                margin: 0px 10px;
+
+                a{
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    font-size: ${patterns.font_size_links};
                 }
             }
         }
@@ -380,7 +415,7 @@ export const AllSubSections = styled.section`
     flex-direction:column;
 
     .fa-angle-left{
-        color: #8f8f8f;
+        color: ${patterns.color_arrows};
         position: absolute;
         top: 310px;
         left: 20px;
@@ -389,7 +424,6 @@ export const AllSubSections = styled.section`
         transition: all 0.3s ease-in-out;        
 
         &:hover{
-            color: #3d3d3d;
             font-size: 80px;
             
             
@@ -397,7 +431,7 @@ export const AllSubSections = styled.section`
     }
 
     .fa-angle-right{
-        color: #8f8f8f;
+        color: ${patterns.color_arrows};
         position: absolute;
         top: 310px;
         right: 20px;
@@ -406,7 +440,6 @@ export const AllSubSections = styled.section`
         transition: all 0.3s ease-in-out;
 
         &:hover{
-            color: #3d3d3d;
             font-size: 80px;    
             
         }
@@ -425,11 +458,16 @@ export const AllSubSections = styled.section`
 
     h6{
         font-family: ${patterns.font_titulos};
+        color: ${patterns.font_color_subtitles};
         font-weight: 200;
         font-size: 1.6em;
         text-transform: uppercase;
         letter-spacing: 0.5em;
         margin: 20px 0px;
+    }
+
+    p{
+        color: ${patterns.font_color_parag};
     }
 
     .carrousel_imagens{
@@ -490,14 +528,13 @@ export const AllSubSections = styled.section`
 
     .container_links{
         width: 200px;
-        position: relative;
-        left: 4px;
+        position: absolute;
+        bottom: -110px;
+        right: 450px;    
+        z-index: 20px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        align-items: center;
-        margin-top: 30px;
-        margin-bottom: 15px;
 
         a{
             color: black;
@@ -505,6 +542,39 @@ export const AllSubSections = styled.section`
             text-transform: uppercase;
             letter-spacing: 5px;
             font-size: ${patterns.font_size_links};
+            margin: 20px 0px;
+        }
+    }
+
+    .container_links_menu{
+        width: 1080px;
+        height: 50px;
+        position: absolute;
+        bottom: -70px;
+        right: 0px;    
+        z-index: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+
+        ul{
+            margin: 0px;
+            padding: 0px;
+            list-style-type: none;
+            
+            li{
+                display: inline-block;
+                margin: 0px 10px;
+
+                a{
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    letter-spacing: 5px;
+                    font-size: ${patterns.font_size_links};
+                }
+            }
         }
     }
 `
@@ -605,7 +675,7 @@ export const ButtonShowDescr = styled.button`
     .setadireita{
         background-color: rgba(0, 0, 0, 0.35);
         width: 85px;
-        height: 2px;
+        height: 1px;
         position: relative;
         right: -41px;        
         transform: rotateZ(-15deg);
@@ -614,9 +684,9 @@ export const ButtonShowDescr = styled.button`
     .setaesquerda{
         background-color: rgba(0, 0, 0, 0.35);
         width: 85px;
-        height: 2px;
+        height: 1px;
         position: relative;
-        top: -2px;
+        top: -1px;
         left: -41px;        
         transform: rotateZ(15deg);
     }
@@ -644,7 +714,7 @@ export const ButtonHideDescr = styled.button`
     .setadireita{
         background-color: rgba(0, 0, 0, 0.35);
         width: 85px;
-        height: 2px;
+        height: 1px;
         position: relative;
         right: -41px;        
         transform: rotateZ(15deg);
@@ -653,9 +723,9 @@ export const ButtonHideDescr = styled.button`
     .setaesquerda{
         background-color: rgba(0, 0, 0, 0.35);
         width: 85px;
-        height: 2px;
+        height: 1px;
         position: relative;
-        top: -2px;
+        top: -1px;
         left: -41px;        
         transform: rotateZ(-15deg);
     }
@@ -675,24 +745,22 @@ export const FlechaDireita = styled.span`
     z-index: 20;
 
     .setup{
-        border: 1px solid black;
         position: relative;
         bottom: -3px;
         height: 160px;
         width: 5.5px;
         border-radius: 0px 100% 5px 0px;
-        background-color: black;
+        background-color: ${patterns.color_arrows};
         transform: rotate(-8deg);
     }
 
     .setdown{
-        border: 1px solid black;
         position: relative;
         top: -3px;
         height: 160px;
         width: 5.5px;
         border-radius: 0px 5px 100% 0px;
-        background-color: black;
+        background-color: ${patterns.color_arrows};
         transform: rotate(8deg);
     }    
 `
@@ -711,24 +779,23 @@ export const FlechaEsquerda = styled.span`
     z-index: 10;
 
     .setup{
-        border: 1px solid black;
         position: relative;
         bottom: -3px;
         height: 160px;
         width: 5.5px;
         border-radius: 100% 0px 0px 5px;
-        background-color: black;
+        background-color: ${patterns.color_arrows};
         transform: rotate(8deg);
     }
 
     .setdown{
-        border: 1px solid black;
+        
         position: relative;
         top: -3px;
         height: 160px;
         width: 5.5px;
         border-radius: 5px 0px 0px 100%;
-        background-color: black;
+        background-color: ${patterns.color_arrows};
         transform: rotate(-8deg);
     }
 `

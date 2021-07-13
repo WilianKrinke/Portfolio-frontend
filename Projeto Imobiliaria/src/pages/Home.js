@@ -28,9 +28,9 @@ const Home = () => {
                 <HomeStyled>
                     <nav>
                         <div className="containerimob">
-                            <h3 onMouseOver={abrirMenu} onMouseLeave={fecharMenu}>
+                            <h1 onMouseOver={abrirMenu} onMouseLeave={fecharMenu}>
                                 Imobiliaria
-                            </h3>
+                            </h1>
                         </div>
                         <DivMenu open={isOpen} onMouseOver={abrirMenu} onMouseLeave={fecharMenu}>
                             <ul>

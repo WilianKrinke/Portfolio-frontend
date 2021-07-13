@@ -59,6 +59,7 @@ export const FooterStyled = styled.footer`
             color: black;
             i{
                 font-size: 25px;
+                color: #4a4a4a
             }
         }
     }

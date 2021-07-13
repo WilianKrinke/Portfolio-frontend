@@ -161,6 +161,15 @@ class Subaptos extends Component {
                                     <div className="setaesquerda"></div>
                                 </ButtonHideDescr>    
                             </DivDescription>
+                            <div className="container_links_menu">
+                                <ul>
+                                    <li><Link to='/apartamentos'>Apartamentos</Link></li>
+                                    <li><Link to='/sobrados'>Sobrados</Link></li>
+                                    <li><Link to='/casas'>Casas</Link></li>
+                                    <li><Link to='/terrenos'>Terrenos</Link></li>
+                                    <li><Link to='/chacaras'>Chácaras/Fazendas</Link></li>
+                                </ul>
+                            </div>
                             <div className="container_links">
                                 <Link to="/contato">Contato</Link>
                                 <Link to="/">Home</Link>
