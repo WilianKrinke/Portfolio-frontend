@@ -314,15 +314,15 @@ export const AllSections = styled.section`
             flex-direction:column;
             margin-left: 10px;
             margin-right: 10px;
-            box-shadow: 0px 0px 5px 2px #000000;
+            box-shadow: 0px 0px 5px 2px #b8b8b8;
             border: 1px outset rgba(0,0,0,0.51);
             border-radius: 2px;            
             z-index: 110;
             cursor: pointer;
             transition: all .1s ease-in-out;
             
-            &:hover{
-                box-shadow: 0px 0px 5px 2px #b8b8b8;
+            &:hover{                
+                box-shadow: 0px 0px 5px 2px #000000;
             }
 
             h3{
@@ -396,7 +396,7 @@ export const AllSections = styled.section`
                     text-decoration: none;
                     text-transform: uppercase;
                     letter-spacing: 5px;
-                    font-size: ${patterns.font_size_links};
+                    font-size: ${patterns.font_color_parag};
                 }
             }
         }
@@ -424,9 +424,7 @@ export const AllSubSections = styled.section`
         transition: all 0.3s ease-in-out;        
 
         &:hover{
-            font-size: 80px;
-            
-            
+            font-size: 80px;   
         }
     }
 
@@ -458,16 +456,11 @@ export const AllSubSections = styled.section`
 
     h6{
         font-family: ${patterns.font_titulos};
-        color: ${patterns.font_color_subtitles};
         font-weight: 200;
         font-size: 1.6em;
         text-transform: uppercase;
         letter-spacing: 0.5em;
         margin: 20px 0px;
-    }
-
-    p{
-        color: ${patterns.font_color_parag};
     }
 
     .carrousel_imagens{
@@ -488,14 +481,14 @@ export const AllSubSections = styled.section`
             border: 1px solid;
             margin: 0px 20px;
             overflow: hidden;
-            box-shadow: 0px 0px 5px 2px #000000;
+            box-shadow: 0px 0px 5px 2px #b8b8b8;
             border: 1px outset rgba(0,0,0,0.51);
             border-radius: 2px;
             transition: all .1s ease-in-out;
             cursor: pointer;
             
             &:hover{
-                box-shadow: 0px 0px 5px 2px #b8b8b8;
+                box-shadow: 0px 0px 5px 2px #000000;
             }
 
             &:first-child{
@@ -537,7 +530,6 @@ export const AllSubSections = styled.section`
         justify-content: space-between;
 
         a{
-            color: black;
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 5px;
@@ -550,7 +542,7 @@ export const AllSubSections = styled.section`
         width: 1080px;
         height: 50px;
         position: absolute;
-        bottom: -70px;
+        bottom: -65px;
         right: 0px;    
         z-index: 20px;
         display: flex;
