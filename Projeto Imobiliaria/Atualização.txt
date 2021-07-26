@@ -1,4 +1,5 @@
 Pausa no desenvolvimento.
 
 Curso de UX Design - Feito
-Curso de SEO - Em andamento
+Curso de SEO - Feito
+Revisão de ReactJs, Hooks e aprendizado de Next Js
