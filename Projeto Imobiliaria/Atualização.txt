@@ -2,4 +2,5 @@ Pausa no desenvolvimento.
 
 Curso de UX Design - Feito
 Curso de SEO - Feito
-Revisão de ReactJs, Hooks e aprendizado de Next Js
+Revisão de ReactJs, Hooks e aprendizado de Next Js - Em andamento
+BootCamp Desenvolvedor React IGTI - Em andamento
