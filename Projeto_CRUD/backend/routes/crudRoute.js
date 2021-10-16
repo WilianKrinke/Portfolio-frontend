@@ -1,9 +1,9 @@
 
 
 const crudRoute = (app) => {
-    app.route("users/:id?")
+    app.route("/users/:id?")
         .get((req, res) => {
-            res.send("ROTA GET USERS")
+            res.status(200).send("ROTA GET USERS")
         })
         .post((req, res) =>{
             res.send("ROTA POST USERS")

@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const crudRoute = require('./routes/crudRoute');
+require('dotenv').config()
 const app = express();
 
 app.use(bodyParser({extended: true}))
