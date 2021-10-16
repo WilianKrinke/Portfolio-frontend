@@ -2,17 +2,17 @@
 
 const crudRoute = (app) => {
     app.route("users/:id?")
-        .get(() => {
-
+        .get((req, res) => {
+            res.send("ROTA GET USERS")
         })
-        .post(() =>{
-
+        .post((req, res) =>{
+            res.send("ROTA POST USERS")
         })
-        .put(() => {
-
+        .put((req, res) => {
+            res.send("ROTA PUT USERS")
         })
-        .delete(() => {
-
+        .delete((req, res) => {
+            res.send("ROTA POST USERS")
         })
 }
 
