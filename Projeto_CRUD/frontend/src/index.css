@@ -6,6 +6,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 300;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 500;
+}
+
+p,
+a label {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  font-weight: 400;
+}
+
+button {
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  font-weight: 500;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

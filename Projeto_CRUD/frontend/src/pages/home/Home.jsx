@@ -1,10 +1,13 @@
 import React from 'react';
+import { HeaderStyled, MainStyled, FooterStyled } from '../../primeComponents';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Esta é a Home</h1>
-    </div>
+    <>
+      <HeaderStyled></HeaderStyled>
+      <MainStyled></MainStyled>
+      <FooterStyled></FooterStyled>
+    </>
   );
 };
 
