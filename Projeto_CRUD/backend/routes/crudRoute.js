@@ -12,7 +12,7 @@ const crudRoute = (app) => {
             res.send("ROTA PUT USERS")
         })
         .delete((req, res) => {
-            res.send("ROTA POST USERS")
+            res.send("ROTA Delete USERS")
         })
 }
 

@@ -4,7 +4,7 @@ const crudRoute = require('./routes/crudRoute');
 require('dotenv').config()
 const app = express();
 
-app.use(bodyParser({extended: true}))
+app.use(express.urlencoded({extended: true}))
 
 crudRoute(app)
 
