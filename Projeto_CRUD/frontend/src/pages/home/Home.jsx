@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import Form from '../../components/form';
 import { HeaderStyled, FooterStyled } from '../../primeComponents';
-import { HomeMain, InfoCard, SectForm, Article1 } from './styled';
+import { HomeMain, InfoCard, SectForm, Article1, Article2 } from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
@@ -22,7 +23,9 @@ const Home = () => {
         </InfoCard>
 
         <SectForm onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
-          <article className="container_form"></article>
+          <Article2>
+            <Form />
+          </Article2>
         </SectForm>
       </HomeMain>
       <FooterStyled></FooterStyled>
