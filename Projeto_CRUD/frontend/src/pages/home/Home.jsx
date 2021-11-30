@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Form from '../../components/signInForm';
+import SignInForm from '../../components/signInForm';
+import SignUpForm from '../../components/signUpForm';
 import { HeaderStyled } from '../../primeComponents';
 import {
   HomeMain,
@@ -12,13 +13,12 @@ import {
   HomeFooter,
   ContainerName,
   ButtonChangeForm,
+  ButtonBackToLogin,
 } from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
   const [isLoginVisible, setisLoginVisible] = useState(true);
-
-  console.log(isLoginVisible);
 
   return (
     <>
@@ -38,11 +38,14 @@ const Home = () => {
 
         <SectForm onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
           <ArticleLogin isVisible={isLoginVisible}>
-            <Form />
+            <SignInForm />
             <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Signup</ButtonChangeForm>
           </ArticleLogin>
 
-          <ArticleSignUp isVisible={isLoginVisible}></ArticleSignUp>
+          <ArticleSignUp isVisible={isLoginVisible}>
+            <SignUpForm />
+            <ButtonBackToLogin onClick={() => setisLoginVisible(!isLoginVisible)}>Login</ButtonBackToLogin>
+          </ArticleSignUp>
         </SectForm>
       </HomeMain>
 

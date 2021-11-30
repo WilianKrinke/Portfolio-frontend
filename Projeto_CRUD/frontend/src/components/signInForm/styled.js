@@ -48,5 +48,8 @@ export const ButtonContainer = styled.div`
     justify-content: center;
     width: 100%;
     height: 50px;
+    position: relative;
+    top: 10px;
+    right: 85px;
 `
 
