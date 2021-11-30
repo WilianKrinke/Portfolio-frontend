@@ -1,33 +1,51 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Form from '../../components/form';
+import Form from '../../components/signInForm';
 import { HeaderStyled } from '../../primeComponents';
-import { HomeMain, InfoCard, SectForm, Article1, Article2, HomeFooter, ContainerName } from './styled';
+import {
+  HomeMain,
+  InfoCard,
+  SectForm,
+  ArticleCrud,
+  ArticleLogin,
+  ArticleSignUp,
+  HomeFooter,
+  ContainerName,
+  ButtonChangeForm,
+} from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
+  const [isLoginVisible, setisLoginVisible] = useState(true);
+
+  console.log(isLoginVisible);
 
   return (
     <>
       <HeaderStyled>
         <h1>Login</h1>
       </HeaderStyled>
+
       <HomeMain>
         <InfoCard onhover={selection}>
-          <Article1 className="container_info">
+          <ArticleCrud>
             <p>Create.</p>
             <p>Read.</p>
             <p>UpDate.</p>
             <p>Delete.</p>
-          </Article1>
+          </ArticleCrud>
         </InfoCard>
 
         <SectForm onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
-          <Article2>
+          <ArticleLogin isVisible={isLoginVisible}>
             <Form />
-          </Article2>
+            <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Signup</ButtonChangeForm>
+          </ArticleLogin>
+
+          <ArticleSignUp isVisible={isLoginVisible}></ArticleSignUp>
         </SectForm>
       </HomeMain>
+
       <HomeFooter>
         <ContainerName>
           <div>

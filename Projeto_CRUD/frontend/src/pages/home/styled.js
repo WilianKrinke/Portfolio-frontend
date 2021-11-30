@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+/* eslint-disable no-unused-vars */
+import styled, { keyframes} from 'styled-components'
 import {MainStyled,FooterStyled} from '../../primeComponents/index'
 
 export const HomeMain = styled(MainStyled)`
@@ -12,8 +13,6 @@ export const HomeMain = styled(MainStyled)`
         flex-direction: column-reverse;
     }
 `
-
-
 export const InfoCard = styled.section`
     width: 55%;
     height: 60vh;
@@ -29,7 +28,6 @@ export const InfoCard = styled.section`
        width: 100%;
     }
 `
-
 export const SectForm = styled.section`
     width: 45%;
     height: 60vh;
@@ -49,8 +47,7 @@ export const SectForm = styled.section`
        width: 100%;
     }
 `
-
-export const Article1 = styled.article`
+export const ArticleCrud = styled.article`
     width: 100%;
     height: 100%;
     display: flex;
@@ -91,18 +88,56 @@ export const Article1 = styled.article`
     }
 `
 
-export const Article2 = styled.article`
+const fadeIn = keyframes`
+from{
+    opacity: 0;
+    display:none
+}
+
+to{
+    opacity: 1;
+    display: flex;
+}
+`
+const fadeOut = keyframes`
+from{
+    opacity: 1;
+    display: flex;
+}
+
+to{
+    opacity: 0;
+    display:none
+}
+`
+
+
+
+
+export const ArticleLogin = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
     height: 100%;
     border: 1px solid;
+    transition: all .3s ease-in-out;
+    opacity: ${props => props.isVisible ? '1' : '0'};
+    display: ${props => props.isVisible ? 'flex' : 'none'};
+`
 
-    form{
-        width: 250px;
-    }
+export const ArticleSignUp = styled.article`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border: 1px solid;
+    transition: all .3s ease-in-out;
+    opacity: ${props => props.isVisible ? '0' : '1'};
+    display: ${props => props.isVisible ? 'none' : 'flex'};
 `
 
 export const HomeFooter = styled(FooterStyled)`
@@ -123,15 +158,8 @@ export const ContainerName = styled.div`
     align-items: center;
     justify-content: space-evenly;
     padding: 10px;
-    
     border-radius: 3px;
     
-    
-
-    @media screen and (max-width: 400px) {
-        width: 100%;
-        height: 100px;
-    }
 
     div{
         width: 100%;
@@ -151,9 +179,23 @@ export const ContainerName = styled.div`
             color: #757575;
         }
 
-        @media screen and (max-width: 400px) {
-            width: 100%;
-            height: 100px;
-        }
     }
+`
+
+export const ButtonChangeForm = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  :hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f9fff9;
+}
+
 `
