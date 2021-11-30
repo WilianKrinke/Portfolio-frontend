@@ -49,6 +49,8 @@ button {
   font-weight: 500;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
 code {

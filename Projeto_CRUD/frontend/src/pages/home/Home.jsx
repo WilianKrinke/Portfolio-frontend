@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Form from '../../components/form';
-import { HeaderStyled, FooterStyled } from '../../primeComponents';
-import { HomeMain, InfoCard, SectForm, Article1, Article2 } from './styled';
+import { HeaderStyled } from '../../primeComponents';
+import { HomeMain, InfoCard, SectForm, Article1, Article2, HomeFooter, ContainerName } from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
@@ -28,7 +28,13 @@ const Home = () => {
           </Article2>
         </SectForm>
       </HomeMain>
-      <FooterStyled></FooterStyled>
+      <HomeFooter>
+        <ContainerName>
+          <div>
+            <h4>Desenvolvido por Wilian Krinke</h4>
+          </div>
+        </ContainerName>
+      </HomeFooter>
     </>
   );
 };

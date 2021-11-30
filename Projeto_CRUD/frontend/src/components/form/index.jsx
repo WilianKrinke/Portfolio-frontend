@@ -1,7 +1,8 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import { UserContainer, PassContainer } from './styled';
+import Button from '../button/index';
+import { UserContainer, PassContainer, ButtonContainer } from './styled';
 
 const Form = () => {
   return (
@@ -12,7 +13,7 @@ const Form = () => {
             <i className="fas fa-user"></i>
           </label>
           <Box autoComplete="off">
-            <TextField id="standard-basic" label="UserName" variant="standard" type="text" />
+            <TextField id="user_name" label="UserName" variant="standard" type="text" />
           </Box>
         </UserContainer>
 
@@ -21,13 +22,13 @@ const Form = () => {
             <i className="fas fa-lock"></i>
           </label>
           <Box autoComplete="off">
-            <TextField id="standard-basic" label="Password" variant="standard" type="password" />
+            <TextField id="pass" label="Password" variant="standard" type="password" />
           </Box>
         </PassContainer>
 
-        <div>
-          <button type="submit">Submit</button>
-        </div>
+        <ButtonContainer>
+          <Button type="submit" label="Submit" />
+        </ButtonContainer>
       </form>
     </>
   );

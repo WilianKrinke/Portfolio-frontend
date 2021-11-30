@@ -1,0 +1,21 @@
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f0f8ff;
+}
+
+@media screen and (max-width: 400px) {
+  button {
+    height: 50px;
+  }
+}
