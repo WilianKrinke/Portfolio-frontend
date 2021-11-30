@@ -213,7 +213,7 @@ export const ButtonBackToLogin = styled.button`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
-  bottom: 27px;
+  bottom: 17px;
   left: 85px;
 
   :hover {

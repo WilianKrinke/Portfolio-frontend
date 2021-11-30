@@ -23,7 +23,7 @@ const Form = () => {
             <i className="fas fa-envelope"></i>
           </label>
           <Box autoComplete="off">
-            <TextField id="email_signup" label="E-mail" variant="standard" type="text" name="email_signup" />
+            <TextField id="email_signup" label="E-mail" variant="standard" type="email" name="email_signup" />
           </Box>
         </ContainerInfoSignUp>
 
