@@ -9,6 +9,11 @@
 h1 {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 300;
+  margin: 0;
+  padding: 0;
+  font-size: 72px;
+  letter-spacing: 3px;
+  color: #050205;
 }
 
 h2,
@@ -18,17 +23,32 @@ h5,
 h6 {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
+  color: #050205;
 }
 
 p,
-a label {
+a,
+label {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 400;
+  margin: 0;
+  padding: 0;
+  color: #050205;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  color: #050205;
 }
 
 button {
   font-family: 'IBM Plex Sans Condensed', sans-serif;
   font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 
 code {

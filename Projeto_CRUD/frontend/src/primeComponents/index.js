@@ -4,8 +4,11 @@ import pattern_colors from '../colors/index.js'
 export const HeaderStyled = styled.header`
     max-width: 100vw;
     min-height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;   
     background-color: ${pattern_colors.prime_compoments_bg};
-    border: 1px solid;
 `
 export const MainStyled = styled.main`
     max-width: 100vw;
