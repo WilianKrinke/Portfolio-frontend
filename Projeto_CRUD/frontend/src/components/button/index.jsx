@@ -2,16 +2,15 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './button.css';
 
-const Button = ({ type, label }) => {
+const Button = ({ label }) => {
   return (
     <>
-      <button type={type}>{label}</button>
+      <button>{label}</button>
     </>
   );
 };
 
 Button.propTypes = {
-  type: propTypes.string.isRequired,
   label: propTypes.string.isRequired,
 };
 
