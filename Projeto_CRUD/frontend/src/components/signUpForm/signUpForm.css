@@ -57,3 +57,7 @@
 .Toastify__toast {
   box-shadow: none !important;
 }
+
+.none {
+  display: none;
+}

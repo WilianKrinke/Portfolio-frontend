@@ -15,7 +15,14 @@ const Form = () => {
             <i className="fas fa-user"></i>
           </label>
           <Box autoComplete="off">
-            <TextField id="user_name_login" label="User Name" variant="standard" type="text" name="user_name_login" />
+            <TextField
+              required
+              id="user_name_login"
+              label="User Name"
+              variant="standard"
+              type="text"
+              name="user_name_login"
+            />
           </Box>
         </UserContainer>
 
@@ -24,7 +31,7 @@ const Form = () => {
             <i className="fas fa-lock"></i>
           </label>
           <Box autoComplete="off">
-            <TextField id="pass_login" label="Password" variant="standard" type="password" name="pass_login" />
+            <TextField required id="pass_login" label="Password" variant="standard" type="password" name="pass_login" />
           </Box>
         </PassContainer>
 

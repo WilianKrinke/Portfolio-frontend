@@ -27,6 +27,5 @@ export const ButtonContainer = styled.div`
     height: 50px;
     position: relative;
     top: 30px;
-    right: 85px
-    
+    right: 85px  
 `

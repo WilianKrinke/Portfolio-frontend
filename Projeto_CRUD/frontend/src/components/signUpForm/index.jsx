@@ -33,6 +33,42 @@ const Form = () => {
     }
   }
 
+  function handleEyePass() {
+    const eyeSlashPass = document.getElementById('eyeSlash');
+    const eyeOpen = document.getElementById('eyeOpen');
+    const textFieldPass = document.getElementById('pass_signup');
+
+    if (eyeOpen.classList.contains('none')) {
+      eyeOpen.classList.remove('none');
+      eyeSlashPass.classList.add('none');
+      textFieldPass.removeAttribute('type');
+      textFieldPass.setAttribute('type', 'text');
+    } else {
+      eyeSlashPass.classList.remove('none');
+      eyeOpen.classList.add('none');
+      textFieldPass.removeAttribute('type');
+      textFieldPass.setAttribute('type', 'password');
+    }
+  }
+
+  function handleEyePassConfirmed() {
+    const eyeSlashPassConfirmed = document.getElementById('eyeSlashConfirmed');
+    const eyeOpenConfirmed = document.getElementById('eyeOpenConfirmed');
+    const textPassConfirmed = document.getElementById('confirmed_pass');
+
+    if (eyeOpenConfirmed.classList.contains('none')) {
+      eyeOpenConfirmed.classList.remove('none');
+      eyeSlashPassConfirmed.classList.add('none');
+      textPassConfirmed.removeAttribute('type');
+      textPassConfirmed.setAttribute('type', 'text');
+    } else {
+      eyeSlashPassConfirmed.classList.remove('none');
+      eyeOpenConfirmed.classList.add('none');
+      textPassConfirmed.removeAttribute('type');
+      textPassConfirmed.setAttribute('type', 'password');
+    }
+  }
+
   return (
     <>
       <form className="signupForm" autoComplete="false" onSubmit={(e) => handleSubmit(e)}>
@@ -71,8 +107,9 @@ const Form = () => {
         </ContainerInfoSignUp>
 
         <ContainerInfoSignUp>
-          <label htmlFor="pass_signup">
-            <i className="fas fa-eye-slash"></i>
+          <label onClick={() => handleEyePass()}>
+            <i className="fas fa-eye-slash" id="eyeSlash"></i>
+            <i className="fas fa-eye none" id="eyeOpen"></i>
           </label>
           <Box autoComplete="off">
             <TextField
@@ -88,8 +125,9 @@ const Form = () => {
         </ContainerInfoSignUp>
 
         <ContainerInfoSignUp>
-          <label htmlFor="confirmed_pass">
-            <i className="fas fa-eye-slash"></i>
+          <label onClick={() => handleEyePassConfirmed()}>
+            <i className="fas fa-eye-slash" id="eyeSlashConfirmed"></i>
+            <i className="fas fa-eye none" id="eyeOpenConfirmed"></i>
           </label>
           <Box autoComplete="off">
             <TextField
