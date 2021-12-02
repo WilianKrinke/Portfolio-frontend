@@ -46,6 +46,11 @@ export const SectForm = styled.section`
     @media screen and (max-width: 750px) {
        width: 100%;
     }
+
+    @media screen and (max-width: 470px) {
+        height: 70vh;
+
+    }
 `
 export const ArticleCrud = styled.article`
     width: 100%;
@@ -111,9 +116,6 @@ to{
 }
 `
 
-
-
-
 export const ArticleLogin = styled.article`
     display: flex;
     flex-direction: column;
@@ -125,6 +127,8 @@ export const ArticleLogin = styled.article`
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '1' : '0'};
     display: ${props => props.isVisible ? 'flex' : 'none'};
+
+    
 `
 
 export const ArticleSignUp = styled.article`
@@ -197,9 +201,15 @@ export const ButtonChangeForm = styled.button`
   left: 85px;
 
   :hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #f9fff9;
-}
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #f9fff9;
+   }
+
+   @media screen and (max-width: 470px) {
+    position: relative;
+    top: 0px;
+    left: 0px;
+  }
 `
 
 export const ButtonBackToLogin = styled.button`
@@ -218,8 +228,12 @@ export const ButtonBackToLogin = styled.button`
 
   :hover {
   background-color: rgba(0, 0, 0, 0.8);
-  color: #f9fff9;
+  color: #f9fff9;  
 }
 
-
+@media screen and (max-width: 470px) {
+    position: relative;
+    top: 20px;
+    left: 0px;
+  }
 `

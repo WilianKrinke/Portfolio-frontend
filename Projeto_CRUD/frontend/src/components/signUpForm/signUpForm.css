@@ -7,6 +7,13 @@
   justify-content: space-evenly;
 }
 
+@media screen and (max-width: 470px) {
+  .signupForm {
+    position: relative;
+    bottom: 20px;
+  }
+}
+
 /* success */
 .Toastify__toast--success {
   border: 1px solid #c2d6c1 !important;

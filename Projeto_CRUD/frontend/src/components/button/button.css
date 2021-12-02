@@ -14,3 +14,11 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.8);
   color: #f9fff9;
 }
+
+@media screen and (max-width: 470px) {
+  button {
+    position: relative;
+    top: 0px;
+    left: 85px;
+  }
+}
