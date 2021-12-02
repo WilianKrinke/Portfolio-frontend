@@ -48,6 +48,7 @@ const Form = () => {
               type="text"
               name="user_name_signup"
               onChange={(e) => setuserName(e.target.value)}
+              required
             />
           </Box>
         </ContainerInfoSignUp>
@@ -64,6 +65,7 @@ const Form = () => {
               type="email"
               name="email_signup"
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </Box>
         </ContainerInfoSignUp>
@@ -80,6 +82,7 @@ const Form = () => {
               type="password"
               name="pass_signup"
               onChange={(e) => setPass(e.target.value)}
+              required
             />
           </Box>
         </ContainerInfoSignUp>
@@ -96,6 +99,7 @@ const Form = () => {
               type="password"
               name="confirmed_pass"
               onChange={(e) => setPassConfirmed(e.target.value)}
+              required
             />
           </Box>
         </ContainerInfoSignUp>
