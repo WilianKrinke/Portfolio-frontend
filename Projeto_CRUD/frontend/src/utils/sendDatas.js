@@ -10,23 +10,27 @@ export async function sendDatas(datas) {
     const wasValidEmail = isValidEmail(datas.email)
     const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
 
-   if (wasValidUserName[0] == true && wasValidEmail[0] == true && wasValidPass[0] == true) {
-        console.log('Dados Válidos')
-   } else {
-        console.log('Dados Inválidos')
-   }
-
-
-
-
-    try {
-        const request = await axios.post('http://localhost:3001/sign-in', {
-            userName: datas.userName,
-            email: datas.email,
-            pass: datas.pass
-        });
-        return request.data;        
-    } catch (error) {
-        return error;
+    if (wasValidUserName[0] == false) {
+        const controlArray = [false, wasValidUserName[1]]
+        return controlArray
+    } else if(wasValidEmail[0] == false){
+        const controlArray = [false, wasValidEmail[1]]
+        return controlArray
+    } else if(wasValidPass[0] == false){
+        const controlArray = [false, wasValidPass[1]]
+        return controlArray
+    } else{
+        try {
+            const request = await axios.post('http://localhost:3001/sign-in', {
+                userName: datas.userName,
+                email: datas.email,
+                pass: datas.pass
+            });
+            const controlArray = [true, request.data]
+            return controlArray;      
+        } catch (error) {
+            const controlArray = [false, error]
+            return controlArray;
+        }
     }
 }

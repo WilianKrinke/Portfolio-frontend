@@ -8,7 +8,7 @@ export function isValidUser(userName){
     const SqlInjection = haveSqlInjection(arrUserName)
 
     if (Numbers === true || SqlInjection === true) {
-        const dataUserName = [false, 'Contém Caracteres Impróprios']
+        const dataUserName = [false, 'Nome de usuário contém caracteres impróprios']
         return dataUserName;
     } else {
         const dataUserName = [true, 'Dados Válidos']

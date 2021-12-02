@@ -25,10 +25,10 @@ const Form = () => {
 
     const wasRegister = await sendDatas(objectDatas);
 
-    if (wasRegister) {
-      toast.success('Registered User!');
+    if (wasRegister[0] == true) {
+      toast.success('Usuário Cadastrado!');
     } else {
-      toast.error('Not Registered!');
+      toast.error(wasRegister[1]);
     }
   }
 

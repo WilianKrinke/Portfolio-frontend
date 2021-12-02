@@ -2,7 +2,7 @@ import {objectSqlInjectionsWords} from './sqlInjections'
 
 export function isValidPass(pass, passConfirmed){
     if (pass != passConfirmed) {
-        const arrayPass = [false, 'Senhas não são iguais']
+        const arrayPass = [false, 'As Senhas não são iguais']
         return arrayPass;
     }
 
