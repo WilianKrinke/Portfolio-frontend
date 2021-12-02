@@ -44,7 +44,7 @@ const Home = () => {
 
           <ArticleSignUp isVisible={isLoginVisible}>
             <SignUpForm />
-            <ButtonBackToLogin onClick={() => setisLoginVisible(!isLoginVisible)}>Login</ButtonBackToLogin>
+            <ButtonBackToLogin onClick={() => setisLoginVisible(!isLoginVisible)}>Back</ButtonBackToLogin>
           </ArticleSignUp>
         </SectForm>
       </HomeMain>

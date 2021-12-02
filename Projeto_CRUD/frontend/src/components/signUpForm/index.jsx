@@ -14,7 +14,6 @@ const Form = () => {
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [passConfirmed, setPassConfirmed] = useState(null);
-  const [toastyState, settoastyState] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -28,8 +27,9 @@ const Form = () => {
     const wasRegister = await sendDatas(objectDatas);
 
     if (wasRegister) {
-      settoastyState(true);
       toast.success('Registered User!');
+    } else {
+      toast.error('Not Registered!');
     }
   }
 
