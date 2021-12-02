@@ -6,6 +6,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 h1 {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 300;

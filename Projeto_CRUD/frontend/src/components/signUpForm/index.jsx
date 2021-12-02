@@ -1,19 +1,22 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import Button from '../button/index';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import Button from '../button/index';
 import { ButtonContainer, ContainerInfoSignUp } from './styled';
-import './signUpForm.css';
 import { sendDatas } from '../../utils/sendDatas';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import './signUpForm.css';
 
 const Form = () => {
   const [userName, setuserName] = useState(null);
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [passConfirmed, setPassConfirmed] = useState(null);
+  const [toastyState, settoastyState] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const objectDatas = {
       userName,
@@ -22,7 +25,12 @@ const Form = () => {
       passConfirmed,
     };
 
-    sendDatas(objectDatas);
+    const wasRegister = await sendDatas(objectDatas);
+
+    if (wasRegister) {
+      settoastyState(true);
+      toast.success('Registered User!');
+    }
   }
 
   return (
@@ -95,6 +103,19 @@ const Form = () => {
           <Button label="Register" />
         </ButtonContainer>
       </form>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        width={500}
+      />
     </>
   );
 };
