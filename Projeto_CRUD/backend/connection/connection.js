@@ -1,10 +1,13 @@
-async function connect(){
-    if(global.connection && global.connection.state !== 'disconnected')
-        return global.connection;
 
-    const mysql = require("mysql2/promise");
-    const connection = await mysql.createConnection("mysql://usuario:senha@servidor:porta/banco");
-    console.log("Conectou no MySQL!");
-    global.connection = connection;
-    return connection;
-}
+const knex = require('knex')({
+  client: process.env.CLIENT,
+  connection: {
+    host : process.env.HOST,
+    port : process.env.PORT,
+    user : process.env.USER,
+    password : process.env.PASS,
+    database : process.env.DATABASE
+  }
+});
+          
+module.exports = knex;

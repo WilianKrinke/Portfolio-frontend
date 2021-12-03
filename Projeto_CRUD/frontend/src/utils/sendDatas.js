@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import axios from 'axios';
 import { doCrypt } from './crypto/doCrypto';
 import { isValidEmail } from './validations/validEmail';
@@ -26,10 +25,18 @@ export async function sendDatas(datas) {
             const request = await axios.post('http://localhost:3001/sign-in', {
                 userName: datas.userName,
                 email: datas.email,
-                pass: passCrypt
-            });
-            const controlArray = [true, request.data]
-            return controlArray;      
+                pass: passCrypt,
+                isAdm: datas.isAdm
+            });            
+
+            if (request.data == true) {
+                const controlArray = [true, request.data]
+                return controlArray;      
+            } else {
+                const controlArray = [false, 'Problemas no servidor, avise o administrador do site']
+                return controlArray
+            }
+
         } catch (error) {
             const controlArray = [false, error]
             return controlArray;
