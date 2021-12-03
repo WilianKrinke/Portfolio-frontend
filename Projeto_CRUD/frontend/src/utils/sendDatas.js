@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import axios from 'axios';
+import { doCrypt } from './crypto/doCrypto';
 import { isValidEmail } from './validations/validEmail';
 import { isValidPass } from './validations/validPass'
 import { isValidUser } from './validations/validUser'
@@ -21,10 +22,11 @@ export async function sendDatas(datas) {
         return controlArray
     } else{
         try {
+            const passCrypt = doCrypt(datas.pass);
             const request = await axios.post('http://localhost:3001/sign-in', {
                 userName: datas.userName,
                 email: datas.email,
-                pass: datas.pass
+                pass: passCrypt
             });
             const controlArray = [true, request.data]
             return controlArray;      
