@@ -2,7 +2,7 @@
 
 # dependencies
 /node_modules
-.connection.js
+./connection/connection.js
 /.pnp
 .pnp.js
 
