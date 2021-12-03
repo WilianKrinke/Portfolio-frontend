@@ -11,7 +11,7 @@ env.js
 
 # production
 /build
-/crypto
+././crypto
 
 # misc
 .DS_Store
