@@ -7,10 +7,6 @@ const app = express();
 require('dotenv').config()
 
 console.log(process.env.CLIENT)
-console.log(process.env.HOST)
-console.log(process.env.PORT)
-console.log(process.env.DATABASE)
-console.log(process.env.USER_NAME)
 
 app.use(cors());
 app.use(bodyParser.json())

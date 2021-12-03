@@ -26,7 +26,6 @@ export async function sendDatas(datas) {
                 userName: datas.userName,
                 email: datas.email,
                 pass: passCrypt,
-                isAdm: datas.isAdm
             });            
 
             if (request.data == true) {

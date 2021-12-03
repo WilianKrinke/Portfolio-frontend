@@ -14,7 +14,6 @@ const Form = () => {
   const [email, setEmail] = useState(null);
   const [pass, setPass] = useState(null);
   const [passConfirmed, setPassConfirmed] = useState(null);
-  const [isAdm, setisAdm] = useState(1);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,7 +22,6 @@ const Form = () => {
       email,
       pass,
       passConfirmed,
-      isAdm,
     };
 
     const wasRegister = await sendDatas(objectDatas);
