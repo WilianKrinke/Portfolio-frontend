@@ -3,8 +3,11 @@ import bcrypt from 'bcryptjs'
 import { SALT } from './env.js'
 
 export function doCrypt(pass){
-    console.log('encriptando...')
-    const hash = bcrypt.hashSync(pass, SALT);
-    console.log('encriptado')
-    return hash;   
+
+    const salt =  bcrypt.genSaltSync(SALT);
+    const hashPassword =  bcrypt.hashSync(pass, salt);
+
+    
+    return hashPassword;
+   
 }
