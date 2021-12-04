@@ -24,7 +24,6 @@ const Form = () => {
     };
 
     const isLogged = await sendSignIn(signinDatas);
-    console.log(isLogged);
 
     if (isLogged == true) {
       navigate('./first-page');
