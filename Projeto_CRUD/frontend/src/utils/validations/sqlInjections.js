@@ -28,6 +28,7 @@ export const objectSqlInjectionsWords = [
     'ADD',
     'ON',
     'TO',
+    'AFTER',
     'select',
     'insert',
     'update',
@@ -56,5 +57,6 @@ export const objectSqlInjectionsWords = [
     'foreign',
     'add',
     'on',
-    'to'    
+    'to',
+    'after'  
 ]
