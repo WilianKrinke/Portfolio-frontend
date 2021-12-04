@@ -6,7 +6,6 @@ async function getPass(userName) {
             userName: userName
         }).select('idUser', 'userName', 'pass', 'adm')
     
-        console.log(datasReceived)
         const pass = datasReceived.map(item => item.pass)
         return pass;
         

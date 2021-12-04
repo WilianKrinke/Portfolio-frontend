@@ -1,17 +1,21 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Button from '../button/index';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendDatas';
+import { ToastContainer, toast } from 'react-toastify';
 import './signInForm.css';
 
 const Form = () => {
   const [userName, setuserName] = useState(null);
   const [pass, setPass] = useState(null);
 
-  function handleForm(e) {
+  const navigate = useNavigate();
+
+  async function handleForm(e) {
     e.preventDefault();
 
     const signinDatas = {
@@ -19,7 +23,16 @@ const Form = () => {
       pass,
     };
 
-    sendSignIn(signinDatas);
+    const isLogged = await sendSignIn(signinDatas);
+    console.log(isLogged);
+
+    if (isLogged == true) {
+      navigate('./first-page');
+      //fazer cookie
+      //fazer sessão
+    } else {
+      toast.error('Usuário ou senha incorretos');
+    }
   }
 
   return (
@@ -63,6 +76,19 @@ const Form = () => {
           <Button type="submit" label="SignIn" />
         </ButtonContainer>
       </form>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        width={500}
+      />
     </>
   );
 };

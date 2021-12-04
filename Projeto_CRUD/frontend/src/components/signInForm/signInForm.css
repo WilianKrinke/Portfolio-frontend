@@ -10,3 +10,47 @@
 .fas {
   cursor: pointer;
 }
+
+/* success */
+.Toastify__toast--success {
+  border: 1px solid #c2d6c1 !important;
+  border-radius: 3px !important;
+  background: #f9fff9 !important;
+}
+
+/* body */
+.Toastify__toast-body {
+  color: #444c63;
+  font-size: 14px;
+  padding: 0px;
+  width: 100%;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+.Toastify__close-button {
+  position: relative !important;
+  top: 2px !important;
+  background-color: #f9fff9;
+}
+
+.Toastify__close-button:hover {
+  border: 1px solid #c2d6c1 !important;
+}
+
+.Toastify__close-button--light {
+  background-color: #f9fff9 !important;
+}
+
+.Toastify__close-button > svg {
+  position: relative !important;
+  top: 2px !important;
+}
+
+.Toastify__close-button > svg {
+  color: black;
+}
+
+.Toastify__toast {
+  box-shadow: none !important;
+}
