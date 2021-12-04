@@ -1,4 +1,4 @@
-const connection = require('../connection/connection')
+const knex = require('../connection/connection')
 
 async function sendDatasToDB(userDatas){
         
@@ -11,16 +11,12 @@ async function sendDatasToDB(userDatas){
 
     let control = false
     try {
-        await connection.insert(datas).into("users")
+        await knex.insert(datas).into("users")
         control = true;
     } catch (error) {
         console.log(error)
     }
-
-        
-    
-    return control;
-    
+    return control;    
 }
 
 module.exports = {sendDatasToDB}

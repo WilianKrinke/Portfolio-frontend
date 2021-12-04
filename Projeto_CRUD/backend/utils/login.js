@@ -1,6 +1,12 @@
-function login (datas){
+const comparePass = require("./comparePass");
+const getPass = require("./getPass");
+
+async function login (datas){
     console.log(datas)
-    //fazer verificação
+    const pass = await getPass(datas.userName)
+    comparePass(datas.pass,pass)
+
+
 }
 
 module.exports = login;
