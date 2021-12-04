@@ -13,7 +13,7 @@
 
 # misc
 /connection
-env.js
+./utils/env.js
 comparePass.js
 .DS_Store
 .env
