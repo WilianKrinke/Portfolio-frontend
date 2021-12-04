@@ -5,6 +5,7 @@ const userLogin = (app) => {
         .post((req, res) => {
 
             console.log(req.body)
+            login(req.body)
         })
 
 }
