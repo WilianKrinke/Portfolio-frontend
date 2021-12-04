@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { doCrypt } from './crypto/doCrypto';
-import { isValidEmail } from './validations/validEmail';
-import { isValidPass } from './validations/validPass'
-import { isValidUser } from './validations/validUser'
+import { doCrypt } from '../crypto/doCrypto';
+import { isValidEmail } from '../validations/validEmail';
+import { isValidPass } from '../validations/validPass'
+import { isValidUser } from '../validations/validUser'
 
 export async function sendDatas(datas) {
 

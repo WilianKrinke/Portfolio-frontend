@@ -4,7 +4,7 @@ import Button from '../button/index';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { ButtonContainer, ContainerInfoSignUp } from './styled';
-import { sendDatas } from '../../utils/sendDatas';
+import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './signUpForm.css';
