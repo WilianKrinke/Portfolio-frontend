@@ -12,7 +12,6 @@ const userLogin = (app) => {
                 res.send(control)
             })
         })
-
 }
 
 module.exports = userLogin;
