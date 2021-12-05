@@ -4,10 +4,9 @@ async function getPass(userName) {
     try {
         const datasReceived = await knex('nodecrud.users').where({
             userName: userName
-        }).select('idUser', 'userName', 'pass', 'adm')
-    
-        const pass = datasReceived.map(item => item.pass)
-        return pass;
+        }).select('idUser', 'userName', 'pass', 'adm', 'isBlock')
+        
+        return datasReceived;
         
     } catch (error) {
         console.log(error)

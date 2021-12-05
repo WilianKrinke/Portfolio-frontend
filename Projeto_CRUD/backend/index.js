@@ -5,15 +5,10 @@ const userLogin = require('./routes/userLogin');
 const cors =  require('cors');
 const bodyParser = require('body-parser');
 const app = express();
-const session = require('express-session')
-const flash = require('connect-flash')
 require('dotenv').config()
 
 console.log(process.env.CLIENT)
 
-app.use(session({
-    secret:
-}))
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))

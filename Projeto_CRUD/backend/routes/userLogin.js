@@ -4,11 +4,9 @@ const userLogin = (app) => {
     app.route("/login")
         .post((req, res) => {
             let control = false
-
             login(req.body)
-            .then(response => {
-                control = response
-                res.send(control)
+            .then(response => {                
+                res.send(response)
             })
             .catch(err => {
                 res.send(control)

@@ -2,11 +2,11 @@ const comparePass = require("./comparePass");
 const getPass = require("./getPass");
 
 async function login (datas){
-    const pass = await getPass(datas.userName)
-    const isSamePass = comparePass(datas.pass,pass)
+    const userDatasFromDb = await getPass(datas.userName)
+    const arrWithToken = comparePass(datas.pass, userDatasFromDb)
 
-    if (isSamePass == true) {
-        return true
+    if (arrWithToken[0] == true) {
+        return arrWithToken
     } else {
         return false
     }
