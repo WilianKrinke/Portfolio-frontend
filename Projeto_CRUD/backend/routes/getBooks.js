@@ -1,9 +1,15 @@
-
+const {getDataBooks} = require('../utils/getBooks')
 
 const getBooks = (app) => {
     app.route('/books-list/:id?')
         .get((req, res) => {
-            res.send('ROTA DE LISTA DE LIVROS')
+          getDataBooks()
+          .then(response => {
+              res.json(response)
+          })
+          .catch(err => {
+              console.log(err)
+          })
         })
         .delete((req, res) => {
             res.send('ROTA PARA DELETAR LIVRO')

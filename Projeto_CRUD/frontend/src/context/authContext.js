@@ -5,8 +5,6 @@ import baseUrl from '../utils/baseUrl';
 
 const Context = createContext();
 
-
-
 function AuthProvider({children}){
     
     const [authenticated, setAutheticated] = useState(false);
@@ -15,21 +13,9 @@ function AuthProvider({children}){
     const states = {
         authenticated,
         setAutheticated,
-        loading
+        loading,
+        setLoading
     }
-
-    useEffect(() => {
-        const token = sessionStorage.getItem('token')
-
-        if (token) {
-            baseUrl.defaults.headers.common['Authorization'] = JSON.parse(token);
-            setAutheticated(true)
-        }
-
-        setLoading(false)
-        
-    }, []);
-
 
     return (
     <Context.Provider value={{states}}>

@@ -10,25 +10,36 @@ const BookList = () => {
   const navigate = useNavigate();
 
   const {
-    states: { authenticated, loading },
+    states: { loading, setLoading },
   } = useContext(Context);
 
   useEffect(() => {
-    // (async () => {
-    //   const datas = await baseUrl.get('/books-list');
-    //   console.log(datas);
-    // })();
-    console.log(authenticated);
+    (async () => {
+      const token = sessionStorage.getItem('token');
 
-    if (!authenticated) {
-      navigate('/');
-    }
+      baseUrl.defaults.headers.common['Authorization'] = JSON.parse(token);
+      const datas = await baseUrl.get('/books-list');
+
+      console.log(datas);
+      if (datas.data == false) {
+        navigate('/');
+      } else {
+        setBooks(datas);
+        setLoading(false);
+      }
+    })();
   }, []);
 
   return (
     <>
-      <h1>WELCOME TO BOOK LISTS</h1>
-      <ButtonLogOut />
+      {loading ? (
+        <h1>Loading...</h1>
+      ) : (
+        <>
+          <h1>WELCOME TO BOOK LISTS</h1>
+          <ButtonLogOut />
+        </>
+      )}
     </>
   );
 };
