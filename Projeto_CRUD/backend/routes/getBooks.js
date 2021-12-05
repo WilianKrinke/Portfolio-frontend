@@ -9,6 +9,7 @@ const getBooks = (app) => {
           })
           .catch(err => {
               console.log(err)
+              res.json(false)
           })
         })
         .delete((req, res) => {

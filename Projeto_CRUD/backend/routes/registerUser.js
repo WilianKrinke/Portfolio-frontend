@@ -8,11 +8,11 @@ const registerUser = (app) => {
             sendDatasToDB(req.body)
             .then(response => {
                 control = response
-                res.send(control)
+                res.json(control)
             })
             .catch(err => {
                 console.log(err)
-                res.send(control)          
+              res.json(false)         
             })
         })
 }

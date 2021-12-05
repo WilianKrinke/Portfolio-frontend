@@ -9,6 +9,7 @@ const userLogin = (app) => {
                 res.send(response)
             })
             .catch(err => {
+                console.log(err)
                 res.send(control)
             })
         })
