@@ -1,4 +1,4 @@
-import axios from 'axios';
+import baseUrl from '../baseUrl';
 import { doCrypt } from '../crypto/doCrypto';
 import { isValidEmail } from '../validations/validEmail';
 import { isValidPass } from '../validations/validPass'
@@ -22,7 +22,7 @@ export async function sendDatas(datas) {
     } else{
         try {
             const passCrypt = doCrypt(datas.pass);
-            const request = await axios.post('http://localhost:3001/sign-in', {
+            const request = await baseUrl.post(`/sign-in`, {
                 userName: datas.userName,
                 email: datas.email,
                 pass: passCrypt,
