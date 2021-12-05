@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '../button/index';
+import { Context } from '../../context/authContext';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Button from '../button/index';
 import './signInForm.css';
 
 const Form = () => {
@@ -15,6 +16,11 @@ const Form = () => {
 
   const navigate = useNavigate();
 
+  const {
+    states: { authenticated, setAutheticated },
+  } = useContext(Context);
+
+  //submitform
   async function handleForm(e) {
     e.preventDefault();
 
@@ -26,9 +32,8 @@ const Form = () => {
     const isLogged = await sendSignIn(signinDatas);
 
     if (isLogged == true) {
-      navigate('./first-page');
-      //fazer cookie
-      //fazer sessão
+      setAutheticated(true);
+      navigate('./book-list');
     } else {
       toast.error('Usuário ou senha incorretos');
     }

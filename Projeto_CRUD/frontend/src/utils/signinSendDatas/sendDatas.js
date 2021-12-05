@@ -10,7 +10,14 @@ export async function sendSignIn(datas){
             userName: datas.userName,
             pass: ciphertext
         })
+
+        if (request.data[0] == true) {
+            sessionStorage.setItem('token', JSON.stringify(request.data[1]));
+            baseUrl.defaults.headers.common['Authorization'] = request.data[1]
+        } 
+
         return request.data[0]
+
         
     } catch (error) {
         return false;     

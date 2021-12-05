@@ -1,18 +1,22 @@
 /* eslint-disable no-unused-vars */
-import axios from 'axios';
-import React, { useEffect } from 'react';
-import './button.css';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router';
+import { Context } from '../../context/authContext';
 import baseUrl from '../../utils/baseUrl';
+import './button.css';
 
 const ButtonLogOut = () => {
-  useEffect(() => {
-    (async () => {
-      const { data } = await baseUrl.get('/');
-    })();
-  }, []);
+  const {
+    states: { setAutheticated },
+  } = useContext(Context);
+
+  const navigate = useNavigate();
 
   function handleLogout() {
-    alert('Logout');
+    const token = sessionStorage.removeItem('token');
+    baseUrl.defaults.headers.common['Authorization'] = undefined;
+    setAutheticated(false);
+    navigate('/');
   }
 
   return (

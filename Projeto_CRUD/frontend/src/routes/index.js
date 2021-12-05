@@ -9,7 +9,7 @@ const index = () => {
     <BrowserRouter>
       <Routes>
         <Route exact path='/' caseSensitive={false} element={<Home />} />
-        <Route exact path='/first-page' caseSensitive={false} element={<BookList />} />
+        <Route exact path='/book-list' caseSensitive={false} element={<BookList />} />
         <Route exact path='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
