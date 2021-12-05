@@ -11,12 +11,10 @@ const authValidate = async (req,res,next) => {
     try {
         const teste = await promisify(jwt.verify)(token, process.env.SECRET)
         
-        if (teste) {
-            console.log('positivo')
+        if (teste) {           
             return next()  
-        } else {
-            console.log('negativo')
-            return false
+        } else {           
+            return res.send(false)
         }
     } catch (error) {
         return res.send(false)
