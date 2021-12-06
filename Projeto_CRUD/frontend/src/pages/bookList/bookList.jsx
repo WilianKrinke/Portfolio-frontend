@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import ButtonLogOut from '../../components/buttonLogout';
 import baseUrl from '../../utils/baseUrl';
 import Loading from '../../components/loading/Loading';
+import preAuth from '../../utils/Auth/preAuth';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
@@ -25,9 +26,7 @@ const BookList = () => {
 
   useEffect(() => {
     (async () => {
-      const token = sessionStorage.getItem('token');
-
-      baseUrl.defaults.headers.common['Authorization'] = JSON.parse(token);
+      preAuth();
       const datas = await baseUrl.get('/books-list');
 
       if (datas.data == false) {
@@ -85,8 +84,8 @@ const BookList = () => {
           <button onClick={() => decCurrentPage()}>Anterior</button>
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
-
-          <ButtonLogOut /> */}
+            */}
+          <ButtonLogOut />
         </>
       )}
     </>
