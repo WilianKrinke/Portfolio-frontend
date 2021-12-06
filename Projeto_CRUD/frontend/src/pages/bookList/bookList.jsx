@@ -6,7 +6,8 @@ import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
+import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
+import { BookListMain } from './styled';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -68,10 +69,18 @@ const BookList = () => {
           <HeaderStyled>
             <h1>Welcome to Will&rsquo;s Library</h1>
           </HeaderStyled>
-          <MainStyled></MainStyled>
+          <BookListMain>
+            {currentItens.map((item) => {
+              return (
+                <div key={item.idBook}>
+                  <h3>{item.bookName}</h3>
+                </div>
+              );
+            })}
+          </BookListMain>
           <FooterStyled></FooterStyled>
 
-          {/* <h1>WELCOME TO BOOK LISTS</h1>
+          {/* 
 
           {currentItens.map((item) => {
             return (
