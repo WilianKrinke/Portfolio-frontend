@@ -31,6 +31,7 @@ const BookList = () => {
       const datas = await baseUrl.get('/books-list');
 
       if (datas.data == false) {
+        baseUrl.defaults.headers.common['Authorization'] = undefined;
         navigate('/');
       } else {
         setBooks(datas.data);
