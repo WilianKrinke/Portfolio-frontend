@@ -67,16 +67,6 @@ const BookList = () => {
         <>
           <h1>WELCOME TO BOOK LISTS</h1>
 
-          <div>
-            <select value={itensPerPage} onChange={(e) => setItensPerPage(e.target.value)}>
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-              <option value="20">20</option>
-              <option value="25">20</option>
-            </select>
-          </div>
-
           {currentItens.map((item) => {
             return (
               <div key={item.idBook}>
