@@ -30,7 +30,6 @@ const BookList = () => {
       baseUrl.defaults.headers.common['Authorization'] = JSON.parse(token);
       const datas = await baseUrl.get('/books-list');
 
-      console.log(datas);
       if (datas.data == false) {
         navigate('/');
       } else {
@@ -41,6 +40,22 @@ const BookList = () => {
       }
     })();
   }, [itensPerPage, startIndex, endIndex]);
+
+  function accCurrentPage() {
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage >= 4) {
+      setCurrentPage(0);
+    }
+  }
+
+  function decCurrentPage() {
+    setCurrentPage(currentPage - 1);
+
+    if (currentPage <= 0) {
+      setCurrentPage(4);
+    }
+  }
 
   return (
     <>
@@ -62,16 +77,6 @@ const BookList = () => {
             </select>
           </div>
 
-          <div>
-            {Array.from(Array(pages), (item, index) => {
-              return (
-                <button key={index} value={index} onClick={(e) => setCurrentPage(e.target.value)}>
-                  {index + 1}
-                </button>
-              );
-            })}
-          </div>
-
           {currentItens.map((item) => {
             return (
               <div key={item.idBook}>
@@ -79,6 +84,11 @@ const BookList = () => {
               </div>
             );
           })}
+
+          <button onClick={() => decCurrentPage()}>Anterior</button>
+          <h2>{currentPage + 1}</h2>
+          <button onClick={() => accCurrentPage()}>Proximo</button>
+
           <ButtonLogOut />
         </>
       )}
