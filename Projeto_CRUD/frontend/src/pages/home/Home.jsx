@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import { HeaderStyled } from '../../primeComponents';
@@ -50,11 +51,7 @@ const Home = () => {
       </HomeMain>
 
       <HomeFooter>
-        <ContainerName>
-          <div>
-            <h4>Desenvolvido por Wilian Krinke</h4>
-          </div>
-        </ContainerName>
+        <Letterfooter />
       </HomeFooter>
     </>
   );

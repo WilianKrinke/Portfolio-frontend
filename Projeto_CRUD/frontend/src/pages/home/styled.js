@@ -1,5 +1,4 @@
-/* eslint-disable no-unused-vars */
-import styled, { keyframes} from 'styled-components'
+import styled from 'styled-components'
 import {MainStyled,FooterStyled} from '../../primeComponents/index'
 
 export const HomeMain = styled(MainStyled)`
@@ -93,29 +92,6 @@ export const ArticleCrud = styled.article`
     }
 `
 
-const fadeIn = keyframes`
-from{
-    opacity: 0;
-    display:none
-}
-
-to{
-    opacity: 1;
-    display: flex;
-}
-`
-const fadeOut = keyframes`
-from{
-    opacity: 1;
-    display: flex;
-}
-
-to{
-    opacity: 0;
-    display:none
-}
-`
-
 export const ArticleLogin = styled.article`
     display: flex;
     flex-direction: column;
@@ -151,39 +127,6 @@ export const HomeFooter = styled(FooterStyled)`
     justify-content: space-evenly;
     letter-spacing: 3px;
     padding: 10px;
-`
-
-export const ContainerName = styled.div`
-    height: 40px;
-    text-align: center;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 10px;
-    border-radius: 3px;
-    
-
-    div{
-        width: 100%;
-        height: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-evenly;
-
-        h4{
-            color: #c9c9c9;
-            font-weight: 200;
-            transition: all .3s ease-in-out;
-        }
-
-        h4:hover{
-            color: #757575;
-        }
-
-    }
 `
 
 export const ButtonChangeForm = styled.button`

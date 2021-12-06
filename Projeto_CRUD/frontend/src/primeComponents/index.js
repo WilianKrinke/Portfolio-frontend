@@ -3,12 +3,13 @@ import pattern_colors from '../colors/index.js'
 
 export const HeaderStyled = styled.header`
     max-width: 100vw;
-    min-height: 20vh;
+    min-height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-flow: column wrap;   
+    flex-direction: column;
     background-color: ${pattern_colors.prime_compoments_bg};
+
 `
 export const MainStyled = styled.main`
     max-width: 100vw;

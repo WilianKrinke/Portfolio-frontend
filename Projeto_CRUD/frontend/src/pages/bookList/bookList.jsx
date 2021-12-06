@@ -2,10 +2,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ButtonLogOut from '../../components/buttonLogout';
 import baseUrl from '../../utils/baseUrl';
+import Loading from '../../components/loading/Loading';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import { DivLoading } from '../../primeComponents';
-import Loading from '../../components/loading/Loading';
+import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -66,7 +66,13 @@ const BookList = () => {
         </DivLoading>
       ) : (
         <>
-          <h1>WELCOME TO BOOK LISTS</h1>
+          <HeaderStyled>
+            <h1>Welcome to Will&rsquo;s Library</h1>
+          </HeaderStyled>
+          <MainStyled></MainStyled>
+          <FooterStyled></FooterStyled>
+
+          {/* <h1>WELCOME TO BOOK LISTS</h1>
 
           {currentItens.map((item) => {
             return (
@@ -80,7 +86,7 @@ const BookList = () => {
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
 
-          <ButtonLogOut />
+          <ButtonLogOut /> */}
         </>
       )}
     </>
