@@ -9,7 +9,7 @@ const getBooks = (app) => {
           })
           .catch(err => {
               console.log(err)
-              res.json(false)
+              res.send(false)
           })
         })
         .delete((req, res) => {
