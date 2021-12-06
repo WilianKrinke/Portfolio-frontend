@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types'
 import { CardStyled } from './styled';

@@ -1,21 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import { HeaderStyled } from '../../primeComponents';
-import {
-  HomeMain,
-  InfoCard,
-  SectForm,
-  ArticleCrud,
-  ArticleLogin,
-  ArticleSignUp,
-  HomeFooter,
-  ContainerName,
-  ButtonChangeForm,
-  ButtonBackToLogin,
-} from './styled';
+import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
+import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp, HomeFooter } from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
@@ -40,7 +29,7 @@ const Home = () => {
         <SectForm onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
           <ArticleLogin isVisible={isLoginVisible}>
             <SignInForm />
-            <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Signup</ButtonChangeForm>
+            <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Sign Up</ButtonChangeForm>
           </ArticleLogin>
 
           <ArticleSignUp isVisible={isLoginVisible}>

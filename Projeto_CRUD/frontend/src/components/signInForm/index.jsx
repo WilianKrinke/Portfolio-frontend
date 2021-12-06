@@ -1,13 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useContext } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../../context/authContext';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Button from '../button/index';
+import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
 
 const Form = () => {
@@ -77,7 +77,7 @@ const Form = () => {
         </PassContainer>
 
         <ButtonContainer>
-          <Button type="submit" label="SignIn" />
+          <ButtonSignin>Sign In</ButtonSignin>
         </ButtonContainer>
       </form>
 

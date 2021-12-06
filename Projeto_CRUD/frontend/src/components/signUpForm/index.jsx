@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Button from '../button/index';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { ButtonContainer, ContainerInfoSignUp } from './styled';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';
+import { ButtonSignUp } from '../Buttons';
 import 'react-toastify/dist/ReactToastify.css';
 import './signUpForm.css';
 
@@ -142,7 +142,7 @@ const Form = () => {
           </Box>
         </ContainerInfoSignUp>
         <ButtonContainer>
-          <Button label="Register" />
+          <ButtonSignUp>Register</ButtonSignUp>
         </ButtonContainer>
       </form>
 

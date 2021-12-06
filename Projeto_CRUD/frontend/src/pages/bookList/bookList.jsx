@@ -1,13 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
-import ButtonLogOut from '../../components/buttonLogout';
 import baseUrl from '../../utils/baseUrl';
 import Loading from '../../components/loading/Loading';
+import logout from '../../utils/Auth/logout';
 import preAuth from '../../utils/Auth/preAuth';
+import Bookcard from '../../components/bookCard/bookCard';
+import { ButtonLogOut } from '../../components/Buttons';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
-import { BookListMain } from './styled';
+import { BookListMain, BookListSection, BookListArticle } from './styled';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -32,6 +34,7 @@ const BookList = () => {
 
       if (datas.data == false) {
         baseUrl.defaults.headers.common['Authorization'] = undefined;
+        Storage.clear();
         navigate('/');
       } else {
         setBooks(datas.data);
@@ -70,18 +73,25 @@ const BookList = () => {
             <h1>Welcome to Will&rsquo;s Library</h1>
           </HeaderStyled>
           <BookListMain>
-            {currentItens.map((item) => {
-              return (
-                <div key={item.idBook}>
-                  <h3>{item.bookName}</h3>
-                </div>
-              );
-            })}
+            <BookListSection>
+              {currentItens.map((item) => {
+                return (
+                  <BookListArticle key={item.idBook}>
+                    <Bookcard
+                      bookName={item.bookName}
+                      category={item.category}
+                      author={item.author}
+                      resume={item.resume}
+                      amount={item.amount}
+                    />
+                  </BookListArticle>
+                );
+              })}
+            </BookListSection>
           </BookListMain>
           <FooterStyled></FooterStyled>
 
           {/* 
-
           {currentItens.map((item) => {
             return (
               <div key={item.idBook}>
@@ -94,7 +104,7 @@ const BookList = () => {
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
             */}
-          <ButtonLogOut />
+          <ButtonLogOut onClick={() => logout(navigate)}>Log Out</ButtonLogOut>
         </>
       )}
     </>
