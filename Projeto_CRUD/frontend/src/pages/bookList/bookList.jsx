@@ -10,6 +10,7 @@ import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
 import { BookListMain, BookListSection, BookListArticle } from './styled';
+import Menu from '../../components/menu/Menu';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -34,7 +35,7 @@ const BookList = () => {
 
       if (datas.data == false) {
         baseUrl.defaults.headers.common['Authorization'] = undefined;
-        Storage.clear();
+        sessionStorage.clear();
         navigate('/');
       } else {
         setBooks(datas.data);
@@ -69,6 +70,7 @@ const BookList = () => {
         </DivLoading>
       ) : (
         <>
+          <Menu />
           <HeaderStyled>
             <h1>Welcome to Will&rsquo;s Library</h1>
           </HeaderStyled>
