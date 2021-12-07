@@ -1,10 +1,11 @@
+/* eslint-disable no-undef */
 import CryptoJS from "crypto-js";
 import baseUrl from '../baseUrl'
-import { SALT2 } from '../crypto/env';
+import insertSessionDatas from "./insertSessionDatas";
 
 export async function sendSignIn(datas){
 
-    const ciphertext = CryptoJS.AES.encrypt(datas.pass, SALT2).toString();
+    const ciphertext = CryptoJS.AES.encrypt(datas.pass, process.env.REACT_APP_SALT2).toString();
 
     try {
         const request = await baseUrl.post(`/login`, {
@@ -12,13 +13,13 @@ export async function sendSignIn(datas){
             pass: ciphertext
         })
 
+        
         if (request.data[0] == true) {
-            sessionStorage.setItem('token', JSON.stringify(request.data[1]));
+            insertSessionDatas(request.data[1])
         } 
 
         return request.data[0]
 
-        
     } catch (error) {
         return false;     
     } 
