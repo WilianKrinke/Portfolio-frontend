@@ -36,6 +36,18 @@ export const IconClose = styled.i`
     opacity: ${props => !props.isOpen ? '1' : '0'};  
 `
 
+export const ContainerUserName = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p{
+        color: antiquewhite;
+    }
+
+`
+
 export const ContainerLinks = styled.nav`
     display: flex;
     flex-direction: column;
@@ -70,4 +82,11 @@ export const ContainerLinks = styled.nav`
             }
         }
     }
+`
+
+export const ContainerUserMenu = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 `

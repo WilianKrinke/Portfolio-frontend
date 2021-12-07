@@ -14,6 +14,7 @@ export async function sendSignIn(datas){
         })
 
         if (request.data[0] == true) {
+            request.data[0]
             insertSessionToken(request.data[1])
         } 
 

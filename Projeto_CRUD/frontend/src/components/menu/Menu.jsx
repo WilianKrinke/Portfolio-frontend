@@ -1,6 +1,15 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ContainerIcon, ContainerLinks, ContainerMenu, IconClose, IconHamburguer } from './styled';
+import {
+  ContainerIcon,
+  ContainerLinks,
+  ContainerMenu,
+  ContainerUserMenu,
+  ContainerUserName,
+  IconClose,
+  IconHamburguer,
+} from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
 import propTypes from 'prop-types';
@@ -8,15 +17,27 @@ import logout from '../../utils/Auth/logout';
 
 const Menu = () => {
   const [isOpen, setisOpen] = useState(true);
-
+  const [userName, setuserName] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setTimeout(() => {
+      const sessionuserName = sessionStorage.getItem('userName');
+      setuserName(sessionuserName.replace(/['"]+/g, ''));
+    }, 1000);
+  }, []);
 
   return (
     <>
       <ContainerMenu isOpen={isOpen}>
-        <ContainerIcon>
-          <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
-        </ContainerIcon>
+        <ContainerUserMenu>
+          <ContainerUserName>
+            <p>Welcome {userName}</p>
+          </ContainerUserName>
+          <ContainerIcon>
+            <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
+          </ContainerIcon>
+        </ContainerUserMenu>
 
         <ContainerLinks>
           <ul>
