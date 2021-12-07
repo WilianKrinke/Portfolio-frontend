@@ -43,6 +43,7 @@ export const ContainerLinks = styled.nav`
     justify-content: space-around;
     padding: 20px;
     width: 100%;
+    
 
     a{
         text-decoration: none;
@@ -52,7 +53,7 @@ export const ContainerLinks = styled.nav`
         list-style: none;
         width: 100%;
         text-align: center;
-        height: 300px;
+        height: 400px;
         display: flex;
         flex-direction: column;
         align-items: center;

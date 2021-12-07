@@ -53,24 +53,15 @@ export const ButtonBackToLogin = styled.button`
 `
 
 export const ButtonLogOut = styled.button` 
-  width: 150px;
-  height: 40px;
-  margin: 0;
-  padding: 0;
-  border-radius: 5px;
-  background-color: transparent;
-  outline: none;
-  font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  position: absolute;
-  top: 0px;
-
-    :hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        color: #f9fff9;
-    }
+    color: antiquewhite;
+    letter-spacing: 3px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;  
 `
 
 

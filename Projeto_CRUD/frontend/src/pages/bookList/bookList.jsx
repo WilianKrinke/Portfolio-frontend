@@ -2,10 +2,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import baseUrl from '../../utils/baseUrl';
 import Loading from '../../components/loading/Loading';
-import logout from '../../utils/Auth/logout';
+
 import preAuth from '../../utils/Auth/preAuth';
 import Bookcard from '../../components/bookCard/bookCard';
-import { ButtonLogOut } from '../../components/Buttons';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
@@ -106,7 +105,6 @@ const BookList = () => {
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
             */}
-          <ButtonLogOut onClick={() => logout(navigate)}>Log Out</ButtonLogOut>
         </>
       )}
     </>

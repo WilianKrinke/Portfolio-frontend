@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
-import propTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { ContainerIcon, ContainerLinks, ContainerMenu, IconClose, IconHamburguer } from './styled';
+import { ButtonLogOut } from '../Buttons';
+import { useNavigate } from 'react-router';
+import propTypes from 'prop-types';
+import logout from '../../utils/Auth/logout';
 
 const Menu = () => {
   const [isOpen, setisOpen] = useState(true);
+
+  const navigate = useNavigate();
 
   return (
     <>
@@ -22,13 +27,16 @@ const Menu = () => {
               <Link to="#">Blog</Link>
             </li>
             <li>
-              <Link to="#">Galler</Link>
+              <Link to="#">Gallery</Link>
             </li>
             <li>
               <Link to="#">About</Link>
             </li>
             <li>
               <Link to="#">Contact</Link>
+            </li>
+            <li>
+              <ButtonLogOut onClick={() => logout(navigate)}>Logout</ButtonLogOut>
             </li>
           </ul>
         </ContainerLinks>
