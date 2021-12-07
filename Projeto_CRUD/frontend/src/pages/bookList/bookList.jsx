@@ -3,12 +3,12 @@ import React, { useContext, useEffect, useState } from 'react';
 import baseUrl from '../../utils/baseUrl';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
-import Bookcard from '../../components/bookCard/bookCard';
 import Menu from '../../components/menu/Menu';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
 import { BookListMain, BookListSection, BookListArticle } from './styled';
+import logout from '../../utils/Auth/logout';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -30,16 +30,16 @@ const BookList = () => {
     (async () => {
       preAuth();
       const datas = await baseUrl.get('/books-list');
+      console.log(datas.data);
+      const data = datas.data.response;
 
-      if (datas.data == false) {
-        baseUrl.defaults.headers.common['Authorization'] = undefined;
-        sessionStorage.clear();
-        navigate('/');
+      if (data == false) {
+        logout();
       } else {
-        setBooks(datas.data);
+        setBooks(data);
         setLoading(false);
-        setPages(Math.ceil(datas.data.length / itensPerPage));
-        setcurrentItens(datas.data.slice(startIndex, endIndex));
+        setPages(Math.ceil(data.length / itensPerPage));
+        setcurrentItens(data.slice(startIndex, endIndex));
       }
     })();
   }, [itensPerPage, startIndex, endIndex]);
