@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import pattern_colors from '../../colors'
 import {MainStyled,FooterStyled} from '../../primeComponents/index'
 
 export const HomeMain = styled(MainStyled)`
@@ -16,7 +17,7 @@ export const InfoCard = styled.section`
     width: 55%;
     height: 60vh;
     padding: 10px;
-    background-color: ${props => props.onhover ? '#FE6B0A' : '#CCFFCB'}  ;
+    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.section_bg}  ;
     border-radius: 5px 0px 0px 5px;
     border-bottom: 1px solid #F3BEF7;
     border-top: 1px solid #F3BEF7;
@@ -33,13 +34,13 @@ export const SectForm = styled.section`
     padding: 10px;
     background-color: #CCFFCB;
     border-radius: 0px 5px 5px 0px;
-    border-bottom: 1px solid #F3BEF7;
-    border-top: 1px solid #F3BEF7;
-    border-right: 1px solid #F3BEF7;
+    border-bottom: 1px solid ${pattern_colors.borders_color};
+    border-top: 1px solid ${pattern_colors.borders_color};
+    border-right: 1px solid ${pattern_colors.borders_color};
     transition: all .3s ease-in-out;
     
     :hover{
-        background-color: #FE6B0A;
+        background-color: ${pattern_colors.strong_color};
     }
     
     @media screen and (max-width: 750px) {
