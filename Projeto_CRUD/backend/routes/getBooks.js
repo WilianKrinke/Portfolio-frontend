@@ -9,9 +9,7 @@ const getBooks = (app) => {
 
             const responseObject = {
                 idUser: req.idUser[0],
-                userName: req.userName[0],
-                isAdm: req.isAdm[0],
-                isBlock: req.isBlock[0]
+                userName: req.userName[0]
             }
 
             res.json({

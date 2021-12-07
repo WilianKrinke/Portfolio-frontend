@@ -11,13 +11,11 @@ const authValidate = async (req,res,next) => {
     try {
         const teste = await promisify(jwt.verify)(token, process.env.SECRET)
 
-        const {idUser, userName, isAdm, isBlock} = await promisify(jwt.verify)(token, process.env.SECRET)
+        const {idUser, userName} = await promisify(jwt.verify)(token, process.env.SECRET)
         
         if (teste) {
             req.idUser = idUser         
-            req.userName = userName         
-            req.isAdm = isAdm         
-            req.isBlock = isBlock         
+            req.userName = userName                  
             return next()  
         } else {           
             return res.send(false)

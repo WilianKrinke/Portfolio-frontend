@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
 import { BookListMain, BookListSection, BookListArticle } from './styled';
 import logout from '../../utils/Auth/logout';
+import insertUserNameSession from '../../utils/insertions/insertUserNameSession';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -29,17 +30,19 @@ const BookList = () => {
   useEffect(() => {
     (async () => {
       preAuth();
-      const datas = await baseUrl.get('/books-list');
-      console.log(datas.data);
-      const data = datas.data.response;
+      const res = await baseUrl.get('/books-list');
+      console.log(res.data);
+      const bookData = res.data.response;
+      const userName = res.data.responseObject;
 
-      if (data == false) {
-        logout();
+      if (res.data == false) {
+        logout(navigate);
       } else {
-        setBooks(data);
+        setBooks(bookData);
         setLoading(false);
-        setPages(Math.ceil(data.length / itensPerPage));
-        setcurrentItens(data.slice(startIndex, endIndex));
+        setPages(Math.ceil(bookData.length / itensPerPage));
+        setcurrentItens(bookData.slice(startIndex, endIndex));
+        insertUserNameSession(userName);
       }
     })();
   }, [itensPerPage, startIndex, endIndex]);

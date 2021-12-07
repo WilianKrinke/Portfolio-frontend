@@ -4,19 +4,15 @@ function generateToken(userDatasFromDb){
 
     const idUser = userDatasFromDb.map(item => item.idUser)
     const userName = userDatasFromDb.map(item => item.userName)
-    const isAdm = userDatasFromDb.map(item => item.adm)
-    const isBlock = userDatasFromDb.map(item => item.isBlock)
-
+    const time = parseInt(process.env.TIME)
     
     const payload = {
         idUser,
         userName,
-        isAdm,
-        isBlock,
     }
 
     const token = jwt.sign(payload,process.env.SECRET,{
-        expiresIn: 60 * 20
+        expiresIn: time
     })
 
     return token;
