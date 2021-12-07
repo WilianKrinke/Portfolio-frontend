@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { ContainerIcon, ContainerLinks, ContainerMenu, IconClose, IconHamburguer } from './styled';
 
 const Menu = () => {
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setisOpen] = useState(true);
 
   return (
     <>
