@@ -2,14 +2,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import baseUrl from '../../utils/baseUrl';
 import Loading from '../../components/loading/Loading';
-
 import preAuth from '../../utils/Auth/preAuth';
 import Bookcard from '../../components/bookCard/bookCard';
+import Menu from '../../components/menu/Menu';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
 import { BookListMain, BookListSection, BookListArticle } from './styled';
-import Menu from '../../components/menu/Menu';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -75,7 +74,34 @@ const BookList = () => {
           </HeaderStyled>
           <BookListMain>
             <BookListSection>
-              {currentItens.map((item) => {
+              <table>
+                <thead>
+                  <tr>
+                    <th>BookName</th>
+                    <th>Author</th>
+                    <th></th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {currentItens.map((item) => {
+                    return (
+                      <tr key={item.idBook}>
+                        <td>{item.bookName}</td>
+                        <td>{item.author}</td>
+                        <td></td>
+                        <td>{item.amount}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </BookListSection>
+          </BookListMain>
+          <FooterStyled></FooterStyled>
+
+          {/* 
+          {currentItens.map((item) => {
                 return (
                   <BookListArticle key={item.idBook}>
                     <Bookcard
@@ -87,12 +113,10 @@ const BookList = () => {
                     />
                   </BookListArticle>
                 );
-              })}
-            </BookListSection>
-          </BookListMain>
-          <FooterStyled></FooterStyled>
-
+              })} 
+        */}
           {/* 
+
           {currentItens.map((item) => {
             return (
               <div key={item.idBook}>
