@@ -13,7 +13,6 @@ export async function sendSignIn(datas){
             pass: ciphertext
         })
 
-        
         if (request.data[0] == true) {
             insertSessionDatas(request.data[1])
         } 
