@@ -41,29 +41,28 @@ export const BookListArticle = styled.article`
     table{
         width: 100%;
         text-align: center;
-
-        tbody > tr{
-            border-bottom: 1px solid transparent;
-            transition: all .3s ease-in-out;
-        }
-
-        tbody > tr:hover{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.68);
-        }
-
+        border-bottom: 1px solid;
+        border-collapse: collapse;
+        
         tr{
             border-bottom: 1px solid transparent;
         }
 
-        tr:hover{
+        tbody tr{
+            border-bottom: 1px solid transparent;
+            transition: all .3s ease-in-out;
+        }
+
+        tbody tr:hover{
             border-bottom: 1px solid rgba(0, 0, 0, 0.68);
         }
 
         td{
             text-align: center;
+            
         }
 
-        td i {
+        td > i {
             font-size: 40px;
             cursor: pointer;
         }
