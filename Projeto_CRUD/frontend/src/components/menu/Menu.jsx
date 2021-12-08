@@ -32,7 +32,7 @@ const Menu = () => {
       <ContainerMenu isOpen={isOpen}>
         <ContainerUserMenu>
           <ContainerUserName>
-            <p>Welcome user {userName}</p>
+            <p>Welcome user {userName}!</p>
           </ContainerUserName>
           <ContainerIcon>
             <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
