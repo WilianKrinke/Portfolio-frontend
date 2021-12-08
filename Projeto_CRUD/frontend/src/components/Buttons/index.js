@@ -61,7 +61,8 @@ export const ButtonLogOut = styled.button`
     cursor: pointer;
     font-family: 'Zen Kaku Gothic New', sans-serif;
     font-weight: 400;
-    text-transform: capitalize;  
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
 `
 
 

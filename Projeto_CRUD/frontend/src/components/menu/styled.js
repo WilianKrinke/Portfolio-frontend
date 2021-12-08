@@ -15,7 +15,7 @@ export const ContainerIcon = styled.div`
     align-items: center;
     justify-content: flex-end;
     padding: 20px;
-    width: 100%;
+    width: 40%;
 `
 
 export const IconHamburguer = styled.i`
@@ -41,6 +41,7 @@ export const ContainerUserName = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 
     p{
         color: antiquewhite;
@@ -75,6 +76,18 @@ export const ContainerLinks = styled.nav`
         
         li{
             font-size: 24px;
+            width: 150px;
+            border-radius: 3px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 1px solid transparent;
+            transition: all .3s ease-in-out;
+
+            :hover{
+                border: 1px solid #fff;
+            }
             
             a{
                 color: antiquewhite;
