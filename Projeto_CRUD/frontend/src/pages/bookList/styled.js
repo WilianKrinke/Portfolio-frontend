@@ -38,8 +38,6 @@ export const BookListArticle = styled.article`
     flex-direction: row;
     padding: 10px;
     
-    
-
     table{
         width: 100%;
         text-align: center;
@@ -47,18 +45,15 @@ export const BookListArticle = styled.article`
         tbody > tr{
             border-bottom: 1px solid transparent;
             transition: all .3s ease-in-out;
+            cursor: pointer;
         }
 
         tbody > tr:hover{
             border-bottom: 1px solid rgba(0, 0, 0, 0.68);
         }
 
-        td, th {            
-            text-align: center;
-        }
-
         td{
-            border: 1px solid;
+            text-align: center;
         }
 
         td > i {
