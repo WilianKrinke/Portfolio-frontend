@@ -6,10 +6,11 @@ import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import insertUserNameSession from '../../utils/insertions/insertUserNameSession';
+import { FcReading } from 'react-icons/fc';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
-import { BookListMain, BookListSection, BookListArticle } from './styled';
+import { DivLoading, FooterStyled } from '../../primeComponents';
+import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection } from './styled';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -72,52 +73,44 @@ const BookList = () => {
       ) : (
         <>
           <Menu />
-          <HeaderStyled>
+          <HeaderBookList>
             <h1>Welcome to Will&rsquo;s Library</h1>
-          </HeaderStyled>
+          </HeaderBookList>
           <BookListMain>
             <BookListSection>
-              <table>
-                <thead>
-                  <tr>
-                    <th>BookName</th>
-                    <th>Author</th>
-                    <th></th>
-                    <th>Amount</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {currentItens.map((item) => {
-                    return (
-                      <tr key={item.idBook}>
-                        <td>{item.bookName}</td>
-                        <td>{item.author}</td>
-                        <td></td>
-                        <td>{item.amount}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <BookListArticle>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>BookName</th>
+                      <th>Author</th>
+                      <th></th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {currentItens.map((item) => {
+                      return (
+                        <tr key={item.idBook}>
+                          <td>{item.bookName}</td>
+                          <td>{item.author}</td>
+                          <td>
+                            <i>
+                              <FcReading title="Emprestar" />
+                            </i>
+                          </td>
+                          <td>{item.amount}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+              </BookListArticle>
+              <AjustBookList></AjustBookList>
             </BookListSection>
           </BookListMain>
           <FooterStyled></FooterStyled>
 
-          {/* 
-          {currentItens.map((item) => {
-                return (
-                  <BookListArticle key={item.idBook}>
-                    <Bookcard
-                      bookName={item.bookName}
-                      category={item.category}
-                      author={item.author}
-                      resume={item.resume}
-                      amount={item.amount}
-                    />
-                  </BookListArticle>
-                );
-              })} 
-        */}
           {/* 
 
           {currentItens.map((item) => {

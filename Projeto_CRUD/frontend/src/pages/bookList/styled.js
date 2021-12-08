@@ -1,36 +1,79 @@
 /* eslint-disable no-unused-vars */
 import styled from 'styled-components'
 import pattern_colors from '../../colors'
-import { MainStyled } from '../../primeComponents'
+import { MainStyled,HeaderStyled } from '../../primeComponents'
+
+export const HeaderBookList = styled(HeaderStyled)`
+    min-height: 22vh;
+`
+
 
 export const BookListMain = styled(MainStyled)`
+    min-height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
+    border: 1px solid #F3BEF7;
+    background-color: ${pattern_colors.section_bg};
+    padding: 10px;   
 `
 
 export const BookListSection = styled.section`
-    height: 300px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid
+    
+`
+
+export const BookListArticle = styled.article`
+    height: 500px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: ${pattern_colors.section_bg};
-`
+    padding: 10px;
+    
+    
 
-export const BookListArticle = styled.article`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    border: 1px solid;
-    margin:10px;
-    cursor: pointer;
+    table{
+        width: 100%;
+        text-align: center;
 
-    :hover{
-        background-color: ${pattern_colors.strong_color};
+        tbody > tr{
+            border-bottom: 1px solid transparent;
+            transition: all .3s ease-in-out;
+        }
+
+        tbody > tr:hover{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.68);
+        }
+
+        td, th {            
+            text-align: center;
+        }
+
+        td{
+            border: 1px solid;
+        }
+
+        td > i {
+            font-size: 40px;
+            cursor: pointer;
+        }
     }
+
 `
+
+export const AjustBookList = styled.section`
+    width: 100%;
+    border: 1px solid black;
+    height: 100px;
+`
+
+
 
