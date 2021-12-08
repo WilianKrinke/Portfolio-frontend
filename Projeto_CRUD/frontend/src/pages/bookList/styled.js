@@ -45,10 +45,17 @@ export const BookListArticle = styled.article`
         tbody > tr{
             border-bottom: 1px solid transparent;
             transition: all .3s ease-in-out;
-            cursor: pointer;
         }
 
         tbody > tr:hover{
+            border-bottom: 1px solid rgba(0, 0, 0, 0.68);
+        }
+
+        tr{
+            border-bottom: 1px solid transparent;
+        }
+
+        tr:hover{
             border-bottom: 1px solid rgba(0, 0, 0, 0.68);
         }
 
@@ -56,7 +63,7 @@ export const BookListArticle = styled.article`
             text-align: center;
         }
 
-        td > i {
+        td i {
             font-size: 40px;
             cursor: pointer;
         }
