@@ -75,14 +75,15 @@ export const ContainerLinks = styled.nav`
         top: 20px;
         
         li{
-            font-size: 24px;
             width: 150px;
+            font-size: 24px;
             border-radius: 3px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             position: relative;
             border: 1px solid transparent;
+            cursor: pointer;
             transition: all .3s ease-in-out;
 
             :hover{
