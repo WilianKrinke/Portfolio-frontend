@@ -14,14 +14,14 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
         <>
             <CardStyled>
                 <ContainerMoldCard isOpen={open}>
-
+                    {/* Informações dos Livros */}
                 </ContainerMoldCard>
 
                 <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>
                     <IconToRight isOpen={open}>
                         <BsChevronRight />
                     </IconToRight>
-                    <IconLike isOpen={open} title='Emprestar' onClick={() => setisLike(!isLike)}>
+                    <IconLike isOpen={open} title='Lend Item' onClick={() => setisLike(!isLike)}>
                         {
                             isLike ?
                                 <BsBookmarkCheckFill />
@@ -29,7 +29,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
                                 <BsBookmarkPlus />
                         }
                     </IconLike>
-                    <IconLendItem isOpen={open} title='Adicionar aos Favoritos' onClick={() => setisLend(!isLend)}>
+                    <IconLendItem isOpen={open} title='Add to Favorites' onClick={() => setisLend(!isLend)}>
                         {
                             isLend ?
                                 <BsHeartFill />
