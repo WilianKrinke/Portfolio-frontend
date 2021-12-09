@@ -1,4 +1,4 @@
-function insertLendBookDb(){
+function insertLendBookDb(datas){
 
 }
 
