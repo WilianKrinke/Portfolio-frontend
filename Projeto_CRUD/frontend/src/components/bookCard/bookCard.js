@@ -16,10 +16,12 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available}) =>
     function handleLikeLend(){
         console.log(isLend)
         setisLend(!isLend)
+        //ADICIONA A MINHA LISTA DE EMPRESTADOS
     }
 
     function handleAddFav(){
         setisLike(!isLike)
+        //ADICIONA AOS FAVORITOS
     }
 
     return (
