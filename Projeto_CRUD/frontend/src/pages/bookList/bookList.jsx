@@ -11,6 +11,7 @@ import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection, BookArticle } from './styled';
+import Bookcard from '../../components/bookCard/bookCard';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -81,11 +82,18 @@ const BookList = () => {
               <BookArticle>
                 <AjustBookList></AjustBookList>
                 <BookListArticle>
-                {currentItens.map((item) => {
-                        return (
-                          
-                        );
-                      })}
+                  {currentItens.map((item) => {
+                    return (
+                      <Bookcard
+                        key={item.idBook}
+                        bookName={item.bookName}
+                        category={item.category}
+                        author={item.author}
+                        resume={item.resume}
+                        amount={item.amount}
+                      />
+                    );
+                  })}
                 </BookListArticle>
                 <AjustBookList></AjustBookList>
               </BookArticle>
