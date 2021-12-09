@@ -10,7 +10,7 @@ import { FcReading } from 'react-icons/fc';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
-import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection } from './styled';
+import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection, BookArticle } from './styled';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);

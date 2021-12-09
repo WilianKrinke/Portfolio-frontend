@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
 import { MainStyled,HeaderStyled } from '../../primeComponents'
 
 export const HeaderBookList = styled(HeaderStyled)`
@@ -14,8 +13,6 @@ export const BookListMain = styled(MainStyled)`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid #F3BEF7;
-    background-color: ${pattern_colors.section_bg};
     padding: 10px;   
 `
 
@@ -25,7 +22,21 @@ export const BookListSection = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid
+    border: 1px solid #F3BEF7;
+    border-radius: 5px;
+    background-color: #CCFFCB;
+    padding: 10px; 
+`
+
+export const BookArticle = styled.article`
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid;
+    
+
     
 `
 
@@ -39,42 +50,89 @@ export const BookListArticle = styled.article`
     padding: 10px;
     
     table{
-        width: 100%;
+        width: 75%;
         text-align: center;
-        border-bottom: 1px solid;
         border-collapse: collapse;
-        
-        tr{
-            border-bottom: 1px solid transparent;
+
+        th{
+            height: 50px;
         }
 
-        tbody tr{
-            border-bottom: 1px solid transparent;
-            transition: all .3s ease-in-out;
-        }
-
-        tbody tr:hover{
-            border-bottom: 1px solid rgba(0, 0, 0, 0.68);
-        }
-
-        td{
-            text-align: center;
+        thead > tr{
+            border-bottom: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 3px;
             
         }
 
-        td > i {
-            font-size: 40px;
+        tbody > tr{
+           border-bottom: 2px solid transparent;           
+           transition: all .3s ease-in-out;
+           letter-spacing: 3px;
+
+           :hover{
+                border-bottom: 2px solid;
+           }
+        }
+
+        td{
+            width: 100px;
+            height: 50px;
+        }
+
+        tbody > tr > td:last-child{
+            border-bottom: 2px solid transparent;
+        }
+
+        i{
             cursor: pointer;
+            font-size: 24px;
+            position: relative;
+            top: 10px;
         }
     }
-
 `
 
 export const AjustBookList = styled.section`
     width: 100%;
-    border: 1px solid black;
     height: 100px;
 `
+
+export const LendButton = styled.div`
+    background-color: rgba(89, 198, 255, 0.61);
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    width: 150px;
+    margin: 0px auto;
+    cursor: pointer;
+
+    :hover {
+        background-color: #2D5CFF;
+    }
+
+`
+
+// export const GiveBackButton = styled.div`
+//     background-color: rgba(255, 142, 89, 0.61);
+//     border-radius: 5px;
+//     transition: all .3s ease-in-out;
+//     margin: 0px auto;
+//     width: 150px;
+//     cursor: pointer;
+
+//     :hover {
+//         background-color: #FE6B0A;
+//     }
+
+//     {/* <td>
+//         <GiveBackButton>
+//         <i>
+//             <BsJournalArrowDown title="Devolver" />
+//         </i>
+//         <p>devolver</p>
+//         </GiveBackButton>
+//     </td> */}
+// `
 
 
 
