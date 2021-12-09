@@ -13,7 +13,8 @@ export const BookListMain = styled(MainStyled)`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;   
+    padding: 10px;
+    
 `
 
 export const BookListSection = styled.section`
@@ -25,7 +26,9 @@ export const BookListSection = styled.section`
     border: 1px solid #F3BEF7;
     border-radius: 5px;
     background-color: #CCFFCB;
-    padding: 10px; 
+    padding: 10px;
+
+    
 `
 
 export const BookArticle = styled.article`
@@ -41,12 +44,13 @@ export const BookArticle = styled.article`
 `
 
 export const BookListArticle = styled.article`
-    height: 500px;
+    min-height: 500px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 10px;
     
     table{

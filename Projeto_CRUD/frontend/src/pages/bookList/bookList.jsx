@@ -91,6 +91,7 @@ const BookList = () => {
                         author={item.author}
                         resume={item.resume}
                         amount={item.amount}
+                        image={item.image}
                       />
                     );
                   })}
