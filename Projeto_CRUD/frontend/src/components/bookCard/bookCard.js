@@ -1,21 +1,25 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types'
-import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike, IconToRight } from './styled';
-import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill,BsHeartFill } from "react-icons/bs";
+import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike, IconNotAvailable, IconToRight } from './styled';
+import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill, BsHeartFill,BsBookmarkXFill } from "react-icons/bs";
 
-const Bookcard = ({bookName,category,author,resume,amount, image}) => {
+const Bookcard = ({bookName,category,author,resume,amount, image, available = 1}) => {
+
     const [open, setOpen] = useState(false);
-    const [isLike, setisLike] = useState(false);
-    const [isLend, setisLend] = useState(false);
 
+    const [isLend, setisLend] = useState(false);
+    const [isLike, setisLike] = useState(false);
+
+    const [isAvailable, setisAvailable] = useState(available == 1 ? true : false);
 
     function handleLikeLend(){
-        setisLike(!isLike)
+        console.log(isLend)
+        setisLend(!isLend)
     }
 
     function handleAddFav(){
-        setisLend(!isLend)
+        setisLike(!isLike)
     }
 
     return (
@@ -31,18 +35,28 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
                         <BsChevronRight />
                     </IconToRight>
 
-                    <IconLike isOpen={open} title='Lend Item' onClick={() => handleLikeLend()}>
-                        {
-                            isLike ?
-                                <BsBookmarkCheckFill />
-                            :
-                                <BsBookmarkPlus />
-                        }
-                    </IconLike>
+                    {
+                        isAvailable ? 
+                            <IconLike isOpen={open} title='Lend Item' onClick={() => handleLikeLend()}>
+                                {
+                                    isLend ?
+                                        <BsBookmarkCheckFill />
+                                    :
+                                        <BsBookmarkPlus />
+                                }
+                            </IconLike>
+                        :
+
+                            <IconNotAvailable isOpen={open} title='not available'>
+                                <BsBookmarkXFill />
+                            </IconNotAvailable>
+
+                    }
+
 
                     <IconLendItem isOpen={open} title='Add to Favorites' onClick={() => handleAddFav()}>
                         {
-                            isLend ?
+                            isLike ?
                                 <BsHeartFill />
                             :
                                 <BsHeart />
@@ -62,7 +76,8 @@ Bookcard.propTypes = {
     author: propTypes.string,
     resume: propTypes.string,
     amount: propTypes.number,
-    image: propTypes.string
+    image: propTypes.string,
+    available: propTypes.any
 }
 
 

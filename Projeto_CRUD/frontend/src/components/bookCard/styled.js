@@ -48,9 +48,9 @@ export const IconToRight = styled.i`
 `
 
 export const IconLike = styled.i`
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     font-size: 24px;
     height: 80px;
@@ -58,11 +58,22 @@ align-items: center;
 `
 
 export const IconLendItem = styled.i`
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 24px;
     cursor: pointer;
     height: 80px;
+    display: ${props => !props.isOpen ? 'none' : 'static'};
+`
+
+export const IconNotAvailable = styled.i`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    height: 80px;
+    color: red;
     display: ${props => !props.isOpen ? 'none' : 'static'};
 `
