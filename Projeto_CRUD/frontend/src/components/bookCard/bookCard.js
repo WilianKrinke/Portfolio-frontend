@@ -7,9 +7,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
     return (
         <>
             <CardStyled>
-                <ContainerMoldCard>
-                    
-                </ContainerMoldCard>
+                
             </CardStyled>
         </>
     );

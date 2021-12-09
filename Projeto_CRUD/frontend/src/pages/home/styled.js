@@ -60,7 +60,7 @@ export const ArticleCrud = styled.article`
     align-items: start;
     flex-direction: column;
     padding-left: 50px;
-    border: 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
 
     @media screen and (max-width: 400px) {
@@ -100,7 +100,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '1' : '0'};
     display: ${props => props.isVisible ? 'flex' : 'none'};

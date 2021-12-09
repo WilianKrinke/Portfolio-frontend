@@ -6,12 +6,13 @@ export const CardStyled = styled.div`
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #F3BEF7;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #CCFFCB;
     transition: all .5s ease-in-out;
     
     :hover{
         background-color: #FE6B0A;
+        border: 1px solid #FE6B0A;
     }
 `
 
