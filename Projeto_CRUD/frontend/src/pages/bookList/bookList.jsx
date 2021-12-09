@@ -86,6 +86,7 @@ const BookList = () => {
                     return (
                       <Bookcard
                         key={item.idBook}
+                        idBook={item.idBook}
                         bookName={item.bookName}
                         category={item.category}
                         author={item.author}

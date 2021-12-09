@@ -3,20 +3,31 @@ import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types'
 import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike, IconNotAvailable, IconToRight } from './styled';
 import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill, BsHeartFill,BsBookmarkXFill } from "react-icons/bs";
+import lendBook from '../../utils/lendBooks/lendBook';
 
-const Bookcard = ({bookName,category,author,resume,amount, image, available}) => {
+const Bookcard = ({bookName,category,author,resume,amount, image, available, idBook}) => {
 
     const [open, setOpen] = useState(false);
 
     const [isLend, setisLend] = useState(false);
     const [isLike, setisLike] = useState(false);
 
-    const [isAvailable, setisAvailable] = useState(available);
+    const [isAvailable] = useState(available);
 
     function handleLikeLend(){
-        console.log(isLend)
+       
+        const userId = sessionStorage.getItem('idUser')
+        const userName = sessionStorage.getItem('userName')
+
+        const objectDatas = {
+            idBook,
+            bookName,
+            userId,
+            userName
+        }
+
+        lendBook(objectDatas)
         setisLend(!isLend)
-        //ADICIONA A MINHA LISTA DE EMPRESTADOS
     }
 
     function handleAddFav(){
@@ -79,7 +90,8 @@ Bookcard.propTypes = {
     resume: propTypes.string,
     amount: propTypes.number,
     image: propTypes.string,
-    available: propTypes.any
+    available: propTypes.any,
+    idBook: propTypes.number
 }
 
 
