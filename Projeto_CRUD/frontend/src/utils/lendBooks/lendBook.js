@@ -1,14 +1,20 @@
 /* eslint-disable no-unused-vars */
 import preAuth from '../Auth/preAuth';
 import baseUrl from '../baseUrl'
+import cryptLendBook from '../crypto/doCryptLendBook';
 
 export default async function lendBook(lendDatas){
 
-    const {idBook,bookName,userId,userName} = lendDatas;
-    
+    const {idBookC,bookNameC,userIdC,userNameC} = cryptLendBook(lendDatas)
+
     try {
         preAuth()
-        const response = await baseUrl.get(`/book-lend/${idBook}&${bookName}&${userId}&${userName}`)
+        const response = await baseUrl.post(`/book-lend`,{
+            idBookC,
+            bookNameC,
+            userIdC,
+            userNameC
+        })
         console.log(response)        
     } catch (error) {
         console.log(error)
