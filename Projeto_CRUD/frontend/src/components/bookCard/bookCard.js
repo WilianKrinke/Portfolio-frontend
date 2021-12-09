@@ -4,14 +4,14 @@ import propTypes from 'prop-types'
 import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike, IconNotAvailable, IconToRight } from './styled';
 import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill, BsHeartFill,BsBookmarkXFill } from "react-icons/bs";
 
-const Bookcard = ({bookName,category,author,resume,amount, image, available = 1}) => {
+const Bookcard = ({bookName,category,author,resume,amount, image, available}) => {
 
     const [open, setOpen] = useState(false);
 
     const [isLend, setisLend] = useState(false);
     const [isLike, setisLike] = useState(false);
 
-    const [isAvailable, setisAvailable] = useState(available == 1 ? true : false);
+    const [isAvailable, setisAvailable] = useState(available);
 
     function handleLikeLend(){
         console.log(isLend)
@@ -36,7 +36,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available = 1}
                     </IconToRight>
 
                     {
-                        isAvailable ? 
+                        isAvailable == 1 ? 
                             <IconLike isOpen={open} title='Lend Item' onClick={() => handleLikeLend()}>
                                 {
                                     isLend ?
