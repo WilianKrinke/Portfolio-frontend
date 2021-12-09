@@ -80,7 +80,13 @@ const BookList = () => {
             <BookListSection>
               <BookArticle>
                 <AjustBookList></AjustBookList>
-                <BookListArticle></BookListArticle>
+                <BookListArticle>
+                {currentItens.map((item) => {
+                        return (
+                          
+                        );
+                      })}
+                </BookListArticle>
                 <AjustBookList></AjustBookList>
               </BookArticle>
             </BookListSection>
