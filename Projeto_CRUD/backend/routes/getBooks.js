@@ -1,12 +1,11 @@
 const {getDataBooks} = require('../utils/getBooks')
 
 const getBooks = (app) => {
-    app.route('/books-list/:id?')
+    app.route('/books-list')
         .get((req, res) => {
             
           getDataBooks()
           .then(response => {
-
             const responseObject = {
                 idUser: req.idUser[0],
                 userName: req.userName[0]
@@ -22,10 +21,6 @@ const getBooks = (app) => {
               res.send(false)
           })
         })
-        .delete((req, res) => {
-            res.send('ROTA PARA DELETAR LIVRO')
-        })
-
 }
 
 module.exports = getBooks;
