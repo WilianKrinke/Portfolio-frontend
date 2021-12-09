@@ -5,10 +5,18 @@ import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike,
 import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill,BsHeartFill } from "react-icons/bs";
 
 const Bookcard = ({bookName,category,author,resume,amount, image}) => {
-
     const [open, setOpen] = useState(false);
     const [isLike, setisLike] = useState(false);
     const [isLend, setisLend] = useState(false);
+
+
+    function handleLikeLend(){
+        setisLike(!isLike)
+    }
+
+    function handleAddFav(){
+        setisLend(!isLend)
+    }
 
     return (
         <>
@@ -17,11 +25,13 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
                     {/* Informações dos Livros */}
                 </ContainerMoldCard>
 
-                <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>
+                <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}> 
+
                     <IconToRight isOpen={open}>
                         <BsChevronRight />
                     </IconToRight>
-                    <IconLike isOpen={open} title='Lend Item' onClick={() => setisLike(!isLike)}>
+
+                    <IconLike isOpen={open} title='Lend Item' onClick={() => handleLikeLend()}>
                         {
                             isLike ?
                                 <BsBookmarkCheckFill />
@@ -29,7 +39,8 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
                                 <BsBookmarkPlus />
                         }
                     </IconLike>
-                    <IconLendItem isOpen={open} title='Add to Favorites' onClick={() => setisLend(!isLend)}>
+
+                    <IconLendItem isOpen={open} title='Add to Favorites' onClick={() => handleAddFav()}>
                         {
                             isLend ?
                                 <BsHeartFill />
@@ -37,6 +48,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image}) => {
                                 <BsHeart />
                         }
                     </IconLendItem>
+
                 </ContainerToLike>
                 
             </CardStyled>
