@@ -84,3 +84,30 @@ input:-webkit-autofill:active {
   border-radius: 5px;
   background: #f3bef7;
 }
+
+[aria-label] {
+  position: relative;
+}
+
+[aria-label]::after {
+  content: attr(aria-label);
+  display: none;
+  position: absolute;
+  top: 110%;
+
+  z-index: 5000;
+  pointer-events: none;
+  padding: 2px 10px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid;
+  color: rgba(0, 0, 0, 0.3);
+  font-style: normal;
+}
+
+[aria-label]:hover::after {
+  display: block;
+}
