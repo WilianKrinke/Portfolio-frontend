@@ -79,17 +79,7 @@ const BookList = () => {
           <BookListMain>
             <BookListSection>
               <BookListArticle>
-                <table>
-                  <thead>
-                    <tr>
-                      <th>BookName</th>
-                      <th>Author</th>
-                      <th></th>
-                      <th>Amount</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {currentItens.map((item) => {
+                {/* {currentItens.map((item) => {
                       return (
                         <tr key={item.idBook}>
                           <td>{item.bookName}</td>
@@ -102,9 +92,7 @@ const BookList = () => {
                           <td>{item.amount}</td>
                         </tr>
                       );
-                    })}
-                  </tbody>
-                </table>
+                    })} */}
               </BookListArticle>
               <AjustBookList></AjustBookList>
             </BookListSection>
