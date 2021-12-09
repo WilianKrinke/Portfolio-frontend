@@ -78,23 +78,11 @@ const BookList = () => {
           </HeaderBookList>
           <BookListMain>
             <BookListSection>
-              <BookListArticle>
-                {/* {currentItens.map((item) => {
-                      return (
-                        <tr key={item.idBook}>
-                          <td>{item.bookName}</td>
-                          <td>{item.author}</td>
-                          <td>
-                            <i>
-                              <FcReading title="Emprestar" />
-                            </i>
-                          </td>
-                          <td>{item.amount}</td>
-                        </tr>
-                      );
-                    })} */}
-              </BookListArticle>
-              <AjustBookList></AjustBookList>
+              <BookArticle>
+                <AjustBookList></AjustBookList>
+                <BookListArticle></BookListArticle>
+                <AjustBookList></AjustBookList>
+              </BookArticle>
             </BookListSection>
           </BookListMain>
           <FooterStyled></FooterStyled>
