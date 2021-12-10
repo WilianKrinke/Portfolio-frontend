@@ -2,6 +2,7 @@ const CryptoJS = require("crypto-js");
 
 function decryptLendDatas(datas){
     const {idBookC, bookNameC, userIdC, userNameC} = datas
+    //verificar a possibilidade de interações automaticas
 
     const idBookCBytes  = CryptoJS.AES.decrypt(idBookC, process.env.SALT2);
     const bookNameCBytes  = CryptoJS.AES.decrypt(bookNameC, process.env.SALT2);
@@ -14,10 +15,10 @@ function decryptLendDatas(datas){
     const userName = userNameCBytes.toString(CryptoJS.enc.Utf8);
 
     const idBookArray = idBookConcat.split(" ")
-    const userIdArray = userId.split(" ")
+    const userIdArray = userIdConcat.split(" ")
     
     const idBook = idBookArray[0];
-    const userId = userIdConcat[0];
+    const userId = userIdArray[0];
 
     const decryptDatas = {
         idBook,

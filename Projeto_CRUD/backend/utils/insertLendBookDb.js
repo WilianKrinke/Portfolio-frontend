@@ -3,9 +3,9 @@ const decryptLendDatas = require("./decryptLendDatas");
 function insertLendBookDb(datas){
     console.log(datas)
 
-    const teste = decryptLendDatas(datas)
+    const bookDatas = decryptLendDatas(datas)
 
-    console.log(teste)
+    console.log(bookDatas)
 }
 
 module.exports = insertLendBookDb;
