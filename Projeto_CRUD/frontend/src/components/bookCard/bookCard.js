@@ -24,9 +24,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available, idB
             bookName,
             userId,
             userName
-        }
-
-        
+        }        
 
         lendBook(objectDatas)
         setisLend(!isLend)
