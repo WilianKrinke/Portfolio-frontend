@@ -5,7 +5,7 @@ const lendAction = (app) => {
         .post((req,res) => {
             
 
-            insertLendBookDb(req.body)
+            lendBookDb(req.body)
 
             res.send(true)
         })
