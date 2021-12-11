@@ -14,7 +14,7 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available, idB
 
     const [isAvailable] = useState(available);
 
-    function handleLikeLend(){
+    async function handleLikeLend(){
        
         const userId = sessionStorage.getItem('idUser')
         const userName = sessionStorage.getItem('userName')
@@ -26,8 +26,15 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available, idB
             userName
         }        
 
-        lendBook(objectDatas)
-        setisLend(!isLend)
+        const response = await lendBook(objectDatas)
+        const isRegister = response.data.isRegister
+
+        if (isRegister ==  true) {
+            setisLend(true)
+        } else {
+            //Fazer tosty de aviso que Livro já está emprestado
+            alert('Este Livro já está emprestado')
+        }
     }
 
     function handleAddFav(){
@@ -93,7 +100,5 @@ Bookcard.propTypes = {
     available: propTypes.any,
     idBook: propTypes.number
 }
-
-
 
 export default Bookcard;
