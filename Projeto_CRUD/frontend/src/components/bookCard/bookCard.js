@@ -5,7 +5,7 @@ import { CardStyled, ContainerMoldCard, ContainerToLike, IconLendItem, IconLike,
 import { BsChevronRight, BsBookmarkPlus, BsHeart, BsBookmarkCheckFill, BsHeartFill,BsBookmarkXFill } from "react-icons/bs";
 import lendBook from '../../utils/lendBooks/lendBook';
 
-const Bookcard = ({bookName,category,author,resume,amount, image, available, idBook}) => {
+const Bookcard = ({bookName,category,author,resume,amount, image, available, idBook, user}) => {
 
     const [open, setOpen] = useState(false);
 
@@ -16,8 +16,8 @@ const Bookcard = ({bookName,category,author,resume,amount, image, available, idB
 
     async function handleLikeLend(){
        
-        const userId = sessionStorage.getItem('idUser')
-        const userName = sessionStorage.getItem('userName')
+        const userId = user.idUser
+        const userName = user.userName
 
         const objectDatas = {
             idBook,
@@ -98,7 +98,8 @@ Bookcard.propTypes = {
     amount: propTypes.number,
     image: propTypes.string,
     available: propTypes.any,
-    idBook: propTypes.number
+    idBook: propTypes.number,
+    user: propTypes.any
 }
 
 export default Bookcard;

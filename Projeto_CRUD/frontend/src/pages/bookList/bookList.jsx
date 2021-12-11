@@ -17,6 +17,7 @@ const BookList = () => {
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItens, setcurrentItens] = useState([]);
+  const [userDatasMenu, setuserDatasMenu] = useState();
 
   const navigate = useNavigate();
 
@@ -31,15 +32,14 @@ const BookList = () => {
     (async () => {
       preAuth();
       const res = await baseUrl.get('/books-list');
-      console.log(res);
 
       const bookData = res.data.response;
       const userDatas = res.data.responseObject;
-      console.log(userDatas);
 
       if (res.data == false) {
         logout(navigate);
       } else {
+        setuserDatasMenu(userDatas);
         setBooks(bookData);
         setPages(Math.ceil(bookData.length / itensPerPage));
         setcurrentItens(bookData.slice(startIndex, endIndex));
@@ -72,7 +72,7 @@ const BookList = () => {
         </DivLoading>
       ) : (
         <>
-          <Menu />
+          <Menu user={userDatasMenu} />
           <HeaderBookList>
             <h1>Welcome to Will&rsquo;s Library</h1>
           </HeaderBookList>
@@ -93,6 +93,7 @@ const BookList = () => {
                         amount={item.amount}
                         image={item.image}
                         available={item.available}
+                        user={userDatasMenu}
                       />
                     );
                   })}

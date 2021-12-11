@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const registerUser = require('./routes/registerUser');
 const userLogin = require('./routes/userLogin');
@@ -8,8 +9,6 @@ const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 
-require('dotenv').config()
-
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))
@@ -18,7 +17,6 @@ registerUser(app)
 userLogin(app)
 
 app.use(authValidate)
-
 getBooks(app)
 lendAction(app)
 

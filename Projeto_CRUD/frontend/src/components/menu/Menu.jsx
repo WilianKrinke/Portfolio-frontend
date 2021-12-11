@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ContainerIcon,
@@ -12,24 +12,19 @@ import {
 } from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
-import { Context } from '../../context/authContext';
 import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
 
-const Menu = () => {
+const Menu = ({ user = 'Loading...' }) => {
   const [isOpen, setisOpen] = useState(true);
   const navigate = useNavigate();
-
-  const {
-    states: { userDatasReceived },
-  } = useContext(Context);
 
   return (
     <>
       <ContainerMenu isOpen={isOpen}>
         <ContainerUserMenu>
           <ContainerUserName>
-            <p>Welcome user {userDatasReceived.userName}!</p>
+            <p>Welcome user {user.userName}!</p>
           </ContainerUserName>
           <ContainerIcon>
             <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
@@ -65,7 +60,7 @@ const Menu = () => {
 };
 
 Menu.propTypes = {
-  isShow: propTypes.bool,
+  user: propTypes.any,
 };
 
 export default Menu;
