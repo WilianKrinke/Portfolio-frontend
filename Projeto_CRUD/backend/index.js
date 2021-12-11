@@ -4,12 +4,10 @@ const userLogin = require('./routes/userLogin');
 const authValidate = require('./utils/authMiddleware');
 const lendAction = require('./routes/lendAction');
 const getBooks = require('./routes/getBooks')
-
-const session = require('express-session');
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
-const authContext = require('./routes/authContext');
+
 require('dotenv').config()
 
 app.use(cors());
@@ -20,7 +18,7 @@ registerUser(app)
 userLogin(app)
 
 app.use(authValidate)
-authContext(app)
+
 getBooks(app)
 lendAction(app)
 
