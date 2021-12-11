@@ -81,8 +81,13 @@ const Bookcard = ({
 
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
-              <IconLike isOpen={open} title="Available item" onClick={() => handleLikeLend()}>
-                {isLend ? <BsBookmarkCheckFill /> : <BsBookmarkPlus />}
+              <IconLike
+                isOpen={open}
+                isLend={isLend}
+                title={`${!isLend ? 'Available item' : 'Item already borrowed by the user'}`}
+                onClick={() => handleLikeLend()}
+              >
+                {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
               </IconLike>
             ) : (
               <IconItenBorrowedByUser isOpen={open} title="Item already borrowed by the user">

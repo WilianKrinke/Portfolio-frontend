@@ -51,7 +51,7 @@ export const IconLike = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+    cursor: ${props => props.isLend ? 'not-allowed' :'pointer'};
     font-size: 24px;
     height: 80px;
     display: ${props => !props.isOpen ? 'none' : 'static'};
