@@ -1,15 +1,17 @@
 const express = require('express');
-const usersRoute = require('./routes/usersRoute');
 const registerUser = require('./routes/registerUser');
 const userLogin = require('./routes/userLogin');
-const cors =  require('cors');
 const authValidate = require('./utils/authMiddleware');
-const getBooks = require('./routes/getBooks');
 const lendAction = require('./routes/lendAction');
+const getBooks = require('./routes/getBooks')
+
+const session = require('express-session');
+const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
 require('dotenv').config()
 
+app.use(session({secret: process.env.SESSION_SECRET, saveUninitialized: true,resave: true}));
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))

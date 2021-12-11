@@ -4,8 +4,9 @@ const userLogin = (app) => {
     app.route("/login")
         .post((req, res) => {
             try {                
+                
                 login(req.body)
-                .then(response => {                
+                .then(response => {
                     res.send(response)
                 })
                 .catch(err => {

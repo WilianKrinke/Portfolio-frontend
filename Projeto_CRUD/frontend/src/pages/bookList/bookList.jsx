@@ -5,13 +5,11 @@ import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
-import insertUserNameSession from '../../utils/insertions/insertUserNameSession';
-import { FcReading } from 'react-icons/fc';
+import Bookcard from '../../components/bookCard/bookCard';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection, BookArticle } from './styled';
-import Bookcard from '../../components/bookCard/bookCard';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -33,9 +31,11 @@ const BookList = () => {
     (async () => {
       preAuth();
       const res = await baseUrl.get('/books-list');
+      console.log(res);
 
       const bookData = res.data.response;
-      const userName = res.data.responseObject;
+      const userDatas = res.data.responseObject;
+      console.log(userDatas);
 
       if (res.data == false) {
         logout(navigate);
@@ -43,8 +43,6 @@ const BookList = () => {
         setBooks(bookData);
         setPages(Math.ceil(bookData.length / itensPerPage));
         setcurrentItens(bookData.slice(startIndex, endIndex));
-        insertUserNameSession(userName);
-        //FAZER SESSION NO LADO DO SERVIDOR
         setLoading(false);
       }
     })();

@@ -4,6 +4,7 @@ const getBooks = (app) => {
     app.route('/books-list')
         .get((req, res) => {
           try {
+            
             getDataBooks()
             .then(response => {
               const responseObject = {
@@ -19,7 +20,8 @@ const getBooks = (app) => {
             .catch(err => {
                 console.log(err)
                 res.send(false)
-            })            
+            })
+
           } catch (error) {
             console.log(error)
           }  
