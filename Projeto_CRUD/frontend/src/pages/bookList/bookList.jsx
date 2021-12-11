@@ -44,6 +44,7 @@ const BookList = () => {
         setPages(Math.ceil(bookData.length / itensPerPage));
         setcurrentItens(bookData.slice(startIndex, endIndex));
         insertUserNameSession(userName);
+        //FAZER SESSION NO LADO DO SERVIDOR
         setLoading(false);
       }
     })();
