@@ -21,7 +21,7 @@ const Menu = () => {
   const navigate = useNavigate();
 
   const {
-    states: { setuserDatasReceived },
+    states: { userDatasReceived },
   } = useContext(Context);
 
   return (
@@ -29,7 +29,7 @@ const Menu = () => {
       <ContainerMenu isOpen={isOpen}>
         <ContainerUserMenu>
           <ContainerUserName>
-            <p>Welcome user {setuserDatasReceived.userName}!</p>
+            <p>Welcome user {userDatasReceived.userName}!</p>
           </ContainerUserName>
           <ContainerIcon>
             <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
