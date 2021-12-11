@@ -39,7 +39,7 @@ const Form = () => {
       <form className="signinForm" autoComplete="false" onSubmit={(e) => handleForm(e)}>
         <UserContainer>
           <label htmlFor="user_name_login">
-            <i className="fas fa-user"></i>
+            <i className="fas fa-user" title="User Name"></i>
           </label>
           <Box autoComplete="off">
             <TextField
@@ -56,7 +56,7 @@ const Form = () => {
 
         <PassContainer>
           <label htmlFor="pass_login">
-            <i className="fas fa-lock"></i>
+            <i className="fas fa-lock" title="Password"></i>
           </label>
           <Box autoComplete="off">
             <TextField

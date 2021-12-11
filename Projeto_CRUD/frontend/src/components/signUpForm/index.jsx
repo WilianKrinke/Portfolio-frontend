@@ -74,7 +74,7 @@ const Form = () => {
       <form className="signupForm" autoComplete="false" onSubmit={(e) => handleSubmit(e)}>
         <ContainerInfoSignUp>
           <label htmlFor="user_name_signup">
-            <i className="fas fa-user"></i>
+            <i className="fas fa-user" title="User Name"></i>
           </label>
           <Box autoComplete="off">
             <TextField
@@ -91,7 +91,7 @@ const Form = () => {
 
         <ContainerInfoSignUp>
           <label htmlFor="email_signup">
-            <i className="fas fa-envelope"></i>
+            <i className="fas fa-envelope" title="E-mail"></i>
           </label>
           <Box autoComplete="off">
             <TextField
@@ -108,8 +108,8 @@ const Form = () => {
 
         <ContainerInfoSignUp>
           <label onClick={() => handleEyePass()}>
-            <i className="fas fa-eye-slash" id="eyeSlash"></i>
-            <i className="fas fa-eye none" id="eyeOpen"></i>
+            <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
+            <i className="fas fa-eye none" id="eyeOpen" title="Password"></i>
           </label>
           <Box autoComplete="off">
             <TextField
@@ -126,8 +126,8 @@ const Form = () => {
 
         <ContainerInfoSignUp>
           <label onClick={() => handleEyePassConfirmed()}>
-            <i className="fas fa-eye-slash" id="eyeSlashConfirmed"></i>
-            <i className="fas fa-eye none" id="eyeOpenConfirmed"></i>
+            <i className="fas fa-eye-slash" id="eyeSlashConfirmed" title="Confirmed Password"></i>
+            <i className="fas fa-eye none" id="eyeOpenConfirmed" title="Confirmed Password"></i>
           </label>
           <Box autoComplete="off">
             <TextField
