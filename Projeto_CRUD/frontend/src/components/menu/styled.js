@@ -6,7 +6,7 @@ export const ContainerMenu = styled.div`
     background-color: rgba(0, 0, 0, 0.98);
     transition: all .3s ease-in-out;
     position: fixed;
-    right: ${props => !props.isOpen ? '0px' : '-300px'};
+    right: ${props => props.isOpen ? '0px' : '-300px'};
 `
 
 export const ContainerIcon = styled.div`
@@ -23,9 +23,7 @@ export const IconHamburguer = styled.i`
     right: 40px;
     top:20px;
     font-size: 48px;
-    transition: all .3s ease-in-out;
-    display: ${props => props.isOpen ? 'block' : 'none'};
-    opacity: ${props => props.isOpen ? '1' : '0'};  
+    display: ${props => !props.isOpen ? 'block' : 'none'};
 `
 
 export const IconClose = styled.i`
@@ -33,7 +31,7 @@ export const IconClose = styled.i`
     font-size: 48px;
     position: relative;
     right: 20px;
-    opacity: ${props => !props.isOpen ? '1' : '0'};  
+    opacity: ${props => props.isOpen ? '1' : '0'};  
 `
 
 export const ContainerUserName = styled.div`

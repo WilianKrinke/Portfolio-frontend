@@ -6,8 +6,7 @@ import baseUrl from '../utils/baseUrl';
 
 const Context = createContext();
 
-function AuthProvider({children}){
-    
+function AuthProvider({children}){    
     const [loading, setLoading] = useState(true);    
     
     const states = {

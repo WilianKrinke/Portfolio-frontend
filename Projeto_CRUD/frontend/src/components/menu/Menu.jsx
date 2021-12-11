@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ContainerIcon,
@@ -12,16 +12,24 @@ import {
 } from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
+import { useDetectClickOutside } from 'react-detect-click-outside';
 import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
 
 const Menu = ({ user = 'Loading...' }) => {
-  const [isOpen, setisOpen] = useState(true);
+  const [isOpen, setisOpen] = useState(false);
   const navigate = useNavigate();
+
+  const closeMenu = () => {
+    setisOpen(false);
+  };
+
+  const ref = useDetectClickOutside({ onTriggered: closeMenu });
 
   return (
     <>
-      <ContainerMenu isOpen={isOpen}>
+      <ContainerMenu isOpen={isOpen} ref={ref}>
+        <IconHamburguer className="fas fa-bars fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
         <ContainerUserMenu>
           <ContainerUserName>
             <p>Welcome user {user.userName}!</p>
@@ -54,7 +62,6 @@ const Menu = ({ user = 'Loading...' }) => {
           </ul>
         </ContainerLinks>
       </ContainerMenu>
-      <IconHamburguer className="fas fa-bars fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
     </>
   );
 };
