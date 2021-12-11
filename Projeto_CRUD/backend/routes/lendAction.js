@@ -2,12 +2,16 @@ const lendBookDb = require("../utils/lendBookDb")
 
 const lendAction = (app) => {
     app.route('/book-lend')
-        .post((req,res) => {
-            
+        .post((req,res) => {           
 
             lendBookDb(req.body)
-
-            res.send(true)
+                .then(response => {
+                    res.send(response)
+                })
+                .catch(err => {
+                    console.log(err)
+                    res.send(err)
+                })            
         })
 }
 
