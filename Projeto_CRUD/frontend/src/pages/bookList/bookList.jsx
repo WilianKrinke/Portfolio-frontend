@@ -5,7 +5,7 @@ import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
-import Bookcard from '../../components/bookCard/bookCard';
+import Bookcard from '../../components/bookCard/bookCard.jsx';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
@@ -33,8 +33,13 @@ const BookList = () => {
       preAuth();
       const res = await baseUrl.get('/books-list');
 
-      const bookData = res.data.response;
+      console.log(res);
+
+      const bookData = res.data.responseBooks;
       const userDatas = res.data.responseObject;
+
+      console.log(bookData);
+      console.log(userDatas);
 
       if (res.data == false) {
         logout(navigate);
@@ -94,6 +99,7 @@ const BookList = () => {
                         image={item.image}
                         available={item.available}
                         user={userDatasMenu}
+                        borrowedByUser={item.isBorrowedByUser}
                       />
                     );
                   })}

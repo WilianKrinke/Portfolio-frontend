@@ -1,3 +1,4 @@
+const borrowBooksFromUser = require('../utils/borrowBooksFromUser')
 const {getDataBooks} = require('../utils/getBooks')
 
 const getBooks = (app) => {
@@ -7,15 +8,25 @@ const getBooks = (app) => {
             
             getDataBooks()
             .then(response => {
+
               const responseObject = {
                   idUser: req.idUser[0],
                   userName: req.userName[0]
               }
-  
-              res.json({
-                  responseObject,
-                  response
-              })
+
+              borrowBooksFromUser(response, responseObject.idUser)
+                .then(responseBooks => {
+
+                  res.send({
+                    responseObject,
+                    responseBooks
+                  })
+
+                })
+                .catch(errBooks => {
+                  console.log(errBooks)
+                  res.send(false)
+                })             
             })
             .catch(err => {
                 console.log(err)

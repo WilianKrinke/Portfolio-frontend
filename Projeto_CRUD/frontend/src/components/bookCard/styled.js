@@ -72,8 +72,18 @@ export const IconNotAvailable = styled.i`
     justify-content: center;
     align-items: center;
     font-size: 24px;
-    cursor: pointer;
+    cursor: not-allowed;
     height: 80px;
     color: red;
+    display: ${props => !props.isOpen ? 'none' : 'static'};
+`
+
+export const IconItenBorrowedByUser = styled.i`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: not-allowed;
+    font-size: 24px;
+    height: 80px;
     display: ${props => !props.isOpen ? 'none' : 'static'};
 `

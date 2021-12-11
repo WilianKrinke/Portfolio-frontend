@@ -82,7 +82,7 @@ export const ContainerLinks = styled.nav`
             position: relative;
             border: 1px solid transparent;
             cursor: pointer;
-            transition: all .3s ease-in-out;
+            transition: all .1s ease-in-out;
 
             :hover{
                 transform: scale(1.5);
