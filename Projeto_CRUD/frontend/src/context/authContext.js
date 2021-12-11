@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, {createContext, useState} from 'react'
+import React, {createContext, useEffect, useState} from 'react'
 import propTypes from 'prop-types'
 
 const Context = createContext();
@@ -18,6 +18,10 @@ function AuthProvider({children}){
         userDatasReceived,
         setuserDatasReceived
     }
+
+    useEffect(() => {
+        console.log('Mostrando useEffect do Auth Context')
+    }, []);
 
     return (
     <Context.Provider value={{states}}>

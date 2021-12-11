@@ -9,19 +9,20 @@ const session = require('express-session');
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
+const authContext = require('./routes/authContext');
 require('dotenv').config()
 
-app.use(session({secret: process.env.SESSION_SECRET, saveUninitialized: true,resave: true}));
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))
 
 registerUser(app)
 userLogin(app)
-lendAction(app)
 
 app.use(authValidate)
+authContext(app)
 getBooks(app)
+lendAction(app)
 
 app.listen(3001, () => {
     console.log('Listening to 3001')
