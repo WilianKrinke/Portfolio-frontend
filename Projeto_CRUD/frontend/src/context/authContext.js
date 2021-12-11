@@ -1,27 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, {createContext, useEffect, useState} from 'react'
 import propTypes from 'prop-types'
+import preAuth from '../utils/Auth/preAuth'
+import baseUrl from '../utils/baseUrl';
 
 const Context = createContext();
 
 function AuthProvider({children}){
     
-    const [loading, setLoading] = useState(true);
-    const [userDatasReceived, setuserDatasReceived] = useState({
-        userName: 'Loading...',
-        userId: 'Loading...'
-    });
+    const [loading, setLoading] = useState(true);    
     
     const states = {
         loading,
-        setLoading,
-        userDatasReceived,
-        setuserDatasReceived
-    }
-
-    useEffect(() => {
-        console.log('Mostrando useEffect do Auth Context')
-    }, []);
+        setLoading
+    }   
 
     return (
     <Context.Provider value={{states}}>
