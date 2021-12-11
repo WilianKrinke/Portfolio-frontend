@@ -17,11 +17,6 @@ const Form = () => {
 
   const navigate = useNavigate();
 
-  const {
-    states: { authenticated, setAutheticated },
-  } = useContext(Context);
-
-  //submitform
   async function handleForm(e) {
     e.preventDefault();
 
@@ -33,7 +28,6 @@ const Form = () => {
     const isLogged = await sendSignIn(signinDatas);
 
     if (isLogged == true) {
-      setAutheticated(true);
       navigate('./book-list');
     } else {
       toast.error('Usuário ou senha incorretos');
