@@ -85,7 +85,7 @@ input:-webkit-autofill:active {
   background: #f3bef7;
 }
 
-[aria-label] {
+/* [aria-label] {
   position: relative;
 }
 
@@ -94,7 +94,6 @@ input:-webkit-autofill:active {
   display: none;
   position: absolute;
   top: 110%;
-
   z-index: 5000;
   pointer-events: none;
   padding: 2px 10px;
@@ -110,4 +109,4 @@ input:-webkit-autofill:active {
 
 [aria-label]:hover::after {
   display: block;
-}
+} */

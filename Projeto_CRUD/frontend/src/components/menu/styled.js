@@ -85,7 +85,7 @@ export const ContainerLinks = styled.nav`
             transition: all .3s ease-in-out;
 
             :hover{
-                border: 1px solid #fff;
+                transform: scale(1.5);
             }
             
             a{
