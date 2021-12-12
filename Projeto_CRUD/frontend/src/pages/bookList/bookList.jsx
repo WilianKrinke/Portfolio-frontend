@@ -6,6 +6,8 @@ import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
@@ -33,13 +35,8 @@ const BookList = () => {
       preAuth();
       const res = await baseUrl.get('/books-list');
 
-      console.log(res);
-
       const bookData = res.data.responseBooks;
       const userDatas = res.data.responseObject;
-
-      console.log(bookData);
-      console.log(userDatas);
 
       if (res.data == false) {
         logout(navigate);
@@ -53,20 +50,8 @@ const BookList = () => {
     })();
   }, [itensPerPage, startIndex, endIndex]);
 
-  function accCurrentPage() {
-    setCurrentPage(currentPage + 1);
-
-    if (currentPage >= 4) {
-      setCurrentPage(0);
-    }
-  }
-
-  function decCurrentPage() {
-    setCurrentPage(currentPage - 1);
-
-    if (currentPage <= 0) {
-      setCurrentPage(4);
-    }
+  function handleChange(event, page) {
+    setCurrentPage(page);
   }
 
   return (
@@ -84,7 +69,11 @@ const BookList = () => {
           <BookListMain>
             <BookListSection>
               <BookArticle>
-                <AjustBookList></AjustBookList>
+                <AjustBookList>
+                  <Stack>
+                    <Pagination count={pages} page={currentPage} onChange={handleChange} defaultPage={0} />
+                  </Stack>
+                </AjustBookList>
                 <BookListArticle>
                   {currentItens.map((item) => {
                     return (
@@ -112,18 +101,26 @@ const BookList = () => {
 
           {/* 
 
-          {currentItens.map((item) => {
-            return (
-              <div key={item.idBook}>
-                <h3>{item.bookName}</h3>
-              </div>
-            );
-          })}
-
           <button onClick={() => decCurrentPage()}>Anterior</button>
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
             */}
+
+          {/* //   function accCurrentPage() {
+  //     setCurrentPage(currentPage + 1);
+
+  //     if (currentPage >= 4) {
+  //       setCurrentPage(0);
+  //     }
+  //   }
+
+  //   function decCurrentPage() {
+  //     setCurrentPage(currentPage - 1);
+
+  //     if (currentPage <= 0) {
+  //       setCurrentPage(4);
+  //     }
+  //   } */}
         </>
       )}
     </>

@@ -100,6 +100,11 @@ export const BookListArticle = styled.article`
 export const AjustBookList = styled.section`
     width: 100%;
     height: 100px;
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 `
 
 export const LendButton = styled.div`
@@ -113,30 +118,19 @@ export const LendButton = styled.div`
     :hover {
         background-color: #2D5CFF;
     }
+`
+
+export const IconForward = styled.i`
+    font-size: 35px;
+    cursor: pointer;
 
 `
 
-// export const GiveBackButton = styled.div`
-//     background-color: rgba(255, 142, 89, 0.61);
-//     border-radius: 5px;
-//     transition: all .3s ease-in-out;
-//     margin: 0px auto;
-//     width: 150px;
-//     cursor: pointer;
+export const IconBack = styled.i`
+    font-size: 35px;
+    cursor: pointer;
 
-//     :hover {
-//         background-color: #FE6B0A;
-//     }
-
-//     {/* <td>
-//         <GiveBackButton>
-//         <i>
-//             <BsJournalArrowDown title="Devolver" />
-//         </i>
-//         <p>devolver</p>
-//         </GiveBackButton>
-//     </td> */}
-// `
+`
 
 
 
