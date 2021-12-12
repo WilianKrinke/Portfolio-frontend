@@ -6,12 +6,20 @@ import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
-import { BookListMain, BookListArticle, AjustBookList, HeaderBookList, BookListSection, BookArticle } from './styled';
+import {
+  BookListMain,
+  BookListArticle,
+  AjustBookList,
+  HeaderBookList,
+  BookListSection,
+  BookArticle,
+  IconForward,
+  IconBack,
+} from './styled';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -50,9 +58,20 @@ const BookList = () => {
     })();
   }, [itensPerPage, startIndex, endIndex]);
 
-  function handleChan(event, page) {
-    console.log(page);
-    setCurrentPage(page);
+  function accCurrentPage() {
+    setCurrentPage(currentPage + 1);
+
+    if (currentPage >= 4) {
+      setCurrentPage(0);
+    }
+  }
+
+  function decCurrentPage() {
+    setCurrentPage(currentPage - 1);
+
+    if (currentPage <= 0) {
+      setCurrentPage(4);
+    }
   }
 
   return (
@@ -71,9 +90,15 @@ const BookList = () => {
             <BookListSection>
               <BookArticle>
                 <AjustBookList>
-                  <Stack>
-                    <Pagination count={pages} page={currentPage} onChange={handleChan} defaultPage={0} />
-                  </Stack>
+                  <IconBack onClick={decCurrentPage}>
+                    <FiChevronLeft />
+                  </IconBack>
+                  <p>
+                    {currentPage + 1}/{pages}
+                  </p>
+                  <IconForward onClick={accCurrentPage}>
+                    <FiChevronRight />
+                  </IconForward>
                 </AjustBookList>
                 <BookListArticle>
                   {currentItens.map((item) => {
@@ -106,22 +131,6 @@ const BookList = () => {
           <h2>{currentPage + 1}</h2>
           <button onClick={() => accCurrentPage()}>Proximo</button>
             */}
-
-          {/* //   function accCurrentPage() {
-  //     setCurrentPage(currentPage + 1);
-
-  //     if (currentPage >= 4) {
-  //       setCurrentPage(0);
-  //     }
-  //   }
-
-  //   function decCurrentPage() {
-  //     setCurrentPage(currentPage - 1);
-
-  //     if (currentPage <= 0) {
-  //       setCurrentPage(4);
-  //     }
-  //   } */}
         </>
       )}
     </>
