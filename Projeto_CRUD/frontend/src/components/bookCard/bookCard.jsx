@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
+import ReactStars from 'react-rating-stars-component';
 import {
   CardStyled,
   ContainerMoldCard,
@@ -11,6 +12,7 @@ import {
   IconLike,
   IconNotAvailable,
   IconToRight,
+  SecondContainerInfo,
 } from './styled';
 import {
   BsChevronRight,
@@ -76,8 +78,22 @@ const Bookcard = ({
             <div className="image">
               <img src={image} alt="Capa" loading="lazy" />
             </div>
-            <div></div>
+            <div className="title_rating">
+              <h2>{bookName}</h2>
+              <div className="rating">
+                <ReactStars
+                  count={5}
+                  size={18}
+                  isHalf={true}
+                  emptyIcon={<i className="far fa-star"></i>}
+                  halfIcon={<i className="fa fa-star-half-alt"></i>}
+                  fullIcon={<i className="fa fa-star"></i>}
+                  activeColor="#ffd700"
+                />
+              </div>
+            </div>
           </FirstContainerInfo>
+          <SecondContainerInfo></SecondContainerInfo>
         </ContainerMoldCard>
 
         <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>

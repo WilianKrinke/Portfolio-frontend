@@ -7,6 +7,7 @@ export const ContainerMenu = styled.div`
     transition: all .3s ease-in-out;
     position: fixed;
     right: ${props => props.isOpen ? '0px' : '-300px'};
+    z-index: 100
 `
 
 export const ContainerIcon = styled.div`

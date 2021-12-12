@@ -23,22 +23,6 @@ export const ContainerMoldCard = styled.div`
     border-radius: 5px 0px 0px 5px;
     transition: all .3s ease-in-out;
     width: ${props => props.isOpen ? '85%' : '95%'};
-    
-
-    .image{
-        width: 50%;
-        height: auto;
-        border: 1px solid;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        img{
-            width: 100px;
-            height: auto;
-        }
-    }
 `
 
 export const ContainerToLike = styled.div`
@@ -105,4 +89,65 @@ export const IconItenBorrowedByUser = styled.i`
     display: ${props => !props.isOpen ? 'none' : 'static'};
 `
 
-export const FirstContainerInfo = styled.div``
+export const FirstContainerInfo = styled.div`
+
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        border: 1px solid;
+
+    .image{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img{
+            width: 100px;
+            height: auto;
+        }
+    }
+
+    .title_rating{
+        width: 50%;
+        height: 100%;
+        border: 1px solid;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        line-height: 24px;
+
+        h2{
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .rating{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+            text-align: center;
+            position: relative;
+        }
+    }
+`
+
+export const SecondContainerInfo = styled.div`
+        width: 100%;
+        height: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border: 1px solid;
+
+`
