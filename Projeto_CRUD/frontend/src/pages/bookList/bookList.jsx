@@ -19,6 +19,7 @@ import {
   BookArticle,
   IconForward,
   IconBack,
+  InfoPagination,
 } from './styled';
 
 const BookList = () => {
@@ -91,13 +92,15 @@ const BookList = () => {
               <BookArticle>
                 <AjustBookList>
                   <IconBack onClick={decCurrentPage}>
-                    <FiChevronLeft />
+                    <FiChevronLeft title="Back" />
                   </IconBack>
-                  <p>
-                    {currentPage + 1}/{pages}
-                  </p>
+                  <InfoPagination>
+                    <span title="Page">
+                      {currentPage + 1}/{pages}
+                    </span>
+                  </InfoPagination>
                   <IconForward onClick={accCurrentPage}>
-                    <FiChevronRight />
+                    <FiChevronRight title="Next" />
                   </IconForward>
                 </AjustBookList>
                 <BookListArticle>
@@ -119,7 +122,19 @@ const BookList = () => {
                     );
                   })}
                 </BookListArticle>
-                <AjustBookList></AjustBookList>
+                <AjustBookList>
+                  <IconBack onClick={decCurrentPage}>
+                    <FiChevronLeft />
+                  </IconBack>
+                  <InfoPagination>
+                    <span>
+                      {currentPage + 1}/{pages}
+                    </span>
+                  </InfoPagination>
+                  <IconForward onClick={accCurrentPage}>
+                    <FiChevronRight />
+                  </IconForward>
+                </AjustBookList>
               </BookArticle>
             </BookListSection>
           </BookListMain>

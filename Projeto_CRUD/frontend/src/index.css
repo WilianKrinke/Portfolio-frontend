@@ -18,7 +18,7 @@ h1 {
   padding: 0;
   font-size: 72px;
   letter-spacing: 3px;
-  color: #050205;
+  color: #0a0a0a;
 }
 
 h2,
@@ -30,25 +30,26 @@ h6 {
   font-weight: 500;
   margin: 0;
   padding: 0;
-  color: #050205;
+  color: #0a0a0a;
 }
 
 p,
 a,
-label {
+span,
+label,
+i {
   font-family: 'Zen Kaku Gothic New', sans-serif;
   font-weight: 400;
   margin: 0;
   padding: 0;
-  color: #050205;
+  color: #0a0a0a;
 }
 
-span,
 ul,
 li {
   margin: 0;
   padding: 0;
-  color: #050205;
+  color: rgba(0, 0, 0, 0.7);
 }
 
 button {

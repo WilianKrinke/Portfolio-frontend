@@ -29,13 +29,18 @@ const Menu = ({ user = 'Loading...' }) => {
   return (
     <>
       <ContainerMenu isOpen={isOpen} ref={ref}>
-        <IconHamburguer className="fas fa-bars fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
+        <IconHamburguer title="Menu" className="fas fa-bars fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
         <ContainerUserMenu>
           <ContainerUserName>
             <p>Welcome user {user.userName}!</p>
           </ContainerUserName>
           <ContainerIcon>
-            <IconClose className="fas fa-times fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
+            <IconClose
+              title="Close Menu"
+              className="fas fa-times fa-2x"
+              isOpen={isOpen}
+              onClick={() => setisOpen(!isOpen)}
+            />
           </ContainerIcon>
         </ContainerUserMenu>
 

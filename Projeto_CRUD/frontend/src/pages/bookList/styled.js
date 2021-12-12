@@ -98,12 +98,11 @@ export const BookListArticle = styled.article`
 `
 
 export const AjustBookList = styled.section`
-    width: 100%;
+    width: 300px;
     height: 100px;
-    border: 1px solid;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
 `
 
@@ -123,13 +122,34 @@ export const LendButton = styled.div`
 export const IconForward = styled.i`
     font-size: 35px;
     cursor: pointer;
+    position: relative;
+    top: 5px;
+    transition: all .1s ease-in-out;
 
+    :hover{
+        transform: scale(1.3);
+    }
 `
 
 export const IconBack = styled.i`
     font-size: 35px;
     cursor: pointer;
+    position: relative;
+    top: 5px;
+    transition: all .1s ease-in-out;
 
+    :hover{
+        transform: scale(1.3);
+    }
+`
+
+export const InfoPagination = styled.div`
+    span{
+        font-size: 35px;
+        letter-spacing: 5px;
+        position: relative;
+        left: 3px
+    }
 `
 
 
