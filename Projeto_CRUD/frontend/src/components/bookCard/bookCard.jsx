@@ -5,6 +5,7 @@ import ReactStars from 'react-rating-stars-component';
 import {
   CardStyled,
   ContainerMoldCard,
+  ContainerResume,
   ContainerToLike,
   FirstContainerInfo,
   IconItenBorrowedByUser,
@@ -12,6 +13,7 @@ import {
   IconLike,
   IconNotAvailable,
   IconToRight,
+  ParagraphResume,
   SecondContainerInfo,
 } from './styled';
 import {
@@ -21,6 +23,7 @@ import {
   BsBookmarkCheckFill,
   BsHeartFill,
   BsBookmarkXFill,
+  BsChevronCompactDown,
 } from 'react-icons/bs';
 import lendBook from '../../utils/lendBooks/lendBook';
 
@@ -41,6 +44,7 @@ const Bookcard = ({
   const [isLend, setisLend] = useState(false);
   const [isLike, setisLike] = useState(false);
   const [isAvailable] = useState(available);
+  const [seeMore, setseeMore] = useState(false);
 
   async function handleLikeLend() {
     const userId = user.idUser;
@@ -70,22 +74,21 @@ const Bookcard = ({
   }
 
   function teste() {
-    const paragrafotestEl = document.querySelector('.paragrafoteste');
-
-    const textLength = paragrafotestEl.textContent.length;
+    console.log(seeMore);
+    setseeMore(!seeMore);
   }
 
   return (
     <>
-      <CardStyled>
-        <ContainerMoldCard isOpen={open}>
+      <CardStyled seeMore={seeMore}>
+        <ContainerMoldCard isOpen={open} seeMore={seeMore}>
           <FirstContainerInfo>
             <div className="image">
-              <img src={image} alt="Capa" loading="lazy" />
+              <img src={image} alt="Capa" loading="lazy" title="Book cover" />
             </div>
             <div className="title_rating">
-              <h2>{bookName}</h2>
-              <div className="rating">
+              <h2 title="Book Title">{bookName}</h2>
+              <div className="rating" title="Rating">
                 <ReactStars
                   count={5}
                   size={18}
@@ -98,11 +101,27 @@ const Bookcard = ({
               </div>
             </div>
           </FirstContainerInfo>
-          <SecondContainerInfo>
-            <p>Autor: {author}</p>
-            <p onClick={teste} className="paragrafoteste">
-              {resume}
-            </p>
+          <SecondContainerInfo seeMore={seeMore}>
+            <div className="container_author" title="Author">
+              <p>Author: {author}</p>
+            </div>
+
+            <div className="container_category" title="Category">
+              <p>Category: {category}</p>
+            </div>
+
+            <div className="container_text_resume">
+              <ContainerResume className="container_resume" title="Resume" seeMore={seeMore}>
+                <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
+              </ContainerResume>
+              <div className="container_see_more" onClick={teste}>
+                <BsChevronCompactDown title="See more" />
+              </div>
+            </div>
+
+            <div className="container_amount" title="Copies">
+              <p>Copies: {amount}</p>
+            </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
 

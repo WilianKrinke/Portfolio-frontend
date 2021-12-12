@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    height: 450px;
+    height: 440px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -18,7 +18,7 @@ export const CardStyled = styled.div`
     }
 `
 export const ContainerMoldCard = styled.div`
-    height: 100%;
+    min-height: 400px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .3s ease-in-out;
@@ -144,13 +144,59 @@ export const FirstContainerInfo = styled.div`
 
 export const SecondContainerInfo = styled.div`
         width: 100%;
-        height: 285px;
+        min-height: 270px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         border: 1px solid;
-        text-overflow: ellipsis
+        
+        .container_author{
+            width: 100%;
+            border: 1px solid;
+            text-align: left;
+        }
 
+        .container_category{
+            width: 100%;
+            border: 1px solid;
+            text-align: left;
+        }
+
+        .container_see_more{
+            width: 100%;
+            border: 1px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .container_amount{
+            width: 100%;
+            border: 1px solid;
+            text-align: left;
+        }
+`
+
+export const ContainerResume = styled.div`
+    width: 100%;
+    min-height: 150px;
+    border: 1px solid;
+    text-align: left;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+`
+
+export const ParagraphResume = styled.p`
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
 `
