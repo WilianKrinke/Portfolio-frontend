@@ -40,7 +40,6 @@ const Bookcard = ({
 
   const [isLend, setisLend] = useState(false);
   const [isLike, setisLike] = useState(false);
-
   const [isAvailable] = useState(available);
 
   async function handleLikeLend() {
@@ -70,6 +69,12 @@ const Bookcard = ({
     //ADICIONA AOS FAVORITOS
   }
 
+  function teste() {
+    const paragrafotestEl = document.querySelector('.paragrafoteste');
+
+    const textLength = paragrafotestEl.textContent.length;
+  }
+
   return (
     <>
       <CardStyled>
@@ -93,7 +98,12 @@ const Bookcard = ({
               </div>
             </div>
           </FirstContainerInfo>
-          <SecondContainerInfo></SecondContainerInfo>
+          <SecondContainerInfo>
+            <p>Autor: {author}</p>
+            <p onClick={teste} className="paragrafoteste">
+              {resume}
+            </p>
+          </SecondContainerInfo>
         </ContainerMoldCard>
 
         <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>

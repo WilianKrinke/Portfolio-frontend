@@ -109,7 +109,8 @@ export const FirstContainerInfo = styled.div`
 
         img{
             width: 100px;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
         }
     }
 
@@ -143,11 +144,13 @@ export const FirstContainerInfo = styled.div`
 
 export const SecondContainerInfo = styled.div`
         width: 100%;
-        height: 150px;
+        height: 285px;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         flex-direction: column;
+        align-items: flex-start;
         border: 1px solid;
+        text-overflow: ellipsis
 
 `
