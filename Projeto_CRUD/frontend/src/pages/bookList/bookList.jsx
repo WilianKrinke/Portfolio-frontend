@@ -50,7 +50,7 @@ const BookList = () => {
     })();
   }, [itensPerPage, startIndex, endIndex]);
 
-  function handleChange(event, page) {
+  function handleChan(event, page) {
     setCurrentPage(page);
   }
 
@@ -71,7 +71,7 @@ const BookList = () => {
               <BookArticle>
                 <AjustBookList>
                   <Stack>
-                    <Pagination count={pages} page={currentPage} onChange={handleChange} defaultPage={0} />
+                    <Pagination count={pages} page={currentPage} onChange={handleChan} defaultPage={1} />
                   </Stack>
                 </AjustBookList>
                 <BookListArticle>
