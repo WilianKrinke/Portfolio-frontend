@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    height: 400px;
+    height: 450px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -18,10 +18,27 @@ export const CardStyled = styled.div`
     }
 `
 export const ContainerMoldCard = styled.div`
-    transition: all .3s ease-in-out;
-    width: ${props => props.isOpen ? '85%' : '95%'};;
     height: 100%;
+    padding: 5px;
     border-radius: 5px 0px 0px 5px;
+    transition: all .3s ease-in-out;
+    width: ${props => props.isOpen ? '85%' : '95%'};
+    
+
+    .image{
+        width: 50%;
+        height: auto;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        img{
+            width: 100px;
+            height: auto;
+        }
+    }
 `
 
 export const ContainerToLike = styled.div`
@@ -87,3 +104,5 @@ export const IconItenBorrowedByUser = styled.i`
     height: 80px;
     display: ${props => !props.isOpen ? 'none' : 'static'};
 `
+
+export const FirstContainerInfo = styled.div``

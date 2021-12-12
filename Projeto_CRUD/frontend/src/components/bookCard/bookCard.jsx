@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import {
   CardStyled,
   ContainerMoldCard,
   ContainerToLike,
+  FirstContainerInfo,
   IconItenBorrowedByUser,
   IconLendItem,
   IconLike,
@@ -71,7 +72,12 @@ const Bookcard = ({
     <>
       <CardStyled>
         <ContainerMoldCard isOpen={open}>
-          <h3>{bookName}</h3>
+          <FirstContainerInfo>
+            <div className="image">
+              <img src={image} alt="Capa" loading="lazy" />
+            </div>
+            <div></div>
+          </FirstContainerInfo>
         </ContainerMoldCard>
 
         <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>

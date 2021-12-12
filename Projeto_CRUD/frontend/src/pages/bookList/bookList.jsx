@@ -47,6 +47,8 @@ const BookList = () => {
       const bookData = res.data.responseBooks;
       const userDatas = res.data.responseObject;
 
+      console.log(bookData);
+
       if (res.data == false) {
         logout(navigate);
       } else {
