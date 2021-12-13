@@ -103,9 +103,7 @@ export const ArticleLogin = styled.article`
     border: 1px solid rgba(0, 0, 0, 0.3);
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '1' : '0'};
-    display: ${props => props.isVisible ? 'flex' : 'none'};
-
-    
+    display: ${props => props.isVisible ? 'flex' : 'none'};   
 `
 
 export const ArticleSignUp = styled.article`

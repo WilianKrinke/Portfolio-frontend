@@ -1,41 +1,48 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    height: 440px;
+    min-height: 500px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     background-color: #CCFFCB;
-    transition: all .5s ease-in-out;
+    transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    -webkit-box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16); 
+    box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16);
     
     :hover{
         background-color: #C2F7BE;
     }
 `
 export const ContainerMoldCard = styled.div`
-    min-height: 400px;
+    min-height: 500px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .3s ease-in-out;
     width: ${props => props.isOpen ? '85%' : '95%'};
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
 `
 
 export const ContainerToLike = styled.div`
     transition: all .3s ease-in-out;
     width: ${props => props.isOpen ? '15%' : '5%'};
-    height: 100%;
-    border-radius: 0px 5px 5px 0px;
-    background-color: #CCFFCB;
+    height: 500px;
     display: flex;
     justify-content: ${props => props.isOpen ? 'space-evenly' : 'center'};
     align-items: center;
     flex-direction: column;
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
+    background: ${props => props.isOpen ? '#FE6B0A' : '#CCFFCB'};
+    border-radius: 0px 5px 5px 0px;
+    
     
 `
 export const IconToRight = styled.i`
@@ -90,14 +97,13 @@ export const IconItenBorrowedByUser = styled.i`
 `
 
 export const FirstContainerInfo = styled.div`
-
         width: 100%;
         height: 150px;
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: row;
-        border: 1px solid;
+        
 
     .image{
         width: 50%;
@@ -117,7 +123,7 @@ export const FirstContainerInfo = styled.div`
     .title_rating{
         width: 50%;
         height: 100%;
-        border: 1px solid;
+        
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -144,29 +150,29 @@ export const FirstContainerInfo = styled.div`
 
 export const SecondContainerInfo = styled.div`
         width: 100%;
-        min-height: 270px;
+        height: 270px;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         align-items: center;
-        border: 1px solid;
+        transition: all .3s ease-in-out;
+        
         
         .container_author{
-            width: 100%;
-            border: 1px solid;
+            width: 100%;            
             text-align: left;
+            padding: 0px 5px;
         }
 
         .container_category{
-            width: 100%;
-            border: 1px solid;
+            width: 100%;            
             text-align: left;
+            padding: 0px 5px;
         }
 
         .container_see_more{
-            width: 100%;
-            border: 1px solid;
+            width: 100%;           
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -176,16 +182,15 @@ export const SecondContainerInfo = styled.div`
         }
 
         .container_amount{
-            width: 100%;
-            border: 1px solid;
+            width: 100%;            
             text-align: left;
+            padding: 0px 5px;
         }
 `
 
 export const ContainerResume = styled.div`
     width: 100%;
-    min-height: 150px;
-    border: 1px solid;
+    min-height: 160px    
     text-align: left;
     display: flex;
     justify-content: space-around;
@@ -197,6 +202,8 @@ export const ContainerResume = styled.div`
 export const ParagraphResume = styled.p`
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: ${props => props.seeMore ? '8' : '4'};;
     -webkit-box-orient: vertical;
+    padding: 0px 5px;
+    transition: all .3s ease-in-out;
 `

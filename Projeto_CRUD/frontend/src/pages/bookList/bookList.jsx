@@ -20,7 +20,9 @@ import {
   IconForward,
   IconBack,
   InfoPagination,
+  BookListFooter,
 } from './styled';
+import Letterfooter from '../../components/letterFooter/letterFooter';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -140,14 +142,9 @@ const BookList = () => {
               </BookArticle>
             </BookListSection>
           </BookListMain>
-          <FooterStyled></FooterStyled>
-
-          {/* 
-
-          <button onClick={() => decCurrentPage()}>Anterior</button>
-          <h2>{currentPage + 1}</h2>
-          <button onClick={() => accCurrentPage()}>Proximo</button>
-            */}
+          <BookListFooter>
+            <Letterfooter />
+          </BookListFooter>
         </>
       )}
     </>

@@ -24,6 +24,7 @@ import {
   BsHeartFill,
   BsBookmarkXFill,
   BsChevronCompactDown,
+  BsChevronCompactUp,
 } from 'react-icons/bs';
 import lendBook from '../../utils/lendBooks/lendBook';
 
@@ -81,13 +82,15 @@ const Bookcard = ({
   return (
     <>
       <CardStyled seeMore={seeMore}>
-        <ContainerMoldCard isOpen={open} seeMore={seeMore}>
+        <ContainerMoldCard isOpen={open}>
           <FirstContainerInfo>
             <div className="image">
               <img src={image} alt="Capa" loading="lazy" title="Book cover" />
             </div>
             <div className="title_rating">
-              <h2 title="Book Title">{bookName}</h2>
+              <h2 title="Book Title">
+                <strong>{bookName}</strong>
+              </h2>
               <div className="rating" title="Rating">
                 <ReactStars
                   count={5}
@@ -103,11 +106,15 @@ const Bookcard = ({
           </FirstContainerInfo>
           <SecondContainerInfo seeMore={seeMore}>
             <div className="container_author" title="Author">
-              <p>Author: {author}</p>
+              <p>
+                <strong>Author:</strong> {author}
+              </p>
             </div>
 
             <div className="container_category" title="Category">
-              <p>Category: {category}</p>
+              <p>
+                <strong>Category:</strong> {category}
+              </p>
             </div>
 
             <div className="container_text_resume">
@@ -115,7 +122,7 @@ const Bookcard = ({
                 <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
               </ContainerResume>
               <div className="container_see_more" onClick={teste}>
-                <BsChevronCompactDown title="See more" />
+                {seeMore ? <BsChevronCompactUp title="See less" /> : <BsChevronCompactDown title="See more" />}
               </div>
             </div>
 
