@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
+import Modal from 'react-modal';
 import {
   CardStyled,
   ContainerMoldCard,
