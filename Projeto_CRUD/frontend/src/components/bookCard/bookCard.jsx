@@ -47,6 +47,7 @@ const Bookcard = ({
   const [isLike, setisLike] = useState(false);
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
+  const [modalIsOpen, setmodalIsOpen] = useState(false);
 
   async function handleLikeLend() {
     const userId = user.idUser;
@@ -59,15 +60,17 @@ const Bookcard = ({
       userName,
     };
 
-    const response = await lendBook(objectDatas);
-    const isRegister = response.data.isRegister;
+    setmodalIsOpen(true);
 
-    if (isRegister == true) {
-      setisLend(true);
-    } else {
-      //Fazer tosty de aviso que Livro já está emprestado
-      alert('Este Livro já está emprestado');
-    }
+    // const response = await lendBook(objectDatas);
+    // const isRegister = response.data.isRegister;
+
+    // if (isRegister == true) {
+    //   setisLend(true);
+    // } else {
+    //   //Fazer tosty de aviso que Livro já está emprestado
+    //   alert('Este Livro já está emprestado');
+    // }
   }
 
   function handleAddFav() {
@@ -91,20 +94,14 @@ const Bookcard = ({
     },
   };
 
-  let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  function openModal() {
-    setIsOpen(true);
+  function closeModal() {
+    setmodalIsOpen(false);
   }
+
+  let subtitle;
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
     subtitle.style.color = '#f00';
-  }
-
-  function closeModal() {
-    setIsOpen(false);
   }
 
   return (
@@ -115,7 +112,18 @@ const Bookcard = ({
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
-      />
+      >
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+      </Modal>
       <CardStyled seeMore={seeMore}>
         <ContainerMoldCard isOpen={open}>
           <FirstContainerInfo>
