@@ -162,7 +162,9 @@ const Bookcard = ({
             </div>
 
             <div className="container_amount" title="Copies">
-              <p>Copies: {amount}</p>
+              <p>
+                <strong>Copies:</strong> {amount}
+              </p>
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
