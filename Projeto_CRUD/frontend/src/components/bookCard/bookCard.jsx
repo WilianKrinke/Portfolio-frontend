@@ -31,6 +31,7 @@ import {
   BsChevronCompactUp,
 } from 'react-icons/bs';
 import lendBook from '../../utils/lendBooks/lendBook';
+import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 
 const Bookcard = ({
   bookName,
@@ -65,7 +66,6 @@ const Bookcard = ({
     };
 
     console.log(modalIsOpen);
-    setmodalIsOpen(true);
 
     console.log(modalIsOpen);
 
@@ -98,7 +98,7 @@ const Bookcard = ({
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
       width: '450px',
-      height: '400px',
+      height: '300px',
       display: 'flex',
       alignItens: 'center',
       justifyContent: 'center',
@@ -184,7 +184,7 @@ const Bookcard = ({
                 isOpen={open}
                 isLend={isLend}
                 title={`${!isLend ? 'Available item' : 'Item already borrowed by the user'}`}
-                onClick={() => handleLend()}
+                onClick={() => setmodalIsOpen(true)}
               >
                 {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
               </IconLike>
@@ -214,11 +214,14 @@ const Bookcard = ({
         <DivModal>
           <div className="disclaimer_lend_book">
             <p>
-              Confirma o empréstimo do livro <strong>{bookName}</strong> no dia <strong>{today}</strong> com a devolução
-              para o dia <strong>{threeDaysBusinessAfter}</strong>?
+              Do you confirm the loan of the book <strong>{bookName}</strong> on the <strong>{today}</strong> with the
+              return for the <strong>{threeDaysBusinessAfter}</strong>?
             </p>
           </div>
-          <button onClick={closeModal}>close</button>
+          <div className="container_buttons_lend_book">
+            <ButtonConfirmedLoanBook>Confirm</ButtonConfirmedLoanBook>
+            <ButtonCancelLoanBook onClick={closeModal}>Cancel</ButtonCancelLoanBook>
+          </div>
         </DivModal>
       </Modal>
     </>

@@ -112,3 +112,40 @@ export const ButtonSignUp = styled.button`
     left: 85px;
 }
 `
+
+export const ButtonConfirmedLoanBook = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  :hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f9fff9;  
+}
+`
+
+export const ButtonCancelLoanBook = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  :hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #f9fff9;  
+}
+`
+
+
+
