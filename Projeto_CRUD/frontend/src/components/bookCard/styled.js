@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    min-height: 500px;
+    min-height: 550px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -20,7 +20,7 @@ export const CardStyled = styled.div`
     }
 `
 export const ContainerMoldCard = styled.div`
-    min-height: 500px;
+    min-height: 550px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .3s ease-in-out;
@@ -35,7 +35,7 @@ export const ContainerMoldCard = styled.div`
 export const ContainerToLike = styled.div`
     transition: all .3s ease-in-out;
     width: ${props => props.isOpen ? '15%' : '5%'};
-    height: 500px;
+    height: 550px;
     display: flex;
     justify-content: ${props => props.isOpen ? 'space-evenly' : 'center'};
     align-items: center;
@@ -214,8 +214,17 @@ export const DivModal = styled.div`
     width: 100%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
+   
+
+    .disclaimer_lend_book{
+        width: 100%;
+        letter-spacing: 2px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        margin: 10px;
+    }
 `

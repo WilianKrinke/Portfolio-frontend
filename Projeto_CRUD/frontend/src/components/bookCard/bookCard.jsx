@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import Modal from 'react-modal';
+import { format, addBusinessDays } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import {
   CardStyled,
   ContainerMoldCard,
@@ -51,7 +53,7 @@ const Bookcard = ({
   const [modalIsOpen, setmodalIsOpen] = useState(false);
   const [isConfirmedLendBook, setisConfirmedLendBook] = useState(false);
 
-  async function handleLikeLend() {
+  async function handleLend() {
     const userId = user.idUser;
     const userName = user.userName;
 
@@ -80,11 +82,10 @@ const Bookcard = ({
 
   function handleAddFav() {
     setisLike(!isLike);
-    //ADICIONA AOS FAVORITOS
+    //ADICIONAR AOS FAVORITOS
   }
 
   function teste() {
-    console.log(seeMore);
     setseeMore(!seeMore);
   }
 
@@ -113,6 +114,9 @@ const Bookcard = ({
   function closeModal() {
     setmodalIsOpen(false);
   }
+
+  const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
+  const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 3), 'dd-MM-yyyy');
 
   return (
     <>
@@ -180,7 +184,7 @@ const Bookcard = ({
                 isOpen={open}
                 isLend={isLend}
                 title={`${!isLend ? 'Available item' : 'Item already borrowed by the user'}`}
-                onClick={() => handleLikeLend()}
+                onClick={() => handleLend()}
               >
                 {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
               </IconLike>
@@ -208,9 +212,13 @@ const Bookcard = ({
         contentLabel="Confirmed Modal"
       >
         <DivModal>
-          <h2>Hello</h2>
+          <div className="disclaimer_lend_book">
+            <p>
+              Confirma o empréstimo do livro <strong>{bookName}</strong> no dia <strong>{today}</strong> com a devolução
+              para o dia <strong>{threeDaysBusinessAfter}</strong>?
+            </p>
+          </div>
           <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
         </DivModal>
       </Modal>
     </>
