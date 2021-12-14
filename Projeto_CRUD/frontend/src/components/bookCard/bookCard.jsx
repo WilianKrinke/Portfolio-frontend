@@ -65,19 +65,16 @@ const Bookcard = ({
       userName,
     };
 
-    console.log(modalIsOpen);
+    const response = await lendBook(objectDatas);
+    const isRegister = response.data.isRegister;
 
-    console.log(modalIsOpen);
-
-    // const response = await lendBook(objectDatas);
-    // const isRegister = response.data.isRegister;
-
-    // if (isRegister == true) {
-    //   setisLend(true);
-    // } else {
-    //   //Fazer tosty de aviso que Livro já está emprestado
-    //   alert('Este Livro já está emprestado');
-    // }
+    if (isRegister == true) {
+      setisLend(true);
+      modalIsOpen(false);
+    } else {
+      //Fazer tosty de aviso que Livro já está emprestado
+      alert('Este Livro já está emprestado');
+    }
   }
 
   function handleAddFav() {
@@ -138,7 +135,7 @@ const Bookcard = ({
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#000000"
+                  activeColor="#000"
                 />
               </div>
             </div>
@@ -219,7 +216,7 @@ const Bookcard = ({
             </p>
           </div>
           <div className="container_buttons_lend_book">
-            <ButtonConfirmedLoanBook>Confirm</ButtonConfirmedLoanBook>
+            <ButtonConfirmedLoanBook onClick={handleLend}>Confirm</ButtonConfirmedLoanBook>
             <ButtonCancelLoanBook onClick={closeModal}>Cancel</ButtonCancelLoanBook>
           </div>
         </DivModal>
