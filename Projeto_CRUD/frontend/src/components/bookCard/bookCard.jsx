@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import Modal from 'react-modal';
@@ -81,6 +81,7 @@ const Bookcard = ({
   function handleAddFav() {
     setisLike(!isLike);
     //ADICIONAR AOS FAVORITOS
+    alert('Adicionou aos favoritos');
   }
 
   function handleSeeMore() {
@@ -93,6 +94,7 @@ const Bookcard = ({
 
   function ratingChanged() {
     //FAZER RATING MUDAR NO BACKEND
+    alert('Alterou o rating');
   }
 
   const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
