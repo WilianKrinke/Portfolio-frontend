@@ -5,6 +5,7 @@ import ReactStars from 'react-rating-stars-component';
 import Modal from 'react-modal';
 import { format, addBusinessDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { ToastContainer, toast } from 'react-toastify';
 import {
   CardStyled,
   ContainerMoldCard,
@@ -52,7 +53,6 @@ const Bookcard = ({
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
   const [modalIsOpen, setmodalIsOpen] = useState(false);
-  const [isConfirmedLendBook, setisConfirmedLendBook] = useState(false);
 
   async function handleLend() {
     const userId = user.idUser;
@@ -70,10 +70,11 @@ const Bookcard = ({
 
     if (isRegister == true) {
       setisLend(true);
-      modalIsOpen(false);
+      setmodalIsOpen(false);
+      toast.success('Successfully borrowed book!');
     } else {
-      //Fazer tosty de aviso que Livro já está emprestado
-      alert('Este Livro já está emprestado');
+      console.log('Alguma falha na requisição');
+      toast.warn('Item not borrowed, contact the administrator');
     }
   }
 
@@ -221,6 +222,19 @@ const Bookcard = ({
           </div>
         </DivModal>
       </Modal>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        width={500}
+      />
     </>
   );
 };

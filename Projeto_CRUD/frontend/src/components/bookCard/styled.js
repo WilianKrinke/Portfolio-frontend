@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    min-height: 550px;
+    min-height: 500px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -20,7 +20,7 @@ export const CardStyled = styled.div`
     }
 `
 export const ContainerMoldCard = styled.div`
-    min-height: 550px;
+    min-height: 500px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .3s ease-in-out;
@@ -35,7 +35,7 @@ export const ContainerMoldCard = styled.div`
 export const ContainerToLike = styled.div`
     transition: all .3s ease-in-out;
     width: ${props => props.isOpen ? '15%' : '5%'};
-    height: 550px;
+    height: 500px;
     display: flex;
     justify-content: ${props => props.isOpen ? 'space-evenly' : 'center'};
     align-items: center;
@@ -202,7 +202,7 @@ export const ContainerResume = styled.div`
 export const ParagraphResume = styled.p`
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: ${props => props.seeMore ? '8' : '4'};;
+    -webkit-line-clamp: ${props => props.seeMore ? '8' : '3'};;
     -webkit-box-orient: vertical;
     padding: 0px 5px;
     transition: all .3s ease-in-out;
