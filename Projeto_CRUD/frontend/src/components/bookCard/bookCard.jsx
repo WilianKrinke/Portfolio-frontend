@@ -8,6 +8,7 @@ import {
   ContainerMoldCard,
   ContainerResume,
   ContainerToLike,
+  DivModal,
   FirstContainerInfo,
   IconItenBorrowedByUser,
   IconLendItem,
@@ -207,6 +208,8 @@ const Bookcard = ({
         <h2>Hello</h2>
         <button onClick={closeModal}>close</button>
         <div>I am a modal</div>
+
+        <DivModal />
       </Modal>
     </>
   );
