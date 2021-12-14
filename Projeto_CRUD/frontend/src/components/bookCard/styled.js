@@ -210,7 +210,12 @@ export const ParagraphResume = styled.p`
 
 
 export const DivModal = styled.div`
-    height: 100px;
-    width: 350px;
-    border: 1px solid:
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
 `

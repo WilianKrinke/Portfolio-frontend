@@ -205,11 +205,11 @@ const Bookcard = ({
         style={customStyles}
         contentLabel="Confirmed Modal"
       >
-        <h2>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-
-        <DivModal />
+        <DivModal>
+          <h2>Hello</h2>
+          <button onClick={closeModal}>close</button>
+          <div>I am a modal</div>
+        </DivModal>
       </Modal>
     </>
   );
