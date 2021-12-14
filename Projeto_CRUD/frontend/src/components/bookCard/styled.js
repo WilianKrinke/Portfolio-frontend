@@ -21,7 +21,7 @@ export const ContainerMoldCard = styled.div`
     min-height: 500px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     width: ${props => props.isOpen ? '85%' : '95%'};
     border-right: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
@@ -31,7 +31,7 @@ export const ContainerMoldCard = styled.div`
 `
 
 export const ContainerToLike = styled.div`
-    transition: all .3s ease-in-out;
+    transition: all .2s ease-in-out;
     width: ${props => props.isOpen ? '15%' : '5%'};
     height: 500px;
     display: flex;
