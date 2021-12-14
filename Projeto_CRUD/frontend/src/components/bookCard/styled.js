@@ -15,9 +15,7 @@ export const CardStyled = styled.div`
     -webkit-box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16); 
     box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16);
     
-    :hover{
-        background-color: #C2F7BE;
-    }
+    
 `
 export const ContainerMoldCard = styled.div`
     min-height: 500px;
@@ -226,6 +224,10 @@ export const DivModal = styled.div`
         letter-spacing: 2px;
         margin: 10px;
         text-align: justify;
+
+        p{
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+        }
     }
 
     .container_buttons_lend_book{

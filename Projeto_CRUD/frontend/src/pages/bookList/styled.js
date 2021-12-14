@@ -38,6 +38,8 @@ export const BookArticle = styled.article`
     justify-content: center;
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all .3s ease-in-out;
+    opacity: ${props => props.fadeIn ? '1' : '0'}
     
 
     

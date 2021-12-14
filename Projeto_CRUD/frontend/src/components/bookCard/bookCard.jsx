@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import Modal from 'react-modal';
+import lendBook from '../../utils/lendBooks/lendBook';
 import { format, addBusinessDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { ToastContainer, toast } from 'react-toastify';
@@ -31,7 +32,6 @@ import {
   BsChevronCompactDown,
   BsChevronCompactUp,
 } from 'react-icons/bs';
-import lendBook from '../../utils/lendBooks/lendBook';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 
 const Bookcard = ({
@@ -189,7 +189,7 @@ const Bookcard = ({
               <IconLike
                 isOpen={open}
                 isLend={isLend}
-                title={`${!isLend ? 'Available item' : 'Item already borrowed by the user'}`}
+                title={`${!isLend ? 'Borrow book' : 'Item already borrowed by the user'}`}
                 onClick={() => setmodalIsOpen(true)}
               >
                 {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
@@ -220,8 +220,8 @@ const Bookcard = ({
         <DivModal>
           <div className="disclaimer_lend_book" title="Disclaimer">
             <p>
-              Do you confirm the loan of the book <strong>{bookName}</strong> on the <strong>{today}</strong> with the
-              return for the <strong>{threeDaysBusinessAfter}</strong>?
+              Do you confirm the loan of the book <strong>&quot;{bookName}&quot;</strong> on the{' '}
+              <strong>{today}</strong> with the return for the <strong>{threeDaysBusinessAfter}</strong>?
             </p>
           </div>
           <div className="container_buttons_lend_book">

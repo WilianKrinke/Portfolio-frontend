@@ -9,7 +9,7 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import { DivLoading, FooterStyled } from '../../primeComponents';
+import { DivLoading } from '../../primeComponents';
 import {
   BookListMain,
   BookListArticle,
@@ -31,6 +31,7 @@ const BookList = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItens, setcurrentItens] = useState([]);
   const [userDatasMenu, setuserDatasMenu] = useState();
+  const [fadeIn, setfadeIn] = useState(false);
 
   const navigate = useNavigate();
 
@@ -59,6 +60,9 @@ const BookList = () => {
         setPages(Math.ceil(bookData.length / itensPerPage));
         setcurrentItens(bookData.slice(startIndex, endIndex));
         setLoading(false);
+        setTimeout(() => {
+          setfadeIn(true);
+        }, 1);
       }
     })();
   }, [itensPerPage, startIndex, endIndex]);
@@ -93,7 +97,7 @@ const BookList = () => {
           </HeaderBookList>
           <BookListMain>
             <BookListSection>
-              <BookArticle>
+              <BookArticle fadeIn={fadeIn}>
                 <AjustBookList>
                   <IconBack onClick={decCurrentPage}>
                     <FiChevronLeft title="Back" />
