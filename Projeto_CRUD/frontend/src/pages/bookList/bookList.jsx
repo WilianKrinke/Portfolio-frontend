@@ -122,6 +122,7 @@ const BookList = () => {
                         available={item.available}
                         user={userDatasMenu}
                         borrowedByUser={item.isBorrowedByUser}
+                        rating={item.rating}
                       />
                     );
                   })}

@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import Modal from 'react-modal';
@@ -45,9 +45,9 @@ const Bookcard = ({
   idBook,
   user,
   borrowedByUser = false,
+  rating,
 }) => {
   const [open, setOpen] = useState(false);
-
   const [isLend, setisLend] = useState(false);
   const [isLike, setisLike] = useState(false);
   const [isAvailable] = useState(available);
@@ -83,9 +83,20 @@ const Bookcard = ({
     //ADICIONAR AOS FAVORITOS
   }
 
-  function teste() {
+  function handleSeeMore() {
     setseeMore(!seeMore);
   }
+
+  function closeModal() {
+    setmodalIsOpen(false);
+  }
+
+  function ratingChanged() {
+    //FAZER RATING MUDAR NO BACKEND
+  }
+
+  const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
+  const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 3), 'dd-MM-yyyy');
 
   const customStyles = {
     content: {
@@ -109,13 +120,6 @@ const Bookcard = ({
     },
   };
 
-  function closeModal() {
-    setmodalIsOpen(false);
-  }
-
-  const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
-  const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 3), 'dd-MM-yyyy');
-
   return (
     <>
       <CardStyled seeMore={seeMore}>
@@ -132,11 +136,13 @@ const Bookcard = ({
                 <ReactStars
                   count={5}
                   size={18}
+                  value={rating}
                   isHalf={true}
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
                   activeColor="#000"
+                  onChange={ratingChanged}
                 />
               </div>
             </div>
@@ -158,7 +164,7 @@ const Bookcard = ({
               <ContainerResume className="container_resume" title="Resume" seeMore={seeMore}>
                 <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
               </ContainerResume>
-              <div className="container_see_more" onClick={teste}>
+              <div className="container_see_more" onClick={handleSeeMore}>
                 {seeMore ? <BsChevronCompactUp title="See less" /> : <BsChevronCompactDown title="See more" />}
               </div>
             </div>
@@ -254,6 +260,7 @@ Bookcard.propTypes = {
   idBook: propTypes.number,
   user: propTypes.any,
   borrowedByUser: propTypes.bool,
+  rating: propTypes.number,
 };
 
 export default Bookcard;
