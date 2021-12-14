@@ -48,6 +48,7 @@ const Bookcard = ({
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
   const [modalIsOpen, setmodalIsOpen] = useState(false);
+  const [isConfirmedLendBook, setisConfirmedLendBook] = useState(false);
 
   async function handleLikeLend() {
     const userId = user.idUser;
@@ -60,7 +61,10 @@ const Bookcard = ({
       userName,
     };
 
+    console.log(modalIsOpen);
     setmodalIsOpen(true);
+
+    console.log(modalIsOpen);
 
     // const response = await lendBook(objectDatas);
     // const isRegister = response.data.isRegister;
@@ -91,17 +95,22 @@ const Bookcard = ({
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
+      width: '450px',
+      height: '400px',
+      display: 'flex',
+      alignItens: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+    },
+    overlay: {
+      backgroundColor: 'transparent',
+      boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+      backdropFilter: 'blur(5.9px)',
     },
   };
 
   function closeModal() {
     setmodalIsOpen(false);
-  }
-
-  let subtitle;
-
-  function afterOpenModal() {
-    subtitle.style.color = '#f00';
   }
 
   return (
@@ -124,7 +133,7 @@ const Bookcard = ({
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#ffd700"
+                  activeColor="#000000"
                 />
               </div>
             </div>
@@ -189,22 +198,15 @@ const Bookcard = ({
         </ContainerToLike>
       </CardStyled>
       <Modal
+        ariaHideApp={false}
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         style={customStyles}
-        contentLabel="Example Modal"
+        contentLabel="Confirmed Modal"
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
+        <h2>Hello</h2>
         <button onClick={closeModal}>close</button>
         <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
       </Modal>
     </>
   );

@@ -207,3 +207,10 @@ export const ParagraphResume = styled.p`
     padding: 0px 5px;
     transition: all .3s ease-in-out;
 `
+
+
+export const DivModal = styled.div`
+    height: 40vh;
+    width: 350px;
+
+`
