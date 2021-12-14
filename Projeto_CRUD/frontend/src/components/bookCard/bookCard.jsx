@@ -210,15 +210,19 @@ const Bookcard = ({
         contentLabel="Confirmed Modal"
       >
         <DivModal>
-          <div className="disclaimer_lend_book">
+          <div className="disclaimer_lend_book" title="Disclaimer">
             <p>
               Do you confirm the loan of the book <strong>{bookName}</strong> on the <strong>{today}</strong> with the
               return for the <strong>{threeDaysBusinessAfter}</strong>?
             </p>
           </div>
           <div className="container_buttons_lend_book">
-            <ButtonConfirmedLoanBook onClick={handleLend}>Confirm</ButtonConfirmedLoanBook>
-            <ButtonCancelLoanBook onClick={closeModal}>Cancel</ButtonCancelLoanBook>
+            <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm">
+              Confirm
+            </ButtonConfirmedLoanBook>
+            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+              Cancel
+            </ButtonCancelLoanBook>
           </div>
         </DivModal>
       </Modal>
