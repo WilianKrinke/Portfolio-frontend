@@ -25,7 +25,6 @@ export const BookListSection = styled.section`
     flex-direction: column;
     border: 1px solid #F3BEF7;
     border-radius: 5px;
-    background-color: #CCFFCB;
     padding: 10px;
 
     
