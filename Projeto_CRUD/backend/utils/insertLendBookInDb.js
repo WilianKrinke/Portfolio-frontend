@@ -18,7 +18,7 @@ async function insertLendBookInDb(bookDatas){
         if (insertion != null) {
             const response = {
                 isRegister: true,
-                message: 'User lent the book'
+                message: 'User borrowed book'
             }
             return response;
 

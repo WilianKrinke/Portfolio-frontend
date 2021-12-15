@@ -59,8 +59,6 @@ const Bookcard = ({
     const userId = user.idUser;
     const userName = user.userName;
 
-    console.log(userId, userName);
-
     const objectDatas = {
       idBook,
       bookName,
@@ -68,19 +66,27 @@ const Bookcard = ({
       userName,
     };
 
-    //adicionar try catch
+    try {
+      const isBookBorrowByUserResponse = await isBorrowedByUser(objectDatas);
+      const isBookBorrowByUser = isBookBorrowByUserResponse.data.isUserLendThisBook;
 
-    const isBookBorrowByUserResponse = await isBorrowedByUser(objectDatas);
-    const isBookBorrowByUser = isBookBorrowByUserResponse.data.isUserLendThisBook;
+      if (isBookBorrowByUser == false) {
+        const response = await lendBook(objectDatas);
+        const borrowBook = response.data.isRegister;
 
-    if (isBookBorrowByUser == false) {
-      const response = await lendBook(objectDatas);
-
-      //   setisLend(true);
-      //   setmodalIsOpen(false);
-      //   toast.success('Successfully borrowed book!');
-    } else {
-      toast.warn('Book already borrowed');
+        if (borrowBook == true) {
+          setisLend(true);
+          setmodalIsOpen(false);
+          toast.success('Successfully borrowed book!');
+        } else {
+          toast.warn('Something is wrong, contact the administrator');
+        }
+      } else {
+        toast.warn('Book already borrowed');
+      }
+    } catch (error) {
+      toast.warn('Something is wrong, contact the administrator');
+      console.log(error);
     }
   }
 
