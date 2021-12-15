@@ -34,6 +34,7 @@ import {
 } from 'react-icons/bs';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import isBorrowedByUser from '../../utils/lendBooks/isBorrowedByUser';
+import returnBook from '../../utils/returnBooks/returnTheBook';
 
 const Bookcard = ({
   bookName,
@@ -53,7 +54,8 @@ const Bookcard = ({
   const [isLike, setisLike] = useState(false);
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
-  const [modalIsOpen, setmodalIsOpen] = useState(false);
+  const [modalLendBookIsOpen, setmodalLendBookIsOpen] = useState(false);
+  const [modalReturnBook, setmodalReturnBook] = useState(false);
 
   async function handleLend() {
     const userId = user.idUser;
@@ -76,7 +78,7 @@ const Bookcard = ({
 
         if (borrowBook == true) {
           setisLend(true);
-          setmodalIsOpen(false);
+          setmodalLendBookIsOpen(false);
           toast.success('Successfully borrowed book!');
         } else {
           toast.warn('Something is wrong, contact the administrator');
@@ -90,6 +92,20 @@ const Bookcard = ({
     }
   }
 
+  async function handleReturnBook() {
+    const userId = user.idUser;
+    const userName = user.userName;
+
+    const objectDatas = {
+      idBook,
+      bookName,
+      userId,
+      userName,
+    };
+
+    returnBook(objectDatas);
+  }
+
   function handleAddFav() {
     setisLike(!isLike);
     //ADICIONAR AOS FAVORITOS
@@ -101,7 +117,8 @@ const Bookcard = ({
   }
 
   function closeModal() {
-    setmodalIsOpen(false);
+    setmodalLendBookIsOpen(false);
+    setmodalReturnBook(false);
     setisLend(false);
   }
 
@@ -200,17 +217,16 @@ const Bookcard = ({
 
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
-              <IconLike
-                isOpen={open}
-                isLend={isLend}
-                title={`${!isLend ? 'Borrow book' : 'To return the book, go to my list tab'}`}
-                onClick={() => setmodalIsOpen(true)}
-              >
-                {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
+              <IconLike isOpen={open} isLend={isLend}>
+                {!isLend ? (
+                  <BsBookmarkPlus title="Return the Book" onClick={() => setmodalLendBookIsOpen(true)} />
+                ) : (
+                  <BsBookmarkCheckFill title="Click to borrow" onClick={() => setmodalReturnBook(true)} />
+                )}
               </IconLike>
             ) : (
-              <IconItenBorrowedByUser isOpen={open} title="To return the book, go to my list tab">
-                <BsBookmarkCheckFill />
+              <IconItenBorrowedByUser isOpen={open} title="Click to return the Book">
+                <BsBookmarkCheckFill title="Click to borrow" onClick={() => setmodalReturnBook(true)} />
               </IconItenBorrowedByUser>
             )
           ) : (
@@ -226,7 +242,7 @@ const Bookcard = ({
       </CardStyled>
       <Modal
         ariaHideApp={false}
-        isOpen={modalIsOpen}
+        isOpen={modalLendBookIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Confirmed Modal"
@@ -240,6 +256,30 @@ const Bookcard = ({
           </div>
           <div className="container_buttons_lend_book">
             <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm">
+              Confirm
+            </ButtonConfirmedLoanBook>
+            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+              Cancel
+            </ButtonCancelLoanBook>
+          </div>
+        </DivModal>
+      </Modal>
+
+      <Modal
+        ariaHideApp={false}
+        isOpen={modalReturnBook}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Confirmed Modal"
+      >
+        <DivModal>
+          <div className="disclaimer_lend_book" title="Disclaimer">
+            <p>
+              Do you confirm returning the book <strong>&quot;{bookName}&quot;</strong>?
+            </p>
+          </div>
+          <div className="container_buttons_lend_book">
+            <ButtonConfirmedLoanBook title="Confirm" onClick={handleReturnBook}>
               Confirm
             </ButtonConfirmedLoanBook>
             <ButtonCancelLoanBook onClick={closeModal} title="Cancel">

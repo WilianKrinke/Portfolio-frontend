@@ -55,11 +55,11 @@ export const IconToRight = styled.i`
 
 export const IconLike = styled.i`
     display: flex;
+    border: 1px solid;
     justify-content: center;
     align-items: center;
-    cursor: ${props => props.isLend ? 'not-allowed' :'pointer'};
+    cursor: pointer;
     font-size: 24px;
-    height: 80px;
     display: ${props => !props.isOpen ? 'none' : 'static'};
 `
 
@@ -88,7 +88,7 @@ export const IconItenBorrowedByUser = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: not-allowed;
+    cursor: pointer;
     font-size: 24px;
     height: 80px;
     display: ${props => !props.isOpen ? 'none' : 'static'};
