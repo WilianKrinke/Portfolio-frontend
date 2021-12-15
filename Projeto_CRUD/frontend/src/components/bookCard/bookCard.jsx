@@ -33,7 +33,6 @@ import {
   BsChevronCompactUp,
 } from 'react-icons/bs';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import isBorrowedByUser from '../../utils/lendBooks/isBorrowedByUser';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 
 const Bookcard = ({
@@ -69,22 +68,16 @@ const Bookcard = ({
     };
 
     try {
-      const isBookBorrowByUserResponse = await isBorrowedByUser(objectDatas);
-      const isBookBorrowByUser = isBookBorrowByUserResponse.data.isUserLendThisBook;
+      const response = await lendBook(objectDatas);
+      const isBorrowedBookData = response.data;
 
-      if (isBookBorrowByUser == false) {
-        const response = await lendBook(objectDatas);
-        const borrowBook = response.data.isRegister;
-
-        if (borrowBook == true) {
-          setisLend(true);
-          setmodalLendBookIsOpen(false);
-          toast.success('Successfully borrowed book!');
-        } else {
-          toast.warn('Something is wrong, contact the administrator');
-        }
+      if (isBorrowedBookData.isRegister == true) {
+        setmodalLendBookIsOpen(false);
+        setisLend(true);
+        toast.success('Successfully borrowed book!');
       } else {
-        toast.warn('Book already borrowed');
+        setmodalLendBookIsOpen(false);
+        toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
       toast.warn('Something is wrong, contact the administrator');
@@ -103,7 +96,23 @@ const Bookcard = ({
       userName,
     };
 
-    returnBook(objectDatas);
+    try {
+      const response = await returnBook(objectDatas);
+      const isReturnTheBookData = response.data;
+
+      if (isReturnTheBookData.isReturnTheBook == true) {
+        setmodalReturnBook(false);
+        setisLend(false);
+        toast.success(isReturnTheBookData.message);
+      } else {
+        setmodalReturnBook(false);
+        setisLend(false);
+        toast.warn('Something is wrong, contact the administrator');
+      }
+    } catch (error) {
+      toast.warn('Something is wrong, contact the administrator');
+      console.log(error);
+    }
   }
 
   function handleAddFav() {

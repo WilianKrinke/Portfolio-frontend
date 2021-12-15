@@ -1,10 +1,12 @@
 const decryptLendDatas = require("./decryptLendDatas");
 const returnBookToDb = require("./returnBookToDb");
 
-function returnTheBook(returnBookDatasCripted){
+async function returnTheBook(returnBookDatasCripted){
     const returnBookDatas = decryptLendDatas(returnBookDatasCripted);
 
-    returnBookToDb(returnBookDatas)
+    const isReturnTheBook = await returnBookToDb(returnBookDatas)
+
+    return isReturnTheBook;    
 }
 
 module.exports = returnTheBook;
