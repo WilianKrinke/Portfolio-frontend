@@ -74,7 +74,7 @@ const Bookcard = ({
       if (isRegister == true) {
         setmodalLendBookIsOpen(false);
         setisLend(true);
-        toast.success('Successfully borrowed book!');
+        console.log(toast.success('Successfully borrowed book!'));
       } else {
         setmodalLendBookIsOpen(false);
         toast.warn('Something is wrong, contact the administrator');
@@ -103,7 +103,7 @@ const Bookcard = ({
       if (isReturnTheBook == true) {
         setmodalReturnBook(false);
         setisLend(false);
-        toast.success('Successfully returned the book!');
+        console.log(toast.success('Successfully returned the book!'));
       } else {
         setmodalReturnBook(false);
         setisLend(false);
@@ -303,7 +303,7 @@ const Bookcard = ({
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop
-        closeOnClick={false}
+        closeOnClick
         rtl={false}
         draggable
         pauseOnHover={false}
