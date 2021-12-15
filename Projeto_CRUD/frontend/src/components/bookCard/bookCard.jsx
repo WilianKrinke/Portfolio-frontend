@@ -69,12 +69,13 @@ const Bookcard = ({
 
     try {
       const response = await lendBook(objectDatas);
-      const isBorrowedBookData = response.data;
+      const { isRegister } = response.data;
 
-      if (isBorrowedBookData.isRegister == true) {
+      if (isRegister == true) {
         setmodalLendBookIsOpen(false);
-        toast.success('Successfully borrowed book!');
         setisLend(true);
+        console.log('Linha 78', 'AQUI');
+        toast.success('Successfully borrowed book!');
       } else {
         setmodalLendBookIsOpen(false);
         toast.warn('Something is wrong, contact the administrator');
@@ -98,20 +99,21 @@ const Bookcard = ({
 
     try {
       const response = await returnBook(objectDatas);
-      const isReturnTheBookData = response.data;
+      const { isReturnTheBook } = response.data;
 
-      if (isReturnTheBookData.isReturnTheBook == true) {
+      if (isReturnTheBook == true) {
         setmodalReturnBook(false);
-        toast.success(isReturnTheBookData.message);
         setisLend(false);
+        console.log('Linha 108', 'AQUI');
+        toast.success('Successfully returned the book!');
       } else {
         setmodalReturnBook(false);
-        toast.warn('Something is wrong, contact the administrator');
         setisLend(false);
+        toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
-      toast.warn('Something is wrong, contact the administrator');
       console.log(error);
+      toast.warn('Something is wrong, contact the administrator');
     }
   }
 
@@ -300,15 +302,15 @@ const Bookcard = ({
 
       <ToastContainer
         position="top-right"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
-        newestOnTop={false}
+        newestOnTop
         closeOnClick
         rtl={false}
-        pauseOnFocusLoss
         draggable
-        pauseOnHover
+        pauseOnHover={false}
         width={500}
+        limit={2}
       />
     </>
   );
