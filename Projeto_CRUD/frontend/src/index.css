@@ -139,26 +139,26 @@ input:-webkit-autofill:active {
 
 /* [aria-label] {
   position: relative;
+  text-decoration: none;
+  color: #0a0a0a;
 }
 
 [aria-label]::after {
   content: attr(aria-label);
-  display: none;
+  background: #414141;
   position: absolute;
-  top: 110%;
-  z-index: 5000;
-  pointer-events: none;
-  padding: 2px 10px;
-  text-decoration: none;
-  font-size: 12px;
-  border-radius: 5px;
-  background-color: transparent;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid;
-  color: rgba(0, 0, 0, 0.3);
-  font-style: normal;
+  width: max-content;
+  border-radius: 2px;
+  padding: 0px 5px;
+  color: #cccfd3;
+  opacity: 0;
+  display: none;
+  font-size: 10px;
+  letter-spacing: 1px;
 }
 
 [aria-label]:hover::after {
-  display: block;
+  display: inline;
+  opacity: 1;
+  top: 90%;
 } */
