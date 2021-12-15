@@ -74,14 +74,13 @@ const Bookcard = ({
       if (isRegister == true) {
         setmodalLendBookIsOpen(false);
         setisLend(true);
-        console.log('Linha 78', 'AQUI');
         toast.success('Successfully borrowed book!');
       } else {
         setmodalLendBookIsOpen(false);
         toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
-      toast.warn('Something is wrong, contact the administrator');
+      toast.warn('Your session has expired or some error has occurred');
       console.log(error);
     }
   }
@@ -104,7 +103,6 @@ const Bookcard = ({
       if (isReturnTheBook == true) {
         setmodalReturnBook(false);
         setisLend(false);
-        console.log('Linha 108', 'AQUI');
         toast.success('Successfully returned the book!');
       } else {
         setmodalReturnBook(false);
@@ -113,7 +111,7 @@ const Bookcard = ({
       }
     } catch (error) {
       console.log(error);
-      toast.warn('Something is wrong, contact the administrator');
+      toast.warn('Your session has expired or some error has occurred');
     }
   }
 
@@ -305,7 +303,7 @@ const Bookcard = ({
         autoClose={3000}
         hideProgressBar={false}
         newestOnTop
-        closeOnClick
+        closeOnClick={false}
         rtl={false}
         draggable
         pauseOnHover={false}
