@@ -34,6 +34,7 @@ import {
 } from 'react-icons/bs';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import returnBook from '../../utils/returnBooks/returnTheBook';
+import addFavorites from '../../utils/addFavorites/addFavorites';
 
 const Bookcard = ({
   bookName,
@@ -56,17 +57,17 @@ const Bookcard = ({
   const [modalLendBookIsOpen, setmodalLendBookIsOpen] = useState(false);
   const [modalReturnBook, setmodalReturnBook] = useState(false);
 
+  const userId = user.idUser;
+  const userName = user.userName;
+
+  const objectDatas = {
+    idBook,
+    bookName,
+    userId,
+    userName,
+  };
+
   async function handleLend() {
-    const userId = user.idUser;
-    const userName = user.userName;
-
-    const objectDatas = {
-      idBook,
-      bookName,
-      userId,
-      userName,
-    };
-
     try {
       const response = await lendBook(objectDatas);
       const { isRegister } = response.data;
@@ -86,16 +87,6 @@ const Bookcard = ({
   }
 
   async function handleReturnBook() {
-    const userId = user.idUser;
-    const userName = user.userName;
-
-    const objectDatas = {
-      idBook,
-      bookName,
-      userId,
-      userName,
-    };
-
     try {
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
@@ -114,10 +105,15 @@ const Bookcard = ({
     }
   }
 
-  function handleAddFav() {
+  async function handleAddFav() {
+    try {
+      const response = await addFavorites(objectDatas);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+
     setisLike(!isLike);
-    //ADICIONAR AOS FAVORITOS
-    alert('Adicionou aos favoritos');
   }
 
   function handleSeeMore() {
@@ -243,7 +239,7 @@ const Bookcard = ({
             </IconNotAvailable>
           )}
 
-          <IconLendItem isOpen={open} title="Add to Favorites" onClick={() => handleAddFav()}>
+          <IconLendItem isOpen={open} title="Add to Favorites" onClick={handleAddFav}>
             {isLike ? <BsHeartFill /> : <BsHeart />}
           </IconLendItem>
         </ContainerToLike>
