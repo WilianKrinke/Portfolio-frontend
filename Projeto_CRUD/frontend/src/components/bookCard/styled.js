@@ -55,7 +55,6 @@ export const IconToRight = styled.i`
 
 export const IconLike = styled.i`
     display: flex;
-    border: 1px solid;
     justify-content: center;
     align-items: center;
     cursor: pointer;

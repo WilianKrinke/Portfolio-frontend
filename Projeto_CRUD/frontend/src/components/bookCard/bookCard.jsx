@@ -73,8 +73,8 @@ const Bookcard = ({
 
       if (isBorrowedBookData.isRegister == true) {
         setmodalLendBookIsOpen(false);
-        setisLend(true);
         toast.success('Successfully borrowed book!');
+        setisLend(true);
       } else {
         setmodalLendBookIsOpen(false);
         toast.warn('Something is wrong, contact the administrator');
@@ -102,12 +102,12 @@ const Bookcard = ({
 
       if (isReturnTheBookData.isReturnTheBook == true) {
         setmodalReturnBook(false);
-        setisLend(false);
         toast.success(isReturnTheBookData.message);
+        setisLend(false);
       } else {
         setmodalReturnBook(false);
-        setisLend(false);
         toast.warn('Something is wrong, contact the administrator');
+        setisLend(false);
       }
     } catch (error) {
       toast.warn('Something is wrong, contact the administrator');
