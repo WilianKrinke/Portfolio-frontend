@@ -5,10 +5,10 @@ const userLogin = require('./routes/userLogin');
 const authValidate = require('./utils/authMiddleware');
 const lendAction = require('./routes/lendAction');
 const getBooks = require('./routes/getBooks')
+const returnBook = require('./routes/returnBook');
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
-const returnBook = require('./routes/returnBook');
 
 app.use(cors());
 app.use(bodyParser.json())

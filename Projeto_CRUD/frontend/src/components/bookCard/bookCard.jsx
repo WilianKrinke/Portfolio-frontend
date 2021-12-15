@@ -72,12 +72,12 @@ const Bookcard = ({
       const { isRegister } = response.data;
 
       if (isRegister == true) {
-        setmodalLendBookIsOpen(false);
+        toast.success('Successfully borrowed book!');
         setisLend(true);
-        console.log(toast.success('Successfully borrowed book!'));
-      } else {
         setmodalLendBookIsOpen(false);
+      } else {
         toast.warn('Something is wrong, contact the administrator');
+        setmodalLendBookIsOpen(false);
       }
     } catch (error) {
       toast.warn('Your session has expired or some error has occurred');
@@ -101,17 +101,16 @@ const Bookcard = ({
       const { isReturnTheBook } = response.data;
 
       if (isReturnTheBook == true) {
-        setmodalReturnBook(false);
+        toast.success('Successfully returned the book!');
         setisLend(false);
-        console.log(toast.success('Successfully returned the book!'));
+        setmodalReturnBook(false);
       } else {
-        setmodalReturnBook(false);
-        setisLend(false);
         toast.warn('Something is wrong, contact the administrator');
+        setmodalReturnBook(false);
       }
     } catch (error) {
-      console.log(error);
       toast.warn('Your session has expired or some error has occurred');
+      console.log(error);
     }
   }
 
@@ -227,15 +226,15 @@ const Bookcard = ({
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
               <IconLike isOpen={open} isLend={isLend}>
-                {!isLend ? (
-                  <BsBookmarkPlus title="Return the Book" onClick={() => setmodalLendBookIsOpen(true)} />
+                {isLend ? (
+                  <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
                 ) : (
-                  <BsBookmarkCheckFill title="Click to borrow" onClick={() => setmodalReturnBook(true)} />
+                  <BsBookmarkPlus title="Click to borrow" onClick={() => setmodalLendBookIsOpen(true)} />
                 )}
               </IconLike>
             ) : (
               <IconItenBorrowedByUser isOpen={open} title="Click to return the Book">
-                <BsBookmarkCheckFill title="Click to borrow" onClick={() => setmodalReturnBook(true)} />
+                <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
               </IconItenBorrowedByUser>
             )
           ) : (
