@@ -17,22 +17,26 @@ async function insertLendBookInDb(bookDatas){
 
         if (insertion != null) {
             const response = {
-                isRegister: 1,
+                isRegister: true,
                 message: 'User lent the book'
             }
-
             return response;
+
         } else {
+
             const response = {
-                isRegister: 0,
+                isRegister: false,
                 message: 'Opps, something wrong, contact the administrator.'
             }
-
             return response;
         }       
 
     } catch (error) {
-        console.log(error)
+        const response = {
+            isRegister: false,
+            message: error
+        }
+            return response;
     }
 }
 

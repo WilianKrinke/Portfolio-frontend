@@ -8,6 +8,7 @@ const getBooks = require('./routes/getBooks')
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
+const isUserLendThisBook = require('./routes/isUserLendThisBook');
 
 app.use(cors());
 app.use(bodyParser.json())
@@ -18,6 +19,7 @@ userLogin(app)
 
 app.use(authValidate)
 getBooks(app)
+isUserLendThisBook(app)
 lendAction(app)
 
 app.listen(3001, () => {

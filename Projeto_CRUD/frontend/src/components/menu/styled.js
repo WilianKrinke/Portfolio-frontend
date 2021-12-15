@@ -24,7 +24,8 @@ export const IconHamburguer = styled.i`
     right: 40px;
     top:20px;
     font-size: 48px;
-    display: ${props => !props.isOpen ? 'block' : 'none'};
+    position: fixed;
+    right: ${props => props.isOpen ? '-50px' : '35px'};
 `
 
 export const IconClose = styled.i`
@@ -44,6 +45,9 @@ export const ContainerUserName = styled.div`
 
     p{
         color: antiquewhite;
+        position: relative;
+        top: 60px;
+        left: 42px;
     }
 
 `

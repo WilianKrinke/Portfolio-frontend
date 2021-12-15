@@ -33,6 +33,7 @@ import {
   BsChevronCompactUp,
 } from 'react-icons/bs';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
+import isBorrowedByUser from '../../utils/lendBooks/isBorrowedByUser';
 
 const Bookcard = ({
   bookName,
@@ -58,6 +59,8 @@ const Bookcard = ({
     const userId = user.idUser;
     const userName = user.userName;
 
+    console.log(userId, userName);
+
     const objectDatas = {
       idBook,
       bookName,
@@ -65,16 +68,19 @@ const Bookcard = ({
       userName,
     };
 
-    const response = await lendBook(objectDatas);
-    const isRegister = response.data.isRegister;
+    //adicionar try catch
 
-    if (isRegister == true) {
-      setisLend(true);
-      setmodalIsOpen(false);
-      toast.success('Successfully borrowed book!');
+    const isBookBorrowByUserResponse = await isBorrowedByUser(objectDatas);
+    const isBookBorrowByUser = isBookBorrowByUserResponse.data.isUserLendThisBook;
+
+    if (isBookBorrowByUser == false) {
+      const response = await lendBook(objectDatas);
+
+      //   setisLend(true);
+      //   setmodalIsOpen(false);
+      //   toast.success('Successfully borrowed book!');
     } else {
-      console.log('Alguma falha na requisição');
-      toast.warn('Item not borrowed, contact the administrator');
+      toast.warn('Book already borrowed');
     }
   }
 
@@ -90,6 +96,7 @@ const Bookcard = ({
 
   function closeModal() {
     setmodalIsOpen(false);
+    setisLend(false);
   }
 
   function ratingChanged() {
@@ -190,13 +197,13 @@ const Bookcard = ({
               <IconLike
                 isOpen={open}
                 isLend={isLend}
-                title={`${!isLend ? 'Borrow book' : 'Item already borrowed by the user'}`}
+                title={`${!isLend ? 'Borrow book' : 'To return the book, go to my list tab'}`}
                 onClick={() => setmodalIsOpen(true)}
               >
                 {!isLend ? <BsBookmarkPlus /> : <BsBookmarkCheckFill />}
               </IconLike>
             ) : (
-              <IconItenBorrowedByUser isOpen={open} title="Item already borrowed by the user">
+              <IconItenBorrowedByUser isOpen={open} title="To return the book, go to my list tab">
                 <BsBookmarkCheckFill />
               </IconItenBorrowedByUser>
             )

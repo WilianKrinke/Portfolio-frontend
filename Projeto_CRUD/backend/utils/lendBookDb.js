@@ -2,28 +2,18 @@ const decryptLendDatas = require("./decryptLendDatas");
 const haveLendBook = require("./haveLendBook");
 const insertLendBookInDb = require("./insertLendBookInDb");
 
-async function lendBookDb(datas){
-    
-    const bookDatas = decryptLendDatas(datas)
-    const itHaveLendThisBook = await haveLendBook(bookDatas)
+async function lendBookDb(datas){        
+    const bookDatas = decryptLendDatas(datas) 
+    const wasRegister = await insertLendBookInDb(bookDatas)
 
-    if (itHaveLendThisBook.findSomeRegister == true) {
-            const response = {
-                isRegister: false,
-                message: itHaveLendThisBook.message
-            }
+    console.log(wasRegister)
 
-            return response;
-        } else {                        
-        const wasRegister = await insertLendBookInDb(bookDatas)
-
-        const response = {
-            isRegister: true,
-            message: wasRegister.message
-        }
-
-        return response;        
+    const response = {
+        isRegister: true,
+        message: wasRegister.message
     }
+
+    return response; 
 }
 
 module.exports = lendBookDb;

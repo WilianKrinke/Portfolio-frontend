@@ -2,7 +2,7 @@ const CryptoJS = require("crypto-js");
 
 function decryptLendDatas(datas){
     const {idBookC, bookNameC, userIdC, userNameC} = datas
-    //verificar a possibilidade de interações automaticas
+    //verificar a possibilidade de iterações automaticas
 
     const idBookCBytes  = CryptoJS.AES.decrypt(idBookC, process.env.SALT2);
     const bookNameCBytes  = CryptoJS.AES.decrypt(bookNameC, process.env.SALT2);
