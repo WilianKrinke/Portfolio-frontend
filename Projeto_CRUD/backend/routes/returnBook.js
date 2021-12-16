@@ -2,16 +2,14 @@ const returnTheBook = require("../actions/returnTheBook");
 
 const returnBook = (app) => {
     app.route('/return-book')
-        .post((req,res) => {           
-            
-            returnTheBook(req.body)
-            .then(response => {
+        .post(async (req,res) => {              
+            try {
+                const response = await returnTheBook(req.body)
                 res.send(response)
-            })
-            .catch(error => {
-                res.send(error)
-            })
-                      
+            } catch (error) {
+                console.log(error)
+                res.send(false)
+            }                      
         })
 }
 

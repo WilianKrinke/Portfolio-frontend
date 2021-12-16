@@ -2,20 +2,13 @@ const login = require("../actions/loginActions/login");
 
 const userLogin = (app) => {
     app.route("/login")
-        .post((req, res) => {
-            try {                
-                
-                login(req.body)
-                .then(response => {
-                    res.send(response)
-                })
-                .catch(err => {
-                    console.log(err)
-                    res.send(false)
-                }) 
-
+        .post(async (req, res) => {            
+            try { 
+                const response = await login(req.body)
+                res.send(response)
             } catch (error) {
                 console.log(error)
+                res.send(false)
             }
         })
 }

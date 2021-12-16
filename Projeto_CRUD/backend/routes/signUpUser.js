@@ -2,19 +2,13 @@ const { sendDatasToDB } = require("../actions/sendDatasToDB")
 
 const signUpUser = (app) => {
     app.route("/sign-up-user")
-        .post((req, res) =>{            
+        .post(async (req, res) =>{            
             try {
-                sendDatasToDB(req.body)
-                .then(response => {
-                    res.send(response)
-                })
-                .catch(err => {
-                    console.log(err)
-                  res.send(false)         
-                })
-                
+                const response = await sendDatasToDB(req.body)
+                res.send(response)                
             } catch (error) {
                 console.log(error)
+                res.send(false)
             }
         })
 }
