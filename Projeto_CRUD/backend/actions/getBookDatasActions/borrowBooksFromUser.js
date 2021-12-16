@@ -1,4 +1,4 @@
-const knex = require("../connection/connection");
+const knex = require("../../connection/connection");
 
 async function borrowBooksFromUser (dataBooks, idUser){    
     const results = await knex('nodecrud.lendregister').where({

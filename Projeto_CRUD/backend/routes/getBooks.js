@@ -1,4 +1,4 @@
-const borrowBooksFromUser = require('../actions/borrowBooksFromUser')
+const borrowBooksFromUser = require('../actions/getBookDatasActions/borrowBooksFromUser')
 const {getDataBooks} = require('../actions/getBookDatasActions/getDataBooks')
 
 const getBooks = (app) => {

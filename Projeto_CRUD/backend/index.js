@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require('express');
-const authValidate = require('./actions/authMiddleware');
+const authValidate = require('./auth/authMiddleware');
 const routeSignUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin');
 const routeLendBook = require('./routes/lendBook');
