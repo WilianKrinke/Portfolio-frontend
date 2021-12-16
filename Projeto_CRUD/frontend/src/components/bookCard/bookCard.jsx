@@ -106,8 +106,16 @@ const Bookcard = ({
   }
 
   async function handleAddFav() {
+    const objectDatasFavorites = {
+      ...objectDatas,
+      author,
+      category,
+      resume,
+      rating,
+    };
+
     try {
-      const response = await addFavorites(objectDatas);
+      const response = await addFavorites(objectDatasFavorites);
       console.log(response);
     } catch (error) {
       console.log(error);
