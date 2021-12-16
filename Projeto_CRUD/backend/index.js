@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const authValidate = require('./actions/authMiddleware');
-const signUpUser = require('./routes/signUpUser');
+const routeSignUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin');
 const routeLendAction = require('./routes/lendAction');
 const routeGetBooks = require('./routes/getBooks')
@@ -15,9 +15,8 @@ app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))
 
-
 routeUserLogin(app)
-signUpUser(app)
+routeSignUpUser(app)
 
 app.use(authValidate)
 routeGetBooks(app)
@@ -25,6 +24,6 @@ routeLendAction(app)
 routeReturnBook(app)
 routeAddFavorite(app)
 
-app.listen(3001, () => {
-    console.log('Listening to 3001')
+app.listen(process.env.EXPRESS_PORT, () => {
+    console.log('Server On-Line')
 })

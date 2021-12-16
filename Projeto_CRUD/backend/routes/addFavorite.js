@@ -2,15 +2,14 @@ const addFavoritesAction = require("../actions/addFavoritesAction");
 
 function addFavorite(app){
     app.route('/add-favorite')
-        .post((req, res) => {           
-
-            addFavoritesAction(req.body)
-            .then(response => {
+        .post(async (req, res) => {            
+            try {
+                const response = await addFavoritesAction(req.body)
                 res.send(response)
-            })
-            .catch(err => {
-                res.send(err)
-            })
+            } catch (error) {
+                console.log(error)
+                res.send(false)
+            }
         })
 }
 
