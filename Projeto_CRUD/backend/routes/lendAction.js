@@ -1,4 +1,4 @@
-const lendBookDb = require("../utils/lendBookDb")
+const lendBookDb = require("../actions/lendBookDb")
 
 const lendAction = (app) => {
     app.route('/book-lend')

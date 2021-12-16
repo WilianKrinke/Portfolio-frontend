@@ -1,4 +1,4 @@
-const addFavoritesAction = require("../utils/addFavoritesAction");
+const addFavoritesAction = require("../actions/addFavoritesAction");
 
 function addFavorite(app){
     app.route('/add-favorite')

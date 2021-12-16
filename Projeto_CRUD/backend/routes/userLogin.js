@@ -1,4 +1,4 @@
-const login = require("../utils/login");
+const login = require("../actions/loginActions/login");
 
 const userLogin = (app) => {
     app.route("/login")
