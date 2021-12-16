@@ -15,7 +15,7 @@ async function insertLendBookInDb(bookDatas){
             devolutionDate: lendDates.threeDaysBusinessAfter
         })
 
-        if (insertion != null) {
+        if (insertion != null || []) {
             const response = {
                 isRegister: true,
                 message: 'User borrowed book'

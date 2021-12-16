@@ -6,9 +6,7 @@ async function addFavoritesAction(favoriteDataC){
 
     const isRegisterFavorites = await registerIntoFavorites(favoriteDatas)
 
-    return isRegisterFavorites;
-
-    
+    return isRegisterFavorites;   
 }
 
 module.exports = addFavoritesAction;

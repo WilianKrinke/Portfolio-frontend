@@ -75,6 +75,14 @@ const Bookcard = ({
     try {
       const response = await addFavorites(objectDatasFavorites);
       console.log(response);
+
+      const { isRegisterFavorite } = response.data;
+
+      if (isRegisterFavorite == true) {
+        alert('Livro Adicionado aos favoritos');
+      } else {
+        alert('Livro NÃO Adicionado aos favoritos');
+      }
     } catch (error) {
       console.log(error);
     }
