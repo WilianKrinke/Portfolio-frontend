@@ -22,14 +22,14 @@ export async function sendDatas(datas) {
     } else{
         try {
             const passCrypt = doCrypt(datas.pass);
-            const request = await baseUrl.post(`/sign-up-user`, {
+            const response = await baseUrl.post(`/sign-up-user`, {
                 userName: datas.userName,
                 email: datas.email,
                 pass: passCrypt,
-            });            
+            }); 
 
-            if (request.data == true) {
-                const controlArray = [true, request.data]
+            if (response.data == true) {
+                const controlArray = [true, response.data]
                 return controlArray;      
             } else {
                 const controlArray = [false, 'Problemas no servidor, avise o administrador do site']

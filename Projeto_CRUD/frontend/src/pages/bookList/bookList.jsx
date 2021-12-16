@@ -45,12 +45,14 @@ const BookList = () => {
   useEffect(() => {
     (async () => {
       preAuth();
-      const res = await baseUrl.get('/books-list');
+      const response = await baseUrl.get('/books-list');
 
-      const bookData = res.data.responseBooks;
-      const userDatas = res.data.responseObject;
+      console.log(response);
 
-      if (res.data == false) {
+      const bookData = response.data.responseBooks;
+      const userDatas = response.data.responseObject;
+
+      if (response.data == false) {
         logout(navigate);
       } else {
         setuserDatasMenu(userDatas);

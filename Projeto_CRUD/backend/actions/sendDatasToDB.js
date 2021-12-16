@@ -11,7 +11,9 @@ async function sendDatasToDB(userDatas){
     
     try {
         const response = await knex.insert(datas).into("users")
-        if (response == 1 ) {
+        console.log(response)
+
+        if (response != null || undefined) {
             return true
         } else {
             return false
