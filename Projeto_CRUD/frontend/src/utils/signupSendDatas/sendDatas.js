@@ -21,12 +21,8 @@ export async function sendDatas(datas) {
         return controlArray
     } else{
         try {
-            console.log('Linha 24 signupDatas')
-            
-            
             const passCrypt = doCrypt(datas.pass);
-            console.log('Linha 28 signupDatas')
-            const request = await baseUrl.post(`/sign-in`, {
+            const request = await baseUrl.post(`/sign-up-user`, {
                 userName: datas.userName,
                 email: datas.email,
                 pass: passCrypt,

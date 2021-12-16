@@ -15,7 +15,7 @@ const Form = () => {
   const [pass, setPass] = useState(null);
   const [passConfirmed, setPassConfirmed] = useState(null);
 
-  async function handleSubmit(e) {
+  async function handleSubmitUser(e) {
     e.preventDefault();
     const objectDatas = {
       userName,
@@ -71,7 +71,7 @@ const Form = () => {
 
   return (
     <>
-      <form className="signupForm" autoComplete="false" onSubmit={(e) => handleSubmit(e)}>
+      <form className="signupForm" autoComplete="false" onSubmit={(e) => handleSubmitUser(e)}>
         <ContainerInfoSignUp>
           <label htmlFor="user_name_signup">
             <i className="fas fa-user" title="User Name"></i>

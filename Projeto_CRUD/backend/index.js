@@ -1,7 +1,7 @@
 require('dotenv').config()
 const express = require('express');
 const authValidate = require('./actions/authMiddleware');
-const routeRegisterUser = require('./routes/registerUser');
+const signUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin');
 const routeLendAction = require('./routes/lendAction');
 const routeGetBooks = require('./routes/getBooks')
@@ -17,7 +17,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 routeUserLogin(app)
-routeRegisterUser(app)
+signUpUser(app)
 
 app.use(authValidate)
 routeGetBooks(app)

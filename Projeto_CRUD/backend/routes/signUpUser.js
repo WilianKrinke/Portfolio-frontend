@@ -1,7 +1,7 @@
 const { sendDatasToDB } = require("../actions/sendDatasToDB")
 
-const registerUser = (app) => {
-    app.route("/sign-in")
+const signUpUser = (app) => {
+    app.route("/sign-up-user")
         .post((req, res) =>{            
             try {
                 sendDatasToDB(req.body)
@@ -19,4 +19,4 @@ const registerUser = (app) => {
         })
 }
 
-module.exports = registerUser;
+module.exports = signUpUser;

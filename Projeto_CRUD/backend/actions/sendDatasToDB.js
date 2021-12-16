@@ -8,15 +8,18 @@ async function sendDatasToDB(userDatas){
         adm: userDatas.isAdm,
         pass: userDatas.pass
     }
-
-    let control = false
+    
     try {
-        await knex.insert(datas).into("users")
-        control = true;
+        const response = await knex.insert(datas).into("users")
+        if (response == 1 ) {
+            return true
+        } else {
+            return false
+        }
     } catch (error) {
-        console.log(error)
+        return false
     }
-    return control;    
+    
 }
 
 module.exports = {sendDatasToDB}
