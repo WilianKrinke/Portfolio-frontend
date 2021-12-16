@@ -1,4 +1,4 @@
-const decryptLendDatas = require("./decryptLendDatas");
+const decryptLendDatas = require("../decryptActions/decryptLendDatas");
 const insertLendBookInDb = require("./insertLendBookInDb");
 
 async function lendBookDb(datas){

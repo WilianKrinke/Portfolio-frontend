@@ -1,6 +1,6 @@
-const lendBookDb = require("../actions/lendBookDb")
+const lendBookDb = require("../actions/loanActions/lendBookDb")
 
-const lendAction = (app) => {
+const lendBook = (app) => {
     app.route('/book-lend')
         .post(async (req,res) => { 
             try {
@@ -13,4 +13,4 @@ const lendAction = (app) => {
         })
 }
 
-module.exports = lendAction;
+module.exports = lendBook;

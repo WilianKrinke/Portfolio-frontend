@@ -3,7 +3,7 @@ const express = require('express');
 const authValidate = require('./actions/authMiddleware');
 const routeSignUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin');
-const routeLendAction = require('./routes/lendAction');
+const routeLendBook = require('./routes/lendBook');
 const routeGetBooks = require('./routes/getBooks')
 const routeReturnBook = require('./routes/returnBook');
 const routeAddFavorite = require('./routes/addFavorite');
@@ -20,7 +20,7 @@ routeSignUpUser(app)
 
 app.use(authValidate)
 routeGetBooks(app)
-routeLendAction(app)
+routeLendBook(app)
 routeReturnBook(app)
 routeAddFavorite(app)
 

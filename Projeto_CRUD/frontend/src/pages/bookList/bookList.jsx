@@ -46,9 +46,6 @@ const BookList = () => {
     (async () => {
       preAuth();
       const response = await baseUrl.get('/books-list');
-
-      console.log(response);
-
       const bookData = response.data.responseBooks;
       const userDatas = response.data.responseObject;
 

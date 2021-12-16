@@ -1,4 +1,4 @@
-const decryptLendDatas = require("./decryptLendDatas");
+const decryptLendDatas = require("./decryptActions/decryptLendDatas");
 const registerIntoFavorites = require("./registerIntoFavorites");
 
 async function addFavoritesAction(favoriteDataC){

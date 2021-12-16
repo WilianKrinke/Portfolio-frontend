@@ -1,5 +1,5 @@
-const knex = require("../connection/connection");
-const getLoanDates = require("./dateActions/getLendDates");
+const knex = require("../../connection/connection");
+const getLoanDates = require("../dateActions/getLoanDates");
 
 async function insertLendBookInDb(bookDatas){
     try {

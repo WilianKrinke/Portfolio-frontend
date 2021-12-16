@@ -1,4 +1,4 @@
-const decryptLendDatas = require("./decryptLendDatas");
+const decryptLendDatas = require("./decryptActions/decryptLendDatas");
 const returnBookToDb = require("./returnBookToDb");
 
 async function returnTheBook(returnBookDatasCripted){

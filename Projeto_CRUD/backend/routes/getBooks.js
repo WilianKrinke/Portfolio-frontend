@@ -1,5 +1,5 @@
 const borrowBooksFromUser = require('../actions/borrowBooksFromUser')
-const {getDataBooks} = require('../actions/getBooks')
+const {getDataBooks} = require('../actions/getBookDatasActions/getDataBooks')
 
 const getBooks = (app) => {
     app.route('/books-list')
