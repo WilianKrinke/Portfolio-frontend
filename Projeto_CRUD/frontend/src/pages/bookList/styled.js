@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import styled from 'styled-components'
+import pattern_colors from '../../colors'
 import { MainStyled,HeaderStyled, FooterStyled } from '../../primeComponents'
 
 export const HeaderBookList = styled(HeaderStyled)`
@@ -14,7 +15,6 @@ export const BookListMain = styled(MainStyled)`
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-    
 `
 
 export const BookListSection = styled.section`
@@ -23,11 +23,9 @@ export const BookListSection = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid #F3BEF7;
+    border: ${pattern_colors.intern_div_border};
     border-radius: 5px;
-    padding: 10px;
-
-    
+    padding: 10px;    
 `
 
 export const BookArticle = styled.article`
