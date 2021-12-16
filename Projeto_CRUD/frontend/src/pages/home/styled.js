@@ -17,12 +17,15 @@ export const InfoCard = styled.section`
     width: 55%;
     height: 60vh;
     padding: 10px;
-    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.section_bg}  ;
     border-radius: 5px 0px 0px 5px;
     border-bottom: 1px solid #F3BEF7;
     border-top: 1px solid #F3BEF7;
     border-left: 1px solid #F3BEF7;
     transition: all .3s ease-in-out;
+
+    :hover{
+        background-color: ${pattern_colors.strong_color};
+    }
 
     @media screen and (max-width: 750px) {
        width: 100%;
@@ -32,16 +35,12 @@ export const SectForm = styled.section`
     width: 45%;
     height: 60vh;
     padding: 10px;
-    background-color: #CCFFCB;
+    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.section_bg};
     border-radius: 0px 5px 5px 0px;
     border-bottom: 1px solid ${pattern_colors.borders_color};
     border-top: 1px solid ${pattern_colors.borders_color};
     border-right: 1px solid ${pattern_colors.borders_color};
     transition: all .3s ease-in-out;
-    
-    :hover{
-        background-color: ${pattern_colors.strong_color};
-    }
     
     @media screen and (max-width: 750px) {
        width: 100%;
@@ -100,7 +99,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: ${pattern_colors.intern_div_border};
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '1' : '0'};
     display: ${props => props.isVisible ? 'flex' : 'none'};   

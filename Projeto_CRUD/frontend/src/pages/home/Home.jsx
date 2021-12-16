@@ -17,7 +17,7 @@ const Home = () => {
       </HeaderStyled>
 
       <HomeMain>
-        <InfoCard onhover={selection}>
+        <InfoCard onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
           <ArticleCrud>
             <p>Create.</p>
             <p>Read.</p>
@@ -26,7 +26,7 @@ const Home = () => {
           </ArticleCrud>
         </InfoCard>
 
-        <SectForm onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
+        <SectForm onhover={selection}>
           <ArticleLogin isVisible={isLoginVisible}>
             <SignInForm />
             <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Sign Up</ButtonChangeForm>
