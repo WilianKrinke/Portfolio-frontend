@@ -1,4 +1,4 @@
-const { sendDatasToDB } = require("../actions/sendDatasToDB")
+const { sendDatasToDB } = require("../actions/signUpActions/sendDatasToDB")
 
 const signUpUser = (app) => {
     app.route("/sign-up-user")

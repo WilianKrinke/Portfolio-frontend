@@ -1,4 +1,4 @@
-const returnTheBook = require("../actions/returnTheBook");
+const returnTheBook = require("../actions/returnBookActions/returnTheBook");
 
 const returnBook = (app) => {
     app.route('/return-book')
