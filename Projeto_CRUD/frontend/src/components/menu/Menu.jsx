@@ -5,6 +5,7 @@ import {
   ContainerIcon,
   ContainerLinks,
   ContainerMenu,
+  ContainerUserAndIcon,
   ContainerUserMenu,
   ContainerUserName,
   IconClose,
@@ -29,34 +30,38 @@ const Menu = ({ user = 'Loading...' }) => {
   return (
     <>
       <ContainerMenu isOpen={isOpen} ref={ref}>
-        <IconHamburguer title="Menu" className="fas fa-bars fa-2x" isOpen={isOpen} onClick={() => setisOpen(!isOpen)} />
-        <ContainerUserMenu>
+        <IconHamburguer
+          aria-label="Menu"
+          title="Menu"
+          className="fas fa-bars fa-2x"
+          isOpen={isOpen}
+          onClick={() => setisOpen(!isOpen)}
+        />
+        <ContainerUserAndIcon>
           <ContainerUserName>
             <p>Welcome user {user.userName}!</p>
           </ContainerUserName>
-          <ContainerIcon>
-            <IconClose
-              title="Close Menu"
-              className="fas fa-times fa-2x"
-              isOpen={isOpen}
-              onClick={() => setisOpen(!isOpen)}
-            />
-          </ContainerIcon>
-        </ContainerUserMenu>
+          <IconClose
+            title="Close Menu"
+            className="fas fa-times fa-2x"
+            isOpen={isOpen}
+            onClick={() => setisOpen(!isOpen)}
+          />
+        </ContainerUserAndIcon>
 
         <ContainerLinks>
           <ul>
             <li>
-              <Link to="#">Home</Link>
+              <Link to="#">Book List</Link>
             </li>
             <li>
-              <Link to="#">Blog</Link>
+              <Link to="#">My Borrowed Books</Link>
             </li>
             <li>
-              <Link to="#">Gallery</Link>
+              <Link to="#">My Favorites</Link>
             </li>
             <li>
-              <Link to="#">About</Link>
+              <Link to="#">My Data</Link>
             </li>
             <li>
               <Link to="#">Contact</Link>
@@ -72,7 +77,7 @@ const Menu = ({ user = 'Loading...' }) => {
 };
 
 Menu.propTypes = {
-  user: propTypes.any,
+  user: propTypes.string,
 };
 
 export default Menu;

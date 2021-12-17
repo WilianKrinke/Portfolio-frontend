@@ -2,21 +2,25 @@ import styled from 'styled-components'
 
 export const ContainerMenu = styled.div`
     height: 100vh;
-    width: 300px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
     background-color: rgba(0, 0, 0, 0.98);
     transition: all .3s ease-in-out;
     position: fixed;
-    right: ${props => props.isOpen ? '0px' : '-300px'};
+    right: ${props => props.isOpen ? '0px' : '-400px'};
     z-index: 100
 `
 
-export const ContainerIcon = styled.div`
+export const ContainerUserAndIcon = styled.div`
+    width: 100%;
+    height: 100px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
-    padding: 20px;
-    width: 40%;
+    justify-content: space-around;  
 `
 
 export const IconHamburguer = styled.i`
@@ -30,10 +34,12 @@ export const IconHamburguer = styled.i`
 
 export const IconClose = styled.i`
     color: antiquewhite;
-    font-size: 48px;
+    font-size: 52px;
     position: relative;
-    right: 20px;
-    opacity: ${props => props.isOpen ? '1' : '0'};  
+    bottom: 10px;
+    right: 38px;
+    opacity: ${props => props.isOpen ? '1' : '0'}; 
+   
 `
 
 export const ContainerUserName = styled.div`
@@ -42,12 +48,12 @@ export const ContainerUserName = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    position: relative;
+    left: 20px;
+    
 
     p{
         color: antiquewhite;
-        position: relative;
-        top: 60px;
-        left: 42px;
     }
 
 `
@@ -58,8 +64,7 @@ export const ContainerLinks = styled.nav`
     align-items: center;
     justify-content: space-around;
     padding: 20px;
-    width: 100%;
-    
+    width: 100%;    
 
     a{
         text-decoration: none;
@@ -74,23 +79,19 @@ export const ContainerLinks = styled.nav`
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        position: relative;
-        top: 20px;
         
         li{
-            width: 150px;
+            width: 100%;
             font-size: 24px;
             border-radius: 3px;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            position: relative;
-            border: 1px solid transparent;
             cursor: pointer;
             transition: all .1s ease-in-out;
 
             :hover{
-                transform: scale(1.5);
+                transform: scale(1.3);
             }
             
             a{

@@ -63,6 +63,7 @@ export const ButtonLogOut = styled.button`
     font-weight: 400;
     text-transform: capitalize;
     transition: all .3s ease-in-out;
+    margin: 0px;
 `
 
 
