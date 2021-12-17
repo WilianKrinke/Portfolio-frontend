@@ -1,4 +1,5 @@
 export const objectSqlInjectionsWords = [
+    'UNION ',
     'SELECT',
     'INSERT',
     'UPDATE',
@@ -29,6 +30,7 @@ export const objectSqlInjectionsWords = [
     'ON',
     'TO',
     'AFTER',
+    'union',
     'select',
     'insert',
     'update',
@@ -58,5 +60,14 @@ export const objectSqlInjectionsWords = [
     'add',
     'on',
     'to',
-    'after'  
+    'after',
+    'or',
+    '=',
+    "';--",
+    "%mmer%",
+    "mmer%",
+    "%mmer",
+    "1",
+    "'",
+    "pg_sleep()"
 ]

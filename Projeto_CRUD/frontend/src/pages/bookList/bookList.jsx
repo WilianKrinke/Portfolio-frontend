@@ -49,6 +49,7 @@ const BookList = () => {
       const bookData = response.data.responseBooks;
       const userDatas = response.data.responseObject;
 
+      console.log(bookData);
       if (response.data == false) {
         logout(navigate);
       } else {
@@ -123,6 +124,7 @@ const BookList = () => {
                         available={item.available}
                         user={userDatasMenu}
                         borrowedByUser={item.isBorrowedByUser}
+                        favoriteByUser={item.isFavoriteByUser}
                         rating={item.rating}
                       />
                     );

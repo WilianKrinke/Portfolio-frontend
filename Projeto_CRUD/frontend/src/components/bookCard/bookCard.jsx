@@ -31,6 +31,7 @@ import {
 import addFavorites from '../../utils/addFavorites/addFavorites';
 import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
+import { removeFavorite } from '../../utils/favorites/removeFavorite';
 
 const Bookcard = ({
   bookName,
@@ -43,6 +44,7 @@ const Bookcard = ({
   idBook,
   user,
   borrowedByUser = false,
+  favoriteByUser = false,
   rating,
 }) => {
   const [open, setOpen] = useState(false);
@@ -80,14 +82,21 @@ const Bookcard = ({
 
       if (isRegisterFavorite == true) {
         alert('Livro Adicionado aos favoritos');
+        setisLike(!isLike);
       } else {
         alert('Livro NÃO Adicionado aos favoritos');
       }
     } catch (error) {
       console.log(error);
     }
+  }
 
-    setisLike(!isLike);
+  async function handleRemoveFavorite() {
+    try {
+      const response = await removeFavorite(objectDatas);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   function handleSeeMore() {
@@ -181,8 +190,14 @@ const Bookcard = ({
             </IconNotAvailable>
           )}
 
-          <IconLendItem isOpen={open} title="Add to Favorites" onClick={handleAddFav}>
-            {isLike ? <BsHeartFill /> : <BsHeart />}
+          <IconLendItem isOpen={open} title="Add to Favorites">
+            {favoriteByUser ? (
+              <BsHeartFill onClick={handleRemoveFavorite} />
+            ) : isLike ? (
+              <BsHeartFill onClick={handleRemoveFavorite} />
+            ) : (
+              <BsHeart onClick={handleAddFav} />
+            )}
           </IconLendItem>
         </ContainerToLike>
       </CardStyled>
@@ -232,6 +247,7 @@ Bookcard.propTypes = {
   idBook: propTypes.number,
   user: propTypes.any,
   borrowedByUser: propTypes.bool,
+  favoriteByUser: propTypes.bool,
   rating: propTypes.number,
 };
 

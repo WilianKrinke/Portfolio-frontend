@@ -3,7 +3,6 @@ import baseUrl from "../baseUrl";
 import cryptLendBook from "../crypto/doCryptLendBook";
 
 export default async function addFavorites(datas) {
-    console.log(datas)
 
     const {idBookC,bookNameC,userIdC,userNameC} = cryptLendBook(datas)
     const {author,resume,rating,category} = datas;
