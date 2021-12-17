@@ -11,9 +11,7 @@ function addFavorite(app){
                 res.send(false)
             }
         })
-        .delete(async (req, res) => {
-            console.log('Delete')
-        })
+        
 }
 
 module.exports = addFavorite;

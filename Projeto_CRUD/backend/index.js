@@ -7,6 +7,8 @@ const routeLendBook = require('./routes/lendBook');
 const routeGetBooks = require('./routes/getBooks')
 const routeReturnBook = require('./routes/returnBook');
 const routeAddFavorite = require('./routes/addFavorite');
+const routeRemoveFavorite = require('./routes/removeFavorites');
+
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
@@ -23,6 +25,7 @@ routeGetBooks(app)
 routeLendBook(app)
 routeReturnBook(app)
 routeAddFavorite(app)
+routeRemoveFavorite(app)
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')

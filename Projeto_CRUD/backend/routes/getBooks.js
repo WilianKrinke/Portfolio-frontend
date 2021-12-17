@@ -20,9 +20,8 @@ const getBooks = (app) => {
               responseBooks
             })
 
-          } catch (error) {
-            console.log(error)
-            res.send(false)
+          } catch (error) {            
+            res.send(error)
           }  
         })
 }

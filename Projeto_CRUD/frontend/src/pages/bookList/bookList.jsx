@@ -46,17 +46,15 @@ const BookList = () => {
     (async () => {
       preAuth();
       const response = await baseUrl.get('/books-list');
-      const bookData = response.data.responseBooks;
-      const userDatas = response.data.responseObject;
+      const { responseBooks, responseObject } = response.data;
 
-      console.log(bookData);
       if (response.data == false) {
         logout(navigate);
       } else {
-        setuserDatasMenu(userDatas);
-        setBooks(bookData);
-        setPages(Math.ceil(bookData.length / itensPerPage));
-        setcurrentItens(bookData.slice(startIndex, endIndex));
+        setuserDatasMenu(responseObject);
+        setBooks(responseBooks);
+        setPages(Math.ceil(responseBooks.length / itensPerPage));
+        setcurrentItens(responseBooks.slice(startIndex, endIndex));
         setLoading(false);
         setTimeout(() => {
           setfadeIn(true);

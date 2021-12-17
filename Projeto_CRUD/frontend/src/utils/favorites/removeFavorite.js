@@ -1,8 +1,24 @@
 /* eslint-disable no-unused-vars */
 import preAuth from "../Auth/preAuth";
+import baseUrl from "../baseUrl";
 
-export function removeFavorite(objectDatas){
-    //Fazer requisição com axios para remover livro dos favoritos
-    preAuth();
+export async function removeFavorite(objectDatas){
+   
+    const {idBook, bookName, userId, userName} = objectDatas;
+
+    try {
+        preAuth();
+        const response = await baseUrl.post('/remove-favorite',{
+            idBook,
+            bookName,
+            userId,
+            userName
+        })
+    
+        return response;
+    } catch (error) {
+        return error;
+    }
+
     
 }

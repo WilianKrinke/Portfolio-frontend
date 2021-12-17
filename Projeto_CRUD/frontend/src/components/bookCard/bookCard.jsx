@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
-import { ToastContainer } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import {
   CardStyled,
   ContainerMoldCard,
@@ -81,10 +81,10 @@ const Bookcard = ({
       const { isRegisterFavorite } = response.data;
 
       if (isRegisterFavorite == true) {
-        alert('Livro Adicionado aos favoritos');
-        setisLike(!isLike);
+        toast.success('Book added to favorites');
+        setisLike(true);
       } else {
-        alert('Livro NÃO Adicionado aos favoritos');
+        toast.warn('Book not added to favorites');
       }
     } catch (error) {
       console.log(error);
@@ -94,6 +94,14 @@ const Bookcard = ({
   async function handleRemoveFavorite() {
     try {
       const response = await removeFavorite(objectDatas);
+      const { isRemoved } = response.data;
+
+      if (isRemoved == true) {
+        toast.success('Book removed from favorites');
+        setisLike(false);
+      } else {
+        toast.warn('Book not removed from favorites');
+      }
     } catch (error) {
       console.log(error);
     }
@@ -172,7 +180,7 @@ const Bookcard = ({
 
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
-              <IconLike isOpen={open} isLend={isLend}>
+              <IconLike isOpen={open}>
                 {isLend ? (
                   <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
                 ) : (

@@ -7,8 +7,7 @@ const returnBook = (app) => {
                 const response = await returnTheBook(req.body)
                 res.send(response)
             } catch (error) {
-                console.log(error)
-                res.send(false)
+                res.send(error)
             }                      
         })
 }

@@ -22,8 +22,8 @@ const ModalReturnBook = ({
 
       if (isReturnTheBook == true) {
         toast.success('Successfully returned the book!');
-        setisLend(false);
         setmodalReturnBook(false);
+        setisLend(false);
       } else {
         toast.warn('Something is wrong, contact the administrator');
         setmodalReturnBook(false);

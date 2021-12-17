@@ -7,8 +7,7 @@ const userLogin = (app) => {
                 const response = await login(req.body)
                 res.send(response)
             } catch (error) {
-                console.log(error)
-                res.send(false)
+                res.send(error)
             }
         })
 }

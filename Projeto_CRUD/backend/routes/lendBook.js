@@ -7,8 +7,7 @@ const lendBook = (app) => {
                 const response = await lendBookDb(req.body)
                 res.send(response)
             } catch (error) {
-                console.log(error)
-                res.send(false)
+                res.send(error)
             }        
         })
 }

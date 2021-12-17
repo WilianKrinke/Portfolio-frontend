@@ -7,8 +7,7 @@ const signUpUser = (app) => {
                 const response = await sendDatasToDB(req.body)
                 res.send(response)                
             } catch (error) {
-                console.log(error)
-                res.send(false)
+                res.send(error)
             }
         })
 }
