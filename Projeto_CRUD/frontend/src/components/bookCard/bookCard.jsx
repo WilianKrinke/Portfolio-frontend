@@ -28,7 +28,7 @@ import {
   BsChevronCompactUp,
 } from 'react-icons/bs';
 
-import addFavorites from '../../utils/addFavorites/addFavorites';
+import addFavorites from '../../utils/favorites/addFavorites';
 import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import preAuth from "../Auth/preAuth";
 
 export function removeFavorite(objectDatas){
