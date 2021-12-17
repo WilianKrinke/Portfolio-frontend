@@ -15,8 +15,6 @@ async function registerIntoFavorites(favoriteDatas){
             category: category,
             rating: rating
         }])
-
-        console.log(response)
     
         if (response != null || []) {
             const objectResponse = {
