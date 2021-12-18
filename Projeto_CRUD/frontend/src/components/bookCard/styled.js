@@ -114,6 +114,7 @@ export const FirstContainerInfo = styled.div`
             width: 100px;
             height: 100%;
             object-fit: cover;
+            cursor: pointer;
         }
     }
 

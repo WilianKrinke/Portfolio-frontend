@@ -32,6 +32,7 @@ import addFavorites from '../../utils/favorites/addFavorites';
 import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
+import ModalImage from '../modals/modalImage';
 
 const Bookcard = ({
   bookName,
@@ -54,6 +55,7 @@ const Bookcard = ({
   const [seeMore, setseeMore] = useState(false);
   const [modalLendBookIsOpen, setmodalLendBookIsOpen] = useState(false);
   const [modalReturnBook, setmodalReturnBook] = useState(false);
+  const [modalImage, setmodalImage] = useState(false);
 
   const userId = user.idUser;
   const userName = user.userName;
@@ -116,13 +118,17 @@ const Bookcard = ({
     alert('Alterou o rating');
   }
 
+  function handleModalImage() {
+    setmodalImage(true);
+  }
+
   return (
     <>
       <CardStyled seeMore={seeMore}>
         <ContainerMoldCard isOpen={open}>
           <FirstContainerInfo>
             <div className="image">
-              <img src={image} alt="Capa" loading="lazy" title="Book cover" />
+              <img src={image} alt="Capa" loading="lazy" title="Book cover" onClick={handleModalImage} />
             </div>
             <div className="title_rating">
               <h2 title="Book Title">
@@ -227,6 +233,8 @@ const Bookcard = ({
         bookName={bookName}
         objectDatas={objectDatas}
       />
+
+      <ModalImage image={image} isOpen={modalImage} setmodalImage={setmodalImage} />
 
       <ToastContainer
         position="top-right"
