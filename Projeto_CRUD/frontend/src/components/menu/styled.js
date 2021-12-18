@@ -39,8 +39,7 @@ export const IconClose = styled(AiOutlineClose)`
     position: relative;
     bottom: 8px;
     right: 30px;
-    opacity: ${props => props.isOpen ? '1' : '0'}; 
-   
+    cursor: pointer;   
 `
 
 export const ContainerUserName = styled.div`

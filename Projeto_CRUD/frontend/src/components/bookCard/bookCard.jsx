@@ -78,8 +78,6 @@ const Bookcard = ({
 
     try {
       const response = await addFavorites(objectDatasFavorites);
-      console.log(response);
-
       const { isRegisterFavorite } = response.data;
 
       if (isRegisterFavorite == true) {
@@ -113,9 +111,8 @@ const Bookcard = ({
     setseeMore(!seeMore);
   }
 
-  function ratingChanged() {
-    //FAZER RATING MUDAR NO BACKEND
-    alert('Alterou o rating');
+  function ratingChanged(e) {
+    console.log(e);
   }
 
   function handleModalImage() {
@@ -144,7 +141,7 @@ const Bookcard = ({
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
                   activeColor="#ffff00"
-                  onChange={ratingChanged}
+                  onChange={(e) => ratingChanged(e)}
                 />
               </div>
             </div>
