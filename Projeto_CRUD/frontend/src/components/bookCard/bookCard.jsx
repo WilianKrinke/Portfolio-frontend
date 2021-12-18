@@ -33,6 +33,7 @@ import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import ModalImage from '../modals/modalImage';
+import sendRating from '../../utils/sendRating/sendRating';
 
 const Bookcard = ({
   bookName,
@@ -112,7 +113,7 @@ const Bookcard = ({
   }
 
   function ratingChanged(e) {
-    console.log(e);
+    sendRating(e);
   }
 
   function handleModalImage() {
