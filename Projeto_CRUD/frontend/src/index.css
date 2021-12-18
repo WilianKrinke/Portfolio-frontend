@@ -45,11 +45,16 @@ i {
 }
 
 p {
-  font-family: 'Spartan', sans-serif;
-  font-weight: 400;
+  font-family: 'Slabo 27px', serif;
   margin: 0;
   padding: 0;
-  color: #0a0a0a;
+  color: #222222;
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+strong {
+  color: #000000;
 }
 
 ul,

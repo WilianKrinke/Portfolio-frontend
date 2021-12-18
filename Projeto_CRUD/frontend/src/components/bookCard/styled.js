@@ -223,10 +223,6 @@ export const DivModal = styled.div`
         letter-spacing: 2px;
         margin: 10px;
         text-align: justify;
-
-        p{
-            font-family: 'Zen Kaku Gothic New', sans-serif;
-        }
     }
 
     .container_buttons_lend_book{

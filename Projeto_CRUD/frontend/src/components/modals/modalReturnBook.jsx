@@ -57,7 +57,7 @@ const ModalReturnBook = ({
       backgroundColor: '#F9FFF9',
     },
     overlay: {
-      backgroundColor: 'transparent',
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
       boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
       backdropFilter: 'blur(5.9px)',
     },
