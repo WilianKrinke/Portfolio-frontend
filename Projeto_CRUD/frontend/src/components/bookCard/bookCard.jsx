@@ -137,7 +137,7 @@ const Bookcard = ({
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#000"
+                  activeColor="#ffff00"
                   onChange={ratingChanged}
                 />
               </div>

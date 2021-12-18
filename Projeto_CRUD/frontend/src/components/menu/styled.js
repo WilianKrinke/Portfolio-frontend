@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { AiOutlineClose } from 'react-icons/ai';
 
 export const ContainerMenu = styled.div`
     height: 100vh;
@@ -32,12 +33,12 @@ export const IconHamburguer = styled.i`
     right: ${props => props.isOpen ? '-50px' : '35px'};
 `
 
-export const IconClose = styled.i`
+export const IconClose = styled(AiOutlineClose)`
     color: antiquewhite;
-    font-size: 52px;
+    font-size: 60px;
     position: relative;
-    bottom: 10px;
-    right: 38px;
+    bottom: 8px;
+    right: 30px;
     opacity: ${props => props.isOpen ? '1' : '0'}; 
    
 `
