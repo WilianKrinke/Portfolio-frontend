@@ -18,19 +18,21 @@ const ModalLendBook = ({
 }) => {
   //
   async function handleLend() {
+    setisLend(true);
     try {
       const response = await lendBook(objectDatas);
       const { isRegister } = response.data;
 
       if (isRegister == true) {
         toast.success('Successfully borrowed book!');
-        setisLend(true);
         setmodalLendBookIsOpen(false);
       } else {
-        toast.warn('Something is wrong, contact the administrator');
         setmodalLendBookIsOpen(false);
+        setisLend(false);
+        toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
+      setisLend(false);
       toast.warn('Your session has expired or some error has occurred');
       console.log(error);
     }

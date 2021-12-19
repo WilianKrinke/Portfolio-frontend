@@ -16,6 +16,7 @@ const ModalReturnBook = ({
 }) => {
   //
   async function handleReturnBook() {
+    setisLend(false);
     try {
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
@@ -23,12 +24,13 @@ const ModalReturnBook = ({
       if (isReturnTheBook == true) {
         toast.success('Successfully returned the book!');
         setmodalReturnBook(false);
-        setisLend(false);
       } else {
-        toast.warn('Something is wrong, contact the administrator');
         setmodalReturnBook(false);
+        setisLend(true);
+        toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
+      setisLend(true);
       toast.warn('Your session has expired or some error has occurred');
       console.log(error);
     }
