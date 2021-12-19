@@ -96,6 +96,7 @@ const Bookcard = ({
 
   async function handleRemoveFavorite() {
     setisLike(false);
+
     try {
       const response = await removeFavorite(objectDatas);
       const { isRemoved } = response.data;
