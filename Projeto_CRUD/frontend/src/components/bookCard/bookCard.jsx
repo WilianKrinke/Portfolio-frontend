@@ -113,7 +113,7 @@ const Bookcard = ({
   }
 
   function ratingChanged(e) {
-    sendRating(e);
+    sendRating(e, idBook);
   }
 
   function handleModalImage() {
