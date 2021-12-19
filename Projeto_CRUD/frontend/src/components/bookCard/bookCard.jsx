@@ -77,33 +77,38 @@ const Bookcard = ({
       rating,
     };
 
+    setisLike(true);
     try {
       const response = await addFavorites(objectDatasFavorites);
       const { isRegisterFavorite } = response.data;
 
       if (isRegisterFavorite == true) {
         toast.success('Book added to favorites');
-        setisLike(true);
       } else {
+        setisLike(false);
         toast.warn('Book not added to favorites');
       }
     } catch (error) {
+      setisLike(false);
       console.log(error);
     }
   }
 
   async function handleRemoveFavorite() {
+    setisLike(false);
     try {
       const response = await removeFavorite(objectDatas);
       const { isRemoved } = response.data;
 
       if (isRemoved == true) {
         toast.success('Book removed from favorites');
-        setisLike(false);
       } else {
+        setisLike(true);
         toast.warn('Book not removed from favorites');
       }
     } catch (error) {
+      setisLike(true);
+      toast.warn('Book not removed from favorites');
       console.log(error);
     }
   }

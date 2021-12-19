@@ -7,7 +7,6 @@ export const HeaderBookList = styled(HeaderStyled)`
     min-height: 22vh;
 `
 
-
 export const BookListMain = styled(MainStyled)`
     min-height: 300px;
     display: flex;
@@ -23,7 +22,7 @@ export const BookListSection = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: ${pattern_colors.intern_div_border};
+    /* border: ${pattern_colors.intern_div_border}; */
     border-radius: 5px;
     padding: 10px;    
 `
@@ -34,7 +33,7 @@ export const BookArticle = styled.article`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    /* border: 1px solid rgba(0, 0, 0, 0.3); */
     transition: all .3s ease-in-out;
     opacity: ${props => props.fadeIn ? '1' : '0'}
     
