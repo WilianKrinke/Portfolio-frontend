@@ -60,6 +60,12 @@ export const ContainerUserName = styled.div`
 
     p{
         color: antiquewhite;
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: 440px) {
+        position: relative;
+        left: 25px;
     }
 
 `

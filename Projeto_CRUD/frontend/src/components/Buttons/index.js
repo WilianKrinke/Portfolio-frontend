@@ -14,10 +14,7 @@ export const ButtonChangeForm = styled.button`
   bottom: 54px;
   left: 85px;
   color: #222;
-
-  :hover {
-    border: 1px solid rgba(0, 0, 0, 0.3);    
-   }
+  border: 1px solid rgba(0, 0, 0, 0.3);  
 
    @media screen and (max-width: 470px) {
     position: relative;
@@ -40,10 +37,6 @@ export const ButtonBackToLogin = styled.button`
   bottom: 17px;
   left: 85px;
   color: #222222;
-
-  :hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
 
 @media screen and (max-width: 470px) {
     position: relative;
@@ -78,10 +71,7 @@ export const ButtonSignin = styled.button`
   cursor: pointer;
   color: #222222;  
   transition: all 0.3s ease-in-out;
-  
-    :hover {
-      border: 1px solid rgba(0, 0, 0, 0.3);     
-    }
+  border: 1px solid rgba(0, 0, 0, 0.3);
 
     @media screen and (max-width: 470px) {
         position: relative;
@@ -102,10 +92,6 @@ export const ButtonSignUp = styled.button`
   cursor: pointer;
   color: #222222;
 
-  :hover {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 @media screen and (max-width: 470px) {
     position: relative;
     top: 0px;
@@ -125,10 +111,6 @@ export const ButtonConfirmedLoanBook = styled.button`
   cursor: pointer;
   color: #222222;
 
-  :hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  
-}
 `
 
 export const ButtonCancelLoanBook = styled.button`
@@ -142,10 +124,6 @@ export const ButtonCancelLoanBook = styled.button`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
-  :hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #222;  
-}
 `
 
 
