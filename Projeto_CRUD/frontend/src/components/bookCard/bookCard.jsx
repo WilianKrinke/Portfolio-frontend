@@ -27,11 +27,10 @@ import {
   BsChevronCompactDown,
   BsChevronCompactUp,
 } from 'react-icons/bs';
-
+import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import addFavorites from '../../utils/favorites/addFavorites';
 import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
-import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 
@@ -159,13 +158,11 @@ const Bookcard = ({
                 <strong>Author:</strong> {author}
               </p>
             </div>
-
             <div className="container_category" title="Category">
               <p>
                 <strong>Category:</strong> {category}
               </p>
             </div>
-
             <div className="container_text_resume">
               <ContainerResume className="container_resume" title="Resume" seeMore={seeMore}>
                 <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
@@ -174,7 +171,6 @@ const Bookcard = ({
                 {seeMore ? <BsChevronCompactUp title="See less" /> : <BsChevronCompactDown title="See more" />}
               </div>
             </div>
-
             <div className="container_amount" title="Copies">
               <p>
                 <strong>Copies:</strong> {amount}
@@ -182,12 +178,10 @@ const Bookcard = ({
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
-
         <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>
           <IconToRight isOpen={open}>
             <BsChevronRight />
           </IconToRight>
-
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
               <IconLike isOpen={open}>
@@ -207,7 +201,6 @@ const Bookcard = ({
               <BsBookmarkXFill />
             </IconNotAvailable>
           )}
-
           <IconLendItem isOpen={open} title="Add to Favorites">
             {favoriteByUser ? (
               <BsHeartFill onClick={handleRemoveFavorite} />

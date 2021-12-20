@@ -34,7 +34,6 @@ const BookList = () => {
   const [fadeIn, setfadeIn] = useState(false);
 
   const navigate = useNavigate();
-
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
 
@@ -65,7 +64,6 @@ const BookList = () => {
 
   function accCurrentPage() {
     setCurrentPage(currentPage + 1);
-
     if (currentPage >= 4) {
       setCurrentPage(0);
     }
@@ -73,7 +71,6 @@ const BookList = () => {
 
   function decCurrentPage() {
     setCurrentPage(currentPage - 1);
-
     if (currentPage <= 0) {
       setCurrentPage(4);
     }
