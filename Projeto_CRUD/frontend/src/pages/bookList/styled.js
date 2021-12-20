@@ -106,15 +106,6 @@ export const BookListArticle = styled.article`
     }
 `
 
-export const AjustBookList = styled.section`
-    width: 300px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-`
-
 export const LendButton = styled.div`
     background-color: rgba(89, 198, 255, 0.61);
     border-radius: 5px;
@@ -125,39 +116,6 @@ export const LendButton = styled.div`
 
     :hover {
         background-color: #2D5CFF;
-    }
-`
-
-export const IconForward = styled.i`
-    font-size: 35px;
-    cursor: pointer;
-    position: relative;
-    top: 5px;
-    transition: all .1s ease-in-out;
-
-    :hover{
-        transform: scale(1.3);
-    }
-`
-
-export const IconBack = styled.i`
-    font-size: 35px;
-    cursor: pointer;
-    position: relative;
-    top: 5px;
-    transition: all .1s ease-in-out;
-
-    :hover{
-        transform: scale(1.3);
-    }
-`
-
-export const InfoPagination = styled.div`
-    span{
-        font-size: 35px;
-        letter-spacing: 5px;
-        position: relative;
-        left: 3px
     }
 `
 

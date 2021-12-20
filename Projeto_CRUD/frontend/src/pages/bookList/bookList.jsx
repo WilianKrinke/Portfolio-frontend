@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
 import baseUrl from '../../utils/baseUrl';
+import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
@@ -21,8 +22,11 @@ import {
   IconBack,
   InfoPagination,
   BookListFooter,
+  DivChangePage,
+  DivSelectQnt,
+  DivSelectCategory,
 } from './styled';
-import Letterfooter from '../../components/letterFooter/letterFooter';
+import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
@@ -88,22 +92,17 @@ const BookList = () => {
           <HeaderBookList>
             <h1>Welcome to Will&rsquo;s Library</h1>
           </HeaderBookList>
+
           <BookListMain>
             <BookListSection>
               <BookArticle fadeIn={fadeIn}>
-                <AjustBookList>
-                  <IconBack onClick={decCurrentPage}>
-                    <FiChevronLeft title="Back" />
-                  </IconBack>
-                  <InfoPagination>
-                    <span title="Page">
-                      {currentPage + 1}/{pages}
-                    </span>
-                  </InfoPagination>
-                  <IconForward onClick={accCurrentPage}>
-                    <FiChevronRight title="Next" />
-                  </IconForward>
-                </AjustBookList>
+                <Ajustbooklist
+                  decCurrentPage={decCurrentPage}
+                  currentPage={currentPage}
+                  pages={pages}
+                  accCurrentPage={accCurrentPage}
+                />
+
                 <BookListArticle>
                   {currentItens.map((item) => {
                     return (
@@ -125,22 +124,17 @@ const BookList = () => {
                     );
                   })}
                 </BookListArticle>
-                <AjustBookList>
-                  <IconBack onClick={decCurrentPage}>
-                    <FiChevronLeft />
-                  </IconBack>
-                  <InfoPagination>
-                    <span>
-                      {currentPage + 1}/{pages}
-                    </span>
-                  </InfoPagination>
-                  <IconForward onClick={accCurrentPage}>
-                    <FiChevronRight />
-                  </IconForward>
-                </AjustBookList>
+
+                <Ajustbooklist
+                  decCurrentPage={decCurrentPage}
+                  currentPage={currentPage}
+                  pages={pages}
+                  accCurrentPage={accCurrentPage}
+                />
               </BookArticle>
             </BookListSection>
           </BookListMain>
+
           <BookListFooter>
             <Letterfooter />
           </BookListFooter>

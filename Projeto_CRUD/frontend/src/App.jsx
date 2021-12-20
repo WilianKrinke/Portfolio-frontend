@@ -1,6 +1,6 @@
 import React from 'react';
-import { AuthProvider } from './context/authContext.js';
 import Routes from './routes/index.js';
+import { AuthProvider } from './context/authContext.js';
 
 function App() {
   return (
