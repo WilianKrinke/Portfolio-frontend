@@ -43,8 +43,6 @@ export const ContainerToLike = styled.div`
     flex-direction: column;
     background: ${props => props.isOpen ? '#FE6B0A' : '#CCFFCB'};
     border-radius: 0px 5px 5px 0px;
-    
-    
 `
 export const IconToRight = styled.i`
     display: flex;
@@ -123,8 +121,7 @@ export const FirstContainerInfo = styled.div`
 
     .title_rating{
         width: 50%;
-        height: 100%;
-        
+        height: 100%;        
         display: flex;
         justify-content: space-evenly;
         align-items: center;
@@ -136,6 +133,12 @@ export const FirstContainerInfo = styled.div`
             font-size: 18px;
             font-weight: 400;
             letter-spacing: 2px;
+        }
+
+        @media screen and (max-width: 440px) {
+            h2{
+                font-size: 22px;
+            }
         }
 
         .rating{
@@ -186,6 +189,12 @@ export const SecondContainerInfo = styled.div`
             width: 100%;            
             text-align: left;
             padding: 0px 5px;
+        }
+
+        @media screen and (max-width: 440px) {
+            p{
+                font-size: 18px;
+            }
         }
 `
 
