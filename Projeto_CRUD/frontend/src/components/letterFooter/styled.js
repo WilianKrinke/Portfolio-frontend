@@ -21,13 +21,9 @@ export const ContainerName = styled.div`
         justify-content: space-evenly;
 
         h4{
-            color: #c9c9c9;
+            color: #757575;
             font-weight: 200;
             transition: all .3s ease-in-out;
-        }
-
-        h4:hover{
-            color: #757575;
         }
     }
 `
