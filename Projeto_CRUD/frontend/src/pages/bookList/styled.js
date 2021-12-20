@@ -4,7 +4,14 @@ import pattern_colors from '../../colors'
 import { MainStyled,HeaderStyled, FooterStyled } from '../../primeComponents'
 
 export const HeaderBookList = styled(HeaderStyled)`
-    min-height: 22vh;
+    min-height: 22vh; 
+
+    @media screen and (max-width: 900px) {
+      text-align: center;
+      position: relative;
+      top: 45px;
+      margin-bottom: 40px;
+    }
 `
 
 export const BookListMain = styled(MainStyled)`
@@ -14,6 +21,10 @@ export const BookListMain = styled(MainStyled)`
     justify-content: center;
     flex-direction: column;
     padding: 10px;
+
+    @media screen and (max-width: 440px) {
+        padding: 10px 0px;
+    }  
 `
 
 export const BookListSection = styled.section`

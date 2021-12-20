@@ -12,7 +12,13 @@ export const ContainerMenu = styled.div`
     transition: all .3s ease-in-out;
     position: fixed;
     right: ${props => props.isOpen ? '0px' : '-400px'};
-    z-index: 100
+    z-index: 100;
+
+    @media screen and (max-width: 440px) {
+        position: fixed;
+        right: ${props => props.isOpen ? '0px' : '-100vw'};
+        width: 100vw;
+    }
 `
 
 export const ContainerUserAndIcon = styled.div`

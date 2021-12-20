@@ -14,8 +14,11 @@ export const CardStyled = styled.div`
     flex-direction: row;
     -webkit-box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16); 
     box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16);
-    
-    
+
+    @media screen and (max-width: 440px) {
+        width: 350px;
+        margin: 10px 0px;
+    }  
 `
 export const ContainerMoldCard = styled.div`
     min-height: 500px;

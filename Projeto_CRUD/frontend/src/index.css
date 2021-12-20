@@ -141,29 +141,3 @@ input:-webkit-autofill:active {
 .Toastify__toast {
   box-shadow: none !important;
 }
-
-/* [aria-label] {
-  position: relative;
-  text-decoration: none;
-  color: #0a0a0a;
-}
-
-[aria-label]::after {
-  content: attr(aria-label);
-  background: #414141;
-  position: absolute;
-  width: max-content;
-  border-radius: 2px;
-  padding: 0px 5px;
-  color: #cccfd3;
-  opacity: 0;
-  display: none;
-  font-size: 10px;
-  letter-spacing: 1px;
-}
-
-[aria-label]:hover::after {
-  display: inline;
-  opacity: 1;
-  top: 90%;
-} */
