@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
+import { Image } from './styleds/styled';
 
 const ModalImage = ({ image, isOpen, setmodalImage }) => {
   function closeModal() {
@@ -15,12 +16,11 @@ const ModalImage = ({ image, isOpen, setmodalImage }) => {
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      width: '400px',
-      height: '600px',
-      backgroundImage: `url(${image})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center center',
-      backgroundSize: 'contain',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      textAlign: 'center',
       border: 'none',
       backgroundColor: 'transparent',
     },
@@ -39,9 +39,9 @@ const ModalImage = ({ image, isOpen, setmodalImage }) => {
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Confirmed Modal"
-        loading="lazy"
-        title="Book cover"
-      />
+      >
+        <Image loading="lazy" title="Book cover" src={image} alt="Book cover" />
+      </Modal>
     </>
   );
 };

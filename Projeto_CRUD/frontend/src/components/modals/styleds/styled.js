@@ -32,3 +32,14 @@ export const DivModal = styled.div`
         align-items: center;
     }
 `
+export const Image = styled.img`
+    width: 350px;
+    height: 500px;
+    border-radius: 3px;
+
+    @media screen and (max-width: 430px) {
+        width: 80%;
+        height: 80%;
+    } 
+
+`

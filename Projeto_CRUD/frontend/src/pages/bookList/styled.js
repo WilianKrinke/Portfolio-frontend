@@ -9,7 +9,7 @@ export const HeaderBookList = styled(HeaderStyled)`
     @media screen and (max-width: 900px) {
       text-align: center;
       position: relative;
-      top: 45px;
+      top: 50px;
       margin-bottom: 40px;
     }
 `
