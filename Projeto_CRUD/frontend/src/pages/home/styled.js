@@ -112,7 +112,7 @@ export const ArticleSignUp = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 1px solid;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '0' : '1'};
     display: ${props => props.isVisible ? 'none' : 'flex'};

@@ -14,7 +14,13 @@ export const ButtonChangeForm = styled.button`
   bottom: 54px;
   left: 85px;
   color: #222;
-  border: 1px solid rgba(0, 0, 0, 0.3);  
+  border: 1px solid rgba(0, 0, 0, 0.5);  
+
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        color: #fff;
+  }
 
    @media screen and (max-width: 470px) {
     position: relative;
@@ -30,7 +36,7 @@ export const ButtonBackToLogin = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   position: relative;
@@ -38,27 +44,18 @@ export const ButtonBackToLogin = styled.button`
   left: 85px;
   color: #222222;
 
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+  }
+
 @media screen and (max-width: 470px) {
     position: relative;
     top: 20px;
     left: 0px;
 }
 `
-
-export const ButtonLogOut = styled.button` 
-    color: antiquewhite;
-    letter-spacing: 3px;
-    font-size: 24px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    font-family: 'Zen Kaku Gothic New', sans-serif;
-    font-weight: 400;
-    text-transform: capitalize;
-    transition: all .3s ease-in-out;
-    margin: 0px;
-`
-
 
 export const ButtonSignin = styled.button`
   width: 150px;
@@ -71,7 +68,13 @@ export const ButtonSignin = styled.button`
   cursor: pointer;
   color: #222222;  
   transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.5); 
+
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        color: #fff;
+  }
 
     @media screen and (max-width: 470px) {
         position: relative;
@@ -87,10 +90,17 @@ export const ButtonSignUp = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: #222222;
+
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+  }
+
 
 @media screen and (max-width: 470px) {
     position: relative;
@@ -106,10 +116,16 @@ export const ButtonConfirmedLoanBook = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: #222222;
+
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+  }
 
 `
 
@@ -120,10 +136,31 @@ export const ButtonCancelLoanBook = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+  }
+
+`
+
+
+export const ButtonLogOut = styled.button` 
+    color: antiquewhite;
+    letter-spacing: 3px;
+    font-size: 24px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+    margin: 0px;
 `
 
 
