@@ -31,12 +31,10 @@ export const ContainerUserAndIcon = styled.div`
 `
 
 export const IconHamburguer = styled.i`
-    position: fixed;
-    right: 40px;
-    top:20px;
     font-size: 48px;
     position: fixed;
-    right: ${props => props.isOpen ? '-50px' : '35px'};
+    top: 20px;
+    right: ${props => props.isOpen ? '-50px' : '30px'};
 `
 
 export const IconClose = styled(AiOutlineClose)`
@@ -44,7 +42,7 @@ export const IconClose = styled(AiOutlineClose)`
     font-size: 60px;
     position: relative;
     bottom: 8px;
-    right: 30px;
+    right: 20px;
     cursor: pointer;   
 `
 
