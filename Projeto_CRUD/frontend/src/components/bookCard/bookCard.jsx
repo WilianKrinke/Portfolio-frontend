@@ -13,12 +13,10 @@ import {
   IconLendItem,
   IconLike,
   IconNotAvailable,
-  IconToRight,
   ParagraphResume,
   SecondContainerInfo,
 } from './styled';
 import {
-  BsChevronRight,
   BsBookmarkPlus,
   BsHeart,
   BsBookmarkCheckFill,
@@ -128,7 +126,7 @@ const Bookcard = ({
   return (
     <>
       <CardStyled seeMore={seeMore}>
-        <ContainerMoldCard isOpen={open}>
+        <ContainerMoldCard>
           <FirstContainerInfo>
             <div className="image">
               <img src={image} alt="Capa" loading="lazy" title="Book cover" onClick={handleModalImage} />
@@ -179,13 +177,10 @@ const Bookcard = ({
           </SecondContainerInfo>
         </ContainerMoldCard>
 
-        <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
-          <IconToRight isOpen={open}>
-            <BsChevronRight />
-          </IconToRight>
+        <ContainerToLike>
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
-              <IconLike isOpen={open}>
+              <IconLike>
                 {isLend ? (
                   <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
                 ) : (
@@ -193,16 +188,16 @@ const Bookcard = ({
                 )}
               </IconLike>
             ) : (
-              <IconItenBorrowedByUser isOpen={open} title="Click to return the Book">
+              <IconItenBorrowedByUser title="Click to return the Book">
                 <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
               </IconItenBorrowedByUser>
             )
           ) : (
-            <IconNotAvailable isOpen={open} title="not available">
+            <IconNotAvailable title="not available">
               <BsBookmarkXFill />
             </IconNotAvailable>
           )}
-          <IconLendItem isOpen={open} title="Add to Favorites">
+          <IconLendItem title="Add to Favorites">
             {favoriteByUser ? (
               <BsHeartFill onClick={handleRemoveFavorite} />
             ) : isLike ? (

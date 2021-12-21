@@ -35,23 +35,14 @@ export const ContainerMoldCard = styled.div`
 
 export const ContainerToLike = styled.div`
     transition: all .2s ease-in-out;
-    width: ${props => props.isOpen ? '15%' : '5%'};
+    width: 15%;
     height: 500px;
     display: flex;
-    justify-content: ${props => props.isOpen ? 'space-evenly' : 'center'};
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    background: ${props => props.isOpen ? '#FE6B0A' : '#CCFFCB'};
+    background: #FE6B0A;
     border-radius: 0px 5px 5px 0px;
-`
-export const IconToRight = styled.i`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 80px;
-    display: ${props => props.isOpen ? 'none' : 'static'};
-    cursor: ${props => !props.isOpen && 'pointer'};
 `
 
 export const IconLike = styled.i`
@@ -60,7 +51,6 @@ export const IconLike = styled.i`
     align-items: center;
     cursor: pointer;
     font-size: 24px;
-    display: ${props => !props.isOpen ? 'none' : 'static'};
 `
 
 export const IconLendItem = styled.i`
@@ -70,7 +60,6 @@ export const IconLendItem = styled.i`
     font-size: 24px;
     cursor: pointer;
     height: 80px;
-    display: ${props => !props.isOpen ? 'none' : 'static'};
 `
 
 export const IconNotAvailable = styled.i`
