@@ -12,20 +12,17 @@ export const DivModal = styled.div`
     background-color: #ffeceb;
     border-radius: 3px;
 
-
     @media screen and (max-width: 430px) {
         height: 350px;
         width: 350px;
     }  
    
-
     .disclaimer_lend_book{
         width: 100%;
         letter-spacing: 2px;
         margin: 10px;
         text-align: justify;
         
-
         p{
             font-family: 'Zen Kaku Gothic New', sans-serif;
         }
@@ -51,11 +48,7 @@ export const DivModal = styled.div`
             width: 100%;
             flex-direction: column;
         }
-       
     }
-
-
-    
 `
 export const Image = styled.img`
     width: 350px;
