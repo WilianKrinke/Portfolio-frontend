@@ -34,15 +34,19 @@ export const ContainerMoldCard = styled.div`
 `
 
 export const ContainerToLike = styled.div`
-    transition: all .2s ease-in-out;
+    transition: all .5s ease-in-out;
     width: 15%;
     height: 500px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;
-    background: #FE6B0A;
+    flex-direction: column;    
+    background-color: #FEB17D;
     border-radius: 0px 5px 5px 0px;
+
+    :hover{
+        background-color: #FE6B0A;
+    }
 `
 
 export const IconLike = styled.i`
