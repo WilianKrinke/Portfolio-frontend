@@ -15,6 +15,7 @@ export const DivModal = styled.div`
 
     @media screen and (max-width: 430px) {
         height: 350px;
+        width: 350px;
     }  
    
 
