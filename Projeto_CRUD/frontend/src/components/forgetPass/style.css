@@ -1,5 +1,7 @@
 .forgetPass {
-  border: 1px solid;
+  position: relative;
+  bottom: 40px;
+  left: 80px;
 }
 
 .forgetPass a {
