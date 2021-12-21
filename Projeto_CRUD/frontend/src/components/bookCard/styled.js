@@ -65,19 +65,23 @@ export const IconLike = styled.i`
     align-items: center;
     cursor: pointer;
     font-size: 24px;
+
+    @media screen and (max-width: 440px) {
+        font-size: 30px;
+    }
 `
 
 export const IconLendItem = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 26px;
+    font-size: 24px;
     cursor: pointer;
     height: 80px;
     width: 100%;
 
     @media screen and (max-width: 440px) {
-        font-size: 28px;
+        font-size: 30px;
     }
 `
 
@@ -85,7 +89,7 @@ export const IconNotAvailable = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 26px;
     cursor: not-allowed;
     height: 80px;
     color: red;

@@ -51,8 +51,8 @@ const Bookcard = ({
   const [isLike, setisLike] = useState(false);
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
-  const [modalLendBookIsOpen, setmodalLendBookIsOpen] = useState(false);
-  const [modalReturnBook, setmodalReturnBook] = useState(false);
+  const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
+  const [modalReturnBookState, setmodalReturnBook] = useState(false);
   const [modalImage, setmodalImage] = useState(false);
 
   const userId = user.idUser;
@@ -211,7 +211,7 @@ const Bookcard = ({
       </CardStyled>
 
       <ModalLendBook
-        modalLendBookIsOpen={modalLendBookIsOpen}
+        modalLendBookIsOpen={modalLendBookIsOpenState}
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
@@ -220,7 +220,7 @@ const Bookcard = ({
       />
 
       <ModalReturnBook
-        modalReturnBook={modalReturnBook}
+        modalReturnBook={modalReturnBookState}
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
@@ -240,7 +240,6 @@ const Bookcard = ({
         draggable
         pauseOnHover={false}
         width={500}
-        limit={2}
       />
     </>
   );
