@@ -41,7 +41,7 @@ export const ContainerToLike = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;    
-    background-color: #FEB17D;
+    background-color: #FEC097;
     border-radius: 0px 5px 5px 0px;
 
     :hover{
