@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <>
       <HeaderStyled>
-        <h1>Login</h1>
+        <h1>Project Library</h1>
       </HeaderStyled>
 
       <HomeMain>

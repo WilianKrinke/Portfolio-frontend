@@ -22,39 +22,15 @@ export const ButtonChangeForm = styled.button`
         color: #fff;
   }
 
-   @media screen and (max-width: 470px) {
-    position: relative;
+   @media screen and (max-width: 960px) {
     top: 0px;
     left: 0px;
   }
-`
 
-export const ButtonBackToLogin = styled.button`
-  width: 150px;
-  height: 40px;
-  border-radius: 5px;
-  background-color: transparent;
-  outline: none;
-  font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
-  bottom: 17px;
-  left: 85px;
-  color: #222222;
-
-  :hover{
-        background: #030103;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        color: #fff;
-  }
-
-@media screen and (max-width: 470px) {
+  @media screen and (max-width: 470px) {
     position: relative;
     top: 20px;
-    left: 0px;
-}
+  }
 `
 
 export const ButtonSignin = styled.button`
@@ -72,15 +48,19 @@ export const ButtonSignin = styled.button`
 
   :hover{
         background: #030103;
-        border: 1px solid rgba(0, 0, 0, 0.5);
         color: #fff;
   }
 
-    @media screen and (max-width: 470px) {
+  @media screen and (max-width: 960px) {
         position: relative;
         top: 0px;
         left: 85px;
-    }
+  }
+
+  @media screen and (max-width: 470px) {
+    position: relative;
+    top: 15px;
+  }
 `
 
 export const ButtonSignUp = styled.button`
@@ -90,23 +70,60 @@ export const ButtonSignUp = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.5); 
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: #222222;
 
   :hover{
         background: #030103;
-        border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
   }
 
-
-@media screen and (max-width: 470px) {
+  @media screen and (max-width: 960px) {
     position: relative;
-    top: 0px;
+    bottom: 12px;
     left: 85px;
-}
+  }
+
+  @media screen and (max-width: 470px) {
+    position: relative;
+    top: 3px;
+    left: 85px;
+  }
+`
+
+export const ButtonBackToLogin = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.5); 
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  bottom: 17px;
+  left: 85px;
+  color: #222222;
+
+  :hover{
+        background: #030103;
+        color: #fff;
+  }
+
+  @media screen and (max-width: 960px) {
+    position: relative;
+    top: 5px;
+    left: 0px;
+  }
+
+  @media screen and (max-width: 470px) {
+    position: relative;
+    top: 25px;
+    left: 0px;
+  }
 `
 
 export const ButtonConfirmedLoanBook = styled.button`

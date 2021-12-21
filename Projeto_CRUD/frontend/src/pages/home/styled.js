@@ -29,6 +29,10 @@ export const InfoCard = styled.section`
 
     @media screen and (max-width: 750px) {
        width: 100%;
+       border-radius: 0px 0px 5px 5px;
+       border-right: 1px solid #F3BEF7;
+       border-bottom: 1px solid #F3BEF7;
+       border-left: 1px solid #F3BEF7;
     }
 `
 export const SectForm = styled.section`
@@ -44,6 +48,10 @@ export const SectForm = styled.section`
     
     @media screen and (max-width: 750px) {
        width: 100%;
+       border-radius: 5px 5px 0px 0px;
+       border-right: 1px solid #F3BEF7;
+       border-top: 1px solid #F3BEF7;
+       border-left: 1px solid #F3BEF7;
     }
 
     @media screen and (max-width: 470px) {
