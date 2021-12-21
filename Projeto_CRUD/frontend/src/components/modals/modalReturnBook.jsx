@@ -14,15 +14,15 @@ const ModalReturnBook = ({
   bookName,
   objectDatas,
 }) => {
+  //
   async function handleReturnBook() {
     try {
-      console.log('passei por aqui');
       setisLend(false);
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
 
       if (isReturnTheBook == true) {
-        setisLend(false);
+        console.log('linha 25, modalreturnbook');
         toast.success('Successfully returned the book!');
         setmodalReturnBook(false);
       } else {

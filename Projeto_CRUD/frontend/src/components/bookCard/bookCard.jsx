@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import { ToastContainer, toast } from 'react-toastify';
@@ -93,7 +93,6 @@ const Bookcard = ({
 
   async function handleRemoveFavorite() {
     setisLike(false);
-
     try {
       const response = await removeFavorite(objectDatas);
       const { isRemoved } = response.data;
