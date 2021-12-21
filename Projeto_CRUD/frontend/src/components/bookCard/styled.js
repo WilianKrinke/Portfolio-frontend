@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const CardStyled = styled.div`
-    min-height: 500px;
+    min-height: 450px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -16,12 +16,13 @@ export const CardStyled = styled.div`
     box-shadow: 3px 3px 4px 1px rgba(0,0,0,0.16);
 
     @media screen and (max-width: 440px) {
+        min-height: 550px;
         width: 350px;
         margin: 10px 0px;
     }  
 `
 export const ContainerMoldCard = styled.div`
-    min-height: 500px;
+    height: 450px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .2s ease-in-out;
@@ -31,18 +32,27 @@ export const ContainerMoldCard = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
+
+
+    @media screen and (max-width: 440px) {
+        height: 550px;
+    }
 `
 
 export const ContainerToLike = styled.div`
     transition: all .5s ease-in-out;
     width: 15%;
-    height: 500px;
+    height: 450px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;    
     background-color: #FEC097;
     border-radius: 0px 5px 5px 0px;
+
+    @media screen and (max-width: 440px) {
+        height: 550px;
+    }
 
     :hover{
         background-color: #FE6B0A;
@@ -61,9 +71,14 @@ export const IconLendItem = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
     height: 80px;
+    width: 100%;
+
+    @media screen and (max-width: 440px) {
+        font-size: 28px;
+    }
 `
 
 export const IconNotAvailable = styled.i`
@@ -74,17 +89,21 @@ export const IconNotAvailable = styled.i`
     cursor: not-allowed;
     height: 80px;
     color: red;
-    display: ${props => !props.isOpen ? 'none' : 'static'};
 `
 
 export const IconItenBorrowedByUser = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 26px;
     cursor: pointer;
-    font-size: 24px;
     height: 80px;
-    display: ${props => !props.isOpen ? 'none' : 'static'};
+    width: 100%;
+
+    @media screen and (max-width: 440px) {
+        font-size: 28px;
+    }
+    
 `
 
 export const FirstContainerInfo = styled.div`
@@ -94,6 +113,7 @@ export const FirstContainerInfo = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: row;
+        padding-top: 10px;
         
 
     .image{
@@ -147,14 +167,13 @@ export const FirstContainerInfo = styled.div`
 
 export const SecondContainerInfo = styled.div`
         width: 100%;
-        height: 270px;
+        height: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         align-items: center;
-        transition: all .3s ease-in-out;
-        
+        transition: all .3s ease-in-out;        
         
         .container_author{
             width: 100%;            

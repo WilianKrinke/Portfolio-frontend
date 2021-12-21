@@ -18,8 +18,8 @@ const ModalLendBook = ({
 }) => {
   //
   async function handleLend() {
-    setisLend(true);
     try {
+      setisLend(true);
       const response = await lendBook(objectDatas);
       const { isRegister } = response.data;
 

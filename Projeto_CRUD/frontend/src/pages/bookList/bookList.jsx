@@ -51,6 +51,8 @@ const BookList = () => {
       const response = await baseUrl.get('/books-list');
       const { responseBooks, responseObject } = response.data;
 
+      console.log(responseBooks);
+
       if (response.data == false) {
         logout(navigate);
       } else {
@@ -90,7 +92,7 @@ const BookList = () => {
         <>
           <Menu user={userDatasMenu} />
           <HeaderBookList>
-            <h1>Welcome to Will&rsquo;s Library</h1>
+            <h1>Book List</h1>
           </HeaderBookList>
 
           <BookListMain>

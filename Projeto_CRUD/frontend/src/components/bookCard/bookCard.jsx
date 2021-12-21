@@ -125,7 +125,7 @@ const Bookcard = ({
 
   return (
     <>
-      <CardStyled seeMore={seeMore}>
+      <CardStyled>
         <ContainerMoldCard>
           <FirstContainerInfo>
             <div className="image">
@@ -150,6 +150,7 @@ const Bookcard = ({
               </div>
             </div>
           </FirstContainerInfo>
+
           <SecondContainerInfo seeMore={seeMore}>
             <div className="container_author" title="Author">
               <p>

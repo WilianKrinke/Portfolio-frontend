@@ -16,9 +16,8 @@ const ModalReturnBook = ({
 }) => {
   //
   async function handleReturnBook() {
-    setisLend(false);
-
     try {
+      setisLend(false);
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
 
