@@ -5,6 +5,7 @@ import SignUpForm from '../../components/signUpForm';
 import { HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp, HomeFooter } from './styled';
+import ForgetPass from '../../components/forgetPass/forgetPass';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
@@ -30,6 +31,7 @@ const Home = () => {
           <ArticleLogin isVisible={isLoginVisible}>
             <SignInForm />
             <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Sign Up</ButtonChangeForm>
+            <ForgetPass />
           </ArticleLogin>
 
           <ArticleSignUp isVisible={isLoginVisible}>
