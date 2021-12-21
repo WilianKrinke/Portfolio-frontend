@@ -7,6 +7,15 @@ export const AjustBookList = styled.section`
     flex-direction: row;
     width: 80%;
     height: 100px;
+
+    @media screen and (max-width: 808px) {
+        height: 240px;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+    }
     
 
     @media screen and (max-width: 440px) {        
@@ -38,6 +47,23 @@ export const DivSelectCategory = styled.div`
         background: #F9FFF9;        
     }  
 
+
+
+    @media screen and (max-width: 808px) {
+        label{
+            font-size: 20px;
+            position: relative;
+            bottom: 3px
+        }
+
+        select {
+            font-size: 18px;
+            font-weight: 200;
+        }
+
+        width: 90%;
+    }
+
     @media screen and (max-width: 440px) {
         label{
             font-size: 20px;
@@ -67,6 +93,10 @@ export const DivChangePage = styled.div`
         background: #F9FFF9;
     }
 
+    @media screen and (max-width: 808px) {
+        width: 100%;   
+    }
+
     @media screen and (max-width: 440px) {
         
         width: 100%;    
@@ -91,6 +121,21 @@ export const DivSelectQnt = styled.div`
         border: none;
         background: #F9FFF9;
     } 
+
+    @media screen and (max-width: 808px) {
+        label{
+            font-size: 20px;
+            position: relative;
+            bottom: 3px
+        }
+
+        select {
+            font-size: 18px;
+            font-weight: 200;
+        }
+        
+        width: 100%;
+    }
     
     @media screen and (max-width: 440px) {
 
