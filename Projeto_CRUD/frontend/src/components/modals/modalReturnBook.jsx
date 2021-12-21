@@ -17,6 +17,7 @@ const ModalReturnBook = ({
   //
   async function handleReturnBook() {
     setisLend(false);
+
     try {
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
@@ -50,13 +51,13 @@ const ModalReturnBook = ({
       bottom: 'auto',
       marginRight: '-50%',
       transform: 'translate(-50%, -50%)',
-      width: '450px',
-      height: '300px',
       display: 'flex',
       alignItens: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      backgroundColor: '#F9FFF9',
+      backgroundColor: 'transparent',
+      border: 'none',
+      outline: 'none',
     },
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.5)',

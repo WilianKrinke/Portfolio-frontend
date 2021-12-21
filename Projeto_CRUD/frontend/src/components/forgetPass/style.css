@@ -6,6 +6,7 @@
 
 .forgetPass a {
   text-decoration: none;
+  font-size: 14px;
 }
 
 @media screen and (max-width: 960px) {

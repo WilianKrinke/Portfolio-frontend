@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const DivModal = styled.div`
-    height: 100%;
-    width: 100%;
+    height: 200px;
+    width: 400px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -15,8 +15,7 @@ export const DivModal = styled.div`
 
     @media screen and (max-width: 430px) {
         height: 350px;
-    }
-    
+    }  
    
 
     .disclaimer_lend_book{
@@ -38,7 +37,7 @@ export const DivModal = styled.div`
     }
 
     .container_buttons_lend_book{
-        width: 100%;
+        width: 90%;
         height: 100px;
         display: flex;
         justify-content: space-between;
@@ -48,6 +47,7 @@ export const DivModal = styled.div`
         
 
         @media screen and (max-width: 430px) {
+            width: 100%;
             flex-direction: column;
         }
        

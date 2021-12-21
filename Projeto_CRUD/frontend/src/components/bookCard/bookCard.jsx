@@ -178,7 +178,8 @@ const Bookcard = ({
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
-        <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(!open)} onMouseLeave={() => setOpen(!open)}>
+
+        <ContainerToLike isOpen={open} onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
           <IconToRight isOpen={open}>
             <BsChevronRight />
           </IconToRight>
