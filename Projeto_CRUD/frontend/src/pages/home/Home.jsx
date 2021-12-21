@@ -5,7 +5,7 @@ import SignUpForm from '../../components/signUpForm';
 import { HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp, HomeFooter } from './styled';
-import ForgetPass from '../../components/forgetPass/forgetPass';
+import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);

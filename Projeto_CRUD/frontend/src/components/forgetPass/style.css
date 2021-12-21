@@ -7,3 +7,19 @@
 .forgetPass a {
   text-decoration: none;
 }
+
+@media screen and (max-width: 960px) {
+  .forgetPass {
+    position: relative;
+    bottom: 0px;
+    left: 3px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .forgetPass {
+    position: relative;
+    top: 32px;
+    left: 3px;
+  }
+}

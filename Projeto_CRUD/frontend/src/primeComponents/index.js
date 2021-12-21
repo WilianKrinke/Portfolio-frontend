@@ -9,6 +9,7 @@ export const HeaderStyled = styled.header`
     justify-content: center;
     flex-direction: column;
     background-color: ${pattern_colors.prime_compoments_bg};
+    text-align: center;
 
 `
 export const MainStyled = styled.main`

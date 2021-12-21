@@ -23,13 +23,13 @@ export const ButtonChangeForm = styled.button`
   }
 
    @media screen and (max-width: 960px) {
-    top: 0px;
+    bottom: 15px;
     left: 0px;
   }
 
   @media screen and (max-width: 470px) {
     position: relative;
-    top: 20px;
+    top: 10px;
   }
 `
 
@@ -53,13 +53,13 @@ export const ButtonSignin = styled.button`
 
   @media screen and (max-width: 960px) {
         position: relative;
-        top: 0px;
+        bottom: 15px;
         left: 85px;
   }
 
   @media screen and (max-width: 470px) {
     position: relative;
-    top: 15px;
+    top: 5px;
   }
 `
 
