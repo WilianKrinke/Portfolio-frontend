@@ -9,9 +9,9 @@ import {
   ContainerResume,
   ContainerToLike,
   FirstContainerInfo,
-  IconItenBorrowedByUser,
+  IconBorrowed,
+  IconLend,
   IconLendItem,
-  IconLike,
   IconNotAvailable,
   ParagraphResume,
   SecondContainerInfo,
@@ -47,8 +47,8 @@ const Bookcard = ({
   rating,
 }) => {
   const [open, setOpen] = useState(false);
-  const [isLend, setisLend] = useState(false);
-  const [isLike, setisLike] = useState(false);
+  const [isLend, setisLend] = useState(borrowedByUser);
+  const [isLike, setisLike] = useState(favoriteByUser);
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
   const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
@@ -189,18 +189,14 @@ const Bookcard = ({
 
         <ContainerToLike>
           {isAvailable == 1 ? (
-            borrowedByUser == false ? (
-              <IconLike>
-                {!isLend ? (
-                  <BsBookmarkPlus title="Click to borrow" onClick={handleModalBorrowBook} />
-                ) : (
-                  <BsBookmarkCheckFill title="Return the Book" onClick={handleModalReturnBook} />
-                )}
-              </IconLike>
+            isLend == false ? (
+              <IconLend>
+                <BsBookmarkPlus title="Click to borrow" onClick={handleModalBorrowBook} />
+              </IconLend>
             ) : (
-              <IconItenBorrowedByUser title="Click to return the Book">
+              <IconBorrowed title="Click to return the Book">
                 <BsBookmarkCheckFill title="Return the Book" onClick={handleModalReturnBook} />
-              </IconItenBorrowedByUser>
+              </IconBorrowed>
             )
           ) : (
             <IconNotAvailable title="not available">
@@ -209,13 +205,7 @@ const Bookcard = ({
           )}
 
           <IconLendItem title="Add to Favorites">
-            {favoriteByUser ? (
-              <BsHeartFill onClick={handleRemoveFavorite} />
-            ) : isLike ? (
-              <BsHeartFill onClick={handleRemoveFavorite} />
-            ) : (
-              <BsHeart onClick={handleAddFav} />
-            )}
+            {isLike ? <BsHeartFill onClick={handleRemoveFavorite} /> : <BsHeart onClick={handleAddFav} />}
           </IconLendItem>
         </ContainerToLike>
       </CardStyled>

@@ -21,7 +21,6 @@ const ModalReturnBook = ({
       const { isReturnTheBook } = response.data;
 
       if (isReturnTheBook == true) {
-        console.log('linha 25, modalreturnbook');
         toast.success('Successfully returned the book!');
         setmodalReturnBook(false);
       } else {
@@ -34,7 +33,7 @@ const ModalReturnBook = ({
   }
 
   function closeModal() {
-    setisLend(false);
+    setisLend(true);
     setmodalLendBookIsOpen(false);
     setmodalReturnBook(false);
   }
@@ -92,7 +91,7 @@ const ModalReturnBook = ({
 };
 
 ModalReturnBook.propTypes = {
-  modalReturnBook: propTypes.string,
+  modalReturnBook: propTypes.bool,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
   bookName: propTypes.string,

@@ -59,7 +59,7 @@ export const ContainerToLike = styled.div`
     }
 `
 
-export const IconLike = styled.i`
+export const IconLend = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -95,7 +95,7 @@ export const IconNotAvailable = styled.i`
     color: red;
 `
 
-export const IconItenBorrowedByUser = styled.i`
+export const IconBorrowed = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;

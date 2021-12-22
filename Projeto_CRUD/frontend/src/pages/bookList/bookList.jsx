@@ -7,7 +7,6 @@ import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading } from '../../primeComponents';
