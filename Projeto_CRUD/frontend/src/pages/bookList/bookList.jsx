@@ -102,6 +102,7 @@ const BookList = () => {
                   currentPage={currentPage}
                   pages={pages}
                   accCurrentPage={accCurrentPage}
+                  setItensPerPage={setItensPerPage}
                 />
 
                 <BookListArticle>

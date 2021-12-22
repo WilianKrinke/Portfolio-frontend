@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -11,7 +12,12 @@ import {
   InfoPagination,
 } from './styled';
 
-const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage }) => {
+const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage }) => {
+  //
+  function handleItemPerPage(e) {
+    setItensPerPage(e.target.value);
+  }
+
   return (
     <>
       <AjustBookList>
@@ -50,7 +56,7 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage }) =
 
         <DivSelectQnt>
           <label htmlFor="item">Itens per Page: </label>
-          <select name="item" id="">
+          <select name="item" id="" onChange={(e) => handleItemPerPage(e)}>
             <option value="5" defaultValue>
               5
             </option>
@@ -68,6 +74,7 @@ Ajustbooklist.propTypes = {
   currentPage: propTypes.number,
   pages: propTypes.number,
   accCurrentPage: propTypes.func,
+  setItensPerPage: propTypes.func,
 };
 
 export default Ajustbooklist;
