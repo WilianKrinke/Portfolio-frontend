@@ -29,12 +29,15 @@ export const AjustBookList = styled.section`
 `
 
 export const DivSelectCategory = styled.div`
+    width: 30%;    
+    height: 50px;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    width: 20%;    
-    height: 50px;
+    background-color: #CCFFCB;
+    padding: 10px;
 
     label {
         position: relative;
@@ -44,7 +47,7 @@ export const DivSelectCategory = styled.div`
     select {
         outline: none;
         border: none;
-        background: #F9FFF9;        
+        background-color: #CCFFCB; 
     }  
 
 
@@ -61,7 +64,7 @@ export const DivSelectCategory = styled.div`
             font-weight: 200;
         }
 
-        width: 90%;
+        width: 100%;
     }
 
     @media screen and (max-width: 440px) {
@@ -76,40 +79,20 @@ export const DivSelectCategory = styled.div`
             font-weight: 200;
         }
 
-        width: 90%;    
-    }
-`
-
-export const DivChangePage = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-direction: row;
-    width: 33%; 
-    position: relative;
-    bottom: 2px;
-
-    select{
-        background: #F9FFF9;
-    }
-
-    @media screen and (max-width: 808px) {
-        width: 100%;   
-    }
-
-    @media screen and (max-width: 440px) {
-        
-        width: 100%;    
+        width: 100%;
     }
 `
 
 export const DivSelectQnt = styled.div`
+    width: 30%;    
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    width: 20%;    
-    height: 50px;
+    padding: 10px;
+    background-color: #CCFFCB;
+    border-radius: 25px;
 
     label {
         position: relative;
@@ -119,7 +102,7 @@ export const DivSelectQnt = styled.div`
     select {
         outline: none;
         border: none;
-        background: #F9FFF9;
+        background-color: #CCFFCB;
     } 
 
     @media screen and (max-width: 808px) {
@@ -149,6 +132,29 @@ export const DivSelectQnt = styled.div`
             font-size: 18px;
             font-weight: 200;
         }
+        
+        width: 100%;    
+    }
+`
+
+export const DivChangePage = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 33%; 
+    position: relative;
+    bottom: 2px;
+
+    select{
+        background: #F9FFF9;
+    }
+
+    @media screen and (max-width: 808px) {
+        width: 100%;   
+    }
+
+    @media screen and (max-width: 440px) {
         
         width: 100%;    
     }
