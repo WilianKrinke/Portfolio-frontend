@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import { ToastContainer, toast } from 'react-toastify';
@@ -197,6 +197,7 @@ const Bookcard = ({
               <BsBookmarkXFill />
             </IconNotAvailable>
           )}
+
           <IconLendItem title="Add to Favorites">
             {favoriteByUser ? (
               <BsHeartFill onClick={handleRemoveFavorite} />
