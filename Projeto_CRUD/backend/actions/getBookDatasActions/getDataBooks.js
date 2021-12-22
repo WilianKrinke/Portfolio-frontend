@@ -1,19 +1,42 @@
 const knex = require('../../connection/connection')
 
-async function getDataBooks(){
-    try {
-        const datasReceived = await knex.select().from('nodecrud.books')
+async function getDataBooks(category){
 
-        if (datasReceived != null || []) {
-            return datasReceived; 
-        } else {
+    console.log(category)
+
+    if (category === 'all') {
+        console.log('passei por aqui')
+        try {
+            const datasReceived = await knex.select().from('books')
+    
+            if (datasReceived != null || []) {
+                return datasReceived; 
+            } else {
+                return null;
+            }
+              
+        } catch (error) {
+            console.log(error)
             return null;
-        }
-          
-    } catch (error) {
-        console.log(error)
-        return null;
-    }  
+        } 
+    } else {
+        try {
+            const datasReceived = await knex('books').select().where('category',category)
+    
+            if (datasReceived != null || []) {
+                return datasReceived; 
+            } else {
+                return null;
+            }
+              
+        } catch (error) {
+            console.log(error)
+            return null;
+        }  
+
+    }
+
 }
 
-module.exports = {getDataBooks}
+module.exports = getDataBooks;
+

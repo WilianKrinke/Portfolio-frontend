@@ -12,10 +12,14 @@ import {
   InfoPagination,
 } from './styled';
 
-const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage }) => {
+const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage, setCategory }) => {
   //
   function handleItemPerPage(e) {
     setItensPerPage(e.target.value);
+  }
+
+  function handleCategory(e) {
+    setCategory(e.target.value);
   }
 
   return (
@@ -23,10 +27,11 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
       <AjustBookList>
         <DivSelectCategory>
           <label htmlFor="category">Category: </label>
-          <select name="category" id="category">
-            <option value="Aventura" defaultValue>
-              Aventura
+          <select name="category" id="category" onChange={(e) => handleCategory(e)}>
+            <option value="all" defaultValue>
+              All
             </option>
+            <option value="Aventura">Aventura</option>
             <option value="Distopico">Distopico</option>
             <option value="Epico">Epico</option>
             <option value="Ficcao">Ficcao</option>
@@ -75,6 +80,7 @@ Ajustbooklist.propTypes = {
   pages: propTypes.number,
   accCurrentPage: propTypes.func,
   setItensPerPage: propTypes.func,
+  setCategory: propTypes.func,
 };
 
 export default Ajustbooklist;

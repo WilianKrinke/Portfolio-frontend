@@ -1,9 +1,9 @@
 const borrowBooksFromUser = require('../actions/getBookDatasActions/borrowBooksFromUser')
-const {getDataBooks} = require('../actions/getBookDatasActions/getDataBooks')
+const getDataBooks = require('../actions/getBookDatasActions/getDataBooks')
 const insertFavoriteBooks = require('../actions/getBookDatasActions/insertFavoriteBooks')
 
 const getBooks = (app) => {
-    app.route('/books-list')
+    app.route('/books-list/:category?')
         .get(async (req, res) => {
           try { 
             const responseObject = {
@@ -11,7 +11,7 @@ const getBooks = (app) => {
               userName: req.userName[0]
             }
 
-            const datasBooks = await getDataBooks() 
+            const datasBooks = await getDataBooks(req.params.category) 
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, responseObject.idUser)
             const responseBooks = await insertFavoriteBooks(booksWithBorrows, responseObject.idUser)
 

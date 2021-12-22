@@ -37,10 +37,11 @@ export const DivSelectCategory = styled.div`
     flex-direction: row;
     background-color: #CCFFCB;
     padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
     label {
         position: relative;
-        bottom: 3px
+        bottom: 2px
     }
 
     select {
@@ -90,10 +91,11 @@ export const DivSelectQnt = styled.div`
     padding: 10px;
     background-color: #CCFFCB;
     border-radius: 25px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
     label {
         position: relative;
-        bottom: 3px
+        bottom: 2px
     }
 
     select {

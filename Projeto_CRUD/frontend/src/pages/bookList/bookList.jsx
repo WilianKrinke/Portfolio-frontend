@@ -29,6 +29,7 @@ import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 
 const BookList = () => {
   const [books, setBooks] = useState(null);
+  const [category, setCategory] = useState('all');
   const [itensPerPage, setItensPerPage] = useState(5);
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
@@ -47,10 +48,8 @@ const BookList = () => {
   useEffect(() => {
     (async () => {
       preAuth();
-      const response = await baseUrl.get('/books-list');
+      const response = await baseUrl.get(`/books-list/${category}`);
       const { responseBooks, responseObject } = response.data;
-
-      console.log(responseBooks);
 
       if (response.data == false) {
         logout(navigate);
@@ -65,7 +64,7 @@ const BookList = () => {
         }, 1);
       }
     })();
-  }, [itensPerPage, startIndex, endIndex]);
+  }, [itensPerPage, startIndex, endIndex, category]);
 
   function accCurrentPage() {
     setCurrentPage(currentPage + 1);
@@ -103,6 +102,7 @@ const BookList = () => {
                   pages={pages}
                   accCurrentPage={accCurrentPage}
                   setItensPerPage={setItensPerPage}
+                  setCategory={setCategory}
                 />
 
                 <BookListArticle>
@@ -132,6 +132,8 @@ const BookList = () => {
                   currentPage={currentPage}
                   pages={pages}
                   accCurrentPage={accCurrentPage}
+                  setItensPerPage={setItensPerPage}
+                  setCategory={setCategory}
                 />
               </BookArticle>
             </BookListSection>
