@@ -1,23 +1,22 @@
 import React from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
+import returnBook from '../../utils/returnBooks/returnTheBook';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { toast } from 'react-toastify';
 import { DivModal } from './styleds/styled';
-import returnBook from '../../utils/returnBooks/returnTheBook';
 
 const ModalReturnBook = ({
   modalReturnBook,
   setmodalLendBookIsOpen,
   setmodalReturnBook,
-  setisLend,
   bookName,
   objectDatas,
+  setisLend,
 }) => {
   //
   async function handleReturnBook() {
     try {
-      setisLend(false);
       const response = await returnBook(objectDatas);
       const { isReturnTheBook } = response.data;
 
@@ -35,9 +34,9 @@ const ModalReturnBook = ({
   }
 
   function closeModal() {
+    setisLend(false);
     setmodalLendBookIsOpen(false);
     setmodalReturnBook(false);
-    setisLend(false);
   }
 
   const customStyles = {
@@ -93,12 +92,12 @@ const ModalReturnBook = ({
 };
 
 ModalReturnBook.propTypes = {
-  modalReturnBook: propTypes.bool,
+  modalReturnBook: propTypes.string,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
-  setisLend: propTypes.func,
   bookName: propTypes.string,
   objectDatas: propTypes.object,
+  setisLend: propTypes.func,
 };
 
 export default ModalReturnBook;

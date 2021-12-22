@@ -12,9 +12,9 @@ const ModalLendBook = ({
   modalLendBookIsOpen,
   setmodalLendBookIsOpen,
   setmodalReturnBook,
-  setisLend,
   bookName,
   objectDatas,
+  setisLend,
 }) => {
   //
   async function handleLend() {
@@ -23,7 +23,6 @@ const ModalLendBook = ({
       const { isRegister } = response.data;
 
       if (isRegister == true) {
-        setisLend(true);
         toast.success('Successfully borrowed book!');
         setmodalLendBookIsOpen(false);
       } else {
@@ -36,9 +35,9 @@ const ModalLendBook = ({
   }
 
   function closeModal() {
+    setisLend(false);
     setmodalLendBookIsOpen(false);
     setmodalReturnBook(false);
-    setisLend(false);
   }
 
   const customStyles = {
@@ -101,9 +100,9 @@ ModalLendBook.propTypes = {
   modalLendBookIsOpen: propTypes.bool,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
-  setisLend: propTypes.func,
   bookName: propTypes.string,
   objectDatas: propTypes.object,
+  setisLend: propTypes.func,
 };
 
 export default ModalLendBook;

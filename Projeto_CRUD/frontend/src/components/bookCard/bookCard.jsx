@@ -122,6 +122,16 @@ const Bookcard = ({
     setmodalImage(true);
   }
 
+  function handleModalBorrowBook() {
+    setmodalLendBookIsOpen(true);
+    setisLend(true);
+  }
+
+  function handleModalReturnBook() {
+    setmodalReturnBook(true);
+    setisLend(false);
+  }
+
   return (
     <>
       <CardStyled>
@@ -181,15 +191,15 @@ const Bookcard = ({
           {isAvailable == 1 ? (
             borrowedByUser == false ? (
               <IconLike>
-                {isLend ? (
-                  <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
+                {!isLend ? (
+                  <BsBookmarkPlus title="Click to borrow" onClick={handleModalBorrowBook} />
                 ) : (
-                  <BsBookmarkPlus title="Click to borrow" onClick={() => setmodalLendBookIsOpen(true)} />
+                  <BsBookmarkCheckFill title="Return the Book" onClick={handleModalReturnBook} />
                 )}
               </IconLike>
             ) : (
               <IconItenBorrowedByUser title="Click to return the Book">
-                <BsBookmarkCheckFill title="Return the Book" onClick={() => setmodalReturnBook(true)} />
+                <BsBookmarkCheckFill title="Return the Book" onClick={handleModalReturnBook} />
               </IconItenBorrowedByUser>
             )
           ) : (
