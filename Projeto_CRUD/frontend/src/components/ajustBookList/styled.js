@@ -17,7 +17,6 @@ export const AjustBookList = styled.section`
         flex-direction: column;
     }
     
-
     @media screen and (max-width: 440px) {        
         height: 240px;
         width: 95%;
@@ -49,8 +48,6 @@ export const DivSelectCategory = styled.div`
         border: none;
         background-color: #CCFFCB; 
     }  
-
-
 
     @media screen and (max-width: 808px) {
         label{

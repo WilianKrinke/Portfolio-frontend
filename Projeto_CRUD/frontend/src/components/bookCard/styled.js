@@ -33,7 +33,6 @@ export const ContainerMoldCard = styled.div`
     align-items: center;
     flex-direction: column;
 
-
     @media screen and (max-width: 440px) {
         height: 550px;
     }
@@ -111,15 +110,14 @@ export const IconBorrowed = styled.i`
 `
 
 export const FirstContainerInfo = styled.div`
-        width: 100%;
-        height: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
-        padding-top: 10px;
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 10px;
         
-
     .image{
         width: 50%;
         height: 100%;
@@ -170,48 +168,48 @@ export const FirstContainerInfo = styled.div`
 `
 
 export const SecondContainerInfo = styled.div`
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    transition: all .3s ease-in-out;        
+    
+    .container_author{
+        width: 100%;            
+        text-align: left;
+        padding: 0px 5px;
+    }
+
+    .container_category{
+        width: 100%;            
+        text-align: left;
+        padding: 0px 5px;
+    }
+
+    .container_see_more{
+        width: 100%;           
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: column;
         align-items: center;
-        transition: all .3s ease-in-out;        
-        
-        .container_author{
-            width: 100%;            
-            text-align: left;
-            padding: 0px 5px;
-        }
+        cursor: pointer;
+    }
 
-        .container_category{
-            width: 100%;            
-            text-align: left;
-            padding: 0px 5px;
-        }
+    .container_amount{
+        width: 100%;            
+        text-align: left;
+        padding: 0px 5px;
+    }
 
-        .container_see_more{
-            width: 100%;           
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-direction: column;
-            align-items: center;
-            cursor: pointer;
+    @media screen and (max-width: 440px) {
+        p{
+            font-size: 18px;
         }
-
-        .container_amount{
-            width: 100%;            
-            text-align: left;
-            padding: 0px 5px;
-        }
-
-        @media screen and (max-width: 440px) {
-            p{
-                font-size: 18px;
-            }
-        }
+    }
 `
 
 export const ContainerResume = styled.div`
