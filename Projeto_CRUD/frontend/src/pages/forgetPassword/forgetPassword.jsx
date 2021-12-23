@@ -3,7 +3,7 @@ import Letterfooter from '../../components/letterFooter/letterFooter';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Link } from 'react-router-dom';
-import { BUttonRecoverPass } from '../../components/Buttons';
+import { ButtonRecoverPass } from '../../components/Buttons';
 import { HeaderStyled } from '../../primeComponents';
 import { Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
 
@@ -32,7 +32,7 @@ const ForgetPassword = () => {
             </form>
             <div className="container_buttons">
               <Link to="/">Back to Login</Link>
-              <BUttonRecoverPass>Send</BUttonRecoverPass>
+              <ButtonRecoverPass>Send</ButtonRecoverPass>
             </div>
           </ContainerInfo>
         </Container>

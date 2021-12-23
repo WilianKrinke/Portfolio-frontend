@@ -181,7 +181,7 @@ export const ButtonLogOut = styled.button`
     margin: 0px;
 `
 
-export const BUttonRecoverPass = styled.button`
+export const ButtonRecoverPass = styled.button`
   width: 150px;
   height: 40px;
   border-radius: 5px;

@@ -51,9 +51,9 @@ export const ContainerInfo = styled.article`
         display: flex;
         justify-content: space-around;
         align-items: center;
-        flex-direction: center;
+        flex-direction: row;
         margin: 10px 10px;
-        width: 70%;
+        width: 70%;      
         
         a{
             transition: all .3s ease-in-out;
