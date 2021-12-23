@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
 import baseUrl from '../../utils/baseUrl';
 import Letterfooter from '../../components/letterFooter/letterFooter';
@@ -7,28 +6,13 @@ import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
+import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading } from '../../primeComponents';
-import {
-  BookListMain,
-  BookListArticle,
-  AjustBookList,
-  HeaderBookList,
-  BookListSection,
-  BookArticle,
-  IconForward,
-  IconBack,
-  InfoPagination,
-  BookListFooter,
-  DivChangePage,
-  DivSelectQnt,
-  DivSelectCategory,
-} from './styled';
-import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
+import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle, BookListFooter } from './styled';
 
 const BookList = () => {
-  const [books, setBooks] = useState(null);
   const [category, setCategory] = useState('all');
   const [itensPerPage, setItensPerPage] = useState(5);
   const [pages, setPages] = useState(0);
@@ -55,7 +39,6 @@ const BookList = () => {
         logout(navigate);
       } else {
         setuserDatasMenu(responseObject);
-        setBooks(responseBooks);
         setPages(Math.ceil(responseBooks.length / itensPerPage));
         setcurrentItens(responseBooks.slice(startIndex, endIndex));
         setLoading(false);

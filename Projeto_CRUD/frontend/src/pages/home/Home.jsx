@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
+import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import { HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp, HomeFooter } from './styled';
-import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);

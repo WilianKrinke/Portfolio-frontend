@@ -5,7 +5,7 @@ import './style.css';
 const ForgetPass = () => {
   return (
     <div className="forgetPass">
-      <Link to="#">Forgot your password?</Link>
+      <Link to="/forget-pass">Forgot your password?</Link>
     </div>
   );
 };

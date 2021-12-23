@@ -7,6 +7,11 @@
 .forgetPass a {
   text-decoration: none;
   font-size: 14px;
+  transition: all 0.1s ease-in-out;
+}
+
+.forgetPass a:hover {
+  color: #6e6edb;
 }
 
 @media screen and (max-width: 960px) {
