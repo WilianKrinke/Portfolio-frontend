@@ -30,20 +30,21 @@ export const ContainerInfo = styled.article`
         width: 80%; 
         text-align: left;
         margin: 10px 10px;
+
+        p{
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
     }
 
     .form{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: flex-start;
         flex-direction: column;
         margin: 10px 10px;
         width: 80%;
         height: 60px;
-
-        input{
-            width: 100%;
-        }
     }
 
     .container_buttons{
