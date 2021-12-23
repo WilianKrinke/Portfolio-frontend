@@ -9,8 +9,8 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
-import { DivLoading } from '../../primeComponents';
-import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle, BookListFooter } from './styled';
+import { DivLoading, FooterStyled } from '../../primeComponents';
+import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -122,9 +122,9 @@ const BookList = () => {
             </BookListSection>
           </BookListMain>
 
-          <BookListFooter>
+          <FooterStyled>
             <Letterfooter />
-          </BookListFooter>
+          </FooterStyled>
         </>
       )}
     </>

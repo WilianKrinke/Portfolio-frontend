@@ -1,6 +1,7 @@
 import React from 'react';
+import Letterfooter from '../../components/letterFooter/letterFooter';
 import { HeaderStyled } from '../../primeComponents';
-import { Container, ForgetPassFooter, ForgetPassMain } from './styled';
+import { Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
 
 const ForgetPassword = () => {
   return (
@@ -9,9 +10,13 @@ const ForgetPassword = () => {
         <h1>Password Recovery</h1>
       </HeaderStyled>
       <ForgetPassMain>
-        <Container></Container>
+        <Container>
+          <ContainerInfo></ContainerInfo>
+        </Container>
       </ForgetPassMain>
-      <ForgetPassFooter></ForgetPassFooter>
+      <ForgetPassFooter>
+        <Letterfooter />
+      </ForgetPassFooter>
     </>
   );
 };

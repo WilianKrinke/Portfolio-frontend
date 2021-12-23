@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import styled from 'styled-components'
 import pattern_colors from '../../colors'
-import { MainStyled,HeaderStyled, FooterStyled } from '../../primeComponents'
+import { MainStyled,HeaderStyled } from '../../primeComponents'
 
 export const HeaderBookList = styled(HeaderStyled)`
     min-height: 22vh; 
@@ -117,15 +117,6 @@ export const LendButton = styled.div`
     :hover {
         background-color: #2D5CFF;
     }
-`
-
-export const BookListFooter = styled(FooterStyled)`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    letter-spacing: 3px;
-    padding: 10px;
 `
 
 

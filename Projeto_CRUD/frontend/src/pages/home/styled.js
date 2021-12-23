@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import pattern_colors from '../../colors'
-import {MainStyled,FooterStyled} from '../../primeComponents/index'
+import {MainStyled} from '../../primeComponents/index'
 
 export const HomeMain = styled(MainStyled)`
     display: flex;
@@ -124,13 +124,4 @@ export const ArticleSignUp = styled.article`
     transition: all .3s ease-in-out;
     opacity: ${props => props.isVisible ? '0' : '1'};
     display: ${props => props.isVisible ? 'none' : 'flex'};
-`
-
-export const HomeFooter = styled(FooterStyled)`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    letter-spacing: 3px;
-    padding: 10px;
 `

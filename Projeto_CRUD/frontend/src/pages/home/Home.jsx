@@ -3,9 +3,9 @@ import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
-import { HeaderStyled } from '../../primeComponents';
+import { FooterStyled, HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
-import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp, HomeFooter } from './styled';
+import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
@@ -41,9 +41,9 @@ const Home = () => {
         </SectForm>
       </HomeMain>
 
-      <HomeFooter>
+      <FooterStyled>
         <Letterfooter />
-      </HomeFooter>
+      </FooterStyled>
     </>
   );
 };
