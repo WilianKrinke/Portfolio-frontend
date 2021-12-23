@@ -52,7 +52,15 @@ export const ContainerInfo = styled.article`
         align-items: center;
         flex-direction: center;
         margin: 10px 10px;
-        width: 70%;  
+        width: 70%;
+        
+        a{
+            transition: all .3s ease-in-out;
+        }
+
+        a:hover{
+            color: #6e6edb;
+        }
     }
 `
 export const ForgetPassFooter = styled(FooterStyled)``
