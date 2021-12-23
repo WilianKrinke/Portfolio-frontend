@@ -14,14 +14,14 @@ const ForgetPassword = () => {
       <ForgetPassMain>
         <Container>
           <ContainerInfo>
-            <div>
+            <div className="container_disclaimer">
               <p>Enter username to send password recovery email</p>
             </div>
-            <form>
+            <form className="form">
               <label>User Name</label>
               <input type="text" name="userName" id="userName" />
             </form>
-            <div>
+            <div className="container_buttons">
               <Link to="/">Back to Login</Link>
               <BUttonRecoverPass>Send</BUttonRecoverPass>
             </div>
