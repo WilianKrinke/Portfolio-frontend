@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderStyled } from '../../primeComponents';
-import { ForgetPassFooter, ForgetPassMain } from './styled';
+import { Container, ForgetPassFooter, ForgetPassMain } from './styled';
 
 const ForgetPassword = () => {
   return (
@@ -8,7 +8,9 @@ const ForgetPassword = () => {
       <HeaderStyled>
         <h1>Password Recovery</h1>
       </HeaderStyled>
-      <ForgetPassMain></ForgetPassMain>
+      <ForgetPassMain>
+        <Container></Container>
+      </ForgetPassMain>
       <ForgetPassFooter></ForgetPassFooter>
     </>
   );

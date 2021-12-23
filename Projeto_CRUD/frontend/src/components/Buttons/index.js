@@ -45,6 +45,8 @@ export const ButtonSignin = styled.button`
   color: #222222;  
   transition: all 0.3s ease-in-out;
   border: 1px solid rgba(0, 0, 0, 0.5); 
+  position: relative;
+  bottom: 1px;
 
   :hover{
         background: #030103;
