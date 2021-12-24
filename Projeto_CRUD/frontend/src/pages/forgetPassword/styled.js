@@ -25,6 +25,7 @@ export const ContainerInfo = styled.article`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+     
 
     .container_disclaimer{
         width: 80%; 
@@ -39,29 +40,35 @@ export const ContainerInfo = styled.article`
 
     .form{
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: flex-start;
         flex-direction: column;
         margin: 10px 10px;
         width: 80%;
-        height: 60px;
+        height: 180px;
+           
+
+        .container_buttons{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row-reverse;
+            width: 70%;
+            position: relative;
+            left: 60px;
+               
+            
+            a{
+                transition: all .3s ease-in-out;
+            }
+    
+            a:hover{
+                color: #6e6edb;
+            }
+        }
     }
 
-    .container_buttons{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: row;
-        margin: 10px 10px;
-        width: 70%;      
-        
-        a{
-            transition: all .3s ease-in-out;
-        }
 
-        a:hover{
-            color: #6e6edb;
-        }
-    }
 `
+
 export const ForgetPassFooter = styled(FooterStyled)``
