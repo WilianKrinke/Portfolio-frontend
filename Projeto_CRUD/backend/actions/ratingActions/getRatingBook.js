@@ -5,8 +5,13 @@ async function getRatingBook(datas){
         idBook: datas.idbook
     }).select('rating')
 
-    const bookRating = parseFloat(response.map(item => item.rating)[0])
-    return bookRating
+    if (response[0] == undefined) {
+       //
+    } else {
+        const bookRating = parseFloat(response.map(item => item.rating)[0])
+        return bookRating
+    }
+
 }
 
 module.exports = getRatingBook;

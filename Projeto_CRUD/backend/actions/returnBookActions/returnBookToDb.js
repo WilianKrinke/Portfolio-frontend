@@ -7,7 +7,7 @@ async function returnBookToDb(bookData){
             .andWhere('idBook', bookData.idBook)
             .del()        
         
-            if (response != null || []) {
+            if (response[0] != undefined) {
 
                 const objectResponse = {
                     isReturnTheBook: true,

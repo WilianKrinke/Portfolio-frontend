@@ -7,12 +7,11 @@ async function getPass(userName) {
         }).select('idUser', 'userName', 'pass', 'adm', 'isBlock')
 
 
-        if (response != null || []) {
+        if (response[0] != undefined) {
             return response;            
         } else {
             return null
-        }
-        
+        }        
         
     } catch (error) {
         console.log(error)

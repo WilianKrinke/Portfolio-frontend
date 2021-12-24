@@ -3,10 +3,10 @@ const knex = require('../../connection/connection')
 async function getDataBooks(category){
     if (category === 'all') {
         try {
-            const datasReceived = await knex.select().from('books')
+            const response = await knex.select().from('books')
     
-            if (datasReceived != null || []) {
-                return datasReceived; 
+            if (response[0] != undefined) {
+                return response; 
             } else {
                 return null;
             }
@@ -17,9 +17,9 @@ async function getDataBooks(category){
         } 
     } else {
         try {
-            const datasReceived = await knex('books').select().where('category', category)
+            const response = await knex('books').select().where('category', category)
     
-            if (datasReceived != null || []) {
+            if (response != undefined) {
                 return datasReceived; 
             } else {
                 return null;

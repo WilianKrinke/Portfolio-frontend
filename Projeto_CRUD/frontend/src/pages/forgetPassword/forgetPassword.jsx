@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
@@ -6,11 +6,15 @@ import { Link } from 'react-router-dom';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import { HeaderStyled } from '../../primeComponents';
 import { Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
+import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 
 const ForgetPassword = () => {
+  const [userName, setuserName] = useState('');
+
   function handleForm(e) {
     e.preventDefault();
-    console.log('submeteu formulário');
+
+    reqRecoverPass(userName);
   }
 
   return (
@@ -31,7 +35,12 @@ const ForgetPassword = () => {
                 }}
                 noValidate
               >
-                <TextField id="standard-basic" label="User Name" variant="standard" />
+                <TextField
+                  id="standard-basic"
+                  label="User Name"
+                  variant="standard"
+                  onChange={(e) => setuserName(e.target.value)}
+                />
               </Box>
               <div className="container_buttons">
                 <ButtonRecoverPass>Send</ButtonRecoverPass>

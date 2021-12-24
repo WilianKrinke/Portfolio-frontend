@@ -45,8 +45,7 @@ export const ContainerInfo = styled.article`
         flex-direction: column;
         margin: 10px 10px;
         width: 80%;
-        height: 180px;
-           
+        height: 180px;           
 
         .container_buttons{
             display: flex;
@@ -55,8 +54,7 @@ export const ContainerInfo = styled.article`
             flex-direction: row-reverse;
             width: 70%;
             position: relative;
-            left: 60px;
-               
+            left: 60px;               
             
             a{
                 transition: all .3s ease-in-out;

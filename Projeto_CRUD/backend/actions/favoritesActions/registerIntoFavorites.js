@@ -16,7 +16,7 @@ async function registerIntoFavorites(favoriteDatas){
             rating: rating
         }])
     
-        if (response != null || []) {
+        if (response != undefined) {
             const objectResponse = {
                 isRegisterFavorite: true,
                 message: 'Added to favorites'

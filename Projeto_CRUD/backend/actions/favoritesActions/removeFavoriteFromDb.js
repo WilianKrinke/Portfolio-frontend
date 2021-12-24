@@ -8,7 +8,7 @@ async function removeFavoriteFromDb(bookData){
         .del()
         
     try {
-        if (response != null || []) {
+        if (response != undefined) {
             const objectResponse = {
                 isRemoved: true,
                 message: 'Book removed from favorites'

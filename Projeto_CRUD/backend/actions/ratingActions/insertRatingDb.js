@@ -9,10 +9,10 @@ async function insertRatingDb(newRating, idBook){
             rating: newRating
         })
     
-        if (response != 1) {
-            return false
-        } else {
+        if (response != undefined) {
             return true
+        } else {
+            return false
         }
     } catch (error) {
         return error;
