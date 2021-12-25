@@ -8,7 +8,7 @@ async function compareUserName(userName){
     if (response[0] !== undefined) {
         return response[0];
     } else {
-        console.log('Nao existe usuario')
+        return null;
     }
 }
 

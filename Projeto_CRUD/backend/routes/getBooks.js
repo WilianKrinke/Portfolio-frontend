@@ -15,13 +15,14 @@ const getBooks = (app) => {
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, responseObject.idUser)
             const responseBooks = await insertFavoriteBooks(booksWithBorrows, responseObject.idUser)
 
-            res.send({
+            res.status(200).send({
               responseObject,
               responseBooks
             })
 
-          } catch (error) {            
-            res.send(error)
+          } catch (error) {  
+            console.log(error)          
+            res.status(500).send('Contact the administrator')
           }  
         })
 }
