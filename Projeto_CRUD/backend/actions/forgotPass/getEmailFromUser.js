@@ -1,9 +1,8 @@
 const compareUserName = require("./compareUserName");
 
 async function getEmailFromUser(userName){
-    const {email} = await compareUserName(userName)
-    console.log(email)
-    //Fazer lógica para enviar email de recuperação de senha
+    const response = await compareUserName(userName)
+    return response;
 }
 
 module.exports = getEmailFromUser;
