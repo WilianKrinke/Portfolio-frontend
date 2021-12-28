@@ -9,16 +9,11 @@ function forgotPass(app){
             const response = await getEmailFromUser(req.body.userName)
             const token = tokenToEmail(response)
 
+            const objectResponse = await persistDatas(response,token)
 
-
-            //fazer email com token e idUser para alterar senha
-            console.log(response)
-            console.log(token)
-
-            const teste = persistDatas()
-
-            //const teste = sendEmail(response, token);
-
+            console.log(objectResponse)
+            //fazer lógica de enviar email
+            
         })
 }
 
