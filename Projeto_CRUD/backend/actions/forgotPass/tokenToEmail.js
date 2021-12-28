@@ -1,17 +1,12 @@
-const jwt = require('jsonwebtoken')
+const bcrypt = require('bcryptjs')
 
 function tokenToEmail(response){
 
     const {email} = response;
-    const time = parseInt(process.env.TIME)
-    
-    const payload = {
-        email
-    }
+    const secret = parseInt(process.env.SECRET_CRYPT)
+    const salt =  bcrypt.genSaltSync(secret);
 
-    const token = jwt.sign(payload,process.env.SECRET,{
-        expiresIn: time
-    })
+    const token =  bcrypt.hashSync(email, salt);
 
     return token;
 }

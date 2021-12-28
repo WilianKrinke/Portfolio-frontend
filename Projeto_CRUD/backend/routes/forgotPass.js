@@ -1,4 +1,5 @@
 const getEmailFromUser = require("../actions/forgotPass/getEmailFromUser");
+const persistDatas = require("../actions/forgotPass/persistDatas");
 const sendEmail = require("../actions/forgotPass/sendEmail");
 const tokenToEmail = require("../actions/forgotPass/tokenToEmail");
 
@@ -14,7 +15,9 @@ function forgotPass(app){
             console.log(response)
             console.log(token)
 
-            const teste = sendEmail(response, token);
+            const teste = persistDatas()
+
+            //const teste = sendEmail(response, token);
 
         })
 }

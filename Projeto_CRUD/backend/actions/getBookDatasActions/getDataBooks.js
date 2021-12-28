@@ -1,6 +1,7 @@
 const knex = require('../../connection/connection')
 
 async function getDataBooks(category){
+
     if (category === 'all') {
         try {
             const response = await knex.select().from('books')
@@ -20,7 +21,7 @@ async function getDataBooks(category){
             const response = await knex('books').select().where('category', category)
     
             if (response != undefined) {
-                return datasReceived; 
+                return response; 
             } else {
                 return null;
             }
