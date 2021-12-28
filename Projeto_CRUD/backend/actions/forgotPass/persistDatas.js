@@ -25,6 +25,7 @@ async function persistDatas(userData,token){
         } else {
             const objectResponse = {
                 wasRegistered: true,
+                email,
                 idUser,
                 token
             }

@@ -6,14 +6,28 @@ const tokenToEmail = require("../actions/forgotPass/tokenToEmail");
 function forgotPass(app){
     app.route('/forgot-pass')
         .post(async (req, res) => {
-            const response = await getEmailFromUser(req.body.userName)
-            const token = tokenToEmail(response)
+            try {
+                const response = await getEmailFromUser(req.body.userName)
+                const token = tokenToEmail(response)
 
-            const objectResponse = await persistDatas(response,token)
+                const objectResponse = await persistDatas(response,token)
+                
+                const wasSent = sendEmail(objectResponse)
 
-            console.log(objectResponse)
-            //fazer lógica de enviar email
-            
+                const {email} = objectResponse
+
+                if (wasSent) {
+                    res.status(200).send({
+                        wasSent,
+                        email
+                    })
+                } else {
+                    res.status(400).send('Unable to send email for password reset')
+                }
+            } catch (error) {
+                console.log(error)
+                res.status(400).send('Unable to send email for password reset')
+            }
         })
 }
 

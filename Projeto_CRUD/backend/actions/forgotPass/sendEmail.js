@@ -1,16 +1,24 @@
 const mailer = require('../../modules/mailer')
-const path = require('path')
 
-function sendEmail(userDatas, token){
+function sendEmail(objectResponse){
+    const {email, token, idUser} = objectResponse;
 
-    const {email, idUser} = userDatas
+    try {
+        mailer.sendMail({
+            from: email,
+            to: email,
+            subject:'Teste de Recuperação de Senha -  Library Project',
+            html: `
+                <p>To reset the password, access this link: <a href="http://localhost:3000/reset-pass/${token}/${idUser}">http://localhost:3000/reset-pass/${token}/${idUser}</a></p>
+            `
+        })
 
-    mailer.sendMail({
-        to: email,
-        from: 'krinkewilian@gmail.com',//algum email comporativo,
-        template: path.resolve('./src/resources/mail/email'),
-        context: { token, idUser  }
-    })
+        return true
+        
+    } catch (error) {
+        console.log(error)
+        return false
+    }
 }
 
 module.exports = sendEmail;

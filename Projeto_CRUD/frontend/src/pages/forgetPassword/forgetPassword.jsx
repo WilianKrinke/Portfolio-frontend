@@ -11,10 +11,13 @@ import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 const ForgetPassword = () => {
   const [userName, setuserName] = useState('');
 
-  function handleForm(e) {
+  async function handleForm(e) {
     e.preventDefault();
 
-    reqRecoverPass(userName);
+    const response = await reqRecoverPass(userName);
+
+    console.log(response);
+    //fazer toasty
   }
 
   return (
