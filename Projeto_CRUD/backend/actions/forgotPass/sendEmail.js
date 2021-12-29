@@ -7,9 +7,14 @@ function sendEmail(objectResponse){
         mailer.sendMail({
             from: email,
             to: email,
-            subject:'Teste de Recuperação de Senha -  Library Project',
+            subject:'Teste de Recuperação de Senha - Library Project',
             html: `
-                <p>To reset the password, access this link: <a href="http://localhost:3000/reset-pass/${token}/${idUser}">http://localhost:3000/reset-pass/${token}/${idUser}</a></p>
+                <h1>Recovery Link to Reset Password</h1>
+                <p>To reset the password, access this link:
+                <br> 
+                <a href="http://localhost:3000/reset-pass/${token}/${idUser}">http://localhost:3000/reset-pass/${token}/${idUser}</a></p>
+                <br>
+                <p><b>Obs: </b>This link is only valid for 24 hours.</p>
             `
         })
 

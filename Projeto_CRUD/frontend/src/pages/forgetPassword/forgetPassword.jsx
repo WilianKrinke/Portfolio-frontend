@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
-import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
+import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import { HeaderStyled } from '../../primeComponents';
-import { Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
-import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
+import { BoxStyled, Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
 
 const ForgetPassword = () => {
   const [userName, setuserName] = useState('');
@@ -14,10 +14,18 @@ const ForgetPassword = () => {
   async function handleForm(e) {
     e.preventDefault();
 
-    const response = await reqRecoverPass(userName);
+    try {
+      const response = await reqRecoverPass(userName);
 
-    console.log(response);
-    //fazer toasty
+      if (response !== null) {
+        const { email } = response;
+        toast.success(`The password reset link has been sent to ${email}`);
+      } else {
+        toast.warn('Something wrong, contact the administrator');
+      }
+    } catch (error) {
+      toast.warn('Something wrong, contact the administrator');
+    }
   }
 
   return (
@@ -29,22 +37,17 @@ const ForgetPassword = () => {
         <Container>
           <ContainerInfo>
             <div className="container_disclaimer">
-              <p>Insert username to send password recovery email.</p>
+              <p>Insert username to send password recovery e-mail.</p>
             </div>
             <form className="form" onSubmit={(e) => handleForm(e)}>
-              <Box
-                sx={{
-                  '& > :not(style)': { m: 0, width: '30vw', position: 'relative', bottom: '8px' },
-                }}
-                noValidate
-              >
+              <BoxStyled noValidate>
                 <TextField
                   id="standard-basic"
                   label="User Name"
                   variant="standard"
                   onChange={(e) => setuserName(e.target.value)}
                 />
-              </Box>
+              </BoxStyled>
               <div className="container_buttons">
                 <ButtonRecoverPass>Send</ButtonRecoverPass>
                 <Link to="/">Back to Login</Link>
@@ -52,6 +55,17 @@ const ForgetPassword = () => {
             </form>
           </ContainerInfo>
         </Container>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop
+          closeOnClick
+          rtl={false}
+          draggable
+          pauseOnHover={false}
+          width={500}
+        />
       </ForgetPassMain>
       <ForgetPassFooter>
         <Letterfooter />
