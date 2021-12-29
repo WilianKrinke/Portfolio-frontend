@@ -24,9 +24,7 @@ export const SectionResetPass = styled.section`
 
     @media screen and (max-width: 600px) {
         width: 95%;
-    }
-
-    
+    } 
 `
 
 export const ContainerInfo = styled.article`
@@ -58,9 +56,7 @@ export const BoxStyled = styled(Box)`
         @media screen and (max-width: 470px) {
             width: 200px;
         }
-    }
-
-    
+    }  
 `
 
 export const DivNewPass = styled.div`    
@@ -112,7 +108,6 @@ export const DivButtons = styled.div`
     top: 30px;
     left: 20px;
     
-
     @media screen and (max-width: 470px) {
         width: 240px;
         flex-direction: column-reverse;

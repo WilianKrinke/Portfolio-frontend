@@ -88,6 +88,7 @@ const RedefinePass = () => {
   function handleNewPass(e) {
     e.preventDefault();
     console.log('Mandou');
+    //lógica de inserção de nova senha
   }
 
   return (
