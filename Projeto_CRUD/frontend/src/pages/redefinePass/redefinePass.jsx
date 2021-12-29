@@ -4,10 +4,19 @@ import Loading from '../../components/loading/Loading';
 import resetPass from '../../utils/resetPass/resetPass';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import TextField from '@mui/material/TextField';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../context/authContext';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
-import { BoxStyled, ContainerInfo, DivConfirmPass, DivNewPass, RedefinePassMain, SectionResetPass } from './styled';
+import {
+  BoxStyled,
+  ContainerInfo,
+  DivButtons,
+  DivConfirmPass,
+  DivNewPass,
+  RedefinePassMain,
+  SectionResetPass,
+} from './styled';
+import { ButtonConfirmResetPass } from '../../components/Buttons';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -116,6 +125,11 @@ const RedefinePass = () => {
                       />
                     </BoxStyled>
                   </DivConfirmPass>
+
+                  <DivButtons>
+                    <Link to="/">Cancel</Link>
+                    <ButtonConfirmResetPass>Confirm</ButtonConfirmResetPass>
+                  </DivButtons>
                 </form>
               </ContainerInfo>
             </SectionResetPass>

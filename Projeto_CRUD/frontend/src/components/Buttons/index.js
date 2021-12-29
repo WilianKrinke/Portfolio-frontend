@@ -200,5 +200,24 @@ export const ButtonRecoverPass = styled.button`
   }
 `
 
+export const ButtonConfirmResetPass = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: #222222;
+
+  :hover{
+        background: #030103;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        color: #fff;
+  }
+`
+
 
 

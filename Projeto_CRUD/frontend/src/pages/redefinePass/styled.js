@@ -26,9 +26,7 @@ export const SectionResetPass = styled.section`
         width: 95%;
     }
 
-    @media screen and (max-width: 400px) {
-        height: 450px;  
-    } 
+    
 `
 
 export const ContainerInfo = styled.article`
@@ -71,6 +69,9 @@ export const DivNewPass = styled.div`
     align-items: center;
     flex-direction: row;
     width: 350px;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 10px;
 
     @media screen and (max-width: 470px) {
         width: 240px;
@@ -88,6 +89,8 @@ export const DivConfirmPass = styled.div`
     align-items: center;
     flex-direction: row;
     width: 350px;
+    position: relative;
+    bottom: 10px;
 
     @media screen and (max-width: 470px) {
         width: 240px;
@@ -96,5 +99,22 @@ export const DivConfirmPass = styled.div`
     i{
         position: relative;
         top: 7px;
+    }
+`
+
+export const DivButtons = styled.div`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 330px;
+    position: relative;
+    top: 30px;
+    
+
+    @media screen and (max-width: 470px) {
+        width: 240px;
+        flex-direction: column-reverse;
+        height: 80px;
     }
 `
