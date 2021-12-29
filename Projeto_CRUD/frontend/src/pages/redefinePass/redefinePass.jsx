@@ -7,7 +7,7 @@ import TextField from '@mui/material/TextField';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../context/authContext';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
-import { BoxStyled, ContainerInfo, RedefinePassMain, SectionResetPass } from './styled';
+import { BoxStyled, ContainerInfo, DivConfirmPass, DivNewPass, RedefinePassMain, SectionResetPass } from './styled';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -85,7 +85,7 @@ const RedefinePass = () => {
             <SectionResetPass>
               <ContainerInfo>
                 <form>
-                  <div>
+                  <DivNewPass>
                     <label onClick={() => handleEyePass()}>
                       <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
                       <i className="fas fa-eye none" id="eyeOpen" title="Password"></i>
@@ -99,9 +99,9 @@ const RedefinePass = () => {
                         type="password"
                       />
                     </BoxStyled>
-                  </div>
+                  </DivNewPass>
 
-                  <div>
+                  <DivConfirmPass>
                     <label onClick={() => handleEyePassConfirmed()}>
                       <i className="fas fa-eye-slash" id="eyeSlashConfirmed" title="Confirmed Password"></i>
                       <i className="fas fa-eye none" id="eyeOpenConfirmed" title="Confirmed Password"></i>
@@ -115,7 +115,7 @@ const RedefinePass = () => {
                         type="password"
                       />
                     </BoxStyled>
-                  </div>
+                  </DivConfirmPass>
                 </form>
               </ContainerInfo>
             </SectionResetPass>

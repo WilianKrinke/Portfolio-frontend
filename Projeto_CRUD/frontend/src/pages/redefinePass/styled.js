@@ -42,26 +42,59 @@ export const ContainerInfo = styled.article`
 `
 
 export const BoxStyled = styled(Box)`
-    width: 100%;
+    width: 310px;
+
+    @media screen and (max-width: 470px) {
+        width: 200px;
+    }
 
     .MuiInput-underline{
-        width: 420px;
-
-        @media screen and (max-width: 600px) {
-            width: 69vw;
-        }
-
-        @media screen and (max-width: 400px) {
-            width: 66vw;
-        }
+        width: 310px; 
         
+        @media screen and (max-width: 470px) {
+            width: 200px;
+        }
     }
 
-    .MuiInput-underline:before {
-        width: 100%;
+    .MuiInput-underline:after{
+        @media screen and (max-width: 470px) {
+            width: 200px;
+        }
     }
 
-    .MuiInput-underline:after {
-        width: 100%;
+    
+`
+
+export const DivNewPass = styled.div`    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 350px;
+
+    @media screen and (max-width: 470px) {
+        width: 240px;
+    }
+
+    i{
+        position: relative;
+        top: 7px;
+    }
+`
+
+export const DivConfirmPass = styled.div`    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 350px;
+
+    @media screen and (max-width: 470px) {
+        width: 240px;
+    }
+
+    i{
+        position: relative;
+        top: 7px;
     }
 `
