@@ -2,9 +2,12 @@
 import React, { useContext, useEffect } from 'react';
 import Loading from '../../components/loading/Loading';
 import resetPass from '../../utils/resetPass/resetPass';
+import Letterfooter from '../../components/letterFooter/letterFooter';
+import TextField from '@mui/material/TextField';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../context/authContext';
-import { DivLoading } from '../../primeComponents';
+import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
+import { BoxStyled, ContainerInfo, RedefinePassMain, SectionResetPass } from './styled';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -28,10 +31,44 @@ const RedefinePass = () => {
       } else {
         navigate('/');
       }
-
-      //lógica de verificação de válidade de tempo de token
     })();
   }, []);
+
+  function handleEyePass() {
+    const eyeSlashPass = document.getElementById('eyeSlash');
+    const eyeOpen = document.getElementById('eyeOpen');
+    const textFieldPass = document.getElementById('standard-basic');
+
+    if (eyeOpen.classList.contains('none')) {
+      eyeOpen.classList.remove('none');
+      eyeSlashPass.classList.add('none');
+      textFieldPass.removeAttribute('type');
+      textFieldPass.setAttribute('type', 'text');
+    } else {
+      eyeSlashPass.classList.remove('none');
+      eyeOpen.classList.add('none');
+      textFieldPass.removeAttribute('type');
+      textFieldPass.setAttribute('type', 'password');
+    }
+  }
+
+  function handleEyePassConfirmed() {
+    const eyeSlashPassConfirmed = document.getElementById('eyeSlashConfirmed');
+    const eyeOpenConfirmed = document.getElementById('eyeOpenConfirmed');
+    const textPassConfirmed = document.getElementById('standard-basic2');
+
+    if (eyeOpenConfirmed.classList.contains('none')) {
+      eyeOpenConfirmed.classList.remove('none');
+      eyeSlashPassConfirmed.classList.add('none');
+      textPassConfirmed.removeAttribute('type');
+      textPassConfirmed.setAttribute('type', 'text');
+    } else {
+      eyeSlashPassConfirmed.classList.remove('none');
+      eyeOpenConfirmed.classList.add('none');
+      textPassConfirmed.removeAttribute('type');
+      textPassConfirmed.setAttribute('type', 'password');
+    }
+  }
 
   return (
     <>
@@ -41,9 +78,51 @@ const RedefinePass = () => {
         </DivLoading>
       ) : (
         <>
-          <h1>Para redefinir sua senha</h1>
-          <h2>{token}</h2>
-          <h2>{idUser}</h2>
+          <HeaderStyled>
+            <h1>Reset Your Password</h1>
+          </HeaderStyled>
+          <RedefinePassMain>
+            <SectionResetPass>
+              <ContainerInfo>
+                <form>
+                  <div>
+                    <label onClick={() => handleEyePass()}>
+                      <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
+                      <i className="fas fa-eye none" id="eyeOpen" title="Password"></i>
+                    </label>
+                    <BoxStyled>
+                      <TextField
+                        aria-invalid="false"
+                        id="standard-basic"
+                        label="New Password"
+                        variant="standard"
+                        type="password"
+                      />
+                    </BoxStyled>
+                  </div>
+
+                  <div>
+                    <label onClick={() => handleEyePassConfirmed()}>
+                      <i className="fas fa-eye-slash" id="eyeSlashConfirmed" title="Confirmed Password"></i>
+                      <i className="fas fa-eye none" id="eyeOpenConfirmed" title="Confirmed Password"></i>
+                    </label>
+                    <BoxStyled>
+                      <TextField
+                        aria-invalid="false"
+                        id="standard-basic2"
+                        label="Confirm Password"
+                        variant="standard"
+                        type="password"
+                      />
+                    </BoxStyled>
+                  </div>
+                </form>
+              </ContainerInfo>
+            </SectionResetPass>
+          </RedefinePassMain>
+          <FooterStyled>
+            <Letterfooter />
+          </FooterStyled>
         </>
       )}
     </>
