@@ -6,7 +6,7 @@ function verifyTokenResetPass(app){
         .post(async (req, res) => {
             try {
                 const wasValid = await compareToken(req.body)
-                const wasTokenDeleted = deleteTokenFromDb(req.body)
+                const wasTokenDeleted = false //deleteTokenFromDb(req.body)
                 
                 if (wasValid) {
                     res.status(200).send({

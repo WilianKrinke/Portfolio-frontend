@@ -5,7 +5,8 @@ async function compareToken(objectDatas){
         const {token, idUser, todayTimeStamp} = objectDatas;
         const response = await knex('resetpass').where('idUser', idUser).select('hash', 'timeExpired')
     
-        const {hash, timeExpired} = response[0]
+        const hash = response[0].hash
+        const timeExpired = response[0].timeExpired
     
         if (token === hash && todayTimeStamp <= timeExpired) {       
             return true;
