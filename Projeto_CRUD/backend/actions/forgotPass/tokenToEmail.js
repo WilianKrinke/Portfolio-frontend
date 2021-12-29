@@ -2,8 +2,9 @@ var cryptoJS = require("crypto-js");
 
 function tokenToEmail(response){
     const {email} = response;
-    const token = cryptoJS.AES.encrypt(email, process.env.SALT).toString();    
-    return token;
+    const hash = cryptoJS.AES.encrypt(email, process.env.SALT).toString();    
+    const token = hash.replace('/', 'a')
+    return token;    
 }
 
 module.exports = tokenToEmail;
