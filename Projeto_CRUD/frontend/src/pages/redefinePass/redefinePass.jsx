@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../../components/loading/Loading';
 import resetPass from '../../utils/resetPass/resetPass';
 import Letterfooter from '../../components/letterFooter/letterFooter';
@@ -22,6 +22,9 @@ const RedefinePass = () => {
   const params = useParams();
   const { token, idUser } = params;
 
+  const [newPass, setnewPass] = useState('');
+  const [confirmPass, setconfirmPass] = useState('');
+
   const {
     states: { loading, setLoading },
   } = useContext(Context);
@@ -30,14 +33,17 @@ const RedefinePass = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await resetPass(token, idUser);
-      const { data } = response;
+      try {
+        const response = await resetPass(token, idUser);
+        const { data } = response;
 
-      console.log(data);
-
-      if (data.wasValid) {
-        setLoading(false);
-      } else {
+        if (data.wasValid) {
+          setLoading(false);
+        } else {
+          navigate('/');
+        }
+      } catch (error) {
+        console.log(error);
         navigate('/');
       }
     })();
@@ -79,6 +85,11 @@ const RedefinePass = () => {
     }
   }
 
+  function handleNewPass(e) {
+    e.preventDefault();
+    console.log('Mandou');
+  }
+
   return (
     <>
       {loading ? (
@@ -93,7 +104,7 @@ const RedefinePass = () => {
           <RedefinePassMain>
             <SectionResetPass>
               <ContainerInfo>
-                <form>
+                <form onSubmit={(e) => handleNewPass(e)}>
                   <DivNewPass>
                     <label onClick={() => handleEyePass()}>
                       <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
@@ -106,6 +117,7 @@ const RedefinePass = () => {
                         label="New Password"
                         variant="standard"
                         type="password"
+                        onChange={(e) => setnewPass(e.target.value)}
                       />
                     </BoxStyled>
                   </DivNewPass>
@@ -122,6 +134,7 @@ const RedefinePass = () => {
                         label="Confirm Password"
                         variant="standard"
                         type="password"
+                        onChange={(e) => setconfirmPass(e.target.value)}
                       />
                     </BoxStyled>
                   </DivConfirmPass>
