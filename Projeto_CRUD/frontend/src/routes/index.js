@@ -13,7 +13,7 @@ const index = () => {
         <Route exact path='/' caseSensitive={false} element={<Home />} />
         <Route exact path='/book-list' caseSensitive={false} element={<BookList />} />
         <Route exact path='/forget-pass' caseSensitive={false} element={<ForgetPassword />} />
-        <Route exact path='/redefine-pass' caseSensitive={false} element={<RedefinePass />} />
+        <Route exact path='/reset-pass/:token/:idUser' caseSensitive={false} element={<RedefinePass />} />
         <Route exact path='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
