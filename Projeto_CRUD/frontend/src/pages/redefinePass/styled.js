@@ -110,11 +110,13 @@ export const DivButtons = styled.div`
     width: 330px;
     position: relative;
     top: 30px;
+    left: 20px;
     
 
     @media screen and (max-width: 470px) {
         width: 240px;
         flex-direction: column-reverse;
         height: 80px;
+        left: 0px;
     }
 `
