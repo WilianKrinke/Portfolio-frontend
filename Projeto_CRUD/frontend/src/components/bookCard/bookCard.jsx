@@ -46,7 +46,6 @@ const Bookcard = ({
   favoriteByUser = false,
   rating,
 }) => {
-  const [open, setOpen] = useState(false);
   const [isLend, setisLend] = useState(borrowedByUser);
   const [isLike, setisLike] = useState(favoriteByUser);
   const [isAvailable] = useState(available);
