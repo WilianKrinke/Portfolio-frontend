@@ -17,7 +17,7 @@ const RedefinePass = () => {
     (async () => {
       console.log('Carregando');
       setLoading(false);
-      //lógica de verificação de válidade de token
+      //lógica de verificação de válidade de tempo de token
     })();
   }, []);
 
