@@ -8,7 +8,7 @@ async function persistDatas(userData,token){
         const today = new Date()    
         const todayTimeStamp = datefns.getTime(today)
 
-        const hashExpires = todayTimeStamp + 900000
+        const hashExpires = todayTimeStamp + (3600000 * 24) //900000 15 minutos
 
         const response = await knex('resetpass').insert({
             idUser: idUser,
