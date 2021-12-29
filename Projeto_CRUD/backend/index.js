@@ -10,6 +10,7 @@ const routeAddFavorite = require('./routes/addFavorite');
 const routeRemoveFavorite = require('./routes/removeFavorites');
 const routeChangeRating = require('./routes/changeRating');
 const routeForgotPass = require('./routes/forgotPass')
+const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 
 const cors =  require('cors');
 const app = express();
@@ -22,6 +23,7 @@ app.use(express.urlencoded({extended: true}))
 routeUserLogin(app)
 routeSignUpUser(app)
 routeForgotPass(app)
+routeVerifyTokenResetPass(app)
 
 app.use(authValidate)
 routeGetBooks(app)
