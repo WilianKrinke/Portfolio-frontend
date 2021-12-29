@@ -4,6 +4,7 @@ import Loading from '../../components/loading/Loading';
 import resetPass from '../../utils/resetPass/resetPass';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import TextField from '@mui/material/TextField';
+import { toast, ToastContainer } from 'react-toastify';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Context } from '../../context/authContext';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
@@ -87,8 +88,13 @@ const RedefinePass = () => {
 
   function handleNewPass(e) {
     e.preventDefault();
-    console.log('Mandou');
     //lógica de inserção de nova senha
+
+    if (newPass === confirmPass) {
+      //
+    } else {
+      toast.warn('Passwords do not match');
+    }
   }
 
   return (
@@ -119,6 +125,7 @@ const RedefinePass = () => {
                         variant="standard"
                         type="password"
                         onChange={(e) => setnewPass(e.target.value)}
+                        required
                       />
                     </BoxStyled>
                   </DivNewPass>
@@ -136,6 +143,7 @@ const RedefinePass = () => {
                         variant="standard"
                         type="password"
                         onChange={(e) => setconfirmPass(e.target.value)}
+                        required
                       />
                     </BoxStyled>
                   </DivConfirmPass>
@@ -147,6 +155,18 @@ const RedefinePass = () => {
                 </form>
               </ContainerInfo>
             </SectionResetPass>
+
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop
+              closeOnClick
+              rtl={false}
+              draggable
+              pauseOnHover={false}
+              width={500}
+            />
           </RedefinePassMain>
           <FooterStyled>
             <Letterfooter />
