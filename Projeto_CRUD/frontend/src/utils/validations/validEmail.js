@@ -3,10 +3,10 @@ export function isValidEmail(email){
     const teste = email.match(patternEmail)
 
     if (teste == null) {
-        const arrayEmailValid = [false, 'E-mail não está válido']
-        return arrayEmailValid
+        const objectEmail = {isValid: false, message: 'E-mail is not valid'}
+        return objectEmail
     } else {
-        const arrayEmailValid = [true, 'Dados válidos']
-        return arrayEmailValid
+        const objectEmail = {isValid: true, message: 'E-mail is valid'}
+        return objectEmail
     }
 }

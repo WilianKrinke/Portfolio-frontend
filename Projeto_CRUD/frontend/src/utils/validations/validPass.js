@@ -2,18 +2,30 @@ import {objectSqlInjectionsWords} from './sqlInjections'
 
 export function isValidPass(pass, passConfirmed){
     if (pass != passConfirmed) {
-        const arrayPass = [false, 'As Senhas não são iguais']
-        return arrayPass;
+        const objectPass = {
+            isValid: false,
+            message: 'Passwords do not match'
+        }
+
+        return objectPass;
     }
 
     const sqlInjection = haveSqlInjection(pass)
 
     if (sqlInjection === true) {
-        const arrayPass = [false, 'Senha possui caracteres impróprios']
-        return arrayPass
+        const objectPass = {
+            isValid: false,
+            message: 'Password has inappropriate characters'
+        }
+
+        return objectPass
     } else {
-        const arrayPass = [true, 'Dados válidos']
-        return arrayPass
+        const objectPass = {
+            isValid: true,
+            message: 'Valid pass'
+        }
+
+        return objectPass
     }
 }
 

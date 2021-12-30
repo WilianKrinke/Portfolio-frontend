@@ -4,15 +4,15 @@ import {objectSqlInjectionsWords} from './sqlInjections'
 export function isValidUser(userName){
     const arrUserName = userName.split(" ");
 
-    const Numbers = haveNumbers(arrUserName)
+    const haveNumbersInUserName = haveNumbers(arrUserName)
     const SqlInjection = haveSqlInjection(arrUserName)
 
-    if (Numbers === true || SqlInjection === true) {
-        const dataUserName = [false, 'Nome de usuário contém caracteres impróprios']
-        return dataUserName;
+    if (haveNumbersInUserName === true || SqlInjection === true) {
+        const objectUserName = {isValid: false, message: 'Username contains inappropriate characters'}
+        return objectUserName;
     } else {
-        const dataUserName = [true, 'Dados Válidos']
-        return dataUserName
+        const objectUserName = {isValid: true, message: 'Valid Username'}
+        return objectUserName;
     } 
 }
 

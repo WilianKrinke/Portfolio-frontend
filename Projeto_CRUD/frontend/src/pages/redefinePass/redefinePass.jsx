@@ -90,14 +90,9 @@ const RedefinePass = () => {
   async function handleNewPass(e) {
     e.preventDefault();
 
-    if (newPass === confirmPass) {
-      //
-      const response = await changePass(newPass, token, idUser);
+    const response = await changePass(newPass, confirmPass, token, idUser);
 
-      console.log(response);
-    } else {
-      toast.warn('Passwords do not match');
-    }
+    console.log(response);
   }
 
   return (

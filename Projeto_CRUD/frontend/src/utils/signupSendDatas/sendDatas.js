@@ -6,21 +6,21 @@ import { isValidUser } from '../validations/validUser'
 
 export async function sendDatas(datas) {
 
-    const wasValidUserName = isValidUser(datas.userName)
-    const wasValidEmail = isValidEmail(datas.email)
-    const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
+    try {
+        const wasValidUserName = isValidUser(datas.userName)
+        const wasValidEmail = isValidEmail(datas.email)
+        const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
 
-    if (wasValidUserName[0] == false) {
-        const controlArray = [false, wasValidUserName[1]]
-        return controlArray
-    } else if(wasValidEmail[0] == false){
-        const controlArray = [false, wasValidEmail[1]]
-        return controlArray
-    } else if(wasValidPass[0] == false){
-        const controlArray = [false, wasValidPass[1]]
-        return controlArray
-    } else{
-        try {
+        if (wasValidUserName.isValid === false) {        
+            return wasValidUserName
+
+        } else if(wasValidEmail.isValid === false){        
+            return wasValidEmail
+
+        } else if(wasValidPass.isValid === false){        
+            return wasValidPass
+
+        } else{
             const passCrypt = doCrypt(datas.pass);
             const response = await baseUrl.post(`/sign-up-user`, {
                 userName: datas.userName,
@@ -35,10 +35,10 @@ export async function sendDatas(datas) {
                 const controlArray = [false, 'Problemas no servidor, avise o administrador do site']
                 return controlArray
             }
-
-        } catch (error) {
-            const controlArray = [false, error]
-            return controlArray;
         }
+
+    } catch (error) {
+        const controlArray = [false, error]
+        return controlArray;
     }
 }
