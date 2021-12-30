@@ -6,6 +6,14 @@ async function insertPassIntoDb(newPassData){
         const response = await knex('users').where('idUser', idUser).update({pass: newPassCrypt})
 
         if (response === 1) {
+            const wasTokenDeleted = await deleteTokenFromDb(newPassData)
+
+            if (wasTokenDeleted) {
+                console.log('O token foi deletado')                
+            } else{
+                console.log('O token Não foi deletado')
+            }
+
             return true;
         } else {
             return false;
