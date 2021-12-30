@@ -92,7 +92,7 @@ const RedefinePass = () => {
 
     if (newPass === confirmPass) {
       //
-      const response = await changePass(newPass, idUser);
+      const response = await changePass(newPass, token, idUser);
 
       console.log(response);
     } else {
