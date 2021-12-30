@@ -1,4 +1,5 @@
 const knex = require('../../connection/connection')
+const deleteTokenFromDb = require('./deleteTokenFromDb')
 
 async function insertPassIntoDb(newPassData){
     try {

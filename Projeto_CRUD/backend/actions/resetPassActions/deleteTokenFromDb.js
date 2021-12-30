@@ -5,7 +5,7 @@ async function deleteTokenFromDb(objectDatas){
         const {token} = objectDatas    
         const response = await knex('resetpass').where('hash', token).del()
     
-        if (response[0] !== undefined) {
+        if (response === 1) {
             return true
         } else {
             return false

@@ -94,14 +94,15 @@ const RedefinePass = () => {
       const response = await changePass(newPass, confirmPass, token, idUser);
 
       if (response.wasUpdate === true) {
-        //Senha foi alterada
-        console.log('Senha foi alterada');
+        toast.success('Password Changed');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
       } else {
-        //Senha não foi alterada
-        console.log('Senha não foi alterada');
+        toast.warn('Password Not Changed, contact the administrator');
       }
     } catch (error) {
-      console.log('Senha não foi alterada');
+      toast.warn('Password Not Changed, contact the administrator');
       console.log(error);
     }
   }
@@ -167,7 +168,7 @@ const RedefinePass = () => {
 
             <ToastContainer
               position="top-right"
-              autoClose={5000}
+              autoClose={3000}
               hideProgressBar={false}
               newestOnTop
               closeOnClick
