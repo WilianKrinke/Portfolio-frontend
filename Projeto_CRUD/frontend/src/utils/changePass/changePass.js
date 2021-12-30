@@ -8,8 +8,8 @@ export default async function changePass(newPass, confirmPass, token, idUser){
         const isValidPassword = isValidPass(newPass, confirmPass);
     
         if (isValidPassword.isValid === false) {
-            return isValidPassword;
-            
+            return {wasUpdate: false};
+
         } else {
             const newPassCrypt = doCrypt(newPass)
         
@@ -19,11 +19,12 @@ export default async function changePass(newPass, confirmPass, token, idUser){
                 token
             })
         
-            return response;
+
+            return response.data;
         }
 
     } catch (error) {
-        return false;
+        return {wasUpdate: false};
     }
 
 

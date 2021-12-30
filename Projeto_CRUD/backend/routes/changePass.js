@@ -5,16 +5,17 @@ function changePass(app){
         .post(async(req, res) => {
             try {
                 const wasUpdate = await insertPassIntoDb(req.body)
+                console.log(wasUpdate)
 
                 if (wasUpdate) {
-                    res.status(200).send(wasUpdate)
+                    res.status(200).send({wasUpdate})
                 } else {
-                    res.status(400).send(wasUpdate)
+                    res.status(400).send({wasUpdate})
                 }
                 
             } catch (error) {
                 console.log(error)
-                res.status(400).send(wasUpdate)
+                res.status(400).send(false)
             }
         })
 }

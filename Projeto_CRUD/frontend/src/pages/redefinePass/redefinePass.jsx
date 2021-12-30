@@ -90,9 +90,20 @@ const RedefinePass = () => {
   async function handleNewPass(e) {
     e.preventDefault();
 
-    const response = await changePass(newPass, confirmPass, token, idUser);
+    try {
+      const response = await changePass(newPass, confirmPass, token, idUser);
 
-    console.log(response);
+      if (response.wasUpdate === true) {
+        //Senha foi alterada
+        console.log('Senha foi alterada');
+      } else {
+        //Senha não foi alterada
+        console.log('Senha não foi alterada');
+      }
+    } catch (error) {
+      console.log('Senha não foi alterada');
+      console.log(error);
+    }
   }
 
   return (
