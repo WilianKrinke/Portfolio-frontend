@@ -11,6 +11,7 @@ const routeRemoveFavorite = require('./routes/removeFavorites');
 const routeChangeRating = require('./routes/changeRating');
 const routeForgotPass = require('./routes/forgotPass')
 const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
+const routeChangePass = require('./routes/changePass')
 
 const cors =  require('cors');
 const app = express();
@@ -24,6 +25,7 @@ routeUserLogin(app)
 routeSignUpUser(app)
 routeForgotPass(app)
 routeVerifyTokenResetPass(app)
+routeChangePass(app)
 
 app.use(authValidate)
 routeGetBooks(app)

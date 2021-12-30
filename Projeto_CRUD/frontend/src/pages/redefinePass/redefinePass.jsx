@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
 import Loading from '../../components/loading/Loading';
-import resetPass from '../../utils/resetPass/resetPass';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import TextField from '@mui/material/TextField';
 import { toast, ToastContainer } from 'react-toastify';
@@ -18,6 +17,8 @@ import {
   SectionResetPass,
 } from './styled';
 import { ButtonConfirmResetPass } from '../../components/Buttons';
+import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
+import changePass from '../../utils/changePass/changePass';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -35,7 +36,7 @@ const RedefinePass = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await resetPass(token, idUser);
+        const response = await verifyToken(token, idUser);
         const { data } = response;
 
         if (data.wasValid) {
@@ -86,12 +87,14 @@ const RedefinePass = () => {
     }
   }
 
-  function handleNewPass(e) {
+  async function handleNewPass(e) {
     e.preventDefault();
-    //lógica de inserção de nova senha
 
     if (newPass === confirmPass) {
       //
+      const response = await changePass(newPass, idUser);
+
+      console.log(response);
     } else {
       toast.warn('Passwords do not match');
     }
