@@ -12,8 +12,6 @@ function forgotPass(app){
                 const userHaveTokenValid = await haveTokenValid(response)
 
                 if (userHaveTokenValid === false) {
-                    console.log('Não há token válido, vamos gerar um token') 
-
                     const token = tokenToEmail(response)    
                     const objectResponse = await persistDatas(response,token)                    
                     const wasSent = sendEmail(objectResponse)
@@ -30,7 +28,6 @@ function forgotPass(app){
                     }
 
                 } else {
-                    console.log('Há token válido') 
                     res.status(400).send('This user already has a call in progress for password change')
                 }
 

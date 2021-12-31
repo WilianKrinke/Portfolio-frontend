@@ -6,8 +6,6 @@ function tokenToEmail(response){
 
     const token = hash.split('/').join('a');
     
-    
-    
     return token;    
 }
 
