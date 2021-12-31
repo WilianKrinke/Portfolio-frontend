@@ -1,11 +1,10 @@
-var cryptoJS = require("crypto-js");
+const bcrypt = require('bcryptjs')
 
 function tokenToEmail(response){
     const {email} = response;
-    const hash = cryptoJS.AES.encrypt(email, process.env.SALT).toString();
-    
-    const token = hash.split('/').join('a')
-    
+    const hash = bcrypt.hashSync(email, 12);
+
+    const token = hash.split('/').join('a');    
     return token;    
 }
 
