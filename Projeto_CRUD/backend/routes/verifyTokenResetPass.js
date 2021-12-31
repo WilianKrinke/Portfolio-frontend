@@ -1,5 +1,4 @@
 const compareToken = require("../actions/resetPassActions/compareToken");
-const deleteTokenFromDb = require("../actions/resetPassActions/deleteTokenFromDb");
 
 function verifyTokenResetPass(app){
     app.route('/verify-token')
