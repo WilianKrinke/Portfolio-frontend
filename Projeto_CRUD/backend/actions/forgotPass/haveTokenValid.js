@@ -6,7 +6,6 @@ async function haveTokenValid(userDatas) {
         const response = await knex('resetpass').select().where('idUser', idUser)
     
         if (response[0] !== undefined) {
-            //há token válido
             return true
         } else {
             return false

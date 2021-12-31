@@ -4,7 +4,10 @@ function tokenToEmail(response){
     const {email} = response;
     const hash = bcrypt.hashSync(email, 12);
 
-    const token = hash.split('/').join('a');    
+    const token = hash.split('/').join('a');
+    
+    
+    
     return token;    
 }
 
