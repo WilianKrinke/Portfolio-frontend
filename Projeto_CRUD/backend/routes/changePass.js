@@ -1,4 +1,4 @@
-const insertPassIntoDb = require("../actions/resetPassActions/changePass");
+const insertPassIntoDb = require("../actions/resetPassActions/insertPassIntoDb");
 
 function changePass(app){
     app.route('/change-pass')
