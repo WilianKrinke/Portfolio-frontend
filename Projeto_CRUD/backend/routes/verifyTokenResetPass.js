@@ -1,4 +1,4 @@
-const compareToken = require("../actions/resetPassActions/compareToken");
+const compareToken = require("../actions/verifyTokenToResetPassActions/compareToken");
 
 function verifyTokenResetPass(app){
     app.route('/verify-token')
