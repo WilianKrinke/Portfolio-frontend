@@ -29,7 +29,7 @@ function forgotPass(app){
                 } else {
                     res.status(400).send('This user already has a call in progress for password change')
                 }
-                
+
             } catch (error) {
                 console.log(error)
                 res.status(400).send('Unable to send email for password reset')
