@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import pattern_colors from '../../colors'
 
 export const CardStyled = styled.div`
     min-height: 450px;
@@ -6,7 +7,7 @@ export const CardStyled = styled.div`
     margin: 10px;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: #CCFFCB;
+    background-color: ${pattern_colors.prime_compoments_bg};
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;

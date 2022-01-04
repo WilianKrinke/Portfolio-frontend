@@ -30,14 +30,14 @@ export const AjustBookList = styled.section`
 export const DivSelectCategory = styled.div`
     width: 30%;    
     height: 30px;
-    border-radius: 25px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    background-color: #CCFFCB;
+    background-color: transparent;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
     label {
         position: relative;
@@ -47,7 +47,7 @@ export const DivSelectCategory = styled.div`
     select {
         outline: none;
         border: none;
-        background-color: #CCFFCB; 
+        background-color: transparent; 
     }  
 
     @media screen and (max-width: 808px) {
@@ -89,9 +89,9 @@ export const DivSelectQnt = styled.div`
     justify-content: space-around;
     flex-direction: row;
     padding: 10px;
-    background-color: #CCFFCB;
-    border-radius: 25px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
     label {
         position: relative;
@@ -101,7 +101,7 @@ export const DivSelectQnt = styled.div`
     select {
         outline: none;
         border: none;
-        background-color: #CCFFCB;
+        background-color: transparent;
     } 
 
     @media screen and (max-width: 808px) {

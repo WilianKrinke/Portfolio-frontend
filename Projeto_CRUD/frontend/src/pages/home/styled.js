@@ -39,7 +39,7 @@ export const SectForm = styled.section`
     width: 45%;
     height: 60vh;
     padding: 10px;
-    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.section_bg};
+    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.prime_compoments_bg};
     border-radius: 0px 5px 5px 0px;
     border-bottom: 1px solid ${pattern_colors.borders_color};
     border-top: 1px solid ${pattern_colors.borders_color};

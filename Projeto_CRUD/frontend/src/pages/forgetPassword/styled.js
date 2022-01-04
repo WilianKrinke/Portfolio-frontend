@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
+import pattern_colors from '../../colors'
 import {FooterStyled, MainStyled} from '../../primeComponents'
 
 export const ForgetPassMain = styled(MainStyled)`
@@ -36,7 +37,7 @@ export const BoxStyled = styled(Box)`
 `
 
 export const Container = styled.section`
-    background-color: #CCFFCB;
+    background-color: ${pattern_colors.prime_compoments_bg};
     width: 550px;
     height: 410px;
     padding: 10px;
