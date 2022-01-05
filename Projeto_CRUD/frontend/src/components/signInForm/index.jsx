@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../../context/authContext';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
-import { sendSignIn } from '../../utils/signinSendDatas/sendDatas';
+import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { ToastContainer, toast } from 'react-toastify';
 import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
@@ -19,18 +19,21 @@ const Form = () => {
 
   async function handleForm(e) {
     e.preventDefault();
+    try {
+      const signinDatas = {
+        userName,
+        pass,
+      };
 
-    const signinDatas = {
-      userName,
-      pass,
-    };
+      const { authenticate } = await sendSignIn(signinDatas);
 
-    const isLogged = await sendSignIn(signinDatas);
-
-    if (isLogged == true) {
-      navigate('./book-list');
-    } else {
-      toast.error('Usuário ou senha incorretos');
+      if (authenticate === true) {
+        navigate('./book-list');
+      } else {
+        toast.error('Incorrect username or password');
+      }
+    } catch (error) {
+      toast.error('Something wrong, contact the administrator');
     }
   }
 

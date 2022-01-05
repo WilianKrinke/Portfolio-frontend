@@ -3,12 +3,12 @@ const getPass = require("./getPass");
 
 async function login (datas){
     const userDatasFromDb = await getPass(datas.userName)
-    const arrWithToken = comparePass(datas.pass, userDatasFromDb)
+    const objectAuth = comparePass(datas.pass, userDatasFromDb)
 
-    if (arrWithToken[0] == true) {
-        return arrWithToken
+    if  (objectAuth.authenticate === true) {
+        return objectAuth
     } else {
-        return false
+        return objectAuth
     }
 }
 
