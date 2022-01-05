@@ -13,8 +13,6 @@ export async function sendSignIn(datas){
             pass: ciphertext
         })
 
-        console.log(response)
-
         const {data} = response
 
         if (data.authenticate === true) {            
