@@ -1,4 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
+import { Context } from '../../context/authContext';
+import { useNavigate } from 'react-router';
+import { DivLoading, FooterStyled } from '../../primeComponents';
+import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 import baseUrl from '../../utils/baseUrl';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
@@ -7,10 +11,6 @@ import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
-import { Context } from '../../context/authContext';
-import { useNavigate } from 'react-router';
-import { DivLoading, FooterStyled } from '../../primeComponents';
-import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -39,16 +39,12 @@ const BookList = () => {
         logout(navigate);
       } else {
         setuserDatasMenu(responseObject);
-
         setPages(Math.ceil(responseBooks.length / itensPerPage));
-
         setcurrentItens(responseBooks.slice(startIndex, endIndex));
         setLoading(false);
         setTimeout(() => {
           setfadeIn(true);
         }, 1);
-
-        console.log(pages);
       }
     })();
   }, [itensPerPage, startIndex, endIndex, category]);
