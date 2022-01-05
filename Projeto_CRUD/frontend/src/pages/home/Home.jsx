@@ -11,6 +11,10 @@ const Home = () => {
   const [selection, setSelection] = useState(true);
   const [isLoginVisible, setisLoginVisible] = useState(true);
 
+  function handleChangeBlock() {
+    setisLoginVisible(!isLoginVisible);
+  }
+
   return (
     <>
       <HeaderStyled>
@@ -28,16 +32,18 @@ const Home = () => {
         </InfoCard>
 
         <SectForm onhover={selection}>
-          <ArticleLogin isVisible={isLoginVisible}>
-            <SignInForm />
-            <ButtonChangeForm onClick={() => setisLoginVisible(!isLoginVisible)}>Sign Up</ButtonChangeForm>
-            <ForgetPass />
-          </ArticleLogin>
-
-          <ArticleSignUp isVisible={isLoginVisible}>
-            <SignUpForm />
-            <ButtonBackToLogin onClick={() => setisLoginVisible(!isLoginVisible)}>Back</ButtonBackToLogin>
-          </ArticleSignUp>
+          {isLoginVisible ? (
+            <ArticleLogin>
+              <SignInForm />
+              <ButtonChangeForm onClick={handleChangeBlock}>Sign Up</ButtonChangeForm>
+              <ForgetPass />
+            </ArticleLogin>
+          ) : (
+            <ArticleSignUp>
+              <SignUpForm />
+              <ButtonBackToLogin onClick={handleChangeBlock}>Back</ButtonBackToLogin>
+            </ArticleSignUp>
+          )}
         </SectForm>
       </HomeMain>
 

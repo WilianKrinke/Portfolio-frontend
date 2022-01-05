@@ -109,8 +109,7 @@ export const ArticleLogin = styled.article`
     height: 100%;
     border: ${pattern_colors.intern_div_border};
     transition: all .3s ease-in-out;
-    opacity: ${props => props.isVisible ? '1' : '0'};
-    display: ${props => props.isVisible ? 'flex' : 'none'};   
+    
 `
 
 export const ArticleSignUp = styled.article`
@@ -122,6 +121,5 @@ export const ArticleSignUp = styled.article`
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.3);
     transition: all .3s ease-in-out;
-    opacity: ${props => props.isVisible ? '0' : '1'};
-    display: ${props => props.isVisible ? 'none' : 'flex'};
+    
 `

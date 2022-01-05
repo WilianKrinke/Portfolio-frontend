@@ -1,19 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { ButtonContainer, ContainerInfoSignUp } from './styled';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';
 import { ButtonSignUp } from '../Buttons';
+import { ButtonContainer, ContainerInfoSignUp } from './styled';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import 'react-toastify/dist/ReactToastify.css';
 import './signUpForm.css';
 
 const Form = () => {
-  const [userName, setuserName] = useState(null);
-  const [email, setEmail] = useState(null);
-  const [pass, setPass] = useState(null);
-  const [passConfirmed, setPassConfirmed] = useState(null);
+  const [userName, setuserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
+  const [passConfirmed, setPassConfirmed] = useState('');
 
   async function handleSubmitUser(e) {
     e.preventDefault();
@@ -29,6 +29,10 @@ const Form = () => {
 
     if (wasRegister === true) {
       toast.success(message);
+      setuserName('');
+      setEmail('');
+      setPass('');
+      setPassConfirmed('');
     } else {
       toast.error(message);
     }
@@ -85,6 +89,7 @@ const Form = () => {
               type="text"
               name="user_name_signup"
               onChange={(e) => setuserName(e.target.value)}
+              value={userName}
               required
             />
           </Box>
@@ -102,6 +107,7 @@ const Form = () => {
               type="email"
               name="email_signup"
               onChange={(e) => setEmail(e.target.value)}
+              value={email}
               required
             />
           </Box>
@@ -120,6 +126,7 @@ const Form = () => {
               type="password"
               name="pass_signup"
               onChange={(e) => setPass(e.target.value)}
+              value={pass}
               required
             />
           </Box>
@@ -138,6 +145,7 @@ const Form = () => {
               type="password"
               name="confirmed_pass"
               onChange={(e) => setPassConfirmed(e.target.value)}
+              value={passConfirmed}
               required
             />
           </Box>
