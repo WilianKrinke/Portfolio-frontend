@@ -28,8 +28,6 @@ function haveSqlInjection(names){
             }            
         }
     })
-
-    return control;
 }
 
 

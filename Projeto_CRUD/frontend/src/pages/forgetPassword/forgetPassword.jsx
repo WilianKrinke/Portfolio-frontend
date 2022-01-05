@@ -17,8 +17,6 @@ const ForgetPassword = () => {
     try {
       const response = await reqRecoverPass(userName);
 
-      console.log(response);
-
       if (response !== null) {
         const { email } = response;
         toast.success(`The password reset link has been sent to ${email}`);
