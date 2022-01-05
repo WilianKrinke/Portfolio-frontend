@@ -194,7 +194,7 @@ const Bookcard = ({
               </IconLend>
             ) : (
               <IconBorrowed title="Click to return the Book">
-                <BsBookmarkCheckFill title="Return the Book" onClick={handleModalReturnBook} />
+                <BsBookmarkCheckFill title="Click to return the Book" onClick={handleModalReturnBook} />
               </IconBorrowed>
             )
           ) : (
@@ -203,8 +203,12 @@ const Bookcard = ({
             </IconNotAvailable>
           )}
 
-          <IconLendItem title="Add to Favorites">
-            {isLike ? <BsHeartFill onClick={handleRemoveFavorite} /> : <BsHeart onClick={handleAddFav} />}
+          <IconLendItem>
+            {isLike ? (
+              <BsHeartFill onClick={handleRemoveFavorite} title="Remove from Favorites" />
+            ) : (
+              <BsHeart onClick={handleAddFav} title="Add to Favorites" />
+            )}
           </IconLendItem>
         </ContainerToLike>
       </CardStyled>

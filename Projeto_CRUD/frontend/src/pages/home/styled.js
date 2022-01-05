@@ -81,22 +81,7 @@ export const ArticleCrud = styled.article`
         font-weight: 600;
         margin: 2px;
         letter-spacing: 3px;
-    }
-    
-    p:first-child{
         font-size: 70px;
-    }
-
-    p:nth-child(2){
-        font-size: 70px;
-    }
-
-    p:nth-child(3){
-        font-size: 70px;
-    }
-
-    p:last-child{
-        font-size: 70px; 
     }
 `
 
@@ -107,9 +92,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: ${pattern_colors.intern_div_border};
-    transition: all .3s ease-in-out;
-    
+    border: ${pattern_colors.intern_div_border};    
 `
 
 export const ArticleSignUp = styled.article`
@@ -119,7 +102,5 @@ export const ArticleSignUp = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    transition: all .3s ease-in-out;
-    
+    border: 1px solid rgba(0, 0, 0, 0.3);    
 `

@@ -6,7 +6,7 @@ const Letterfooter = () => {
         <>
             <ContainerName>
                 <div>
-                    <h4>Desenvolvido por Wilian Krinke</h4>
+                    <h4>Developed by Wilian Krinke</h4>
                 </div>
             </ContainerName>
         </>
