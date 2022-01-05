@@ -39,27 +39,33 @@ const BookList = () => {
         logout(navigate);
       } else {
         setuserDatasMenu(responseObject);
+
         setPages(Math.ceil(responseBooks.length / itensPerPage));
+
         setcurrentItens(responseBooks.slice(startIndex, endIndex));
         setLoading(false);
         setTimeout(() => {
           setfadeIn(true);
         }, 1);
+
+        console.log(pages);
       }
     })();
   }, [itensPerPage, startIndex, endIndex, category]);
 
   function accCurrentPage() {
     setCurrentPage(currentPage + 1);
-    if (currentPage >= 4) {
+
+    if (currentPage >= pages - 1) {
       setCurrentPage(0);
     }
   }
 
   function decCurrentPage() {
     setCurrentPage(currentPage - 1);
+
     if (currentPage <= 0) {
-      setCurrentPage(4);
+      setCurrentPage(pages - 1);
     }
   }
 
