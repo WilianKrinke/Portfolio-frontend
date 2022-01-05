@@ -24,12 +24,13 @@ const Form = () => {
       passConfirmed,
     };
 
-    const wasRegister = await sendDatas(objectDatas);
+    const response = await sendDatas(objectDatas);
+    const { wasRegister, message } = response;
 
-    if (wasRegister[0] == true) {
-      toast.success('Usuário Cadastrado!');
+    if (wasRegister === true) {
+      toast.success(message);
     } else {
-      toast.error(wasRegister[1]);
+      toast.error(message);
     }
   }
 

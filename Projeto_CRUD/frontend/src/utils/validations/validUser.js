@@ -5,9 +5,9 @@ export function isValidUser(userName){
     const arrUserName = userName.split(" ");
 
     const haveNumbersInUserName = haveNumbers(arrUserName)
-    const SqlInjection = haveSqlInjection(arrUserName)
+    const sqlInjection = haveSqlInjection(arrUserName)
 
-    if (haveNumbersInUserName === true || SqlInjection === true) {
+    if (haveNumbersInUserName === true || sqlInjection === true) {
         const objectUserName = {isValid: false, message: 'Username contains inappropriate characters'}
         return objectUserName;
     } else {
@@ -16,20 +16,18 @@ export function isValidUser(userName){
     } 
 }
 
-
 function haveSqlInjection(names){
     let control = false;
-
-    names.forEach(element => {        
-        for (let i = 0; i < objectSqlInjectionsWords.length; i++) {
-            if (element === objectSqlInjectionsWords[i]) {
+    names.forEach(userNameWord => {
+        objectSqlInjectionsWords.forEach(sqlInjectionWord => {            
+            if (userNameWord === sqlInjectionWord) {
                 control = true;
-                break;
-            }            
-        }
+            }
+        })
     })
-}
 
+    return control;
+}
 
 function haveNumbers(names){
     const isPatternUserName = /^[A-Za-z0-9]*\d+[A-Za-z0-9]*$/g;

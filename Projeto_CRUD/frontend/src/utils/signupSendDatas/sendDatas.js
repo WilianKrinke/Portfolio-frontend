@@ -5,20 +5,22 @@ import { isValidPass } from '../validations/validPass'
 import { isValidUser } from '../validations/validUser'
 
 export async function sendDatas(datas) {
-
     try {
         const wasValidUserName = isValidUser(datas.userName)
         const wasValidEmail = isValidEmail(datas.email)
         const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
 
         if (wasValidUserName.isValid === false) {        
-            return wasValidUserName
+            const objectResponse = {wasRegister: false, message: wasValidUserName.message}
+            return objectResponse
 
         } else if(wasValidEmail.isValid === false){        
-            return wasValidEmail
+            const objectResponse = {wasRegister: false, message: wasValidEmail.message}
+            return objectResponse
 
         } else if(wasValidPass.isValid === false){        
-            return wasValidPass
+            const objectResponse = {wasRegister: false, message: wasValidPass.message}
+            return objectResponse
 
         } else{
             const passCrypt = doCrypt(datas.pass);
@@ -26,19 +28,23 @@ export async function sendDatas(datas) {
                 userName: datas.userName,
                 email: datas.email,
                 pass: passCrypt,
-            }); 
+            });
 
-            if (response.data == true) {
-                const controlArray = [true, response.data]
-                return controlArray;      
+            const {data} = response;
+
+            if (data === true) {
+                const objectResponse = {wasRegister: true, message: 'User registered successfully!'}
+                return objectResponse;
             } else {
-                const controlArray = [false, 'Problemas no servidor, avise o administrador do site']
-                return controlArray
+                console.log('Erro no servidor')
+                const objectResponse = {wasRegister: false, message: 'User has not been registered.'}
+                return objectResponse
             }
         }
 
     } catch (error) {
-        const controlArray = [false, error]
-        return controlArray;
+        console.log(error)
+        const objectResponse = {wasRegister: false, message: 'User has not been registered.'}
+        return objectResponse
     }
 }

@@ -29,16 +29,12 @@ export function isValidPass(pass, passConfirmed){
     }
 }
 
-
 function haveSqlInjection(pass){
-    let control = false;
-  
+    let control = false;  
     for (let i = 0; i < objectSqlInjectionsWords.length; i++) {
         if (pass === objectSqlInjectionsWords[i]) {
             control = true;
-            break;
         }            
-    }
-   
+    }   
     return control;
 }
