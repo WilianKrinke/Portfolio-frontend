@@ -12,7 +12,7 @@ export const RedefinePassMain = styled(MainStyled)`
 `
 
 export const SectionResetPass = styled.section`
-    background-color: #CCFFCB;
+    background-color: #F9FFF9;
     width: 550px;
     height: 410px;
     padding: 10px;
