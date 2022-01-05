@@ -4,7 +4,6 @@ import baseUrl from '../baseUrl'
 import insertSessionToken from "../insertions/insertSessionToken";
 
 export async function sendSignIn(datas){
-
     const ciphertext = CryptoJS.AES.encrypt(datas.pass, process.env.REACT_APP_SALT2).toString();
 
     try {
