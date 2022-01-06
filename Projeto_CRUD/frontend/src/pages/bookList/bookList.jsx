@@ -47,6 +47,11 @@ const BookList = () => {
         }, 1);
       }
     })();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [itensPerPage, startIndex, endIndex, category]);
 
   function accCurrentPage() {
@@ -62,6 +67,15 @@ const BookList = () => {
 
     if (currentPage <= 0) {
       setCurrentPage(pages - 1);
+    }
+  }
+
+  function handleScroll() {
+    const positionY = window.scrollY;
+    console.log(positionY);
+
+    if (positionY >= 900) {
+      alert('CHEGOU AOS 900');
     }
   }
 
