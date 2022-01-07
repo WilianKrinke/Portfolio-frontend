@@ -48,7 +48,7 @@ const Menu = ({ user = { userName: 'Loading...' } }) => {
               <Link to="#">Book List</Link>
             </li>
             <li>
-              <Link to="#">My Borrowed Books</Link>
+              <Link to="/my-borrowed-books">My Borrowed Books</Link>
             </li>
             <li>
               <Link to="#">My Favorites</Link>
