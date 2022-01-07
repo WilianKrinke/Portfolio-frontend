@@ -1,10 +1,9 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
-import { Context } from '../../context/authContext';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { ToastContainer, toast } from 'react-toastify';

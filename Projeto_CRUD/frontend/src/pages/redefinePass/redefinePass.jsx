@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Loading from '../../components/loading/Loading';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import TextField from '@mui/material/TextField';
 import { toast, ToastContainer } from 'react-toastify';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Context } from '../../context/authContext';
+import { useSelector, useDispatch } from 'react-redux';
 import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
 import {
   BoxStyled,
@@ -19,6 +19,7 @@ import {
 import { ButtonConfirmResetPass } from '../../components/Buttons';
 import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
 import changePass from '../../utils/changePass/changePass';
+import { toggleLoading } from '../../store/actions/actions';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -27,9 +28,8 @@ const RedefinePass = () => {
   const [newPass, setnewPass] = useState('');
   const [confirmPass, setconfirmPass] = useState('');
 
-  const {
-    states: { loading, setLoading },
-  } = useContext(Context);
+  const loading = useSelector((state) => state.toggleLoading.loading);
+  const dispatch = useDispatch();
 
   let navigate = useNavigate();
 
@@ -40,7 +40,7 @@ const RedefinePass = () => {
         const { data } = response;
 
         if (data.wasValid) {
-          setLoading(false);
+          dispatch(toggleLoading());
         } else {
           navigate('/');
         }
