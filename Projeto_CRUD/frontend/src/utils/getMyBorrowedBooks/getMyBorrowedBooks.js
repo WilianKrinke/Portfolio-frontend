@@ -2,7 +2,6 @@ import baseUrl from "../baseUrl";
 
 export default async function getMyBorrowedBooks(navigate){
     try {
-        console.log('Passou por aqui')
         const response = await baseUrl.get('/my-borrowed-book-list');
         const {data} = response;
 
