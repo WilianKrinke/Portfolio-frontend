@@ -78,7 +78,6 @@ const BookList = () => {
           <HeaderBookList>
             <h1>Book List</h1>
           </HeaderBookList>
-
           <BookListMain>
             <BookListSection>
               <BookArticle fadeIn={fadeIn}>
@@ -90,7 +89,6 @@ const BookList = () => {
                   setItensPerPage={setItensPerPage}
                   setCategory={setCategory}
                 />
-
                 <BookListArticle>
                   {currentItens.map((item) => {
                     return (
@@ -112,7 +110,6 @@ const BookList = () => {
                     );
                   })}
                 </BookListArticle>
-
                 <Ajustbooklist
                   decCurrentPage={decCurrentPage}
                   currentPage={currentPage}
