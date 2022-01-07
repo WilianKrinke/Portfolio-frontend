@@ -11,6 +11,7 @@ import Menu from '../../components/menu/Menu';
 import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
+import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -20,6 +21,7 @@ const BookList = () => {
   const [currentItens, setcurrentItens] = useState([]);
   const [userDatasMenu, setuserDatasMenu] = useState();
   const [fadeIn, setfadeIn] = useState(false);
+  const [scrollElement, setScrollElement] = useState(false);
 
   const navigate = useNavigate();
   const startIndex = currentPage * itensPerPage;
@@ -75,7 +77,9 @@ const BookList = () => {
     console.log(positionY);
 
     if (positionY >= 900) {
-      alert('CHEGOU AOS 900');
+      setScrollElement(true);
+    } else {
+      setScrollElement(false);
     }
   }
 
@@ -136,6 +140,8 @@ const BookList = () => {
                 />
               </BookArticle>
             </BookListSection>
+
+            {scrollElement && <Scrolltotop />}
           </BookListMain>
 
           <FooterStyled>
