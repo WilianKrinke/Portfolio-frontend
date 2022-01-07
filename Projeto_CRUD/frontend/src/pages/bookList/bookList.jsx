@@ -3,7 +3,6 @@ import { Context } from '../../context/authContext';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
-import baseUrl from '../../utils/baseUrl';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -12,6 +11,7 @@ import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
+import getBookList from '../../utils/getBookList/getBookList';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -32,20 +32,25 @@ const BookList = () => {
 
   useEffect(() => {
     (async () => {
-      preAuth();
-      const response = await baseUrl.get(`/books-list/${category}`);
-      const { responseBooks, responseObject } = response.data;
+      try {
+        preAuth();
+        const response = await getBookList(category);
+        const { responseBooks, responseObject } = response.data;
 
-      if (response.data == false) {
-        logout(navigate);
-      } else {
-        setuserDatasMenu(responseObject);
-        setPages(Math.ceil(responseBooks.length / itensPerPage));
-        setcurrentItens(responseBooks.slice(startIndex, endIndex));
-        setLoading(false);
-        setTimeout(() => {
-          setfadeIn(true);
-        }, 1);
+        if (response.data == false) {
+          logout(navigate);
+        } else {
+          setuserDatasMenu(responseObject);
+          setPages(Math.ceil(responseBooks.length / itensPerPage));
+          setcurrentItens(responseBooks.slice(startIndex, endIndex));
+          setLoading(false);
+          setTimeout(() => {
+            setfadeIn(true);
+          }, 1);
+        }
+      } catch (error) {
+        console.log(error);
+        //Para página de erro
       }
     })();
   }, [itensPerPage, startIndex, endIndex, category]);
