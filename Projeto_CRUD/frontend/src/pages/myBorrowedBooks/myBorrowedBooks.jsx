@@ -19,13 +19,13 @@ const MyBorrowedBooks = () => {
         </DivLoading>
       ) : (
         <>
+          <Menu />
           <HeaderStyled></HeaderStyled>
           <MainStyled></MainStyled>
           <FooterStyled>
             <Letterfooter />
           </FooterStyled>
 
-          <Menu />
           {/* Componente */}
         </>
       )}

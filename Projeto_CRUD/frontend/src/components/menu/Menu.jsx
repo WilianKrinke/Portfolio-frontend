@@ -45,7 +45,7 @@ const Menu = ({ user = { userName: 'Loading...' } }) => {
         <ContainerLinks>
           <ul>
             <li>
-              <Link to="#">Book List</Link>
+              <Link to="/book-list">Book List</Link>
             </li>
             <li>
               <Link to="/my-borrowed-books">My Borrowed Books</Link>
