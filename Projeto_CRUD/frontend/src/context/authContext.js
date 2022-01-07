@@ -7,12 +7,23 @@ import baseUrl from '../utils/baseUrl';
 const Context = createContext();
 
 function AuthProvider({children}){    
-    const [loading, setLoading] = useState(true);    
+    const [loading, setLoading] = useState(true);
+    const [hours, setHours] = useState(0);  
+    const [minutes, setMinutes] = useState(0);  
+    const [seconds, setSeconds] = useState(0);  
     
     const states = {
         loading,
-        setLoading
-    }   
+        setLoading,
+        hours,
+        minutes,
+        seconds
+    }
+
+    useEffect(() => {
+        
+        
+    }, [hours,minutes,seconds]);
 
     return (
     <Context.Provider value={{states}}>
