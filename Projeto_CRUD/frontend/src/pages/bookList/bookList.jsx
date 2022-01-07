@@ -1,8 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Context } from '../../context/authContext';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
+import { useSelector, useDispatch } from 'react-redux';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -12,6 +12,7 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
+import { toggleLoading } from '../../store/actions/actions';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -26,9 +27,8 @@ const BookList = () => {
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
 
-  const {
-    states: { loading, setLoading },
-  } = useContext(Context);
+  const loading = useSelector((state) => state.toggleLoading.loading);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -43,7 +43,7 @@ const BookList = () => {
           setuserDatasMenu(responseObject);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
           setcurrentItens(responseBooks.slice(startIndex, endIndex));
-          setLoading(false);
+          dispatch(toggleLoading());
           setTimeout(() => {
             setfadeIn(true);
           }, 1);
