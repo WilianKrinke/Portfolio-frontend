@@ -12,6 +12,7 @@ const routeChangeRating = require('./routes/changeRating');
 const routeForgotPass = require('./routes/forgotPass')
 const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 const routeChangePass = require('./routes/changePass')
+const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
 
 const cors =  require('cors');
 const app = express();
@@ -34,6 +35,8 @@ routeReturnBook(app)
 routeAddFavorite(app)
 routeRemoveFavorite(app)
 routeChangeRating(app)
+routeGetMyBorrowedBooks(app)
+
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')

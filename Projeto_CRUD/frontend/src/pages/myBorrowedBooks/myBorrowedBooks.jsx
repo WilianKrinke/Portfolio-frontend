@@ -6,7 +6,7 @@ import Menu from '../../components/menu/Menu';
 import { Context } from '../../context/authContext';
 import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
 import preAuth from '../../utils/Auth/preAuth';
-import baseUrl from '../../utils/baseUrl';
+import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
 
 const MyBorrowedBooks = () => {
   const {
@@ -16,8 +16,9 @@ const MyBorrowedBooks = () => {
   useEffect(() => {
     (async () => {
       preAuth();
-      const response = await baseUrl.get('/my-borrowed-book-list');
-      console.log(response);
+      const response = await getMyBorrowedBooks();
+
+      setLoading(false);
     })();
   }, []);
 
