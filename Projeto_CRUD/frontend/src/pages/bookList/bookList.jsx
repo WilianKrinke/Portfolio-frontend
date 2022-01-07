@@ -21,7 +21,6 @@ const BookList = () => {
   const [currentItens, setcurrentItens] = useState([]);
   const [userDatasMenu, setuserDatasMenu] = useState();
   const [fadeIn, setfadeIn] = useState(false);
-  const [scrollElement, setScrollElement] = useState(false);
 
   const navigate = useNavigate();
   const startIndex = currentPage * itensPerPage;
@@ -49,11 +48,6 @@ const BookList = () => {
         }, 1);
       }
     })();
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
   }, [itensPerPage, startIndex, endIndex, category]);
 
   function accCurrentPage() {
@@ -69,17 +63,6 @@ const BookList = () => {
 
     if (currentPage <= 0) {
       setCurrentPage(pages - 1);
-    }
-  }
-
-  function handleScroll() {
-    const positionY = window.scrollY;
-    console.log(positionY);
-
-    if (positionY >= 900) {
-      setScrollElement(true);
-    } else {
-      setScrollElement(false);
     }
   }
 
@@ -140,10 +123,8 @@ const BookList = () => {
                 />
               </BookArticle>
             </BookListSection>
-
-            {scrollElement && <Scrolltotop />}
+            <Scrolltotop />
           </BookListMain>
-
           <FooterStyled>
             <Letterfooter />
           </FooterStyled>

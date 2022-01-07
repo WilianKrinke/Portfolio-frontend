@@ -3,11 +3,16 @@ import { IoMdPlay } from "react-icons/io";
 
 export const ScrollArrow = styled(IoMdPlay)`
     position: fixed;
-    right: 20px;
-    bottom: 40px;
+    right: 18.6px;
+    bottom: 53px;
     font-size: 48px;
     transform: rotate(0.75turn);
     cursor: pointer;
+`
 
-    /* Fazer bolinha com after ou before */
+export const SpanStyled = styled.span`
+    position: fixed;
+    right: 13.6px;
+    bottom: 47px;
+    font-size: 10px;
 `
