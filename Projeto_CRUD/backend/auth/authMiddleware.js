@@ -7,7 +7,7 @@ const authValidate = async (req,res,next) => {
     if(!authorization) return res.send(false)
     
     const token = authorization
-    
+        
     try {
         const teste = await promisify(jwt.verify)(token, process.env.SECRET)
 

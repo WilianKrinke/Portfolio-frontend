@@ -18,6 +18,7 @@ const MyBorrowedBooks = () => {
       preAuth();
       const response = await getMyBorrowedBooks();
 
+      console.log('Useeffect');
       setLoading(false);
     })();
   }, []);
