@@ -14,6 +14,7 @@ const MyBorrowedBooks = () => {
   const navigate = useNavigate();
 
   const loading = useSelector((state) => state.toggleLoading.loading);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ const MyBorrowedBooks = () => {
       preAuth();
       const response = await getMyBorrowedBooks(navigate);
 
-      console.log('Useeffect');
+      console.log(response);
       dispatch(toggleLoading());
     })();
   }, []);

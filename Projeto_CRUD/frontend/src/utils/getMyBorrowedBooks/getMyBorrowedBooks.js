@@ -12,8 +12,6 @@ export default async function getMyBorrowedBooks(navigate){
         } else {
             console.log('Token Válido')
         }
-
-        console.log(response);
         return response;
     } catch (error) {
         //
