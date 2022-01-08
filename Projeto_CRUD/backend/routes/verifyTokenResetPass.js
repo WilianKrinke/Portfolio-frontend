@@ -14,7 +14,7 @@ function verifyTokenResetPass(app){
                     res.status(400).send('Something wrong, contact the administrator')
                 }
             } catch (error) {
-                res.status(400).send('Something wrong, contact the administrator')
+                res.status(500).send('Something wrong, contact the administrator')
             }
         })
 }

@@ -33,7 +33,7 @@ function forgotPass(app){
 
             } catch (error) {
                 console.log(error)
-                res.status(400).send('Unable to send email for password reset')
+                res.status(500).send('Unable to send email for password reset')
             }
         })
 }
