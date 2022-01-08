@@ -16,7 +16,8 @@ const getBooks = (app) => {
             const responseBooks = await insertFavoriteBooks(booksWithBorrows, responseObject.idUser)
 
             res.status(200).send({
-              responseObject,
+              idUser: responseObject.idUser,
+              userName: responseObject.userName,
               responseBooks
             })
 

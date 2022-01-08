@@ -20,7 +20,7 @@ const BookList = () => {
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItens, setcurrentItens] = useState([]);
-  const [userDatasMenu, setuserDatasMenu] = useState();
+  const [userDatasMenu, setuserDatasMenu] = useState('');
   const [fadeIn, setfadeIn] = useState(false);
 
   const navigate = useNavigate();
@@ -35,12 +35,12 @@ const BookList = () => {
       try {
         preAuth();
         const response = await getBookList(category);
-        const { responseBooks, responseObject } = response.data;
+        const { responseBooks, userName } = response;
 
         if (response.data == false) {
           logout(navigate);
         } else {
-          setuserDatasMenu(responseObject);
+          setuserDatasMenu(userName);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
           setcurrentItens(responseBooks.slice(startIndex, endIndex));
           dispatch(toggleLoading());

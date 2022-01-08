@@ -15,7 +15,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
 
-const Menu = ({ user = { userName: 'Loading...' } }) => {
+const Menu = ({ user = 'Loading...' }) => {
   const [isOpen, setisOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ const Menu = ({ user = { userName: 'Loading...' } }) => {
         />
         <ContainerUserAndIcon>
           <ContainerUserName>
-            <p>Welcome user {user.userName}!</p>
+            <p>Welcome user {user}!</p>
           </ContainerUserName>
           <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} />
         </ContainerUserAndIcon>
@@ -70,7 +70,7 @@ const Menu = ({ user = { userName: 'Loading...' } }) => {
 };
 
 Menu.propTypes = {
-  user: propTypes.object,
+  user: propTypes.string,
 };
 
 export default Menu;

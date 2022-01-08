@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
@@ -11,6 +11,8 @@ import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBook
 import { toggleLoading } from '../../store/actions/actions';
 
 const MyBorrowedBooks = () => {
+  const [userNameState, setUserNameState] = useState('');
+
   const navigate = useNavigate();
   const loading = useSelector((state) => state.toggleLoading.loading);
   const dispatch = useDispatch();
@@ -19,8 +21,9 @@ const MyBorrowedBooks = () => {
     (async () => {
       preAuth();
       const response = await getMyBorrowedBooks(navigate);
-
       console.log(response);
+      const { userName, objectResponse } = response;
+      setUserNameState(userName);
       dispatch(toggleLoading());
     })();
   }, []);
@@ -33,7 +36,7 @@ const MyBorrowedBooks = () => {
         </DivLoading>
       ) : (
         <>
-          <Menu />
+          <Menu user={{ userNameState }} />
           <HeaderStyled></HeaderStyled>
           <MainStyled></MainStyled>
           <FooterStyled>
