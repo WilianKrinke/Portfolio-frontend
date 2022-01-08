@@ -6,9 +6,6 @@ async function returnBookToDb(bookData){
             .where('idUser', bookData.userId)
             .andWhere('idBook', bookData.idBook)
             .del()        
-        
-
-            console.log(response)
 
             if (response === 1) {
                 const objectResponse = {

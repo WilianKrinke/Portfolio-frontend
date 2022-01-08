@@ -5,9 +5,16 @@ const lendBook = (app) => {
         .post(async (req,res) => { 
             try {
                 const response = await lendBookDb(req.body)
-                res.send(response)
+
+                if (response.isRegister === true) {
+                    res.status(200).send(response)                    
+                } else {
+                    res.status(400).send(response)
+                }
+
             } catch (error) {
-                res.send(error)
+                console.log(error)
+                res.status(400).send(error)
             }        
         })
 }

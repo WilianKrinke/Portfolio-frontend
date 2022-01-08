@@ -20,9 +20,9 @@ const ModalLendBook = ({
   async function handleLend() {
     try {
       const response = await lendBook(objectDatas);
-      const { isRegister } = response.data;
+      const { isRegister } = response;
 
-      if (isRegister == true) {
+      if (isRegister === true) {
         toast.success('Successfully borrowed book!');
         setmodalLendBookIsOpen(false);
       } else {

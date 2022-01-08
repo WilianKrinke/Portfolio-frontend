@@ -3,7 +3,7 @@ const getLoanDates = require("../dateActions/getLoanDates");
 
 async function insertLendBookInDb(bookDatas){
     try {
-        const {idBook,bookName,userId,userName} = bookDatas;
+        const {idBook,bookName,userId,userName, category, author, resume, image, rating} = bookDatas;
         const lendDates = getLoanDates()        
 
         const insertion = await knex('nodecrud.lendregister').insert({
@@ -12,10 +12,15 @@ async function insertLendBookInDb(bookDatas){
             idBook: idBook,
             bookName: bookName,
             lendDate: lendDates.today,
-            devolutionDate: lendDates.threeDaysBusinessAfter
+            devolutionDate: lendDates.threeDaysBusinessAfter,
+            category: category,
+            author: author,
+            resume: resume,
+            image: image,
+            rating: rating
         })
 
-        if (insertion != null || []) {
+        if (insertion[0] !== null || undefined) {
             const response = {
                 isRegister: true,
                 message: 'User borrowed book'

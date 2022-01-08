@@ -60,6 +60,11 @@ const Bookcard = ({
     bookName,
     userId,
     userName,
+    author,
+    category,
+    resume,
+    rating,
+    image,
   };
 
   async function handleAddFav() {
@@ -69,6 +74,7 @@ const Bookcard = ({
       category,
       resume,
       rating,
+      image,
     };
 
     setisLike(true);

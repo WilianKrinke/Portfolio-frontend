@@ -4,8 +4,8 @@ import baseUrl from '../baseUrl'
 import cryptLendBook from '../crypto/doCryptLendBook';
 
 export default async function lendBook(lendDatas){
-
     const {idBookC,bookNameC,userIdC,userNameC} = cryptLendBook(lendDatas)
+    const {author,category,image,resume,rating} = lendDatas
 
     try {
         preAuth()
@@ -13,9 +13,15 @@ export default async function lendBook(lendDatas){
             idBookC,
             bookNameC,
             userIdC,
-            userNameC
+            userNameC,
+            author,
+            category,
+            image,
+            resume,
+            rating
         })
-        return response;        
+
+        return response.data
     } catch (error) {
         console.log(error)
     }
