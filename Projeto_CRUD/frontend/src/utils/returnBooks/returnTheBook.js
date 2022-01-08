@@ -3,9 +3,6 @@ import baseUrl from '../baseUrl'
 import cryptLendBook from '../crypto/doCryptLendBook';
 
 export default async function returnBook(returnBookData){
-
-    console.log('Aqui')
-    console.log(returnBookData)
     const {idBookC,bookNameC,userIdC,userNameC} = cryptLendBook(returnBookData)
 
     try {
