@@ -10,7 +10,7 @@ const getBooks = (app) => {
               idUser: req.idUser[0],
               userName: req.userName[0]
             }
-
+            
             const datasBooks = await getDataBooks(req.params.category) 
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, responseObject.idUser)
             const responseBooks = await insertFavoriteBooks(booksWithBorrows, responseObject.idUser)
@@ -18,7 +18,8 @@ const getBooks = (app) => {
             res.status(200).send({
               idUser: responseObject.idUser,
               userName: responseObject.userName,
-              responseBooks
+              responseBooks,
+              tokenValid: req.tokenIsValid
             })
 
           } catch (error) {  

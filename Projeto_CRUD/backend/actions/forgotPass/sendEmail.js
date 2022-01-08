@@ -1,4 +1,4 @@
-const mailer = require('../../modules/mailer')
+const mailer = require('./mailer')
 
 function sendEmail(objectResponse){
     const {email, token, idUser} = objectResponse;

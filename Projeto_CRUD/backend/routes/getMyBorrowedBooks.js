@@ -22,7 +22,8 @@ function getMyBorrowedBooks(app){
                     })
                 }
             } catch (error) {
-                res.status(400).send({
+                console.log(error)
+                res.status(500).send({
                     idUser: null,
                     userName: null,
                     responseObject: false
