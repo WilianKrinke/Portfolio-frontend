@@ -16,7 +16,6 @@ const ModalLendBook = ({
   objectDatas,
   setisLend,
 }) => {
-  //
   async function handleLend() {
     try {
       const response = await lendBook(objectDatas);

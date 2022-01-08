@@ -18,11 +18,9 @@ const ModalReturnBook = ({
   async function handleReturnBook() {
     try {
       const response = await returnBook(objectDatas);
+      const { isReturnTheBook } = response;
 
-      console.log(response);
-      const { isReturnTheBook } = response.data;
-
-      if (isReturnTheBook == true) {
+      if (isReturnTheBook === true) {
         toast.success('Successfully returned the book!');
         setmodalReturnBook(false);
       } else {

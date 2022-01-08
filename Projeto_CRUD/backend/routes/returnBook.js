@@ -4,13 +4,16 @@ const returnBook = (app) => {
     app.route('/return-book')
         .post(async (req,res) => {              
             try {
-
-                console.log(req.body)
-
                 const response = await returnTheBook(req.body)
-                res.send(response)
+
+                if (response.isReturnTheBook === true) {
+                    res.status(200).send(response)                    
+                } else {
+                    res.status(400).send(response)  
+                }
             } catch (error) {
-                res.send(error)
+                console.log(error)
+                res.status(400).send(error) 
             }                      
         })
 }

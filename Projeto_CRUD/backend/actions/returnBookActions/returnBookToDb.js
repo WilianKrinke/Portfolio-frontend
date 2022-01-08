@@ -1,10 +1,11 @@
 const knex = require('../../connection/connection')
 async function returnBookToDb(bookData){
-
     try {
+        const {userId,idBook} = bookData
+        
         const response = await knex('lendregister')
-            .where('idUser', bookData.userId)
-            .andWhere('idBook', bookData.idBook)
+            .where('idUser',userId)
+            .andWhere('idBook',idBook)
             .del()        
 
             if (response === 1) {

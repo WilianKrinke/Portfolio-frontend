@@ -13,7 +13,8 @@ export default async function returnBook(returnBookData){
             userIdC,
             userNameC
         })
-        return response;        
+
+        return response.data;        
     } catch (error) {
         console.log(error)
     }
