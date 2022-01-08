@@ -19,7 +19,8 @@ const BookList = () => {
   const [pages, setPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [currentItens, setcurrentItens] = useState([]);
-  const [userDatasMenu, setuserDatasMenu] = useState('');
+  const [userIdData, setUserIdData] = useState(null);
+  const [userName, setUserName] = useState('');
   const [fadeIn, setfadeIn] = useState(false);
 
   const navigate = useNavigate();
@@ -34,12 +35,13 @@ const BookList = () => {
       try {
         preAuth();
         const response = await getBookList(category);
-        const { responseBooks, userName } = response;
+        const { responseBooks, userName, idUser } = response;
 
         if (response === false) {
           navigate('/');
         } else {
-          setuserDatasMenu(userName);
+          setUserName(userName);
+          setUserIdData(idUser);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
           setcurrentItens(responseBooks.slice(startIndex, endIndex));
           dispatch(toggleLoading());
@@ -78,7 +80,7 @@ const BookList = () => {
         </DivLoading>
       ) : (
         <>
-          <Menu user={userDatasMenu} />
+          <Menu user={userName} />
           <HeaderBookList>
             <h1>Book List</h1>
           </HeaderBookList>
@@ -106,7 +108,8 @@ const BookList = () => {
                         amount={item.amount}
                         image={item.image}
                         available={item.available}
-                        user={userDatasMenu}
+                        userName={userName}
+                        userId={userIdData}
                         borrowedByUser={item.isBorrowedByUser}
                         favoriteByUser={item.isFavoriteByUser}
                         rating={item.rating}

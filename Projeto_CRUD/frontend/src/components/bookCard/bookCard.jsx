@@ -41,7 +41,8 @@ const Bookcard = ({
   image,
   available,
   idBook,
-  user,
+  userName,
+  userId,
   borrowedByUser = false,
   favoriteByUser = false,
   rating,
@@ -53,9 +54,6 @@ const Bookcard = ({
   const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
   const [modalReturnBookState, setmodalReturnBook] = useState(false);
   const [modalImage, setmodalImage] = useState(false);
-
-  const userId = user.idUser;
-  const userName = user.userName;
 
   const objectDatas = {
     idBook,
@@ -257,7 +255,8 @@ Bookcard.propTypes = {
   image: propTypes.string,
   available: propTypes.any,
   idBook: propTypes.number,
-  user: propTypes.any,
+  userName: propTypes.string,
+  userId: propTypes.number,
   borrowedByUser: propTypes.bool,
   favoriteByUser: propTypes.bool,
   rating: propTypes.number,

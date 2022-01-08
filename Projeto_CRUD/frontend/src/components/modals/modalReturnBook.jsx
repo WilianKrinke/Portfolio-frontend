@@ -18,6 +18,8 @@ const ModalReturnBook = ({
   async function handleReturnBook() {
     try {
       const response = await returnBook(objectDatas);
+
+      console.log(response);
       const { isReturnTheBook } = response.data;
 
       if (isReturnTheBook == true) {
