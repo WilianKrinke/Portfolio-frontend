@@ -21,8 +21,8 @@ const MyBorrowedBooks = () => {
     (async () => {
       preAuth();
       const response = await getMyBorrowedBooks(navigate);
-      console.log(response);
-      const { userName, objectResponse } = response;
+      const { userName, responseObject } = response;
+      console.log(responseObject);
       setUserNameState(userName);
       dispatch(toggleLoading());
     })();
@@ -36,7 +36,7 @@ const MyBorrowedBooks = () => {
         </DivLoading>
       ) : (
         <>
-          <Menu user={{ userNameState }} />
+          <Menu user={userNameState} />
           <HeaderStyled></HeaderStyled>
           <MainStyled></MainStyled>
           <FooterStyled>

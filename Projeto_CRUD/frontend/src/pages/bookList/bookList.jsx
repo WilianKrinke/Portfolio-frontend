@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 import { useSelector, useDispatch } from 'react-redux';
+import { toggleLoading } from '../../store/actions/actions';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -11,7 +12,6 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
-import { toggleLoading } from '../../store/actions/actions';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
