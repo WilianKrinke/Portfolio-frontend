@@ -7,7 +7,6 @@ import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
-import logout from '../../utils/Auth/logout';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
@@ -37,8 +36,8 @@ const BookList = () => {
         const response = await getBookList(category);
         const { responseBooks, userName } = response;
 
-        if (response.data == false) {
-          logout(navigate);
+        if (response === false) {
+          navigate('/');
         } else {
           setuserDatasMenu(userName);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
