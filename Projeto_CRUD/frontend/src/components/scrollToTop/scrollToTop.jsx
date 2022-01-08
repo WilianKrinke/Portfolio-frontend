@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollArrow, SpanStyled } from './styled';
+import { ScrollArrow } from './styled';
 import { animateScroll as scroll } from 'react-scroll';
 
 const Scrolltotop = () => {
@@ -30,7 +30,6 @@ const Scrolltotop = () => {
       {scrollElement && (
         <>
           <ScrollArrow title="Scroll to Top" onClick={handleClickScroll} />
-          <SpanStyled>Scroll To Top</SpanStyled>
         </>
       )}
     </>

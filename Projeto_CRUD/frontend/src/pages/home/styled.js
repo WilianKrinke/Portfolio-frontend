@@ -92,7 +92,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: ${pattern_colors.intern_div_border};    
+    border: ${pattern_colors.intern_div_border};   
 `
 
 export const ArticleSignUp = styled.article`

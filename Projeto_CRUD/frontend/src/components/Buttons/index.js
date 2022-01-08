@@ -29,7 +29,7 @@ export const ButtonChangeForm = styled.button`
 
   @media screen and (max-width: 470px) {
     position: relative;
-    top: 10px;
+    bottom: 25px;
   }
 `
 
