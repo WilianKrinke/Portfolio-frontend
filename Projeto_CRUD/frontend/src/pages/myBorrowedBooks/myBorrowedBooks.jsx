@@ -12,9 +12,7 @@ import { toggleLoading } from '../../store/actions/actions';
 
 const MyBorrowedBooks = () => {
   const navigate = useNavigate();
-
   const loading = useSelector((state) => state.toggleLoading.loading);
-
   const dispatch = useDispatch();
 
   useEffect(() => {

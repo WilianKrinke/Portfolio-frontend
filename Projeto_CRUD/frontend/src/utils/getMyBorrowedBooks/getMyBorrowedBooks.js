@@ -6,12 +6,10 @@ export default async function getMyBorrowedBooks(navigate){
         const {data} = response;
 
         if (data === false) {
-            console.log('Token Inválido')
             navigate('/')
         } else {
-            console.log('Token Válido')
+            return data;
         }
-        return response;
     } catch (error) {
         //
     }
