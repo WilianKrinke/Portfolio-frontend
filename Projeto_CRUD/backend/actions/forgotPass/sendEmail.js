@@ -14,7 +14,7 @@ function sendEmail(objectResponse){
                 <br> 
                 <a href="http://localhost:3000/reset-pass/${token}/${idUser}">http://localhost:3000/reset-pass/${token}/${idUser}</a></p>
                 <br>
-                <p><b>Obs: </b>This link is only valid for 15 minutes.</p>
+                <p><b>Obs: </b>This link is only valid for 15 minutes, and for safety, only one try.</p>
             `
         })
 

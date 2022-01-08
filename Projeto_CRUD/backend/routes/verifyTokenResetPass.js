@@ -4,6 +4,7 @@ function verifyTokenResetPass(app){
     app.route('/verify-token')
         .post(async (req, res) => {
             try {
+                console.log(req.body) 
                 const wasValid = await compareToken(req.body)
                 
                 if (wasValid) {
