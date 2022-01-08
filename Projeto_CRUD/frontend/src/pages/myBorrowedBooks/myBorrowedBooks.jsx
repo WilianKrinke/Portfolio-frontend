@@ -37,13 +37,15 @@ const MyBorrowedBooks = () => {
       ) : (
         <>
           <Menu user={userNameState} />
-          <HeaderStyled></HeaderStyled>
-          <MainStyled></MainStyled>
+          <HeaderStyled>
+            <h1>My Borrowed Books</h1>
+          </HeaderStyled>
+          <MainStyled>
+            {/* Verificar se livro está dentro do prazo de devolução, caso sim, borda normal, caso não borda vermelha, ou algo que sinalize, botão para devolução e retirada de card de item emprestado do front,  */}
+          </MainStyled>
           <FooterStyled>
             <Letterfooter />
           </FooterStyled>
-
-          {/* Componente */}
         </>
       )}
     </>
