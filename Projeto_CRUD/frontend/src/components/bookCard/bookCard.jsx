@@ -127,8 +127,9 @@ const Bookcard = ({
     setseeMore(!seeMore);
   }
 
-  function ratingChanged(e) {
-    sendRating(e, idBook);
+  async function ratingChanged(e) {
+    const response = await sendRating(e, idBook);
+    if (response === false) navigate('/');
   }
 
   function handleModalImage() {
