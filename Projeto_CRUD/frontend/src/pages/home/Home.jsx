@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
@@ -64,4 +64,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);
