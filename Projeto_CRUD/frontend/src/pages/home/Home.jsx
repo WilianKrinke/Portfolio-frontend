@@ -6,14 +6,24 @@ import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import { FooterStyled, HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
+import { useParams } from 'react-router-dom';
+import { useCallback } from 'react';
 
 const Home = () => {
   const [selection, setSelection] = useState(true);
   const [isLoginVisible, setisLoginVisible] = useState(true);
 
+  const params = useParams();
+
+  console.log(params);
+
   function handleChangeBlock() {
     setisLoginVisible(!isLoginVisible);
   }
+
+  const handleChangeColor = useCallback(() => {
+    setSelection(!selection);
+  }, [selection]);
 
   return (
     <>
@@ -22,7 +32,7 @@ const Home = () => {
       </HeaderStyled>
 
       <HomeMain>
-        <InfoCard onMouseEnter={() => setSelection(false)} onMouseLeave={() => setSelection(true)}>
+        <InfoCard onMouseEnter={handleChangeColor} onMouseLeave={handleChangeColor}>
           <ArticleCrud>
             <p>Create.</p>
             <p>Read.</p>

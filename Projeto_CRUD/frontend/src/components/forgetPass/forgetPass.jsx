@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 
@@ -10,4 +10,4 @@ const ForgetPass = () => {
   );
 };
 
-export default ForgetPass;
+export default memo(ForgetPass);

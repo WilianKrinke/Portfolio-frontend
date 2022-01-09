@@ -9,6 +9,7 @@ import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { ToastContainer, toast } from 'react-toastify';
 import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
+import { memo } from 'react';
 
 const Form = () => {
   const [userName, setuserName] = useState(null);
@@ -94,4 +95,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default memo(Form);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo}from 'react';
 import { ContainerName } from './styled';
 
 const Letterfooter = () => {
@@ -13,4 +13,4 @@ const Letterfooter = () => {
     );
 }
 
-export default Letterfooter;
+export default memo(Letterfooter);

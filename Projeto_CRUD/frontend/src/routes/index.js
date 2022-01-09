@@ -11,7 +11,10 @@ const index = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route exact path='/' element={<Home />} />
+        <Route path="/">
+            <Route path=":message" element={<Home />} />
+            <Route path="" element={<Home />} />
+        </Route>
         <Route exact path='/book-list' element={<BookList />} />
         <Route excat path='/my-borrowed-books' element={<MyBorrowedBooks />} />
         <Route exact path='/forget-pass' element={<ForgetPassword />} />

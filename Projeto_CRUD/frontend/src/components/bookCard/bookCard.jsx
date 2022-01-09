@@ -84,7 +84,10 @@ const Bookcard = ({
     try {
       const response = await addFavorites(objectDatasFavorites);
 
-      if (response === false) navigate('/');
+      if (response === false) {
+        const message = 'Token Invalid, please re-login';
+        navigate(`/message`);
+      }
 
       const { isRegisterFavorite } = response;
 
@@ -104,9 +107,11 @@ const Bookcard = ({
     setisLike(false);
     try {
       const response = await removeFavorite(objectDatas);
-      console.log(response);
 
-      if (response === false) navigate('/');
+      if (response === false) {
+        const message = 'Token Invalid, please re-login';
+        navigate(`/message`);
+      }
 
       const { isRemoved } = response;
 

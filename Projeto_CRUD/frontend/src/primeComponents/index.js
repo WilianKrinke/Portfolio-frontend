@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import pattern_colors from '../colors/index.js'
 
+
 export const HeaderStyled = styled.header`
     max-width: 100vw;
     min-height: 10vh;
