@@ -23,10 +23,6 @@ export const InfoCard = styled.section`
     border-left: 1px solid #F3BEF7;
     transition: all .3s ease-in-out;
 
-    :hover{
-        background-color: ${pattern_colors.strong_color};
-    }
-
     @media screen and (max-width: 750px) {
        width: 100%;
        border-radius: 0px 0px 5px 5px;
@@ -39,7 +35,7 @@ export const SectForm = styled.section`
     width: 45%;
     height: 60vh;
     padding: 10px;
-    background-color: ${props => props.onhover ? pattern_colors.strong_color : pattern_colors.prime_compoments_bg};
+    background-color: ${pattern_colors.strong_color};
     border-radius: 0px 5px 5px 0px;
     border-bottom: 1px solid ${pattern_colors.borders_color};
     border-top: 1px solid ${pattern_colors.borders_color};
@@ -92,7 +88,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: ${pattern_colors.intern_div_border};   
+    border: ${pattern_colors.intern_div_border};
 `
 
 export const ArticleSignUp = styled.article`

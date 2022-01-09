@@ -7,23 +7,17 @@ import { FooterStyled, HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
 import { useParams } from 'react-router-dom';
-import { useCallback } from 'react';
 
 const Home = () => {
-  const [selection, setSelection] = useState(true);
   const [isLoginVisible, setisLoginVisible] = useState(true);
 
   const params = useParams();
 
-  console.log(params);
+  params.message === undefined ? console.log('Parametro vazio') : console.log('Parametro não vazio');
 
   function handleChangeBlock() {
     setisLoginVisible(!isLoginVisible);
   }
-
-  const handleChangeColor = useCallback(() => {
-    setSelection(!selection);
-  }, [selection]);
 
   return (
     <>
@@ -32,7 +26,7 @@ const Home = () => {
       </HeaderStyled>
 
       <HomeMain>
-        <InfoCard onMouseEnter={handleChangeColor} onMouseLeave={handleChangeColor}>
+        <InfoCard>
           <ArticleCrud>
             <p>Create.</p>
             <p>Read.</p>
@@ -41,7 +35,7 @@ const Home = () => {
           </ArticleCrud>
         </InfoCard>
 
-        <SectForm onhover={selection}>
+        <SectForm>
           {isLoginVisible ? (
             <ArticleLogin>
               <SignInForm />
