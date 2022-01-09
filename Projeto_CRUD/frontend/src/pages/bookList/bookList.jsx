@@ -35,6 +35,7 @@ const BookList = () => {
       try {
         preAuth();
         const response = await getBookList(category);
+
         const { responseBooks, userName, idUser } = response;
 
         if (response === false) {

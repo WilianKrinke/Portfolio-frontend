@@ -5,6 +5,7 @@ import returnBook from '../../utils/returnBooks/returnTheBook';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { toast } from 'react-toastify';
 import { DivModal } from './styleds/styled';
+import { useNavigate } from 'react-router-dom';
 
 const ModalReturnBook = ({
   modalReturnBook,
@@ -14,10 +15,13 @@ const ModalReturnBook = ({
   objectDatas,
   setisLend,
 }) => {
-  //
+  const navigate = useNavigate();
+
   async function handleReturnBook() {
     try {
       const response = await returnBook(objectDatas);
+      if (response === false) navigate('/');
+
       const { isReturnTheBook } = response;
 
       if (isReturnTheBook === true) {

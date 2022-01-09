@@ -7,6 +7,7 @@ import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { DivModal } from './styleds/styled';
 import { format, addBusinessDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
+import { useNavigate } from 'react-router-dom';
 
 const ModalLendBook = ({
   modalLendBookIsOpen,
@@ -16,9 +17,13 @@ const ModalLendBook = ({
   objectDatas,
   setisLend,
 }) => {
+  const navigate = useNavigate();
+
   async function handleLend() {
     try {
       const response = await lendBook(objectDatas);
+      if (response === false) navigate('/');
+
       const { isRegister } = response;
 
       if (isRegister === true) {

@@ -26,6 +26,7 @@ import {
   BsChevronCompactUp,
 } from 'react-icons/bs';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
+import { useNavigate } from 'react-router-dom';
 import addFavorites from '../../utils/favorites/addFavorites';
 import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
@@ -67,6 +68,8 @@ const Bookcard = ({
     image,
   };
 
+  const navigate = useNavigate();
+
   async function handleAddFav() {
     const objectDatasFavorites = {
       ...objectDatas,
@@ -81,9 +84,11 @@ const Bookcard = ({
     try {
       const response = await addFavorites(objectDatasFavorites);
 
+      if (response === false) navigate('/');
+
       const { isRegisterFavorite } = response;
 
-      if (isRegisterFavorite == true) {
+      if (isRegisterFavorite === true) {
         toast.success('Book added to favorites');
       } else {
         setisLike(false);
@@ -99,9 +104,13 @@ const Bookcard = ({
     setisLike(false);
     try {
       const response = await removeFavorite(objectDatas);
-      const { isRemoved } = response.data;
+      console.log(response);
 
-      if (isRemoved == true) {
+      if (response === false) navigate('/');
+
+      const { isRemoved } = response;
+
+      if (isRemoved === true) {
         toast.success('Book removed from favorites');
       } else {
         setisLike(true);

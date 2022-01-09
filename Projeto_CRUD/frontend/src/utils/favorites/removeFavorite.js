@@ -15,7 +15,7 @@ export async function removeFavorite(objectDatas){
             userName
         })
     
-        return response;
+        return response.data;
     } catch (error) {
         return error;
     }

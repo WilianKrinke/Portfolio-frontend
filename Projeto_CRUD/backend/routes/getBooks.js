@@ -19,12 +19,12 @@ const getBooks = (app) => {
               idUser: responseObject.idUser,
               userName: responseObject.userName,
               responseBooks,
-              tokenValid: req.tokenIsValid
             })
 
-          } catch (error) {  
-            console.log(error)          
-            res.status(500).send('Contact the administrator')
+          } catch (e) {  
+            const error = new Error(e)
+            console.log(error.message)          
+            res.status(500).send(error.message)
           }  
         })
 }
