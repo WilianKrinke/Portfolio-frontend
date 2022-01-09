@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {toggleLoading} from '../reducers/reducers'
+import {toggleLoadingState} from '../reducers/reducers'
 
 export default combineReducers({
-    toggleLoading,
+    toggleLoadingState,
 })

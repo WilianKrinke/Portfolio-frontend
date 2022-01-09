@@ -33,7 +33,6 @@ export const BookListSection = styled.section`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: ${pattern_colors.intern_div_border}; */
     border-radius: 5px;
     padding: 10px;    
 `
@@ -44,12 +43,7 @@ export const BookArticle = styled.article`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    /* border: 1px solid rgba(0, 0, 0, 0.3); */
     transition: all .3s ease-in-out;
-    opacity: ${props => props.fadeIn ? '1' : '0'}
-    
-
-    
 `
 
 export const BookListArticle = styled.article`

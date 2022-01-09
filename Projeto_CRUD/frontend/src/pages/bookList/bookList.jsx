@@ -4,7 +4,6 @@ import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLoading } from '../../store/actions/actions';
-import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -13,6 +12,7 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
+import { toast } from 'react-toastify';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -28,7 +28,7 @@ const BookList = () => {
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
 
-  const loading = useSelector((state) => state.toggleLoading.loading);
+  const loading = useSelector((state) => state.toggleLoadingState.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -36,6 +36,7 @@ const BookList = () => {
       try {
         preAuth();
         const response = await getBookList(category);
+
         const { responseBooks, userName, idUser } = response;
 
         if (response === false) {
@@ -48,7 +49,11 @@ const BookList = () => {
           setUserIdData(idUser);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
           setcurrentItens(responseBooks.slice(startIndex, endIndex));
-          dispatch(toggleLoading());
+
+          dispatch(toggleLoading(false));
+
+          console.log(loading);
+
           setTimeout(() => {
             setfadeIn(true);
           }, 1);

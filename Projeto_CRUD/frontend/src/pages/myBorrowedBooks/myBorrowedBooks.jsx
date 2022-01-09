@@ -9,12 +9,16 @@ import preAuth from '../../utils/Auth/preAuth';
 import { useSelector, useDispatch } from 'react-redux';
 import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
 import { toggleLoading } from '../../store/actions/actions';
+import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
+import { SectionContainer } from './styled';
+import { toast } from 'react-toastify';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
+  const [borrowedBooks, setBorrowedBooks] = useState();
 
   const navigate = useNavigate();
-  const loading = useSelector((state) => state.toggleLoading.loading);
+  const loading = useSelector((state) => state.toggleLoadingState.loading);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,11 +28,17 @@ const MyBorrowedBooks = () => {
         const response = await getMyBorrowedBooks(navigate);
 
         if (response === false) {
-          navigate('/');
+          toast.warn('Token time expired, please re-login');
+          setTimeout(() => {
+            navigate('/');
+          }, 3000);
         } else {
           const { userName, responseObject } = response;
 
+          console.log(responseObject);
+
           setUserNameState(userName);
+          setBorrowedBooks(responseObject);
           dispatch(toggleLoading());
         }
       } catch (error) {
@@ -51,7 +61,11 @@ const MyBorrowedBooks = () => {
             <h1>My Borrowed Books</h1>
           </HeaderStyled>
           <MainStyled>
-            {/* Verificar se livro está dentro do prazo de devolução, caso sim, borda normal, caso não borda vermelha, ou algo que sinalize, botão para devolução e retirada de card de item emprestado do front,  */}
+            <SectionContainer>
+              {borrowedBooks.map((item) => {
+                return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
+              })}
+            </SectionContainer>
           </MainStyled>
           <FooterStyled>
             <Letterfooter />
