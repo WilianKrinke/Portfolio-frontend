@@ -1,11 +1,18 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
-import { BorrowedBookCard } from './styled';
+import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle } from './styled';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   console.log(infoDatas);
 
-  return <BorrowedBookCard></BorrowedBookCard>;
+  return (
+    <BorrowedBookCard>
+      <ContainerTitle />
+      <ContainerResume />
+      <ContainerActions />
+    </BorrowedBookCard>
+  );
 };
 
 Borrowedbookscard.propTypes = {

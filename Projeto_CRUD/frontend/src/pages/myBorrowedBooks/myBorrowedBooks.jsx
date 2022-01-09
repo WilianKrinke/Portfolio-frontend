@@ -1,17 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
+import { SectionContainer } from './styled';
+import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
-import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
 import preAuth from '../../utils/Auth/preAuth';
-import { useSelector, useDispatch } from 'react-redux';
 import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
-import { toggleLoading } from '../../store/actions/actions';
 import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
-import { SectionContainer } from './styled';
-import { toast } from 'react-toastify';
+import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -33,9 +32,6 @@ const MyBorrowedBooks = () => {
           }, 3000);
         } else {
           const { userName, responseObject } = response;
-
-          console.log(responseObject);
-
           setUserNameState(userName);
           setBorrowedBooks(responseObject);
           setloadingState(false);
@@ -65,6 +61,7 @@ const MyBorrowedBooks = () => {
                 return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
               })}
             </SectionContainer>
+            <Scrolltotop />
           </MainStyled>
           <FooterStyled>
             <Letterfooter />

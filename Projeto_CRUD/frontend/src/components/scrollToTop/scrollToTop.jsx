@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, memo } from 'react';
 import { ScrollArrow } from './styled';
 import { animateScroll as scroll } from 'react-scroll';
 
@@ -36,4 +36,4 @@ const Scrolltotop = () => {
   );
 };
 
-export default Scrolltotop;
+export default memo(Scrolltotop);

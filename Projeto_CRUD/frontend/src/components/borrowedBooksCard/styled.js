@@ -2,9 +2,30 @@ import styled from 'styled-components'
 
 export const BorrowedBookCard = styled.article`
     border: 1px solid;
-    height: 200px;
+    height: 300px;
     width: 100%;
-    padding: 10px;
     margin: 10px 0px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: row nowrap;
+    border-radius: 3px;
+`
 
+export const ContainerTitle = styled.div`
+    padding: 10px;
+    height: 100%;
+    width: 25%;
+`
+
+export const ContainerResume = styled.div`
+    padding: 10px;
+    height: 100%;
+    width: 65%;
+`
+
+export const ContainerActions = styled.div`
+    padding: 10px;
+    height: 100%;
+    width: 10%;
 `
