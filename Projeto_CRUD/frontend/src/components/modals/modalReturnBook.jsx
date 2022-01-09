@@ -20,7 +20,12 @@ const ModalReturnBook = ({
   async function handleReturnBook() {
     try {
       const response = await returnBook(objectDatas);
-      if (response === false) navigate('/');
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }
 
       const { isReturnTheBook } = response;
 
@@ -31,8 +36,8 @@ const ModalReturnBook = ({
         toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
-      toast.warn('Your session has expired or some error has occurred');
       console.log(error);
+      //para a página de erro
     }
   }
 

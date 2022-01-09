@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import {
   CardStyled,
   ContainerMoldCard,
@@ -85,8 +85,10 @@ const Bookcard = ({
       const response = await addFavorites(objectDatasFavorites);
 
       if (response === false) {
-        const message = 'Token Invalid, please re-login';
-        navigate(`/message`);
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
       }
 
       const { isRegisterFavorite } = response;
@@ -100,6 +102,7 @@ const Bookcard = ({
     } catch (error) {
       setisLike(false);
       console.log(error);
+      //para página de erro
     }
   }
 
@@ -109,8 +112,10 @@ const Bookcard = ({
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {
-        const message = 'Token Invalid, please re-login';
-        navigate(`/message`);
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
       }
 
       const { isRemoved } = response;
@@ -123,8 +128,8 @@ const Bookcard = ({
       }
     } catch (error) {
       setisLike(true);
-      toast.warn('Book not removed from favorites');
       console.log(error);
+      //para a página de erros
     }
   }
 
@@ -133,8 +138,18 @@ const Bookcard = ({
   }
 
   async function ratingChanged(e) {
-    const response = await sendRating(e, idBook);
-    if (response === false) navigate('/');
+    try {
+      const response = await sendRating(e, idBook);
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }
+    } catch (error) {
+      console.log(error);
+      //para página de erros
+    }
   }
 
   function handleModalImage() {
@@ -252,18 +267,6 @@ const Bookcard = ({
       />
 
       <ModalImage image={image} isOpen={modalImage} setmodalImage={setmodalImage} />
-
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        draggable
-        pauseOnHover={false}
-        width={500}
-      />
     </>
   );
 };

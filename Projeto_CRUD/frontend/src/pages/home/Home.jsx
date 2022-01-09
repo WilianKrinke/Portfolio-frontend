@@ -6,14 +6,9 @@ import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import { FooterStyled, HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
-import { useParams } from 'react-router-dom';
 
 const Home = () => {
   const [isLoginVisible, setisLoginVisible] = useState(true);
-
-  const params = useParams();
-
-  params.message === undefined ? console.log('Parametro vazio') : console.log('Parametro não vazio');
 
   function handleChangeBlock() {
     setisLoginVisible(!isLoginVisible);

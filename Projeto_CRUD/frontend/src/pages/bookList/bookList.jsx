@@ -4,6 +4,7 @@ import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleLoading } from '../../store/actions/actions';
+import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -35,11 +36,13 @@ const BookList = () => {
       try {
         preAuth();
         const response = await getBookList(category);
-
         const { responseBooks, userName, idUser } = response;
 
         if (response === false) {
-          navigate('/');
+          toast.warn('Token time expired, please re-login');
+          setTimeout(() => {
+            navigate('/');
+          }, 3000);
         } else {
           setUserName(userName);
           setUserIdData(idUser);

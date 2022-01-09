@@ -22,7 +22,12 @@ const ModalLendBook = ({
   async function handleLend() {
     try {
       const response = await lendBook(objectDatas);
-      if (response === false) navigate('/');
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }
 
       const { isRegister } = response;
 
@@ -33,8 +38,8 @@ const ModalLendBook = ({
         toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
-      toast.warn('Your session has expired or some error has occurred');
       console.log(error);
+      //para a página de erro
     }
   }
 
