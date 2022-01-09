@@ -61,7 +61,7 @@ const ModalLendBook = ({
       alignItens: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      backgroundColor: 'transparent',
+      backgroundColor: '#F9FFF9',
       border: 'none',
       outline: 'none',
     },

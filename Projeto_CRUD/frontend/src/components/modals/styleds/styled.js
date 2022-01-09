@@ -9,8 +9,9 @@ export const DivModal = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px 20px;
-    background-color: #ffeceb;
+    background-color: #F9FFF9;
     border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
 
     @media screen and (max-width: 430px) {
         height: 350px;

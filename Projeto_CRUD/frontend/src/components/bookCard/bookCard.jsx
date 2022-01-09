@@ -71,17 +71,17 @@ const Bookcard = ({
   const navigate = useNavigate();
 
   async function handleAddFav() {
-    const objectDatasFavorites = {
-      ...objectDatas,
-      author,
-      category,
-      resume,
-      rating,
-      image,
-    };
-
-    setisLike(true);
     try {
+      const objectDatasFavorites = {
+        ...objectDatas,
+        author,
+        category,
+        resume,
+        rating,
+        image,
+      };
+
+      setisLike(true);
       const response = await addFavorites(objectDatasFavorites);
 
       if (response === false) {
@@ -107,8 +107,8 @@ const Bookcard = ({
   }
 
   async function handleRemoveFavorite() {
-    setisLike(false);
     try {
+      setisLike(false);
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {

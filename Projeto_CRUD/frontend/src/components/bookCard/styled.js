@@ -64,7 +64,8 @@ export const IconLend = styled.i`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    font-size: 24px;
+    height: 80px;
+    font-size: 26px;
 
     @media screen and (max-width: 440px) {
         font-size: 30px;
@@ -75,7 +76,7 @@ export const IconLendItem = styled.i`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
     height: 80px;
     width: 100%;
@@ -105,7 +106,7 @@ export const IconBorrowed = styled.i`
     width: 100%;
 
     @media screen and (max-width: 440px) {
-        font-size: 28px;
+        font-size: 30px;
     }
     
 `
