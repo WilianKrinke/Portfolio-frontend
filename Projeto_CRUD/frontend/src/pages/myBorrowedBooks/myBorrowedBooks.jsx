@@ -16,10 +16,9 @@ import { toast } from 'react-toastify';
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
   const [borrowedBooks, setBorrowedBooks] = useState();
+  const [loadingState, setloadingState] = useState(true);
 
   const navigate = useNavigate();
-  const loading = useSelector((state) => state.toggleLoadingState.loading);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -39,7 +38,7 @@ const MyBorrowedBooks = () => {
 
           setUserNameState(userName);
           setBorrowedBooks(responseObject);
-          dispatch(toggleLoading());
+          setloadingState(false);
         }
       } catch (error) {
         console.log(error);
@@ -50,7 +49,7 @@ const MyBorrowedBooks = () => {
 
   return (
     <>
-      {loading ? (
+      {loadingState ? (
         <DivLoading>
           <Loading />
         </DivLoading>

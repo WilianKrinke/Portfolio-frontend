@@ -1,5 +1,5 @@
 const initialStates = {
-    loading: null
+    loading: true
 }
 
 export default initialStates;

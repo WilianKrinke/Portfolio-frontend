@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
 import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
-import { useSelector, useDispatch } from 'react-redux';
-import { toggleLoading } from '../../store/actions/actions';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
@@ -23,13 +21,11 @@ const BookList = () => {
   const [userIdData, setUserIdData] = useState(null);
   const [userName, setUserName] = useState('');
   const [fadeIn, setfadeIn] = useState(false);
+  const [loadingState, setloadingState] = useState(true);
 
   const navigate = useNavigate();
   const startIndex = currentPage * itensPerPage;
   const endIndex = startIndex + itensPerPage;
-
-  const loading = useSelector((state) => state.toggleLoadingState.loading);
-  const dispatch = useDispatch();
 
   useEffect(() => {
     (async () => {
@@ -49,11 +45,7 @@ const BookList = () => {
           setUserIdData(idUser);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
           setcurrentItens(responseBooks.slice(startIndex, endIndex));
-
-          dispatch(toggleLoading(false));
-
-          console.log(loading);
-
+          setloadingState(false);
           setTimeout(() => {
             setfadeIn(true);
           }, 1);
@@ -83,7 +75,7 @@ const BookList = () => {
 
   return (
     <>
-      {loading ? (
+      {loadingState ? (
         <DivLoading>
           <Loading />
         </DivLoading>

@@ -1,7 +1,7 @@
 import initialStates from '../initialStates/initialStates'
 import typeActions from '../typeActions/typeActions'
 
-export const toggleLoadingState = (state = initialStates, action) => {
+export const toggleLoadingReducer = (state = initialStates, action) => {
     switch (action.type) {
         case typeActions.TOGGLE_LOADING:
 
