@@ -20,7 +20,9 @@ export default async function addFavorites(datas) {
             category
         })
 
-        return response;
+        const {data} = response
+
+        return data;
         
     } catch (error) {
         console.log(error)

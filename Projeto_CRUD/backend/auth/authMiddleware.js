@@ -13,13 +13,14 @@ const authValidate = async (req,res,next) => {
         
         if (teste) {
             req.idUser = idUser         
-            req.userName = userName             
+            req.userName = userName 
             return next()  
-        } else {       
-            return res.status(401).send(false)
+        } else { 
+            return res.status(200).send(false)
         }
     } catch (error) {
-        return res.status(401).send(false)
+        console.log(error)
+        return res.status(200).send(false)
     }
 
 }

@@ -80,7 +80,8 @@ const Bookcard = ({
     setisLike(true);
     try {
       const response = await addFavorites(objectDatasFavorites);
-      const { isRegisterFavorite } = response.data;
+
+      const { isRegisterFavorite } = response;
 
       if (isRegisterFavorite == true) {
         toast.success('Book added to favorites');

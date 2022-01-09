@@ -19,12 +19,22 @@ const MyBorrowedBooks = () => {
 
   useEffect(() => {
     (async () => {
-      preAuth();
-      const response = await getMyBorrowedBooks(navigate);
-      const { userName, responseObject } = response;
-      console.log(responseObject);
-      setUserNameState(userName);
-      dispatch(toggleLoading());
+      try {
+        preAuth();
+        const response = await getMyBorrowedBooks(navigate);
+
+        if (response === false) {
+          navigate('/');
+        } else {
+          const { userName, responseObject } = response;
+
+          setUserNameState(userName);
+          dispatch(toggleLoading());
+        }
+      } catch (error) {
+        console.log(error);
+        //Para página de erro
+      }
     })();
   }, []);
 
