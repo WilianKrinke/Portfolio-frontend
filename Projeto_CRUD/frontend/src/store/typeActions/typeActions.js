@@ -1,5 +1,5 @@
 const typeActions = {
-    TOGGLE_LOADING: 'TOGGLE_LOADING',
+    CHANGE_LOADING: 'CHANGE_LOADING',
 }
 
 export default typeActions;

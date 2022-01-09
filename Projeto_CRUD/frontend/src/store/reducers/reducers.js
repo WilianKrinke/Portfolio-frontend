@@ -3,14 +3,14 @@ import typeActions from '../typeActions/typeActions'
 
 export const toggleLoadingReducer = (state = initialStates, action) => {
     switch (action.type) {
-        case typeActions.TOGGLE_LOADING:
+        case typeActions.CHANGE_LOADING:
 
             console.log(action.payload)
             console.log(state.loading)
 
             return {
                 ...state,
-                loading: action.payLoad
+                loading: action.payload
             }
     
         default:
