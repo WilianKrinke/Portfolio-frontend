@@ -2,18 +2,34 @@
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle } from './styled';
+import ReactStars from 'react-rating-stars-component';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   console.log(infoDatas);
 
-  const { image } = infoDatas;
+  const { image, bookName, rating } = infoDatas;
 
   return (
     <BorrowedBookCard>
       <ContainerTitle>
-        <div className="divimg"></div>
-        <div className="divtitle"></div>
-        <div className="divrating"></div>
+        <div className="divimg">
+          <img src={image} alt="Cover Book" title="Book Cover" />
+        </div>
+        <div className="divtitle">
+          <h3>{bookName}</h3>
+        </div>
+        <div className="divrating">
+          <ReactStars
+            count={5}
+            size={18}
+            value={rating}
+            isHalf={true}
+            emptyIcon={<i className="far fa-star"></i>}
+            halfIcon={<i className="fa fa-star-half-alt"></i>}
+            fullIcon={<i className="fa fa-star"></i>}
+            activeColor="#ffff00"
+          />
+        </div>
       </ContainerTitle>
       <ContainerResume />
       <ContainerActions />
