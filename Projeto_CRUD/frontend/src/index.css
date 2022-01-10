@@ -19,6 +19,7 @@ h1 {
   font-size: 72px;
   letter-spacing: 3px;
   color: #0a0a0a;
+  cursor: default;
 }
 
 h2,
@@ -31,6 +32,7 @@ h6 {
   margin: 0;
   padding: 0;
   color: #0a0a0a;
+  cursor: default;
 }
 
 a,
@@ -52,10 +54,12 @@ p {
   color: #222222;
   letter-spacing: 1px;
   font-size: 14px;
+  cursor: default;
 }
 
 strong {
   color: #000;
+  cursor: default;
 }
 
 ul,

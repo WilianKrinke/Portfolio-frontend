@@ -19,7 +19,6 @@ export const ContainerTitle = styled.div`
     border: 1px solid;
 
     .divimg{
-        border: 1px solid;
         height: 75%;
         display: flex;
         justify-content: center;
@@ -29,11 +28,11 @@ export const ContainerTitle = styled.div`
         img{
             width: 90%;
             height: 100%;
+            cursor: pointer;
         }
     }
 
     .divtitle{
-        border: 1px solid;
         height: 15%;
         padding: 5px 0px;
         display: flex;
@@ -48,7 +47,6 @@ export const ContainerTitle = styled.div`
     }
 
     .divrating{
-        border: 1px solid;
         height: 10%;
         padding: 5px 0px;
         display: flex;

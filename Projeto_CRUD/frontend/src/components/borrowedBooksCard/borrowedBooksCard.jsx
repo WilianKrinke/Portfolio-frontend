@@ -13,12 +13,12 @@ const Borrowedbookscard = ({ infoDatas }) => {
     <BorrowedBookCard>
       <ContainerTitle>
         <div className="divimg">
-          <img src={image} alt="Cover Book" title="Book Cover" />
+          <img src={image} alt="Cover Book" title="Book Cover" loading="lazy" />
         </div>
         <div className="divtitle">
-          <h3>{bookName}</h3>
+          <h3 title="Book Name">{bookName}</h3>
         </div>
-        <div className="divrating">
+        <div className="divrating" title="Rating">
           <ReactStars
             count={5}
             size={18}
