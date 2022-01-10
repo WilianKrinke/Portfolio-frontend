@@ -6,7 +6,6 @@ export const ScrollArrow = styled(AiOutlineUp)`
     right: 18.52px;
     bottom: 40px;
     font-size: 48px;
-    /* transform: rotate(0.75turn); */
     cursor: pointer;
     color: #000
 `

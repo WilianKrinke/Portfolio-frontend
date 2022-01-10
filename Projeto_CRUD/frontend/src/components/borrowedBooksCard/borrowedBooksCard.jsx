@@ -2,23 +2,31 @@
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle } from './styled';
+import { format, isAfter, isBefore } from 'date-fns';
 import ReactStars from 'react-rating-stars-component';
 
 const Borrowedbookscard = ({ infoDatas }) => {
-  console.log(infoDatas);
+  //console.log(infoDatas);
 
-  const { image, bookName, rating } = infoDatas;
+  const { image, bookName, rating, resume, devolutionDate } = infoDatas;
+
+  const dateDevolution = new Date(devolutionDate);
+  const today = new Date();
+
+  const isBookLate = isAfter(today, dateDevolution);
+
+  console.log(isBookLate);
 
   return (
     <BorrowedBookCard>
       <ContainerTitle>
-        <div className="divimg">
+        <div className="div_img">
           <img src={image} alt="Cover Book" title="Book Cover" loading="lazy" />
         </div>
-        <div className="divtitle">
+        <div className="div_title">
           <h3 title="Book Name">{bookName}</h3>
         </div>
-        <div className="divrating" title="Rating">
+        <div className="div_rating" title="Rating">
           <ReactStars
             count={5}
             size={18}
@@ -31,7 +39,11 @@ const Borrowedbookscard = ({ infoDatas }) => {
           />
         </div>
       </ContainerTitle>
-      <ContainerResume />
+      <ContainerResume>
+        <div className="div_resume">
+          <p>{resume}</p>
+        </div>
+      </ContainerResume>
       <ContainerActions />
     </BorrowedBookCard>
   );

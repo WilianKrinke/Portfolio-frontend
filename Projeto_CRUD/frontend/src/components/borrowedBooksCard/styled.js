@@ -17,8 +17,13 @@ export const ContainerTitle = styled.div`
     height: 100%;
     width: 25%;
     border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 
-    .divimg{
+    .div_img{
+        width: 90%;
         height: 75%;
         display: flex;
         justify-content: center;
@@ -26,13 +31,13 @@ export const ContainerTitle = styled.div`
         flex-direction: column;        
 
         img{
-            width: 90%;
+            width: 100%;
             height: 100%;
             cursor: pointer;
         }
     }
 
-    .divtitle{
+    .div_title{
         height: 15%;
         padding: 5px 0px;
         display: flex;
@@ -46,7 +51,7 @@ export const ContainerTitle = styled.div`
         }
     }
 
-    .divrating{
+    .div_rating{
         height: 10%;
         padding: 5px 0px;
         display: flex;
@@ -61,6 +66,14 @@ export const ContainerResume = styled.div`
     height: 100%;
     width: 65%;
     border: 1px solid;
+
+    .div_resume{
+        
+
+        p{
+            font-size: 16px;
+        }
+    }
 `
 
 export const ContainerActions = styled.div`
