@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
@@ -23,6 +24,10 @@ const Borrowedbookscard = ({ infoDatas }) => {
     setmodalImageBorrowedCards(!modalImageBorrowedCards);
   }
 
+  function handleRating(e) {
+    console.log(e);
+  }
+
   return (
     <>
       <BorrowedBookCard isBookLate={isBookLate}>
@@ -46,6 +51,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                 fullIcon={<i className="fa fa-star"></i>}
                 activeColor="#ffff00"
+                onChange={(e) => handleRating(e)}
               />
             </div>
           </div>

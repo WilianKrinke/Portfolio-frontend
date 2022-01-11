@@ -136,7 +136,7 @@ const Bookcard = ({
     setseeMore(!seeMore);
   }
 
-  async function ratingChanged(e) {
+  async function handleRating(e) {
     try {
       const response = await sendRating(e, idBook);
       if (response === false) {
@@ -152,7 +152,7 @@ const Bookcard = ({
   }
 
   function handleModalImage() {
-    setmodalImage(true);
+    setmodalImage(!modalImage);
   }
 
   function handleModalBorrowBook() {
@@ -187,7 +187,7 @@ const Bookcard = ({
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
                   activeColor="#ffff00"
-                  onChange={(e) => ratingChanged(e)}
+                  onChange={(e) => handleRating(e)}
                 />
               </div>
             </div>
