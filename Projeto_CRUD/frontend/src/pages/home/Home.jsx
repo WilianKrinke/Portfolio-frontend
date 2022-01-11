@@ -6,6 +6,7 @@ import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import { FooterStyled, HeaderStyled } from '../../primeComponents';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
+import Letterheader from '../../components/letterHeader/letterHeader';
 
 const Home = () => {
   const [isLoginVisible, setisLoginVisible] = useState(true);
@@ -16,9 +17,7 @@ const Home = () => {
 
   return (
     <>
-      <HeaderStyled>
-        <h1>Project Library</h1>
-      </HeaderStyled>
+      <Letterheader phrase="Project Library" />
 
       <HomeMain>
         <InfoCard>
@@ -46,9 +45,7 @@ const Home = () => {
         </SectForm>
       </HomeMain>
 
-      <FooterStyled>
-        <Letterfooter />
-      </FooterStyled>
+      <Letterfooter />
     </>
   );
 };

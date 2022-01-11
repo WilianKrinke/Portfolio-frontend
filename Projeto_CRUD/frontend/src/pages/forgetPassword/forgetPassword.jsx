@@ -6,7 +6,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import { HeaderStyled } from '../../primeComponents';
-import { BoxStyled, Container, ContainerInfo, ForgetPassFooter, ForgetPassMain } from './styled';
+import { BoxStyled, Container, ContainerInfo, ForgetPassMain } from './styled';
 
 const ForgetPassword = () => {
   const [userName, setuserName] = useState('');
@@ -67,9 +67,7 @@ const ForgetPassword = () => {
           width={500}
         />
       </ForgetPassMain>
-      <ForgetPassFooter>
-        <Letterfooter />
-      </ForgetPassFooter>
+      <Letterfooter />
     </>
   );
 };

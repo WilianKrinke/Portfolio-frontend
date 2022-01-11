@@ -15,10 +15,10 @@ export const HeaderBorrowedList = styled(HeaderStyled)`
     min-height: 22vh; 
 
     @media screen and (max-width: 900px) {
-    text-align: center;
-    position: relative;
-    top: 50px;
-    margin-bottom: 40px;
+        text-align: center;
+        position: relative;
+        top: 50px;
+        margin-bottom: 40px;
     }
 
 `

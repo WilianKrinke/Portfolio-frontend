@@ -1,16 +1,17 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
-import { HeaderBorrowedList, SectionContainer } from './styled';
+import { DivLoading, MainStyled } from '../../primeComponents';
+import { SectionContainer } from './styled';
 import { toast } from 'react-toastify';
-import Letterfooter from '../../components/letterFooter/letterFooter';
+import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
 import preAuth from '../../utils/Auth/preAuth';
 import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
 import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
+import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -52,9 +53,7 @@ const MyBorrowedBooks = () => {
       ) : (
         <>
           <Menu user={userNameState} />
-          <HeaderBorrowedList>
-            <h1>My Borrowed Books</h1>
-          </HeaderBorrowedList>
+          <Letterheader phrase="My Borrowed Books" />
           <MainStyled>
             <SectionContainer>
               {borrowedBooks.map((item) => {

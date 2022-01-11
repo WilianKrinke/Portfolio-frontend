@@ -1,15 +1,16 @@
 import styled from 'styled-components'
+import pattern_colors from '../../colors'
 
 export const ContainerName = styled.div`
-    height: 40px;
-    text-align: center;
-    width: 400px;
+    max-width: 100vw;
+    min-height: 10vh;
+    background-color: ${pattern_colors.prime_compoments_bg};
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    letter-spacing: 3px;
     padding: 10px;
-    border-radius: 3px;
     
 
     div{

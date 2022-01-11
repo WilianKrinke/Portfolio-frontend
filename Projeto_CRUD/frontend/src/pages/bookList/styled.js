@@ -2,17 +2,6 @@
 import styled from 'styled-components'
 import { MainStyled,HeaderStyled } from '../../primeComponents'
 
-export const HeaderBookList = styled(HeaderStyled)`
-    min-height: 22vh; 
-
-    @media screen and (max-width: 900px) {
-      text-align: center;
-      position: relative;
-      top: 50px;
-      margin-bottom: 40px;
-    }
-`
-
 export const BookListMain = styled(MainStyled)`
     min-height: 300px;
     display: flex;

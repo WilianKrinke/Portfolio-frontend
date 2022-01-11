@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { DivLoading, FooterStyled } from '../../primeComponents';
-import { BookListMain, BookListArticle, HeaderBookList, BookListSection, BookArticle } from './styled';
+import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
 import { toast } from 'react-toastify';
-import Letterfooter from '../../components/letterFooter/letterFooter';
+import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
+import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Loading from '../../components/loading/Loading';
 import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
@@ -82,9 +83,7 @@ const BookList = () => {
       ) : (
         <>
           <Menu user={userName} />
-          <HeaderBookList>
-            <h1>Book List</h1>
-          </HeaderBookList>
+          <Letterheader phrase="Book List" />
           <BookListMain>
             <BookListSection>
               <BookArticle fadeIn={fadeIn}>
@@ -130,9 +129,7 @@ const BookList = () => {
             </BookListSection>
             <Scrolltotop />
           </BookListMain>
-          <FooterStyled>
-            <Letterfooter />
-          </FooterStyled>
+          <Letterfooter />
         </>
       )}
     </>

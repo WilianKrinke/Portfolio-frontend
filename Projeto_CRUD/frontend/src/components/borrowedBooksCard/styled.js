@@ -29,7 +29,7 @@ export const BorrowedBookCard = styled.article`
 
 export const ContainerTitle = styled.div`
     padding: 10px;
-    height: 40%;
+    height: 100%;
     width: 25%;
     display: flex;
     justify-content: center;
@@ -52,7 +52,7 @@ export const ContainerTitle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;  
+        flex-direction: column;
         
         @media screen and (max-width: 1100px) {
             height: 100%;
@@ -134,7 +134,7 @@ export const ContainerTitle = styled.div`
 
 export const ContainerResume = styled.div`
     padding: 10px;
-    height: 50%;
+    height: 100%;
     width: 65%;
     display: flex;
     justify-content: center;
@@ -150,7 +150,8 @@ export const ContainerResume = styled.div`
     }
     
     .div_resume{           
-        padding: 10px;        
+        padding: 10px;
+              
         p{
             font-size: 16px;
         }
@@ -164,7 +165,11 @@ export const ContainerResume = styled.div`
 
     .div_info_lend_book{ 
         padding: 10px;
-        width: 100%;               
+        width: 100%;
+        
+        p{
+            font-size: 16px;
+        }
         
         @media screen and (max-width: 570px) {
              p{
@@ -176,7 +181,7 @@ export const ContainerResume = styled.div`
 
 export const ContainerActions = styled.div`
     padding: 10px;
-    height: 10%;
+    height: 100%;
     width: 15%;
     display: flex;
     justify-content: center;

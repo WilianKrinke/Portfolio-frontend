@@ -115,9 +115,7 @@ const RedefinePass = () => {
         </DivLoading>
       ) : (
         <>
-          <HeaderStyled>
-            <h1>Reset Your Password</h1>
-          </HeaderStyled>
+          <Letterheader phrase="Reset Your Password" />
           <RedefinePassMain>
             <SectionResetPass>
               <ContainerInfo>
@@ -178,9 +176,7 @@ const RedefinePass = () => {
               width={500}
             />
           </RedefinePassMain>
-          <FooterStyled>
-            <Letterfooter />
-          </FooterStyled>
+          <Letterfooter />
         </>
       )}
     </>
