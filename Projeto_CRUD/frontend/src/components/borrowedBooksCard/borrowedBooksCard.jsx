@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
@@ -9,6 +10,7 @@ import sendRating from '../../utils/sendRating/sendRating';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import ModalReturnBook from '../modals/modalReturnBook';
+import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
@@ -89,6 +91,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
         </ContainerActions>
       </BorrowedBookCard>
       <ModalImage image={image} isOpen={modalImageBorrowedCards} setmodalImage={handleModal} />
+      <ModalReturnBookBorrowedCard />
     </>
   );
 };

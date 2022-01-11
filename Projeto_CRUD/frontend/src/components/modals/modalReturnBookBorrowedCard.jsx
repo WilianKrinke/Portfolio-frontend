@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
@@ -7,35 +9,26 @@ import { toast } from 'react-toastify';
 import { DivModal } from './styleds/styled';
 import { useNavigate } from 'react-router-dom';
 
-const ModalReturnBook = ({
-  modalReturnBook,
-  setmodalLendBookIsOpen,
-  setmodalReturnBook,
-  bookName,
-  objectDatas,
-  setisLend,
-}) => {
+const ModalReturnBookBorrowedCard = () => {
   const navigate = useNavigate();
 
   async function handleReturnBook() {
     try {
-      console.log(objectDatas);
-      const response = await returnBook(objectDatas);
-      if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
-      }
-
-      const { isReturnTheBook } = response;
-
-      if (isReturnTheBook === true) {
-        toast.success('Successfully returned the book!');
-        setmodalReturnBook(false);
-      } else {
-        toast.warn('Something is wrong, contact the administrator');
-      }
+      //   console.log(objectDatas);
+      //   const response = await returnBook(objectDatas);
+      //   if (response === false) {
+      //     toast.warn('Token time expired, please re-login');
+      //     setTimeout(() => {
+      //       navigate('/');
+      //     }, 3000);
+      //   }
+      //   const { isReturnTheBook } = response;
+      //   if (isReturnTheBook === true) {
+      //     toast.success('Successfully returned the book!');
+      //     setmodalReturnBook(false);
+      //   } else {
+      //     toast.warn('Something is wrong, contact the administrator');
+      //   }
     } catch (error) {
       console.log(error);
       //para a página de erro
@@ -100,7 +93,7 @@ const ModalReturnBook = ({
   );
 };
 
-ModalReturnBook.propTypes = {
+ModalReturnBookBorrowedCard.propTypes = {
   modalReturnBook: propTypes.bool,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
@@ -109,4 +102,4 @@ ModalReturnBook.propTypes = {
   setisLend: propTypes.func,
 };
 
-export default ModalReturnBook;
+export default ModalReturnBookBorrowedCard;
