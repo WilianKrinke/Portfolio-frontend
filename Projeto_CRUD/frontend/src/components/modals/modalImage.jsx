@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
 import { Image } from './styleds/styled';
@@ -52,4 +52,4 @@ ModalImage.propTypes = {
   setmodalImage: propTypes.func,
 };
 
-export default ModalImage;
+export default memo(ModalImage);
