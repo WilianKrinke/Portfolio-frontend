@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
 import pattern_colors from '../../colors'
-import {FooterStyled, MainStyled} from '../../primeComponents'
+import { MainStyled} from '../../primeComponents'
 
 export const ForgetPassMain = styled(MainStyled)`
     padding: 10px;

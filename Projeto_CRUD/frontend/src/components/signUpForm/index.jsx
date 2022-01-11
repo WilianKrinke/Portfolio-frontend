@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, memo } from 'react';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ToastContainer, toast } from 'react-toastify';

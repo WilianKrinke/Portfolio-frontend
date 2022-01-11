@@ -3,10 +3,9 @@ import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
-import { FooterStyled, HeaderStyled } from '../../primeComponents';
+import Letterheader from '../../components/letterHeader/letterHeader';
 import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
 import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
-import Letterheader from '../../components/letterHeader/letterHeader';
 
 const Home = () => {
   const [isLoginVisible, setisLoginVisible] = useState(true);
@@ -18,7 +17,6 @@ const Home = () => {
   return (
     <>
       <Letterheader phrase="Project Library" />
-
       <HomeMain>
         <InfoCard>
           <ArticleCrud>
@@ -44,7 +42,6 @@ const Home = () => {
           )}
         </SectForm>
       </HomeMain>
-
       <Letterfooter />
     </>
   );

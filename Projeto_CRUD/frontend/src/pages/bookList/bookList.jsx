@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DivLoading, FooterStyled } from '../../primeComponents';
+import { DivLoading } from '../../primeComponents';
 import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
 import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';

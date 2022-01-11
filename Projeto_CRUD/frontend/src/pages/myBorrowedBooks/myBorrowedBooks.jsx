@@ -62,9 +62,7 @@ const MyBorrowedBooks = () => {
             </SectionContainer>
             <Scrolltotop />
           </MainStyled>
-          <FooterStyled>
-            <Letterfooter />
-          </FooterStyled>
+          <Letterfooter />
         </>
       )}
     </>

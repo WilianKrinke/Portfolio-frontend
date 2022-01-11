@@ -6,7 +6,7 @@ import TextField from '@mui/material/TextField';
 import { toast, ToastContainer } from 'react-toastify';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { DivLoading, FooterStyled, HeaderStyled } from '../../primeComponents';
+import { DivLoading } from '../../primeComponents';
 import {
   BoxStyled,
   ContainerInfo,
@@ -20,6 +20,7 @@ import { ButtonConfirmResetPass } from '../../components/Buttons';
 import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
 import changePass from '../../utils/changePass/changePass';
 import { toggleLoading } from '../../store/actions/actions';
+import Letterheader from '../../components/letterHeader/letterHeader';
 
 const RedefinePass = () => {
   const params = useParams();

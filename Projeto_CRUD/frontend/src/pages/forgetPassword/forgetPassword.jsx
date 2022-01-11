@@ -5,8 +5,8 @@ import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 import { toast, ToastContainer } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { ButtonRecoverPass } from '../../components/Buttons';
-import { HeaderStyled } from '../../primeComponents';
 import { BoxStyled, Container, ContainerInfo, ForgetPassMain } from './styled';
+import Letterheader from '../../components/letterHeader/letterHeader';
 
 const ForgetPassword = () => {
   const [userName, setuserName] = useState('');
@@ -30,9 +30,7 @@ const ForgetPassword = () => {
 
   return (
     <>
-      <HeaderStyled>
-        <h1>Password Recovery</h1>
-      </HeaderStyled>
+      <Letterheader phrase="Recovery Password" />
       <ForgetPassMain>
         <Container>
           <ContainerInfo>

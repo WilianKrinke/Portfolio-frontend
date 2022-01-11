@@ -1,16 +1,14 @@
-import React, {memo}from 'react';
+import React, { memo } from 'react';
 import { ContainerName } from './styled';
 
 const Letterfooter = () => {
-    return (
-        <>
-            <ContainerName>
-                <div>
-                    <h4>Developed by Wilian Krinke</h4>
-                </div>
-            </ContainerName>
-        </>
-    );
-}
+  return (
+    <>
+      <ContainerName>
+        <h4>Developed by Wilian Krinke</h4>
+      </ContainerName>
+    </>
+  );
+};
 
 export default memo(Letterfooter);
