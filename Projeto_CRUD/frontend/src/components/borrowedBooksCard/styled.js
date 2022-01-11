@@ -9,8 +9,8 @@ export const BorrowedBookCard = styled.article`
     justify-content: space-around;
     align-items: center;
     flex-flow: row nowrap;
-    transition: all .3s ease-in-out;  
-    
+    transition: all .3s ease-in-out;
+
 
     @media screen and (max-width: 1100px) {
         min-height: 550px;
@@ -20,23 +20,21 @@ export const BorrowedBookCard = styled.article`
     }
 
     @media screen and (max-width: 570px) {
-        min-height: 600px;
+        min-height: 620px;
         width: 100%;
         border-left:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-radius: 0px;
+        border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"}; 
     }
 `
 
 export const ContainerTitle = styled.div`
     padding: 10px;
-    height: 100%;
+    height: 40%;
     width: 25%;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;     
-   
+    flex-direction: column;
 
     @media screen and (max-width: 1100px) {
         border-right: none;
@@ -50,7 +48,7 @@ export const ContainerTitle = styled.div`
 
     .div_img{
         width: 180px;
-        height: 75%;
+        height: 85%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -58,20 +56,21 @@ export const ContainerTitle = styled.div`
         
         @media screen and (max-width: 1100px) {
             height: 100%;
+            width: 100%;
         }
 
         @media screen and (max-width: 570px) {
-            width: 220px;
+            width: 100%;
         }
 
         img{
-            width: 100%;
+            width: 180px;
             height: 100%;
             cursor: pointer;
 
             @media screen and (max-width: 570px) {
                 width: 100%;
-                height: 80%;
+                height: 100%;
             }
         }
     }
@@ -135,25 +134,23 @@ export const ContainerTitle = styled.div`
 
 export const ContainerResume = styled.div`
     padding: 10px;
-    height: 100%;
+    height: 50%;
     width: 65%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
     border-left:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
     border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
-
+       
     @media screen and (max-width: 1100px) {
         width: 100%;
         border-bottom: none;
         border-left: none;
     }
-
-    .div_resume{   
-        padding: 10px;         
-        
+    
+    .div_resume{           
+        padding: 10px;        
         p{
             font-size: 16px;
         }
@@ -167,7 +164,7 @@ export const ContainerResume = styled.div`
 
     .div_info_lend_book{ 
         padding: 10px;
-        width: 100% ;        
+        width: 100%;               
         
         @media screen and (max-width: 570px) {
              p{
@@ -179,7 +176,7 @@ export const ContainerResume = styled.div`
 
 export const ContainerActions = styled.div`
     padding: 10px;
-    height: 100%;
+    height: 10%;
     width: 15%;
     display: flex;
     justify-content: center;
