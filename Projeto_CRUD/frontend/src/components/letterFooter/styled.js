@@ -10,8 +10,7 @@ export const ContainerFooter = styled.div`
     align-items: center;
     justify-content: space-evenly;
     letter-spacing: 3px;
-    padding: 10px;
-    
+    padding: 10px;    
 
     div{
         width: 100%;

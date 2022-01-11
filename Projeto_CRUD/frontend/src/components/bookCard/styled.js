@@ -46,8 +46,7 @@ export const ContainerToLike = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    flex-direction: column;    
-    background-color: #FEC097;
+    flex-direction: column;   
     border-radius: 0px 5px 5px 0px;
 
     @media screen and (max-width: 440px) {

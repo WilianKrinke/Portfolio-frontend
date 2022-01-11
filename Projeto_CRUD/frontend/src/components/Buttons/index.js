@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Pulse} from './keyframes'
 
 export const ButtonChangeForm = styled.button`
   width: 150px;
@@ -14,12 +15,13 @@ export const ButtonChangeForm = styled.button`
   bottom: 54px;
   left: 85px;
   color: #222;
-  border: 1px solid rgba(0, 0, 0, 0.5);  
+  border: 1px solid rgba(0, 0, 0, 0.5);
 
   :hover{
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.5);
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
    @media screen and (max-width: 960px) {
@@ -51,6 +53,7 @@ export const ButtonSignin = styled.button`
   :hover{
         background: #030103;
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -80,6 +83,7 @@ export const ButtonSignUp = styled.button`
   :hover{
         background: #030103;
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -113,6 +117,7 @@ export const ButtonBackToLogin = styled.button`
   :hover{
         background: #030103;
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -144,6 +149,7 @@ export const ButtonConfirmedLoanBook = styled.button`
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
 `
@@ -163,6 +169,7 @@ export const ButtonCancelLoanBook = styled.button`
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
 `
@@ -197,6 +204,7 @@ export const ButtonRecoverPass = styled.button`
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 `
 
@@ -216,6 +224,7 @@ export const ButtonConfirmResetPass = styled.button`
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 `
 
