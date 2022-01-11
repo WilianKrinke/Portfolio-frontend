@@ -21,6 +21,7 @@ const ModalLendBook = ({
 
   async function handleLend() {
     try {
+      console.log(objectDatas);
       const response = await lendBook(objectDatas);
       if (response === false) {
         toast.warn('Token time expired, please re-login');

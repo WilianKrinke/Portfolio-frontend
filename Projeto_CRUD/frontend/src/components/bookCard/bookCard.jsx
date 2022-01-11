@@ -42,7 +42,7 @@ const Bookcard = ({
   available,
   idBook,
   userName,
-  userId,
+  idUser,
   borrowedByUser = false,
   favoriteByUser = false,
   rating,
@@ -57,8 +57,8 @@ const Bookcard = ({
 
   const objectDatas = {
     idBook,
+    idUser,
     bookName,
-    userId,
     userName,
     author,
     category,
@@ -66,6 +66,8 @@ const Bookcard = ({
     rating,
     image,
   };
+
+  console.log(objectDatas);
 
   const navigate = useNavigate();
 
@@ -161,6 +163,7 @@ const Bookcard = ({
   }
 
   function handleModalReturnBook() {
+    console.log(objectDatas);
     setmodalReturnBook(true);
     setisLend(false);
   }
@@ -280,7 +283,7 @@ Bookcard.propTypes = {
   available: propTypes.any,
   idBook: propTypes.number,
   userName: propTypes.string,
-  userId: propTypes.number,
+  idUser: propTypes.number,
   borrowedByUser: propTypes.bool,
   favoriteByUser: propTypes.bool,
   rating: propTypes.number,

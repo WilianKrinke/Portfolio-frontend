@@ -26,6 +26,8 @@ const MyBorrowedBooks = () => {
         preAuth();
         const response = await getMyBorrowedBooks(navigate);
 
+        console.log(response);
+
         if (response === false) {
           toast.warn('Token time expired, please re-login');
           setTimeout(() => {

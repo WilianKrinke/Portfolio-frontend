@@ -14,6 +14,7 @@ import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
+  const [modalReturnBook, setModalReturnBook] = useState(false);
 
   const { image, bookName, rating, resume, devolutionDate, lendDate, idBook } = infoDatas;
 
@@ -30,6 +31,10 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
   function handleModal() {
     setmodalImageBorrowedCards(!modalImageBorrowedCards);
+  }
+
+  function handleModalReturnBook() {
+    setModalReturnBook(!modalReturnBook);
   }
 
   async function handleRating(e) {
@@ -87,11 +92,18 @@ const Borrowedbookscard = ({ infoDatas }) => {
           </DivInfoLendBook>
         </ContainerResume>
         <ContainerActions isBookLate={isBookLate}>
-          <Icon title="Return Book" />
+          <Icon title="Return Book" onClick={handleModalReturnBook} />
         </ContainerActions>
       </BorrowedBookCard>
+
       <ModalImage image={image} isOpen={modalImageBorrowedCards} setmodalImage={handleModal} />
-      <ModalReturnBookBorrowedCard />
+
+      <ModalReturnBookBorrowedCard
+        isOpen={modalReturnBook}
+        setModalReturnBook={handleModalReturnBook}
+        bookName={bookName}
+        objectDatas={infoDatas}
+      />
     </>
   );
 };

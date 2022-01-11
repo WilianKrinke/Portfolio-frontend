@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
@@ -9,26 +7,30 @@ import { toast } from 'react-toastify';
 import { DivModal } from './styleds/styled';
 import { useNavigate } from 'react-router-dom';
 
-const ModalReturnBookBorrowedCard = () => {
+const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, objectDatas }) => {
   const navigate = useNavigate();
 
   async function handleReturnBook() {
     try {
-      //   console.log(objectDatas);
-      //   const response = await returnBook(objectDatas);
-      //   if (response === false) {
-      //     toast.warn('Token time expired, please re-login');
-      //     setTimeout(() => {
-      //       navigate('/');
-      //     }, 3000);
-      //   }
-      //   const { isReturnTheBook } = response;
-      //   if (isReturnTheBook === true) {
-      //     toast.success('Successfully returned the book!');
-      //     setmodalReturnBook(false);
-      //   } else {
-      //     toast.warn('Something is wrong, contact the administrator');
-      //   }
+      console.log(objectDatas);
+      const response = await returnBook(objectDatas);
+
+      console.log(response);
+
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }
+      const { isReturnTheBook } = response;
+      if (isReturnTheBook === true) {
+        toast.success('Successfully returned the book!');
+        setModalReturnBook(false);
+        window.location.reload();
+      } else {
+        toast.warn('Something is wrong, contact the administrator');
+      }
     } catch (error) {
       console.log(error);
       //para a página de erro
@@ -36,9 +38,7 @@ const ModalReturnBookBorrowedCard = () => {
   }
 
   function closeModal() {
-    setisLend(true);
-    setmodalLendBookIsOpen(false);
-    setmodalReturnBook(false);
+    setModalReturnBook(false);
   }
 
   const customStyles = {
@@ -68,7 +68,7 @@ const ModalReturnBookBorrowedCard = () => {
     <>
       <Modal
         ariaHideApp={false}
-        isOpen={modalReturnBook}
+        isOpen={isOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Confirmed Modal"
@@ -94,12 +94,10 @@ const ModalReturnBookBorrowedCard = () => {
 };
 
 ModalReturnBookBorrowedCard.propTypes = {
-  modalReturnBook: propTypes.bool,
-  setmodalLendBookIsOpen: propTypes.func,
-  setmodalReturnBook: propTypes.func,
+  isOpen: propTypes.bool,
+  setModalReturnBook: propTypes.func,
   bookName: propTypes.string,
   objectDatas: propTypes.object,
-  setisLend: propTypes.func,
 };
 
 export default ModalReturnBookBorrowedCard;

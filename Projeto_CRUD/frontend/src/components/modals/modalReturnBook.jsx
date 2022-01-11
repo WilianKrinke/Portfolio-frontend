@@ -19,7 +19,6 @@ const ModalReturnBook = ({
 
   async function handleReturnBook() {
     try {
-      console.log(objectDatas);
       const response = await returnBook(objectDatas);
       if (response === false) {
         toast.warn('Token time expired, please re-login');
