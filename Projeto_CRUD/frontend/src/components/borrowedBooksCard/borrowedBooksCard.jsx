@@ -1,7 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
-import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, Icon } from './styled';
+import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
 import { format, isAfter } from 'date-fns';
 import ReactStars from 'react-rating-stars-component';
 
@@ -50,13 +49,13 @@ const Borrowedbookscard = ({ infoDatas }) => {
         <div className="div_resume">
           <p>{resume}</p>
         </div>
-        <div className="div_info_lend_book">
+        <DivInfoLendBook isBookLate={isBookLate}>
           <p>
-            Este livro foi emprestado no dia {lendDateFormat}, com devolução para o dia {dateDevolutionFormat}, portanto
-            está
+            Este livro foi emprestado no dia {lendDateFormat}, com devolução para o dia {dateDevolutionFormat},
+            portanto, está
             {isBookLate ? ' atrasado.' : ' dentro do prazo.'}
           </p>
-        </div>
+        </DivInfoLendBook>
       </ContainerResume>
       <ContainerActions isBookLate={isBookLate}>
         <Icon />

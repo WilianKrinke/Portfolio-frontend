@@ -162,21 +162,6 @@ export const ContainerResume = styled.div`
              }
         }
     }
-
-    .div_info_lend_book{ 
-        padding: 10px;
-        width: 100%;
-        
-        p{
-            font-size: 16px;
-        }
-        
-        @media screen and (max-width: 570px) {
-             p{
-                 font-size: 16px;
-             }
-        }
-    }
 `
 
 export const ContainerActions = styled.div`
@@ -199,4 +184,20 @@ export const ContainerActions = styled.div`
 export const Icon = styled(BsBookmarkCheckFill)`
     font-size: 38px;
     cursor: pointer;
+`
+
+export const DivInfoLendBook = styled.div`
+    padding: 10px;
+    width: 100%;
+    border: ${props => props.isBookLate ? "1px solid rgba(255, 0, 0, 1)" : "1px solid rgba(0, 0, 0, 0.3)"};
+    
+    p{
+        font-size: 16px;
+    }
+    
+    @media screen and (max-width: 570px) {
+            p{
+                font-size: 16px;
+            }
+    }
 `
