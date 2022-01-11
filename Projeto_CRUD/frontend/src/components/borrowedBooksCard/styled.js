@@ -9,13 +9,14 @@ export const BorrowedBookCard = styled.article`
     justify-content: space-around;
     align-items: center;
     flex-flow: row nowrap;
-    border-radius: 3px;
     transition: all .3s ease-in-out;  
     
 
     @media screen and (max-width: 1100px) {
         min-height: 550px;
         flex-flow: column nowrap;
+        border-left:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
     }
 
     @media screen and (max-width: 570px) {
@@ -34,8 +35,8 @@ export const ContainerTitle = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-right:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};    
+    flex-direction: column;     
+   
 
     @media screen and (max-width: 1100px) {
         border-right: none;
@@ -53,11 +54,14 @@ export const ContainerTitle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-  
+        flex-direction: column;  
         
         @media screen and (max-width: 1100px) {
             height: 100%;
+        }
+
+        @media screen and (max-width: 570px) {
+            width: 220px;
         }
 
         img{
@@ -95,9 +99,14 @@ export const ContainerTitle = styled.div`
         align-items: center;
         flex-direction: column;
         text-align: center;
+        
 
         @media screen and (max-width: 1100px) {
             height: 100px;
+        }
+
+        @media screen and (max-width: 570px) {
+            width: 90%;
         }
 
         h3{
@@ -112,11 +121,14 @@ export const ContainerTitle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
-
+        flex-direction: column; 
 
         @media screen and (max-width: 1100px) {
             height: 100px;
+        }
+
+        @media screen and (max-width: 570px) {
+            width: 90%;
         }
     }
 `
@@ -129,11 +141,14 @@ export const ContainerResume = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-bottom: ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
+
+    border-left:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
 
     @media screen and (max-width: 1100px) {
         width: 100%;
         border-bottom: none;
+        border-left: none;
     }
 
     .div_resume{   
@@ -169,8 +184,8 @@ export const ContainerActions = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    border-bottom: ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"}; 
+    flex-direction: column; 
+    border-bottom:  ${props => props.isBookLate ? "2px solid rgba(255, 0, 0, 1)" : "2px solid rgba(0, 0, 0, 0.3)"};
 
     @media screen and (max-width: 1100px) {
         height: 20%;

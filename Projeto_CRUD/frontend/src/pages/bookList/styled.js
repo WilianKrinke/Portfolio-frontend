@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
 import { MainStyled,HeaderStyled } from '../../primeComponents'
 
 export const HeaderBookList = styled(HeaderStyled)`

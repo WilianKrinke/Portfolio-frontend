@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {HeaderStyled} from '../../primeComponents/index'
 
 export const SectionContainer = styled.section`
     max-width: 100vw;
@@ -8,5 +9,16 @@ export const SectionContainer = styled.section`
     align-items: center;
     flex-flow: column nowrap;
     padding: 10px;
+`
+
+export const HeaderBorrowedList = styled(HeaderStyled)`
+    min-height: 22vh; 
+
+    @media screen and (max-width: 900px) {
+    text-align: center;
+    position: relative;
+    top: 50px;
+    margin-bottom: 40px;
+    }
 
 `

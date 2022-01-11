@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DivLoading, FooterStyled, HeaderStyled, MainStyled } from '../../primeComponents';
-import { SectionContainer } from './styled';
+import { HeaderBorrowedList, SectionContainer } from './styled';
 import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Loading from '../../components/loading/Loading';
@@ -52,9 +52,9 @@ const MyBorrowedBooks = () => {
       ) : (
         <>
           <Menu user={userNameState} />
-          <HeaderStyled>
+          <HeaderBorrowedList>
             <h1>My Borrowed Books</h1>
-          </HeaderStyled>
+          </HeaderBorrowedList>
           <MainStyled>
             <SectionContainer>
               {borrowedBooks.map((item) => {
