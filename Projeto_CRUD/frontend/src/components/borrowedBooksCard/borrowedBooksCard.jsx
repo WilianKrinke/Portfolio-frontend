@@ -9,7 +9,6 @@ import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import ModalReturnBook from '../modals/modalReturnBook';
 import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 
 const Borrowedbookscard = ({ infoDatas }) => {

@@ -12,11 +12,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
 
   async function handleReturnBook() {
     try {
-      console.log(objectDatas);
       const response = await returnBook(objectDatas);
-
-      console.log(response);
-
       if (response === false) {
         toast.warn('Token time expired, please re-login');
         setTimeout(() => {
