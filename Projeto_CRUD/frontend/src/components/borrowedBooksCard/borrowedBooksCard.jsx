@@ -5,11 +5,17 @@ import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, Di
 import { format, isAfter } from 'date-fns';
 import ReactStars from 'react-rating-stars-component';
 import ModalImage from '../modals/modalImage';
+import sendRating from '../../utils/sendRating/sendRating';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+import ModalReturnBook from '../modals/modalReturnBook';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
 
-  const { image, bookName, rating, resume, devolutionDate, lendDate } = infoDatas;
+  const { image, bookName, rating, resume, devolutionDate, lendDate, idBook } = infoDatas;
+
+  const navigate = useNavigate();
 
   const lendDateData = new Date(lendDate);
   const dateDevolution = new Date(devolutionDate);
@@ -24,8 +30,19 @@ const Borrowedbookscard = ({ infoDatas }) => {
     setmodalImageBorrowedCards(!modalImageBorrowedCards);
   }
 
-  function handleRating(e) {
-    console.log(e);
+  async function handleRating(e) {
+    try {
+      const response = await sendRating(e, idBook);
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+      }
+    } catch (error) {
+      console.log(error);
+      //para página de erros
+    }
   }
 
   return (
@@ -34,7 +51,6 @@ const Borrowedbookscard = ({ infoDatas }) => {
         <ContainerTitle isBookLate={isBookLate}>
           <div className="div_img" onClick={handleModal}>
             <img src={image} alt="Cover Book" title="Book Cover" loading="lazy" />
-            <ModalImage image={image} isOpen={modalImageBorrowedCards} setmodalImage={handleModal} />
           </div>
 
           <div className="div_bookname_and_rating">
@@ -57,10 +73,10 @@ const Borrowedbookscard = ({ infoDatas }) => {
           </div>
         </ContainerTitle>
         <ContainerResume isBookLate={isBookLate}>
-          <div className="div_resume">
+          <div className="div_resume" title="Resume">
             <p>{resume}</p>
           </div>
-          <DivInfoLendBook isBookLate={isBookLate}>
+          <DivInfoLendBook isBookLate={isBookLate} title="Loan Information">
             <p>
               Este livro foi emprestado no dia {lendDateFormat}, com devolução para o dia {dateDevolutionFormat},
               portanto, está
@@ -69,9 +85,10 @@ const Borrowedbookscard = ({ infoDatas }) => {
           </DivInfoLendBook>
         </ContainerResume>
         <ContainerActions isBookLate={isBookLate}>
-          <Icon />
+          <Icon title="Return Book" />
         </ContainerActions>
       </BorrowedBookCard>
+      <ModalImage image={image} isOpen={modalImageBorrowedCards} setmodalImage={handleModal} />
     </>
   );
 };

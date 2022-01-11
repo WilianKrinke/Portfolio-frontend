@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { BsBookmarkCheckFill } from 'react-icons/bs';
+import { BsBoxArrowDown } from 'react-icons/bs';
 
 export const BorrowedBookCard = styled.article`
     height: 350px;
@@ -181,7 +181,7 @@ export const ContainerActions = styled.div`
     }
 `
 
-export const Icon = styled(BsBookmarkCheckFill)`
+export const Icon = styled(BsBoxArrowDown)`
     font-size: 38px;
     cursor: pointer;
 `
