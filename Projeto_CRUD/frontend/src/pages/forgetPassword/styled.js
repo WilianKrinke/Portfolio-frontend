@@ -124,8 +124,4 @@ export const ContainerInfo = styled.article`
             }
         }
     }
-
-
 `
-
-export const ForgetPassFooter = styled(FooterStyled)``

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';

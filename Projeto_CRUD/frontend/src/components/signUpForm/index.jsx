@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { ButtonSignUp } from '../Buttons';
 import { ButtonContainer, ContainerInfoSignUp } from './styled';
 import Box from '@mui/material/Box';
@@ -153,19 +153,6 @@ const Form = () => {
           <ButtonSignUp>Register</ButtonSignUp>
         </ButtonContainer>
       </form>
-
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        width={500}
-      />
     </>
   );
 };

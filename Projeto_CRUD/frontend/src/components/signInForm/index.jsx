@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
 import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
 import { memo } from 'react';
@@ -76,19 +76,6 @@ const Form = () => {
           <ButtonSignin>Sign In</ButtonSignin>
         </ButtonContainer>
       </form>
-
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        width={500}
-      />
     </>
   );
 };

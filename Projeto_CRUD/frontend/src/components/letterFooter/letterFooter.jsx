@@ -1,12 +1,12 @@
 import React, { memo } from 'react';
-import { ContainerName } from './styled';
+import { ContainerFooter } from './styled';
 
 const Letterfooter = () => {
   return (
     <>
-      <ContainerName>
+      <ContainerFooter>
         <h4>Developed by Wilian Krinke</h4>
-      </ContainerName>
+      </ContainerFooter>
     </>
   );
 };

@@ -2,7 +2,7 @@
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, Icon } from './styled';
-import { format, isAfter, isBefore } from 'date-fns';
+import { format, isAfter } from 'date-fns';
 import ReactStars from 'react-rating-stars-component';
 
 const Borrowedbookscard = ({ infoDatas }) => {
