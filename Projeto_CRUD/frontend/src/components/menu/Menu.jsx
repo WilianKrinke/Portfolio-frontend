@@ -1,14 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  ContainerLinks,
-  ContainerMenu,
-  ContainerUserAndIcon,
-  ContainerUserName,
-  IconClose,
-  IconHamburguer,
-} from './styled';
+import { ContainerIcon, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
 import { useDetectClickOutside } from 'react-detect-click-outside';
@@ -35,12 +28,12 @@ const Menu = ({ user = 'Loading...' }) => {
           isOpen={isOpen}
           onClick={() => setisOpen(!isOpen)}
         />
-        <ContainerUserAndIcon>
-          <ContainerUserName>
-            <p>Welcome user {user}!</p>
-          </ContainerUserName>
+        <ContainerIcon>
           <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} />
-        </ContainerUserAndIcon>
+        </ContainerIcon>
+        <ContainerUser>
+          <p>Welcome user {user}!</p>
+        </ContainerUser>
 
         <ContainerLinks>
           <ul>

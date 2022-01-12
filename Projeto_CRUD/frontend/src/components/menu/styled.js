@@ -1,5 +1,10 @@
+/* eslint-disable no-unused-vars */
 import styled from 'styled-components'
-import { AiOutlineClose } from 'react-icons/ai';
+import { BsXLg } from 'react-icons/bs';
+import { HiOutlineX } from 'react-icons/hi';
+import { IoCloseOutline } from 'react-icons/io5';
+import { MdClose } from "react-icons/md";
+import { VscClose, VscChromeClose } from "react-icons/vsc";
 
 export const ContainerMenu = styled.div`
     height: 100vh;
@@ -21,13 +26,36 @@ export const ContainerMenu = styled.div`
     }
 `
 
-export const ContainerUserAndIcon = styled.div`
+export const ContainerUser = styled.div`
     width: 100%;
-    height: 100px;
+    height: 50px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;  
+    justify-content: center;     
+    position: relative;
+    top: 20px; 
+
+    p{
+        color: antiquewhite;
+        font-size: 18px;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+
+        @media screen and (max-width: 440px) {
+            font-size: 24px;
+        }
+    }
+`
+
+export const ContainerIcon = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    color: antiquewhite;
+    position: relative;
+    top: 17px;
 `
 
 export const IconHamburguer = styled.i`
@@ -37,35 +65,12 @@ export const IconHamburguer = styled.i`
     right: ${props => props.isOpen ? '-50px' : '30px'};
 `
 
-export const IconClose = styled(AiOutlineClose)`
+export const IconClose = styled(VscChromeClose)`
     color: antiquewhite;
-    font-size: 60px;
+    font-size: 52px;
+    cursor: pointer;
     position: relative;
-    bottom: 8px;
-    right: 20px;
-    cursor: pointer;   
-`
-
-export const ContainerUserName = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: relative;
-    left: 20px;
-    
-
-    p{
-        color: antiquewhite;
-        font-size: 18px;
-    }
-
-    @media screen and (max-width: 440px) {
-        position: relative;
-        left: 25px;
-    }
-
+    left: 130px;
 `
 
 export const ContainerLinks = styled.nav`
@@ -99,6 +104,7 @@ export const ContainerLinks = styled.nav`
             justify-content: center;
             cursor: pointer;
             transition: all .1s ease-in-out;
+            font-family: 'Zen Kaku Gothic New', sans-serif;
 
             :hover{
                 transform: scale(1.3);
@@ -110,11 +116,4 @@ export const ContainerLinks = styled.nav`
             }
         }
     }
-`
-
-export const ContainerUserMenu = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
 `

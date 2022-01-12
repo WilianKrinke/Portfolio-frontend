@@ -62,9 +62,11 @@ const Borrowedbookscard = ({ infoDatas }) => {
             </p>
           </DivInfoLendBook>
         </ContainerResume>
-        <ContainerActions isBookLate={isBookLate} isSameDate={isSameDate}>
-          <Icon title="Return Book" onClick={handleModalReturnBook} />
-          <p>Return book</p>
+        <ContainerActions isBookLate={isBookLate} isSameDate={isSameDate} onClick={handleModalReturnBook}>
+          <div className="div_conainer_icon">
+            <Icon title="Return Book" />
+            <p>Return book</p>
+          </div>
         </ContainerActions>
       </BorrowedBookCard>
 

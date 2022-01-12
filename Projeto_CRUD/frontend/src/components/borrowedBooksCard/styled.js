@@ -20,7 +20,7 @@ export const BorrowedBookCard = styled.article`
     }
 
     @media screen and (max-width: 570px) {
-        min-height: 650px;
+        min-height: 670px;
         width: 100%;
         border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
         border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"}; 
@@ -55,11 +55,12 @@ export const ContainerTitle = styled.div`
         flex-direction: column;
         
         @media screen and (max-width: 1100px) {
-            height: 100%;
+            height: 95%;
             width: 180px;
         }
 
         @media screen and (max-width: 570px) {
+            height: 95%;
             width: 180px;
         }
 
@@ -148,16 +149,31 @@ export const ContainerResume = styled.div`
 export const ContainerActions = styled.div`
     padding: 10px;
     height: 100%;
-    width: 15%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
     border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    cursor: pointer;
+    
+    .div_conainer_icon{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        width: 70%;
+
+        @media screen and (max-width: 570px) {
+            width: 40%;
+        }
+    }
     
     p{
         font-size: 14px;
         color: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
     }
 
     @media screen and (max-width: 1100px) {
@@ -165,12 +181,10 @@ export const ContainerActions = styled.div`
         width: 100%;
         border-bottom: none;
     }
-
 `
 
 export const Icon = styled(BsBoxArrowDown)`
     font-size: 38px;
-    cursor: pointer;
     color: rgba(0, 0, 0, 0.7);
 `
 
