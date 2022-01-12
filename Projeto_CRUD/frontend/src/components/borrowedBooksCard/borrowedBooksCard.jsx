@@ -43,7 +43,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
           <div className="div_bookname_and_rating">
             <div className="div_title">
-              <h3 title="Book Name">{bookName}</h3>
+              <h3 title="Book Title">{bookName}</h3>
             </div>
           </div>
         </ContainerTitle>
