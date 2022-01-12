@@ -21,7 +21,7 @@ export const ContainerFooter = styled.div`
         justify-content: space-evenly;
 
         h4{
-            color: #757575;
+            color: rgba(0, 0, 0, 0.7);
             font-weight: 200;
             transition: all .3s ease-in-out;
         }

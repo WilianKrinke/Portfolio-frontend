@@ -15,15 +15,15 @@ export const BorrowedBookCard = styled.article`
     @media screen and (max-width: 1100px) {
         min-height: 550px;
         flex-flow: column nowrap;
-        border-left:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
     }
 
     @media screen and (max-width: 570px) {
-        min-height: 620px;
+        min-height: 650px;
         width: 100%;
-        border-left:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"}; 
+        border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"}; 
     }
 `
 
@@ -56,22 +56,17 @@ export const ContainerTitle = styled.div`
         
         @media screen and (max-width: 1100px) {
             height: 100%;
-            width: 100%;
+            width: 180px;
         }
 
         @media screen and (max-width: 570px) {
-            width: 100%;
+            width: 180px;
         }
 
         img{
             width: 180px;
             height: 100%;
             cursor: pointer;
-
-            @media screen and (max-width: 570px) {
-                width: 100%;
-                height: 100%;
-            }
         }
     }
 
@@ -110,6 +105,10 @@ export const ContainerTitle = styled.div`
 
         h3{
             font-size: 16px;
+
+            @media screen and (max-width: 570px) {
+                font-size: 20px;
+            }
         }
     }
 `
@@ -122,8 +121,8 @@ export const ContainerResume = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-    border-bottom:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
        
     @media screen and (max-width: 1100px) {
         width: 100%;
@@ -154,24 +153,31 @@ export const ContainerActions = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    border-bottom:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    
+    p{
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.7);
+    }
 
     @media screen and (max-width: 1100px) {
         height: 20%;
         width: 100%;
         border-bottom: none;
     }
+
 `
 
 export const Icon = styled(BsBoxArrowDown)`
     font-size: 38px;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.7);
 `
 
 export const DivInfoLendBook = styled.div`
     padding: 10px;
     width: 100%;
-    border:  ${props => props.isSameDate ? "2px solid #cde060"  :  props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border:  ${props => props.isSameDate ? "2px solid #f00" : props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
     
     p{
         font-size: 16px;

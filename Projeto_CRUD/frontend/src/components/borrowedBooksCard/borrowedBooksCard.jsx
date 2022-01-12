@@ -53,18 +53,18 @@ const Borrowedbookscard = ({ infoDatas }) => {
           </div>
           <DivInfoLendBook isBookLate={isBookLate} isSameDate={isSameDate} title="Loan Information">
             <p>
-              Este livro foi emprestado no dia {lendDateFormat}, com devolução para o dia {dateDevolutionFormat},
-              portanto,
+              This book was borrowed on {lendDateFormat}, with return on {dateDevolutionFormat},
               {isSameDate
-                ? ' não esqueça, hoje é dia de entregá-lo.'
+                ? " so don't forget, today is the day to deliver it."
                 : isBookLate
-                ? ' está atrasado.'
-                : ' está dentro do prazo.'}
+                ? " therefore, you're late..."
+                : ' therefore, is within the deadline.'}
             </p>
           </DivInfoLendBook>
         </ContainerResume>
         <ContainerActions isBookLate={isBookLate} isSameDate={isSameDate}>
           <Icon title="Return Book" onClick={handleModalReturnBook} />
+          <p>Return book</p>
         </ContainerActions>
       </BorrowedBookCard>
 
