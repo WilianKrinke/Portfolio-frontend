@@ -25,9 +25,6 @@ const Borrowedbookscard = ({ infoDatas }) => {
   const isBookLate = isLate(todayFormat, dateDevolutionFormat);
   const isSameDate = sameDateValidation(todayFormat, dateDevolutionFormat);
 
-  console.log(isBookLate);
-  console.log(isSameDate);
-
   function handleModal() {
     setmodalImageBorrowedCards(!modalImageBorrowedCards);
   }
