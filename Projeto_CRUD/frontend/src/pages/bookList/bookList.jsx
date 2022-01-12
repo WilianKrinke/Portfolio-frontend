@@ -99,24 +99,7 @@ const BookList = () => {
                 />
                 <BookListArticle>
                   {currentItens.map((item) => {
-                    return (
-                      <Bookcard
-                        key={item.idBook}
-                        idBook={item.idBook}
-                        bookName={item.bookName}
-                        category={item.category}
-                        author={item.author}
-                        resume={item.resume}
-                        amount={item.amount}
-                        image={item.image}
-                        available={item.available}
-                        userName={userName}
-                        idUser={userIdData}
-                        borrowedByUser={item.isBorrowedByUser}
-                        favoriteByUser={item.isFavoriteByUser}
-                        rating={item.rating}
-                      />
-                    );
+                    return <Bookcard key={item.idBook} idUser={userIdData} userName={userName} bookInfo={item} />;
                   })}
                 </BookListArticle>
                 <Ajustbooklist

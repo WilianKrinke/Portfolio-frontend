@@ -32,21 +32,28 @@ import ModalReturnBook from '../modals/modalReturnBook';
 import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 
-const Bookcard = ({
-  bookName,
-  category,
-  author,
-  resume,
-  amount,
-  image,
-  available,
-  idBook,
-  userName,
-  idUser,
-  borrowedByUser = false,
-  favoriteByUser = false,
-  rating,
-}) => {
+const Bookcard = ({ userName, idUser, bookInfo }) => {
+  const {
+    idBook,
+    bookName,
+    author,
+    category,
+    resume,
+    rating,
+    image,
+    borrowedByUser,
+    favoriteByUser,
+    available,
+    amount,
+  } = bookInfo;
+
+  const objectDatas = {
+    idUser,
+    userName,
+    idBook,
+    bookName,
+  };
+
   const [isLend, setisLend] = useState(borrowedByUser);
   const [isLike, setisLike] = useState(favoriteByUser);
   const [isAvailable] = useState(available);
@@ -54,18 +61,6 @@ const Bookcard = ({
   const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
   const [modalReturnBookState, setmodalReturnBook] = useState(false);
   const [modalImage, setmodalImage] = useState(false);
-
-  const objectDatas = {
-    idBook,
-    idUser,
-    bookName,
-    userName,
-    author,
-    category,
-    resume,
-    rating,
-    image,
-  };
 
   const navigate = useNavigate();
 
@@ -272,19 +267,9 @@ const Bookcard = ({
 };
 
 Bookcard.propTypes = {
-  bookName: propTypes.string,
-  category: propTypes.string,
-  author: propTypes.string,
-  resume: propTypes.string,
-  amount: propTypes.number,
-  image: propTypes.string,
-  available: propTypes.any,
-  idBook: propTypes.number,
   userName: propTypes.string,
   idUser: propTypes.number,
-  borrowedByUser: propTypes.bool,
-  favoriteByUser: propTypes.bool,
-  rating: propTypes.number,
+  bookInfo: propTypes.object,
 };
 
 export default memo(Bookcard);
