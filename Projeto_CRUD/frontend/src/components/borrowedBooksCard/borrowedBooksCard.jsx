@@ -9,7 +9,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
   const [modalReturnBook, setModalReturnBook] = useState(false);
 
-  const { image, bookName, rating, resume, devolutionDate, lendDate } = infoDatas;
+  const { image, bookName, resume, devolutionDate, lendDate } = infoDatas;
 
   const lendDateData = new Date(lendDate);
   const dateDevolution = new Date(devolutionDate);
@@ -39,9 +39,6 @@ const Borrowedbookscard = ({ infoDatas }) => {
           <div className="div_bookname_and_rating">
             <div className="div_title">
               <h3 title="Book Name">{bookName}</h3>
-            </div>
-            <div className="div_rating">
-              <span>Rating: {rating}/5</span>
             </div>
           </div>
         </ContainerTitle>

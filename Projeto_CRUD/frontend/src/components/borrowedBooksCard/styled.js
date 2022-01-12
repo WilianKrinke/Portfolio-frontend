@@ -112,24 +112,6 @@ export const ContainerTitle = styled.div`
             font-size: 16px;
         }
     }
-
-    .div_rating{
-        height: 50%;
-        width: 100%;
-        padding: 5px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        @media screen and (max-width: 1100px) {
-            height: 100px;
-        }
-
-        @media screen and (max-width: 570px) {
-            width: 90%;
-        }
-    }
 `
 
 export const ContainerResume = styled.div`
