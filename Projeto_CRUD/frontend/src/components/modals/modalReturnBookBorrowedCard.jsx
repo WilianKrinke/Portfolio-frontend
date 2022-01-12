@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
 import returnBook from '../../utils/returnBooks/returnTheBook';
@@ -98,4 +98,4 @@ ModalReturnBookBorrowedCard.propTypes = {
   objectDatas: propTypes.object,
 };
 
-export default ModalReturnBookBorrowedCard;
+export default memo(ModalReturnBookBorrowedCard);

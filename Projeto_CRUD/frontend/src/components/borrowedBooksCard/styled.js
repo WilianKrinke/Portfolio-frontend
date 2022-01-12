@@ -120,7 +120,7 @@ export const ContainerTitle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column; 
+        flex-direction: column;
 
         @media screen and (max-width: 1100px) {
             height: 100px;

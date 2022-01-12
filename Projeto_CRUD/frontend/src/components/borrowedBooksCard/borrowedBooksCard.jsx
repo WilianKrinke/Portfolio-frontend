@@ -1,23 +1,15 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
 import { format, isAfter } from 'date-fns';
-import ReactStars from 'react-rating-stars-component';
 import ModalImage from '../modals/modalImage';
-import sendRating from '../../utils/sendRating/sendRating';
-import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
 import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
   const [modalReturnBook, setModalReturnBook] = useState(false);
 
-  const { image, bookName, rating, resume, devolutionDate, lendDate, idBook } = infoDatas;
-
-  const navigate = useNavigate();
+  const { image, bookName, rating, resume, devolutionDate, lendDate } = infoDatas;
 
   const lendDateData = new Date(lendDate);
   const dateDevolution = new Date(devolutionDate);
@@ -36,21 +28,6 @@ const Borrowedbookscard = ({ infoDatas }) => {
     setModalReturnBook(!modalReturnBook);
   }
 
-  async function handleRating(e) {
-    try {
-      const response = await sendRating(e, idBook);
-      if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
-      }
-    } catch (error) {
-      console.log(error);
-      //para página de erros
-    }
-  }
-
   return (
     <>
       <BorrowedBookCard isBookLate={isBookLate}>
@@ -63,18 +40,8 @@ const Borrowedbookscard = ({ infoDatas }) => {
             <div className="div_title">
               <h3 title="Book Name">{bookName}</h3>
             </div>
-            <div className="div_rating" title="Rating">
-              <ReactStars
-                count={5}
-                size={18}
-                value={rating}
-                isHalf={true}
-                emptyIcon={<i className="far fa-star"></i>}
-                halfIcon={<i className="fa fa-star-half-alt"></i>}
-                fullIcon={<i className="fa fa-star"></i>}
-                activeColor="#ffff00"
-                onChange={(e) => handleRating(e)}
-              />
+            <div className="div_rating">
+              <span>Rating: {rating}/5</span>
             </div>
           </div>
         </ContainerTitle>

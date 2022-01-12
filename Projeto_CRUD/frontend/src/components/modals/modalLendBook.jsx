@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
 import lendBook from '../../utils/lendBooks/lendBook';
@@ -115,4 +115,4 @@ ModalLendBook.propTypes = {
   setisLend: propTypes.func,
 };
 
-export default ModalLendBook;
+export default memo(ModalLendBook);

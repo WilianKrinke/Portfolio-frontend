@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import { toast } from 'react-toastify';
@@ -66,8 +66,6 @@ const Bookcard = ({
     rating,
     image,
   };
-
-  console.log(objectDatas);
 
   const navigate = useNavigate();
 
@@ -289,4 +287,4 @@ Bookcard.propTypes = {
   rating: propTypes.number,
 };
 
-export default Bookcard;
+export default memo(Bookcard);

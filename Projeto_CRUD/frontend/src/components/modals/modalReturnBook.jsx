@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import Modal from 'react-modal';
 import propTypes from 'prop-types';
 import returnBook from '../../utils/returnBooks/returnTheBook';
@@ -108,4 +108,4 @@ ModalReturnBook.propTypes = {
   setisLend: propTypes.func,
 };
 
-export default ModalReturnBook;
+export default memo(ModalReturnBook);
