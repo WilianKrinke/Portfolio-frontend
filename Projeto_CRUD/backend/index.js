@@ -13,6 +13,7 @@ const routeForgotPass = require('./routes/forgotPass')
 const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 const routeChangePass = require('./routes/changePass')
 const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
+const routeGetMyFavorites = require('./routes/getMyFavorites')
 
 const cors =  require('cors');
 const app = express();
@@ -36,6 +37,7 @@ routeAddFavorite(app)
 routeRemoveFavorite(app)
 routeChangeRating(app)
 routeGetMyBorrowedBooks(app)
+routeGetMyFavorites(app)
 
 
 app.listen(process.env.EXPRESS_PORT, () => {
