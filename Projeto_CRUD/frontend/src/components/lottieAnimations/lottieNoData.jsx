@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import lottie from 'lottie-web';
 import noresults from '../../assets/no-results.json';
 import './styled.css';
@@ -28,4 +28,4 @@ const Lottienodata = () => {
   );
 };
 
-export default Lottienodata;
+export default memo(Lottienodata);

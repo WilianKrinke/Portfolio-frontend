@@ -3,6 +3,7 @@ const insertLendBookInDb = require("./insertLendBookInDb");
 
 async function lendBookDb(datas){    
     try {
+        
         const bookDatas = decryptLendDatas(datas)                     
         const wasRegister = await insertLendBookInDb(bookDatas)
 
