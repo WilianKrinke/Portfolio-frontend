@@ -1,9 +1,8 @@
 import baseUrl from "../baseUrl";
 
-export default async function getMyBorrowedBooks(){
+export default async function getFavorites(){
     try {
-        
-        const response = await baseUrl.get('/my-borrowed-book-list');
+        const response = await baseUrl('/get-favorites')
         const {data} = response;
 
         return data;
@@ -11,4 +10,5 @@ export default async function getMyBorrowedBooks(){
         console.log(error)
         return null
     }
+
 }

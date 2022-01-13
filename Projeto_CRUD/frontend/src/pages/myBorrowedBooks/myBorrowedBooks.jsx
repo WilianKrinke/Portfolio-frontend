@@ -35,13 +35,12 @@ const MyBorrowedBooks = () => {
           }, 3000);
         } else {
           const { userName, responseObject } = response;
+          setUserNameState(userName);
 
           if (responseObject.length === 0) {
-            console.log('nenhum livro emprestado');
             setNoBookData(true);
           }
 
-          setUserNameState(userName);
           setBorrowedBooks(responseObject);
           setloadingState(false);
         }
@@ -65,9 +64,7 @@ const MyBorrowedBooks = () => {
           <MainStyled>
             <SectionContainer>
               {noBookData ? (
-                <>
-                  <Lottienodata />
-                </>
+                <Lottienodata />
               ) : (
                 borrowedBooks.map((item) => {
                   return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
