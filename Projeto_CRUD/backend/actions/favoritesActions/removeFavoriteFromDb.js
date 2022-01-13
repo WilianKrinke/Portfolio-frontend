@@ -3,7 +3,7 @@ const knex = require('../../connection/connection')
 async function removeFavoriteFromDb(bookData){
 
     const response = await knex('favorites')
-        .where('idUser', bookData.userId)
+        .where('idUser', bookData.idUser)
         .andWhere('idBook', bookData.idBook)
         .del()
         

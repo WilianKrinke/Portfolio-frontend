@@ -41,10 +41,10 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
     resume,
     rating,
     image,
-    borrowedByUser,
-    favoriteByUser,
     available,
     amount,
+    isBorrowedByUser,
+    isFavoriteByUser,
   } = bookInfo;
 
   const objectDatas = {
@@ -54,8 +54,8 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
     bookName,
   };
 
-  const [isLend, setisLend] = useState(borrowedByUser);
-  const [isLike, setisLike] = useState(favoriteByUser);
+  const [isLend, setisLend] = useState(isBorrowedByUser);
+  const [isLike, setisLike] = useState(isFavoriteByUser);
   const [isAvailable] = useState(available);
   const [seeMore, setseeMore] = useState(false);
   const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
@@ -103,6 +103,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
   async function handleRemoveFavorite() {
     try {
       setisLike(false);
+
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {
@@ -156,7 +157,6 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
   }
 
   function handleModalReturnBook() {
-    console.log(objectDatas);
     setmodalReturnBook(true);
     setisLend(false);
   }
@@ -217,8 +217,8 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         </ContainerMoldCard>
 
         <ContainerToLike>
-          {isAvailable == 1 ? (
-            isLend == false ? (
+          {isAvailable === 1 ? (
+            !isLend ? (
               <IconLend>
                 <BsBookmarkPlus title="Click to borrow" onClick={handleModalBorrowBook} />
               </IconLend>
@@ -248,8 +248,8 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
-        bookName={bookName}
-        objectDatas={objectDatas}
+        userAndBookDatas={objectDatas}
+        bookInfo={bookInfo}
       />
 
       <ModalReturnBook
@@ -257,8 +257,8 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
-        bookName={bookName}
-        objectDatas={objectDatas}
+        userAndBookDatas={objectDatas}
+        bookInfo={bookInfo}
       />
 
       <ModalImage image={image} isOpen={modalImage} setmodalImage={setmodalImage} />

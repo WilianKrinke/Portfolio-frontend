@@ -36,8 +36,6 @@ const BookList = () => {
 
         const { responseBooks, userName, idUser } = response;
 
-        console.log(idUser);
-
         if (response === false) {
           toast.warn('Token time expired, please re-login');
           setTimeout(() => {

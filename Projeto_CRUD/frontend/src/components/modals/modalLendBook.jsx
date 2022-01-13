@@ -13,15 +13,21 @@ const ModalLendBook = ({
   modalLendBookIsOpen,
   setmodalLendBookIsOpen,
   setmodalReturnBook,
-  bookName,
-  objectDatas,
   setisLend,
+  userAndBookDatas,
+  bookInfo,
 }) => {
   const navigate = useNavigate();
 
+  const objectDatas = {
+    ...userAndBookDatas,
+    ...bookInfo,
+  };
+
+  const { bookName } = bookInfo;
+
   async function handleLend() {
     try {
-      console.log(objectDatas);
       const response = await lendBook(objectDatas);
       if (response === false) {
         toast.warn('Token time expired, please re-login');
@@ -110,9 +116,9 @@ ModalLendBook.propTypes = {
   modalLendBookIsOpen: propTypes.bool,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
-  bookName: propTypes.string,
-  objectDatas: propTypes.object,
   setisLend: propTypes.func,
+  userAndBookDatas: propTypes.object,
+  bookInfo: propTypes.object,
 };
 
 export default memo(ModalLendBook);

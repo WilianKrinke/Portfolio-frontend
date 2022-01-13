@@ -14,6 +14,8 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
   const { image, bookName, resume, devolutionDate, lendDate } = infoDatas;
 
+  console.log(image);
+
   const lendDateData = new Date(lendDate);
   const dateDevolution = new Date(devolutionDate);
   const today = new Date();

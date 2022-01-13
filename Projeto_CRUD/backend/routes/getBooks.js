@@ -6,18 +6,18 @@ const getBooks = (app) => {
     app.route('/books-list/:category?')
         .get(async (req, res) => {
           try { 
-            const responseObject = {
+            const userData = {
               idUser: req.idUser[0],
               userName: req.userName[0]
             }
             
             const datasBooks = await getDataBooks(req.params.category) 
-            const booksWithBorrows = await borrowBooksFromUser(datasBooks, responseObject.idUser)
-            const responseBooks = await insertFavoriteBooks(booksWithBorrows, responseObject.idUser)
+            const booksWithBorrows = await borrowBooksFromUser(datasBooks, userData.idUser)
+            const responseBooks = await insertFavoriteBooks(booksWithBorrows, userData.idUser)
 
             res.status(200).send({
-              idUser: responseObject.idUser,
-              userName: responseObject.userName,
+              idUser: userData.idUser,
+              userName: userData.userName,
               responseBooks,
             })
 

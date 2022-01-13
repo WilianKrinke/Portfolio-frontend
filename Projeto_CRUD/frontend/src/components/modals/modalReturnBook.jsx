@@ -11,11 +11,18 @@ const ModalReturnBook = ({
   modalReturnBook,
   setmodalLendBookIsOpen,
   setmodalReturnBook,
-  bookName,
-  objectDatas,
   setisLend,
+  userAndBookDatas,
+  bookInfo,
 }) => {
   const navigate = useNavigate();
+
+  const objectDatas = {
+    ...userAndBookDatas,
+    ...bookInfo,
+  };
+
+  const { bookName } = bookInfo;
 
   async function handleReturnBook() {
     try {
@@ -103,9 +110,9 @@ ModalReturnBook.propTypes = {
   modalReturnBook: propTypes.bool,
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
-  bookName: propTypes.string,
-  objectDatas: propTypes.object,
   setisLend: propTypes.func,
+  userAndBookDatas: propTypes.object,
+  bookInfo: propTypes.object,
 };
 
 export default memo(ModalReturnBook);
