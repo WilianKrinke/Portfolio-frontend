@@ -16,6 +16,7 @@ const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
   const [loadingState, setloadingState] = useState(true);
   const [noBookData, setNoBookData] = useState(false);
+  const [bookFavorites, setBookFavorites] = useState();
 
   const navigate = useNavigate();
 
@@ -40,6 +41,7 @@ const Myfavorites = () => {
             setNoBookData(true);
           }
 
+          setBookFavorites(responseObject);
           setloadingState(false);
         }
       } catch (error) {
@@ -65,7 +67,9 @@ const Myfavorites = () => {
                 <LottieNoData />
               ) : (
                 <>
-                  <h1>Algum Livro</h1>
+                  {bookFavorites.map((item) => {
+                    console.log(item);
+                  })}
                 </>
               )}
             </SectionContainer>
