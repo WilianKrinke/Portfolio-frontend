@@ -12,11 +12,13 @@ import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBook
 import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
+import Lottienodata from '../../components/lottieAnimations/lottieNoData.jsx';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
   const [borrowedBooks, setBorrowedBooks] = useState();
   const [loadingState, setloadingState] = useState(true);
+  const [noBookData, setNoBookData] = useState(false);
 
   const navigate = useNavigate();
 
@@ -25,6 +27,7 @@ const MyBorrowedBooks = () => {
       try {
         preAuth();
         const response = await getMyBorrowedBooks(navigate);
+
         if (response === false) {
           toast.warn('Token time expired, please re-login');
           setTimeout(() => {
@@ -32,6 +35,12 @@ const MyBorrowedBooks = () => {
           }, 3000);
         } else {
           const { userName, responseObject } = response;
+
+          if (responseObject.length === 0) {
+            console.log('nenhum livro emprestado');
+            setNoBookData(true);
+          }
+
           setUserNameState(userName);
           setBorrowedBooks(responseObject);
           setloadingState(false);
@@ -55,9 +64,15 @@ const MyBorrowedBooks = () => {
           <Letterheader phrase="My Borrowed Books" />
           <MainStyled>
             <SectionContainer>
-              {borrowedBooks.map((item) => {
-                return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
-              })}
+              {noBookData ? (
+                <>
+                  <Lottienodata />
+                </>
+              ) : (
+                borrowedBooks.map((item) => {
+                  return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
+                })
+              )}
             </SectionContainer>
             <Scrolltotop />
           </MainStyled>
