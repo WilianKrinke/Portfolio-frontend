@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import lottie from 'lottie-web';
 import noresults from '../../assets/no-results.json';
+import './styled.css';
 
 const Lottienodata = () => {
   useEffect(() => {
@@ -16,7 +17,11 @@ const Lottienodata = () => {
   return (
     <>
       <div id="NoData" style={{ width: 400, height: 400 }} />
-      <p>No Data Found</p>
+      <div className="div_words">
+        <span className="word1">No</span>
+        <span className="word2">Data</span>
+        <span className="word3">Found</span>
+      </div>
     </>
   );
 };

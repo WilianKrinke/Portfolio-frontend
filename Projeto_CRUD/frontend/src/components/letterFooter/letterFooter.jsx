@@ -5,7 +5,7 @@ const Letterfooter = () => {
   return (
     <>
       <ContainerFooter>
-        <h4>Developed by Wilian Krinke</h4>
+        <h4 className="h4">Developed by Wilian Krinke</h4>
       </ContainerFooter>
     </>
   );
