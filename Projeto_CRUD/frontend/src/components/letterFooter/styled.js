@@ -23,6 +23,10 @@ export const ContainerFooter = styled.div`
 
     .h4{       
         color: rgba(0, 0, 0, 0.7);
-        font-weight: 200;     
+        font-weight: 200;
+        
+        @media screen and (max-width: 570px) {
+            font-size: 18px;
+        }
     }
 `

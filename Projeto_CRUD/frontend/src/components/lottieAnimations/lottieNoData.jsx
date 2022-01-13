@@ -16,12 +16,14 @@ const Lottienodata = () => {
 
   return (
     <>
-      <div id="NoData" style={{ width: 400, height: 400 }} />
-      <div className="div_words">
-        <span className="word1">No</span>
-        <span className="word2">Data</span>
-        <span className="word3">Found</span>
-      </div>
+      <section className="section">
+        <div id="NoData" style={{ width: '100%', height: 350 }} />
+        <div className="div_words">
+          <span className="word1">No</span>
+          <span className="word2">Data</span>
+          <span className="word3">Found</span>
+        </div>
+      </section>
     </>
   );
 };
