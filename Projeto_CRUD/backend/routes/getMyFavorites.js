@@ -19,7 +19,7 @@ function getMyFavorites(app){
             } catch (e) {
                 const error = new Error(e)
                 console.log(error.message)
-                return response
+                return res.status(200).send(null)
             }
         })
 }
