@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { ContainerIcon, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
 import { ButtonLogOut } from '../Buttons';
@@ -44,7 +44,7 @@ const Menu = ({ user = 'Loading...' }) => {
               <Link to="/my-borrowed-books">My Borrowed Books</Link>
             </li>
             <li>
-              <Link to="#">My Favorites</Link>
+              <Link to="/my-favorites">My Favorites</Link>
             </li>
             <li>
               <Link to="#">My Data</Link>
@@ -66,4 +66,4 @@ Menu.propTypes = {
   user: propTypes.string,
 };
 
-export default Menu;
+export default memo(Menu);

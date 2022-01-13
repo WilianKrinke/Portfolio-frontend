@@ -4,8 +4,9 @@ import BookList from '../pages/bookList/bookList'
 import NotFound from '../pages/404/NotFound'
 import ForgetPassword from '../pages/forgetPassword/forgetPassword'
 import RedefinePass from '../pages/redefinePass/redefinePass'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MyBorrowedBooks from '../pages/myBorrowedBooks/myBorrowedBooks';
+import Myfavorites from '../pages/myFavorites/myFavorites';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const index = () => {
   return (
@@ -13,7 +14,8 @@ const index = () => {
       <Routes>
         <Route exact path="/" element={<Home />} />            
         <Route exact path='/book-list' element={<BookList />} />
-        <Route excat path='/my-borrowed-books' element={<MyBorrowedBooks />} />
+        <Route exact path='/my-borrowed-books' element={<MyBorrowedBooks />} />
+        <Route exact path='/my-favorites' element={<Myfavorites />}/>
         <Route exact path='/forget-pass' element={<ForgetPassword />} />
         <Route exact path='/reset-pass/:token/:idUser' element={<RedefinePass />} />
         <Route exact path='*' element={<NotFound/>} />
