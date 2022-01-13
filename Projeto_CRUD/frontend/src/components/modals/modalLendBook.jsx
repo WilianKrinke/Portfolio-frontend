@@ -80,7 +80,8 @@ const ModalLendBook = ({
   };
 
   const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
-  const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 3), 'dd-MM-yyyy');
+  const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 1), 'dd-MM-yyyy');
+  //mudar posteriomente para tres dias uteis
 
   return (
     <>
