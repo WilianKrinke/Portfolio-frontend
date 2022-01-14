@@ -170,9 +170,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
               <img src={image} alt="Capa" loading="lazy" title="Book cover" onClick={handleModalImage} />
             </div>
             <div className="title_rating">
-              <h2 title="Book Title">
-                <strong>{bookName}</strong>
-              </h2>
+              <h2 title="Book Title">{bookName}</h2>
               <div className="rating" title="Rating">
                 <ReactStars
                   count={5}

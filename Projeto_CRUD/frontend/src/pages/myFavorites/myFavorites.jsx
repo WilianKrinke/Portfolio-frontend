@@ -11,7 +11,7 @@ import getFavorites from '../../utils/getFavorites/getFavorites';
 import { SectionContainer } from './styled';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import Favoritecard from '../../components/favoriteCard/favoriteCard';
+import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
