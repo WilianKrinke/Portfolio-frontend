@@ -26,6 +26,7 @@ const Myfavorites = () => {
       try {
         preAuth();
         const response = await getFavorites();
+        const { userName, responseObject } = response;
 
         if (response === false) {
           toast.warn('Token time expired, please re-login');
@@ -35,14 +36,14 @@ const Myfavorites = () => {
         } else if (response === null) {
           //Enviar para pagina de erro
         } else {
-          const { userName, responseObject } = response;
           setUserNameState(userName);
 
           if (responseObject.length === 0) {
             setNoBookData(true);
+          } else {
+            setBookFavorites(responseObject);
           }
 
-          setBookFavorites(responseObject);
           setloadingState(false);
         }
       } catch (error) {

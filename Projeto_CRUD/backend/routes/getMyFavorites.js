@@ -8,14 +8,9 @@ function getMyFavorites(app){
                 const [idUser] = req.idUser
                 const [userName] = req.userName
 
-                const response = await getMyFavoritesFromDb(idUser)
-
-                if (response === null) {
-                    res.status(200).send(null)
-                } else {
-                    res.status(200).send({userName: userName, responseObject: response})
-                }
-
+                const response = await getMyFavoritesFromDb(idUser)                
+                res.status(200).send({userName: userName, responseObject: response})
+                
             } catch (e) {
                 const error = new Error(e)
                 console.log(error.message)
