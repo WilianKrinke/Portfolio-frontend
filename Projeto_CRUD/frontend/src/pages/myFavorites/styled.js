@@ -6,6 +6,6 @@ export const SectionContainer = styled.section`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-flow: column nowrap;
+    flex-flow: row wrap;
     padding: 10px;
 `

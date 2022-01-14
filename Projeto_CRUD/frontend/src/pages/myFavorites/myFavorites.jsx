@@ -27,6 +27,7 @@ const Myfavorites = () => {
         preAuth();
         const response = await getFavorites();
         const { userName, responseObject } = response;
+        console.log(responseObject);
 
         if (response === false) {
           toast.warn('Token time expired, please re-login');
@@ -70,7 +71,7 @@ const Myfavorites = () => {
               ) : (
                 <>
                   {bookFavorites.map((item) => {
-                    <Favoritecard key={item.idFavoriteRegister} favoriteItem={item} />;
+                    return <Favoritecard key={item.idFavoriteRegister} favoriteItem={item} />;
                   })}
                 </>
               )}
