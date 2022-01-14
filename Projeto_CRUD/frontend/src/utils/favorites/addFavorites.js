@@ -3,9 +3,8 @@ import baseUrl from "../baseUrl";
 import cryptLendBook from "../crypto/doCryptLendBook";
 
 export default async function addFavorites(datas) {
-
     const {idBookC,bookNameC,userIdC,userNameC} = cryptLendBook(datas)
-    const {author,resume,rating,category} = datas;
+    const {author,resume,rating,category, image} = datas;
 
     try {
         preAuth()
@@ -17,7 +16,8 @@ export default async function addFavorites(datas) {
             author,
             resume,
             rating,
-            category
+            category,
+            image
         })
 
         const {data} = response

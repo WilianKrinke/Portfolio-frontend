@@ -2,7 +2,7 @@ const knex = require("../../connection/connection");
 
 async function registerIntoFavorites(favoriteDatas){
 
-    const {userId, userName, idBook, bookName,author, category, resume, rating } = favoriteDatas
+    const {userId, userName, idBook, bookName,author, category, resume, rating, image } = favoriteDatas
 
     try {
         const response = await knex('favorites').insert([{
@@ -13,7 +13,8 @@ async function registerIntoFavorites(favoriteDatas){
             author: author,
             resume: resume,
             category: category,
-            rating: rating
+            rating: rating,
+            image: image
         }])
     
         if (response != undefined) {

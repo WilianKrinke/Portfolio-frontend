@@ -11,6 +11,7 @@ import getFavorites from '../../utils/getFavorites/getFavorites';
 import { SectionContainer } from './styled';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import Favoritecard from '../../components/favoriteCard/favoriteCard';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -68,7 +69,7 @@ const Myfavorites = () => {
               ) : (
                 <>
                   {bookFavorites.map((item) => {
-                    console.log(item);
+                    <Favoritecard key={item.idFavoriteRegister} favoriteItem={item} />;
                   })}
                 </>
               )}
