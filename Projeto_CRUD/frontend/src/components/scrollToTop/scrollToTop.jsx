@@ -1,5 +1,5 @@
 import React, { useEffect, useState, memo } from 'react';
-import { ScrollArrow } from './styled';
+import { Phrase, ScrollArrow } from './styled';
 import { animateScroll as scroll } from 'react-scroll';
 
 const Scrolltotop = () => {
@@ -30,6 +30,7 @@ const Scrolltotop = () => {
       {scrollElement && (
         <>
           <ScrollArrow title="Scroll to Top" onClick={handleClickScroll} />
+          <Phrase>Top</Phrase>
         </>
       )}
     </>

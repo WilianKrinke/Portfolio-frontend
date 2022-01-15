@@ -1,12 +1,19 @@
 import styled from 'styled-components'
-import { AiOutlineUp } from "react-icons/ai";
+import { GoArrowUp } from "react-icons/go";
 
-export const ScrollArrow = styled(AiOutlineUp)`
+export const ScrollArrow = styled(GoArrowUp)`
     position: fixed;
-    right: 30.52px;
-    bottom: 40px;
-    font-size: 48px;
+    right: 17px;
+    bottom: 53px;
+    font-size: 52px;
     cursor: pointer;
-    color: #000
+    color: #000 ;  
+`
+
+export const Phrase = styled.p`
+    position: fixed;
+    right: 30px;
+    bottom: 46px;
+    font-size: 14px;
 `
 
