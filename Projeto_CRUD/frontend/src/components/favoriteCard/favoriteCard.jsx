@@ -1,18 +1,47 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
 import { ContainerCard, ContainerResume, ContainerTitle, Icon, IconHeartBroken } from './styled';
 import ReactStars from 'react-rating-stars-component';
 import ScrollToTop from '../scrollToTop/scrollToTop';
 import { useState } from 'react';
+import { removeFavorite } from '../../utils/favorites/removeFavorite';
+import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Favoritecard = ({ favoriteItem }) => {
-  const { bookName, author, category, image, rating, resume } = favoriteItem;
+  const { bookName, author, category, image, rating, resume, idBook, idUser, userName } = favoriteItem;
+  const navigate = useNavigate();
+
+  const objectDatas = {
+    idBook,
+    bookName,
+    idUser,
+    userName,
+  };
 
   const [changeHeart, setchangeHeart] = useState(false);
 
-  function handleRemoveFavorites() {
-    setchangeHeart(true);
+  async function handleRemoveFavorites() {
+    try {
+      setchangeHeart(true);
+      const response = await removeFavorite(objectDatas);
+
+      if (response === false) {
+        toast.warn('Token time expired, please re-login');
+        setTimeout(() => {
+          navigate('/');
+        }, 3000);
+        setchangeHeart(false);
+      } else {
+        toast.success('Successfully removed from favorites!');
+        setTimeout(() => {
+          window.location.reload();
+        }, 3000);
+      }
+    } catch (error) {
+      console.log(error);
+      //para a página de erro
+    }
   }
 
   return (

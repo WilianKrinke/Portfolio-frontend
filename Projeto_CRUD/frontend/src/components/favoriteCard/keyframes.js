@@ -12,6 +12,6 @@ export const heartBrokenAnimation = keyframes`
 
     to{
        opacity: 0;
-       transform: translateY(-50px)
+       transform: translateY(-50px);
     }
 `

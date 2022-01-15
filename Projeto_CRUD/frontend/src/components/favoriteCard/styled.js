@@ -66,7 +66,7 @@ export const IconHeartBroken = styled(FaHeartBroken)`
     width: 20%;
     height: 35px;    
     cursor: pointer;
-    animation: ${heartBrokenAnimation} 1s ease 1 forwards;
+    animation: ${heartBrokenAnimation} 1s cubic-bezier(0,.43,.83,.82) 1 forwards;
 `
 
 export const ContainerResume = styled.div`
