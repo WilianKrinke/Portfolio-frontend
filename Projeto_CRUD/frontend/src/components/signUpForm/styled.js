@@ -9,7 +9,8 @@ export const ContainerInfoSignUp = styled.div`
 
     i{
         position: relative;
-        top: 5px;
+        top: 9px;
+        font-size: 18px;
     }
 
     .fa-eye-slash{

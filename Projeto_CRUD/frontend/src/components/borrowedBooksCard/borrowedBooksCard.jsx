@@ -57,7 +57,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
               {isSameDate
                 ? " so don't forget, today is the day to deliver it."
                 : isBookLate
-                ? " therefore, you're late..."
+                ? " therefore, you're late."
                 : ' therefore, is within the deadline.'}
             </p>
           </DivInfoLendBook>

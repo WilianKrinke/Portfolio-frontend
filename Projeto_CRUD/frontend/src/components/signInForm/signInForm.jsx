@@ -9,7 +9,7 @@ import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
 import { memo } from 'react';
 
-const Form = () => {
+const signIn = () => {
   const [userName, setuserName] = useState(null);
   const [pass, setPass] = useState(null);
 
@@ -80,4 +80,4 @@ const Form = () => {
   );
 };
 
-export default memo(Form);
+export default memo(signIn);

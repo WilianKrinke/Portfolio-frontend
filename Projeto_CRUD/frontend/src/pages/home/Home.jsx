@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
-import SignInForm from '../../components/signInForm';
+import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader';

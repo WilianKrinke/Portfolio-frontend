@@ -5,7 +5,7 @@ import { heartBrokenAnimation } from './keyframes'
 export const ContainerCard = styled.article`
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 5px;
-    width: 350px;
+    width: 370px;
     height: 500px;
     margin: 10px;
     padding: 10px;
@@ -27,6 +27,7 @@ export const ContainerTitle = styled.div`
     .div_img{
         width: 55%;
         height: 100%;
+        cursor: pointer;
 
         img{
             width:100%;

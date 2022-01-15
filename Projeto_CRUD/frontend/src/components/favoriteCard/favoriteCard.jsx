@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
 import { ContainerCard, ContainerResume, ContainerTitle, Icon, IconHeartBroken } from './styled';
@@ -7,10 +8,10 @@ import { useState } from 'react';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import ModalImage from '../modals/modalImage';
 
 const Favoritecard = ({ favoriteItem }) => {
   const { bookName, author, category, image, rating, resume, idBook, idUser, userName } = favoriteItem;
-  const navigate = useNavigate();
 
   const objectDatas = {
     idBook,
@@ -19,7 +20,9 @@ const Favoritecard = ({ favoriteItem }) => {
     userName,
   };
 
+  const navigate = useNavigate();
   const [changeHeart, setchangeHeart] = useState(false);
+  const [isOpen, setisOpen] = useState(false);
 
   async function handleRemoveFavorites() {
     try {
@@ -33,10 +36,9 @@ const Favoritecard = ({ favoriteItem }) => {
         }, 3000);
         setchangeHeart(false);
       } else {
-        toast.success('Successfully removed from favorites!');
         setTimeout(() => {
           window.location.reload();
-        }, 3000);
+        }, 500);
       }
     } catch (error) {
       console.log(error);
@@ -44,15 +46,19 @@ const Favoritecard = ({ favoriteItem }) => {
     }
   }
 
+  function handleModalImage() {
+    setisOpen(true);
+  }
+
   return (
     <ContainerCard>
       <ContainerTitle>
-        <div className="div_img">
+        <div className="div_img" onClick={handleModalImage}>
           <img src={image} alt="Book Cover" title="Book Cover"></img>
         </div>
         <div className="div_icon_title">
           {changeHeart ? <IconHeartBroken /> : <Icon title="Remove from favorites" onClick={handleRemoveFavorites} />}
-          <div className="div_title">
+          <div className="div_title" title="Book Name">
             <h2>{bookName}</h2>
           </div>
           <div className="div_stars">
@@ -72,23 +78,24 @@ const Favoritecard = ({ favoriteItem }) => {
         </div>
       </ContainerTitle>
       <ContainerResume>
-        <div className="div_author">
+        <div className="div_author" title="Author">
           <p>
             <b>Author:</b> {author}
           </p>
         </div>
-        <div className="div_resume">
+        <div className="div_resume" title="Resume">
           <p>
             <b>Resume:</b> {resume}
           </p>
         </div>
-        <div className="div_category">
+        <div className="div_category" title="Category">
           <p>
             <b>Category:</b> {category}
           </p>
         </div>
       </ContainerResume>
       <ScrollToTop />
+      <ModalImage image={image} isOpen={isOpen} setmodalImage={setisOpen} />
     </ContainerCard>
   );
 };
