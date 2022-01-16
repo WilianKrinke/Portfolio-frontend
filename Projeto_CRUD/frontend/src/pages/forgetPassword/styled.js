@@ -76,7 +76,7 @@ export const ContainerInfo = styled.article`
         }
 
         p{
-            font-size: 16px;
+            font-size: 18px;
             letter-spacing: 1px;
         }
     }
@@ -117,6 +117,11 @@ export const ContainerInfo = styled.article`
             
             a{
                 transition: all .3s ease-in-out;
+                font-size: 16px;
+
+                @media screen and (max-width: 400px) {
+                    font-size: 18px;
+                }
             }
     
             a:hover{
