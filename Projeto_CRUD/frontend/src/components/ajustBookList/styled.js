@@ -9,7 +9,7 @@ export const AjustBookList = styled.section`
     height: 100px;
 
     @media screen and (max-width: 808px) {
-        height: 240px;
+        height: 200px;
         width: 95%;
         display: flex;
         align-items: center;
@@ -18,7 +18,7 @@ export const AjustBookList = styled.section`
     }
     
     @media screen and (max-width: 440px) {        
-        height: 240px;
+        height: 180px;
         width: 95%;
         display: flex;
         align-items: center;
