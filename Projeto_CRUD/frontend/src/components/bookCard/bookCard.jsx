@@ -171,7 +171,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
             </div>
             <div className="title_rating">
               <h2 title="Book Title">{bookName}</h2>
-              <div className="rating" title="Rating">
+              <div className="rating" title={`Rating ${rating}`}>
                 <ReactStars
                   count={5}
                   size={18}
@@ -180,7 +180,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#ffff00"
+                  activeColor="#000"
                   onChange={(e) => handleRating(e)}
                 />
               </div>

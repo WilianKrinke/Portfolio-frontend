@@ -6,8 +6,8 @@ import { UserContainer, PassContainer, ButtonContainer } from './styled';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { toast } from 'react-toastify';
 import { ButtonSignin } from '../Buttons';
-import './signInForm.css';
 import { memo } from 'react';
+import './signInForm.css';
 
 const signIn = () => {
   const [userName, setuserName] = useState(null);

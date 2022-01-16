@@ -1,18 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
-import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
-import { format } from 'date-fns';
 import ModalImage from '../modals/modalImage';
 import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 import isLate from '../../utils/validations/dateValidation';
 import sameDateValidation from '../../utils/validations/sameDateValidation';
+import ReactStars from 'react-rating-stars-component';
+import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
+import { format } from 'date-fns';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
   const [modalReturnBook, setModalReturnBook] = useState(false);
 
-  const { image, bookName, resume, devolutionDate, lendDate } = infoDatas;
+  const { image, bookName, resume, devolutionDate, lendDate, rating } = infoDatas;
 
   const lendDateData = new Date(lendDate);
   const dateDevolution = new Date(devolutionDate);
@@ -44,6 +45,20 @@ const Borrowedbookscard = ({ infoDatas }) => {
           <div className="div_bookname_and_rating">
             <div className="div_title">
               <h3 title="Book Title">{bookName}</h3>
+            </div>
+            <div className="div_rating">
+              <ReactStars
+                count={5}
+                size={18}
+                value={rating}
+                isHalf={true}
+                emptyIcon={<i className="far fa-star"></i>}
+                halfIcon={<i className="fa fa-star-half-alt"></i>}
+                fullIcon={<i className="fa fa-star"></i>}
+                activeColor="#000"
+                edit={false}
+                title="Read Only"
+              />
             </div>
           </div>
         </ContainerTitle>

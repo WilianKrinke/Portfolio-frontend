@@ -70,7 +70,7 @@ const Favoritecard = ({ favoriteItem }) => {
               emptyIcon={<i className="far fa-star"></i>}
               halfIcon={<i className="fa fa-star-half-alt"></i>}
               fullIcon={<i className="fa fa-star"></i>}
-              activeColor="#ffff00"
+              activeColor="#000"
               edit={false}
               title="Read Only"
             />

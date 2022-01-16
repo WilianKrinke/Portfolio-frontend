@@ -112,6 +112,13 @@ export const ContainerTitle = styled.div`
             }
         }
     }
+
+    .div_rating{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 `
 
 export const ContainerResume = styled.div`

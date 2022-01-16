@@ -16,8 +16,8 @@ export const UserContainer = styled.div`
     i{
         color: rgba(0, 0, 0, 0.8);
         position: relative;
-        top: 6px;
-        font-size: 22px;
+        top: 8px;
+        font-size: 18px;
     }
 `
 
@@ -37,7 +37,7 @@ export const PassContainer = styled.div`
     i{
         color: rgba(0, 0, 0, 0.8);
         position: relative;
-        top: 6px;
+        top: 8px;
         font-size: 18px;
     }
 `
