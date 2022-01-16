@@ -43,41 +43,6 @@ export const BookListArticle = styled.article`
     flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
-    
-    table{
-        width: 75%;
-        text-align: center;
-        border-collapse: collapse;
-
-        th{
-            height: 50px;
-        }
-
-        thead > tr{
-            border-bottom: 2px solid transparent;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            
-        }
-
-        tbody > tr{
-           border-bottom: 2px solid transparent;           
-           transition: all .3s ease-in-out;
-           letter-spacing: 3px;
-
-           :hover{
-                border-bottom: 2px solid;
-           }
-        }
-
-        td{
-            width: 100px;
-            height: 50px;
-        }
-
-        tbody > tr > td:last-child{
-            border-bottom: 2px solid transparent;
-        }
 
         i{
             cursor: pointer;

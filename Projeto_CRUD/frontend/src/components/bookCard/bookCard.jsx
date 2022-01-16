@@ -12,18 +12,11 @@ import {
   IconLend,
   IconLendItem,
   IconNotAvailable,
+  IconSeeMoreLess,
   ParagraphResume,
   SecondContainerInfo,
 } from './styled';
-import {
-  BsBookmarkPlus,
-  BsHeart,
-  BsBookmarkCheckFill,
-  BsHeartFill,
-  BsBookmarkXFill,
-  BsChevronCompactDown,
-  BsChevronCompactUp,
-} from 'react-icons/bs';
+import { BsBookmarkPlus, BsHeart, BsBookmarkCheckFill, BsHeartFill, BsBookmarkXFill } from 'react-icons/bs';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import { useNavigate } from 'react-router-dom';
 import addFavorites from '../../utils/favorites/addFavorites';
@@ -103,7 +96,6 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
   async function handleRemoveFavorite() {
     try {
       setisLike(false);
-
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {
@@ -203,7 +195,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
                 <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
               </ContainerResume>
               <div className="container_see_more" onClick={handleSeeMore}>
-                {seeMore ? <BsChevronCompactUp title="See less" /> : <BsChevronCompactDown title="See more" />}
+                <IconSeeMoreLess title={`See ${seeMore ? 'Less' : 'More'}`} seeMore={seeMore} />
               </div>
             </div>
             <div className="container_amount" title="Copies">

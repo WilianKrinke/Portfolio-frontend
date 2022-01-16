@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import pattern_colors from '../../colors'
+import {BsChevronCompactDown,
+} from 'react-icons/bs';
+import { SeeLessAnimation, SeeMoreAnimation } from './keyframes';
 
 export const CardStyled = styled.div`
     min-height: 450px;
@@ -48,13 +51,13 @@ export const ContainerToLike = styled.div`
     align-items: center;
     flex-direction: column;   
     border-radius: 0px 5px 5px 0px;
+    background-color: #FE6B0A;
 
     @media screen and (max-width: 440px) {
         height: 550px;
     }
 
     :hover{
-        background-color: #FE6B0A;
     }
 `
 
@@ -106,8 +109,12 @@ export const IconBorrowed = styled.i`
 
     @media screen and (max-width: 440px) {
         font-size: 30px;
-    }
-    
+    }  
+`
+
+export const IconSeeMoreLess = styled(BsChevronCompactDown)`
+    font-size: 22px;
+    animation: ${props => props.seeMore ? SeeMoreAnimation : SeeLessAnimation} .5s ease 1 forwards;
 `
 
 export const FirstContainerInfo = styled.div`
