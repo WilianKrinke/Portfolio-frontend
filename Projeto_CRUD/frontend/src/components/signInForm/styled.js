@@ -38,7 +38,7 @@ export const PassContainer = styled.div`
         color: rgba(0, 0, 0, 0.8);
         position: relative;
         top: 6px;
-        font-size: 22px;
+        font-size: 18px;
     }
 `
 
