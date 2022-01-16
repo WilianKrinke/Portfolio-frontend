@@ -4,11 +4,11 @@ import propTypes from 'prop-types';
 import { ContainerCard, ContainerResume, ContainerTitle, Icon, IconHeartBroken } from './styled';
 import ReactStars from 'react-rating-stars-component';
 import ScrollToTop from '../scrollToTop/scrollToTop';
+import ModalImage from '../modals/modalImage';
 import { useState } from 'react';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
-import ModalImage from '../modals/modalImage';
 
 const Favoritecard = ({ favoriteItem }) => {
   const { bookName, author, category, image, rating, resume, idBook, idUser, userName } = favoriteItem;
@@ -61,7 +61,7 @@ const Favoritecard = ({ favoriteItem }) => {
           <div className="div_title" title="Book Name">
             <h2>{bookName}</h2>
           </div>
-          <div className="div_stars">
+          <div className="div_stars" title={`Rating ${rating}`}>
             <ReactStars
               count={5}
               size={18}

@@ -68,6 +68,7 @@ export const ContainerTitle = styled.div`
             width: 180px;
             height: 100%;
             cursor: pointer;
+            object-fit: cover;
         }
     }
 

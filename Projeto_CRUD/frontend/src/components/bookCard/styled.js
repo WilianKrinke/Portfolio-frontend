@@ -130,7 +130,7 @@ export const FirstContainerInfo = styled.div`
         img{
             width: 100px;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
             cursor: pointer;
         }
     }
