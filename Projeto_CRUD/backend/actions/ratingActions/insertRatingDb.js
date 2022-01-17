@@ -4,17 +4,19 @@ async function insertRatingDb(newRating, idBook){
 
     try {
         const response = await knex('books')
-        .where({idBook: idBook})
+        .where({idBook: 80})
         .update({
             rating: newRating
         })
     
-        if (response != undefined) {
+        if (response !== 0) {
             return true
         } else {
             return false
         }
-    } catch (error) {
+    } catch (e) {
+        const error = new Error(e)
+        console.log(error.message)
         return error;
     }
     

@@ -4,7 +4,11 @@ import baseUrl from "../baseUrl"
 export default async function sendRating(rating, idBook){  
     try {
         preAuth()
-        const response = await baseUrl.put(`/change-rating/${rating}/${idBook}`)
+        console.log(rating, idBook)
+        const response = await baseUrl.post('/change-rating', {
+            rating,
+            idBook
+        })
         return response.data;
     } catch (error) {
         return error
