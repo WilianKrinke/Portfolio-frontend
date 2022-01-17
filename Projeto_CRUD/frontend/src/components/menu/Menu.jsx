@@ -32,7 +32,7 @@ const Menu = ({ user = 'Loading...' }) => {
           <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} />
         </ContainerIcon>
         <ContainerUser>
-          <p>Welcome user {user}!</p>
+          <p>Welcome {user}!</p>
         </ContainerUser>
 
         <ContainerLinks>

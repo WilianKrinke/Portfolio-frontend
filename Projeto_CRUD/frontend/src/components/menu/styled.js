@@ -1,10 +1,5 @@
-/* eslint-disable no-unused-vars */
 import styled from 'styled-components'
-import { BsXLg } from 'react-icons/bs';
-import { HiOutlineX } from 'react-icons/hi';
-import { IoCloseOutline } from 'react-icons/io5';
-import { MdClose } from "react-icons/md";
-import { VscClose, VscChromeClose } from "react-icons/vsc";
+import { VscChromeClose } from "react-icons/vsc";
 
 export const ContainerMenu = styled.div`
     height: 100vh;
@@ -70,7 +65,7 @@ export const IconClose = styled(VscChromeClose)`
     font-size: 52px;
     cursor: pointer;
     position: relative;
-    left: 130px;
+    left: 150px;
 `
 
 export const ContainerLinks = styled.nav`
