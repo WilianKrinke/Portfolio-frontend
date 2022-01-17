@@ -10,7 +10,7 @@ async function borrowBooksFromUser (dataBooks, idUser){
         const idBookData = results[index];
 
         dataBooks.forEach(element => {
-            if (idBookData.idBook == element.idBook) element.isBorrowedByUser = true
+            if (idBookData.idBook === element.idBook) element.isBorrowedByUser = true
         })   
     }
 
