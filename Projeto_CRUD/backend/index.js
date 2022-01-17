@@ -14,17 +14,17 @@ const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 const routeChangePass = require('./routes/changePass')
 const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
 const routeGetMyFavorites = require('./routes/getMyFavorites')
+const sanitizationReqBody = require('./utils/sanitization/sanitization');
 
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
-const sanitization = require('./utils/sanitization/sanitization');
 
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))
 
-app.use(sanitization)
+app.use(sanitizationReqBody)
 routeUserLogin(app)
 routeSignUpUser(app)
 routeForgotPass(app)
@@ -40,7 +40,6 @@ routeRemoveFavorite(app)
 routeChangeRating(app)
 routeGetMyBorrowedBooks(app)
 routeGetMyFavorites(app)
-
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')
