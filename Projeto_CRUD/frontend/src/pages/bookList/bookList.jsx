@@ -6,7 +6,6 @@ import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Loading from '../../components/loading/Loading';
-import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
@@ -31,7 +30,6 @@ const BookList = () => {
   useEffect(() => {
     (async () => {
       try {
-        preAuth();
         const response = await getBookList(category);
         const { responseBooks, userName, idUser } = response;
 

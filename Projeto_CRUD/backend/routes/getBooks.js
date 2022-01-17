@@ -10,6 +10,8 @@ const getBooks = (app) => {
               idUser: req.idUser[0],
               userName: req.userName[0]
             }
+
+            
             
             const datasBooks = await getDataBooks(req.params.category) 
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, userData.idUser)

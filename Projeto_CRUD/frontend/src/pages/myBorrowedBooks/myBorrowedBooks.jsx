@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DivLoading, MainStyled } from '../../primeComponents';
@@ -7,7 +6,6 @@ import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
-import preAuth from '../../utils/Auth/preAuth';
 import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
 import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
@@ -25,7 +23,6 @@ const MyBorrowedBooks = () => {
   useEffect(() => {
     (async () => {
       try {
-        preAuth();
         const response = await getMyBorrowedBooks(navigate);
 
         if (response === false) {

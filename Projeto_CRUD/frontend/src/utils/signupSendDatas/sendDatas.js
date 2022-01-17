@@ -30,12 +30,8 @@ export async function sendDatas(datas) {
                 pass: passCrypt,
             });
 
-
-            console.log(response)
             const {data} = response;
-
-
-
+            
             if (data === true) {
                 const objectResponse = {wasRegister: true, message: 'User registered successfully!'}
                 return objectResponse;

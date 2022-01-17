@@ -1,4 +1,4 @@
-export const objectSqlInjectionsWords = [
+const objectSqlInjectionsWords = [
     'UNION ',
     'SELECT',
     'INSERT',
@@ -72,3 +72,5 @@ export const objectSqlInjectionsWords = [
     "'",
     "pg_sleep()"
 ]
+
+module.exports = objectSqlInjectionsWords;

@@ -14,7 +14,7 @@ const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 const routeChangePass = require('./routes/changePass')
 const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
 const routeGetMyFavorites = require('./routes/getMyFavorites')
-const sanitizationReqBody = require('./utils/sanitization/sanitization');
+const sanitizationReqBody = require('./validations/sanitization');
 
 const cors =  require('cors');
 const app = express();

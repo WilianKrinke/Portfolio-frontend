@@ -4,7 +4,6 @@ import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
 import LottieNoData from '../../components/lottieAnimations/lottieNoData';
-import preAuth from '../../utils/Auth/preAuth';
 import Menu from '../../components/menu/Menu.jsx';
 import { DivLoading, MainStyled } from '../../primeComponents';
 import getFavorites from '../../utils/getFavorites/getFavorites';
@@ -25,7 +24,6 @@ const Myfavorites = () => {
   useEffect(() => {
     (async () => {
       try {
-        preAuth();
         const response = await getFavorites();
         const { userName, responseObject } = response;
 
