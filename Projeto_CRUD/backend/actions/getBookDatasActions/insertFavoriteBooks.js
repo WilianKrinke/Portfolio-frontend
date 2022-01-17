@@ -1,15 +1,15 @@
 const knex = require("../../connection/connection");
 
 async function insertFavoriteBooks(dataBooks, idUser){
-    const results = await knex('favorites').where({
-        idUser: idUser
-    })
+    const results = await knex('favorites').where('idUser', idUser)
 
     for (let index = 0; index < results.length; index++) {
-        const idBookData = results[index];
+        const idBookData = parseInt(results[index].idBook);
         
         dataBooks.forEach(element => {
-            if (idBookData.idBook == element.idBook) element.isFavoriteByUser = true
+            if (idBookData === element.idBook){
+                element.isFavoriteByUser = true
+            } 
         });
     }
 
