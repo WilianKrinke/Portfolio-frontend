@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, memo } from 'react';
 import { Link } from 'react-router-dom';
 import { ContainerIcon, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';

@@ -13,6 +13,9 @@ const getBooks = (app) => {
             
             const datasBooks = await getDataBooks(req.params.category) 
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, userData.idUser)
+
+            //console.log(booksWithBorrows)
+
             const responseBooks = await insertFavoriteBooks(booksWithBorrows, userData.idUser)
 
             res.status(200).send({
