@@ -26,7 +26,6 @@ import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
-  console.log(bookInfo);
   const {
     idBook,
     bookName,

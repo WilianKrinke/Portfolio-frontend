@@ -18,11 +18,13 @@ const routeGetMyFavorites = require('./routes/getMyFavorites')
 const cors =  require('cors');
 const app = express();
 const bodyParser = require('body-parser');
+const sanitization = require('./utils/sanitization/sanitization');
 
 app.use(cors());
 app.use(bodyParser.json())
 app.use(express.urlencoded({extended: true}))
 
+app.use(sanitization)
 routeUserLogin(app)
 routeSignUpUser(app)
 routeForgotPass(app)
