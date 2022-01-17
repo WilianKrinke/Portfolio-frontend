@@ -233,7 +233,7 @@ export const ContainerResume = styled.div`
 export const ParagraphResume = styled.p`
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: ${props => props.seemore ? '8' : '3'};;
+    -webkit-line-clamp: ${props => props.seemore ? '9' : '3'};;
     -webkit-box-orient: vertical;
     padding: 0px 5px;
     transition: all .3s ease-in-out;

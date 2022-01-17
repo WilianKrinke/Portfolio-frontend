@@ -12,6 +12,7 @@ import { SectionContainer } from './styled';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
+import ScrollToTop from '../../components/scrollToTop/scrollToTop';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -27,7 +28,6 @@ const Myfavorites = () => {
         preAuth();
         const response = await getFavorites();
         const { userName, responseObject } = response;
-        console.log(responseObject);
 
         if (response === false) {
           toast.warn('Token time expired, please re-login');
@@ -76,6 +76,7 @@ const Myfavorites = () => {
                 </>
               )}
             </SectionContainer>
+            <ScrollToTop />
           </MainStyled>
           <LetterFooter />
         </>

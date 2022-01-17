@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
 import styled from 'styled-components'
-import { MainStyled,HeaderStyled } from '../../primeComponents'
+import { MainStyled } from '../../primeComponents'
 
 export const BookListMain = styled(MainStyled)`
     min-height: 300px;
