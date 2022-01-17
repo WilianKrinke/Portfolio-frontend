@@ -66,6 +66,11 @@ export const IconClose = styled(VscChromeClose)`
     cursor: pointer;
     position: relative;
     left: 150px;
+
+    @media screen and (max-width: 440px) {
+        position: relative;
+        left: 130px;
+    }
 `
 
 export const ContainerLinks = styled.nav`
