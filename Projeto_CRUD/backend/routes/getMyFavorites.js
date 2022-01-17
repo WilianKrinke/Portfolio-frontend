@@ -13,8 +13,8 @@ function getMyFavorites(app){
                 
             } catch (e) {
                 const error = new Error(e)
-                console.log(error.message)
-                return res.status(200).send(null)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
 }

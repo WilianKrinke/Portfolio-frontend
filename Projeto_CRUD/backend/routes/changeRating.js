@@ -8,8 +8,8 @@ function changeRating(app) {
                 res.send(response)                
             } catch (e) {
                 const error = new Error(e)
-                console.log(error.message)
-                return error;
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
 }

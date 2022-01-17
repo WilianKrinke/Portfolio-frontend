@@ -11,9 +11,10 @@ const returnBook = (app) => {
                 } else {
                     res.status(400).send(response)  
                 }
-            } catch (error) {
-                console.log(error)
-                res.status(400).send(error) 
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }                      
         })
 }

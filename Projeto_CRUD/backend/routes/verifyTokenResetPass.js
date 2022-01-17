@@ -14,8 +14,10 @@ function verifyTokenResetPass(app){
                 } else {
                     res.status(400).send('Something wrong, contact the administrator')
                 }
-            } catch (error) {
-                res.status(500).send('Something wrong, contact the administrator')
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
 }

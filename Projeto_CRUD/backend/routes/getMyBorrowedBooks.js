@@ -21,13 +21,10 @@ function getMyBorrowedBooks(app){
                         responseObject: false
                     })
                 }
-            } catch (error) {
-                console.log(error)
-                res.status(500).send({
-                    idUser: null,
-                    userName: null,
-                    responseObject: false
-                })
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
 }

@@ -6,8 +6,10 @@ function removeFavorite(app){
             try {
                 const response = await removeFavoriteFromDb(req.body)
                 res.send(response);                
-            } catch (error) {
-                res.send(error)
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
 
         })

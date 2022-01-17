@@ -6,9 +6,10 @@ function addFavorite(app){
             try {
                 const response = await addFavoritesAction(req.body)
                 res.send(response)
-            } catch (error) {
-                console.log(error)
-                res.send(false)
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
         

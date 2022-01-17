@@ -31,9 +31,10 @@ function forgotPass(app){
                     res.status(400).send('This user already has a call in progress for password change')
                 }
 
-            } catch (error) {
-                console.log(error)
-                res.status(500).send('Unable to send email for password reset')
+            } catch (e) {
+                const error = new Error(e)
+                console.log(error.message)          
+                res.status(500).send(error.message)
             }
         })
 }
