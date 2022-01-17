@@ -1,6 +1,11 @@
 import {keyframes} from 'styled-components'
 
-export const SeeMoreAnimation = keyframes`   
+export const SeeMoreAnimation = keyframes`
+
+    from{
+        transform: rotate(0deg)
+    }
+
     to{        
         transform: rotate(180deg)
     }

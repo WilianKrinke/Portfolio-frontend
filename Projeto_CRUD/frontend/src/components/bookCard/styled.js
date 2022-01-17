@@ -1,11 +1,10 @@
 import styled from 'styled-components'
 import pattern_colors from '../../colors'
-import {BsChevronCompactDown,
-} from 'react-icons/bs';
+import {BsChevronCompactDown} from 'react-icons/bs';
 import { SeeLessAnimation, SeeMoreAnimation } from './keyframes';
 
 export const CardStyled = styled.div`
-    min-height: 450px;
+    min-height: 470px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
@@ -26,11 +25,11 @@ export const CardStyled = styled.div`
     }  
 `
 export const ContainerMoldCard = styled.div`
-    height: 450px;
+    height: 470px;
     padding: 5px;
     border-radius: 5px 0px 0px 5px;
     transition: all .2s ease-in-out;
-    width: ${props => props.isOpen ? '85%' : '95%'};
+    width: 85%;
     border-right: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-around;
@@ -45,7 +44,7 @@ export const ContainerMoldCard = styled.div`
 export const ContainerToLike = styled.div`
     transition: all .5s ease-in-out;
     width: 15%;
-    height: 450px;
+    height: 470px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -114,7 +113,7 @@ export const IconBorrowed = styled.i`
 
 export const IconSeeMoreLess = styled(BsChevronCompactDown)`
     font-size: 22px;
-    animation: ${props => props.seeMore ? SeeMoreAnimation : SeeLessAnimation} .5s ease 1 forwards;
+    animation: ${props => props.$seemore ? SeeMoreAnimation : SeeLessAnimation} .5s ease 1 forwards;
 `
 
 export const FirstContainerInfo = styled.div`
@@ -234,7 +233,7 @@ export const ContainerResume = styled.div`
 export const ParagraphResume = styled.p`
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: ${props => props.seeMore ? '8' : '3'};;
+    -webkit-line-clamp: ${props => props.seemore ? '8' : '3'};;
     -webkit-box-orient: vertical;
     padding: 0px 5px;
     transition: all .3s ease-in-out;

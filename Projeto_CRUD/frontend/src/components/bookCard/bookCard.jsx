@@ -179,7 +179,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
             </div>
           </FirstContainerInfo>
 
-          <SecondContainerInfo seeMore={seeMore}>
+          <SecondContainerInfo>
             <div className="container_author" title="Author">
               <p>
                 <strong>Author:</strong> {author}
@@ -191,11 +191,11 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
               </p>
             </div>
             <div className="container_text_resume">
-              <ContainerResume className="container_resume" title="Resume" seeMore={seeMore}>
-                <ParagraphResume seeMore={seeMore}>{resume}</ParagraphResume>
+              <ContainerResume className="container_resume" title="Resume" seemore={seeMore}>
+                <ParagraphResume seemore={seeMore}>{resume}</ParagraphResume>
               </ContainerResume>
               <div className="container_see_more" onClick={handleSeeMore}>
-                <IconSeeMoreLess title={`See ${seeMore ? 'Less' : 'More'}`} seeMore={seeMore} />
+                <IconSeeMoreLess title={`See ${seeMore ? 'Less' : 'More'}`} $seemore={seeMore} />
               </div>
             </div>
             <div className="container_amount" title="Copies">
