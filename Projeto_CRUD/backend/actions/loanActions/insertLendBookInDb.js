@@ -1,4 +1,5 @@
 const knex = require("../../connection/connection");
+const decrementCopies = require("../copiesActions/decrementCopies");
 const getLoanDates = require("../dateActions/getLoanDates");
 
 async function insertLendBookInDb(bookDatas){
@@ -20,7 +21,9 @@ async function insertLendBookInDb(bookDatas){
             rating: rating
         })
 
-        if (insertion[0] !== null || undefined) {
+        const responseDecrementCopies = await decrementCopies(idBook)
+
+        if (insertion[0] !== null || undefined && responseDecrementCopies === true) {
             const response = {
                 isRegister: true,
                 message: 'User borrowed book'
