@@ -7,11 +7,11 @@ import {
   ContainerMoldCard,
   ContainerResume,
   ContainerToLike,
+  DivIconBorrowed,
+  DivIconFavorite,
+  DivIconLend,
+  DivIconNotAvailable,
   FirstContainerInfo,
-  IconBorrowed,
-  IconLend,
-  IconLendItem,
-  IconNotAvailable,
   IconSeeMoreLess,
   ParagraphResume,
   SecondContainerInfo,
@@ -26,19 +26,8 @@ import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
-  const {
-    idBook,
-    bookName,
-    author,
-    category,
-    resume,
-    rating,
-    image,
-    available,
-    amount,
-    isBorrowedByUser,
-    isFavoriteByUser,
-  } = bookInfo;
+  const { idBook, bookName, author, category, resume, rating, image, amount, isBorrowedByUser, isFavoriteByUser } =
+    bookInfo;
 
   const objectDatas = {
     idUser,
@@ -49,7 +38,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
 
   const [isLend, setisLend] = useState(isBorrowedByUser);
   const [isLike, setisLike] = useState(isFavoriteByUser);
-  const [isAvailable] = useState(available);
+  const [amountState, setamountState] = useState(amount);
   const [seeMore, setseeMore] = useState(false);
   const [modalLendBookIsOpenState, setmodalLendBookIsOpen] = useState(false);
   const [modalReturnBookState, setmodalReturnBook] = useState(false);
@@ -200,36 +189,36 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
             </div>
             <div className="container_amount" title="Copies">
               <p>
-                <strong>Copies:</strong> {amount}
+                <strong>Copies:</strong> {amountState === 0 ? 'Not Available' : amountState}
               </p>
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
 
         <ContainerToLike>
-          {isAvailable === 1 ? (
+          {amountState > 0 ? (
             !isLend ? (
-              <IconLend>
-                <BsBookmarkPlus title="Click to borrow" onClick={handleModalBorrowBook} />
-              </IconLend>
+              <DivIconLend onClick={handleModalBorrowBook}>
+                <BsBookmarkPlus title="Click to borrow" />
+              </DivIconLend>
             ) : (
-              <IconBorrowed title="Click to return the Book">
-                <BsBookmarkCheckFill title="Click to return the Book" onClick={handleModalReturnBook} />
-              </IconBorrowed>
+              <DivIconBorrowed title="Click to return the Book" onClick={handleModalReturnBook}>
+                <BsBookmarkCheckFill title="Click to return the Book" />
+              </DivIconBorrowed>
             )
           ) : (
-            <IconNotAvailable title="not available">
+            <DivIconNotAvailable title="Not Available">
               <BsBookmarkXFill />
-            </IconNotAvailable>
+            </DivIconNotAvailable>
           )}
 
-          <IconLendItem>
+          <DivIconFavorite>
             {isLike ? (
               <BsHeartFill onClick={handleRemoveFavorite} title="Remove from Favorites" />
             ) : (
               <BsHeart onClick={handleAddFav} title="Add to Favorites" />
             )}
-          </IconLendItem>
+          </DivIconFavorite>
         </ContainerToLike>
       </CardStyled>
 
@@ -238,6 +227,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
+        setamountState={setamountState}
         userAndBookDatas={objectDatas}
         bookInfo={bookInfo}
       />
@@ -247,6 +237,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         setmodalLendBookIsOpen={setmodalLendBookIsOpen}
         setmodalReturnBook={setmodalReturnBook}
         setisLend={setisLend}
+        setamountState={setamountState}
         userAndBookDatas={objectDatas}
         bookInfo={bookInfo}
       />

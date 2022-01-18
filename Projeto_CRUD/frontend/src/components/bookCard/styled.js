@@ -60,7 +60,7 @@ export const ContainerToLike = styled.div`
     }
 `
 
-export const IconLend = styled.i`
+export const DivIconLend = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -73,7 +73,7 @@ export const IconLend = styled.i`
     }
 `
 
-export const IconLendItem = styled.i`
+export const DivIconFavorite = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,17 +87,17 @@ export const IconLendItem = styled.i`
     }
 `
 
-export const IconNotAvailable = styled.i`
+export const DivIconNotAvailable = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 26px;
     cursor: not-allowed;
     height: 80px;
-    color: red;
+    width: 100%;
 `
 
-export const IconBorrowed = styled.i`
+export const DivIconBorrowed = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;

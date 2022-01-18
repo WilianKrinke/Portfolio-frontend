@@ -13,6 +13,7 @@ const ModalLendBook = ({
   modalLendBookIsOpen,
   setmodalLendBookIsOpen,
   setmodalReturnBook,
+  setamountState,
   setisLend,
   userAndBookDatas,
   bookInfo,
@@ -41,6 +42,7 @@ const ModalLendBook = ({
       if (isRegister === true) {
         toast.success('Successfully borrowed book!');
         setmodalLendBookIsOpen(false);
+        setamountState((currentstate) => currentstate - 1);
       } else {
         toast.warn('Something is wrong, contact the administrator');
       }
@@ -118,6 +120,7 @@ ModalLendBook.propTypes = {
   setmodalLendBookIsOpen: propTypes.func,
   setmodalReturnBook: propTypes.func,
   setisLend: propTypes.func,
+  setamountState: propTypes.func,
   userAndBookDatas: propTypes.object,
   bookInfo: propTypes.object,
 };
