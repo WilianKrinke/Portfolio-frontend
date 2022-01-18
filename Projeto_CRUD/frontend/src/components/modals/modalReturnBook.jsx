@@ -68,7 +68,7 @@ const ModalReturnBook = ({
       alignItens: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      backgroundColor: '#F9FFF9',
+      backgroundColor: 'transparent',
       border: 'none',
       outline: 'none',
     },

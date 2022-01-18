@@ -51,7 +51,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
       alignItens: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      backgroundColor: '#F9FFF9',
+      backgroundColor: 'transparent',
       border: 'none',
       outline: 'none',
     },
