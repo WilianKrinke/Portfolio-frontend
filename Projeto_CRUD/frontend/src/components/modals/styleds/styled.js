@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
-export const DivModal = styled.div`
-    height: 200px;
-    width: 400px;
+export const DivModal = styled.div`    
+    height: 240px;
+    width: 440px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     align-items: center;
-    padding: 20px 20px;
+    padding: 20px;
     background-color: #F9FFF9;
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);
@@ -16,8 +16,37 @@ export const DivModal = styled.div`
     @media screen and (max-width: 430px) {
         height: 350px;
         width: 350px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        background-color: #F9FFF9;
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+`
+
+export const SubDivModal = styled.div`
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #F9FFF9;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+
+    @media screen and (max-width: 430px) {
+        height: 350px;
+        width: 320px;
     }  
-   
+
     .disclaimer_lend_book{
         width: 100%;
         letter-spacing: 2px;
@@ -50,6 +79,7 @@ export const DivModal = styled.div`
             flex-direction: column;
         }
     }
+
 `
 export const Image = styled.img`
     width: 350px;

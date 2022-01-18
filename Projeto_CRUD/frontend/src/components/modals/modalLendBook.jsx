@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import lendBook from '../../utils/lendBooks/lendBook';
 import { toast } from 'react-toastify';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal } from './styleds/styled';
+import { DivModal, SubDivModal } from './styleds/styled';
 import { format, addBusinessDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +70,7 @@ const ModalLendBook = ({
       alignItens: 'center',
       justifyContent: 'center',
       flexDirection: 'column',
-      backgroundColor: '#F9FFF9',
+      backgroundColor: 'transparent',
       border: 'none',
       outline: 'none',
     },
@@ -95,20 +95,22 @@ const ModalLendBook = ({
         contentLabel="Confirmed Modal"
       >
         <DivModal>
-          <div className="disclaimer_lend_book" title="Disclaimer">
-            <p>
-              Do you confirm the loan of the book <strong>&quot;{bookName}&quot;</strong> on the{' '}
-              <strong>{today}</strong> with the return for the <strong>{threeDaysBusinessAfter}</strong>?
-            </p>
-          </div>
-          <div className="container_buttons_lend_book">
-            <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm">
-              Confirm
-            </ButtonConfirmedLoanBook>
-            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
-              Cancel
-            </ButtonCancelLoanBook>
-          </div>
+          <SubDivModal>
+            <div className="disclaimer_lend_book" title="Disclaimer">
+              <p>
+                Do you confirm the loan of the book <strong>&quot;{bookName}&quot;</strong> on the{' '}
+                <strong>{today}</strong> with the return for the <strong>{threeDaysBusinessAfter}</strong>?
+              </p>
+            </div>
+            <div className="container_buttons_lend_book">
+              <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm">
+                Confirm
+              </ButtonConfirmedLoanBook>
+              <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+                Cancel
+              </ButtonCancelLoanBook>
+            </div>
+          </SubDivModal>
         </DivModal>
       </Modal>
     </>

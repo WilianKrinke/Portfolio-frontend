@@ -4,7 +4,7 @@ import propTypes from 'prop-types';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { toast } from 'react-toastify';
-import { DivModal } from './styleds/styled';
+import { DivModal, SubDivModal } from './styleds/styled';
 import { useNavigate } from 'react-router-dom';
 
 const ModalReturnBook = ({
@@ -89,19 +89,21 @@ const ModalReturnBook = ({
         contentLabel="Confirmed Modal"
       >
         <DivModal>
-          <div className="disclaimer_lend_book" title="Disclaimer">
-            <p>
-              Do you confirm returning the book <strong>&quot;{bookName}&quot;</strong>?
-            </p>
-          </div>
-          <div className="container_buttons_lend_book">
-            <ButtonConfirmedLoanBook title="Confirm" onClick={handleReturnBook}>
-              Confirm
-            </ButtonConfirmedLoanBook>
-            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
-              Cancel
-            </ButtonCancelLoanBook>
-          </div>
+          <SubDivModal>
+            <div className="disclaimer_lend_book" title="Disclaimer">
+              <p>
+                Do you confirm returning the book <strong>&quot;{bookName}&quot;</strong>?
+              </p>
+            </div>
+            <div className="container_buttons_lend_book">
+              <ButtonConfirmedLoanBook title="Confirm" onClick={handleReturnBook}>
+                Confirm
+              </ButtonConfirmedLoanBook>
+              <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+                Cancel
+              </ButtonCancelLoanBook>
+            </div>
+          </SubDivModal>
         </DivModal>
       </Modal>
     </>
