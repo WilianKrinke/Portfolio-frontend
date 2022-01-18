@@ -1,6 +1,7 @@
 const borrowBooksFromUser = require('../actions/getBookDatasActions/borrowBooksFromUser')
 const getDataBooks = require('../actions/getBookDatasActions/getDataBooks')
 const insertFavoriteBooks = require('../actions/getBookDatasActions/insertFavoriteBooks')
+const isValidWords = require('../validations/isValidWords/isValidWords')
 
 const getBooks = (app) => {
     app.route('/books-list/:category?')
@@ -10,8 +11,11 @@ const getBooks = (app) => {
               idUser: req.idUser[0],
               userName: req.userName[0]
             }
-
             
+            const isValid = isValidWords([req.params.category])
+            if (isValid !== true) {
+              throw new Error('Sql Injection')
+            }            
             
             const datasBooks = await getDataBooks(req.params.category) 
             const booksWithBorrows = await borrowBooksFromUser(datasBooks, userData.idUser)
