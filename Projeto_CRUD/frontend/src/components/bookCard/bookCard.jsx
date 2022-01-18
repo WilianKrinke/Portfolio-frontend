@@ -116,11 +116,14 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
   async function handleRating(e) {
     try {
       const response = await sendRating(e, idBook);
+      console.log(response);
       if (response === false) {
         toast.warn('Token time expired, please re-login');
         setTimeout(() => {
           navigate('/');
         }, 3000);
+      } else if (response === null) {
+        toast.warn('Book rating not updated');
       }
     } catch (error) {
       console.log(error);
