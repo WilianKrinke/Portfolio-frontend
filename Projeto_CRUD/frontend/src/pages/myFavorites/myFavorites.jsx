@@ -65,7 +65,7 @@ const Myfavorites = () => {
           <MainStyled>
             <SectionContainer>
               {noBookData ? (
-                <LottieNoData />
+                <LottieNoData word="Favorites" />
               ) : (
                 <>
                   {bookFavorites.map((item) => {

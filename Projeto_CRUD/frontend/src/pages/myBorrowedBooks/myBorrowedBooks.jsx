@@ -61,7 +61,7 @@ const MyBorrowedBooks = () => {
           <MainStyled>
             <SectionContainer>
               {noBookData ? (
-                <Lottienodata />
+                <Lottienodata word="Borrowings" />
               ) : (
                 borrowedBooks.map((item) => {
                   return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;
