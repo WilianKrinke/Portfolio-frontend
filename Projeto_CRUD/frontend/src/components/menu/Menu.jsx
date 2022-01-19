@@ -46,7 +46,7 @@ const Menu = ({ user = 'Loading...' }) => {
               <Link to="/my-favorites">My Favorites</Link>
             </li>
             <li>
-              <Link to="#">My Data</Link>
+              <Link to="/my-data">My Data</Link>
             </li>
             <li>
               <Link to="#">Contact</Link>
