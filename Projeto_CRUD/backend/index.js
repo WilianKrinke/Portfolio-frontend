@@ -14,6 +14,7 @@ const routeVerifyTokenResetPass = require('./routes/verifyTokenResetPass')
 const routeChangePass = require('./routes/changePass')
 const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
 const routeGetMyFavorites = require('./routes/getMyFavorites')
+const routeGetMyDatas = require('./routes/getMyDatas')
 const sanitizationReqBody = require('./validations/sanitization');
 
 const cors =  require('cors');
@@ -40,6 +41,7 @@ routeRemoveFavorite(app)
 routeChangeRating(app)
 routeGetMyBorrowedBooks(app)
 routeGetMyFavorites(app)
+routeGetMyDatas(app)
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')
