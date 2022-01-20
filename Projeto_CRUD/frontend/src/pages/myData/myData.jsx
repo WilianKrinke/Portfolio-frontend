@@ -11,6 +11,8 @@ const Mydata = () => {
     (async () => {
       try {
         const response = await getMyDatas();
+
+        console.log(response);
       } catch (e) {
         const error = new Error(e);
         console.log(error.message);

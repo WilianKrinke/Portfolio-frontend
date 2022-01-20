@@ -6,8 +6,8 @@ export default async function getMyDatas(){
     try {
         preAuth();
         const response = await baseUrl.get('/my-datas')
-
-        console.log(response)
+        const {data} = response
+        return data;
     } catch (e) {
         const error = new Error(e)
         console.log(error.message)
