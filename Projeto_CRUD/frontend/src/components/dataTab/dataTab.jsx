@@ -5,9 +5,12 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import Identificationpanel from '../identificationPanel/identificationPanel';
+import Adresspanel from '../adressPanel/adressPanel';
+import Contactpanel from '../contactPanel/contactPanel';
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const { children, value, index } = props;
 
   return (
     <div
@@ -15,11 +18,14 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box
+          sx={{
+            p: 3,
+          }}
+        >
+          {children}
         </Box>
       )}
     </div>
@@ -40,6 +46,40 @@ function a11yProps(index) {
 }
 
 function BasicTabs({ userDatasObject }) {
+  const {
+    primeiro_nome,
+    segundo_nome,
+    data_nascimento,
+    userName,
+    email,
+    endereco_bairro,
+    endereco_cidade,
+    endereco_numero,
+    endereco_logradouro,
+    telefone_celular,
+    telefone_fixo,
+  } = userDatasObject;
+
+  const objectUserIdentification = {
+    primeiro_nome,
+    segundo_nome,
+    data_nascimento,
+    userName,
+  };
+
+  const objectUserAdress = {
+    endereco_bairro,
+    endereco_cidade,
+    endereco_numero,
+    endereco_logradouro,
+  };
+
+  const objectUserContact = {
+    email,
+    telefone_celular,
+    telefone_fixo,
+  };
+
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -47,7 +87,15 @@ function BasicTabs({ userDatasObject }) {
   };
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+      }}
+    >
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
           <Tab label="Identification" {...a11yProps(0)} />
@@ -56,13 +104,13 @@ function BasicTabs({ userDatasObject }) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Item One
+        <Identificationpanel objectUserIdentification={objectUserIdentification} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        <Adresspanel objectUserAdress={objectUserAdress} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Contactpanel objectUserContact={objectUserContact} />
       </TabPanel>
     </Box>
   );

@@ -26,7 +26,6 @@ const Mydata = () => {
     (async () => {
       try {
         const response = await getMyDatas();
-        console.log(response);
 
         if (response === false) {
           tokenTimeOut(navigate);

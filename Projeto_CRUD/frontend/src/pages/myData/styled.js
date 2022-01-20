@@ -13,7 +13,7 @@ export const SectionContainer = styled.section`
 `
 
 export const ArticleContainer = styled.article`
-    width: 95%;
+    width: 100%;
     min-height: 70vh;
     display: flex;
     justify-content: center;
