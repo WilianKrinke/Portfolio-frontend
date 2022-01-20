@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
@@ -8,10 +7,10 @@ import Menu from '../../components/menu/Menu.jsx';
 import { DivLoading, MainStyled } from '../../primeComponents';
 import getFavorites from '../../utils/getFavorites/getFavorites';
 import { SectionContainer } from './styled';
-import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
 import ScrollToTop from '../../components/scrollToTop/scrollToTop';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -28,10 +27,7 @@ const Myfavorites = () => {
         const { userName, responseObject } = response;
 
         if (response === false) {
-          toast.warn('Token time expired, please re-login');
-          setTimeout(() => {
-            navigate('/');
-          }, 3000);
+          tokenTimeOut(navigate);
         } else if (response === null) {
           //Enviar para pagina de erro
         } else {

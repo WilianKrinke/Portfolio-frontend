@@ -24,6 +24,7 @@ import ModalLendBook from '../modals/modalLendBook';
 import ModalReturnBook from '../modals/modalReturnBook';
 import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
   const { idBook, bookName, author, category, resume, rating, image, amount, isBorrowedByUser, isFavoriteByUser } =
@@ -61,10 +62,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
       const response = await addFavorites(objectDatasFavorites);
 
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        tokenTimeOut(navigate);
       }
 
       const { isRegisterFavorite } = response;

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import ModalImage from '../modals/modalImage';

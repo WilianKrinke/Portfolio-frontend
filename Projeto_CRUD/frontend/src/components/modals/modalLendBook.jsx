@@ -8,6 +8,7 @@ import { DivModal, SubDivModal } from './styleds/styled';
 import { format, addBusinessDays } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { useNavigate } from 'react-router-dom';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const ModalLendBook = ({
   modalLendBookIsOpen,
@@ -31,10 +32,7 @@ const ModalLendBook = ({
     try {
       const response = await lendBook(objectDatas);
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        tokenTimeOut(navigate);
       }
 
       const { isRegister } = response;

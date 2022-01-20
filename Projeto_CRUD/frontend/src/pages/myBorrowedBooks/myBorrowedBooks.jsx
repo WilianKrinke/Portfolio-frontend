@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DivLoading, MainStyled } from '../../primeComponents';
 import { SectionContainer } from './styled';
-import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
@@ -11,6 +10,7 @@ import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksC
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Lottienodata from '../../components/lottieAnimations/lottieNoData.jsx';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -26,10 +26,7 @@ const MyBorrowedBooks = () => {
         const response = await getMyBorrowedBooks(navigate);
 
         if (response === false) {
-          toast.warn('Token time expired, please re-login');
-          setTimeout(() => {
-            navigate('/');
-          }, 3000);
+          tokenTimeOut(navigate);
         } else {
           const { userName, responseObject } = response;
           setUserNameState(userName);

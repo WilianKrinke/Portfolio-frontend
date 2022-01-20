@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { DivLoading } from '../../primeComponents';
 import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
-import { toast } from 'react-toastify';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Loading from '../../components/loading/Loading';
@@ -11,6 +10,7 @@ import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const BookList = () => {
   const [category, setCategory] = useState('all');
@@ -34,10 +34,7 @@ const BookList = () => {
         const { responseBooks, userName, idUser } = response;
 
         if (response === false) {
-          toast.warn('Token time expired, please re-login');
-          setTimeout(() => {
-            navigate('/');
-          }, 3000);
+          tokenTimeOut(navigate);
         } else {
           setUserName(userName);
           setUserIdData(idUser);

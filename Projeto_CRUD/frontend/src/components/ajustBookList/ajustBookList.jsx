@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
@@ -13,7 +12,6 @@ import {
 } from './styled';
 
 const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage, setCategory }) => {
-  //
   function handleItemPerPage(e) {
     setItensPerPage(e.target.value);
   }

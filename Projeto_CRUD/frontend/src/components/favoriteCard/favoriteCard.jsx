@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
 import { ContainerCard, ContainerResume, ContainerTitle, Icon, IconHeartBroken } from './styled';
@@ -7,8 +6,8 @@ import ScrollToTop from '../scrollToTop/scrollToTop';
 import ModalImage from '../modals/modalImage';
 import { useState } from 'react';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
-import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const Favoritecard = ({ favoriteItem }) => {
   const { bookName, author, category, image, rating, resume, idBook, idUser, userName } = favoriteItem;
@@ -30,10 +29,7 @@ const Favoritecard = ({ favoriteItem }) => {
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        tokenTimeOut(navigate);
         setchangeHeart(false);
       } else {
         setTimeout(() => {

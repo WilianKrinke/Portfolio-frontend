@@ -6,6 +6,7 @@ import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { toast } from 'react-toastify';
 import { DivModal, SubDivModal } from './styleds/styled';
 import { useNavigate } from 'react-router-dom';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const ModalReturnBook = ({
   modalReturnBook,
@@ -29,10 +30,7 @@ const ModalReturnBook = ({
     try {
       const response = await returnBook(objectDatas);
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        tokenTimeOut(navigate);
       }
 
       const { isReturnTheBook } = response;
