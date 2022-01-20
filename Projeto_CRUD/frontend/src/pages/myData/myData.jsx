@@ -13,6 +13,7 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import BasicTabs from '../../components/dataTab/dataTab';
+import { ArticleContainer, SectionContainer } from './styled';
 
 const Mydata = () => {
   const navigate = useNavigate();
@@ -57,7 +58,11 @@ const Mydata = () => {
           <Menu user={userNameState} />
           <Letterheader phrase="My Datas" />
           <MainStyled>
-            <BasicTabs />
+            <SectionContainer>
+              <ArticleContainer>
+                <BasicTabs />
+              </ArticleContainer>
+            </SectionContainer>
           </MainStyled>
           <LetterFooter />
         </>
