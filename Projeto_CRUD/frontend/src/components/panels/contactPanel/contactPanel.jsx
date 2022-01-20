@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
-import { MainContainer } from '../panels/identificationPanel/styled';
+import { MainContainer } from '../identificationPanel/styled';
 
 const Contactpanel = ({ objectUserContact }) => {
   return (

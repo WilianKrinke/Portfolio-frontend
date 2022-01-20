@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
+import Adresspanel from '../panels/adressPanel/adressPanel';
+import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
-import Adresspanel from '../panels/adressPanel/adressPanel.jsx';
-import Contactpanel from '../panels/contactPanel/contactPanel.jsx';
 
 function TabPanel(props) {
   const { children, value, index } = props;
