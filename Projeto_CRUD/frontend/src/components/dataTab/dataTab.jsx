@@ -3,11 +3,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import Identificationpanel from '../identificationPanel/identificationPanel';
-import Adresspanel from '../adressPanel/adressPanel';
-import Contactpanel from '../contactPanel/contactPanel';
+import Identificationpanel from '../panels/identificationPanel/identificationPanel';
+import Adresspanel from '../panels/adressPanel/adressPanel.jsx';
+import Contactpanel from '../panels/contactPanel/contactPanel.jsx';
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -101,6 +100,7 @@ function BasicTabs({ userDatasObject }) {
           <Tab label="Identification" {...a11yProps(0)} />
           <Tab label="Address" {...a11yProps(1)} />
           <Tab label="Contact" {...a11yProps(2)} />
+          <Tab label="Show All Data" {...a11yProps(3)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -111,6 +111,9 @@ function BasicTabs({ userDatasObject }) {
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Contactpanel objectUserContact={objectUserContact} />
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        {/*  */}
       </TabPanel>
     </Box>
   );
