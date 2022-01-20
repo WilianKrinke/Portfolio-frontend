@@ -1,20 +1,25 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { DivLoading, MainStyled } from '../../primeComponents';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
-import { DivLoading, MainStyled } from '../../primeComponents';
 import getMyDatas from '../../utils/getMyDatas/getMyDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import BasicTabs from '../../components/dataTab/dataTab';
 
 const Mydata = () => {
   const navigate = useNavigate();
 
   const [userNameState, setuserNameState] = useState('');
   const [loadingState, setloadingState] = useState(true);
+  const [valueTab, setValueTab] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -37,6 +42,10 @@ const Mydata = () => {
     })();
   }, []);
 
+  function handleChangeTab(event, newValue) {
+    setValueTab(newValue);
+  }
+
   return (
     <>
       {loadingState ? (
@@ -47,7 +56,9 @@ const Mydata = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Datas" />
-          <MainStyled></MainStyled>
+          <MainStyled>
+            <BasicTabs />
+          </MainStyled>
           <LetterFooter />
         </>
       )}
