@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
@@ -38,7 +39,7 @@ function a11yProps(index) {
   };
 }
 
-export default function BasicTabs() {
+function BasicTabs({ userDatasObject }) {
   const [value, setValue] = React.useState(0);
 
   const handleChange = (event, newValue) => {
@@ -49,9 +50,9 @@ export default function BasicTabs() {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Item Two" {...a11yProps(1)} />
-          <Tab label="Item Three" {...a11yProps(2)} />
+          <Tab label="Identification" {...a11yProps(0)} />
+          <Tab label="Address" {...a11yProps(1)} />
+          <Tab label="Contact" {...a11yProps(2)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -66,3 +67,9 @@ export default function BasicTabs() {
     </Box>
   );
 }
+
+BasicTabs.propTypes = {
+  userDatasObject: PropTypes.object.isRequired,
+};
+
+export default React.memo(BasicTabs);

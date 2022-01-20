@@ -20,7 +20,7 @@ const Mydata = () => {
 
   const [userNameState, setuserNameState] = useState('');
   const [loadingState, setloadingState] = useState(true);
-  const [valueTab, setValueTab] = useState(0);
+  const [userDatasObject, setUserDatasObject] = useState();
 
   useEffect(() => {
     (async () => {
@@ -34,6 +34,7 @@ const Mydata = () => {
           const { userName, userDatas } = response;
 
           setuserNameState(userName);
+          setUserDatasObject(userDatas);
           setloadingState(false);
         }
       } catch (e) {
@@ -42,10 +43,6 @@ const Mydata = () => {
       }
     })();
   }, []);
-
-  function handleChangeTab(event, newValue) {
-    setValueTab(newValue);
-  }
 
   return (
     <>
@@ -60,7 +57,7 @@ const Mydata = () => {
           <MainStyled>
             <SectionContainer>
               <ArticleContainer>
-                <BasicTabs />
+                <BasicTabs userDatasObject={userDatasObject} />
               </ArticleContainer>
             </SectionContainer>
           </MainStyled>
