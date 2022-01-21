@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
-import { MainContainer, ContainerInput, FormStyled } from '../identificationPanel/styled';
+import { MainContainer, ContainerInput, FormStyled } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
 import TextField from '@mui/material/TextField';
 

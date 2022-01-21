@@ -1,7 +1,7 @@
 import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
-import { ContainerInput, FormStyled, MainContainer } from './styled';
+import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
 
 const Identificationpanel = ({ objectUserIdentification }) => {

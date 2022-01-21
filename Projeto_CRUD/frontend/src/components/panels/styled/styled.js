@@ -28,6 +28,19 @@ export const FormStyled = styled(Box)`
         height: 50%
     }
 `
+export const ContainerStyledShowDatas = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;
+
+    @media screen and (max-width: 600px) {
+        width: 350px;
+    }
+`
 
 export const ContainerInput = styled.div`
     display: flex;
@@ -35,7 +48,7 @@ export const ContainerInput = styled.div`
     justify-content: space-evenly;
     flex-direction: row;
     height: 100%;
-    width: 60%;  
+    width: 50%;  
 
     @media screen and (max-width: 600px) {
         margin: 10px 0px;

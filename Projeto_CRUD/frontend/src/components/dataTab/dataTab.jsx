@@ -8,6 +8,7 @@ import Adresspanel from '../panels/adressPanel/adressPanel';
 import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import Showingdatapanel from '../panels/showingData/showingDataPanel';
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -156,7 +157,7 @@ function DataTabs({ userDatasObject }) {
         <Contactpanel objectUserContact={objectUserContact} />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        {/*  */}
+        <Showingdatapanel userDatasObject={userDatasObject} />
       </TabPanel>
     </Box>
   );
