@@ -23,12 +23,14 @@ const Showingdatapanel = ({ userDatasObject }) => {
     <>
       <MainContainer>
         <ContainerStyledShowDatas>
-          <div className="div_name">
-            <div className="first_name"></div>
-            <div className="second_name"></div>
+          <div className="div_identification">
+            <div className="div_name">
+              <div className="first_name"></div>
+              <div className="second_name"></div>
+            </div>
+            <div className="div_userName"></div>
+            <div className="div_birth"></div>
           </div>
-          <div className="div_userName"></div>
-          <div className="div_birth"></div>
           <div className="div_adress">
             <div className="div_adress_street"></div>
             <div className="div_adress_neighborhood"></div>
