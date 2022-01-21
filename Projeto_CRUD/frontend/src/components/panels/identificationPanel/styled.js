@@ -9,10 +9,11 @@ export const MainContainer = styled.div`
     justify-content: center;
     flex-direction: row;
     text-align: center;
-    border: 1px solid;
+    
 
-    @media screen and (max-width: 880px) {
+    @media screen and (max-width: 600px) {
         width: 100%;
+        height: 300px;
     }
 `
 
@@ -23,15 +24,22 @@ export const FormStyled = styled(Box)`
     flex-direction: column;
     height: 100%;
     width: 100%;
-    border: 1px solid;
+
+    @media screen and (max-width: 600px) {
+        height: 50%
+    }
 `
 
 export const ContainerInput = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
     width: 100%;
-    border: 1px solid;
+    
+
+    @media screen and (max-width: 600px) {
+        margin: 10px 0px
+    }
 `

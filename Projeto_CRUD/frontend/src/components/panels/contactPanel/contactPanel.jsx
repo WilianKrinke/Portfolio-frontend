@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { memo } from 'react';
 import propTypes from 'prop-types';
 import { MainContainer } from '../identificationPanel/styled';
 
@@ -17,4 +17,4 @@ Contactpanel.propTypes = {
   objectUserContact: propTypes.object,
 };
 
-export default Contactpanel;
+export default memo(Contactpanel);

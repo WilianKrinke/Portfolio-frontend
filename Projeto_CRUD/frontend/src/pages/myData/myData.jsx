@@ -8,11 +8,7 @@ import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
 import getMyDatas from '../../utils/getMyDatas/getMyDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import BasicTabs from '../../components/dataTab/dataTab';
+import DataTabs from '../../components/dataTab/dataTab';
 import { ArticleContainer, SectionContainer } from './styled';
 
 const Mydata = () => {
@@ -56,7 +52,7 @@ const Mydata = () => {
           <MainStyled>
             <SectionContainer>
               <ArticleContainer>
-                <BasicTabs userDatasObject={userDatasObject} />
+                <DataTabs userDatasObject={userDatasObject} />
               </ArticleContainer>
             </SectionContainer>
           </MainStyled>

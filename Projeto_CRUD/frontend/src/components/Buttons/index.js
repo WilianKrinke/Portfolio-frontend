@@ -229,4 +229,27 @@ export const ButtonConfirmResetPass = styled.button`
 `
 
 
+export const ButtonUpDate = styled.button`
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.5); 
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: #222222;
+
+  :hover{
+        background: #030103;
+        color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+
+  @media screen and (max-width: 600px) {
+  }
+`
+
+
 

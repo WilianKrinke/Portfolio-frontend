@@ -8,7 +8,7 @@ export const SectionContainer = styled.section`
     align-items: center;
     flex-flow: column nowrap;
     padding: 10px;
-    border: 1px solid;
+    
 `
 
 export const ArticleContainer = styled.article`
@@ -19,5 +19,5 @@ export const ArticleContainer = styled.article`
     align-items: center;
     flex-flow: column nowrap;
     padding: 10px;
-    border: 1px solid;
+    
 `

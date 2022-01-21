@@ -7,6 +7,7 @@ import Box from '@mui/material/Box';
 import Adresspanel from '../panels/adressPanel/adressPanel';
 import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function TabPanel(props) {
   const { children, value, index } = props;
@@ -44,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-function BasicTabs({ userDatasObject }) {
+function DataTabs({ userDatasObject }) {
   const {
     primeiro_nome,
     segundo_nome,
@@ -85,6 +86,9 @@ function BasicTabs({ userDatasObject }) {
     setValue(newValue);
   };
 
+  const matches600w = useMediaQuery('(max-width:600px)');
+  console.log(matches600w);
+
   return (
     <Box
       sx={{
@@ -92,15 +96,53 @@ function BasicTabs({ userDatasObject }) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'column',
+        flexDirection: `column`,
       }}
     >
-      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" centered>
-          <Tab label="Identification" {...a11yProps(0)} />
-          <Tab label="Address" {...a11yProps(1)} />
-          <Tab label="Contact" {...a11yProps(2)} />
-          <Tab label="Show All Data" {...a11yProps(3)} />
+      <Box sx={{ borderBottom: 1, borderColor: `${matches600w ? 'transparent' : 'divider'}` }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+          centered
+          sx={{ width: `${matches600w ? '360px' : '100%'}` }}
+        >
+          <Tab
+            label="Identification"
+            {...a11yProps(0)}
+            sx={{
+              fontSize: `${matches600w ? '10px' : '16px'}`,
+              width: `${matches600w ? '20px' : '180px'}`,
+              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+            }}
+          />
+          <Tab
+            label="Address"
+            {...a11yProps(1)}
+            sx={{
+              fontSize: `${matches600w ? '10px' : '16px'}`,
+              width: `${matches600w ? '20px' : '180px'}`,
+              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+            }}
+          />
+          <Tab
+            label="Contact"
+            {...a11yProps(2)}
+            sx={{
+              fontSize: `${matches600w ? '10px' : '16px'}`,
+              width: `${matches600w ? '20px' : '180px'}`,
+              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+            }}
+          />
+          <Tab
+            label="Show All Data"
+            {...a11yProps(3)}
+            sx={{
+              fontSize: `${matches600w ? '10px' : '16px'}`,
+              width: `${matches600w ? '20px' : '180px'}`,
+              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+            }}
+          />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
@@ -119,8 +161,8 @@ function BasicTabs({ userDatasObject }) {
   );
 }
 
-BasicTabs.propTypes = {
+DataTabs.propTypes = {
   userDatasObject: PropTypes.object.isRequired,
 };
 
-export default React.memo(BasicTabs);
+export default React.memo(DataTabs);
