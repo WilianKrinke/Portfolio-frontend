@@ -17,7 +17,7 @@ const Lottienodata = ({ word }) => {
 
   return (
     <>
-      <section className="section">
+      <section className="section" title="No Data to Display">
         <div id="NoData" style={{ width: '100%', height: 350 }} />
         <div className="div_words">
           <span className="word1">No</span>
