@@ -230,8 +230,8 @@ export const ButtonConfirmResetPass = styled.button`
 
 
 export const ButtonUpDate = styled.button`
-  width: 150px;
-  height: 40px;
+  width: 130px;
+  height: 55px;
   border-radius: 5px;
   background-color: transparent;
   outline: none;
@@ -248,6 +248,8 @@ export const ButtonUpDate = styled.button`
   }
 
   @media screen and (max-width: 600px) {
+    width: 110px;
+    height: 55px;
   }
 `
 

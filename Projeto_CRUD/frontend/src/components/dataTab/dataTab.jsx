@@ -23,6 +23,7 @@ function TabPanel(props) {
         <Box
           sx={{
             p: 3,
+            width: '100%',
           }}
         >
           {children}
@@ -87,7 +88,6 @@ function DataTabs({ userDatasObject }) {
   };
 
   const matches600w = useMediaQuery('(max-width:600px)');
-  console.log(matches600w);
 
   return (
     <Box
@@ -97,6 +97,7 @@ function DataTabs({ userDatasObject }) {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: `column`,
+        border: `${matches600w ? 'transparent' : 'divider'}`,
       }}
     >
       <Box sx={{ borderBottom: 1, borderColor: `${matches600w ? 'transparent' : 'divider'}` }}>
@@ -111,7 +112,7 @@ function DataTabs({ userDatasObject }) {
             label="Identification"
             {...a11yProps(0)}
             sx={{
-              fontSize: `${matches600w ? '10px' : '16px'}`,
+              fontSize: `${matches600w ? '11px' : '14px'}`,
               width: `${matches600w ? '20px' : '180px'}`,
               wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
             }}
@@ -120,7 +121,7 @@ function DataTabs({ userDatasObject }) {
             label="Address"
             {...a11yProps(1)}
             sx={{
-              fontSize: `${matches600w ? '10px' : '16px'}`,
+              fontSize: `${matches600w ? '11px' : '14px'}`,
               width: `${matches600w ? '20px' : '180px'}`,
               wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
             }}
@@ -129,7 +130,7 @@ function DataTabs({ userDatasObject }) {
             label="Contact"
             {...a11yProps(2)}
             sx={{
-              fontSize: `${matches600w ? '10px' : '16px'}`,
+              fontSize: `${matches600w ? '11px' : '14px'}`,
               width: `${matches600w ? '20px' : '180px'}`,
               wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
             }}
@@ -138,7 +139,7 @@ function DataTabs({ userDatasObject }) {
             label="Show All Data"
             {...a11yProps(3)}
             sx={{
-              fontSize: `${matches600w ? '10px' : '16px'}`,
+              fontSize: `${matches600w ? '11px' : '14px'}`,
               width: `${matches600w ? '20px' : '180px'}`,
               wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
             }}

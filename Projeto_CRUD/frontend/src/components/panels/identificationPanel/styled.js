@@ -36,10 +36,15 @@ export const ContainerInput = styled.div`
     justify-content: space-evenly;
     flex-direction: row;
     height: 100%;
-    width: 100%;
-    
+    width: 60%;    
 
     @media screen and (max-width: 600px) {
-        margin: 10px 0px
+        margin: 10px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: row;
+        height: 100%;
+        width: 340px;
     }
 `
