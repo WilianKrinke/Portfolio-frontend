@@ -5,7 +5,6 @@ import { ContainerInput, FormStyled, MainContainer } from './styled';
 import { ButtonUpDate } from '../../Buttons';
 
 const Identificationpanel = ({ objectUserIdentification }) => {
-  console.log(objectUserIdentification);
   const { userName, primeiro_nome, segundo_nome, data_nascimento } = objectUserIdentification;
 
   return (
@@ -15,7 +14,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
           <ContainerInput>
             <TextField
               id="outlined-basic"
-              label={userName === null ? 'User Name' : userName}
+              label={userName === null ? 'Insert User Name' : userName}
               variant="outlined"
               title="Update Your User Name"
             />
@@ -24,7 +23,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
           <ContainerInput>
             <TextField
               id="outlined-basic"
-              label={primeiro_nome === null ? 'First Name' : primeiro_nome}
+              label={primeiro_nome === null ? 'Insert First Name' : primeiro_nome}
               variant="outlined"
               title="Update Your Name"
             />
@@ -33,7 +32,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
           <ContainerInput>
             <TextField
               id="outlined-basic"
-              label={segundo_nome === null ? 'Second Name' : segundo_nome}
+              label={segundo_nome === null ? 'Insert Second Name' : segundo_nome}
               variant="outlined"
               title="Update Your Second Name"
             />
@@ -42,7 +41,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
           <ContainerInput>
             <TextField
               id="outlined-basic"
-              label={data_nascimento === null ? 'Year Of Birth' : data_nascimento}
+              label={data_nascimento === null ? 'Insert Year Of Birth' : data_nascimento}
               variant="outlined"
               title="Update Your Year Of Birth"
             />

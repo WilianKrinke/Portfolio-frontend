@@ -8,8 +8,7 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    text-align: center;
-    
+    text-align: center;    
 
     @media screen and (max-width: 600px) {
         width: 100%;
@@ -36,7 +35,7 @@ export const ContainerInput = styled.div`
     justify-content: space-evenly;
     flex-direction: row;
     height: 100%;
-    width: 60%;    
+    width: 60%;  
 
     @media screen and (max-width: 600px) {
         margin: 10px 0px;
