@@ -38,7 +38,7 @@ export const ContainerStyledShowDatas = styled.div`
     border: 1px solid;
 
     @media screen and (max-width: 600px) {
-        width: 350px;
+        width: 340px;
     }
 `
 
