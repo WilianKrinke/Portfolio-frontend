@@ -12,6 +12,7 @@ import Showingdatapanel from '../panels/showingData/showingDataPanel';
 
 function TabPanel(props) {
   const { children, value, index } = props;
+  const matches840w = useMediaQuery('(max-width:840px)');
 
   return (
     <div
@@ -19,6 +20,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
+      style={{ minHeight: `${matches840w === true && index === 3 ? '670px' : '280px'}` }}
     >
       {value === index && (
         <Box
@@ -88,7 +90,7 @@ function DataTabs({ userDatasObject }) {
     setValue(newValue);
   };
 
-  const matches600w = useMediaQuery('(max-width:600px)');
+  const matches840w = useMediaQuery('(max-width:840px)');
 
   return (
     <Box
@@ -98,51 +100,51 @@ function DataTabs({ userDatasObject }) {
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: `column`,
-        border: `${matches600w ? 'transparent' : 'divider'}`,
+        border: `${matches840w ? 'transparent' : 'divider'}`,
       }}
     >
-      <Box sx={{ borderBottom: 1, borderColor: `${matches600w ? 'transparent' : 'divider'}` }}>
+      <Box sx={{ borderBottom: 1, borderColor: `${matches840w ? 'transparent' : 'divider'}` }}>
         <Tabs
           value={value}
           onChange={handleChange}
           aria-label="basic tabs example"
           centered
-          sx={{ width: `${matches600w ? '360px' : '100%'}` }}
+          sx={{ width: `${matches840w ? '360px' : '100%'}` }}
         >
           <Tab
             label="Identification"
             {...a11yProps(0)}
             sx={{
-              fontSize: `${matches600w ? '11px' : '14px'}`,
-              width: `${matches600w ? '20px' : '180px'}`,
-              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+              fontSize: `${matches840w ? '11px' : '14px'}`,
+              width: `${matches840w ? '20px' : '180px'}`,
+              wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
           />
           <Tab
             label="Address"
             {...a11yProps(1)}
             sx={{
-              fontSize: `${matches600w ? '11px' : '14px'}`,
-              width: `${matches600w ? '20px' : '180px'}`,
-              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+              fontSize: `${matches840w ? '11px' : '14px'}`,
+              width: `${matches840w ? '20px' : '180px'}`,
+              wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
           />
           <Tab
             label="Contact"
             {...a11yProps(2)}
             sx={{
-              fontSize: `${matches600w ? '11px' : '14px'}`,
-              width: `${matches600w ? '20px' : '180px'}`,
-              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+              fontSize: `${matches840w ? '11px' : '14px'}`,
+              width: `${matches840w ? '20px' : '180px'}`,
+              wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
           />
           <Tab
             label="Show All Data"
             {...a11yProps(3)}
             sx={{
-              fontSize: `${matches600w ? '11px' : '14px'}`,
-              width: `${matches600w ? '20px' : '180px'}`,
-              wordBreak: `${matches600w ? 'break-word' : 'normal'}`,
+              fontSize: `${matches840w ? '11px' : '14px'}`,
+              width: `${matches840w ? '20px' : '180px'}`,
+              wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
           />
         </Tabs>

@@ -31,36 +31,77 @@ export const FormStyled = styled(Box)`
 export const ContainerStyledShowDatas = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 320px;
+    justify-content: center;
+    flex-direction: row;
+    min-height: 280px;
     width: 100%;
+
+    @media screen and (max-width: 600px){
+        flex-direction: column;
+        position: relative;
+        top: 150px;
+    }
+
+    b{
+        text-decoration: underline;
+    }
+
+    p{
+        font-size: 18px;
+        word-break: break-word;
+    }
+
+    .div_first, .div_second{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        min-height: 320px;
+        width: 45%;
+
+        @media screen and (max-width: 600px){
+            width: 340px;
+            justify-content: space-around;
+        }
+    }
 
     .div_name, .div_userName, .div_birth,  .div_adress{
         display: flex;
-        align-items: center;
         justify-content: flex-start;
+        align-items: center;
         flex-direction: row;
         width: 100%;
-        padding: 0px 10px;
+        padding-left: 30px;
+
+        @media screen and (max-width: 600px){
+            width: 340px;
+        }
     }
 
     .div_adress_street, .div_adress_district, .div_adress_number, .div_adress_city{
         display: flex;
-        align-items: center;
         justify-content: flex-start;
+        align-items: center;
         flex-direction: row;
         width: 100%;
-        padding: 0px 10px;
+        padding-left: 30px;
+
+        @media screen and (max-width: 600px){
+            width: 340px;
+        }
     }
 
     .div_email, .div_cell_phone, .div_landline{
         display: flex;
-        align-items: center;
         justify-content: flex-start;
+        align-items: center;
         flex-direction: row;
         width: 100%;
-        padding: 0px 10px;
+        padding-left: 30px;
+
+        @media screen and (max-width: 600px){
+            width: 340px;
+        }
     }
 
     @media screen and (max-width: 600px) {
