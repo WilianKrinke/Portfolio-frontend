@@ -16,18 +16,28 @@ export const MainContainer = styled.div`
     }
 `
 
+export const ContainerInput = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100px;
+    width: 50%;  
+
+    @media screen and (max-width: 600px) {
+        height: 100%;
+        width: 340px;
+    }
+`
+
 export const FormStyled = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-direction: row;
-    height: 310px;
     width: 100%;
-    margin:10px 0px;  
-
-    @media screen and (max-width: 600px) {
-        height: 310px;
-    }
+    margin: 10px 0px; 
+    border: 1px solid; 
 `
 export const ContainerStyledShowDatas = styled.div`
     display: flex;
@@ -120,21 +130,3 @@ export const TagP = styled.p`
     }
 `
 
-export const ContainerInput = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    flex-direction: column;
-    height: 100px;
-    width: 50%;  
-
-    @media screen and (max-width: 600px) {
-        margin: 10px 0px;
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: row;
-        height: 100%;
-        width: 340px;
-    }
-`
