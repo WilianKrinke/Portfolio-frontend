@@ -10,8 +10,8 @@ const Identificationpanel = ({ objectUserIdentification }) => {
   return (
     <>
       <MainContainer>
-        <FormStyled component="form" noValidate autoComplete="off">
-          <ContainerInput>
+        <ContainerInput>
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={userName === null ? 'Insert User Name' : userName}
@@ -19,8 +19,9 @@ const Identificationpanel = ({ objectUserIdentification }) => {
               title="Update Your User Name"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={primeiro_nome === null ? 'Insert First Name' : primeiro_nome}
@@ -28,8 +29,9 @@ const Identificationpanel = ({ objectUserIdentification }) => {
               title="Update Your Name"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={segundo_nome === null ? 'Insert Second Name' : segundo_nome}
@@ -37,8 +39,9 @@ const Identificationpanel = ({ objectUserIdentification }) => {
               title="Update Your Second Name"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={data_nascimento === null ? 'Insert Year Of Birth' : data_nascimento}
@@ -46,8 +49,8 @@ const Identificationpanel = ({ objectUserIdentification }) => {
               title="Update Your Year Of Birth"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-        </FormStyled>
+          </FormStyled>
+        </ContainerInput>
       </MainContainer>
     </>
   );

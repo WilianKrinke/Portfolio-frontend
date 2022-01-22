@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    text-align: center;    
+    text-align: center; 
 
     @media screen and (max-width: 600px) {
         width: 100%;
@@ -20,9 +20,10 @@ export const FormStyled = styled(Box)`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: column;
+    flex-direction: row;
     height: 310px;
-    width: 100%;   
+    width: 100%;
+    margin:10px 0px;  
 
     @media screen and (max-width: 600px) {
         height: 310px;
@@ -123,8 +124,8 @@ export const ContainerInput = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    flex-direction: row;
-    height: 100%;
+    flex-direction: column;
+    height: 100px;
     width: 50%;  
 
     @media screen and (max-width: 600px) {
