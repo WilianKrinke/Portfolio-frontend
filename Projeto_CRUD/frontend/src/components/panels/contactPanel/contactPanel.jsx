@@ -6,14 +6,26 @@ import { TextField } from '@mui/material';
 import { ButtonUpDate } from '../../Buttons';
 
 const Contactpanel = ({ objectUserContact }) => {
-  console.log(objectUserContact);
   const { email, telefone_celular, telefone_fixo } = objectUserContact;
+
+  function handleEmail(e) {
+    e.preventDefault();
+    console.log('Chamou a func');
+  }
+  function handleCellPhone(e) {
+    e.preventDefault();
+    console.log('Chamou a func');
+  }
+  function handleLandLine(e) {
+    e.preventDefault();
+    console.log('Chamou a func');
+  }
 
   return (
     <>
       <MainContainer>
         <ContainerInput>
-          <FormStyled component="form" noValidate autoComplete="off">
+          <FormStyled component="form" noValidate autoComplete="off" onSubmit={(e) => handleEmail(e)}>
             <TextField
               id="outlined-basic"
               label={email === null ? 'Insert E-mail' : email}
@@ -23,7 +35,7 @@ const Contactpanel = ({ objectUserContact }) => {
             <ButtonUpDate>Update</ButtonUpDate>
           </FormStyled>
 
-          <FormStyled component="form" noValidate autoComplete="off">
+          <FormStyled component="form" noValidate autoComplete="off" onSubmit={(e) => handleCellPhone(e)}>
             <TextField
               id="outlined-basic"
               label={telefone_celular === null ? 'Insert Cell Phone' : telefone_celular}
@@ -33,7 +45,7 @@ const Contactpanel = ({ objectUserContact }) => {
             <ButtonUpDate>Update</ButtonUpDate>
           </FormStyled>
 
-          <FormStyled component="form" noValidate autoComplete="off">
+          <FormStyled component="form" noValidate autoComplete="off" onSubmit={(e) => handleLandLine(e)}>
             <TextField
               id="outlined-basic"
               label={telefone_fixo === null ? 'Insert Landline' : telefone_fixo}
