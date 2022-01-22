@@ -12,8 +12,8 @@ const Contactpanel = ({ objectUserContact }) => {
   return (
     <>
       <MainContainer>
-        <FormStyled component="form" noValidate autoComplete="off">
-          <ContainerInput>
+        <ContainerInput>
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={email === null ? 'Insert E-mail' : email}
@@ -21,8 +21,9 @@ const Contactpanel = ({ objectUserContact }) => {
               title="Update Your E-mail"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={telefone_celular === null ? 'Insert Cell Phone' : telefone_celular}
@@ -30,8 +31,9 @@ const Contactpanel = ({ objectUserContact }) => {
               title="Update Your Cell Phone"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={telefone_fixo === null ? 'Insert Landline' : telefone_fixo}
@@ -39,8 +41,8 @@ const Contactpanel = ({ objectUserContact }) => {
               title="Update Your Landline"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-        </FormStyled>
+          </FormStyled>
+        </ContainerInput>
       </MainContainer>
     </>
   );

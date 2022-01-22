@@ -37,7 +37,6 @@ export const FormStyled = styled(Box)`
     flex-direction: row;
     width: 100%;
     margin: 10px 0px; 
-    border: 1px solid; 
 `
 export const ContainerStyledShowDatas = styled.div`
     display: flex;

@@ -11,8 +11,8 @@ const Adresspanel = ({ objectUserAdress }) => {
   return (
     <>
       <MainContainer>
-        <FormStyled component="form" noValidate autoComplete="off">
-          <ContainerInput>
+        <ContainerInput>
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={endereco_logradouro === null ? 'Insert Address Street' : endereco_logradouro}
@@ -20,8 +20,9 @@ const Adresspanel = ({ objectUserAdress }) => {
               title="Update Your Address Street"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={endereco_bairro === null ? 'Insert Address Neighborhood' : endereco_bairro}
@@ -29,8 +30,9 @@ const Adresspanel = ({ objectUserAdress }) => {
               title="Update Your Address Neighborhood"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={endereco_numero === null ? 'Insert Address Number' : endereco_numero}
@@ -38,8 +40,9 @@ const Adresspanel = ({ objectUserAdress }) => {
               title="Update Your Address Number"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-          <ContainerInput>
+          </FormStyled>
+
+          <FormStyled component="form" noValidate autoComplete="off">
             <TextField
               id="outlined-basic"
               label={endereco_cidade === null ? 'Insert City ​​Address' : endereco_cidade}
@@ -47,8 +50,8 @@ const Adresspanel = ({ objectUserAdress }) => {
               title="Update Your City ​​Address"
             />
             <ButtonUpDate>Update</ButtonUpDate>
-          </ContainerInput>
-        </FormStyled>
+          </FormStyled>
+        </ContainerInput>
       </MainContainer>
     </>
   );
