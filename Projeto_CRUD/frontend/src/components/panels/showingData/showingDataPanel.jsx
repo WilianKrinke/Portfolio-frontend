@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
-import { ContainerStyledShowDatas, MainContainer } from '../styled/styled';
+import { ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled';
 
 const Showingdatapanel = ({ userDatasObject }) => {
   console.log(userDatasObject);
@@ -24,66 +24,86 @@ const Showingdatapanel = ({ userDatasObject }) => {
       <MainContainer>
         <ContainerStyledShowDatas>
           <div className="div_first">
-            <div className="div_name">
-              <p>
+            <div
+              className="div_name"
+              title={`${
+                primeiro_nome === null || segundo_nome === null ? 'Data not updated' : primeiro_nome + segundo_nome
+              }`}
+            >
+              <TagP isNull={primeiro_nome}>
                 <b>Name:</b>{' '}
                 {primeiro_nome === null || segundo_nome === null ? 'Data not updated' : primeiro_nome + segundo_nome}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_userName">
-              <p>
+            <div className="div_userName" title={`${userName === null ? 'Data not updated' : userName}`}>
+              <TagP isNull={userName}>
                 <b>User Name:</b> {userName === null ? 'Data not updated' : userName}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_birth">
-              <p>
+            <div className="div_birth" title={`${data_nascimento === null ? 'Data not Updated' : data_nascimento}`}>
+              <TagP isNull={data_nascimento}>
                 <b>Birth:</b> {data_nascimento === null ? 'Data not Updated' : data_nascimento}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_adress_street">
-              <p>
+            <div
+              className="div_adress_street"
+              title={`${endereco_logradouro === null ? 'Data not Updated' : endereco_logradouro}`}
+            >
+              <TagP isNull={endereco_logradouro}>
                 <b>Adress Street:</b> {endereco_logradouro === null ? 'Data not Updated' : endereco_logradouro}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_adress_district">
-              <p>
+            <div
+              className="div_adress_district"
+              title={`${endereco_bairro === null ? 'Data not Updated' : endereco_bairro}`}
+            >
+              <TagP isNull={endereco_bairro}>
                 <b>Adress District:</b> {endereco_bairro === null ? 'Data not Updated' : endereco_bairro}
-              </p>
+              </TagP>
             </div>
           </div>
           <div className="div_second">
-            <div className="div_adress_number">
-              <p>
+            <div
+              className="div_adress_number"
+              title={`${endereco_numero === null ? 'Data not Updated' : endereco_numero}`}
+            >
+              <TagP isNull={endereco_numero}>
                 <b>Adress Number:</b> {endereco_numero === null ? 'Data not Updated' : endereco_numero}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_adress_city">
-              <p>
+            <div
+              className="div_adress_city"
+              title={`${endereco_cidade === null ? 'Data not Updated' : endereco_cidade}`}
+            >
+              <TagP isNull={endereco_cidade}>
                 <b>Adress City:</b> {endereco_cidade === null ? 'Data not Updated' : endereco_cidade}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_email">
-              <p>
+            <div className="div_email" title={`${email === null ? 'Data not Updated' : email}`}>
+              <TagP isNull={email}>
                 <b>E-mail:</b> {email === null ? 'Data not Updated' : email}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_cell_phone">
-              <p>
+            <div
+              className="div_cell_phone"
+              title={`${telefone_celular === null ? 'Data not Updated' : telefone_celular}`}
+            >
+              <TagP isNull={telefone_celular}>
                 <b>Cell Phone:</b> {telefone_celular === null ? 'Data not Updated' : telefone_celular}
-              </p>
+              </TagP>
             </div>
 
-            <div className="div_landline">
-              <p>
+            <div className="div_landline" title={`${telefone_fixo === null ? 'Data not Updated' : telefone_fixo}`}>
+              <TagP isNull={telefone_fixo}>
                 <b>Landline:</b> {telefone_fixo === null ? 'Data not Updated' : telefone_fixo}
-              </p>
+              </TagP>
             </div>
           </div>
         </ContainerStyledShowDatas>

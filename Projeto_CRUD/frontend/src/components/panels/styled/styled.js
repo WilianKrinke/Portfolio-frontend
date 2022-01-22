@@ -109,6 +109,16 @@ export const ContainerStyledShowDatas = styled.div`
     }
 `
 
+export const TagP = styled.p`
+    b{
+        color: #222222;
+    }
+
+    :not(b){
+        color: ${props => props.isNull === null && "#e32012"}
+    }
+`
+
 export const ContainerInput = styled.div`
     display: flex;
     align-items: center;
