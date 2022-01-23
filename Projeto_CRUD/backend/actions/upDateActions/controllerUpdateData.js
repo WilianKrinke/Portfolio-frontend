@@ -1,8 +1,10 @@
-function controllerUpdateData(data,option){
+const upDateClass = require('./upDateClass')
 
+function controllerUpdateData(data,option){
     switch (option) {
         case 1:
-            console.log('Atualizar 1') 
+            const upDateObject = new upDateClass()
+            const response = upDateObject.upDateUserName(data)
             break;
         case 2:
             console.log('Atualizar 2') 
@@ -38,10 +40,6 @@ function controllerUpdateData(data,option){
         default:
             break;
     }
-
-
-
-
 }
 
 module.exports = controllerUpdateData;
