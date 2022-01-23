@@ -1,10 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
 import CryptoJS from "crypto-js";
 
 export default function cryptLendBook(lendDatas){
-    
-
     const {idBook,bookName,idUser,userName} = lendDatas
 
     const idBookC = CryptoJS.AES.encrypt(idBook + " " + process.env.REACT_APP_SALT3, process.env.REACT_APP_SALT2).toString()

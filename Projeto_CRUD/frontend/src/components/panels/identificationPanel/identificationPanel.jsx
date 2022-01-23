@@ -12,7 +12,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
   const [userNameState, setuserNameState] = useState('');
   const [primeiro_NomeState, setPrimeiro_NomeState] = useState('');
   const [segundo_NomeState, setSegundo_NomeState] = useState('');
-  const [data_Nascimento, setData_Nascimento] = useState('');
+  const [data_NascimentoState, setData_NascimentoState] = useState('');
 
   async function handleUserName(e) {
     console.log('chamou a função');
@@ -88,7 +88,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
               label={data_nascimento === null ? 'Insert Year Of Birth' : data_nascimento}
               variant="outlined"
               title="Update Your Year Of Birth"
-              onChange={(e) => setData_Nascimento(e.target.value)}
+              onChange={(e) => setData_NascimentoState(e.target.value)}
               required
             />
             <ButtonUpDate>Update</ButtonUpDate>
