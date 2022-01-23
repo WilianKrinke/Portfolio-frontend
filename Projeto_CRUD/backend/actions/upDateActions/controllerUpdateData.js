@@ -1,12 +1,12 @@
 const upDateClass = require('./upDateClass')
 
-function controllerUpdateData(objectDatas){
+async function controllerUpdateData(objectDatas){
     const {data,option,idUser} = objectDatas
 
     switch (option) {
         case 1:
             const upDateObject = new upDateClass(idUser)
-            const response = upDateObject.upDateUserName(data)
+            const response = await upDateObject.upDateUserName(data)
             return response
         case 2:
             console.log('Atualizar 2') 

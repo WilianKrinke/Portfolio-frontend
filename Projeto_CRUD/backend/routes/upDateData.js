@@ -15,8 +15,8 @@ function upDateData(app){
                     option
                 }   
 
-                const response = controllerUpdateData(objectDatas)
-               
+                const response = await controllerUpdateData(objectDatas)
+                               
                 if (response === true) {
                     res.status(200).send(true)
                 } else {

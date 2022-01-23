@@ -7,7 +7,6 @@ import { isValidUser } from "../validations/validUser"
 export default async function upDateData(objectData){
     try {
         const {data, option} = objectData
-
         const {isValid} = isValidUser(data)
         const encryptedData = cryptUpdate(data)
         
