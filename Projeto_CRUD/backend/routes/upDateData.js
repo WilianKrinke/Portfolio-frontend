@@ -7,8 +7,15 @@ function upDateData(app){
             try {
                 const {encryptedData, option} = req.body
                 const data = decryptData(encryptedData)
-    
-                const response = controllerUpdateData(data,option)
+                const idUser = req.idUser[0]
+
+                const objectDatas = {
+                    idUser,
+                    data,
+                    option
+                }   
+                 
+                const response = controllerUpdateData(objectDatas)
                 console.log(response)
                 
             } catch (e) {

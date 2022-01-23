@@ -1,9 +1,11 @@
 const upDateClass = require('./upDateClass')
 
-function controllerUpdateData(data,option){
+function controllerUpdateData(objectDatas){
+    const {data,option,idUser} = objectDatas
+
     switch (option) {
         case 1:
-            const upDateObject = new upDateClass()
+            const upDateObject = new upDateClass(idUser)
             const response = upDateObject.upDateUserName(data)
             break;
         case 2:
