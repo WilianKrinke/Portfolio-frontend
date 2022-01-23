@@ -4,7 +4,6 @@ import propTypes from 'prop-types';
 import { ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled';
 
 const Showingdatapanel = ({ userDatasObject }) => {
-  console.log(userDatasObject);
   const {
     data_nascimento,
     email,
