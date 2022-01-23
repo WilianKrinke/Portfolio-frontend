@@ -6,16 +6,15 @@ import { isValidUser } from "../validations/validUser"
 
 export default async function upDateData(objectData){
     try {
-        console.log(objectData)
         const {data, option} = objectData
 
-        const isValidData = isValidUser(data)
+        const {isValid} = isValidUser(data)
         const encryptedData = cryptUpdate(data)
         
-        if(isValidData === true){
+        if(isValid === true){
             preAuth()
             const response = await baseUrl.post('/update-data', {
-                data: encryptedData,
+                encryptedData,
                 option
             })
 
