@@ -7,7 +7,7 @@ function controllerUpdateData(objectDatas){
         case 1:
             const upDateObject = new upDateClass(idUser)
             const response = upDateObject.upDateUserName(data)
-            break;
+            return response
         case 2:
             console.log('Atualizar 2') 
             break;

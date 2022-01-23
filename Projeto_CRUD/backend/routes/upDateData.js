@@ -14,9 +14,14 @@ function upDateData(app){
                     data,
                     option
                 }   
-                 
+
                 const response = controllerUpdateData(objectDatas)
-                console.log(response)
+               
+                if (response === true) {
+                    res.status(200).send(true)
+                } else {
+                    res.status(200).send(false)
+                }
                 
             } catch (e) {
                 const error = new Error(e)

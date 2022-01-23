@@ -22,10 +22,6 @@ class upDateClass{
             console.log(error)
             return false
         }
-
-
-
-
    }
 
    upDateFirstName(data){
