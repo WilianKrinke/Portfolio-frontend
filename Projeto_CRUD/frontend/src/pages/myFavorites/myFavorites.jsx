@@ -28,8 +28,6 @@ const Myfavorites = () => {
 
         if (response === false) {
           tokenTimeOut(navigate);
-        } else if (response === null) {
-          //Enviar para pagina de erro
         } else {
           setUserNameState(userName);
 

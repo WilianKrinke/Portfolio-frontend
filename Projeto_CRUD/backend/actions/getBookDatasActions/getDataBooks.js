@@ -7,7 +7,7 @@ async function getDataBooks(category){
         if (response[0] !== undefined) {
             return response; 
         } else {
-            throw new Error('Server Error - choice of categories')
+            throw new Error('Server Error - getDataBooks')
         }
     } else {        
         const response = await knex('books').select().where('category', category)
@@ -15,7 +15,7 @@ async function getDataBooks(category){
         if (response !== undefined) {
             return response; 
         } else {
-            throw new Error('Server Error - choice of categories')
+            throw new Error('Server Error - getDataBooks')
         } 
     }
 }

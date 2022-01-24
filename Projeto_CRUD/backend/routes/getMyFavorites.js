@@ -11,8 +11,7 @@ function getMyFavorites(app){
                 const response = await getMyFavoritesFromDb(idUser)                
                 res.status(200).send({userName: userName, responseObject: response})
                 
-            } catch (e) {
-                const error = new Error(e)
+            } catch (error) {                
                 console.log(error.message)          
                 res.status(500).send(error.message)
             }

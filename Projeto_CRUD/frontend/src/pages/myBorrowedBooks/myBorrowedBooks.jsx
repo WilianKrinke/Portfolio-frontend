@@ -23,7 +23,7 @@ const MyBorrowedBooks = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await getMyBorrowedBooks(navigate);
+        const response = await getMyBorrowedBooks();
 
         if (response === false) {
           tokenTimeOut(navigate);

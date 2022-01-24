@@ -4,25 +4,18 @@ function getMyBorrowedBooks(app){
     app.route('/my-borrowed-book-list')
         .get(async (req, res) => {            
             try {                
-                const userId = req.idUser[0]
-                const userName = req.userName[0]
-                const response = await getBorrowedBooksActions(userId);
+                const [idUser] = req.idUser
+                const [userName] = req.userName
 
-                if (response !== null) {
-                    res.status(200).send({
-                        idUser: userId,
-                        userName: userName,
-                        responseObject: response
-                    })
-                } else {
-                    res.status(400).send({
-                        idUser: null,
-                        userName: null,
-                        responseObject: false
-                    })
-                }
-            } catch (e) {
-                const error = new Error(e)
+                const response = await getBorrowedBooksActions(idUser);
+                
+                res.status(200).send({
+                    idUser: idUser,
+                    userName: userName,
+                    responseObject: response
+                })
+                
+            } catch (error) {
                 console.log(error.message)          
                 res.status(500).send(error.message)
             }
