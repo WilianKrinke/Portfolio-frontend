@@ -28,10 +28,10 @@ const signIn = () => {
       if (authenticate === true) {
         navigate('./book-list');
       } else {
-        toast.error('Incorrect username or password');
+        throw new Error('Incorrect username or password');
       }
     } catch (error) {
-      toast.error('Something wrong, contact the administrator');
+      toast.error(error.message);
     }
   }
 

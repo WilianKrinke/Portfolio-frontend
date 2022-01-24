@@ -31,11 +31,10 @@ const BookList = () => {
     (async () => {
       try {
         const response = await getBookList(category);
-        const { responseBooks, userName, idUser } = response;
-
         if (response === false) {
           tokenTimeOut(navigate);
         } else {
+          const { responseBooks, userName, idUser } = response;
           setUserName(userName);
           setUserIdData(idUser);
           setPages(Math.ceil(responseBooks.length / itensPerPage));
@@ -46,7 +45,7 @@ const BookList = () => {
           }, 1);
         }
       } catch (error) {
-        console.log(error);
+        console.log(error.message);
         //pagina de erro
       }
     })();

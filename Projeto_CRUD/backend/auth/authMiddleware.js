@@ -2,28 +2,28 @@ const {promisify} = require('util')
 const jwt = require('jsonwebtoken')
 
 const authValidate = async (req, res, next) => {        
-    const {authorization} = req.headers;
-    if(!authorization) return res.send(false)
-    
-    const token = authorization
-        
     try {
-        const teste = await promisify(jwt.verify)(token, process.env.SECRET)
-        const {idUser, userName} = await promisify(jwt.verify)(token, process.env.SECRET)
+        const {authorization} = req.headers;
+        if(!authorization) return res.status(400).send(null)
+    
+        const teste = jwt.verify(authorization, process.env.SECRET)
+        const {idUser, userName} = jwt.verify(authorization, process.env.SECRET)
         
         if (teste) {
             req.idUser = idUser         
             req.userName = userName
             return next()  
         } else { 
-            return res.status(200).send(false)
+            return res.status(500).send(null)
         }
-    } catch (e) {
-        const error = new Error(e)
-        console.log(error.message)
-        return res.status(200).send(false)
+    } catch (error) {
+        if (error.message === 'jwt expired') {
+            console.log('Token Expired')
+            res.status(200).send(false)
+        } else {
+            res.status(500).send(null)
+        }
     }
-
 }
 
 module.exports = authValidate

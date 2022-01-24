@@ -22,7 +22,6 @@ const Identificationpanel = ({ objectUserIdentification }) => {
   async function handleUserName(e) {
     try {
       e.preventDefault();
-
       const objectData = {
         data: userNameState,
         option: 1,
