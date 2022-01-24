@@ -45,7 +45,7 @@ const ModalLendBook = ({
         toast.warn('Something is wrong, contact the administrator');
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       //para a página de erro
     }
   }

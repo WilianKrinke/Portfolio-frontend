@@ -9,11 +9,10 @@ const lendBook = (app) => {
                 if (response.isRegister === true) {
                     res.status(200).send(response)                    
                 } else {
-                    res.status(400).send(response)
+                    throw new Error('Server Error - lendBook')
                 }
 
-            } catch (e) {
-                const error = new Error(e)
+            } catch (error) {
                 console.log(error.message)          
                 res.status(500).send(error.message)
             }        
