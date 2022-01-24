@@ -40,7 +40,7 @@ const ModalReturnBook = ({
         setmodalReturnBook(false);
         setamountState((currentState) => currentState + 1);
       } else {
-        toast.warn('Something is wrong, contact the administrator');
+        throw new Error('Client Error - handleReturnBook');
       }
     } catch (error) {
       console.log(error);

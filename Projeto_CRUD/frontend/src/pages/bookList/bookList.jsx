@@ -45,6 +45,7 @@ const BookList = () => {
           }, 1);
         }
       } catch (error) {
+        console.log('Entrou no Error');
         console.log(error.message);
         //pagina de erro
       }

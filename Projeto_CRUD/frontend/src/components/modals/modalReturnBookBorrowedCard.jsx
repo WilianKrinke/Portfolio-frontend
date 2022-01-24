@@ -17,6 +17,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
       if (response === false) {
         tokenTimeOut(navigate);
       }
+
       const { isReturnTheBook } = response;
       if (isReturnTheBook === true) {
         toast.success('Successfully returned the book!');
@@ -25,7 +26,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
           window.location.reload();
         }, 3000);
       } else {
-        toast.warn('Something is wrong, contact the administrator');
+        throw new Error('Client Error - handleReturnBook');
       }
     } catch (error) {
       console.log(error);

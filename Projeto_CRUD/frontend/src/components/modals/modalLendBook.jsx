@@ -42,7 +42,7 @@ const ModalLendBook = ({
         setmodalLendBookIsOpen(false);
         setamountState((currentstate) => currentstate - 1);
       } else {
-        toast.warn('Something is wrong, contact the administrator');
+        throw new Error('Client Error - handleLend');
       }
     } catch (error) {
       console.log(error.message);
