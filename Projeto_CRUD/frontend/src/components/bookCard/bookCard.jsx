@@ -71,7 +71,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         toast.success('Book added to favorites');
       } else {
         setisLike(false);
-        toast.warn('Book not added to favorites');
+        throw new Error('Client Error - handleAddFav');
       }
     } catch (error) {
       setisLike(false);
@@ -86,10 +86,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
       const response = await removeFavorite(objectDatas);
 
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
+        tokenTimeOut(navigate);
       }
 
       const { isRemoved } = response;
@@ -98,7 +95,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         toast.success('Book removed from favorites');
       } else {
         setisLike(true);
-        toast.warn('Book not removed from favorites');
+        throw new Error('Client Error - handleAddFav');
       }
     } catch (error) {
       setisLike(true);
@@ -115,12 +112,11 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
     try {
       const response = await sendRating(e, idBook);
       if (response === false) {
-        toast.warn('Token time expired, please re-login');
-        setTimeout(() => {
-          navigate('/');
-        }, 3000);
-      } else if (response === null) {
-        toast.warn('Book rating not updated');
+        tokenTimeOut(navigate);
+      }
+
+      if (response === null) {
+        throw new Error('Client Error - handleRating');
       }
     } catch (error) {
       console.log(error);

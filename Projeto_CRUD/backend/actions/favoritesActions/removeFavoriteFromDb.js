@@ -1,13 +1,11 @@
 const knex = require('../../connection/connection')
 
 async function removeFavoriteFromDb(bookData){
-
     const response = await knex('favorites')
         .where('idUser', bookData.idUser)
         .andWhere('idBook', bookData.idBook)
-        .del()
-        
-    try {
+        .del()        
+    
         if (response != undefined) {
             const objectResponse = {
                 isRemoved: true,
@@ -16,22 +14,8 @@ async function removeFavoriteFromDb(bookData){
     
             return objectResponse
         } else {
-            const objectResponse = {
-                isRemoved: false,
-                message: 'Book not removed from favorites'
-            }
-    
-            return objectResponse
+            throw new Error('Server Error - removeFavoriteFromDb')
         }
-    } catch (error) {
-        const objectResponse = {
-            isRemoved: false,
-            message: error
-        }
-
-        return objectResponse
-    }
-    
 }
 
 module.exports = removeFavoriteFromDb;
