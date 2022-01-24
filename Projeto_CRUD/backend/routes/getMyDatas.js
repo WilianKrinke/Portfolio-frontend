@@ -12,7 +12,7 @@ function getMyDatas(app) {
                 if (response !== null) {
                     res.status(200).send({userName, userDatas: response[0]})
                 } else {
-                    res.status(200).send(null)
+                    res.status(400).send()
                 }
 
             } catch (e) {

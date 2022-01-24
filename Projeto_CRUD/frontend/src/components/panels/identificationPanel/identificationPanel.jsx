@@ -5,6 +5,9 @@ import TextField from '@mui/material/TextField';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
 import upDateData from '../../../utils/upDateData/upDateData';
+import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Identificationpanel = ({ objectUserIdentification }) => {
   const { userName, primeiro_nome, segundo_nome, data_nascimento } = objectUserIdentification;
@@ -14,16 +17,28 @@ const Identificationpanel = ({ objectUserIdentification }) => {
   const [segundo_NomeState, setSegundo_NomeState] = useState('');
   const [data_NascimentoState, setData_NascimentoState] = useState('');
 
+  const navigate = useNavigate();
+
   async function handleUserName(e) {
-    console.log('chamou a função');
-    e.preventDefault();
+    try {
+      e.preventDefault();
 
-    const objectData = {
-      data: userNameState,
-      option: 1,
-    };
+      const objectData = {
+        data: userNameState,
+        option: 1,
+      };
 
-    const response = await upDateData(objectData);
+      const response = await upDateData(objectData);
+
+      if (response === false) {
+        tokenTimeOut(navigate);
+      } else {
+        toast.success('UpDated Data');
+      }
+    } catch (error) {
+      console.log(error);
+      //pagina de erros
+    }
   }
 
   function handleFirstName(e) {

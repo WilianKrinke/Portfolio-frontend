@@ -5,9 +5,11 @@ export default async function getBookList(category){
     try {
         preAuth();
         const response = await baseUrl.get(`/books-list/${category}`);
+        
         const {data} = response
         return data;        
-    } catch (error) {
+    } catch (e) {
+        const error = new Error(e)
         console.log(error)
         return null
     }

@@ -17,7 +17,8 @@ export default async function upDateData(objectData){
                 option
             })
 
-            console.log(response)
+            const {data} = response;
+            return data;
 
         } else{
             return null

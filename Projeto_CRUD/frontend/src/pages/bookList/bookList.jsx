@@ -47,7 +47,7 @@ const BookList = () => {
         }
       } catch (error) {
         console.log(error);
-        //Para página de erro
+        //pagina de erro
       }
     })();
   }, [itensPerPage, startIndex, endIndex, category]);

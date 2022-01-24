@@ -14,13 +14,13 @@ class upDateClass{
             if (response === 1) {
                 return true
             } else {
-                return false
+                return null
             }
             
         } catch (e) {
             const error = new Error(e)
             console.log(error)
-            return false
+            return null
         }
    }
 

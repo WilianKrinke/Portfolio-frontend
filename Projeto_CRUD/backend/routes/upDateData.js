@@ -20,7 +20,7 @@ function upDateData(app){
                 if (response === true) {
                     res.status(200).send(true)
                 } else {
-                    res.status(200).send(false)
+                    res.status(400).send(null)
                 }
                 
             } catch (e) {

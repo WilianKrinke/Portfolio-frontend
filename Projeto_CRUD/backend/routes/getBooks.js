@@ -13,6 +13,7 @@ const getBooks = (app) => {
             }
             
             const isValid = isValidWords([req.params.category])
+            
             if (isValid !== true) {
               throw new Error('Sql Injection')
             }            
