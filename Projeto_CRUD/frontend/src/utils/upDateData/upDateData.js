@@ -5,7 +5,7 @@ import preAuth from '../Auth/preAuth'
 import { isValidUser } from "../validations/validUser"
 
 export default async function upDateData(objectData){
-    try {
+    
         const {data, option} = objectData
         const {isValid} = isValidUser(data)
         const encryptedData = cryptUpdate(data)
@@ -20,13 +20,7 @@ export default async function upDateData(objectData){
             const {data} = response;
             return data;
 
-        } else{
-            return null
-        }
-
-    } catch (e) {
-        const error = new Error(e)
-        console.log(error.message)
-        return null
-    }
+        } else {
+            throw new Error('Contains Inappropriate Characters')
+        }    
 }

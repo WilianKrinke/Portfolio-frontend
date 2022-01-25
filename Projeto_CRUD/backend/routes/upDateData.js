@@ -20,16 +20,13 @@ function upDateData(app){
                 if (response === true) {
                     res.status(200).send(true)
                 } else {
-                    res.status(400).send(null)
+                    throw new Error('Server Error - upDateData')
                 }
                 
-            } catch (e) {
-                const error = new Error(e)
+            } catch (error) {
                 console.log(error.message)
                 res.status(500).send(error.message)
             }
-
-            
         })
 }
 

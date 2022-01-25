@@ -5,22 +5,15 @@ class upDateClass{
         this.idUser = idUser
     }
 
-   async upDateUserName(data){
-        try {
-            const response = await knex('users').where('idUser', this.idUser).update({
-                userName: data
-            })
-    
-            if (response === 1) {
-                return true
-            } else {
-                return null
-            }
-            
-        } catch (e) {
-            const error = new Error(e)
-            console.log(error)
-            return null
+   async upDateUserName(data){        
+        const response = await knex('users').where('idUser', this.idUser).update({
+            userName: data
+        })
+
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
         }
    }
 

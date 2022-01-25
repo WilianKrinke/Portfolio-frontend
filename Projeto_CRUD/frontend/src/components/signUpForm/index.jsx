@@ -15,25 +15,25 @@ const Form = () => {
   const [passConfirmed, setPassConfirmed] = useState('');
 
   async function handleSubmitUser(e) {
-    e.preventDefault();
-    const objectDatas = {
-      userName,
-      email,
-      pass,
-      passConfirmed,
-    };
+    try {
+      e.preventDefault();
+      const objectDatas = {
+        userName,
+        email,
+        pass,
+        passConfirmed,
+      };
 
-    const response = await sendDatas(objectDatas);
-    const { wasRegister, message } = response;
+      const response = await sendDatas(objectDatas);
+      const { message } = response;
 
-    if (wasRegister === true) {
       toast.success(message);
       setuserName('');
       setEmail('');
       setPass('');
       setPassConfirmed('');
-    } else {
-      toast.error(message);
+    } catch (error) {
+      toast.error(error.message);
     }
   }
 

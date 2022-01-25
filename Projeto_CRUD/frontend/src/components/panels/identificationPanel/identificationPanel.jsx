@@ -35,6 +35,10 @@ const Identificationpanel = ({ objectUserIdentification }) => {
         toast.success('UpDated Data');
       }
     } catch (error) {
+      if (error.message === 'Contains Inappropriate Characters') {
+        toast.warn('Contains Inappropriate Characters');
+      }
+
       console.log(error);
       //pagina de erros
     }

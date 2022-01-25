@@ -5,46 +5,37 @@ import { isValidPass } from '../validations/validPass'
 import { isValidUser } from '../validations/validUser'
 
 export async function sendDatas(datas) {
-    try {
-        const wasValidUserName = isValidUser(datas.userName)
-        const wasValidEmail = isValidEmail(datas.email)
-        const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
+    const wasValidUserName = isValidUser(datas.userName)
+    const wasValidEmail = isValidEmail(datas.email)
+    const wasValidPass = isValidPass(datas.pass, datas.passConfirmed)
 
-        if (wasValidUserName.isValid === false) {        
-            const objectResponse = {wasRegister: false, message: wasValidUserName.message}
-            return objectResponse
+    if (wasValidUserName.isValid === false) {        
+        const {message} = wasValidUserName
+        throw new Error(message)
 
-        } else if(wasValidEmail.isValid === false){        
-            const objectResponse = {wasRegister: false, message: wasValidEmail.message}
-            return objectResponse
+    } else if(wasValidEmail.isValid === false){        
+        const {message} = wasValidEmail
+        throw new Error(message)
 
-        } else if(wasValidPass.isValid === false){        
-            const objectResponse = {wasRegister: false, message: wasValidPass.message}
-            return objectResponse
+    } else if(wasValidPass.isValid === false){        
+        const {message} = wasValidPass
+        throw new Error(message)
 
-        } else{
-            const passCrypt = doCrypt(datas.pass);
-            const response = await baseUrl.post(`/sign-up-user`, {
-                userName: datas.userName,
-                email: datas.email,
-                pass: passCrypt,
-            });
+    } else{
+        const passCrypt = doCrypt(datas.pass);
+        const response = await baseUrl.post(`/sign-up-user`, {
+            userName: datas.userName,
+            email: datas.email,
+            pass: passCrypt,
+        });
 
-            const {data} = response;
-            
-            if (data === true) {
-                const objectResponse = {wasRegister: true, message: 'User registered successfully!'}
-                return objectResponse;
-            } else {
-                console.log('Erro no servidor')
-                const objectResponse = {wasRegister: false, message: 'User has not been registered.'}
-                return objectResponse
-            }
+        const {data} = response;
+        
+        if (data === true) {
+            const objectResponse = {wasRegister: true, message: 'User registered successfully!'}
+            return objectResponse;
+        } else {
+            throw new Error('Cliente Error - sendDatas')
         }
-
-    } catch (error) {
-        console.log(error)
-        const objectResponse = {wasRegister: false, message: 'User has not been registered.'}
-        return objectResponse
     }
 }
