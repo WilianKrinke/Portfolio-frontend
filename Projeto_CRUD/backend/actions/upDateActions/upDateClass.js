@@ -17,46 +17,125 @@ class upDateClass{
         }
    }
 
-   upDateFirstName(data){
+   async upDateFirstName(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            primeiro_nome: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
    }
 
-   upDateSecondName(data){
+   async upDateSecondName(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            segundo_nome: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateBirth(data){
+    async upDateBirth(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            segundo_nome: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateAdressStreet(data){
+    async upDateAdressStreet(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            endereco_logradouro: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateAdressNeighborhood(data){
+    async upDateAdressNeighborhood(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            endereco_bairro: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateAdressNumber(data){
+    async upDateAdressNumber(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            endereco_numero: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateCityAdress(data){
+    async upDateCityAdress(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            endereco_cidade: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateEmail(data){
+    async upDateEmail(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            email: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateCellPhone(data){
+    async upDateCellPhone(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            telefone_celular: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
 
-    upDateLandLine(data){
+    async upDateLandLine(data){
+        const response = await knex('users').where('idUser', this.idUser).update({
+            telefone_fixo: data
+        })
 
+        if (response === 1) {
+            return true
+        } else {
+            throw new Error('Server Error - class upDateClass - upDateUserName')
+        }
     }
-
 }
 
 module.exports = upDateClass;

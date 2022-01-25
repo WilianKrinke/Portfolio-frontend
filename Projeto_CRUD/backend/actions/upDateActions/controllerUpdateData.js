@@ -3,21 +3,21 @@ const upDateClass = require('./upDateClass')
 async function controllerUpdateData(objectDatas){
     const {data,option,idUser} = objectDatas
     console.log(objectDatas)
+    const upDateObject = new upDateClass(idUser)
 
     switch (option) {
         case 1:
-            const upDateObject = new upDateClass(idUser)
-            const response = await upDateObject.upDateUserName(data)
-            return response
+            const responseUserName = await upDateObject.upDateUserName(data)
+            return responseUserName
         case 2:
-            console.log('Atualizar 2') 
-            break;
+            const responseFirstName = await upDateObject.upDateFirstName(data)
+            return responseFirstName
         case 3:
-            console.log('Atualizar 3') 
-            break;
+            const responseSecondName = await upDateObject.upDateSecondName(data)
+            return responseSecondName
         case 4:
-            console.log('Atualizar 4') 
-            break;
+            const responseBirth = await upDateObject.upDateBirth(data)
+            return responseBirth
         case 5:
             console.log('Atualizar 5') 
             break;

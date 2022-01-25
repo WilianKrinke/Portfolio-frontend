@@ -4,8 +4,7 @@ import cryptUpdate from "../crypto/cryptUpdate"
 import preAuth from '../Auth/preAuth'
 import { isValidUser } from "../validations/validUser"
 
-export default async function upDateData(objectData){
-    
+export default async function upDateData(objectData){    
         const {data, option} = objectData
         const {isValid} = isValidUser(data)
         const encryptedData = cryptUpdate(data)
