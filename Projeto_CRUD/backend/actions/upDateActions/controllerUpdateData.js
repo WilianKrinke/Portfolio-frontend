@@ -19,26 +19,26 @@ async function controllerUpdateData(objectDatas){
             const responseBirth = await upDateObject.upDateBirth(data)
             return responseBirth
         case 5:
-            console.log('Atualizar 5') 
-            break;
+            const responseAdressStreet = await upDateObject.upDateAdressStreet(data)
+            return responseAdressStreet
         case 6:
-            console.log('Atualizar 6') 
-            break;
+            const responseAdressNeighborhood = await upDateObject.upDateAdressNeighborhood(data)
+            return responseAdressNeighborhood
         case 7:
-            console.log('Atualizar 7') 
-            break;
+            const responseAdressNumber = await upDateObject.upDateAdressNumber(data)
+            return responseAdressNumber
         case 8:
-            console.log('Atualizar 8') 
-            break;
+            const responseCityAdress = await upDateObject.upDateCityAdress(data)
+            return responseCityAdress
         case 9:
-            console.log('Atualizar 9') 
-            break;
+            const responseupDateEmail = await upDateObject.upDateEmail(data)
+            return responseupDateEmail
         case 10:
-            console.log('Atualizar 10') 
-            break;
+            const responseupDateCellPhone = await upDateObject.upDateCellPhone(data)
+            return responseupDateCellPhone
         case 11:
-            console.log('Atualizar 11') 
-            break;   
+            const responseupDateLandLine = await upDateObject.upDateLandLine(data)
+            return responseupDateLandLine   
     
         default:
             break;
