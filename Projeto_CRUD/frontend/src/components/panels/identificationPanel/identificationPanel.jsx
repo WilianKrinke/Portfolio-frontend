@@ -36,7 +36,7 @@ const Identificationpanel = ({ objectUserIdentification }) => {
       }
     } catch (error) {
       if (error.message === 'Contains Inappropriate Characters') {
-        toast.warn('Contains Inappropriate Characters');
+        toast.error('Contains Inappropriate Characters');
       }
 
       console.log(error);
@@ -44,19 +44,79 @@ const Identificationpanel = ({ objectUserIdentification }) => {
     }
   }
 
-  function handleFirstName(e) {
-    e.preventDefault();
-    console.log('Chamou handle first Name');
+  async function handleFirstName(e) {
+    try {
+      e.preventDefault();
+      const objectData = {
+        data: primeiro_NomeState,
+        option: 2,
+      };
+
+      const response = await upDateData(objectData);
+
+      if (response === false) {
+        tokenTimeOut(navigate);
+      } else {
+        toast.success('UpDated Data');
+      }
+    } catch (error) {
+      if (error.message === 'Contains Inappropriate Characters') {
+        toast.error('Contains Inappropriate Characters');
+      }
+
+      console.log(error);
+      //pagina de erros
+    }
   }
 
-  function handleSecondName(e) {
-    e.preventDefault();
-    console.log('Chamou handle second name');
+  async function handleSecondName(e) {
+    try {
+      e.preventDefault();
+      const objectData = {
+        data: segundo_NomeState,
+        option: 3,
+      };
+
+      const response = await upDateData(objectData);
+
+      if (response === false) {
+        tokenTimeOut(navigate);
+      } else {
+        toast.success('UpDated Data');
+      }
+    } catch (error) {
+      if (error.message === 'Contains Inappropriate Characters') {
+        toast.error('Contains Inappropriate Characters');
+      }
+
+      console.log(error);
+      //pagina de erros
+    }
   }
 
-  function handleBirth(e) {
-    e.preventDefault();
-    console.log('Chamou handle birth');
+  async function handleBirth(e) {
+    try {
+      e.preventDefault();
+      const objectData = {
+        data: data_NascimentoState,
+        option: 4,
+      };
+
+      const response = await upDateData(objectData);
+
+      if (response === false) {
+        tokenTimeOut(navigate);
+      } else {
+        toast.success('UpDated Data');
+      }
+    } catch (error) {
+      if (error.message === 'Contains Inappropriate Characters') {
+        toast.error('Contains Inappropriate Characters');
+      }
+
+      console.log(error);
+      //pagina de erros
+    }
   }
 
   return (

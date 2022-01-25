@@ -2,6 +2,7 @@ const upDateClass = require('./upDateClass')
 
 async function controllerUpdateData(objectDatas){
     const {data,option,idUser} = objectDatas
+    console.log(objectDatas)
 
     switch (option) {
         case 1:
