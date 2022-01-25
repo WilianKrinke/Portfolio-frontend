@@ -2,10 +2,10 @@
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import TextField from '@mui/material/TextField';
-import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
-import { ButtonUpDate } from '../../Buttons';
 import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
+import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
+import { ButtonUpDate } from '../../Buttons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 

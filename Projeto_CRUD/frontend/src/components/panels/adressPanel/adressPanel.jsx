@@ -1,13 +1,12 @@
-/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import { MainContainer, ContainerInput, FormStyled } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import TextField from '@mui/material/TextField';
 import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 
 const Adresspanel = ({ objectUserAdress }) => {
   const navigate = useNavigate();
@@ -22,7 +21,7 @@ const Adresspanel = ({ objectUserAdress }) => {
     try {
       e.preventDefault();
       const objectData = {
-        data: endereco_logradouro,
+        data: endereco_LogradouroState,
         option: 5,
       };
 
@@ -47,7 +46,7 @@ const Adresspanel = ({ objectUserAdress }) => {
     try {
       e.preventDefault();
       const objectData = {
-        data: endereco_bairro,
+        data: endereco_BairroState,
         option: 6,
       };
 
@@ -72,7 +71,7 @@ const Adresspanel = ({ objectUserAdress }) => {
     try {
       e.preventDefault();
       const objectData = {
-        data: endereco_numero,
+        data: endereco_NumeroState,
         option: 7,
       };
 
@@ -97,7 +96,7 @@ const Adresspanel = ({ objectUserAdress }) => {
     try {
       e.preventDefault();
       const objectData = {
-        data: endereco_cidade,
+        data: endereco_CidadeState,
         option: 8,
       };
 
