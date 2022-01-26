@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateString from '../../../utils/upDateData/upDateString';
+import upDateNumber from '../../../utils/upDateData/upDateNumber';
 
 const Contactpanel = () => {
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ const Contactpanel = () => {
         option: 10,
       };
 
-      const response = await upDateString(objectData);
+      const response = await upDateNumber(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -72,7 +73,7 @@ const Contactpanel = () => {
         option: 11,
       };
 
-      const response = await upDateString(objectData);
+      const response = await upDateNumber(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);

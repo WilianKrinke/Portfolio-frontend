@@ -100,6 +100,10 @@ const Identificationpanel = () => {
         option: 4,
       };
 
+      if (idadeState > '122') {
+        throw new Error('Maximum human age passed, try gain');
+      }
+
       const response = await upDateNumber(objectData);
 
       if (response === false) {
@@ -110,6 +114,8 @@ const Identificationpanel = () => {
     } catch (error) {
       if (error.message === 'Contains Inappropriate Characters') {
         toast.error('Contains Inappropriate Characters');
+      } else {
+        toast.error(error.message);
       }
 
       console.log(error);

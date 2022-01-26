@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import TextField from '@mui/material/TextField';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateString from '../../../utils/upDateData/upDateString';
+import upDateNumber from '../../../utils/upDateData/upDateNumber';
 
 const Adresspanel = () => {
   const navigate = useNavigate();
@@ -73,7 +74,7 @@ const Adresspanel = () => {
         option: 7,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateNumber(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
