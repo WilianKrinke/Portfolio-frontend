@@ -15,15 +15,15 @@ export const BorrowedBookCard = styled.article`
     @media screen and (max-width: 1100px) {
         min-height: 550px;
         flex-flow: column nowrap;
-        border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
     }
 
     @media screen and (max-width: 570px) {
         min-height: 670px;
         width: 100%;
-        border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"}; 
+        border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"}; 
     }
 `
 
@@ -130,8 +130,8 @@ export const ContainerResume = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-    border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
        
     @media screen and (max-width: 1100px) {
         width: 100%;
@@ -162,7 +162,7 @@ export const ContainerActions = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column; 
-    border-bottom:  ${props => props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
     cursor: pointer;
     
     .div_conainer_icon{
@@ -193,21 +193,28 @@ export const ContainerActions = styled.div`
 
 export const Icon = styled(BsBoxArrowDown)`
     font-size: 38px;
-    color: rgba(0, 0, 0, 0.7);
+    color: #222;
 `
 
 export const DivInfoLendBook = styled.div`
     padding: 10px;
     width: 100%;
-    border:  ${props => props.isSameDate ? "2px solid #f00" : props.isBookLate ? "2px solid #f00" : "2px solid rgba(0, 0, 0, 0.3)"};
-    
+    border:  ${props => props.isSameDate ? "2px solid #FE6B0A" : props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+    transition: background-color .3s ease-in-out;
+
+    :hover{
+        background-color: ${props => props.isSameDate ? "#FE6B0A" : props.isBookLate ? "#FE6B0A" : "transparent"};
+    }
+
     p{
         font-size: 16px;
     }
     
     @media screen and (max-width: 570px) {
-            p{
-                font-size: 16px;
-            }
+        background-color: ${props => props.isSameDate ? "#FE6B0A" : props.isBookLate ? "#FE6B0A" : "transparent"};
+
+        p{
+            font-size: 16px;
+        }
     }
 `
