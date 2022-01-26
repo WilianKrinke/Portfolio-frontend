@@ -12,7 +12,7 @@ export const MainContainer = styled.div`
 
     @media screen and (max-width: 600px) {
         width: 100%;
-        height: 300px;
+        height: 350px;
     }
 `
 
@@ -43,7 +43,7 @@ export const ContainerStyledShowDatas = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    min-height: 280px;
+    min-height: 270px;
     width: 100%;
 
     @media screen and (max-width: 600px){
@@ -71,6 +71,7 @@ export const ContainerStyledShowDatas = styled.div`
 
         @media screen and (max-width: 600px){
             width: 340px;
+            min-height: 310px;
             justify-content: space-around;
         }
     }

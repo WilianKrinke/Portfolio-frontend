@@ -5,7 +5,7 @@ import { ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled'
 
 const Showingdatapanel = ({ userDatasObject }) => {
   const {
-    data_nascimento,
+    idade,
     email,
     endereco_bairro,
     endereco_cidade,
@@ -41,9 +41,9 @@ const Showingdatapanel = ({ userDatasObject }) => {
               </TagP>
             </div>
 
-            <div className="div_birth" title={`${data_nascimento === null ? 'Data not Updated' : data_nascimento}`}>
-              <TagP isNull={data_nascimento}>
-                <b>Birth:</b> {data_nascimento === null ? 'Data not Updated' : data_nascimento}
+            <div className="div_birth" title={`${idade === null ? 'Data not Updated' : idade}`}>
+              <TagP isNull={idade}>
+                <b>Birth:</b> {idade === null ? 'Data not Updated' : idade}
               </TagP>
             </div>
 

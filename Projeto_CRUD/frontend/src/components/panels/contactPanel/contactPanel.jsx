@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react';
-import propTypes from 'prop-types';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 import { TextField } from '@mui/material';
 import { ButtonUpDate } from '../../Buttons';
@@ -8,9 +7,8 @@ import { toast } from 'react-toastify';
 import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 
-const Contactpanel = ({ objectUserContact }) => {
+const Contactpanel = () => {
   const navigate = useNavigate();
-  const { email, telefone_celular, telefone_fixo } = objectUserContact;
 
   const [userEmailState, setEmailState] = useState('');
   const [telefone_celularState, setTelefone_celularState] = useState('');
@@ -98,7 +96,7 @@ const Contactpanel = ({ objectUserContact }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleEmail(e)}>
             <TextField
               id="outlined-basic"
-              label={email === null ? 'Insert E-mail' : email}
+              label="E-mail"
               variant="outlined"
               title="Update Your E-mail"
               required
@@ -110,7 +108,7 @@ const Contactpanel = ({ objectUserContact }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleCellPhone(e)}>
             <TextField
               id="outlined-basic"
-              label={telefone_celular === null ? 'Insert Cell Phone' : telefone_celular}
+              label="Cell Phone"
               variant="outlined"
               title="Update Your Cell Phone"
               required
@@ -122,7 +120,7 @@ const Contactpanel = ({ objectUserContact }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleLandLine(e)}>
             <TextField
               id="outlined-basic"
-              label={telefone_fixo === null ? 'Insert Landline' : telefone_fixo}
+              label="Landline"
               variant="outlined"
               title="Update Your Landline"
               required
@@ -134,10 +132,6 @@ const Contactpanel = ({ objectUserContact }) => {
       </MainContainer>
     </>
   );
-};
-
-Contactpanel.propTypes = {
-  objectUserContact: propTypes.object,
 };
 
 export default memo(Contactpanel);

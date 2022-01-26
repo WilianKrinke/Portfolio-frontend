@@ -20,7 +20,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      style={{ minHeight: `${matches840w === true && index === 3 ? '670px' : '280px'}` }}
+      style={{ minHeight: `${matches840w === true && index === 3 ? '650px' : '280px'}` }}
     >
       {value === index && (
         <Box
@@ -53,7 +53,7 @@ function DataTabs({ userDatasObject }) {
   const {
     primeiro_nome,
     segundo_nome,
-    data_nascimento,
+    idade,
     userName,
     email,
     endereco_bairro,
@@ -67,7 +67,7 @@ function DataTabs({ userDatasObject }) {
   const objectUserIdentification = {
     primeiro_nome,
     segundo_nome,
-    data_nascimento,
+    idade,
     userName,
   };
 

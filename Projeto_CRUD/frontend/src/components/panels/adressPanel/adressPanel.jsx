@@ -1,5 +1,4 @@
 import React, { memo, useState } from 'react';
-import propTypes from 'prop-types';
 import { MainContainer, ContainerInput, FormStyled } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
 import { useNavigate } from 'react-router-dom';
@@ -8,9 +7,8 @@ import TextField from '@mui/material/TextField';
 import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 
-const Adresspanel = ({ objectUserAdress }) => {
+const Adresspanel = () => {
   const navigate = useNavigate();
-  const { endereco_logradouro, endereco_bairro, endereco_numero, endereco_cidade } = objectUserAdress;
 
   const [endereco_LogradouroState, setEndereco_LogradouroState] = useState('');
   const [endereco_BairroState, setEndereco_BairroState] = useState('');
@@ -124,7 +122,7 @@ const Adresspanel = ({ objectUserAdress }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressStreet(e)}>
             <TextField
               id="outlined-basic"
-              label={endereco_logradouro === null ? 'Insert Address Street' : endereco_logradouro}
+              label="Address Street"
               variant="outlined"
               title="Update Your Address Street"
               required
@@ -136,9 +134,9 @@ const Adresspanel = ({ objectUserAdress }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressNeighborhood(e)}>
             <TextField
               id="outlined-basic"
-              label={endereco_bairro === null ? 'Insert Address Neighborhood' : endereco_bairro}
+              label="District"
               variant="outlined"
-              title="Update Your Address Neighborhood"
+              title="Update Your District"
               required
               onChange={(e) => setEndereco_BairroState(e.target.value)}
             />
@@ -148,7 +146,7 @@ const Adresspanel = ({ objectUserAdress }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressNumber(e)}>
             <TextField
               id="outlined-basic"
-              label={endereco_numero === null ? 'Insert Address Number' : endereco_numero}
+              label="Number"
               variant="outlined"
               title="Update Your Address Number"
               required
@@ -160,7 +158,7 @@ const Adresspanel = ({ objectUserAdress }) => {
           <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleCityAdress(e)}>
             <TextField
               id="outlined-basic"
-              label={endereco_cidade === null ? 'Insert City ​​Address' : endereco_cidade}
+              label="City"
               variant="outlined"
               title="Update Your City ​​Address"
               required
@@ -172,10 +170,6 @@ const Adresspanel = ({ objectUserAdress }) => {
       </MainContainer>
     </>
   );
-};
-
-Adresspanel.propTypes = {
-  objectUserAdress: propTypes.object,
 };
 
 export default memo(Adresspanel);

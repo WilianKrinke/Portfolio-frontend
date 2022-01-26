@@ -16,8 +16,8 @@ async function controllerUpdateData(objectDatas){
             const responseSecondName = await upDateObject.upDateSecondName(data)
             return responseSecondName
         case 4:
-            const responseBirth = await upDateObject.upDateBirth(data)
-            return responseBirth
+            const responseAge = await upDateObject.upDateAge(data)
+            return responseAge
         case 5:
             const responseAdressStreet = await upDateObject.upDateAdressStreet(data)
             return responseAdressStreet

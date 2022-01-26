@@ -25,7 +25,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateFirstName')
         }
    }
 
@@ -37,19 +37,19 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateSecondName')
         }
     }
 
-    async upDateBirth(data){
+    async upDateAge(data){
         const response = await knex('users').where('idUser', this.idUser).update({
-            segundo_nome: data
+            idade: data
         })
 
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateAge')
         }
     }
 
@@ -61,7 +61,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateAdressStreet')
         }
     }
 
@@ -73,7 +73,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateAdressNeighborhood')
         }
     }
 
@@ -85,7 +85,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateAdressNumber')
         }
     }
 
@@ -97,7 +97,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateCityAdress')
         }
     }
 
@@ -109,7 +109,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateEmail')
         }
     }
 
@@ -121,7 +121,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateCellPhone')
         }
     }
 
@@ -133,7 +133,7 @@ class upDateClass{
         if (response === 1) {
             return true
         } else {
-            throw new Error('Server Error - class upDateClass - upDateUserName')
+            throw new Error('Server Error - class upDateClass - upDateLandLine')
         }
     }
 }

@@ -7,7 +7,7 @@ export const ContainerMenu = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: rgba(0, 0, 0, 0.98);
     transition: all .3s ease-in-out;
     position: fixed;
@@ -49,8 +49,6 @@ export const ContainerIcon = styled.div`
     justify-content: center;
     align-items: flex-end;
     color: antiquewhite;
-    position: relative;
-    top: 17px;
 `
 
 export const IconHamburguer = styled.i`
@@ -65,6 +63,7 @@ export const IconClose = styled(VscChromeClose)`
     font-size: 52px;
     cursor: pointer;
     position: relative;
+    bottom: 30px;
     left: 150px;
 
     @media screen and (max-width: 440px) {
