@@ -31,7 +31,9 @@ const Showingdatapanel = ({ userDatasObject }) => {
             >
               <TagP isNull={primeiro_nome}>
                 <b>Name:</b>{' '}
-                {primeiro_nome === null || segundo_nome === null ? 'Data not updated' : primeiro_nome + segundo_nome}
+                {primeiro_nome === null || segundo_nome === null
+                  ? 'Data not updated'
+                  : primeiro_nome + ' ' + segundo_nome}
               </TagP>
             </div>
 

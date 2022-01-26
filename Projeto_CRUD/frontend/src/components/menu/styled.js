@@ -11,12 +11,12 @@ export const ContainerMenu = styled.div`
     background-color: rgba(0, 0, 0, 0.98);
     transition: all .3s ease-in-out;
     position: fixed;
-    right: ${props => props.isOpen ? '0px' : '-400px'};
+    right: ${props => props.$isopen ? '0px' : '-400px'};
     z-index: 100;
 
     @media screen and (max-width: 440px) {
         position: fixed;
-        right: ${props => props.isOpen ? '0px' : '-100vw'};
+        right: ${props => props.$isopen ? '0px' : '-100vw'};
         width: 100vw;
     }
 `
@@ -29,10 +29,11 @@ export const ContainerUser = styled.div`
     align-items: center;
     justify-content: center;     
     position: relative;
-    top: 20px; 
+    top: 10px; 
 
     p{
         color: antiquewhite;
+        letter-spacing: 7px;
         font-size: 18px;
         font-family: 'Zen Kaku Gothic New', sans-serif;
 
@@ -42,34 +43,21 @@ export const ContainerUser = styled.div`
     }
 `
 
-export const ContainerIcon = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+export const IconClose = styled(VscChromeClose)`
     color: antiquewhite;
+    font-size: 52px;
+    cursor: pointer;
+    position: fixed; 
+    top: 18px;
+    right: ${props => !props.$isopen ? '-50px' : '25px'};   
+    transition: all .3s ease-in-out;
 `
 
 export const IconHamburguer = styled.i`
     font-size: 48px;
     position: fixed;
     top: 20px;
-    right: ${props => props.isOpen ? '-50px' : '30px'};
-`
-
-export const IconClose = styled(VscChromeClose)`
-    color: antiquewhite;
-    font-size: 52px;
-    cursor: pointer;
-    position: relative;
-    bottom: 30px;
-    left: 150px;
-
-    @media screen and (max-width: 440px) {
-        position: relative;
-        left: 130px;
-    }
+    right: ${props => props.$isopen ? '-50px' : '30px'};
 `
 
 export const ContainerLinks = styled.nav`

@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
 import { Link } from 'react-router-dom';
-import { ContainerIcon, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
+import { ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
 import { useDetectClickOutside } from 'react-detect-click-outside';
@@ -19,17 +19,17 @@ const Menu = ({ user = 'Loading...' }) => {
 
   return (
     <>
-      <ContainerMenu isOpen={isOpen} ref={ref}>
+      <ContainerMenu $isopen={isOpen} ref={ref}>
         <IconHamburguer
           aria-label="Menu"
           title="Menu"
           className="fas fa-bars fa-2x"
-          isOpen={isOpen}
+          $isopen={isOpen}
           onClick={() => setisOpen(!isOpen)}
         />
-        <ContainerIcon>
-          <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} />
-        </ContainerIcon>
+
+        <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} $isopen={isOpen} />
+
         <ContainerUser>
           <p>Welcome {user}!</p>
         </ContainerUser>
