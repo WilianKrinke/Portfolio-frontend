@@ -1,12 +1,13 @@
 /* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import TextField from '@mui/material/TextField';
-import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 import { ButtonUpDate } from '../../Buttons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import upDateString from '../../../utils/upDateData/upDateString';
+import upDateNumber from '../../../utils/upDateData/upDateNumber';
 
 const Identificationpanel = () => {
   const [userNameState, setuserNameState] = useState('');
@@ -24,7 +25,7 @@ const Identificationpanel = () => {
         option: 1,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -49,7 +50,7 @@ const Identificationpanel = () => {
         option: 2,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -74,7 +75,7 @@ const Identificationpanel = () => {
         option: 3,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -99,7 +100,7 @@ const Identificationpanel = () => {
         option: 4,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateNumber(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);

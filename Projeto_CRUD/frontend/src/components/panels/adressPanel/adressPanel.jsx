@@ -4,8 +4,8 @@ import { ButtonUpDate } from '../../Buttons';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import TextField from '@mui/material/TextField';
-import upDateData from '../../../utils/upDateData/upDateData';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
+import upDateString from '../../../utils/upDateData/upDateString';
 
 const Adresspanel = () => {
   const navigate = useNavigate();
@@ -23,7 +23,7 @@ const Adresspanel = () => {
         option: 5,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -48,7 +48,7 @@ const Adresspanel = () => {
         option: 6,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);
@@ -98,7 +98,7 @@ const Adresspanel = () => {
         option: 8,
       };
 
-      const response = await upDateData(objectData);
+      const response = await upDateString(objectData);
 
       if (response === false) {
         tokenTimeOut(navigate);

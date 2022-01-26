@@ -69,6 +69,5 @@ export const objectSqlInjectionsWords = [
     "mmer%",
     "%mmer",
     "1",
-    "'",
     "pg_sleep()"
 ]

@@ -1,7 +1,6 @@
 import baseUrl from "../baseUrl";
 import preAuth from "../Auth/preAuth";
 
-
 export default async function getMyDatas(){
     try {
         preAuth();

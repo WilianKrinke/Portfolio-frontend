@@ -5,6 +5,7 @@ function upDateData(app){
     app.route('/update-data')
         .post(async(req, res) => {
             try {
+                console.log(req.body)
                 const {encryptedData, option} = req.body
                 const data = decryptData(encryptedData)
                 const idUser = req.idUser[0]

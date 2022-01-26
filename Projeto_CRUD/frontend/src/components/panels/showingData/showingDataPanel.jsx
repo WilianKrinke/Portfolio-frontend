@@ -45,7 +45,7 @@ const Showingdatapanel = ({ userDatasObject }) => {
 
             <div className="div_birth" title={`${idade === null ? 'Data not Updated' : idade}`}>
               <TagP isNull={idade}>
-                <b>Birth:</b> {idade === null ? 'Data not Updated' : idade}
+                <b>Age:</b> {idade === null ? 'Data not Updated' : idade}
               </TagP>
             </div>
 
