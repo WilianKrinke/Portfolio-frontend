@@ -108,11 +108,11 @@ export const ContainerInfo = styled.article`
             position: relative;
             left: 60px;
             
-            
             @media screen and (max-width: 400px) {
                 flex-direction: column;
                 height: 90px;
-                left: 40px;
+                width: 100%;
+                position: static;
             }
             
             a{
