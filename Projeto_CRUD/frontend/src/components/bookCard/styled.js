@@ -51,13 +51,12 @@ export const ContainerToLike = styled.div`
     flex-direction: column;   
     border-radius: 0px 5px 5px 0px;
     background-color: #FE6B0A;
+    border: 1px solid #FE6B0A;
 
     @media screen and (max-width: 440px) {
         height: 550px;
     }
 
-    :hover{
-    }
 `
 
 export const DivIconLend = styled.div`

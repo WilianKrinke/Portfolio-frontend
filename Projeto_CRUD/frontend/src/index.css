@@ -119,8 +119,14 @@ input:-webkit-autofill:active {
   border: 1px solid #c2d6c1 !important;
   border-radius: 3px !important;
   background: #f9fff9 !important;
-  position: relative;
-  top: 60px;
+}
+
+@media screen and (max-width: 470px) {
+  .Toastify__toast--success {
+    border: 1px solid #c2d6c1 !important;
+    border-radius: 3px !important;
+    background: #f9fff9 !important;
+  }
 }
 
 /* body */

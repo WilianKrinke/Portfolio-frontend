@@ -9,6 +9,13 @@ export const ContainerCard = styled.article`
     height: 500px;
     margin: 10px;
     padding: 10px;
+    transition: all .3s ease-in-out;
+
+    :hover {
+        -webkit-box-shadow: 5px 7px 8px -1px rgba(0,0,0,0.66); 
+        box-shadow: 5px 7px 8px -1px rgba(0,0,0,0.66);
+        border: 1px solid transparent;
+    }
 
     @media screen and (max-width: 470px) {
         margin: 10px 0px;

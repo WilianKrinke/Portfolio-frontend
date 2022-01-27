@@ -3,7 +3,7 @@ import { GoArrowUp } from "react-icons/go";
 
 export const ScrollArrow = styled(GoArrowUp)`
     position: fixed;
-    right: 17px;
+    right: 20px;
     bottom: 53px;
     font-size: 52px;
     cursor: pointer;
@@ -12,7 +12,7 @@ export const ScrollArrow = styled(GoArrowUp)`
 
 export const Phrase = styled.p`
     position: fixed;
-    right: 30px;
+    right: 33px;
     bottom: 46px;
     font-size: 14px;
 `
