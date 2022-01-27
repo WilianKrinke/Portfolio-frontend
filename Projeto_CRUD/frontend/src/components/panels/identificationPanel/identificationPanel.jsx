@@ -100,7 +100,7 @@ const Identificationpanel = () => {
         option: 4,
       };
 
-      if (idadeState > '122') {
+      if (idadeState > 122) {
         throw new Error('Maximum human age passed, try gain');
       }
 

@@ -5,14 +5,15 @@ function upDateData(app){
     app.route('/update-data')
         .post(async(req, res) => {
             try {
-                const {encryptedData, option} = req.body
+                const {encryptedData, option, last_update} = req.body
                 const data = decryptData(encryptedData)
                 const idUser = req.idUser[0]
-
+                
                 const objectDatas = {
                     idUser,
                     data,
-                    option
+                    option,
+                    last_update
                 }   
 
                 const response = await controllerUpdateData(objectDatas)

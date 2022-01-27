@@ -1,8 +1,11 @@
+const lastUpdate = require('./lastUpdate')
 const upDateClass = require('./upDateClass')
 
 async function controllerUpdateData(objectDatas){
-    const {data,option,idUser} = objectDatas
+    const {data,option,idUser,last_update} = objectDatas
     const upDateObject = new upDateClass(idUser)
+
+    lastUpdate(idUser,last_update)
 
     switch (option) {
         case 1:

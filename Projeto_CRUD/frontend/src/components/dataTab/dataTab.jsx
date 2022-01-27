@@ -112,7 +112,7 @@ function DataTabs({ userDatasObject }) {
           sx={{ width: `${matches840w ? '360px' : '100%'}` }}
         >
           <Tab
-            label="Identification"
+            label="Show All Data"
             {...a11yProps(0)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -121,7 +121,7 @@ function DataTabs({ userDatasObject }) {
             }}
           />
           <Tab
-            label="Address"
+            label="Identification"
             {...a11yProps(1)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -130,7 +130,7 @@ function DataTabs({ userDatasObject }) {
             }}
           />
           <Tab
-            label="Contact"
+            label="Address"
             {...a11yProps(2)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -139,7 +139,7 @@ function DataTabs({ userDatasObject }) {
             }}
           />
           <Tab
-            label="Show All Data"
+            label="Contact"
             {...a11yProps(3)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -150,16 +150,16 @@ function DataTabs({ userDatasObject }) {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Identificationpanel objectUserIdentification={objectUserIdentification} />
+        <Showingdatapanel userDatasObject={userDatasObject} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Adresspanel objectUserAdress={objectUserAdress} />
+        <Identificationpanel objectUserIdentification={objectUserIdentification} />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Contactpanel objectUserContact={objectUserContact} />
+        <Adresspanel objectUserAdress={objectUserAdress} />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <Showingdatapanel userDatasObject={userDatasObject} />
+        <Contactpanel objectUserContact={objectUserContact} />
       </TabPanel>
     </Box>
   );

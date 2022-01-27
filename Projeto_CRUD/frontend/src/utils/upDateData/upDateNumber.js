@@ -1,3 +1,4 @@
+import { format } from "date-fns"
 import preAuth from "../Auth/preAuth"
 import baseUrl from "../baseUrl"
 import cryptUpdate from "../crypto/cryptUpdate"
@@ -6,6 +7,9 @@ import validAgeUser from "../validations/validAgeUser"
 export default async function upDateNumber(objectData){
     const {data, option} = objectData
 
+    const now = new Date()
+    const last_update = format(now, "dd 'de' MMMM 'de' yyyy', at' HH:mm")
+
     const {isValid} = validAgeUser(data)
     const encryptedData = cryptUpdate(data)
 
@@ -13,7 +17,8 @@ export default async function upDateNumber(objectData){
         preAuth()
         const response = await baseUrl.post('/update-data', {
             encryptedData,
-            option
+            option,
+            last_update
         })
 
         const {data} = response;

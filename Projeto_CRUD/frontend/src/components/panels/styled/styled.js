@@ -42,7 +42,7 @@ export const ContainerStyledShowDatas = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 270px;
     width: 100%;
 
@@ -61,13 +61,38 @@ export const ContainerStyledShowDatas = styled.div`
         word-break: break-word;
     }
 
+    .div_datas{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .div_lastupdate{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 77.7%;
+
+        button{
+            background-color: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            padding: 2px 5px;
+
+            
+        }
+    }
+
     .div_first, .div_second{
         display: flex;
         align-items: center;
         justify-content: space-evenly;
         flex-direction: column;
         min-height: 320px;
-        width: 45%;
+        width: 340px;
 
         @media screen and (max-width: 600px){
             width: 340px;
