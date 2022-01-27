@@ -20,7 +20,7 @@ function TabPanel(props) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
-      style={{ minHeight: `${matches840w === true && index === 3 ? '650px' : '280px'}` }}
+      style={{ minHeight: '280px' }}
     >
       {value === index && (
         <Box

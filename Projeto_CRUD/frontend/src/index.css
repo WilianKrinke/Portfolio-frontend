@@ -89,7 +89,7 @@ code {
 }
 
 .css-11n0r2k {
-  padding: 24px 0px !important;
+  padding: 0px 0px !important;
 }
 
 input:-webkit-autofill,
@@ -188,4 +188,14 @@ input:-webkit-autofill:active {
 
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
   border-color: #222222;
+}
+
+@media screen and (max-width: 470px) {
+  .MuiBox-root css-t9xfkt {
+    width: 360px !important;
+  }
+
+  .css-t9xfkt {
+    width: 360px !important;
+  }
 }

@@ -27,7 +27,7 @@ const Showingdatapanel = ({ userDatasObject }) => {
     <>
       <MainContainer>
         <ContainerStyledShowDatas>
-          <div className="div_lastupdate">
+          <div className="div_lastupdate_btn">
             <button onClick={handleRefresh}>Click to refresh datas</button>
           </div>
           <div className="div_datas">
@@ -117,7 +117,7 @@ const Showingdatapanel = ({ userDatasObject }) => {
               </div>
             </div>
           </div>
-          <div className="div_lastupdate">
+          <div className="div_lastupdate_p">
             <p>-Last update: {last_update}.</p>
           </div>
         </ContainerStyledShowDatas>

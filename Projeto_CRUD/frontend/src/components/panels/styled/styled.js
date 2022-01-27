@@ -8,11 +8,10 @@ export const MainContainer = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    text-align: center; 
-
+    text-align: center;
+    
     @media screen and (max-width: 600px) {
-        width: 100%;
-        height: 350px;
+        width: 360px;
     }
 `
 
@@ -45,11 +44,10 @@ export const ContainerStyledShowDatas = styled.div`
     flex-direction: column;
     min-height: 270px;
     width: 100%;
+    margin-top: 20px;
 
-    @media screen and (max-width: 600px){
-        flex-direction: column;
-        position: relative;
-        top: 150px;
+    @media screen and (max-width: 600px) {
+        width: 340px;
     }
 
     p{
@@ -63,9 +61,24 @@ export const ContainerStyledShowDatas = styled.div`
         justify-content: center;
         flex-direction: row;
         width: 100%;
+        height: 300px;
+
+        @media screen and (max-width: 600px) {
+            height: 650px;
+            width: 340px;
+            flex-direction: column;
+        }
     }
 
-    .div_lastupdate{
+    .div_lastupdate_p{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-direction: row;
+        width: 77.7%;
+    }
+
+    .div_lastupdate_btn{
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -81,9 +94,7 @@ export const ContainerStyledShowDatas = styled.div`
 
             :hover{
                 background-color: rgba(0, 0, 0, 0.06);
-            }
-
-            
+            }            
         }
     }
 
@@ -95,11 +106,10 @@ export const ContainerStyledShowDatas = styled.div`
         min-height: 320px;
         width: 340px;
 
-        @media screen and (max-width: 600px){
-            width: 340px;
-            min-height: 310px;
+        @media screen and (max-width: 600px) {
             justify-content: space-around;
         }
+
     }
 
     .div_name, .div_userName, .div_birth,  .div_adress{
@@ -141,9 +151,7 @@ export const ContainerStyledShowDatas = styled.div`
         }
     }
 
-    @media screen and (max-width: 600px) {
-        width: 340px;
-    }
+    
 `
 
 export const TagP = styled.p`
