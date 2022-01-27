@@ -76,6 +76,12 @@ export const ContainerStyledShowDatas = styled.div`
         justify-content: flex-start;
         flex-direction: row;
         width: 77.7%;
+        text-align:left;
+
+        @media screen and (max-width: 600px) {
+            width: 85%;
+        }
+
     }
 
     .div_lastupdate_btn{
