@@ -10,7 +10,7 @@ export default async function upDateString(objectData){
         const encryptedData = cryptUpdate(data)
 
         const now = new Date()
-        const last_update = format(now, "dd 'de' MMMM 'de' yyyy', at' HH:mm")
+        const last_update = format(now, "MMMM, dd, yyyy', at' HH:mm")
         
         
         if(isValid === true){

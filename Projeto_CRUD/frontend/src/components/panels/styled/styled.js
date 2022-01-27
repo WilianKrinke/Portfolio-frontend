@@ -52,10 +52,6 @@ export const ContainerStyledShowDatas = styled.div`
         top: 150px;
     }
 
-    b{
-        text-decoration: underline;
-    }
-
     p{
         font-size: 18px;
         word-break: break-word;
@@ -77,10 +73,15 @@ export const ContainerStyledShowDatas = styled.div`
         width: 77.7%;
 
         button{
-            background-color: rgba(0, 0, 0, 0.05);
+            background-color: rgba(0, 0, 0, 0.03);
             border: 1px solid rgba(0, 0, 0, 0.3);
             cursor: pointer;
             padding: 2px 5px;
+            transition: all .3s ease-in-out;
+
+            :hover{
+                background-color: rgba(0, 0, 0, 0.06);
+            }
 
             
         }

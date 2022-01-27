@@ -203,7 +203,7 @@ export const DivInfoLendBook = styled.div`
     transition: background-color .3s ease-in-out;
 
     :hover{
-        background-color: ${props => props.isSameDate ? "#FE6B0A" : props.isBookLate ? "#FE6B0A" : "transparent"};
+        background-color: ${props => props.isSameDate ? "transparent" : props.isBookLate ? "#FE6B0A" : "transparent"};
     }
 
     p{

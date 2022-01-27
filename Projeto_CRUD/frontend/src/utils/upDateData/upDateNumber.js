@@ -8,7 +8,7 @@ export default async function upDateNumber(objectData){
     const {data, option} = objectData
 
     const now = new Date()
-    const last_update = format(now, "dd 'de' MMMM 'de' yyyy', at' HH:mm")
+    const last_update = format(now, "MMMM, dd, yyyy', at' HH:mm")
 
     const {isValid} = validAgeUser(data)
     const encryptedData = cryptUpdate(data)
