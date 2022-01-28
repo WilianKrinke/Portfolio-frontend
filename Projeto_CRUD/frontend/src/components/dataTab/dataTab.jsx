@@ -121,7 +121,7 @@ function DataTabs({ userDatasObject }) {
             }}
           />
           <Tab
-            label="Identification"
+            label="Personal"
             {...a11yProps(1)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,

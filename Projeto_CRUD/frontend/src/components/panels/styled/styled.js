@@ -79,7 +79,7 @@ export const ContainerStyledShowDatas = styled.div`
         text-align:left;
 
         @media screen and (max-width: 600px) {
-            width: 85%;
+            width: 80%;
         }
 
     }
