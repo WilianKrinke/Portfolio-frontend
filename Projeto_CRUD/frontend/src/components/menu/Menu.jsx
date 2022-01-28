@@ -49,7 +49,7 @@ const Menu = ({ user = 'Loading...' }) => {
               <Link to="/my-data">My Data</Link>
             </li>
             <li>
-              <Link to="#">Contact</Link>
+              <Link to="/contact">Contact Us</Link>
             </li>
             <li>
               <ButtonLogOut onClick={() => logout(navigate)}>Logout</ButtonLogOut>

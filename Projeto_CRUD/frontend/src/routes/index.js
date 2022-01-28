@@ -6,8 +6,9 @@ import ForgetPassword from '../pages/forgetPassword/forgetPassword'
 import RedefinePass from '../pages/redefinePass/redefinePass'
 import MyBorrowedBooks from '../pages/myBorrowedBooks/myBorrowedBooks';
 import Myfavorites from '../pages/myFavorites/myFavorites';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Mydata from '../pages/myData/myData';
+import ContactPage from '../pages/contact/contactPage'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const index = () => {
   return (
@@ -18,6 +19,7 @@ const index = () => {
         <Route exact path='/my-borrowed-books' element={<MyBorrowedBooks />} />
         <Route exact path='/my-favorites' element={<Myfavorites />}/>
         <Route exact path='/my-data' element={<Mydata />} />
+        <Route exact path='/contact' element={<ContactPage />} />
         <Route exact path='/forget-pass' element={<ForgetPassword />} />
         <Route exact path='/reset-pass/:token/:idUser' element={<RedefinePass />} />
         <Route exact path='*' element={<NotFound/>} />

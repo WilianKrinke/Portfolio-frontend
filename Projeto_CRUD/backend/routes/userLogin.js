@@ -6,8 +6,7 @@ const userLogin = (app) => {
             try { 
                 const response = await login(req.body)
                 res.send(response)
-            } catch (e) {
-                const error = new Error(e)
+            } catch (error) {
                 console.log(error.message)          
                 res.status(500).send(error.message)
             }

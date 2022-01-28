@@ -16,6 +16,7 @@ const routeGetMyBorrowedBooks = require('./routes/getMyBorrowedBooks')
 const routeGetMyFavorites = require('./routes/getMyFavorites')
 const routeGetMyDatas = require('./routes/getMyDatas')
 const routeUpdateData = require('./routes/upDateData')
+const routeAccessUserData = require('./routes/userAccessData')
 const sanitizationReqBody = require('./validations/sanitization');
 
 const cors =  require('cors');
@@ -44,6 +45,7 @@ routeGetMyBorrowedBooks(app)
 routeGetMyFavorites(app)
 routeGetMyDatas(app)
 routeUpdateData(app)
+routeAccessUserData(app)
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')
