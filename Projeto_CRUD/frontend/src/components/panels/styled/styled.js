@@ -18,13 +18,13 @@ export const MainContainer = styled.div`
 export const ContainerInput = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
-    height: 100px;
+    height: 366px;
     width: 50%;  
 
     @media screen and (max-width: 600px) {
-        height: 100%;
+        height: 375px;
         width: 340px;
     }
 `

@@ -189,14 +189,3 @@ input:-webkit-autofill:active {
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
   border-color: #222222;
 }
-
-@media screen and (max-width: 470px) {
-  .MuiBox-root css-t9xfkt {
-    width: 360px !important;
-  }
-
-  .css-t9xfkt {
-    width: 360px !important;
-    height: 448px !important;
-  }
-}
