@@ -12,6 +12,8 @@ import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import userContact from '../../utils/userContact/userContact';
 import { SectionContainer } from '../myBorrowedBooks/styled';
 import { ArticleContainer, DivPhysicalAddress, FormStyled, IconLoading } from './styled';
+import Autocomplete from '@mui/material/Autocomplete';
+import TextField from '@mui/material/TextField';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
@@ -64,6 +66,20 @@ const ContactPage = () => {
     }
   }
 
+  const arrSubjects = [
+    { subject: 'Subject1' },
+    { subject: 'Subject2' },
+    { subject: 'Subject3' },
+    { subject: 'Subject4' },
+    { subject: 'Subject5' },
+    { subject: 'Subject6' },
+  ];
+
+  const defaultProps = {
+    options: arrSubjects,
+    getOptionLabel: (option) => option.subject,
+  };
+
   return (
     <>
       {loadingState ? (
@@ -111,8 +127,18 @@ const ContactPage = () => {
                       <b>To:</b> {emailSupportState}
                     </p>
                   </div>
+                  <div className="div_select_subject">
+                    <Autocomplete
+                      {...defaultProps}
+                      id="auto-complete"
+                      autoComplete
+                      renderInput={(params) => <TextField {...params} label="Subject" variant="standard" />}
+                    />
+                  </div>
                   <div className="div_message">
-                    <label htmlFor="textarea">Message:</label>
+                    <label htmlFor="textarea">
+                      <b>Message: </b>
+                    </label>
                     <textarea
                       name="textarea"
                       id="textarea"

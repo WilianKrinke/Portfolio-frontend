@@ -1,9 +1,8 @@
 const mailer = require('./mailer')
 
-function sendEmail(objectResponse){
-    const {email, token, idUser} = objectResponse;
-
+function sendEmail(objectResponse){    
     try {
+        const {email, token, idUser} = objectResponse;
         mailer.sendMail({
             from: email,
             to: email,

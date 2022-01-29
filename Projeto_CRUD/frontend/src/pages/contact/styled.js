@@ -12,9 +12,9 @@ export const ArticleContainer = styled.article`
 `
 
 export const DivPhysicalAddress = styled.div`
-    height: 400px;
+    height: 430px;
     width: 50%;
-    padding: 10px;
+    padding: 10px 40px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -50,9 +50,9 @@ export const DivPhysicalAddress = styled.div`
 
 export const FormStyled = styled.form`
     border-left: 1px solid rgba(0, 0, 0, 0.3);    
-    height: 400px;
+    height: 430px;
     width: 50%;
-    padding: 10px;
+    padding: 10px 40px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -73,6 +73,11 @@ export const FormStyled = styled.form`
     }
 
     .div_to{        
+        width: 100%;
+        text-align: left;
+    }
+
+    .div_select_subject{
         width: 100%;
         text-align: left;
     }
@@ -99,6 +104,6 @@ export const FormStyled = styled.form`
 export const IconLoading = styled(AiOutlineLoading3Quarters)`
     font-size: 18px;
     position: relative;
-    top:3px;
+    top: 3px;
     animation: ${RotateLoading} .75s linear infinite running;
 `
