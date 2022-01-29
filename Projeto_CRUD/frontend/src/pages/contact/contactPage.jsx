@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ButtonSendContact } from '../../components/Buttons';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
@@ -8,15 +9,17 @@ import Menu from '../../components/menu/Menu';
 import { DivLoading, MainStyled } from '../../primeComponents';
 import acessUser from '../../utils/accessUser/acessUser';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import userContact from '../../utils/userContact/userContact';
 import { SectionContainer } from '../myBorrowedBooks/styled';
-import { ArticleContainer, DivPhysicalAddress, FormStyled } from './styled';
+import { ArticleContainer, DivPhysicalAddress, FormStyled, IconLoading } from './styled';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
   const [loadingButtonState, setLoadingButtonState] = useState(false);
   const [userNameState, setUserNameState] = useState('');
-  const [emailState, setEmailState] = useState('');
   const [messageState, setMessageState] = useState('');
+  const [emailState, setEmailState] = useState('');
+  const [emailSupportState] = useState('support_contact@email.com');
 
   const navigate = useNavigate();
 
@@ -44,6 +47,23 @@ const ContactPage = () => {
     setMessageState(e.target.value);
   }
 
+  async function handleSubmit(e) {
+    try {
+      e.preventDefault();
+      setLoadingButtonState(true);
+
+      const objectDatas = {
+        emailFrom: emailState,
+        emailTo: emailSupportState,
+        message: messageState,
+      };
+
+      const response = await userContact(objectDatas);
+    } catch (error) {
+      //
+    }
+  }
+
   return (
     <>
       {loadingState ? (
@@ -59,7 +79,7 @@ const ContactPage = () => {
               <ArticleContainer>
                 <DivPhysicalAddress>
                   <div className="div_title">
-                    <h2>Contact</h2>
+                    <h2>Personal Contact</h2>
                   </div>
                   <div className="div_adress">
                     <address>Lorem Ipsum Street, Lorem Ipsum District, Lorem Ipsum City</address>
@@ -67,25 +87,28 @@ const ContactPage = () => {
                     <p>Lorem-E-mail@email.com</p>
                     <iframe
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58879.017085215884!2d-46.933618992296786!3d-22.730524619711403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8dea2fead7493%3A0xaae359ef9cc88d5f!2sPedreira%2C%20SP%2C%2013920-000!5e0!3m2!1spt-BR!2sbr!4v1643423901136!5m2!1spt-BR!2sbr"
-                      width="600"
-                      height="200"
-                      style={{ border: '1px solid rgba(0, 0, 0, 0.2)', borderRadius: '2px' }}
+                      style={{
+                        border: '1px solid rgba(0, 0, 0, 0.2)',
+                        borderRadius: '2px',
+                        width: '100%',
+                        height: '200px',
+                      }}
                       loading="lazy"
                     ></iframe>
                   </div>
                 </DivPhysicalAddress>
-                <FormStyled>
+                <FormStyled onSubmit={(e) => handleSubmit(e)}>
                   <div className="div_title">
                     <h2>Message Us</h2>
                   </div>
                   <div className="div_from">
                     <p>
-                      <b>From:</b> personalemail@gmail.com
+                      <b>From:</b> personalemail@gmail.com/{emailState}
                     </p>
                   </div>
                   <div className="div_to">
                     <p>
-                      <b>To:</b> support_contact@email.com
+                      <b>To:</b> {emailSupportState}
                     </p>
                   </div>
                   <div className="div_message">
@@ -98,10 +121,13 @@ const ContactPage = () => {
                       className="textarea"
                       onChange={(e) => handleMessage(e)}
                       maxLength={240}
+                      required
                     ></textarea>
                     <span>{messageState.length}/240 characters</span>
                   </div>
-                  <div className="div_button"></div>
+                  <div className="div_button">
+                    <ButtonSendContact>{loadingButtonState ? <IconLoading /> : 'Send'}</ButtonSendContact>
+                  </div>
                 </FormStyled>
               </ArticleContainer>
             </SectionContainer>

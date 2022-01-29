@@ -253,5 +253,25 @@ export const ButtonUpDate = styled.button`
   }
 `
 
+export const ButtonSendContact = styled.button`
+  width: 100%;
+  height: 35px;
+  border-radius: 5px;
+  background-color: transparent;
+  outline: none;
+  font-size: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.5); 
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: #222222;
+
+  :hover{
+        background: #030103;
+        color: #fff;
+        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+
+`
+
 
 

@@ -1,4 +1,6 @@
 import styled from 'styled-components'
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { RotateLoading } from './keyframes';
 
 export const ArticleContainer = styled.article`    
     height: 400px;
@@ -21,8 +23,7 @@ export const DivPhysicalAddress = styled.div`
 
     .div_title{
         width: 100%;
-        text-align: center;
-        
+        text-align: center;        
 
         h2{
             letter-spacing: 3px;
@@ -36,12 +37,19 @@ export const DivPhysicalAddress = styled.div`
         align-items: center;
         justify-content: space-around;
         flex-direction: column;
+
+        p{
+            font-size: 16px;
+        }
+
+        address{
+            font-size: 18px;
+        }
     }
 `
 
 export const FormStyled = styled.form`
-    border-left: 1px solid rgba(0, 0, 0, 0.3);
-    border: 1px solid;
+    border-left: 1px solid rgba(0, 0, 0, 0.3);    
     height: 400px;
     width: 50%;
     padding: 10px;
@@ -50,36 +58,47 @@ export const FormStyled = styled.form`
     justify-content: space-around;
     flex-direction: column;
 
-    .div_title{
-        border: 1px solid;
+    p,b{
+        font-size: 16px;
+    }
+
+    .div_title{        
         width: 100%;
         text-align: center;
     }
 
-    .div_from{
-        border: 1px solid;
+    .div_from{        
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
-    .div_to{
-        border: 1px solid;
+    .div_to{        
         width: 100%;
-        text-align: center;
+        text-align: left;
     }
 
-    .div_message{
-        border: 1px solid;
+    .div_message{        
         width: 100%;
         text-align: center;
         display: flex;
         align-items: flex-start;
         justify-content: space-around;
         flex-direction: column;
+
+        textarea{
+            width: 100%;
+            resize: none;
+        }
     }
 
     .div_button{
-        border: 1px solid;
         width: 100%;
     }
+`
+
+export const IconLoading = styled(AiOutlineLoading3Quarters)`
+    font-size: 18px;
+    position: relative;
+    top:3px;
+    animation: ${RotateLoading} .75s linear infinite running;
 `
