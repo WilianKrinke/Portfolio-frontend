@@ -52,13 +52,13 @@ const ContactPage = () => {
       e.preventDefault();
       setLoadingButtonState(true);
 
-      const objectDatas = {
+      const objectMessage = {
         emailFrom: emailState,
         emailTo: emailSupportState,
         message: messageState,
       };
 
-      const response = await userContact(objectDatas);
+      const response = await userContact(objectMessage);
     } catch (error) {
       //
     }
