@@ -16,6 +16,7 @@ const ContactPage = () => {
   const [loadingButtonState, setLoadingButtonState] = useState(false);
   const [userNameState, setUserNameState] = useState('');
   const [emailState, setEmailState] = useState('');
+  const [messageState, setMessageState] = useState('');
 
   const navigate = useNavigate();
 
@@ -38,6 +39,10 @@ const ContactPage = () => {
       }
     })();
   }, []);
+
+  function handleMessage(e) {
+    setMessageState(e.target.value);
+  }
 
   return (
     <>
@@ -75,7 +80,7 @@ const ContactPage = () => {
                   </div>
                   <div className="div_from">
                     <p>
-                      <b>From:</b> {emailState}
+                      <b>From:</b> personalemail@gmail.com
                     </p>
                   </div>
                   <div className="div_to">
@@ -83,7 +88,19 @@ const ContactPage = () => {
                       <b>To:</b> support_contact@email.com
                     </p>
                   </div>
-                  <div className="div_message"></div>
+                  <div className="div_message">
+                    <label htmlFor="textarea">Message:</label>
+                    <textarea
+                      name="textarea"
+                      id="textarea"
+                      cols="30"
+                      rows="10"
+                      className="textarea"
+                      onChange={(e) => handleMessage(e)}
+                      maxLength={240}
+                    ></textarea>
+                    <span>{messageState.length}/240 characters</span>
+                  </div>
                   <div className="div_button"></div>
                 </FormStyled>
               </ArticleContainer>

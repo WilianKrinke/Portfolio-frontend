@@ -72,6 +72,10 @@ export const FormStyled = styled.form`
         border: 1px solid;
         width: 100%;
         text-align: center;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-around;
+        flex-direction: column;
     }
 
     .div_button{
