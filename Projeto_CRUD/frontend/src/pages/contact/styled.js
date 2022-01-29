@@ -45,8 +45,36 @@ export const FormStyled = styled.form`
     height: 400px;
     width: 50%;
     padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+
+    .div_title{
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+    }
 
     .div_from{
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+    }
+
+    .div_to{
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+    }
+
+    .div_message{
+        border: 1px solid;
+        width: 100%;
+        text-align: center;
+    }
+
+    .div_button{
         border: 1px solid;
         width: 100%;
     }

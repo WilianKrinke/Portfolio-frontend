@@ -15,6 +15,7 @@ const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
   const [loadingButtonState, setLoadingButtonState] = useState(false);
   const [userNameState, setUserNameState] = useState('');
+  const [emailState, setEmailState] = useState('');
 
   const navigate = useNavigate();
 
@@ -28,6 +29,7 @@ const ContactPage = () => {
         } else {
           const { userName, email } = response;
           setUserNameState(userName);
+          setEmailState(email);
           setloadingState(false);
         }
       } catch (error) {
@@ -68,8 +70,21 @@ const ContactPage = () => {
                   </div>
                 </DivPhysicalAddress>
                 <FormStyled>
-                  <div className="div_from"></div>
-                  <div className="div_"></div>
+                  <div className="div_title">
+                    <h2>Message Us</h2>
+                  </div>
+                  <div className="div_from">
+                    <p>
+                      <b>From:</b> {emailState}
+                    </p>
+                  </div>
+                  <div className="div_to">
+                    <p>
+                      <b>To:</b> support_contact@email.com
+                    </p>
+                  </div>
+                  <div className="div_message"></div>
+                  <div className="div_button"></div>
                 </FormStyled>
               </ArticleContainer>
             </SectionContainer>
