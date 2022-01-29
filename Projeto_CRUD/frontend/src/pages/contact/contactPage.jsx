@@ -12,6 +12,7 @@ import { SectionContainer } from '../myBorrowedBooks/styled';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
+  const [loadingButtonState, setLoadingButtonState] = useState(false);
   const [userNameState, setUserNameState] = useState('');
 
   const navigate = useNavigate();
@@ -29,7 +30,8 @@ const ContactPage = () => {
           setloadingState(false);
         }
       } catch (error) {
-        //
+        console.log(error.message);
+        //Página de Erro
       }
     })();
   }, []);
