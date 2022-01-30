@@ -9,6 +9,7 @@ import Myfavorites from '../pages/myFavorites/myFavorites';
 import Mydata from '../pages/myData/myData';
 import ContactPage from '../pages/contact/contactPage'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Errorpage from '../pages/Errors/errorPage';
 
 const index = () => {
   return (
@@ -22,6 +23,7 @@ const index = () => {
         <Route exact path='/contact' element={<ContactPage />} />
         <Route exact path='/forget-pass' element={<ForgetPassword />} />
         <Route exact path='/reset-pass/:token/:idUser' element={<RedefinePass />} />
+        <Route exact path='/error-page/:error' element={<Errorpage/>} />
         <Route exact path='*' element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
