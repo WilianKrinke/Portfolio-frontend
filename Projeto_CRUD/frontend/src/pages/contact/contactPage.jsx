@@ -69,10 +69,12 @@ const ContactPage = () => {
         tokenTimeOut(navigate);
       } else {
         setLoadingButtonState(false);
+        document.getElementById('textarea').value = '';
         toast.success('Message Sent Successfully, Thank you.');
       }
     } catch (error) {
-      //
+      //Página de error
+      console.log(error.message);
     }
   }
 
