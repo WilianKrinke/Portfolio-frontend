@@ -4,12 +4,13 @@ import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import TextField from '@mui/material/TextField';
 import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import { BoxStyled, Container, ContainerInfo, ForgetPassMain } from './styled';
 
 const ForgetPassword = () => {
   const [userName, setuserName] = useState('');
+  const navigate = useNavigate();
 
   async function handleForm(e) {
     e.preventDefault();
@@ -24,7 +25,7 @@ const ForgetPassword = () => {
         toast.warn('Something wrong, contact the administrator');
       }
     } catch (error) {
-      toast.warn('Something wrong, contact the administrator');
+      navigate(`/error-page/${error.message}`);
     }
   }
 

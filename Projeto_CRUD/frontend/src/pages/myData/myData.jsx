@@ -32,9 +32,8 @@ const Mydata = () => {
           setUserDatasObject(userDatas);
           setloadingState(false);
         }
-      } catch (e) {
-        const error = new Error(e);
-        console.log(error.message);
+      } catch (error) {
+        navigate(`/error-page/${error.message}`);
       }
     })();
   }, []);

@@ -45,8 +45,7 @@ const ModalLendBook = ({
         throw new Error('Client Error - handleLend');
       }
     } catch (error) {
-      console.log(error.message);
-      //para a página de erro
+      navigate(`/error-page/${error.message}`);
     }
   }
 
@@ -81,7 +80,6 @@ const ModalLendBook = ({
 
   const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
   const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 1), 'dd-MM-yyyy');
-  //mudar posteriomente para tres dias uteis
 
   return (
     <>

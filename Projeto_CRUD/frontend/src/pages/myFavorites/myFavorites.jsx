@@ -40,8 +40,7 @@ const Myfavorites = () => {
           setloadingState(false);
         }
       } catch (error) {
-        console.log(error);
-        //Enviar para página de erro
+        navigate(`/error-page/${error.message}`);
       }
     })();
   }, []);

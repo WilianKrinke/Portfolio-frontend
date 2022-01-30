@@ -12,7 +12,7 @@ export const StyledSection = styled.section`
         height: 150px;
     }
 
-    a{
+    p{
         width: 150px;
         height: 40px;
         border-radius: 5px;

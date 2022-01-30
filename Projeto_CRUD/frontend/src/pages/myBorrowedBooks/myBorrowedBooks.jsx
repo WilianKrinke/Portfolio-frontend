@@ -39,8 +39,7 @@ const MyBorrowedBooks = () => {
           setloadingState(false);
         }
       } catch (error) {
-        console.log(error);
-        //Para página de erro
+        navigate(`/error-page/${error.message}`);
       }
     })();
   }, []);

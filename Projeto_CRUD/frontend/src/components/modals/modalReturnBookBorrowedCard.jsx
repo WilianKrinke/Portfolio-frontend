@@ -29,8 +29,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
         throw new Error('Client Error - handleReturnBook');
       }
     } catch (error) {
-      console.log(error);
-      //para a página de erro
+      navigate(`/error-page/${error.message}`);
     }
   }
 

@@ -41,8 +41,7 @@ const ContactPage = () => {
           setloadingState(false);
         }
       } catch (error) {
-        console.log(error.message);
-        //Página de Erro
+        navigate(`/error-page/${error.message}`);
       }
     })();
   }, []);
@@ -73,8 +72,7 @@ const ContactPage = () => {
         toast.success('Message Sent Successfully, Thank you.');
       }
     } catch (error) {
-      //Página de error
-      console.log(error.message);
+      navigate(`/error-page/${error.message}`);
     }
   }
 
