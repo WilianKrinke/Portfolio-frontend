@@ -14,12 +14,14 @@ import { SectionContainer } from '../myBorrowedBooks/styled';
 import { ArticleContainer, DivPhysicalAddress, FormStyled, IconLoading } from './styled';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
+import { toast } from 'react-toastify';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
   const [loadingButtonState, setLoadingButtonState] = useState(false);
   const [userNameState, setUserNameState] = useState('');
   const [messageState, setMessageState] = useState('');
+  const [subjectState, setSubjectState] = useState('');
   const [emailState, setEmailState] = useState('');
   const [emailSupportState] = useState('support_contact@email.com');
 
@@ -57,27 +59,40 @@ const ContactPage = () => {
       const objectMessage = {
         emailFrom: emailState,
         emailTo: emailSupportState,
+        subject: subjectState.Subject,
         message: messageState,
       };
 
       const response = await userContact(objectMessage);
+
+      if (response === false) {
+        tokenTimeOut(navigate);
+      } else {
+        setLoadingButtonState(false);
+        toast.success('Message Sent Successfully, Thank you.');
+      }
     } catch (error) {
       //
     }
   }
 
   const arrSubjects = [
-    { subject: 'Subject1' },
-    { subject: 'Subject2' },
-    { subject: 'Subject3' },
-    { subject: 'Subject4' },
-    { subject: 'Subject5' },
-    { subject: 'Subject6' },
+    { Subject: 'System Errors' },
+    { Subject: 'Book Loan' },
+    { Subject: 'Favorites' },
+    { Subject: 'Website Usability' },
+    { Subject: 'Website Colors' },
+    { Subject: 'Passwords' },
+    { Subject: 'Login' },
   ];
 
   const defaultProps = {
     options: arrSubjects,
-    getOptionLabel: (option) => option.subject,
+    getOptionLabel: (option) => option.Subject,
+  };
+
+  const flatProps = {
+    options: arrSubjects.map((option) => option.Subject),
   };
 
   return (
@@ -131,8 +146,11 @@ const ContactPage = () => {
                     <Autocomplete
                       {...defaultProps}
                       id="auto-complete"
+                      isOptionEqualToValue={(option, value) => option.id === value.id}
                       autoComplete
-                      renderInput={(params) => <TextField {...params} label="Subject" variant="standard" />}
+                      includeInputInList
+                      renderInput={(params) => <TextField {...params} label="Subjects" variant="standard" />}
+                      onChange={(event, value) => setSubjectState(value)}
                     />
                   </div>
                   <div className="div_message">

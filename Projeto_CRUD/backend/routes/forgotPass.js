@@ -14,25 +14,20 @@ function forgotPass(app){
                 if (userHaveTokenValid === false) {
                     const token = tokenToEmail(response)    
                     const objectResponse = await persistDatas(response,token)                    
-                    const wasSent = sendEmail(objectResponse)
+                    const wasSent = await sendEmail(objectResponse)
     
-                    const {email} = objectResponse
-    
-                    if (wasSent) {
-                        res.status(200).send({
-                            wasSent,
-                            email
-                        })
-                    } else {
-                        res.status(400).send('Unable to send email for password reset')
-                    }
+                    const {email} = objectResponse    
+                    
+                    res.status(200).send({
+                        wasSent,
+                        email
+                    })                    
 
                 } else {
                     res.status(400).send('This user already has a call in progress for password change')
                 }
 
-            } catch (e) {
-                const error = new Error(e)
+            } catch (error) {
                 console.log(error.message)          
                 res.status(500).send(error.message)
             }
