@@ -104,3 +104,14 @@ export const ContainerLinks = styled.nav`
         }
     }
 `
+
+export const ContainerIsUpDated = styled.div`
+    width: 100%;
+    text-align: center;
+
+    p{
+        color: #FE6B0A;
+        font-size: 16px;
+    }
+
+`

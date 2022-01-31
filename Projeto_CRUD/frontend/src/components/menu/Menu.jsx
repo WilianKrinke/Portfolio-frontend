@@ -1,15 +1,39 @@
-import React, { useState, memo } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useState, memo, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
+import { ContainerIsUpDated, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
 import { ButtonLogOut } from '../Buttons';
 import { useNavigate } from 'react-router';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
+import isUpdateDatas from '../../utils/isUpdateDatas/isUpdateDatas';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 
 const Menu = ({ user = 'Loading...' }) => {
   const [isOpen, setisOpen] = useState(false);
+  const [isUpDatedDatasState, setisUpDatedDatasState] = useState(true);
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await isUpdateDatas();
+        const { isUpDated } = response;
+
+        if (response === false) {
+          tokenTimeOut(navigate);
+        }
+
+        if (isUpDated === false) {
+          setisUpDatedDatasState(false);
+        }
+      } catch (error) {
+        navigate(`/error-page/${error.message}`);
+      }
+    })();
+  }, []);
 
   const closeMenu = () => {
     setisOpen(false);
@@ -56,6 +80,8 @@ const Menu = ({ user = 'Loading...' }) => {
             </li>
           </ul>
         </ContainerLinks>
+
+        <ContainerIsUpDated>{isUpDatedDatasState === false && <p>Your Data Is Not Up to Date</p>}</ContainerIsUpDated>
       </ContainerMenu>
     </>
   );

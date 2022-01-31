@@ -18,6 +18,7 @@ const routeGetMyDatas = require('./routes/getMyDatas')
 const routeUpdateData = require('./routes/upDateData')
 const routeAccessUserData = require('./routes/userAccessData')
 const routeContactMessageIntern = require('./routes/contactMessage')
+const routeIsUpDateDatas = require('./routes/isUpDateDatas')
 const sanitizationReqBody = require('./validations/sanitization');
 
 const cors =  require('cors');
@@ -46,6 +47,7 @@ routeGetMyBorrowedBooks(app)
 routeGetMyFavorites(app)
 routeGetMyDatas(app)
 routeUpdateData(app)
+routeIsUpDateDatas(app)
 routeAccessUserData(app)
 routeContactMessageIntern(app)
 
