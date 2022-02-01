@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import { MainStyled } from '../../primeComponents'
 
-export const BookListMain = styled(MainStyled)`
+export const BookListMain = styled.main`
+    max-width: 100vw;
     min-height: 300px;
+    background-color: #F9FFF9;      
     display: flex;
     align-items: center;
     justify-content: center;

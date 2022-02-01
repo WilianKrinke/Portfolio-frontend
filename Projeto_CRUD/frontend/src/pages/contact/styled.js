@@ -2,6 +2,12 @@ import styled from 'styled-components'
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { RotateLoading } from './keyframes';
 
+export const ContactMain= styled.main`
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: #F9FFF9;
+`
+
 export const ArticleContainer = styled.article`    
     min-height: 430px;
     width: 100%;

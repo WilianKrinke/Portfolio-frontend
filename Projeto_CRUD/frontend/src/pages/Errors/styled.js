@@ -1,6 +1,12 @@
 import styled from 'styled-components'
 import { Pulse } from '../../components/Buttons/keyframes'
 
+export const ErrorMainStyled = styled.main`
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: #F9FFF9;
+`
+
 export const StyledSection = styled.section`
     display: flex;
     align-items: center;

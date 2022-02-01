@@ -1,8 +1,9 @@
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
-import {MainStyled} from '../../primeComponents/index'
 
-export const HomeMain = styled(MainStyled)`
+export const HomeMain = styled.main`
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: #F9FFF9;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -35,11 +36,11 @@ export const SectForm = styled.section`
     width: 45%;
     height: 60vh;
     padding: 10px;
-    background-color: ${pattern_colors.strong_color};
+    background-color: #FE6B0A;
     border-radius: 0px 5px 5px 0px;
-    border-bottom: 1px solid ${pattern_colors.borders_color};
-    border-top: 1px solid ${pattern_colors.borders_color};
-    border-right: 1px solid ${pattern_colors.borders_color};
+    border-bottom: 1px solid #F3BEF7;
+    border-top: 1px solid #F3BEF7;
+    border-right: 1px solid #F3BEF7;
     transition: all .3s ease-in-out;
     
     @media screen and (max-width: 750px) {
@@ -89,7 +90,7 @@ export const ArticleLogin = styled.article`
     justify-content: center;
     width: 100%;
     height: 100%;
-    border: ${pattern_colors.intern_div_border};
+    border: 1px solid rgba(0, 0, 0, 0.3);
 `
 
 export const ArticleSignUp = styled.article`

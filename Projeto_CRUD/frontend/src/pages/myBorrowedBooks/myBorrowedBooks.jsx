@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DivLoading, MainStyled } from '../../primeComponents';
-import { SectionContainer } from './styled';
+import { DivLoading } from '../../components/loading/DivLoading';
+import { BorrowMain, SectionContainer } from './styled';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
@@ -54,7 +54,7 @@ const MyBorrowedBooks = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Borrowed Books" />
-          <MainStyled>
+          <BorrowMain>
             <SectionContainer>
               {noBookData ? (
                 <Lottienodata word="Borrowings" />
@@ -65,7 +65,7 @@ const MyBorrowedBooks = () => {
               )}
             </SectionContainer>
             <Scrolltotop />
-          </MainStyled>
+          </BorrowMain>
           <Letterfooter />
         </>
       )}

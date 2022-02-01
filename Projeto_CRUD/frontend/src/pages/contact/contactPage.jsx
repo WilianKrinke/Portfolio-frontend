@@ -6,15 +6,15 @@ import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
-import { DivLoading, MainStyled } from '../../primeComponents';
 import acessUser from '../../utils/accessUser/acessUser';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import userContact from '../../utils/userContact/userContact';
 import { SectionContainer } from '../myBorrowedBooks/styled';
-import { ArticleContainer, DivPhysicalAddress, FormStyled, IconLoading } from './styled';
+import { ArticleContainer, ContactMain, DivPhysicalAddress, FormStyled, IconLoading } from './styled';
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { toast } from 'react-toastify';
+import { DivLoading } from '../../components/loading/DivLoading';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
@@ -105,7 +105,7 @@ const ContactPage = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="Contact Us" />
-          <MainStyled>
+          <ContactMain>
             <SectionContainer>
               <ArticleContainer>
                 <DivPhysicalAddress>
@@ -175,7 +175,7 @@ const ContactPage = () => {
                 </FormStyled>
               </ArticleContainer>
             </SectionContainer>
-          </MainStyled>
+          </ContactMain>
           <LetterFooter />
         </>
       )}

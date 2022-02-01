@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DivLoading } from '../../primeComponents';
+import { DivLoading } from '../../components/loading/DivLoading';
 import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';

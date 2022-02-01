@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DivLoading, MainStyled } from '../../primeComponents';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
@@ -9,7 +8,8 @@ import Menu from '../../components/menu/Menu';
 import getMyDatas from '../../utils/getMyDatas/getMyDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import DataTabs from '../../components/dataTab/dataTab';
-import { ArticleContainer, SectionContainer } from './styled';
+import { ArticleContainer, MyDataMain, SectionContainer } from './styled';
+import { DivLoading } from '../../components/loading/DivLoading';
 
 const Mydata = () => {
   const navigate = useNavigate();
@@ -48,13 +48,13 @@ const Mydata = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Datas" />
-          <MainStyled>
+          <MyDataMain>
             <SectionContainer>
               <ArticleContainer>
                 <DataTabs userDatasObject={userDatasObject} />
               </ArticleContainer>
             </SectionContainer>
-          </MainStyled>
+          </MyDataMain>
           <LetterFooter />
         </>
       )}

@@ -1,10 +1,9 @@
 import React from 'react';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
-import { MainStyled } from '../../primeComponents';
 import { useParams } from 'react-router-dom';
 import LottieAlert from '../../components/lottieAnimations/lottieError';
-import { StyledSection } from './styled';
+import { ErrorMainStyled, StyledSection } from './styled';
 
 const Errorpage = () => {
   const { error } = useParams();
@@ -17,13 +16,13 @@ const Errorpage = () => {
   return (
     <>
       <Letterheader phrase="Error" />
-      <MainStyled>
+      <ErrorMainStyled>
         <StyledSection>
           <h3>Error: {error}</h3>
           <p onClick={handleBack}>Go Back</p>
         </StyledSection>
         <LottieAlert />
-      </MainStyled>
+      </ErrorMainStyled>
       <LetterFooter />
     </>
   );

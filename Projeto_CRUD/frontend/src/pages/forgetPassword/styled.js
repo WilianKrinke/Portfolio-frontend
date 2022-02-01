@@ -65,10 +65,7 @@ export const ContainerInfo = styled.article`
     align-items: center;
     flex-direction: column; 
     transition: border .3s ease-in-out;
-    
-    :hover{
-        border: 1px solid #FE6B0A;
-    }
+
 
     .container_disclaimer{
         width: 420px; 

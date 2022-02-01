@@ -4,13 +4,13 @@ import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
 import LottieNoData from '../../components/lottieAnimations/lottieNoData';
 import Menu from '../../components/menu/Menu.jsx';
-import { DivLoading, MainStyled } from '../../primeComponents';
 import getFavorites from '../../utils/getFavorites/getFavorites';
-import { SectionContainer } from './styled';
+import { FavoriteMain, SectionContainer } from './styled';
 import { useNavigate } from 'react-router-dom';
 import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
 import ScrollToTop from '../../components/scrollToTop/scrollToTop';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import { DivLoading } from '../../components/loading/DivLoading';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
@@ -55,7 +55,7 @@ const Myfavorites = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Favorites" />
-          <MainStyled>
+          <FavoriteMain>
             <SectionContainer>
               {noBookData ? (
                 <LottieNoData word="Favorites" />
@@ -68,7 +68,7 @@ const Myfavorites = () => {
               )}
             </SectionContainer>
             <ScrollToTop />
-          </MainStyled>
+          </FavoriteMain>
           <LetterFooter />
         </>
       )}
