@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import { DivLoading } from '../../components/loading/DivLoading';
 import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Loading from '../../components/loading/Loading';
@@ -26,9 +26,6 @@ const BookList = () => {
   const [loadingState, setloadingState] = useState(true);
 
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-  const dispatch = useDispatch();
-
-  console.log(darkMode);
 
   const navigate = useNavigate();
   const startIndex = currentPage * itensPerPage;

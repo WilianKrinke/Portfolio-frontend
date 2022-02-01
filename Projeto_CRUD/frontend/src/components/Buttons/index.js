@@ -274,23 +274,28 @@ export const ButtonSendContact = styled.button`
 
 export const DivSemiCircle = styled.div`
     border: 1px solid #fff;
-    width: 100px;
+    width: 80px;
     height: 30px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all .3s ease-in-out;
     justify-content: flex-end;
     border-radius: 23px;
     padding: 0px 3px;
+    position: relative;
+    top: 5px;
+`
 
+export const Circle = styled.div`    
+    border: 1px solid #fff;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    transition: all .2s ease-in-out;
+    position: relative;
+    right: ${props => props.darkMode ? '49px' : '-1px'}
 
-    .circle_div{
-        border: 1px solid #fff;
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-
-    }
 `
 
 

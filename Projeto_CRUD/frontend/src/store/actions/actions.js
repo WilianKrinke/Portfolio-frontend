@@ -1,6 +1,5 @@
 import typeActions from '../typeActions/typeActions'
 
-export const toggleLoading = (condition) => ({
+export const toggleLoading = () => ({
     type: typeActions.CHANGE_MODE,
-    payload: condition
 })
