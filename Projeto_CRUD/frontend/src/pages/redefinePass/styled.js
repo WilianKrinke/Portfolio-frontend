@@ -1,9 +1,10 @@
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
-import { MainStyled } from '../../primeComponents'
 
-export const RedefinePassMain = styled(MainStyled)`
-    border: 1px solid
+export const RedefinePassMain = styled.main`
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: #F9FFF9;
     padding: 10px;
     display: flex;
     justify-content: center;

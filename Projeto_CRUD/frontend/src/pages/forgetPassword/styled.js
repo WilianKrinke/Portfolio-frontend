@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 import Box from '@mui/material/Box';
 import pattern_colors from '../../colors'
-import { MainStyled} from '../../primeComponents'
 
-export const ForgetPassMain = styled(MainStyled)`
+export const ForgetPassMain = styled.main`
+    max-width: 100vw;
+    min-height: 70vh;
+    background-color: #F9FFF9;
     padding: 10px;
     display: flex;
     justify-content: center;
