@@ -9,6 +9,9 @@ import {
   IconBack,
   IconForward,
   InfoPagination,
+  Label,
+  Option,
+  Select,
   Span,
 } from './styled';
 import { useSelector } from 'react-redux';
@@ -29,23 +32,47 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
     <>
       <AjustBookList>
         <DivSelectCategory darkMode={darkMode}>
-          <label htmlFor="category">Category: </label>
-          <select name="category" id="category" onChange={(e) => handleCategory(e)}>
-            <option value="all" defaultValue>
+          <Label htmlFor="category" darkMode={darkMode}>
+            Category:{' '}
+          </Label>
+          <Select name="category" id="category" onChange={(e) => handleCategory(e)} darkMode={darkMode}>
+            <Option value="all" defaultValue darkMode={darkMode}>
               All
-            </option>
-            <option value="Aventura">Aventura</option>
-            <option value="Distopico">Distopico</option>
-            <option value="Epico">Epico</option>
-            <option value="Ficcao">Ficcao</option>
-            <option value="Filosofia">Filosofia</option>
-            <option value="Historia">Historia</option>
-            <option value="Infantil">Infantil</option>
-            <option value="Investigacao">Investigacao</option>
-            <option value="Literatura Brasileira">Literatura Brasileira</option>
-            <option value="Politica">Politica</option>
-            <option value="Romance">Romance</option>
-          </select>
+            </Option>
+            <Option value="Aventura" darkMode={darkMode}>
+              Aventura
+            </Option>
+            <Option value="Distopico" darkMode={darkMode}>
+              Distopico
+            </Option>
+            <Option value="Epico" darkMode={darkMode}>
+              Epico
+            </Option>
+            <Option value="Ficcao" darkMode={darkMode}>
+              Ficcao
+            </Option>
+            <Option value="Filosofia" darkMode={darkMode}>
+              Filosofia
+            </Option>
+            <Option value="Historia" darkMode={darkMode}>
+              Historia
+            </Option>
+            <Option value="Infantil" darkMode={darkMode}>
+              Infantil
+            </Option>
+            <Option value="Investigacao" darkMode={darkMode}>
+              Investigacao
+            </Option>
+            <Option value="Literatura Brasileira" darkMode={darkMode}>
+              Literatura Brasileira
+            </Option>
+            <Option value="Politica" darkMode={darkMode}>
+              Politica
+            </Option>
+            <Option value="Romance" darkMode={darkMode}>
+              Romance
+            </Option>
+          </Select>
         </DivSelectCategory>
 
         <DivChangePage darkMode={darkMode}>
@@ -63,14 +90,20 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
         </DivChangePage>
 
         <DivSelectQnt darkMode={darkMode}>
-          <label htmlFor="item">Itens per Page: </label>
-          <select name="item" id="" onChange={(e) => handleItemPerPage(e)}>
-            <option value="5" defaultValue>
+          <Label htmlFor="item" darkMode={darkMode}>
+            Itens per Page:{' '}
+          </Label>
+          <Select name="item" id="" onChange={(e) => handleItemPerPage(e)} darkMode={darkMode}>
+            <Option value="5" defaultValue darkMode={darkMode}>
               5
-            </option>
-            <option value="10">10</option>
-            <option value="15">15</option>
-          </select>
+            </Option>
+            <Option value="10" darkMode={darkMode}>
+              10
+            </Option>
+            <Option value="15" darkMode={darkMode}>
+              15
+            </Option>
+          </Select>
         </DivSelectQnt>
       </AjustBookList>
     </>
