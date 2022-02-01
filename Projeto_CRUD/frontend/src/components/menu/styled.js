@@ -88,14 +88,16 @@ export const ContainerLinks = styled.nav`
             width: 100%;
             font-size: 24px;
             border-radius: 3px;
+            display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: all .1s ease-in-out;
+            text-align: center;
             font-family: 'Zen Kaku Gothic New', sans-serif;
 
-            :hover{
+            :hover:not(.change_mode){
                 transform: scale(1.3);
             }
             

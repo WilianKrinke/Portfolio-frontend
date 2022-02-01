@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux'
-import {toggleLoadingReducer} from '../reducers/reducers'
+import {toggleDarkModeReducer} from '../reducers/reducers'
 
 export default combineReducers({
-    toggleLoadingReducer,
+    toggleDarkModeReducer,
 })

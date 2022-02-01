@@ -9,6 +9,8 @@ import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
 import isUpdateDatas from '../../utils/isUpdateDatas/isUpdateDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import Buttonchangemode from '../Buttons/ButtonChangeMode';
+import ButtonChangeMode from '../Buttons/ButtonChangeMode';
 
 const Menu = ({ user = 'Loading...' }) => {
   const [isOpen, setisOpen] = useState(false);
@@ -77,6 +79,9 @@ const Menu = ({ user = 'Loading...' }) => {
             </li>
             <li>
               <ButtonLogOut onClick={() => logout(navigate)}>Logout</ButtonLogOut>
+            </li>
+            <li className="change_mode">
+              <ButtonChangeMode />
             </li>
           </ul>
         </ContainerLinks>

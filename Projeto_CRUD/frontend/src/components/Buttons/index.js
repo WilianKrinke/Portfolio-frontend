@@ -270,8 +270,30 @@ export const ButtonSendContact = styled.button`
         color: #fff;
         animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
-
 `
+
+export const DivSemiCircle = styled.div`
+    border: 1px solid #fff;
+    width: 100px;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 23px;
+    padding: 0px 3px;
+
+
+    .circle_div{
+        border: 1px solid #fff;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+
+    }
+`
+
+
 
 
 

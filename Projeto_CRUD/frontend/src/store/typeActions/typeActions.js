@@ -1,5 +1,5 @@
 const typeActions = {
-    CHANGE_LOADING: 'CHANGE_LOADING',
+    CHANGE_MODE: 'CHANGE_MODE',
 }
 
 export default typeActions;

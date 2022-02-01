@@ -1,5 +1,5 @@
 const initialStates = {
-    loading: true
+    darkMode: false
 }
 
 export default initialStates;
