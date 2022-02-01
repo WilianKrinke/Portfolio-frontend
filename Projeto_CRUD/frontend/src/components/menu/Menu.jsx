@@ -9,15 +9,15 @@ import propTypes from 'prop-types';
 import logout from '../../utils/Auth/logout';
 import isUpdateDatas from '../../utils/isUpdateDatas/isUpdateDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
-import Buttonchangemode from '../Buttons/ButtonChangeMode';
 import ButtonChangeMode from '../Buttons/ButtonChangeMode';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const Menu = ({ user = 'Loading...' }) => {
   const [isOpen, setisOpen] = useState(false);
   const [isUpDatedDatasState, setisUpDatedDatasState] = useState(true);
-
   const navigate = useNavigate();
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+  console.log(darkMode);
 
   useEffect(() => {
     (async () => {
@@ -53,6 +53,7 @@ const Menu = ({ user = 'Loading...' }) => {
           className="fas fa-bars fa-2x"
           $isopen={isOpen}
           onClick={() => setisOpen(!isOpen)}
+          darkMode={darkMode}
         />
 
         <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} $isopen={isOpen} />

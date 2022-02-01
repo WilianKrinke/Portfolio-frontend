@@ -1,11 +1,14 @@
 import React, { memo } from 'react';
-import { ContainerFooter } from './styled';
+import { useSelector } from 'react-redux';
+import { ContainerFooter, H4 } from './styled';
 
 const Letterfooter = () => {
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+
   return (
     <>
-      <ContainerFooter>
-        <h4 className="h4">Developed by Wilian Krinke</h4>
+      <ContainerFooter darkMode={darkMode}>
+        <H4 darkMode={darkMode}>Developed by Wilian Krinke</H4>
       </ContainerFooter>
     </>
   );

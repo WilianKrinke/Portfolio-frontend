@@ -36,8 +36,9 @@ export const DivSelectCategory = styled.div`
     justify-content: space-around;
     flex-direction: row;
     background-color: transparent;
+    transition: all .7s ease-in-out;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid ${props => props.darkMode ? "#F9FFF9" : "rgba(0, 0, 0, 0.1)"};
 
     label {
         position: relative;
@@ -91,7 +92,8 @@ export const DivSelectQnt = styled.div`
     padding: 10px;
     background-color: transparent;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid ${props => props.darkMode ? "#F9FFF9" : "rgba(0, 0, 0, 0.1)"};
+    transition: all .7s ease-in-out;
 
     label {
         position: relative;
@@ -160,15 +162,12 @@ export const DivChangePage = styled.div`
 `
 
 export const IconBack = styled.i`
-    font-size: 35px;
+    font-size: 45px;
     cursor: pointer;
     position: relative;
     top: 5px;
-    transition: all .1s ease-in-out;
-
-    :hover{
-        transform: scale(1.3);
-    }
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    transition: all .7s ease-in-out;
 `
 
 export const InfoPagination = styled.div`
@@ -181,13 +180,20 @@ export const InfoPagination = styled.div`
 `
 
 export const IconForward = styled.i`
-    font-size: 35px;
+    font-size: 45px;
     cursor: pointer;
     position: relative;
     top: 5px;
-    transition: all .1s ease-in-out;
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    transition: all .7s ease-in-out;
 
-    :hover{
-        transform: scale(1.3);
-    }
+`
+
+export const Span = styled.span`
+    font-size: 35px;
+    letter-spacing: 5px;
+    position: relative;
+    left: 3px;
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    transition: all .7s ease-in-out;
 `

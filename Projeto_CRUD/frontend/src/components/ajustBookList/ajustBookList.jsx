@@ -9,7 +9,9 @@ import {
   IconBack,
   IconForward,
   InfoPagination,
+  Span,
 } from './styled';
+import { useSelector } from 'react-redux';
 
 const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage, setCategory }) => {
   function handleItemPerPage(e) {
@@ -20,10 +22,13 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
     setCategory(e.target.value);
   }
 
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+  console.log(darkMode);
+
   return (
     <>
       <AjustBookList>
-        <DivSelectCategory>
+        <DivSelectCategory darkMode={darkMode}>
           <label htmlFor="category">Category: </label>
           <select name="category" id="category" onChange={(e) => handleCategory(e)}>
             <option value="all" defaultValue>
@@ -43,21 +48,21 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
           </select>
         </DivSelectCategory>
 
-        <DivChangePage>
-          <IconBack onClick={decCurrentPage}>
+        <DivChangePage darkMode={darkMode}>
+          <IconBack onClick={decCurrentPage} darkMode={darkMode}>
             <FiChevronLeft title="Back" />
           </IconBack>
           <InfoPagination>
-            <span title="Page">
+            <Span title="Page" darkMode={darkMode}>
               {currentPage + 1}/{pages}
-            </span>
+            </Span>
           </InfoPagination>
-          <IconForward onClick={accCurrentPage}>
+          <IconForward onClick={accCurrentPage} darkMode={darkMode}>
             <FiChevronRight title="Next" />
           </IconForward>
         </DivChangePage>
 
-        <DivSelectQnt>
+        <DivSelectQnt darkMode={darkMode}>
           <label htmlFor="item">Itens per Page: </label>
           <select name="item" id="" onChange={(e) => handleItemPerPage(e)}>
             <option value="5" defaultValue>

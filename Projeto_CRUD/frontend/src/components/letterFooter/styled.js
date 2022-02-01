@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
 
 export const ContainerFooter = styled.div`
     max-width: 100vw;
     min-height: 10vh;
-    background-color: ${pattern_colors.prime_compoments_bg};
+    background-color: ${props => props.darkMode ? "#0e1324" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -21,12 +21,15 @@ export const ContainerFooter = styled.div`
         justify-content: space-evenly;
     }
 
-    .h4{       
-        color: rgba(0, 0, 0, 0.7);
-        font-weight: 200;
-        
-        @media screen and (max-width: 570px) {
-            font-size: 18px;
-        }
+    
+`
+export const H4 = styled.h4`
+    color: ${props => !props.darkMode ? "rgba(0, 0, 0, 0.7)" : "#F9FFF9"};
+    font-weight: 200;
+    transition: all .7s ease-in-out;
+    
+    @media screen and (max-width: 570px) {
+        font-size: 18px;
     }
+   
 `

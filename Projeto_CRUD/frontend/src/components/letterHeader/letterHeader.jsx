@@ -1,12 +1,15 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import { HeaderStyled } from './styled';
+import { H1, HeaderStyled } from './styled';
+import { useSelector } from 'react-redux';
 
 const Letterheader = ({ phrase }) => {
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+
   return (
-    <HeaderStyled>
+    <HeaderStyled darkMode={darkMode}>
       <div className="title">
-        <h1>{phrase}</h1>
+        <H1 darkMode={darkMode}>{phrase}</H1>
       </div>
     </HeaderStyled>
   );

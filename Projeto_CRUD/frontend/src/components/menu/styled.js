@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { VscChromeClose } from "react-icons/vsc";
-import { turnOff, turnOn } from './keyframes';
+import { HideHamb, ShowHamb, turnOff, turnOn } from './keyframes';
 
 export const ContainerMenu = styled.div`
     height: 100vh;
@@ -9,7 +9,7 @@ export const ContainerMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.98);
+    background-color: #030303;
     transition: all .3s ease-in-out;
     position: fixed;
     right: ${props => props.$isopen ? '0px' : '-400px'};
@@ -45,7 +45,7 @@ export const ContainerUser = styled.div`
 `
 
 export const IconClose = styled(VscChromeClose)`
-    color: antiquewhite;
+    color: #F9FFF9;
     font-size: 52px;
     cursor: pointer;
     position: fixed; 
@@ -59,7 +59,10 @@ export const IconHamburguer = styled.i`
     font-size: 48px;
     position: fixed;
     top: 20px;
-    right: ${props => props.$isopen ? '-50px' : '30px'};
+    right: 30px;
+    transition: all .5s ease-in-out;
+    color: ${props => !props.darkMode ? "#030303" : "#F9FFF9"};
+    animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
 `
 
 export const ContainerLinks = styled.nav`

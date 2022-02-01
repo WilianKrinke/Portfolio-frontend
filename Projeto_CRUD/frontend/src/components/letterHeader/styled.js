@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
 
 export const HeaderStyled = styled.header`
     max-width: 100vw;
@@ -8,7 +7,8 @@ export const HeaderStyled = styled.header`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: ${pattern_colors.prime_compoments_bg};
+    background-color: ${props => props.darkMode ? "#0e1324" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
     text-align: center;
 
     .title{
@@ -24,5 +24,9 @@ export const HeaderStyled = styled.header`
             line-height: 75px;
         }
     }
+`
 
+export const H1 = styled.h1`
+    color: ${props => !props.darkMode ? "#0a0a0a" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
 `
