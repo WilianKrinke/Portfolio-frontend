@@ -110,7 +110,7 @@ const ContactPage = () => {
               <ArticleContainer>
                 <DivPhysicalAddress>
                   <div className="div_title">
-                    <h2>Personal Contact</h2>
+                    <h2>Our Office</h2>
                   </div>
                   <div className="div_adress">
                     <address>Lorem Ipsum Street, Lorem Ipsum District, Lorem Ipsum City</address>

@@ -67,12 +67,10 @@ const Borrowedbookscard = ({ infoDatas }) => {
           </div>
           <DivInfoLendBook isBookLate={isBookLate} isSameDate={isSameDate} title="Loan Information">
             <p>
-              This book was borrowed on {lendDateFormat}, with return on {dateDevolutionFormat},
-              {isSameDate
-                ? " so don't forget, today is the day to deliver it."
-                : isBookLate
-                ? " therefore, you're late."
-                : ' therefore, is within the deadline.'}
+              This book was borrowed on {lendDateFormat}, with return on {dateDevolutionFormat}.
+            </p>
+            <p>
+              {isSameDate ? 'Today is book delivery day.' : isBookLate ? 'This book is late.' : 'This book is on time.'}
             </p>
           </DivInfoLendBook>
         </ContainerResume>

@@ -199,6 +199,11 @@ export const Icon = styled(BsBoxArrowDown)`
 export const DivInfoLendBook = styled.div`
     padding: 10px;
     width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: column; 
     border:  ${props => props.isSameDate ? "2px solid #FE6B0A" : props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
     transition: background-color .3s ease-in-out;
 
@@ -208,6 +213,10 @@ export const DivInfoLendBook = styled.div`
 
     p{
         font-size: 16px;
+
+        :last-child{
+            font-size: 22px;
+        }
     }
     
     @media screen and (max-width: 570px) {

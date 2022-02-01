@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { VscChromeClose } from "react-icons/vsc";
+import { turnOff, turnOn } from './keyframes';
 
 export const ContainerMenu = styled.div`
     height: 100vh;
@@ -51,6 +52,7 @@ export const IconClose = styled(VscChromeClose)`
     top: 18px;
     right: ${props => !props.$isopen ? '-50px' : '25px'};   
     transition: all .3s ease-in-out;
+    animation: ${props => !props.$isopen ? turnOn : turnOff} .3s ease-in-out forwards;
 `
 
 export const IconHamburguer = styled.i`
