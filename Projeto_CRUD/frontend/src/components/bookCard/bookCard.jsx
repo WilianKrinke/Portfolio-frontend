@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import ReactStars from 'react-rating-stars-component';
 import { toast } from 'react-toastify';
 import {
+  B,
   CardStyled,
   ContainerMoldCard,
   ContainerResume,
@@ -12,7 +13,9 @@ import {
   DivIconLend,
   DivIconNotAvailable,
   FirstContainerInfo,
+  H2,
   IconSeeMoreLess,
+  P,
   ParagraphResume,
   SecondContainerInfo,
 } from './styled';
@@ -25,6 +28,7 @@ import ModalReturnBook from '../modals/modalReturnBook';
 import ModalImage from '../modals/modalImage';
 import sendRating from '../../utils/sendRating/sendRating';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import { useSelector } from 'react-redux';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
   const { idBook, bookName, author, category, resume, rating, image, amount, isBorrowedByUser, isFavoriteByUser } =
@@ -36,6 +40,9 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
     idBook,
     bookName,
   };
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+  console.log(darkMode);
 
   const [isLend, setisLend] = useState(isBorrowedByUser);
   const [isLike, setisLike] = useState(isFavoriteByUser);
@@ -140,14 +147,16 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
 
   return (
     <>
-      <CardStyled>
+      <CardStyled darkMode={darkMode}>
         <ContainerMoldCard>
           <FirstContainerInfo>
             <div className="image">
               <img src={image} alt="Capa" loading="lazy" title="Book cover" onClick={handleModalImage} />
             </div>
             <div className="title_rating">
-              <h2 title="Book Title">{bookName}</h2>
+              <H2 title="Book Title" darkMode={darkMode}>
+                {bookName}
+              </H2>
               <div className="rating" title={`Rating ${rating}`}>
                 <ReactStars
                   count={5}
@@ -166,14 +175,14 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
 
           <SecondContainerInfo>
             <div className="container_author" title="Author">
-              <p>
-                <strong>Author:</strong> {author}
-              </p>
+              <P darkMode={darkMode}>
+                <B darkMode={darkMode}>Author:</B> {author}
+              </P>
             </div>
             <div className="container_category" title="Category">
-              <p>
-                <strong>Category:</strong> {category}
-              </p>
+              <P darkMode={darkMode}>
+                <B darkMode={darkMode}>Category:</B> {category}
+              </P>
             </div>
             <div className="container_text_resume">
               <ContainerResume className="container_resume" title="Resume" seemore={seeMore}>
@@ -184,9 +193,9 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
               </div>
             </div>
             <div className="container_amount" title="Copies">
-              <p>
-                <strong>Copies:</strong> {amountState === 0 ? 'Not Available' : amountState}
-              </p>
+              <P darkMode={darkMode}>
+                <B darkMode={darkMode}>Copies:</B> {amountState === 0 ? 'Not Available' : amountState}
+              </P>
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>

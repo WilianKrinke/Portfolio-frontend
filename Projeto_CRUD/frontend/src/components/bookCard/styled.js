@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import pattern_colors from '../../colors'
 import {BsChevronCompactDown} from 'react-icons/bs';
 import { SeeLessAnimation, SeeMoreAnimation } from './keyframes';
 
@@ -8,8 +7,8 @@ export const CardStyled = styled.div`
     width: 350px;
     margin: 10px;
     border-radius: 5px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: ${pattern_colors.prime_compoments_bg};
+    border: 1px solid ${props => props.darkMode ? "rgba(84, 84, 84, 0.4)" : "rgba(0, 0, 0, 0.1)"};
+    background-color: ${props => props.darkMode ? '#0e1324' : 'transparent'};
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;
@@ -24,6 +23,37 @@ export const CardStyled = styled.div`
         margin: 10px 0px;
     }  
 `
+
+export const H2 = styled.h2`    
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px; 
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};       
+
+    @media screen and (max-width: 440px) {        
+        font-size: 22px;        
+    }
+`
+
+export const P = styled.p`
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"}; 
+    
+    @media screen and (max-width: 440px) {
+       
+        font-size: 18px;
+       
+    }
+`
+
+export const B = styled.b`
+    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"}; 
+
+    @media screen and (max-width: 440px) {       
+       font-size: 18px;      
+   }
+`
+
+
 export const ContainerMoldCard = styled.div`
     height: 470px;
     padding: 5px;
@@ -150,18 +180,6 @@ export const FirstContainerInfo = styled.div`
         text-align: center;
         line-height: 24px;
 
-        h2{
-            font-size: 18px;
-            font-weight: 400;
-            letter-spacing: 2px;
-        }
-
-        @media screen and (max-width: 440px) {
-            h2{
-                font-size: 22px;
-            }
-        }
-
         .rating{
             display: flex;
             justify-content: center;
@@ -209,12 +227,6 @@ export const SecondContainerInfo = styled.div`
         width: 100%;            
         text-align: left;
         padding: 0px 5px;
-    }
-
-    @media screen and (max-width: 440px) {
-        p{
-            font-size: 18px;
-        }
     }
 `
 
