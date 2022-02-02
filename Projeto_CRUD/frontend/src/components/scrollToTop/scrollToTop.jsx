@@ -1,9 +1,11 @@
 import React, { useEffect, useState, memo } from 'react';
 import { Phrase, ScrollArrow } from './styled';
 import { animateScroll as scroll } from 'react-scroll';
+import { useSelector } from 'react-redux';
 
 const Scrolltotop = () => {
   const [scrollElement, setScrollElement] = useState(false);
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -29,8 +31,10 @@ const Scrolltotop = () => {
     <>
       {scrollElement && (
         <>
-          <ScrollArrow title="Scroll to Top" onClick={handleClickScroll} />
-          <Phrase>Top</Phrase>
+          <ScrollArrow title="Scroll to Top" onClick={handleClickScroll} $darkmode={darkMode} />
+          <Phrase $darkmode={darkMode} onClick={handleClickScroll}>
+            Top
+          </Phrase>
         </>
       )}
     </>

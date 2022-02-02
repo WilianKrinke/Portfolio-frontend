@@ -7,8 +7,8 @@ const Letterfooter = () => {
 
   return (
     <>
-      <ContainerFooter darkMode={darkMode}>
-        <H4 darkMode={darkMode}>Developed by Wilian Krinke</H4>
+      <ContainerFooter $darkmode={darkMode}>
+        <H4 $darkmode={darkMode}>Developed by Wilian Krinke</H4>
       </ContainerFooter>
     </>
   );

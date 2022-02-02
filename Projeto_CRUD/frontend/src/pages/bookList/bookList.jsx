@@ -26,7 +26,6 @@ const BookList = () => {
   const [loadingState, setloadingState] = useState(true);
 
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-  console.log(darkMode);
 
   const navigate = useNavigate();
   const startIndex = currentPage * itensPerPage;
@@ -81,7 +80,7 @@ const BookList = () => {
         <>
           <Menu user={userName} />
           <Letterheader phrase="Book List" />
-          <BookListMain darkMode={darkMode}>
+          <BookListMain $darkmode={darkMode}>
             <BookListSection>
               <BookArticle fadeIn={fadeIn}>
                 <Ajustbooklist

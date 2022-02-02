@@ -7,9 +7,9 @@ const Letterheader = ({ phrase }) => {
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   return (
-    <HeaderStyled darkMode={darkMode}>
+    <HeaderStyled $darkmode={darkMode}>
       <div className="title">
-        <H1 darkMode={darkMode}>{phrase}</H1>
+        <H1 $darkmode={darkMode}>{phrase}</H1>
       </div>
     </HeaderStyled>
   );

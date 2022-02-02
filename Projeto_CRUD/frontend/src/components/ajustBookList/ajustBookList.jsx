@@ -26,81 +26,80 @@ const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, set
   }
 
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-  console.log(darkMode);
 
   return (
     <>
       <AjustBookList>
-        <DivSelectCategory darkMode={darkMode}>
-          <Label htmlFor="category" darkMode={darkMode}>
+        <DivSelectCategory $darkmode={darkMode}>
+          <Label htmlFor="category" $darkmode={darkMode}>
             Category:{' '}
           </Label>
-          <Select name="category" id="category" onChange={(e) => handleCategory(e)} darkMode={darkMode}>
-            <Option value="all" defaultValue darkMode={darkMode}>
+          <Select name="category" id="category" onChange={(e) => handleCategory(e)} $darkmode={darkMode}>
+            <Option value="all" defaultValue $darkmode={darkMode}>
               All
             </Option>
-            <Option value="Aventura" darkMode={darkMode}>
+            <Option value="Aventura" $darkmode={darkMode}>
               Aventura
             </Option>
-            <Option value="Distopico" darkMode={darkMode}>
+            <Option value="Distopico" $darkmode={darkMode}>
               Distopico
             </Option>
-            <Option value="Epico" darkMode={darkMode}>
+            <Option value="Epico" $darkmode={darkMode}>
               Epico
             </Option>
-            <Option value="Ficcao" darkMode={darkMode}>
+            <Option value="Ficcao" $darkmode={darkMode}>
               Ficcao
             </Option>
-            <Option value="Filosofia" darkMode={darkMode}>
+            <Option value="Filosofia" $darkmode={darkMode}>
               Filosofia
             </Option>
-            <Option value="Historia" darkMode={darkMode}>
+            <Option value="Historia" $darkmode={darkMode}>
               Historia
             </Option>
-            <Option value="Infantil" darkMode={darkMode}>
+            <Option value="Infantil" $darkmode={darkMode}>
               Infantil
             </Option>
-            <Option value="Investigacao" darkMode={darkMode}>
+            <Option value="Investigacao" $darkmode={darkMode}>
               Investigacao
             </Option>
-            <Option value="Literatura Brasileira" darkMode={darkMode}>
+            <Option value="Literatura Brasileira" $darkmode={darkMode}>
               Literatura Brasileira
             </Option>
-            <Option value="Politica" darkMode={darkMode}>
+            <Option value="Politica" $darkmode={darkMode}>
               Politica
             </Option>
-            <Option value="Romance" darkMode={darkMode}>
+            <Option value="Romance" $darkmode={darkMode}>
               Romance
             </Option>
           </Select>
         </DivSelectCategory>
 
-        <DivChangePage darkMode={darkMode}>
-          <IconBack onClick={decCurrentPage} darkMode={darkMode}>
+        <DivChangePage $darkmode={darkMode}>
+          <IconBack onClick={decCurrentPage} $darkmode={darkMode}>
             <FiChevronLeft title="Back" />
           </IconBack>
           <InfoPagination>
-            <Span title="Page" darkMode={darkMode}>
+            <Span title="Page" $darkmode={darkMode}>
               {currentPage + 1}/{pages}
             </Span>
           </InfoPagination>
-          <IconForward onClick={accCurrentPage} darkMode={darkMode}>
+          <IconForward onClick={accCurrentPage} $darkmode={darkMode}>
             <FiChevronRight title="Next" />
           </IconForward>
         </DivChangePage>
 
-        <DivSelectQnt darkMode={darkMode}>
-          <Label htmlFor="item" darkMode={darkMode}>
+        <DivSelectQnt $darkmode={darkMode}>
+          <Label htmlFor="item" $darkmode={darkMode}>
             Itens per Page:{' '}
           </Label>
-          <Select name="item" id="" onChange={(e) => handleItemPerPage(e)} darkMode={darkMode}>
-            <Option value="5" defaultValue darkMode={darkMode}>
+          <Select name="item" id="" onChange={(e) => handleItemPerPage(e)} $darkmode={darkMode}>
+            <Option value="5" defaultValue $darkmode={darkMode}>
               5
             </Option>
-            <Option value="10" darkMode={darkMode}>
+            <Option value="10" $darkmode={darkMode}>
               10
             </Option>
-            <Option value="15" darkMode={darkMode}>
+            <Option value="15" $darkmode={darkMode}>
               15
             </Option>
           </Select>

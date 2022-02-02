@@ -38,7 +38,7 @@ export const DivSelectCategory = styled.div`
     background-color: transparent;
     transition: all .7s ease-in-out;
     padding: 10px;
-    border: 1px solid ${props => props.darkMode ? "rgba(84, 84, 84, 0.4)" : "rgba(0, 0, 0, 0.1)"};  
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};  
 
     @media screen and (max-width: 808px) {
         width: 95%;
@@ -59,7 +59,7 @@ export const DivSelectQnt = styled.div`
     padding: 10px;
     background-color: transparent;
     border-radius: 5px;
-    border: 1px solid ${props => props.darkMode ? "rgba(84, 84, 84, 0.4)" : "rgba(0, 0, 0, 0.1)"};
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     transition: all .7s ease-in-out;
 
     @media screen and (max-width: 808px) {        
@@ -94,7 +94,7 @@ export const IconBack = styled.i`
     cursor: pointer;
     position: relative;
     top: 5px;
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};      
     transition: all .7s ease-in-out;
 `
 
@@ -106,7 +106,7 @@ export const IconForward = styled.i`
     cursor: pointer;
     position: relative;
     top: 5px;
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};      
     transition: all .7s ease-in-out;
 
 `
@@ -116,14 +116,14 @@ export const Span = styled.span`
     letter-spacing: 5px;
     position: relative;
     left: 3px;
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};      
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};      
     transition: all .7s ease-in-out;
 `
 
 export const Label = styled.label`
     position: relative;
     bottom: 2px;
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
     transition: all .7s ease-in-out;
 
     @media screen and (max-width: 808px) {
@@ -143,7 +143,7 @@ export const Select = styled.select`
     outline: none;
     border: none;
     background-color: transparent; 
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 
     @media screen and (max-width: 808px) {
         font-size: 18px;
@@ -152,7 +152,7 @@ export const Select = styled.select`
 `
 
 export const Option = styled.option`
-    background-color: ${props => props.darkMode ? "#0e1324" : "#F9FFF9"};
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};   
+    background-color: ${props => props.$darkmode ? "#0e1324" : "#F9FFF9"};
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};   
     transition: all .7s ease-in-out;
 `

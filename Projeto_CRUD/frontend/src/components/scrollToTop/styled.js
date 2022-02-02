@@ -7,7 +7,7 @@ export const ScrollArrow = styled(GoArrowUp)`
     bottom: 53px;
     font-size: 52px;
     cursor: pointer;
-    color: #000 ;  
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 `
 
 export const Phrase = styled.p`
@@ -15,5 +15,6 @@ export const Phrase = styled.p`
     right: 33px;
     bottom: 46px;
     font-size: 14px;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 `
 

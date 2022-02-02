@@ -42,7 +42,6 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
   };
 
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-  console.log(darkMode);
 
   const [isLend, setisLend] = useState(isBorrowedByUser);
   const [isLike, setisLike] = useState(isFavoriteByUser);
@@ -147,14 +146,14 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
 
   return (
     <>
-      <CardStyled darkMode={darkMode}>
-        <ContainerMoldCard>
+      <CardStyled $darkmode={darkMode}>
+        <ContainerMoldCard $darkmode={darkMode}>
           <FirstContainerInfo>
             <div className="image">
               <img src={image} alt="Capa" loading="lazy" title="Book cover" onClick={handleModalImage} />
             </div>
             <div className="title_rating">
-              <H2 title="Book Title" darkMode={darkMode}>
+              <H2 title="Book Title" $darkmode={darkMode}>
                 {bookName}
               </H2>
               <div className="rating" title={`Rating ${rating}`}>
@@ -166,7 +165,6 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
                   emptyIcon={<i className="far fa-star"></i>}
                   halfIcon={<i className="fa fa-star-half-alt"></i>}
                   fullIcon={<i className="fa fa-star"></i>}
-                  activeColor="#000"
                   onChange={(e) => handleRating(e)}
                 />
               </div>
@@ -175,32 +173,34 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
 
           <SecondContainerInfo>
             <div className="container_author" title="Author">
-              <P darkMode={darkMode}>
-                <B darkMode={darkMode}>Author:</B> {author}
+              <P $darkmode={darkMode}>
+                <B $darkmode={darkMode}>Author:</B> {author}
               </P>
             </div>
             <div className="container_category" title="Category">
-              <P darkMode={darkMode}>
-                <B darkMode={darkMode}>Category:</B> {category}
+              <P $darkmode={darkMode}>
+                <B $darkmode={darkMode}>Category:</B> {category}
               </P>
             </div>
             <div className="container_text_resume">
               <ContainerResume className="container_resume" title="Resume" seemore={seeMore}>
-                <ParagraphResume seemore={seeMore}>{resume}</ParagraphResume>
+                <ParagraphResume seemore={seeMore} $darkmode={darkMode}>
+                  {resume}
+                </ParagraphResume>
               </ContainerResume>
               <div className="container_see_more" onClick={handleSeeMore}>
-                <IconSeeMoreLess title={`See ${seeMore ? 'Less' : 'More'}`} $seemore={seeMore} />
+                <IconSeeMoreLess $darkmode={darkMode} title={`See ${seeMore ? 'Less' : 'More'}`} $seemore={seeMore} />
               </div>
             </div>
             <div className="container_amount" title="Copies">
-              <P darkMode={darkMode}>
-                <B darkMode={darkMode}>Copies:</B> {amountState === 0 ? 'Not Available' : amountState}
+              <P $darkmode={darkMode}>
+                <B $darkmode={darkMode}>Copies:</B> {amountState === 0 ? 'Not Available' : amountState}
               </P>
             </div>
           </SecondContainerInfo>
         </ContainerMoldCard>
 
-        <ContainerToLike>
+        <ContainerToLike $darkmode={darkMode}>
           {amountState > 0 ? (
             !isLend ? (
               <DivIconLend onClick={handleModalBorrowBook}>

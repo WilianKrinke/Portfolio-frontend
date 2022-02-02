@@ -17,7 +17,6 @@ const Menu = ({ user = 'Loading...' }) => {
   const [isUpDatedDatasState, setisUpDatedDatasState] = useState(true);
   const navigate = useNavigate();
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-  console.log(darkMode);
 
   useEffect(() => {
     (async () => {
@@ -53,7 +52,7 @@ const Menu = ({ user = 'Loading...' }) => {
           className="fas fa-bars fa-2x"
           $isopen={isOpen}
           onClick={() => setisOpen(!isOpen)}
-          darkMode={darkMode}
+          $darkmode={darkMode}
         />
 
         <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} $isopen={isOpen} />

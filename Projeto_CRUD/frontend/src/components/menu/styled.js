@@ -61,7 +61,7 @@ export const IconHamburguer = styled.i`
     top: 20px;
     right: 30px;
     transition: all .5s ease-in-out;
-    color: ${props => !props.darkMode ? "#030303" : "#F9FFF9"};
+    color: ${props => !props.$darkmode ? "#030303" : "#F9FFF9"};
     animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
 `
 

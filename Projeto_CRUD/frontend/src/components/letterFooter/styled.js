@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ContainerFooter = styled.div`
     max-width: 100vw;
     min-height: 10vh;
-    background-color: ${props => props.darkMode ? "#0e1324" : "#F9FFF9"};      
+    background-color: ${props => props.$darkmode ? "#0e1324" : "#F9FFF9"};      
     transition: all .7s ease-in-out;
     display: flex;
     flex-direction: row;
@@ -24,7 +24,7 @@ export const ContainerFooter = styled.div`
     
 `
 export const H4 = styled.h4`
-    color: ${props => !props.darkMode ? "rgba(0, 0, 0, 0.7)" : "#F9FFF9"};
+    color: ${props => !props.$darkmode ? "rgba(0, 0, 0, 0.7)" : "#F9FFF9"};
     font-weight: 200;
     transition: all .7s ease-in-out;
     

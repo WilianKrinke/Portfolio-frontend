@@ -2,13 +2,14 @@ import styled from 'styled-components'
 import {BsChevronCompactDown} from 'react-icons/bs';
 import { SeeLessAnimation, SeeMoreAnimation } from './keyframes';
 
+
 export const CardStyled = styled.div`
     min-height: 470px;
     width: 350px;
     margin: 10px;
     border-radius: 5px;
-    border: 1px solid ${props => props.darkMode ? "rgba(84, 84, 84, 0.4)" : "rgba(0, 0, 0, 0.1)"};
-    background-color: ${props => props.darkMode ? '#0e1324' : 'transparent'};
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    background-color: ${props => props.$darkmode ? '#0e1324' : 'transparent'};
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;
@@ -28,7 +29,8 @@ export const H2 = styled.h2`
     font-size: 18px;
     font-weight: 400;
     letter-spacing: 2px; 
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};       
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    transition: all .7s ease-in-out;       
 
     @media screen and (max-width: 440px) {        
         font-size: 22px;        
@@ -36,17 +38,17 @@ export const H2 = styled.h2`
 `
 
 export const P = styled.p`
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"}; 
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
     
-    @media screen and (max-width: 440px) {
-       
-        font-size: 18px;
-       
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
 `
 
 export const B = styled.b`
-    color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"}; 
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
 
     @media screen and (max-width: 440px) {       
        font-size: 18px;      
@@ -60,7 +62,7 @@ export const ContainerMoldCard = styled.div`
     border-radius: 5px 0px 0px 5px;
     transition: all .2s ease-in-out;
     width: 85%;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.8)" : "rgba(0, 0, 0, 0.2)"};
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -143,6 +145,8 @@ export const DivIconBorrowed = styled.div`
 export const IconSeeMoreLess = styled(BsChevronCompactDown)`
     font-size: 22px;
     animation: ${props => props.$seemore ? SeeMoreAnimation : SeeLessAnimation} .5s ease 1 forwards;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    
 `
 
 export const FirstContainerInfo = styled.div`
@@ -247,7 +251,8 @@ export const ParagraphResume = styled.p`
     -webkit-line-clamp: ${props => props.seemore ? '9' : '3'};;
     -webkit-box-orient: vertical;
     padding: 0px 5px;
-    transition: all .3s ease-in-out;
+    transition: all .7s ease-in-out;  
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 `
 
 
