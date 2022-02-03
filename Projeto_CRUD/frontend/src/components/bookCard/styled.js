@@ -9,7 +9,7 @@ export const CardStyled = styled.div`
     margin: 10px;
     border-radius: 5px;
     border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
-    background-color: ${props => props.$darkmode ? '#0e1324' : 'transparent'};
+    background-color: ${props => props.$darkmode ? '#050517' : 'transparent'};
     transition: all .3s ease-in-out;
     display: flex;
     justify-content: center;

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const BookListMain = styled.main`
     max-width: 100vw;
     min-height: 300px;
-    background-color: ${props => props.$darkmode ? "#0e1324" : "#F9FFF9"};      
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
     transition: all .7s ease-in-out;
     display: flex;
     align-items: center;

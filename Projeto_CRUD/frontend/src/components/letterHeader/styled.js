@@ -7,7 +7,7 @@ export const HeaderStyled = styled.header`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: ${props => props.$darkmode ? "#0e1324" : "#F9FFF9"};      
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
     transition: all .7s ease-in-out;
     text-align: center;
 
