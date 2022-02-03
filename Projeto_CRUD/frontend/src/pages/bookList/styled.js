@@ -10,7 +10,7 @@ export const BookListMain = styled.main`
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-
+    
     @media screen and (max-width: 440px) {
         padding: 10px 0px;
     }  
