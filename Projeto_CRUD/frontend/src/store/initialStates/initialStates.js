@@ -1,5 +1,6 @@
+const teste = (sessionStorage.getItem('dark') === 'true')
 const initialStates = {
-    darkMode: false
+    darkMode: false || teste
 }
 
 export default initialStates;

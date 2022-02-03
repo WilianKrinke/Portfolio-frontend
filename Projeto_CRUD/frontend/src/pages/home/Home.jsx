@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState, memo, useEffect } from 'react';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
@@ -13,6 +13,10 @@ const Home = () => {
   function handleChangeBlock() {
     setisLoginVisible(!isLoginVisible);
   }
+
+  useEffect(() => {
+    sessionStorage.setItem('dark', false);
+  }, []);
 
   return (
     <>
