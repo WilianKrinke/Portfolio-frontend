@@ -11,12 +11,15 @@ import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Lottienodata from '../../components/lottieAnimations/lottieNoData.jsx';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import { useSelector } from 'react-redux';
 
 const MyBorrowedBooks = () => {
   const [userNameState, setUserNameState] = useState('');
   const [borrowedBooks, setBorrowedBooks] = useState();
   const [loadingState, setloadingState] = useState(true);
   const [noBookData, setNoBookData] = useState(false);
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   const navigate = useNavigate();
 
@@ -54,7 +57,7 @@ const MyBorrowedBooks = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Borrowed Books" />
-          <BorrowMain>
+          <BorrowMain $darkmode={darkMode}>
             <SectionContainer>
               {noBookData ? (
                 <Lottienodata word="Borrowings" />

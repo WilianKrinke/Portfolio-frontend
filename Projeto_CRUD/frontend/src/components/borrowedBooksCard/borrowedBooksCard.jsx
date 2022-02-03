@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import propTypes from 'prop-types';
 import ModalImage from '../modals/modalImage';
@@ -5,12 +6,24 @@ import ModalReturnBookBorrowedCard from '../modals/modalReturnBookBorrowedCard';
 import isLate from '../../utils/validations/dateValidation';
 import sameDateValidation from '../../utils/validations/sameDateValidation';
 import ReactStars from 'react-rating-stars-component';
-import { BorrowedBookCard, ContainerActions, ContainerResume, ContainerTitle, DivInfoLendBook, Icon } from './styled';
+import {
+  BorrowedBookCard,
+  ContainerActions,
+  ContainerResume,
+  ContainerTitle,
+  DivInfoLendBook,
+  H3,
+  Icon,
+  P,
+} from './styled';
 import { format } from 'date-fns';
+import { useSelector } from 'react-redux';
 
 const Borrowedbookscard = ({ infoDatas }) => {
   const [modalImageBorrowedCards, setmodalImageBorrowedCards] = useState(false);
   const [modalReturnBook, setModalReturnBook] = useState(false);
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   const { image, bookName, resume, devolutionDate, lendDate, rating } = infoDatas;
 
@@ -35,7 +48,7 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
   return (
     <>
-      <BorrowedBookCard isBookLate={isBookLate} isSameDate={isSameDate}>
+      <BorrowedBookCard isBookLate={isBookLate} isSameDate={isSameDate} $darkmode={darkMode}>
         <ContainerTitle isBookLate={isBookLate} isSameDate={isSameDate}>
           <div className="div_img" onClick={handleModal}>
             <img src={image} alt="Cover Book" title="Book Cover" loading="lazy" />
@@ -43,7 +56,9 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
           <div className="div_bookname_and_rating">
             <div className="div_title">
-              <h3 title="Book Title">{bookName}</h3>
+              <H3 title="Book Title" $darkmode={darkMode}>
+                {bookName}
+              </H3>
             </div>
             <div className="div_rating" title={`Rating ${rating}`}>
               <ReactStars
@@ -54,30 +69,34 @@ const Borrowedbookscard = ({ infoDatas }) => {
                 emptyIcon={<i className="far fa-star"></i>}
                 halfIcon={<i className="fa fa-star-half-alt"></i>}
                 fullIcon={<i className="fa fa-star"></i>}
-                activeColor="#000"
                 edit={false}
                 title="Read Only"
               />
             </div>
           </div>
         </ContainerTitle>
-        <ContainerResume isBookLate={isBookLate} isSameDate={isSameDate}>
+        <ContainerResume isBookLate={isBookLate} isSameDate={isSameDate} $darkmode={darkMode}>
           <div className="div_resume" title="Resume">
-            <p>{resume}</p>
+            <P $darkmode={darkMode}>{resume}</P>
           </div>
-          <DivInfoLendBook isBookLate={isBookLate} isSameDate={isSameDate} title="Loan Information">
-            <p>
+          <DivInfoLendBook
+            isBookLate={isBookLate}
+            isSameDate={isSameDate}
+            title="Loan Information"
+            $darkmode={darkMode}
+          >
+            <P $darkmode={darkMode}>
               This book was borrowed on {lendDateFormat}, with return on {dateDevolutionFormat}.
-            </p>
-            <p>
+            </P>
+            <P $darkmode={darkMode}>
               {isSameDate ? 'Today is book delivery day.' : isBookLate ? 'This book is late.' : 'This book is on time.'}
-            </p>
+            </P>
           </DivInfoLendBook>
         </ContainerResume>
         <ContainerActions isBookLate={isBookLate} isSameDate={isSameDate} onClick={handleModalReturnBook}>
-          <div className="div_conainer_icon">
-            <Icon title="Return Book" />
-            <p>Return book</p>
+          <div className="div_container_icon">
+            <Icon $darkmode={darkMode} title="Return Book" />
+            <P $darkmode={darkMode}>Return book</P>
           </div>
         </ContainerActions>
       </BorrowedBookCard>

@@ -15,15 +15,17 @@ export const BorrowedBookCard = styled.article`
     @media screen and (max-width: 1100px) {
         min-height: 550px;
         flex-flow: column nowrap;
-        border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+        border-left: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? " 2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
+    
+        border-bottom: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? "2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
     }
 
     @media screen and (max-width: 570px) {
         min-height: 670px;
         width: 100%;
-        border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
-        border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"}; 
+        border-left: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? " 2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
+    
+        border-bottom: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? "2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"}; 
     }
 `
 
@@ -104,14 +106,6 @@ export const ContainerTitle = styled.div`
         @media screen and (max-width: 570px) {
             width: 90%;
         }
-
-        h3{
-            font-size: 16px;
-
-            @media screen and (max-width: 570px) {
-                font-size: 20px;
-            }
-        }
     }
 
     .div_rating{
@@ -119,6 +113,29 @@ export const ContainerTitle = styled.div`
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+`
+
+export const H3 = styled.h3`
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px; 
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    transition: all .7s ease-in-out;       
+
+    @media screen and (max-width: 440px) {        
+        font-size: 22px;        
+    }
+`
+
+
+
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
 `
 
@@ -130,8 +147,9 @@ export const ContainerResume = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border-left:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
-    border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border-left: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? " 2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
+
+    border-bottom: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? "2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
        
     @media screen and (max-width: 1100px) {
         width: 100%;
@@ -165,7 +183,7 @@ export const ContainerActions = styled.div`
     border-bottom:  ${props => props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
     cursor: pointer;
     
-    .div_conainer_icon{
+    .div_container_icon{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -177,12 +195,6 @@ export const ContainerActions = styled.div`
             width: 40%;
         }
     }
-    
-    p{
-        font-size: 14px;
-        color: rgba(0, 0, 0, 0.7);
-        cursor: pointer;
-    }
 
     @media screen and (max-width: 1100px) {
         height: 20%;
@@ -193,7 +205,7 @@ export const ContainerActions = styled.div`
 
 export const Icon = styled(BsBoxArrowDown)`
     font-size: 38px;
-    color: #222;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 `
 
 export const DivInfoLendBook = styled.div`
@@ -204,7 +216,7 @@ export const DivInfoLendBook = styled.div`
     justify-content: space-around;
     align-items: flex-start;
     flex-direction: column; 
-    border:  ${props => props.isSameDate ? "2px solid #FE6B0A" : props.isBookLate ? "2px solid #FE6B0A" : "2px solid rgba(0, 0, 0, 0.3)"};
+    border: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? "2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
     transition: background-color .3s ease-in-out;
 
     :hover{
