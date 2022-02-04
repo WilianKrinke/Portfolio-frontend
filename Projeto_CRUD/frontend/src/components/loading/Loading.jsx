@@ -12,8 +12,8 @@ const Loading = () => {
                 <ReactLoading
                     type={'bars'}
                     color={`${darkMode ? 'rgba(185, 185, 185, 0.8)' : 'rgba(0, 0, 0, 0.31)'}`}
-                    height={175}
-                    width={175}
+                    height={190}
+                    width={190}
                 />
             </DivLoading>
         </>

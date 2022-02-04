@@ -105,7 +105,12 @@ export const ContainerStyledShowDatas = styled.div`
         width: 35%;
         cursor: pointer;
         position: relative;
-        right: 180px;       
+        right: 180px;  
+        
+        @media screen and (max-width: 600px) {
+           right:0px;
+           width: 95%;
+        }
     }
 
     .div_first, .div_second{
