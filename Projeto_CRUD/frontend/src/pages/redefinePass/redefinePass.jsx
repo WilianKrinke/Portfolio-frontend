@@ -20,7 +20,6 @@ import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
 import changePass from '../../utils/changePass/changePass';
 import { toggleLoading } from '../../store/actions/actions';
 import Letterheader from '../../components/letterHeader/letterHeader';
-import { DivLoading } from '../../components/loading/DivLoading';
 
 const RedefinePass = () => {
   const params = useParams();
@@ -111,9 +110,7 @@ const RedefinePass = () => {
   return (
     <>
       {loading ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Letterheader phrase="Reset Your Password" />

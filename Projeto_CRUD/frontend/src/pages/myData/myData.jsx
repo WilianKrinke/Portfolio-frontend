@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, memo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import LetterFooter from '../../components/letterFooter/letterFooter';
@@ -9,7 +8,6 @@ import getMyDatas from '../../utils/getMyDatas/getMyDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import DataTabs from '../../components/dataTab/dataTab';
 import { ArticleContainer, MyDataMain, SectionContainer } from './styled';
-import { DivLoading } from '../../components/loading/DivLoading';
 import { useSelector } from 'react-redux';
 
 const Mydata = () => {
@@ -44,9 +42,7 @@ const Mydata = () => {
   return (
     <>
       {loadingState ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Menu user={userNameState} />

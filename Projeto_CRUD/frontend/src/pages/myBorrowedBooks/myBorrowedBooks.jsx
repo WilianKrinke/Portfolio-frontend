@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { DivLoading } from '../../components/loading/DivLoading';
 import { BorrowMain, SectionContainer } from './styled';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Loading from '../../components/loading/Loading';
@@ -50,9 +49,7 @@ const MyBorrowedBooks = () => {
   return (
     <>
       {loadingState ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Menu user={userNameState} />

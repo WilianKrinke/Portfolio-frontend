@@ -1,12 +1,10 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import { DivLoading } from '../../components/loading/DivLoading';
 import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
 import { useSelector } from 'react-redux';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
-import Loading from '../../components/loading/Loading';
+import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
@@ -73,9 +71,7 @@ const BookList = () => {
   return (
     <>
       {loadingState ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Menu user={userName} />

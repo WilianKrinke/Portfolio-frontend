@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
@@ -11,7 +10,6 @@ import { useNavigate } from 'react-router-dom';
 import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
 import ScrollToTop from '../../components/scrollToTop/scrollToTop';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
-import { DivLoading } from '../../components/loading/DivLoading';
 import { useSelector } from 'react-redux';
 
 const Myfavorites = () => {
@@ -52,9 +50,7 @@ const Myfavorites = () => {
   return (
     <>
       {loadingState ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Menu user={userNameState} />

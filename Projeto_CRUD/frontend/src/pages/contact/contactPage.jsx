@@ -14,7 +14,7 @@ import { ArticleContainer, ContactMain, DivPhysicalAddress, FormStyled, IconLoad
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import { toast } from 'react-toastify';
-import { DivLoading } from '../../components/loading/DivLoading';
+import { useSelector } from 'react-redux';
 
 const ContactPage = () => {
   const [loadingState, setloadingState] = useState(true);
@@ -26,6 +26,7 @@ const ContactPage = () => {
   const [emailSupportState] = useState('support_contact@email.com');
 
   const navigate = useNavigate();
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   useEffect(() => {
     (async () => {
@@ -98,9 +99,7 @@ const ContactPage = () => {
   return (
     <>
       {loadingState ? (
-        <DivLoading>
-          <Loading />
-        </DivLoading>
+        <Loading />
       ) : (
         <>
           <Menu user={userNameState} />
