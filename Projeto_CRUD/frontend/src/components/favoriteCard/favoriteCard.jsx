@@ -1,13 +1,15 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import propTypes from 'prop-types';
-import { ContainerCard, ContainerResume, ContainerTitle, Icon, IconHeartBroken } from './styled';
+import { ContainerCard, ContainerResume, ContainerTitle, H2, Icon, IconHeartBroken, P } from './styled';
 import ReactStars from 'react-rating-stars-component';
 import ScrollToTop from '../scrollToTop/scrollToTop';
 import ModalImage from '../modals/modalImage';
+import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { useState } from 'react';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import { useNavigate } from 'react-router-dom';
-import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import { useSelector } from 'react-redux';
 
 const Favoritecard = ({ favoriteItem }) => {
   const { bookName, author, category, image, rating, resume, idBook, idUser, userName } = favoriteItem;
@@ -19,9 +21,11 @@ const Favoritecard = ({ favoriteItem }) => {
     userName,
   };
 
-  const navigate = useNavigate();
   const [changeHeart, setchangeHeart] = useState(false);
   const [isOpen, setisOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   async function handleRemoveFavorites() {
     try {
@@ -47,15 +51,19 @@ const Favoritecard = ({ favoriteItem }) => {
   }
 
   return (
-    <ContainerCard>
+    <ContainerCard $darkmode={darkMode}>
       <ContainerTitle>
         <div className="div_img" onClick={handleModalImage}>
           <img src={image} alt="Book Cover" title="Book Cover"></img>
         </div>
         <div className="div_icon_title">
-          {changeHeart ? <IconHeartBroken /> : <Icon title="Remove from favorites" onClick={handleRemoveFavorites} />}
+          {changeHeart ? (
+            <IconHeartBroken $darkmode={darkMode} />
+          ) : (
+            <Icon title="Remove from favorites" onClick={handleRemoveFavorites} $darkmode={darkMode} />
+          )}
           <div className="div_title" title="Book Name">
-            <h2>{bookName}</h2>
+            <H2 $darkmode={darkMode}>{bookName}</H2>
           </div>
           <div className="div_stars" title={`Rating ${rating}`}>
             <ReactStars
@@ -66,7 +74,6 @@ const Favoritecard = ({ favoriteItem }) => {
               emptyIcon={<i className="far fa-star"></i>}
               halfIcon={<i className="fa fa-star-half-alt"></i>}
               fullIcon={<i className="fa fa-star"></i>}
-              activeColor="#000"
               edit={false}
               title="Read Only"
             />
@@ -75,19 +82,19 @@ const Favoritecard = ({ favoriteItem }) => {
       </ContainerTitle>
       <ContainerResume>
         <div className="div_author" title="Author">
-          <p>
+          <P $darkmode={darkMode}>
             <b>Author:</b> {author}
-          </p>
+          </P>
         </div>
         <div className="div_resume" title="Resume">
-          <p>
+          <P $darkmode={darkMode}>
             <b>Resume:</b> {resume}
-          </p>
+          </P>
         </div>
         <div className="div_category" title="Category">
-          <p>
+          <P $darkmode={darkMode}>
             <b>Category:</b> {category}
-          </p>
+          </P>
         </div>
       </ContainerResume>
       <ScrollToTop />

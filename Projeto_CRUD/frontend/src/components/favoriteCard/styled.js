@@ -3,7 +3,7 @@ import {FaHeart, FaHeartBroken} from 'react-icons/fa'
 import { heartBrokenAnimation } from './keyframes'
 
 export const ContainerCard = styled.article`
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     border-radius: 5px;
     width: 370px;
     height: 500px;
@@ -14,7 +14,7 @@ export const ContainerCard = styled.article`
     :hover {
         -webkit-box-shadow: 5px 7px 8px -1px rgba(0,0,0,0.66); 
         box-shadow: 5px 7px 8px -1px rgba(0,0,0,0.66);
-        border: 1px solid transparent;
+        border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "transparent"};
     }
 
     @media screen and (max-width: 470px) {
@@ -68,6 +68,7 @@ export const Icon = styled(FaHeart)`
     width: 20%;
     height: 35px;    
     cursor: pointer;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
 `
 
 export const IconHeartBroken = styled(FaHeartBroken)`
@@ -76,6 +77,7 @@ export const IconHeartBroken = styled(FaHeartBroken)`
     height: 35px;    
     cursor: pointer;
     animation: ${heartBrokenAnimation} 1s cubic-bezier(0,.43,.83,.82) 1 forwards;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
 `
 
 export const ContainerResume = styled.div`
@@ -90,30 +92,37 @@ export const ContainerResume = styled.div`
         text-align: left;
         width: 100%;
         margin:5px;
-
-        p{
-            font-size: 16px;
-        }
     }
 
     .div_author{
         text-align: left;
         width: 100%;
         margin:5px;
-
-        p{
-            font-size: 16px;
-        }
-        
     }
 
     .div_category{
         text-align: left;
         width: 100%;
         margin:5px;
+    }
+`
+export const H2 = styled.h2`
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px; 
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    transition: all .7s ease-in-out;       
 
-        p{
-            font-size: 16px;
-        }
+    @media screen and (max-width: 440px) {        
+        font-size: 22px;        
+    }
+`
+
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
 `

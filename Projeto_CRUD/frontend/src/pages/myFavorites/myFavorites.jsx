@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
@@ -11,12 +12,15 @@ import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
 import ScrollToTop from '../../components/scrollToTop/scrollToTop';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { DivLoading } from '../../components/loading/DivLoading';
+import { useSelector } from 'react-redux';
 
 const Myfavorites = () => {
   const [userNameState, setUserNameState] = useState('');
   const [loadingState, setloadingState] = useState(true);
   const [noBookData, setNoBookData] = useState(false);
   const [bookFavorites, setBookFavorites] = useState();
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   const navigate = useNavigate();
 
@@ -55,7 +59,7 @@ const Myfavorites = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Favorites" />
-          <FavoriteMain>
+          <FavoriteMain $darkmode={darkMode}>
             <SectionContainer>
               {noBookData ? (
                 <LottieNoData word="Favorites" />
