@@ -9,6 +9,6 @@ export const DivLoading = styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 250px;
-    position: absolute;
+    position: fixed;
     top:0px;
 `

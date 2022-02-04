@@ -6,23 +6,23 @@ import { Provider } from 'react-redux';
 import { ToastContainer, Slide } from 'react-toastify';
 
 function App() {
-  return (
-    <Provider store={store}>
-      <Routes />
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        draggable
-        pauseOnHover={false}
-        width={500}
-        transition={Slide}
-      />
-    </Provider>
-  );
+    return (
+        <Provider store={store}>
+            <Routes />
+            <ToastContainer
+                position="top-right"
+                autoClose={3000}
+                hideProgressBar={false}
+                newestOnTop
+                closeOnClick
+                rtl={false}
+                draggable
+                pauseOnHover={false}
+                width={500}
+                transition={Slide}
+            />
+        </Provider>
+    );
 }
 
 export default App;
