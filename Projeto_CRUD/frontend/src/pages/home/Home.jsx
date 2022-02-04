@@ -1,54 +1,57 @@
-import React, { useState, memo, useEffect } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { memo, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { ButtonBackToLogin, ButtonChangeForm } from '../../components/Buttons';
+import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import Letterfooter from '../../components/letterFooter/letterFooter';
+import Letterheader from '../../components/letterHeader/letterHeader';
 import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
-import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
-import Letterheader from '../../components/letterHeader/letterHeader';
-import { ButtonChangeForm, ButtonBackToLogin } from '../../components/Buttons';
-import { HomeMain, InfoCard, SectForm, ArticleCrud, ArticleLogin, ArticleSignUp } from './styled';
+import { ArticleCrud, ArticleLogin, ArticleSignUp, HomeMain, InfoCard, SectForm } from './styled';
 
 const Home = () => {
-  const [isLoginVisible, setisLoginVisible] = useState(true);
+    const [isLoginVisible, setisLoginVisible] = useState(true);
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
-  function handleChangeBlock() {
-    setisLoginVisible(!isLoginVisible);
-  }
+    function handleChangeBlock() {
+        setisLoginVisible(!isLoginVisible);
+    }
 
-  useEffect(() => {
-    sessionStorage.setItem('dark', false);
-  }, []);
+    useEffect(() => {
+        sessionStorage.setItem('dark', false);
+    }, []);
 
-  return (
-    <>
-      <Letterheader phrase="Project Library" />
-      <HomeMain>
-        <InfoCard>
-          <ArticleCrud>
-            <p>Create.</p>
-            <p>Read.</p>
-            <p>UpDate.</p>
-            <p>Delete.</p>
-          </ArticleCrud>
-        </InfoCard>
+    return (
+        <>
+            <Letterheader phrase="Project Library" />
+            <HomeMain $darkmode={darkMode}>
+                <InfoCard $darkmode={darkMode}>
+                    <ArticleCrud $darkmode={darkMode}>
+                        <p>Create.</p>
+                        <p>Read.</p>
+                        <p>UpDate.</p>
+                        <p>Delete.</p>
+                    </ArticleCrud>
+                </InfoCard>
 
-        <SectForm>
-          {isLoginVisible ? (
-            <ArticleLogin>
-              <SignInForm />
-              <ButtonChangeForm onClick={handleChangeBlock}>Sign Up</ButtonChangeForm>
-              <ForgetPass />
-            </ArticleLogin>
-          ) : (
-            <ArticleSignUp>
-              <SignUpForm />
-              <ButtonBackToLogin onClick={handleChangeBlock}>Back</ButtonBackToLogin>
-            </ArticleSignUp>
-          )}
-        </SectForm>
-      </HomeMain>
-      <Letterfooter />
-    </>
-  );
+                <SectForm $darkmode={darkMode}>
+                    {isLoginVisible ? (
+                        <ArticleLogin $darkmode={darkMode}>
+                            <SignInForm />
+                            <ButtonChangeForm onClick={handleChangeBlock}>Sign Up</ButtonChangeForm>
+                            <ForgetPass />
+                        </ArticleLogin>
+                    ) : (
+                        <ArticleSignUp>
+                            <SignUpForm />
+                            <ButtonBackToLogin onClick={handleChangeBlock}>Back</ButtonBackToLogin>
+                        </ArticleSignUp>
+                    )}
+                </SectForm>
+            </HomeMain>
+            <Letterfooter />
+        </>
+    );
 };
 
 export default memo(Home);

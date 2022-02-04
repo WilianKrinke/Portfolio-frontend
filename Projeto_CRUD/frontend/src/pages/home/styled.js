@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const HomeMain = styled.main`
     max-width: 100vw;
-    min-height: 70vh;
-    background-color: #F9FFF9;
+    min-height: calc(74vh - 5px);
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,17 +19,17 @@ export const InfoCard = styled.section`
     height: 60vh;
     padding: 10px;
     border-radius: 5px 0px 0px 5px;
-    border-bottom: 1px solid #F3BEF7;
-    border-top: 1px solid #F3BEF7;
-    border-left: 1px solid #F3BEF7;
+    border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+    border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+    border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
     transition: all .3s ease-in-out;
 
     @media screen and (max-width: 750px) {
        width: 100%;
        border-radius: 0px 0px 5px 5px;
-       border-right: 1px solid #F3BEF7;
-       border-bottom: 1px solid #F3BEF7;
-       border-left: 1px solid #F3BEF7;
+       border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+       border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+       border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
     }
 `
 export const SectForm = styled.section`
@@ -38,17 +38,17 @@ export const SectForm = styled.section`
     padding: 10px;
     background-color: #FE6B0A;
     border-radius: 0px 5px 5px 0px;
-    border-bottom: 1px solid #F3BEF7;
-    border-top: 1px solid #F3BEF7;
-    border-right: 1px solid #F3BEF7;
+    border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     transition: all .3s ease-in-out;
     
     @media screen and (max-width: 750px) {
        width: 100%;
        border-radius: 5px 5px 0px 0px;
-       border-right: 1px solid #F3BEF7;
-       border-top: 1px solid #F3BEF7;
-       border-left: 1px solid #F3BEF7;
+       border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+       border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+       border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     }
 
     @media screen and (max-width: 470px) {

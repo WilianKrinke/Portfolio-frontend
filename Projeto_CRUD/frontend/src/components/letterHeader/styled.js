@@ -13,8 +13,7 @@ export const HeaderStyled = styled.header`
 
     .title{
         width: 100%;
-        margin: 0px auto;
-
+        
         @media screen and (max-width: 570px) {
             width: 60%;
             display: flex;
