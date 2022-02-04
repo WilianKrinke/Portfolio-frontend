@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContainerFooter = styled.div`
+export const ContainerFooter = styled.footer`
     max-width: 100vw;
     min-height: 10vh;
     background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      

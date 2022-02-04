@@ -42,7 +42,7 @@ export const P = styled.p`
     transition: all .7s ease-in-out;  
     
     @media screen and (max-width: 440px) {       
-        font-size: 18px;       
+        font-size: 16px;       
     }
 `
 
@@ -51,7 +51,7 @@ export const B = styled.b`
     transition: all .7s ease-in-out;  
 
     @media screen and (max-width: 440px) {       
-       font-size: 18px;      
+       font-size: 16px;      
    }
 `
 
@@ -62,7 +62,6 @@ export const ContainerMoldCard = styled.div`
     border-radius: 5px 0px 0px 5px;
     transition: all .2s ease-in-out;
     width: 85%;
-    border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.8)" : "rgba(0, 0, 0, 0.2)"};
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -252,7 +251,11 @@ export const ParagraphResume = styled.p`
     -webkit-box-orient: vertical;
     padding: 0px 5px;
     transition: all .7s ease-in-out;  
-    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 16px;       
+    }
 `
 
 

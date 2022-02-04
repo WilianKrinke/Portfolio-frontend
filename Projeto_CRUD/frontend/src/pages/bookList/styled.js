@@ -13,6 +13,7 @@ export const BookListMain = styled.main`
     
     @media screen and (max-width: 440px) {
         padding: 10px 0px;
+        border: 1px solid transparent;
     }  
 `
 
