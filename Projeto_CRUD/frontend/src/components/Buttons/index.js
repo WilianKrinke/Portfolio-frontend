@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-import { Pulse } from './keyframes'
+
+import styled from 'styled-components';
+import { Pulse } from './keyframes';
 
 export const ButtonChangeForm = styled.button`
   width: 150px;
@@ -266,34 +267,45 @@ export const ButtonSendContact = styled.button`
 
   :hover{
     background: ${props => props.$darkmode ? "#071057" : "#030103"};;
-        color: #fff;
+    color: #fff;
   }
 `
 
 export const DivSemiCircle = styled.div`
     border: 1px solid #fff;
-    width: 80px;
-    height: 30px;
+    width: 100px;
+    height: 40px;
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: all .3s ease-in-out;
     justify-content: flex-end;
     border-radius: 23px;
     padding: 0px 3px;
     position: relative;
     top: 5px;
+    transition: all .7s ease-in-out;
 `
 
 export const Circle = styled.div`    
     border: 1px solid #fff;
-    height: 24px;
-    width: 24px;
+    height: 34px;
+    width: 34px;
     border-radius: 50%;
     transition: all .2s ease-in-out;
     position: relative;
-    right: ${props => props.darkMode ? '49px' : '-1px'}
+    right: ${props => props.darkMode ? '59px' : '-1px'};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: ${props => props.darkMode ? "#050517" : "#F9FFF9"};  
+`
 
+export const Icon = styled.i`
+   color: ${props => props.darkMode ? "#F9FFF9" : "#0a0a0a"};
+   font-size: 15px;
+   position: relative;
+   top:2px;
 `
 
 

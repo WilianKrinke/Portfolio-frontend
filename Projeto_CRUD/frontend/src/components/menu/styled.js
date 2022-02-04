@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { VscChromeClose } from "react-icons/vsc";
+import styled from 'styled-components';
 import { HideHamb, ShowHamb, turnOff, turnOn } from './keyframes';
 
 export const ContainerMenu = styled.div`
