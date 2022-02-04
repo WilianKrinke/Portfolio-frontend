@@ -236,13 +236,13 @@ export const ButtonUpDate = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+  border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
 
   :hover{
-        background: ${props => props.$darkmode ? "#071057" : "#0a0a0a"};;
+        background: ${props => props.$darkmode ? "#071057" : "#030103"};
         color: #fff;
   }
 
@@ -259,15 +259,14 @@ export const ButtonSendContact = styled.button`
   background-color: transparent;
   outline: none;
   font-size: 14px;
-  border: 1px solid rgba(0, 0, 0, 0.5); 
+  border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: #222222;
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
 
   :hover{
-        background: #030103;
+    background: ${props => props.$darkmode ? "#071057" : "#030103"};;
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 `
 

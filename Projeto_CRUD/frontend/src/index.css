@@ -179,3 +179,15 @@ input:-webkit-autofill:active {
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
     color: #1976d2 !important;
 }
+
+.css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root {
+    color: #1976d2 !important;
+}
+
+.css-ghsjzk-MuiInputBase-root-MuiInput-root:before {
+    border-bottom: 1px solid #1976d2 !important;
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+    color: #1976d2 !important;
+}

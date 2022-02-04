@@ -1,11 +1,12 @@
-import styled from 'styled-components'
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import styled from 'styled-components';
 import { RotateLoading } from './keyframes';
 
 export const ContactMain= styled.main`
     max-width: 100vw;
     min-height: 70vh;
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"}; 
+    transition: all .7s ease-in-out;
 `
 
 export const ArticleContainer = styled.article`    
@@ -29,7 +30,8 @@ export const DivPhysicalAddress = styled.div`
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
-    border-right: 1px solid rgba(0, 0, 0, 0.3);
+    border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    transition: all .7s ease-in-out;
 
     @media screen and (max-width: 884px) {
         height: 450px;
@@ -78,8 +80,38 @@ export const DivPhysicalAddress = styled.div`
     }
 `
 
+export const H2 = styled.h2`    
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 2px; 
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    transition: all .7s ease-in-out;       
+
+    @media screen and (max-width: 440px) {        
+        font-size: 22px;        
+    }
+`
+
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
+    }
+`
+
+export const Adress = styled.address`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
+    }
+`
+
 export const FormStyled = styled.form`
-    border-left: 1px solid rgba(0, 0, 0, 0.3);    
+    border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     height: 430px;
     width: 50%;
     padding: 10px 40px;
@@ -87,6 +119,7 @@ export const FormStyled = styled.form`
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
+    transition: all .7s ease-in-out;
 
     @media screen and (max-width: 884px) {
         height: 500px;
