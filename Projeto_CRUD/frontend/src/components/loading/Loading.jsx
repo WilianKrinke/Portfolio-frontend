@@ -8,8 +8,8 @@ const Loading = () => {
   const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
   return (
     <>
-      <DivLoading>
-        <ReactLoading type={'bars'} color={'rgba(0, 0, 0, 0.31)'} height={175} width={175} align="center" />
+      <DivLoading $darkmode={darkMode}>
+        <ReactLoading type={'bars'} color={'rgba(0, 0, 0, 0.31)'} height={175} width={175} align="top" />
       </DivLoading>
     </>
   );
