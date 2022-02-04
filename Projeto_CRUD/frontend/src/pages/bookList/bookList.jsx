@@ -1,17 +1,16 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router';
-import { BookListMain, BookListArticle, BookListSection, BookArticle } from './styled';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router';
+import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
+import Bookcard from '../../components/bookCard/bookCard.jsx';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
-import Bookcard from '../../components/bookCard/bookCard.jsx';
-import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
+import { BookArticle, BookListArticle, BookListMain, BookListSection } from './styled';
 
 const BookList = () => {
     const [category, setCategory] = useState('all');

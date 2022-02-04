@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
 import propTypes from 'prop-types';
-import { ButtonRefresh, ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import { ButtonRefresh, ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled';
 
 const Showingdatapanel = ({ userDatasObject }) => {
     const {

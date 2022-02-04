@@ -172,22 +172,10 @@ input:-webkit-autofill:active {
     box-shadow: none !important;
 }
 
-.css-1480iag-MuiInputBase-root-MuiInput-root:after {
-    border-bottom: 2px solid #222222 !important;
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: #1976d2 !important;
 }
 
-.css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
-    border-color: #222222;
-}
-
-.css-ghsjzk-MuiInputBase-root-MuiInput-root:after {
-    border-bottom: 2px solid #000 !important;
-}
-
-.jRmrUd {
-    margin-top: 0 !important;
-}
-
-.fxaxGD {
-    margin-top: 0 !important;
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    color: #1976d2 !important;
 }
