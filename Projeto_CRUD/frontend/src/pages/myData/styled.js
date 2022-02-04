@@ -3,7 +3,8 @@ import styled from 'styled-components'
 export const MyDataMain = styled.main`
     max-width: 100vw;
     min-height: 70vh;
-    background-color: #F9FFF9;
+    transition: all .7s ease-in-out;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
 `
 
 export const SectionContainer = styled.section`

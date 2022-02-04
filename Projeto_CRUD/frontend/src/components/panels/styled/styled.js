@@ -15,6 +15,19 @@ export const MainContainer = styled.div`
     }
 `
 
+export const ButtonRefresh = styled.button`
+    background-color: rgba(0, 0, 0, 0.03);
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    cursor: pointer;
+    padding: 2px 5px;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
+    transition: all .7s ease-in-out;
+
+        :hover{
+            background-color: rgba(0, 0, 0, 0.06);
+        }
+`
+
 export const ContainerInput = styled.div`
     display: flex;
     align-items: center;
@@ -75,7 +88,7 @@ export const ContainerStyledShowDatas = styled.div`
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
-        width: 77.7%;
+        width: 78%;
         text-align:left;
 
         @media screen and (max-width: 600px) {
@@ -87,21 +100,12 @@ export const ContainerStyledShowDatas = styled.div`
     .div_lastupdate_btn{
         display: flex;
         align-items: center;
-        justify-content: flex-start;
+        justify-content: center;
         flex-direction: row;
-        width: 77.7%;
-
-        button{
-            background-color: rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0, 0, 0, 0.3);
-            cursor: pointer;
-            padding: 2px 5px;
-            transition: all .3s ease-in-out;
-
-            :hover{
-                background-color: rgba(0, 0, 0, 0.06);
-            }            
-        }
+        width: 35%;
+        cursor: pointer;
+        position: relative;
+        right: 180px;       
     }
 
     .div_first, .div_second{
@@ -156,13 +160,14 @@ export const ContainerStyledShowDatas = styled.div`
             width: 340px;
         }
     }
-
-    
 `
 
 export const TagP = styled.p`
-    b{
-        color: #222222;
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
 
     :not(b){

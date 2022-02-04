@@ -9,10 +9,10 @@ import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Showingdatapanel from '../panels/showingData/showingDataPanel';
+import { useSelector } from 'react-redux';
 
 function TabPanel(props) {
   const { children, value, index } = props;
-  const matches840w = useMediaQuery('(max-width:840px)');
 
   return (
     <div
@@ -91,6 +91,7 @@ function DataTabs({ userDatasObject }) {
   };
 
   const matches840w = useMediaQuery('(max-width:840px)');
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   return (
     <Box
@@ -116,6 +117,7 @@ function DataTabs({ userDatasObject }) {
             {...a11yProps(0)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
+              color: `${darkMode ? '#F9FFF9' : '#0a0a0a'}`,
               width: `${matches840w ? '20px' : '180px'}`,
               wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
@@ -125,6 +127,7 @@ function DataTabs({ userDatasObject }) {
             {...a11yProps(1)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
+              color: `${darkMode ? '#F9FFF9' : '#0a0a0a'}`,
               width: `${matches840w ? '20px' : '180px'}`,
               wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
@@ -134,6 +137,7 @@ function DataTabs({ userDatasObject }) {
             {...a11yProps(2)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
+              color: `${darkMode ? '#F9FFF9' : '#0a0a0a'}`,
               width: `${matches840w ? '20px' : '180px'}`,
               wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}
@@ -143,6 +147,7 @@ function DataTabs({ userDatasObject }) {
             {...a11yProps(3)}
             sx={{
               fontSize: `${matches840w ? '11px' : '14px'}`,
+              color: `${darkMode ? '#F9FFF9' : '#0a0a0a'}`,
               width: `${matches840w ? '20px' : '180px'}`,
               wordBreak: `${matches840w ? 'break-word' : 'normal'}`,
             }}

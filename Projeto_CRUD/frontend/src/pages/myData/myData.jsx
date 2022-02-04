@@ -10,6 +10,7 @@ import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import DataTabs from '../../components/dataTab/dataTab';
 import { ArticleContainer, MyDataMain, SectionContainer } from './styled';
 import { DivLoading } from '../../components/loading/DivLoading';
+import { useSelector } from 'react-redux';
 
 const Mydata = () => {
   const navigate = useNavigate();
@@ -17,6 +18,8 @@ const Mydata = () => {
   const [userNameState, setuserNameState] = useState('');
   const [loadingState, setloadingState] = useState(true);
   const [userDatasObject, setUserDatasObject] = useState();
+
+  const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
   useEffect(() => {
     (async () => {
@@ -48,7 +51,7 @@ const Mydata = () => {
         <>
           <Menu user={userNameState} />
           <Letterheader phrase="My Datas" />
-          <MyDataMain>
+          <MyDataMain $darkmode={darkMode}>
             <SectionContainer>
               <ArticleContainer>
                 <DataTabs userDatasObject={userDatasObject} />

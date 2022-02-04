@@ -165,24 +165,8 @@ input:-webkit-autofill:active {
   box-shadow: none !important;
 }
 
-.css-107tcpr-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  color: #222222 !important;
-}
-
-.css-1aquho2-MuiTabs-indicator {
-  background-color: #222222 !important;
-}
-
 .css-1480iag-MuiInputBase-root-MuiInput-root:after {
   border-bottom: 2px solid #222222 !important;
-}
-
-.css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: #222222 !important;
-}
-
-.css-167ecv9-MuiButtonBase-root-MuiTab-root.Mui-selected {
-  color: #222222 !important;
 }
 
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused.MuiOutlinedInput-notchedOutline {
