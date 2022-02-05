@@ -1,5 +1,5 @@
+import { FaHeart, FaHeartBroken } from 'react-icons/fa'
 import styled from 'styled-components'
-import {FaHeart, FaHeartBroken} from 'react-icons/fa'
 import { heartBrokenAnimation } from './keyframes'
 
 export const ContainerCard = styled.article`
@@ -21,6 +21,10 @@ export const ContainerCard = styled.article`
         margin: 10px 0px;
         width: 98%;
     }
+
+    @media screen and (max-width: 390px) {
+        height: 600px;
+    }
 `
 
 export const ContainerTitle = styled.div`
@@ -31,8 +35,12 @@ export const ContainerTitle = styled.div`
     align-items: flex-start;
     flex-flow: row nowrap;
 
+    @media screen and (max-width: 390px) {
+        height: 40%;
+    }
+
     .div_img{
-        width: 55%;
+        width: 45%;
         height: 100%;
         cursor: pointer;
         
@@ -44,13 +52,14 @@ export const ContainerTitle = styled.div`
     }
 
     .div_icon_title{
-        width: 45%;
+        width: 55%;
         height: 100%;
         display:flex;
         justify-content: space-around;
         align-items: center;
         flex-flow: column nowrap;
         text-align: center;
+        padding: 10px;
     }
 
     .div_stars{
@@ -87,6 +96,11 @@ export const ContainerResume = styled.div`
     justify-content:center;
     align-items: center;
     flex-flow: column nowrap;
+
+    @media screen and (max-width: 390px) {
+        height: 60%;
+        justify-content: space-evenly;
+    }
     
     .div_resume{
         text-align: left;
@@ -120,7 +134,8 @@ export const H2 = styled.h2`
 
 export const P = styled.p`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
-    transition: all .7s ease-in-out;  
+    transition: all .7s ease-in-out; 
+    font-size: 16px; 
     
     @media screen and (max-width: 440px) {       
         font-size: 18px;       

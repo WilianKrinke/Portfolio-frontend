@@ -39,8 +39,7 @@ const Favoritecard = ({ favoriteItem }) => {
                 }, 500);
             }
         } catch (error) {
-            console.log(error);
-            //para a página de erro
+            navigate(`/error-page/${error.message}`);
         }
     }
 
