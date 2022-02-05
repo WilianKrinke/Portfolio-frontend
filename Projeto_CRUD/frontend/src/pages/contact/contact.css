@@ -1,0 +1,41 @@
+.darkmode svg {
+    color: #f9fff9;
+}
+
+.darkmode label {
+    color: #f9fff9;
+}
+
+.darkmode .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #f9fff9;
+}
+
+.darkmode .css-ghsjzk-MuiInputBase-root-MuiInput-root:before {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.774);
+}
+
+.darkmode .css-ghsjzk-MuiInputBase-root-MuiInput-root:after {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.774);
+}
+
+/* Normal */
+
+.normal svg {
+    color: #0a0a0a;
+}
+
+.normal label {
+    color: #0a0a0a;
+}
+
+.normal .css-1c2i806-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #0a0a0a;
+}
+
+.normal .css-ghsjzk-MuiInputBase-root-MuiInput-root:before {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.774);
+}
+
+.normal .css-ghsjzk-MuiInputBase-root-MuiInput-root:after {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.774);
+}

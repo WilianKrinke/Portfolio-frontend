@@ -7,6 +7,7 @@ import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
 import { ButtonUpDate } from '../../Buttons';
+import '../styled/style.css';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 
 const Adresspanel = () => {
@@ -123,6 +124,7 @@ const Adresspanel = () => {
                             id="outlined-basic"
                             label="Address Street"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Address Street"
                             required
                             onChange={(e) => setEndereco_LogradouroState(e.target.value)}
@@ -135,6 +137,7 @@ const Adresspanel = () => {
                             id="outlined-basic"
                             label="District"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your District"
                             required
                             onChange={(e) => setEndereco_BairroState(e.target.value)}
@@ -147,6 +150,7 @@ const Adresspanel = () => {
                             id="outlined-basic"
                             label="Number"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Address Number"
                             required
                             onChange={(e) => setEndereco_NumeroState(e.target.value)}
@@ -159,6 +163,7 @@ const Adresspanel = () => {
                             id="outlined-basic"
                             label="City"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your City ​​Address"
                             required
                             onChange={(e) => setEndereco_CidadeState(e.target.value)}

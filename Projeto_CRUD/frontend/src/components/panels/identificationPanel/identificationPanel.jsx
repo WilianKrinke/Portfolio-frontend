@@ -8,6 +8,7 @@ import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
 import { ButtonUpDate } from '../../Buttons';
+import '../styled/style.css';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 
 const Identificationpanel = () => {
@@ -128,6 +129,7 @@ const Identificationpanel = () => {
                             id="outlined-basic"
                             label="User Name"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your User Name"
                             onChange={(e) => setuserNameState(e.target.value)}
                             value={userNameState}
@@ -141,6 +143,7 @@ const Identificationpanel = () => {
                             id="outlined-basic"
                             label="First Name"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Name"
                             onChange={(e) => setPrimeiro_NomeState(e.target.value)}
                             required
@@ -153,6 +156,7 @@ const Identificationpanel = () => {
                             id="outlined-basic"
                             label="Second Name"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Second Name"
                             onChange={(e) => setSegundo_NomeState(e.target.value)}
                             required
@@ -165,6 +169,7 @@ const Identificationpanel = () => {
                             id="outlined-basic"
                             label="Age"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Year Of Birth"
                             onChange={(e) => setIdadeState(e.target.value)}
                             required

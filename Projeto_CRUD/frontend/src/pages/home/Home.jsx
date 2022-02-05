@@ -7,6 +7,7 @@ import Letterfooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
+import './home.css';
 import { ArticleCrud, ArticleLogin, ArticleSignUp, HomeMain, InfoCard, SectForm } from './styled';
 
 const Home = () => {

@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import Box from '@mui/material/Box';
+import styled from 'styled-components';
 
 export const MainContainer = styled.div`
     min-height: 320px;

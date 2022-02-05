@@ -2,13 +2,14 @@
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
-import { BoxStyled, Container, ContainerInfo, ForgetPassMain } from './styled';
+import './forgetPass.css';
+import { BoxStyled, Container, ContainerInfo, ForgetPassMain, LinkStyled, P } from './styled';
 
 const ForgetPassword = () => {
     const [userName, setuserName] = useState('');
@@ -31,6 +32,8 @@ const ForgetPassword = () => {
         }
     }
 
+    const teste = {};
+
     return (
         <>
             <Letterheader phrase="Recovery Password" />
@@ -38,20 +41,23 @@ const ForgetPassword = () => {
                 <Container>
                     <ContainerInfo $darkmode={darkMode}>
                         <div className="container_disclaimer">
-                            <p>Insert username to send password recovery e-mail.</p>
+                            <P $darkmode={darkMode}>Insert username to send password recovery e-mail.</P>
                         </div>
                         <form className="form" onSubmit={(e) => handleForm(e)}>
                             <BoxStyled noValidate>
                                 <TextField
                                     id="standard-basic"
+                                    className={darkMode ? 'darkmodeForgetPass' : 'normalForgetPass'}
                                     label="User Name"
                                     variant="standard"
                                     onChange={(e) => setuserName(e.target.value)}
                                 />
                             </BoxStyled>
                             <div className="container_buttons">
-                                <ButtonRecoverPass>Send</ButtonRecoverPass>
-                                <Link to="/">Back to Login</Link>
+                                <ButtonRecoverPass $darkmode={darkMode}>Send</ButtonRecoverPass>
+                                <LinkStyled to="/" $darkmode={darkMode}>
+                                    Back to Login
+                                </LinkStyled>
                             </div>
                         </form>
                     </ContainerInfo>

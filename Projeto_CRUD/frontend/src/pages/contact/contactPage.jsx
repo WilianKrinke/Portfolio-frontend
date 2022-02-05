@@ -14,6 +14,7 @@ import acessUser from '../../utils/accessUser/acessUser';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import userContact from '../../utils/userContact/userContact';
 import { SectionContainer } from '../myBorrowedBooks/styled';
+import './contact.css';
 import { Adress, ArticleContainer, ContactMain, DivPhysicalAddress, FormStyled, H2, IconLoading, P } from './styled';
 
 const ContactPage = () => {
@@ -144,11 +145,11 @@ const ContactPage = () => {
                                         </P>
                                     </div>
                                     <div className="div_select_subject">
-                                        {darkMode && (
+                                        {/* {darkMode && (
                                             <P $darkmode={darkMode}>
                                                 <b>Subjects:</b>{' '}
                                             </P>
-                                        )}
+                                        )} */}
                                         <Autocomplete
                                             {...defaultProps}
                                             id="auto-complete"
@@ -156,7 +157,12 @@ const ContactPage = () => {
                                             autoComplete
                                             includeInputInList
                                             renderInput={(params) => (
-                                                <TextField {...params} label="Subjects" variant="standard" />
+                                                <TextField
+                                                    {...params}
+                                                    label="Subjects"
+                                                    variant="standard"
+                                                    className={darkMode ? 'darkmode' : 'normal'}
+                                                />
                                             )}
                                             onChange={(event, value) => setSubjectState(value)}
                                         />

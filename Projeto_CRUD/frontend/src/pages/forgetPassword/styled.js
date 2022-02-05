@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const ForgetPassMain = styled.main`
@@ -62,12 +63,13 @@ export const Container = styled.section`
 export const ContainerInfo = styled.article`
     width: 100%;
     height: 100%;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column; 
     transition: border .3s ease-in-out;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"}; 
 
 
     .container_disclaimer{
@@ -133,5 +135,23 @@ export const ContainerInfo = styled.article`
                 color: #6e6edb;
             }
         }
+    }
+`
+
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 16px;       
+    }
+`
+
+export const LinkStyled = styled(Link)`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 16px;       
     }
 `

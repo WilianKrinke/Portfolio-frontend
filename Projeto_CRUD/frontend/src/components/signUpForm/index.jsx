@@ -86,6 +86,7 @@ const Form = () => {
                             label="User Name"
                             variant="standard"
                             type="text"
+                            className="dark"
                             name="user_name_signup"
                             onChange={(e) => setuserName(e.target.value)}
                             value={userName}
@@ -104,6 +105,7 @@ const Form = () => {
                             label="E-mail"
                             variant="standard"
                             type="email"
+                            className="dark"
                             name="email_signup"
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
@@ -123,6 +125,7 @@ const Form = () => {
                             label="Password"
                             variant="standard"
                             type="password"
+                            className="dark"
                             name="pass_signup"
                             onChange={(e) => setPass(e.target.value)}
                             value={pass}
@@ -142,6 +145,7 @@ const Form = () => {
                             label="Confirm the Password"
                             variant="standard"
                             type="password"
+                            className="dark"
                             name="confirmed_pass"
                             onChange={(e) => setPassConfirmed(e.target.value)}
                             value={passConfirmed}

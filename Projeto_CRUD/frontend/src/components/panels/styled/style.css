@@ -1,0 +1,41 @@
+.darkmode input {
+    border-bottom: 2px solid transparent;
+}
+
+.darkmode .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: #f9fff9;
+}
+
+.darkmode .css-1kty9di-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #f9fff9;
+}
+
+.darkmode .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: #f9fff9;
+}
+
+.darkmode span {
+    color: #f9fff9;
+}
+
+/* Normal */
+
+.normal input {
+    border-bottom: 2px solid transparent;
+}
+
+.normal .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border-color: rgba(10, 10, 10, 0.342);
+}
+
+.normal .css-1kty9di-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+    color: #0a0a0a;
+}
+
+.normal .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border-color: rgba(10, 10, 10, 0.342);
+}
+
+.normal span {
+    color: #0a0a0a;
+}

@@ -47,6 +47,7 @@ const signIn = () => {
                             id="user_name_login"
                             label="User Name"
                             variant="standard"
+                            className="dark"
                             type="text"
                             name="user_name_login"
                             onChange={(e) => setuserName(e.target.value)}
@@ -64,6 +65,7 @@ const signIn = () => {
                             id="pass_login"
                             label="Password"
                             variant="standard"
+                            className="dark"
                             type="password"
                             name="pass_login"
                             onChange={(e) => setPass(e.target.value)}

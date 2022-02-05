@@ -7,6 +7,7 @@ import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
 import { ButtonUpDate } from '../../Buttons';
+import '../styled/style.css';
 import { ContainerInput, FormStyled, MainContainer } from '../styled/styled';
 
 const Contactpanel = () => {
@@ -98,6 +99,7 @@ const Contactpanel = () => {
                             id="outlined-basic"
                             label="E-mail"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your E-mail"
                             required
                             onChange={(e) => setEmailState(e.target.value)}
@@ -110,6 +112,7 @@ const Contactpanel = () => {
                             id="outlined-basic"
                             label="Cell Phone"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Cell Phone"
                             required
                             onChange={(e) => setTelefone_celularState(e.target.value)}
@@ -122,6 +125,7 @@ const Contactpanel = () => {
                             id="outlined-basic"
                             label="Landline"
                             variant="outlined"
+                            className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Landline"
                             required
                             onChange={(e) => setTelefone_fixoState(e.target.value)}
