@@ -44,10 +44,6 @@ export const DivPhysicalAddress = styled.div`
     .div_title{
         width: 100%;
         text-align: center;        
-
-        h2{
-            letter-spacing: 3px;
-        }
     }
 
     .div_adress{
@@ -60,23 +56,7 @@ export const DivPhysicalAddress = styled.div`
 
         @media screen and (max-width: 884px) {
             height: 340px;
-        }
-
-        p{
-            font-size: 16px;
-
-            @media screen and (max-width: 884px) {
-                font-size: 18px;
-            }
-        }
-
-        address{
-            font-size: 18px;
-
-            @media screen and (max-width: 884px) {
-                font-size: 20px;
-            }
-        }
+        }        
     }
 `
 
@@ -94,7 +74,9 @@ export const H2 = styled.h2`
 
 export const P = styled.p`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
-    transition: all .7s ease-in-out;  
+    transition: all .7s ease-in-out; 
+    font-size: 16px;
+    word-break: break-word;      
     
     @media screen and (max-width: 440px) {       
         font-size: 18px;       
@@ -103,11 +85,12 @@ export const P = styled.p`
 
 export const Adress = styled.address`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
-    transition: all .7s ease-in-out;  
-    
-    @media screen and (max-width: 440px) {       
-        font-size: 18px;       
-    }
+    transition: all .7s ease-in-out;
+    font-size: 18px;
+
+    @media screen and (max-width: 884px) {
+        font-size: 20px;
+    }  
 `
 
 export const FormStyled = styled.form`
@@ -128,14 +111,6 @@ export const FormStyled = styled.form`
         width: 100%;
     }
 
-    p,b{
-        font-size: 16px;
-
-        @media screen and (max-width: 884px) {
-            font-size: 18px;
-        }
-    }
-
     .div_title{        
         width: 100%;
         text-align: center;
@@ -144,10 +119,6 @@ export const FormStyled = styled.form`
     .div_from{        
         width: 100%;
         text-align: left;
-
-        p{
-            word-break: break-word;            
-        }
     }
 
     .div_to{        

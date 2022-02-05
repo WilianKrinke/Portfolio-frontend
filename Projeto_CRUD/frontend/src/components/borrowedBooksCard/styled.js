@@ -138,11 +138,7 @@ export const H3 = styled.h3`
 export const P = styled.p`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
     transition: all .7s ease-in-out; 
-    font-size: 16px;  
-    
-    @media screen and (max-width: 440px) {       
-        font-size: 18px;       
-    }
+    font-size: 18px;  
 `
 
 export const ContainerResume = styled.div`
@@ -165,16 +161,6 @@ export const ContainerResume = styled.div`
     
     .div_resume{           
         padding: 10px;
-              
-        p{
-            font-size: 16px;
-        }
-
-        @media screen and (max-width: 570px) {
-             p{
-                 font-size: 16px;
-             }
-        }
     }
 `
 
