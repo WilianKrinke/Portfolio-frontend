@@ -1,8 +1,8 @@
-import styled from 'styled-components'
 import { BsBoxArrowDown } from 'react-icons/bs';
+import styled from 'styled-components';
 
 export const BorrowedBookCard = styled.article`
-    height: 350px;
+    height: 380px;
     width: 85%;
     margin: 10px 0px;
     display: flex;
@@ -24,7 +24,6 @@ export const BorrowedBookCard = styled.article`
         min-height: 670px;
         width: 100%;
         border-left: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? " 2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
-    
         border-bottom: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? "2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"}; 
     }
 `
@@ -46,11 +45,12 @@ export const ContainerTitle = styled.div`
 
     @media screen and (max-width: 570px) {
         border-right: none;
+        height: 85%;
     }
 
     .div_img{
-        width: 180px;
-        height: 85%;
+        width: 150px;
+        height: 60%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -63,14 +63,14 @@ export const ContainerTitle = styled.div`
 
         @media screen and (max-width: 570px) {
             height: 95%;
-            width: 180px;
+            width: 45%;
         }
 
         img{
-            width: 180px;
+            width: 100%;
             height: 100%;
             cursor: pointer;
-            object-fit: cover;
+            object-fit: contain;
         }
     }
 
@@ -78,14 +78,19 @@ export const ContainerTitle = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: column;
- 
+        flex-direction: column; 
         width: 100%;
-        height: 25%; 
+        height: 40%;        
 
         @media screen and (max-width: 1100px) {
             height: 120px;
         }
+
+        @media screen and (max-width: 570px) {
+            width: 55%;
+            padding:10px;
+        }
+
     }
 
     .div_title{
@@ -132,7 +137,8 @@ export const H3 = styled.h3`
 
 export const P = styled.p`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
-    transition: all .7s ease-in-out;  
+    transition: all .7s ease-in-out; 
+    font-size: 16px;  
     
     @media screen and (max-width: 440px) {       
         font-size: 18px;       
@@ -144,7 +150,7 @@ export const ContainerResume = styled.div`
     height: 100%;
     width: 65%;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     border-left: ${props => props.isBookLate ? "2px solid #FE6B0A" : props.$darkmode ? " 2px solid rgba(185, 185, 185, 0.5)" : "2px solid rgba(0, 0, 0, 0.2)"};
@@ -222,20 +228,9 @@ export const DivInfoLendBook = styled.div`
     :hover{
         background-color: ${props => props.isSameDate ? "transparent" : props.isBookLate ? "#FE6B0A" : "transparent"};
     }
-
-    p{
-        font-size: 16px;
-
-        :last-child{
-            font-size: 22px;
-        }
-    }
     
     @media screen and (max-width: 570px) {
         background-color: ${props => props.isSameDate ? "#FE6B0A" : props.isBookLate ? "#FE6B0A" : "transparent"};
-
-        p{
-            font-size: 16px;
-        }
+        height: 130px;        
     }
 `
