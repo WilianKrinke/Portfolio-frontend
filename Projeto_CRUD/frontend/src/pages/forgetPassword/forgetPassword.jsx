@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ButtonRecoverPass } from '../../components/Buttons';
@@ -11,11 +13,11 @@ import { BoxStyled, Container, ContainerInfo, ForgetPassMain } from './styled';
 const ForgetPassword = () => {
     const [userName, setuserName] = useState('');
     const navigate = useNavigate();
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     async function handleForm(e) {
-        e.preventDefault();
-
         try {
+            e.preventDefault();
             const response = await reqRecoverPass(userName);
 
             if (response !== null) {
@@ -32,9 +34,9 @@ const ForgetPassword = () => {
     return (
         <>
             <Letterheader phrase="Recovery Password" />
-            <ForgetPassMain>
+            <ForgetPassMain $darkmode={darkMode}>
                 <Container>
-                    <ContainerInfo>
+                    <ContainerInfo $darkmode={darkMode}>
                         <div className="container_disclaimer">
                             <p>Insert username to send password recovery e-mail.</p>
                         </div>

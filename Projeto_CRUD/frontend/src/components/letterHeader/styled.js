@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HeaderStyled = styled.header`
     max-width: 100vw;
-    min-height: 10vh;
+    min-height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;

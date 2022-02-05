@@ -1,11 +1,11 @@
-import styled from 'styled-components'
 import Box from '@mui/material/Box';
-import pattern_colors from '../../colors'
+import styled from 'styled-components';
 
 export const ForgetPassMain = styled.main`
     max-width: 100vw;
     min-height: 70vh;
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -39,7 +39,8 @@ export const BoxStyled = styled(Box)`
 `
 
 export const Container = styled.section`
-    background-color: ${pattern_colors.prime_compoments_bg};
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
     width: 550px;
     height: 410px;
     padding: 10px;

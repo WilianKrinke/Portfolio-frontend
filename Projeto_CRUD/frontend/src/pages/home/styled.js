@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const HomeMain = styled.main`
     max-width: 100vw;
-    min-height: calc(74vh - 5px);
+    min-height: 70vh;
     background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
     display: flex;
     flex-direction: row;

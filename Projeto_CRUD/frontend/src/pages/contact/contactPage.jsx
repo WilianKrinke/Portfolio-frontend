@@ -144,6 +144,11 @@ const ContactPage = () => {
                                         </P>
                                     </div>
                                     <div className="div_select_subject">
+                                        {darkMode && (
+                                            <P $darkmode={darkMode}>
+                                                <b>Subjects:</b>{' '}
+                                            </P>
+                                        )}
                                         <Autocomplete
                                             {...defaultProps}
                                             id="auto-complete"
