@@ -9,7 +9,6 @@ import Adresspanel from '../panels/adressPanel/adressPanel';
 import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
 import Showingdatapanel from '../panels/showingData/showingDataPanel';
-import Showingdatapanel from '../panels/showingData/showingDataPanel';
 function TabPanel(props) {
     const { children, value, index } = props;
 
