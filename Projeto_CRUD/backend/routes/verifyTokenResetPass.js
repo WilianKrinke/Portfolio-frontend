@@ -7,7 +7,6 @@ function verifyTokenResetPass(app){
                 const wasValid = await compareToken(req.body)
                 
                 if (wasValid) {
-                    console.log('Entrou no TRUE')
                     res.status(200).send({
                         wasValid
                     })
