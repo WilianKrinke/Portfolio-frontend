@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import React, { useEffect, useState } from 'react';
@@ -91,10 +90,6 @@ const ContactPage = () => {
     const defaultProps = {
         options: arrSubjects,
         getOptionLabel: (option) => option.Subject,
-    };
-
-    const flatProps = {
-        options: arrSubjects.map((option) => option.Subject),
     };
 
     return (

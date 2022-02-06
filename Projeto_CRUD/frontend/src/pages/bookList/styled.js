@@ -45,27 +45,6 @@ export const BookListArticle = styled.article`
     flex-direction: row;
     flex-wrap: wrap;
     padding: 10px;
-
-        i{
-            cursor: pointer;
-            font-size: 24px;
-            position: relative;
-            top: 10px;
-        }
-    }
-`
-
-export const LendButton = styled.div`
-    background-color: rgba(89, 198, 255, 0.61);
-    border-radius: 5px;
-    transition: all .3s ease-in-out;
-    width: 150px;
-    margin: 0px auto;
-    cursor: pointer;
-
-    :hover {
-        background-color: #2D5CFF;
-    }
 `
 
 

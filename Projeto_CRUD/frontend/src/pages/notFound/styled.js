@@ -1,16 +1,24 @@
 import styled from 'styled-components'
 
-export const ErrorMainStyled = styled.main`
+export const MainNotFound = styled.main`
     max-width: 100vw;
     min-height: 70vh;
     background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
 `
 
 export const StyledSection = styled.section`
     display: flex;
     align-items: center;
     justify-content: space-around;
-    flex-direction: row;
+    flex-direction: column;
+    border: 1px solid;
+    width: 100%;
+    min-height: 25px;
 
     @media screen and (max-width: 650px) {
         flex-direction: column;
@@ -42,17 +50,5 @@ export const ButtonBackPage = styled.button`
     
     @media screen and (max-width: 440px) {       
         font-size: 16px;       
-    }
-`
-
-export const H3 = styled.h3`    
-    font-size: 18px;
-    font-weight: 400;
-    letter-spacing: 2px; 
-    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
-    transition: all .7s ease-in-out;       
-
-    @media screen and (max-width: 440px) {        
-        font-size: 22px;        
     }
 `
