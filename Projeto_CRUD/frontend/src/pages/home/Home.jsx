@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ButtonBackToLogin, ButtonChangeForm } from '../../components/Buttons';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
@@ -17,10 +17,6 @@ const Home = () => {
     function handleChangeBlock() {
         setisLoginVisible(!isLoginVisible);
     }
-
-    useEffect(() => {
-        sessionStorage.setItem('dark', false);
-    }, []);
 
     return (
         <>
