@@ -138,17 +138,19 @@ export const ButtonConfirmedLoanBook = styled.button`
   width: 150px;
   height: 40px;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: ${props => props.darkMode ? "#050517" : "transparent"};  
   outline: none;
   font-size: 14px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: #222222;
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+  
 
   :hover{
-        background: #030103;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: ${props => props.$darkmode ? "#071057" : "#030103"};
+        border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
         color: #fff;
         animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
@@ -159,18 +161,20 @@ export const ButtonCancelLoanBook = styled.button`
   width: 150px;
   height: 40px;
   border-radius: 5px;
-  background-color: transparent;
+  background-color: ${props => props.darkMode ? "#050517" : "transparent"};  
   outline: none;
   font-size: 14px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 
   :hover{
-        background: #030103;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+    background: ${props => props.$darkmode ? "#071057" : "#030103"};
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
+    color: #fff;
+    animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
 `
@@ -268,7 +272,7 @@ export const ButtonSendContact = styled.button`
   color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
 
   :hover{
-    background: ${props => props.$darkmode ? "#071057" : "#030103"};;
+    background: ${props => props.$darkmode ? "#071057" : "#030103"};
     color: #fff;
   }
 `

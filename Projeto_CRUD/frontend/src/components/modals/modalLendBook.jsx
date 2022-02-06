@@ -1,14 +1,16 @@
+/* eslint-disable no-unused-vars */
 import { addBusinessDays, format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import propTypes from 'prop-types';
 import React, { memo } from 'react';
 import Modal from 'react-modal';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import lendBook from '../../utils/lendBooks/lendBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal, SubDivModal } from './styleds/styled';
+import { DivModal, P, SubDivModal } from './styleds/styled';
 
 const ModalLendBook = ({
     modalLendBookIsOpen,
@@ -27,6 +29,7 @@ const ModalLendBook = ({
     };
 
     const { bookName } = bookInfo;
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     async function handleLend() {
         try {
@@ -90,20 +93,19 @@ const ModalLendBook = ({
                 style={customStyles}
                 contentLabel="Confirmed Modal"
             >
-                <DivModal>
-                    <SubDivModal>
+                <DivModal $darkmode={darkMode}>
+                    <SubDivModal $darkmode={darkMode}>
                         <div className="disclaimer_lend_book" title="Disclaimer">
-                            <p>
-                                Do you confirm the loan of the book <strong>&quot;{bookName}&quot;</strong> on the{' '}
-                                <strong>{today}</strong> with the return for the{' '}
-                                <strong>{threeDaysBusinessAfter}</strong>?
-                            </p>
+                            <P $darkmode={darkMode}>
+                                Do you confirm the loan of the book <b>&quot;{bookName}&quot;</b> on the <b>{today}</b>{' '}
+                                with the return for the <b>{threeDaysBusinessAfter}</b>?
+                            </P>
                         </div>
                         <div className="container_buttons_lend_book">
-                            <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm">
+                            <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm" $darkmode={darkMode}>
                                 Confirm
                             </ButtonConfirmedLoanBook>
-                            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+                            <ButtonCancelLoanBook onClick={closeModal} title="Cancel" $darkmode={darkMode}>
                                 Cancel
                             </ButtonCancelLoanBook>
                         </div>

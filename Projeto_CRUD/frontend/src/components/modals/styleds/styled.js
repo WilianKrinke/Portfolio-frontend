@@ -9,7 +9,7 @@ export const DivModal = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};   
     border-radius: 3px;
     border: 1px solid rgba(0, 0, 0, 0.3);
 
@@ -28,6 +28,15 @@ export const DivModal = styled.div`
     }
 `
 
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;  
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 16px;       
+    }
+`
+
 export const SubDivModal = styled.div`
     height: 200px;
     width: 400px;
@@ -37,9 +46,9 @@ export const SubDivModal = styled.div`
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
     border-radius: 3px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
 
 
     @media screen and (max-width: 430px) {

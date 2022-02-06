@@ -1,15 +1,17 @@
 import propTypes from 'prop-types';
 import React, { memo } from 'react';
 import Modal from 'react-modal';
+import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal, SubDivModal } from './styleds/styled';
+import { DivModal, P, SubDivModal } from './styleds/styled';
 
 const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, objectDatas }) => {
     const navigate = useNavigate();
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     async function handleReturnBook() {
         try {
@@ -69,18 +71,18 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
                 style={customStyles}
                 contentLabel="Confirmed Modal"
             >
-                <DivModal>
-                    <SubDivModal>
+                <DivModal $darkmode={darkMode}>
+                    <SubDivModal $darkmode={darkMode}>
                         <div className="disclaimer_lend_book" title="Disclaimer">
-                            <p>
-                                Do you confirm returning the book <strong>&quot;{bookName}&quot;</strong>?
-                            </p>
+                            <P $darkmode={darkMode}>
+                                Do you confirm returning the book <b>&quot;{bookName}&quot;</b>?
+                            </P>
                         </div>
                         <div className="container_buttons_lend_book">
-                            <ButtonConfirmedLoanBook title="Confirm" onClick={handleReturnBook}>
+                            <ButtonConfirmedLoanBook $darkmode={darkMode} title="Confirm" onClick={handleReturnBook}>
                                 Confirm
                             </ButtonConfirmedLoanBook>
-                            <ButtonCancelLoanBook onClick={closeModal} title="Cancel">
+                            <ButtonCancelLoanBook $darkmode={darkMode} onClick={closeModal} title="Cancel">
                                 Cancel
                             </ButtonCancelLoanBook>
                         </div>

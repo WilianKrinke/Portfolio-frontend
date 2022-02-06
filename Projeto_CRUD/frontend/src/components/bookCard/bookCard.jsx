@@ -27,7 +27,7 @@ import {
     IconSeeMoreLess,
     P,
     ParagraphResume,
-    SecondContainerInfo,
+    SecondContainerInfo
 } from './styled';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
