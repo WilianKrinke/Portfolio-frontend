@@ -23,7 +23,7 @@ export const ArticleContainer = styled.article`
 `
 
 export const DivPhysicalAddress = styled.div`
-    height: 430px;
+    height: 470px;
     width: 50%;
     padding: 10px 40px;
     display: flex;
@@ -95,7 +95,7 @@ export const Adress = styled.address`
 
 export const FormStyled = styled.form`
     border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
-    height: 430px;
+    height: 470px;
     width: 50%;
     padding: 10px 40px;
     display: flex;
@@ -142,6 +142,8 @@ export const FormStyled = styled.form`
         textarea{
             width: 100%;
             resize: none;
+            font-family: 'Slabo 27px', serif;
+            font-size: 16px;
 
             @media screen and (max-width: 884px) {
                 border: 1px solid rgba(0, 0, 0, 0.5);

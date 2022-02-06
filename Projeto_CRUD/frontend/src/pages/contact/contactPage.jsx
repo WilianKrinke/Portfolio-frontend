@@ -23,6 +23,7 @@ const ContactPage = () => {
     const [messageState, setMessageState] = useState('');
     const [subjectState, setSubjectState] = useState('');
     const [emailState, setEmailState] = useState('');
+    const [messageLength, setmessageLength] = useState(0);
     const [emailSupportState] = useState('support_contact@email.com');
 
     const navigate = useNavigate();
@@ -47,6 +48,10 @@ const ContactPage = () => {
         })();
     }, []);
 
+    useEffect(() => {
+        setmessageLength(messageState.length);
+    }, [messageState]);
+
     function handleMessage(e) {
         setMessageState(e.target.value);
     }
@@ -70,6 +75,7 @@ const ContactPage = () => {
             } else {
                 setLoadingButtonState(false);
                 document.getElementById('textarea').value = '';
+                setmessageLength(0);
                 toast.success('Message Sent Successfully, Thank you.');
             }
         } catch (error) {
@@ -140,11 +146,6 @@ const ContactPage = () => {
                                         </P>
                                     </div>
                                     <div className="div_select_subject">
-                                        {/* {darkMode && (
-                                            <P $darkmode={darkMode}>
-                                                <b>Subjects:</b>{' '}
-                                            </P>
-                                        )} */}
                                         <Autocomplete
                                             {...defaultProps}
                                             id="auto-complete"
@@ -178,7 +179,7 @@ const ContactPage = () => {
                                             maxLength={240}
                                             required
                                         ></textarea>
-                                        <P $darkmode={darkMode}>{messageState.length}/240 characters</P>
+                                        <P $darkmode={darkMode}>{messageLength}/240 characters</P>
                                     </div>
                                     <div className="div_button">
                                         <ButtonSendContact $darkmode={darkMode}>
