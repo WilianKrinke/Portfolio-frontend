@@ -4,20 +4,22 @@ function verifyTokenResetPass(app){
     app.route('/verify-token')
         .post(async (req, res) => {
             try {
-                console.log(req.body) 
                 const wasValid = await compareToken(req.body)
                 
                 if (wasValid) {
+                    console.log('Entrou no TRUE')
                     res.status(200).send({
                         wasValid
                     })
                 } else {
-                    res.status(400).send('Something wrong, contact the administrator')
+                    res.status(200).send({
+                        wasValid: false
+                    })
                 }
-            } catch (e) {
-                const error = new Error(e)
-                console.log(error.message)          
-                res.status(500).send(error.message)
+            } catch (error) {         
+                res.status(200).send({
+                    wasValid: false
+                })
             }
         })
 }

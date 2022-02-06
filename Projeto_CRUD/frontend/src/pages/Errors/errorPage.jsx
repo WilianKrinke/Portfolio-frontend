@@ -1,19 +1,20 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import LetterFooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import LottieAlert from '../../components/lottieAnimations/lottieError';
 import { ButtonBackPage, ErrorMainStyled, H3, StyledSection } from './styled';
 
 const Errorpage = () => {
+    const navigate = useNavigate();
     const { error } = useParams();
     console.log(error);
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     function handleBack() {
-        window.history.back();
+        navigate('/');
     }
 
     return (
@@ -23,7 +24,7 @@ const Errorpage = () => {
                 <StyledSection>
                     <H3 $darkmode={darkMode}>Error: {error}</H3>
                     <ButtonBackPage onClick={handleBack} $darkmode={darkMode}>
-                        Go Back
+                        Back Home
                     </ButtonBackPage>
                 </StyledSection>
                 <LottieAlert />

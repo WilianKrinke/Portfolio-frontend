@@ -6,9 +6,8 @@ function changeRating(app) {
             try {                
                 const response = await changeRatingBook(req.body);                 
                 res.send(response)                
-            } catch (e) {
-                const error = new Error(e)
-                console.log(error.message)          
+            } catch (error) {
+                console.log(error.message)
                 res.status(500).send(error.message)
             }
         })

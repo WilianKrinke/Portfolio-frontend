@@ -1,10 +1,10 @@
-import styled from 'styled-components'
 import Box from '@mui/material/Box';
+import styled from 'styled-components';
 
 export const RedefinePassMain = styled.main`
     max-width: 100vw;
     min-height: 70vh;
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
     padding: 10px;
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@ export const RedefinePassMain = styled.main`
 `
 
 export const SectionResetPass = styled.section`
-    background-color: #F9FFF9;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
     width: 550px;
     height: 410px;
     padding: 10px;
@@ -31,6 +31,7 @@ export const SectionResetPass = styled.section`
 export const ContainerInfo = styled.article`
     width: 100%;
     height: 100%;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};
     border: 1px solid rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;

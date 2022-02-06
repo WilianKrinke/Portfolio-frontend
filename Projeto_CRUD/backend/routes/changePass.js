@@ -9,12 +9,11 @@ function changePass(app){
                 if (wasUpdate) {
                     res.status(200).send({wasUpdate})
                 } else {
-                    res.status(400).send({wasUpdate})
+                    throw new Error('Server Error - changePass')
                 }
                 
-            } catch (e) {
-                const error = new Error(e)
-                console.log(error.message)          
+            } catch (error) {  
+                console.log(error.message)     
                 res.status(500).send(error.message)
             }
         })

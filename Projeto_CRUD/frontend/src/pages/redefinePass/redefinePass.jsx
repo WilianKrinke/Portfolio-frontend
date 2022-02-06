@@ -40,7 +40,8 @@ const RedefinePass = () => {
                 if (data.wasValid) {
                     setloadingState(false);
                 } else {
-                    navigate('/');
+                    const message = 'Token Not Valid';
+                    navigate(`/error-page/${message}`);
                 }
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
@@ -109,7 +110,7 @@ const RedefinePass = () => {
             ) : (
                 <>
                     <Letterheader phrase="Reset Your Password" $darkmode={darkMode} />
-                    <RedefinePassMain>
+                    <RedefinePassMain $darkmode={darkMode}>
                         <SectionResetPass>
                             <ContainerInfo>
                                 <form onSubmit={(e) => handleNewPass(e)}>

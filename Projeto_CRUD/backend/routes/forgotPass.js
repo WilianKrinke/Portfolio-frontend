@@ -10,8 +10,7 @@ function forgotPass(app){
             try {
                 const response = await getEmailFromUser(req.body.userName)
                 const userHaveTokenValid = await haveTokenValid(response)
-
-                console.log(userHaveTokenValid)
+                
                 if (userHaveTokenValid === false) {
                     const token = tokenToEmail(response)    
                     const objectResponse = await persistDatas(response,token)     
@@ -25,7 +24,10 @@ function forgotPass(app){
                     })                    
 
                 } else {
-                    res.status(400).send('This user already has a call in progress for password change')
+                    res.status(200).send({
+                        wasSent: null,
+                        email: null
+                    })
                 }
 
             } catch (error) {
