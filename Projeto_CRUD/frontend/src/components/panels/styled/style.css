@@ -1,5 +1,6 @@
 .darkmode input {
     border-bottom: 2px solid transparent;
+    color: #f9fff9;
 }
 
 .darkmode .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
@@ -22,6 +23,7 @@
 
 .normal input {
     border-bottom: 2px solid transparent;
+    color: #0a0a0a;
 }
 
 .normal .css-1d3z3hw-MuiOutlinedInput-notchedOutline {

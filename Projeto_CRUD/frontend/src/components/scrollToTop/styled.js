@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import { GoArrowUp } from "react-icons/go";
+import styled from 'styled-components';
 
 export const ScrollArrow = styled(GoArrowUp)`
     position: fixed;
@@ -15,6 +15,7 @@ export const Phrase = styled.p`
     right: 35px;
     bottom: 35px;
     font-size: 12px;
+    cursor: pointer;
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
 `
 
