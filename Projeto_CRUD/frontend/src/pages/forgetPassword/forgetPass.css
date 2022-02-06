@@ -4,6 +4,7 @@
 
 .darkmodeForgetPass input {
     border-bottom: 2px solid #f9fff9;
+    color: #f9fff9 !important ;
 }
 
 .darkmodeForgetPass input:hover {

@@ -1,4 +1,4 @@
-import baseUrl from '../baseUrl'
+import baseUrl from '../baseUrl';
 import { isValidUser } from '../validations/validUser';
 
 export default async function reqRecoverPass(userName){
@@ -8,7 +8,8 @@ export default async function reqRecoverPass(userName){
         if (isValidUserName.isValid) {
             const response = await baseUrl.post('/forgot-pass', {
                 userName
-            })    
+            }) 
+            
             const {data} = response
             return data;            
         } else {

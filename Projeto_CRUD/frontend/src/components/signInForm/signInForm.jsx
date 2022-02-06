@@ -41,7 +41,7 @@ const signIn = () => {
                     <label htmlFor="user_name_login">
                         <i className="fas fa-user" title="User Name"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             required
                             id="user_name_login"
@@ -51,6 +51,7 @@ const signIn = () => {
                             type="text"
                             name="user_name_login"
                             onChange={(e) => setuserName(e.target.value)}
+                            autoComplete="off"
                         />
                     </Box>
                 </UserContainer>
@@ -59,7 +60,7 @@ const signIn = () => {
                     <label htmlFor="pass_login">
                         <i className="fas fa-lock" title="Password"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             required
                             id="pass_login"
@@ -69,6 +70,7 @@ const signIn = () => {
                             type="password"
                             name="pass_login"
                             onChange={(e) => setPass(e.target.value)}
+                            autoComplete="off"
                         />
                     </Box>
                 </PassContainer>

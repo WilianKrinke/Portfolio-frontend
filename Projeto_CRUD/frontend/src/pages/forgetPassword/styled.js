@@ -1,6 +1,8 @@
 import Box from '@mui/material/Box';
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { RotateLoading } from './keyframes';
 
 export const ForgetPassMain = styled.main`
     max-width: 100vw;
@@ -154,4 +156,11 @@ export const LinkStyled = styled(Link)`
     @media screen and (max-width: 440px) {       
         font-size: 16px;       
     }
+`
+
+export const IconLoading = styled(AiOutlineLoading3Quarters)`
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    animation: ${RotateLoading} .75s linear infinite running;
 `

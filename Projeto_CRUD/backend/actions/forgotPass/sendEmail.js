@@ -1,6 +1,6 @@
 const mailer = require('./mailer')
 
-async function sendEmail(objectResponse){        
+async function sendEmail(objectResponse){  
     const {email, token, idUser} = objectResponse;
     const response = await mailer.sendMail({
         from: email,

@@ -9,7 +9,6 @@ const Notfound = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     function handleBack() {
-        console.log('Clique');
         window.history.back();
     }
 

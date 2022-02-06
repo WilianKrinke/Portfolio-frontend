@@ -11,11 +11,12 @@ function forgotPass(app){
                 const response = await getEmailFromUser(req.body.userName)
                 const userHaveTokenValid = await haveTokenValid(response)
 
+                console.log(userHaveTokenValid)
                 if (userHaveTokenValid === false) {
                     const token = tokenToEmail(response)    
-                    const objectResponse = await persistDatas(response,token)                    
-                    const wasSent = await sendEmail(objectResponse)
-    
+                    const objectResponse = await persistDatas(response,token)     
+                    
+                    const wasSent = await sendEmail(objectResponse)    
                     const {email} = objectResponse    
                     
                     res.status(200).send({

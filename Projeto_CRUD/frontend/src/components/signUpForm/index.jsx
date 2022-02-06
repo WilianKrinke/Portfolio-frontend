@@ -75,12 +75,12 @@ const Form = () => {
 
     return (
         <>
-            <form className="signupForm" autoComplete="false" onSubmit={(e) => handleSubmitUser(e)}>
+            <form className="signupForm" onSubmit={(e) => handleSubmitUser(e)}>
                 <ContainerInfoSignUp>
                     <label htmlFor="user_name_signup">
                         <i className="fas fa-user" title="User Name"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             id="user_name_signup"
                             label="User Name"
@@ -91,6 +91,7 @@ const Form = () => {
                             onChange={(e) => setuserName(e.target.value)}
                             value={userName}
                             required
+                            autoComplete="off"
                         />
                     </Box>
                 </ContainerInfoSignUp>
@@ -99,7 +100,7 @@ const Form = () => {
                     <label htmlFor="email_signup">
                         <i className="fas fa-envelope" title="E-mail"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             id="email_signup"
                             label="E-mail"
@@ -110,6 +111,7 @@ const Form = () => {
                             onChange={(e) => setEmail(e.target.value)}
                             value={email}
                             required
+                            autoComplete="off"
                         />
                     </Box>
                 </ContainerInfoSignUp>
@@ -119,7 +121,7 @@ const Form = () => {
                         <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
                         <i className="fas fa-eye none" id="eyeOpen" title="Password"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             id="pass_signup"
                             label="Password"
@@ -130,6 +132,7 @@ const Form = () => {
                             onChange={(e) => setPass(e.target.value)}
                             value={pass}
                             required
+                            autoComplete="off"
                         />
                     </Box>
                 </ContainerInfoSignUp>
@@ -139,7 +142,7 @@ const Form = () => {
                         <i className="fas fa-eye-slash" id="eyeSlashConfirmed" title="Confirmed Password"></i>
                         <i className="fas fa-eye none" id="eyeOpenConfirmed" title="Confirmed Password"></i>
                     </label>
-                    <Box autoComplete="off">
+                    <Box>
                         <TextField
                             id="confirmed_pass"
                             label="Confirm the Password"
@@ -150,6 +153,7 @@ const Form = () => {
                             onChange={(e) => setPassConfirmed(e.target.value)}
                             value={passConfirmed}
                             required
+                            autoComplete="off"
                         />
                     </Box>
                 </ContainerInfoSignUp>

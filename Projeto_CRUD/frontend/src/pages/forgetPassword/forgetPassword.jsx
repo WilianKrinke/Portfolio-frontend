@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import TextField from '@mui/material/TextField';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -9,21 +8,25 @@ import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
 import Letterheader from '../../components/letterHeader/letterHeader.jsx';
 import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 import './forgetPass.css';
-import { BoxStyled, Container, ContainerInfo, ForgetPassMain, LinkStyled, P } from './styled';
+import { BoxStyled, Container, ContainerInfo, ForgetPassMain, IconLoading, LinkStyled, P } from './styled';
 
 const ForgetPassword = () => {
     const [userName, setuserName] = useState('');
+    const [loadingSendEmailState, setLoadingSendEmailState] = useState(false);
+
     const navigate = useNavigate();
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     async function handleForm(e) {
         try {
             e.preventDefault();
+            setLoadingSendEmailState(true);
             const response = await reqRecoverPass(userName);
 
             if (response !== null) {
                 const { email } = response;
                 toast.success(`The password reset link has been sent to ${email}`);
+                setLoadingSendEmailState(false);
             } else {
                 toast.warn('Something wrong, contact the administrator');
             }
@@ -31,8 +34,6 @@ const ForgetPassword = () => {
             navigate(`/error-page/${error.message}`);
         }
     }
-
-    const teste = {};
 
     return (
         <>
@@ -51,10 +52,13 @@ const ForgetPassword = () => {
                                     label="User Name"
                                     variant="standard"
                                     onChange={(e) => setuserName(e.target.value)}
+                                    autoComplete="off"
                                 />
                             </BoxStyled>
                             <div className="container_buttons">
-                                <ButtonRecoverPass $darkmode={darkMode}>Send</ButtonRecoverPass>
+                                <ButtonRecoverPass $darkmode={darkMode}>
+                                    {loadingSendEmailState ? <IconLoading /> : 'Send'}
+                                </ButtonRecoverPass>
                                 <LinkStyled to="/" $darkmode={darkMode}>
                                     Back to Login
                                 </LinkStyled>
