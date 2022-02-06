@@ -51,7 +51,6 @@ const signIn = () => {
                             type="text"
                             name="user_name_login"
                             onChange={(e) => setuserName(e.target.value)}
-                            autoComplete="off"
                         />
                     </Box>
                 </UserContainer>

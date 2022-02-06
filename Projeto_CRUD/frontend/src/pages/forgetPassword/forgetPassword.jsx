@@ -52,7 +52,6 @@ const ForgetPassword = () => {
                                     label="User Name"
                                     variant="standard"
                                     onChange={(e) => setuserName(e.target.value)}
-                                    autoComplete="off"
                                 />
                             </BoxStyled>
                             <div className="container_buttons">
