@@ -1,14 +1,12 @@
-/* eslint-disable no-unused-vars */
 import TextField from '@mui/material/TextField';
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { ButtonConfirmResetPass } from '../../components/Buttons';
 import Letterfooter from '../../components/letterFooter/letterFooter';
 import Letterheader from '../../components/letterHeader/letterHeader';
 import Loading from '../../components/loading/Loading';
-import { toggleLoading } from '../../store/actions/actions';
 import changePass from '../../utils/changePass/changePass';
 import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
 import {
@@ -25,11 +23,11 @@ const RedefinePass = () => {
     const params = useParams();
     const { token, idUser } = params;
 
+    const [loadingState, setloadingState] = useState(true);
     const [newPass, setnewPass] = useState('');
     const [confirmPass, setconfirmPass] = useState('');
 
-    const loading = useSelector((state) => state.toggleLoading.loading);
-    const dispatch = useDispatch();
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     let navigate = useNavigate();
 
@@ -40,13 +38,12 @@ const RedefinePass = () => {
                 const { data } = response;
 
                 if (data.wasValid) {
-                    dispatch(toggleLoading());
+                    setloadingState(false);
                 } else {
                     navigate('/');
                 }
             } catch (error) {
-                console.log(error);
-                navigate('/');
+                navigate(`/error-page/${error.message}`);
             }
         })();
     }, []);
@@ -88,9 +85,8 @@ const RedefinePass = () => {
     }
 
     async function handleNewPass(e) {
-        e.preventDefault();
-
         try {
+            e.preventDefault();
             const response = await changePass(newPass, confirmPass, token, idUser);
 
             if (response.wasUpdate === true) {
@@ -102,18 +98,17 @@ const RedefinePass = () => {
                 toast.warn('Password Not Changed, contact the administrator');
             }
         } catch (error) {
-            toast.warn('Password Not Changed, contact the administrator');
-            console.log(error);
+            navigate(`/error-page/${error.message}`);
         }
     }
 
     return (
         <>
-            {loading ? (
+            {loadingState ? (
                 <Loading />
             ) : (
                 <>
-                    <Letterheader phrase="Reset Your Password" />
+                    <Letterheader phrase="Reset Your Password" $darkmode={darkMode} />
                     <RedefinePassMain>
                         <SectionResetPass>
                             <ContainerInfo>
@@ -169,20 +164,8 @@ const RedefinePass = () => {
                                 </form>
                             </ContainerInfo>
                         </SectionResetPass>
-
-                        <ToastContainer
-                            position="top-right"
-                            autoClose={3000}
-                            hideProgressBar={false}
-                            newestOnTop
-                            closeOnClick
-                            rtl={false}
-                            draggable
-                            pauseOnHover={false}
-                            width={500}
-                        />
                     </RedefinePassMain>
-                    <Letterfooter />
+                    <Letterfooter $darkmode={darkMode} />
                 </>
             )}
         </>
