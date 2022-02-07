@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ButtonConfirmResetPass } from '../../components/Buttons';
-import Letterfooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import Externalfooter from '../../components/footer/externalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import changePass from '../../utils/changePass/changePass';
 import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
@@ -109,7 +109,7 @@ const RedefinePass = () => {
                 <Loading />
             ) : (
                 <>
-                    <Letterheader phrase="Reset Your Password" $darkmode={darkMode} />
+                    <HeaderComponent phrase="Reset Your Password" />
                     <RedefinePassMain $darkmode={darkMode}>
                         <SectionResetPass>
                             <ContainerInfo>
@@ -166,7 +166,7 @@ const RedefinePass = () => {
                             </ContainerInfo>
                         </SectionResetPass>
                     </RedefinePassMain>
-                    <Letterfooter $darkmode={darkMode} />
+                    <Externalfooter />
                 </>
             )}
         </>

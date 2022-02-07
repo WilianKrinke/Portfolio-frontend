@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import LetterFooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import InternalFooter from '../../components/footer/InternalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import LottieNotFound from '../../components/lottieAnimations/lottieNotFound';
 import { ButtonBackPage, MainNotFound } from './styled';
 
@@ -14,14 +14,14 @@ const Notfound = () => {
 
     return (
         <>
-            <Letterheader phrase="Page Not Found" $darkmode={darkMode} />
+            <HeaderComponent phrase="Page Not Found" />
             <MainNotFound $darkmode={darkMode}>
                 <ButtonBackPage onClick={handleBack} $darkmode={darkMode}>
                     Go Back
                 </ButtonBackPage>
                 <LottieNotFound />
             </MainNotFound>
-            <LetterFooter $darkmode={darkMode} />
+            <InternalFooter />
         </>
     );
 };

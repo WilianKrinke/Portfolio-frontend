@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Favoritecard from '../../components/favoriteCard/favoriteCard.jsx';
-import LetterFooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import InternalFooter from '../../components/footer/InternalFooter.jsx';
+import HeaderComponent from '../../components/header/HeaderComponent.jsx';
 import Loading from '../../components/loading/Loading';
 import LottieNoData from '../../components/lottieAnimations/lottieNoData';
 import Menu from '../../components/menu/Menu.jsx';
@@ -54,7 +54,7 @@ const Myfavorites = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <Letterheader phrase="My Favorites" />
+                    <HeaderComponent phrase="My Favorites" />
                     <FavoriteMain $darkmode={darkMode}>
                         <SectionContainer>
                             {noBookData ? (
@@ -69,7 +69,7 @@ const Myfavorites = () => {
                         </SectionContainer>
                         <ScrollToTop />
                     </FavoriteMain>
-                    <LetterFooter />
+                    <InternalFooter />
                 </>
             )}
         </>

@@ -3,7 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { H1, HeaderStyled } from './styled';
 
-const Letterheader = ({ phrase }) => {
+const HeaderComponent = ({ phrase }) => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     return (
@@ -15,8 +15,8 @@ const Letterheader = ({ phrase }) => {
     );
 };
 
-Letterheader.propTypes = {
+HeaderComponent.propTypes = {
     phrase: propTypes.string,
 };
 
-export default Letterheader;
+export default HeaderComponent;

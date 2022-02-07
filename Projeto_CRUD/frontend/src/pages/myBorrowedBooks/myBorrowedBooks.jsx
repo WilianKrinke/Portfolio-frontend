@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Borrowedbookscard from '../../components/borrowedBooksCard/borrowedBooksCard';
-import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
-import Letterheader from '../../components/letterHeader/letterHeader.jsx';
+import InternalFooter from '../../components/footer/InternalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import Lottienodata from '../../components/lottieAnimations/lottieNoData.jsx';
 import Menu from '../../components/menu/Menu';
@@ -53,7 +53,7 @@ const MyBorrowedBooks = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <Letterheader phrase="My Borrowed Books" />
+                    <HeaderComponent phrase="My Borrowed Books" />
                     <BorrowMain $darkmode={darkMode}>
                         <SectionContainer>
                             {noBookData ? (
@@ -66,7 +66,7 @@ const MyBorrowedBooks = () => {
                         </SectionContainer>
                         <Scrolltotop />
                     </BorrowMain>
-                    <Letterfooter />
+                    <InternalFooter />
                 </>
             )}
         </>

@@ -5,8 +5,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ButtonSendContact } from '../../components/Buttons';
-import LetterFooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import InternalFooter from '../../components/footer/InternalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
 import acessUser from '../../utils/accessUser/acessUser';
@@ -105,7 +105,7 @@ const ContactPage = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <Letterheader phrase="Contact Us" />
+                    <HeaderComponent phrase="Contact Us" />
                     <ContactMain $darkmode={darkMode}>
                         <SectionContainer>
                             <ArticleContainer>
@@ -190,7 +190,7 @@ const ContactPage = () => {
                             </ArticleContainer>
                         </SectionContainer>
                     </ContactMain>
-                    <LetterFooter />
+                    <InternalFooter />
                 </>
             )}
         </>

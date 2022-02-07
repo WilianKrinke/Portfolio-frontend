@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import LetterFooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import Externalfooter from '../../components/footer/externalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import LottieAlert from '../../components/lottieAnimations/lottieError';
 import { ButtonBackPage, ErrorMainStyled, H3, StyledSection } from './styled';
 
@@ -19,17 +19,17 @@ const Errorpage = () => {
 
     return (
         <>
-            <Letterheader phrase="Error" $darkmode={darkMode} />
+            <HeaderComponent phrase="Error" />
             <ErrorMainStyled $darkmode={darkMode}>
                 <StyledSection>
-                    <H3 $darkmode={darkMode}>Error: {error}</H3>
+                    <H3 $darkmode={darkMode}>Error: {error} - Contact The Administrator</H3>
                     <ButtonBackPage onClick={handleBack} $darkmode={darkMode}>
                         Back Home
                     </ButtonBackPage>
                 </StyledSection>
                 <LottieAlert />
             </ErrorMainStyled>
-            <LetterFooter $darkmode={darkMode} />
+            <Externalfooter />
         </>
     );
 };

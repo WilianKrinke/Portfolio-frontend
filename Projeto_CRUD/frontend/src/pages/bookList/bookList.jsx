@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import Ajustbooklist from '../../components/ajustBookList/ajustBookList';
 import Bookcard from '../../components/bookCard/bookCard.jsx';
-import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
-import Letterheader from '../../components/letterHeader/letterHeader.jsx';
+import InternalFooter from '../../components/footer/InternalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
@@ -75,7 +75,7 @@ const BookList = () => {
             ) : (
                 <>
                     <Menu user={userName} />
-                    <Letterheader phrase="Book List" />
+                    <HeaderComponent phrase="Book List" />
                     <BookListMain $darkmode={darkMode}>
                         <BookListSection>
                             <BookArticle fadeIn={fadeIn}>
@@ -111,7 +111,7 @@ const BookList = () => {
                         </BookListSection>
                         <Scrolltotop />
                     </BookListMain>
-                    <Letterfooter />
+                    <InternalFooter />
                 </>
             )}
         </>

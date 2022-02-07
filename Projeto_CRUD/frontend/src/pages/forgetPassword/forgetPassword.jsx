@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { ButtonRecoverPass } from '../../components/Buttons';
-import Letterfooter from '../../components/letterFooter/letterFooter.jsx';
-import Letterheader from '../../components/letterHeader/letterHeader.jsx';
+import Externalfooter from '../../components/footer/externalFooter';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 import './forgetPass.css';
 import { BoxStyled, Container, ContainerInfo, ForgetPassMain, IconLoading, LinkStyled, P } from './styled';
@@ -37,7 +37,7 @@ const ForgetPassword = () => {
 
     return (
         <>
-            <Letterheader phrase="Recovery Password" />
+            <HeaderComponent phrase="Recovery Password" />
             <ForgetPassMain $darkmode={darkMode}>
                 <Container>
                     <ContainerInfo $darkmode={darkMode}>
@@ -66,7 +66,7 @@ const ForgetPassword = () => {
                     </ContainerInfo>
                 </Container>
             </ForgetPassMain>
-            <Letterfooter />
+            <Externalfooter />
         </>
     );
 };

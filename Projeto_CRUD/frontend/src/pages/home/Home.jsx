@@ -1,10 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ButtonBackToLogin, ButtonChangeForm } from '../../components/Buttons';
+import Externalfooter from '../../components/footer/externalFooter';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
-import Letterfooter from '../../components/letterFooter/letterFooter';
-import Letterheader from '../../components/letterHeader/letterHeader';
+import HeaderComponent from '../../components/header/HeaderComponent';
 import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import './home.css';
@@ -20,7 +19,7 @@ const Home = () => {
 
     return (
         <>
-            <Letterheader phrase="Project Library" />
+            <HeaderComponent phrase="Project Library" />
             <HomeMain $darkmode={darkMode}>
                 <InfoCard $darkmode={darkMode}>
                     <ArticleCrud $darkmode={darkMode}>
@@ -46,7 +45,7 @@ const Home = () => {
                     )}
                 </SectForm>
             </HomeMain>
-            <Letterfooter />
+            <Externalfooter />
         </>
     );
 };
