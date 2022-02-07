@@ -5,6 +5,7 @@ import {
     DivMap,
     DivSocialMidia,
     DivTerm,
+    H4,
     IconGithub,
     IconGmail,
     IconInstagram,
@@ -77,7 +78,7 @@ const InternalFooter = () => {
                     </DivSocialMidia>
                 </div>
                 <div className="div_developed">
-                    <P $darkmode={darkMode}>Developed by Wilian Krinke</P>
+                    <H4 $darkmode={darkMode}>Developed by Wilian Krinke</H4>
                 </div>
             </ContainerFooter>
         </>

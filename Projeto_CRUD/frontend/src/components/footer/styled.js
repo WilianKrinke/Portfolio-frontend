@@ -54,7 +54,7 @@ export const DivSocialMidia = styled.div`
     height: 160px;
     width:100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
     padding: 20px;
@@ -107,7 +107,7 @@ export const IconGmail = styled(SiGmail)`
     margin-right: 20px;
     cursor:pointer;
     position: relative;
-    top: 35px;
+    top: 43px;
 `
 export const IconInstagram = styled(SiInstagram)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
@@ -115,7 +115,7 @@ export const IconInstagram = styled(SiInstagram)`
     margin: 0px 20px;
     cursor:pointer;
     position: relative;
-    top: 35px;
+    top: 43px;
 `
 export const IconLinkedin = styled(SiLinkedin)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
@@ -123,7 +123,7 @@ export const IconLinkedin = styled(SiLinkedin)`
     margin: 0px 20px;
     cursor:pointer;
     position: relative;
-    top: 35px;
+    top: 43px;
 `
 export const IconGithub = styled(SiGithub)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
@@ -131,5 +131,18 @@ export const IconGithub = styled(SiGithub)`
     margin: 0px 20px;
     cursor:pointer;
     position: relative;
-    top: 35px;
+    top: 43px;
+`
+
+export const ExternalContainerFooter = styled.footer`
+    max-width: 100vw;
+    min-height: 50px;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
+    transition: all .7s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 3px;
+    padding: 10px;
 `

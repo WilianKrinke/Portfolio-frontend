@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import DataTabs from '../../components/dataTab/dataTab';
+import InternalFooter from '../../components/footer/InternalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
@@ -53,7 +54,7 @@ const Mydata = () => {
                             </ArticleContainer>
                         </SectionContainer>
                     </MyDataMain>
-                    <internalFooter />
+                    <InternalFooter />
                 </>
             )}
         </>
