@@ -65,7 +65,7 @@ const ModalLendBook = ({
         closeModal,
     };
 
-    const teste = [Warningbox, Lendbookbox(objectLendBookBox)];
+    const teste = [Warningbox(objectLendBookBox), Lendbookbox(objectLendBookBox)];
 
     const customStyles = {
         content: {
@@ -91,7 +91,7 @@ const ModalLendBook = ({
     };
 
     function handleDecrementIndex() {
-        if (indexSelected < 0) {
+        if (indexSelected === 0) {
             setIndexSelected(1);
         } else {
             setIndexSelected((current) => current - 1);
@@ -99,10 +99,10 @@ const ModalLendBook = ({
     }
 
     function handleIncrementIndex() {
-        if (indexSelected > 1) {
+        if (indexSelected === teste.length - 1) {
             setIndexSelected(0);
         } else {
-            setIndexSelected((current) => current + 1);
+            setIndexSelected((curr) => curr + 1);
         }
     }
 
