@@ -1,16 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { addBusinessDays, format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
 import propTypes from 'prop-types';
-import React, { memo } from 'react';
+import React, { memo, useState } from 'react';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import lendBook from '../../utils/lendBooks/lendBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
-import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal, P, SubDivModal } from './styleds/styled';
+import Lendbookbox from '../InfoBoxes/LendbookBox';
+import Warningbox from '../InfoBoxes/WarningBox';
+import { DivModal } from './styleds/styled';
 
 const ModalLendBook = ({
     modalLendBookIsOpen,
@@ -21,6 +20,8 @@ const ModalLendBook = ({
     userAndBookDatas,
     bookInfo,
 }) => {
+    const [indexSelected, setIndexSelected] = useState(0);
+
     const navigate = useNavigate();
 
     const objectDatas = {
@@ -58,6 +59,14 @@ const ModalLendBook = ({
         setmodalReturnBook(false);
     }
 
+    const objectLendBookBox = {
+        bookName,
+        handleLend,
+        closeModal,
+    };
+
+    const teste = [Warningbox, Lendbookbox(objectLendBookBox)];
+
     const customStyles = {
         content: {
             top: '50%',
@@ -81,8 +90,21 @@ const ModalLendBook = ({
         },
     };
 
-    const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
-    const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 1), 'dd-MM-yyyy');
+    function handleDecrementIndex() {
+        if (indexSelected < 0) {
+            setIndexSelected(1);
+        } else {
+            setIndexSelected((current) => current - 1);
+        }
+    }
+
+    function handleIncrementIndex() {
+        if (indexSelected > 1) {
+            setIndexSelected(0);
+        } else {
+            setIndexSelected((current) => current + 1);
+        }
+    }
 
     return (
         <>
@@ -94,22 +116,11 @@ const ModalLendBook = ({
                 contentLabel="Confirmed Modal"
             >
                 <DivModal $darkmode={darkMode}>
-                    <SubDivModal $darkmode={darkMode}>
-                        <div className="disclaimer_lend_book" title="Disclaimer">
-                            <P $darkmode={darkMode}>
-                                Do you confirm the loan of the book <b>&quot;{bookName}&quot;</b> on the <b>{today}</b>{' '}
-                                with the return for the <b>{threeDaysBusinessAfter}</b>?
-                            </P>
-                        </div>
-                        <div className="container_buttons_lend_book">
-                            <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm" $darkmode={darkMode}>
-                                Confirm
-                            </ButtonConfirmedLoanBook>
-                            <ButtonCancelLoanBook onClick={closeModal} title="Cancel" $darkmode={darkMode}>
-                                Cancel
-                            </ButtonCancelLoanBook>
-                        </div>
-                    </SubDivModal>
+                    {teste[indexSelected]}
+                    <div className="div_steps">
+                        <p onClick={handleDecrementIndex}>Anterior</p>
+                        <p onClick={handleIncrementIndex}>Proximo</p>
+                    </div>
                 </DivModal>
             </Modal>
         </>

@@ -136,7 +136,7 @@ export const IconGithub = styled(SiGithub)`
 
 export const ExternalContainerFooter = styled.footer`
     max-width: 100vw;
-    min-height: 50px;
+    min-height: 10vh;
     background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      
     transition: all .7s ease-in-out;
     display: flex;

@@ -7,7 +7,7 @@ const Externalfooter = () => {
 
     return (
         <>
-            <ExternalContainerFooter>
+            <ExternalContainerFooter $darkmode={darkMode}>
                 <H4 $darkmode={darkMode}>Developed by Wilian Krinke</H4>
             </ExternalContainerFooter>
         </>

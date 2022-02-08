@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const DivModal = styled.div`    
-    height: 240px;
-    width: 440px;
+    height: 500px;
+    width: 700px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -25,6 +25,21 @@ export const DivModal = styled.div`
         background-color: #F9FFF9;
         border-radius: 3px;
         border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+    .div_steps{
+        width: 100%;
+        height: 5%;
+        border: 1px solid;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        align-items: center;
+
+        p{
+            cursor: pointer
+        }
     }
 `
 
