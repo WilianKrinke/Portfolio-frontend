@@ -34,7 +34,7 @@ export const ContainerFooter = styled.footer`
 
     .div_space{
         width:100%;
-        height: 100px;
+        height: 60px;
     }
 `
 
