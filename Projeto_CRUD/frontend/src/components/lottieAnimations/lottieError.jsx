@@ -16,7 +16,7 @@ const LottieAlert = () => {
 
     return (
         <>
-            <section className="section" title="No Data to Display">
+            <section className="section" title="Warning">
                 <div
                     id="NoData"
                     style={{ width: '100%', height: 350, position: 'relative', top: '30px', left: '7px' }}

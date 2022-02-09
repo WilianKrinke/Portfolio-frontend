@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { format } from 'date-fns';
 import propTypes from 'prop-types';
 import React, { memo, useState } from 'react';
