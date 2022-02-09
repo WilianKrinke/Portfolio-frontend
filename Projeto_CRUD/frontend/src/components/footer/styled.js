@@ -22,16 +22,6 @@ export const ContainerFooter = styled.footer`
         width:100%;
     }
 
-    .div_developed{
-        display: flex;
-        flex-direction: row;
-        align-items: flex-end;
-        justify-content: center;
-        width:100%;
-        height: 40px;
-        padding: 10px;        
-    }
-
     .div_space{
         width:100%;
         height: 60px;
@@ -56,8 +46,29 @@ export const DivSocialMidia = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
+
+    .div_developed{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width:100%;
+        height: 40px;
+        padding: 10px;;
+    }
+
+    .div_icons{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        width:80%;
+        height: 40px;
+        text-align: center;;
+
+    }
 `
 
 export const DivTerm = styled.div`
@@ -104,34 +115,23 @@ export const P = styled.p`
 export const IconGmail = styled(SiGmail)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
     font-size: 20px;
-    margin-right: 20px;
     cursor:pointer;
-    position: relative;
-    top: 43px;
 `
 export const IconInstagram = styled(SiInstagram)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
     font-size: 20px;
-    margin: 0px 20px;
     cursor:pointer;
-    position: relative;
-    top: 43px;
 `
 export const IconLinkedin = styled(SiLinkedin)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
     font-size: 20px;
-    margin: 0px 20px;
+    
     cursor:pointer;
-    position: relative;
-    top: 43px;
 `
 export const IconGithub = styled(SiGithub)`
     color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"};
     font-size: 20px;
-    margin: 0px 20px;
     cursor:pointer;
-    position: relative;
-    top: 43px;
 `
 
 export const ExternalContainerFooter = styled.footer`
