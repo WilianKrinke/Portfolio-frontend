@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { AiOutlineWarning } from "react-icons/ai";
+import styled from 'styled-components';
 
 export const SubDivModal = styled.div`
 height: 90%;
@@ -57,4 +58,11 @@ export const P = styled.p`
     @media screen and (max-width: 440px) {       
         font-size: 18;       
     }
+`
+
+export const IconWarning = styled(AiOutlineWarning)`
+    color: ${props => props.$darkmode ? "#FE6B0A" : "#0a0a0a"};
+    position: absolute;
+    top: 55px;    
+    font-size:40px;
 `
