@@ -19,7 +19,9 @@ const routeUpdateData = require('./routes/upDateData')
 const routeAccessUserData = require('./routes/userAccessData')
 const routeContactMessageIntern = require('./routes/contactMessage')
 const routeIsUpDateDatas = require('./routes/isUpDateDatas')
+const routeIsUserBlock = require('./routes/isUserBlock')
 const sanitizationReqBody = require('./validations/sanitization');
+
 
 const cors =  require('cors');
 const app = express();
@@ -38,6 +40,7 @@ routeChangePass(app)
 
 app.use(authValidate)
 routeGetBooks(app)
+routeIsUserBlock(app)
 routeLendBook(app)
 routeReturnBook(app)
 routeAddFavorite(app)

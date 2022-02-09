@@ -1,17 +1,15 @@
-const borrowBooksFromUser = require('../actions/getBookDatasActions/borrowBooksFromUser')
+const hasborrowBooksFromUser = require('../actions/getBookDatasActions/hasborrowBooksFromUser')
 const getDataBooks = require('../actions/getBookDatasActions/getDataBooks')
-const insertFavoriteBooks = require('../actions/getBookDatasActions/insertFavoriteBooks')
+const hasFavoriteBooks = require('../actions/getBookDatasActions/hasFavoriteBooks')
 const isValidWords = require('../validations/isValidWords/isValidWords')
 
 const getBooks = (app) => {
     app.route('/books-list/:category?')
         .get(async (req, res) => {
           try { 
-            const userData = {
-              idUser: req.idUser[0],
-              userName: req.userName[0]
-            }
-            
+            const [idUser] = req.idUser
+            const [userName] = req.userName
+                                    
             const isValid = isValidWords([req.params.category])
             
             if (isValid !== true) {
@@ -19,12 +17,12 @@ const getBooks = (app) => {
             }            
             
             const datasBooks = await getDataBooks(req.params.category) 
-            const booksWithBorrows = await borrowBooksFromUser(datasBooks, userData.idUser)
-            const responseBooks = await insertFavoriteBooks(booksWithBorrows, userData.idUser)
+            const booksWithBorrows = await hasborrowBooksFromUser(datasBooks, idUser)
+            const responseBooks = await hasFavoriteBooks(booksWithBorrows, idUser)
 
             res.status(200).send({
-              idUser: userData.idUser,
-              userName: userData.userName,
+              idUser,
+              userName,
               responseBooks,
             })
 

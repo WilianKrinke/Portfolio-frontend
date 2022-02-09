@@ -1,6 +1,6 @@
 const knex = require("../../connection/connection");
 
-async function insertFavoriteBooks(dataBooks, idUser){
+async function hasFavoriteBooks(dataBooks, idUser){
     const results = await knex('favorites').where('idUser', idUser)
 
     for (let index = 0; index < results.length; index++) {
@@ -16,4 +16,4 @@ async function insertFavoriteBooks(dataBooks, idUser){
     return dataBooks;
 }
 
-module.exports = insertFavoriteBooks;
+module.exports = hasFavoriteBooks;

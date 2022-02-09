@@ -4,7 +4,6 @@ async function sendDatasToDB(userDatas){
     const datas = {
         userName: userDatas.userName,
         email: userDatas.email,
-        adm: userDatas.isAdm,
         pass: userDatas.pass
     }    
     

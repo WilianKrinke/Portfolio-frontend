@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -9,6 +10,7 @@ import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
+import isUserBlocked from '../../utils/isUserBlocked/isUserBlocked';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { BookArticle, BookListArticle, BookListMain, BookListSection } from './styled';
 
@@ -33,6 +35,10 @@ const BookList = () => {
         (async () => {
             try {
                 const response = await getBookList(category);
+                const isBlocked = await isUserBlocked();
+
+                console.log(isBlocked);
+
                 if (response === false) {
                     tokenTimeOut(navigate);
                 } else {

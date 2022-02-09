@@ -1,4 +1,3 @@
-const { response } = require('express')
 const getMyFavoritesFromDb = require('../actions/getFavoritesActions/getFavoritesFromDb')
 
 function getMyFavorites(app){
