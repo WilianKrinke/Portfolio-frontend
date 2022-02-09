@@ -9,7 +9,7 @@ import lendBook from '../../utils/lendBooks/lendBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import Lendbookbox from '../InfoBoxes/LendbookBox';
 import Warningbox from '../InfoBoxes/WarningBox';
-import { DivModal } from './styleds/styled';
+import { DivModal, DivSTeps, P } from './styleds/styled';
 
 const ModalLendBook = ({
     modalLendBookIsOpen,
@@ -65,7 +65,7 @@ const ModalLendBook = ({
         closeModal,
     };
 
-    const teste = [Warningbox(objectLendBookBox), Lendbookbox(objectLendBookBox)];
+    const teste = [Warningbox(), Lendbookbox(objectLendBookBox)];
 
     const customStyles = {
         content: {
@@ -94,7 +94,7 @@ const ModalLendBook = ({
         if (indexSelected === 0) {
             setIndexSelected(1);
         } else {
-            setIndexSelected((current) => current - 1);
+            setIndexSelected((curr) => curr - 1);
         }
     }
 
@@ -117,10 +117,17 @@ const ModalLendBook = ({
             >
                 <DivModal $darkmode={darkMode}>
                     {teste[indexSelected]}
-                    <div className="div_steps">
-                        <p onClick={handleDecrementIndex}>Anterior</p>
-                        <p onClick={handleIncrementIndex}>Proximo</p>
-                    </div>
+                    <DivSTeps $darkmode={darkMode}>
+                        <P onClick={handleDecrementIndex} $darkmode={darkMode} title="Previous">
+                            Previous
+                        </P>
+                        <P $darkmode={darkMode}>
+                            {indexSelected + 1}/{teste.length}
+                        </P>
+                        <P onClick={handleIncrementIndex} $darkmode={darkMode} title="Next">
+                            Next
+                        </P>
+                    </DivSTeps>
                 </DivModal>
             </Modal>
         </>

@@ -2,16 +2,22 @@
 import propTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { SubDivModal2 } from './styled/styled';
+import { P, SubDivModal } from './styled/styled';
 
-const Warningbox = (objectLendBookBox) => {
-    const { bookName, handleLend, closeModal } = objectLendBookBox;
+const Warningbox = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     return (
-        <SubDivModal2 $darkmode={darkMode}>
-            <p>{bookName}</p>
-        </SubDivModal2>
+        <SubDivModal $darkmode={darkMode}>
+            <div className="div_warnings">
+                <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
+                <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
+                <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
+                <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
+                <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
+                <P $darkmode={darkMode}>-In case of delay, a fine will be applied, proportionally to the days late</P>
+            </div>
+        </SubDivModal>
     );
 };
 

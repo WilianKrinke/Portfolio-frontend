@@ -22,12 +22,12 @@ const Lendbookbox = (objectLendBookBox) => {
                 </P>
             </div>
             <div className="container_buttons_lend_book">
-                <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm" $darkmode={darkMode}>
-                    Confirm
-                </ButtonConfirmedLoanBook>
                 <ButtonCancelLoanBook onClick={closeModal} title="Cancel" $darkmode={darkMode}>
                     Cancel
                 </ButtonCancelLoanBook>
+                <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm" $darkmode={darkMode}>
+                    Confirm
+                </ButtonConfirmedLoanBook>
             </div>
         </SubDivModal>
     );
