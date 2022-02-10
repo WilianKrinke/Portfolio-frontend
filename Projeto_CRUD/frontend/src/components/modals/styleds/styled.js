@@ -28,6 +28,23 @@ export const DivModal = styled.div`
     }
 `
 
+export const DivModalBlocked = styled.div`
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    position: fixed;
+    z-index: 90;
+    backdrop-filter: blur(10px);
+`
+
+
 export const DivSTeps = styled.div`
     width: 100%;
     height: 10%;
