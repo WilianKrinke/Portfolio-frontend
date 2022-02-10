@@ -8,6 +8,7 @@ import InternalFooter from '../../components/footer/InternalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
+import Modalblocked from '../../components/modals/modalBlocked';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
 import getBookList from '../../utils/getBookList/getBookList';
 import isUserBlocked from '../../utils/isUserBlocked/isUserBlocked';
@@ -24,6 +25,7 @@ const BookList = () => {
     const [userName, setUserName] = useState('');
     const [fadeIn, setfadeIn] = useState(false);
     const [loadingState, setloadingState] = useState(true);
+    const [isUserBlockedState, setisUserBlockedState] = useState(false);
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
@@ -35,23 +37,21 @@ const BookList = () => {
         (async () => {
             try {
                 const response = await getBookList(category);
-                const isBlocked = await isUserBlocked();
+                const isBlock = await isUserBlocked();
 
-                console.log(isBlocked);
+                response === false && tokenTimeOut(navigate);
 
-                if (response === false) {
-                    tokenTimeOut(navigate);
-                } else {
-                    const { responseBooks, userName, idUser } = response;
-                    setUserName(userName);
-                    setUserIdData(idUser);
-                    setPages(Math.ceil(responseBooks.length / itensPerPage));
-                    setcurrentItens(responseBooks.slice(startIndex, endIndex));
-                    setloadingState(false);
-                    setTimeout(() => {
-                        setfadeIn(true);
-                    }, 1);
-                }
+                const { responseBooks, userName, idUser } = response;
+                setUserName(userName);
+                setUserIdData(idUser);
+                setPages(Math.ceil(responseBooks.length / itensPerPage));
+                setcurrentItens(responseBooks.slice(startIndex, endIndex));
+                setloadingState(false);
+                setTimeout(() => {
+                    setfadeIn(true);
+                }, 1);
+
+                if (isBlock === false) setisUserBlockedState(true);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }
@@ -80,6 +80,7 @@ const BookList = () => {
                 <Loading />
             ) : (
                 <>
+                    {isUserBlockedState && <Modalblocked />}
                     <Menu user={userName} />
                     <HeaderComponent phrase="Book List" />
                     <BookListMain $darkmode={darkMode}>

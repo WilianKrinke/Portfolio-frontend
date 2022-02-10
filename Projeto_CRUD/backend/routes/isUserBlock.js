@@ -7,15 +7,19 @@ function isUserBlock(app){
                 const [idUser] = req.idUser               
                 const response = await isUserBlockedVerify(idUser)
 
-                if (response === false) {
-                    res.status(200).send({
-                        isBlock: false
-                    })
-                } else {
-                    res.status(200).send({
-                        isBlock: true
-                    })
-                }
+                // if (response === false) {
+                //     res.status(200).send({
+                //         isBlock: false
+                //     })
+                // } else {
+                //     res.status(200).send({
+                //         isBlock: true
+                //     })
+                // }
+
+                res.status(200).send({
+                    isBlock: true
+                })
                 
             } catch (error) {
                 console.log(error.message)          

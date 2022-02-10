@@ -5,6 +5,7 @@ const Modalblocked = () => {
     const customStyles = {
         content: {
             position: 'fixed',
+            zIndex: '90',
             top: '50%',
             left: '50%',
             right: 'auto',
