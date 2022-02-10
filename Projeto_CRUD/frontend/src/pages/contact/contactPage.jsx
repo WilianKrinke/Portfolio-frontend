@@ -69,15 +69,12 @@ const ContactPage = () => {
             };
 
             const response = await userContact(objectMessage);
+            response === false && tokenTimeOut(navigate);
 
-            if (response === false) {
-                tokenTimeOut(navigate);
-            } else {
-                setLoadingButtonState(false);
-                document.getElementById('textarea').value = '';
-                setmessageLength(0);
-                toast.success('Message Sent Successfully, Thank you.');
-            }
+            setLoadingButtonState(false);
+            document.getElementById('textarea').value = '';
+            setmessageLength(0);
+            toast.success('Message Sent Successfully, Thank you.');
         } catch (error) {
             navigate(`/error-page/${error.message}`);
         }

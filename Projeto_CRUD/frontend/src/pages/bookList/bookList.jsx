@@ -38,7 +38,6 @@ const BookList = () => {
             try {
                 const response = await getBookList(category);
                 const isBlock = await isUserBlocked();
-                console.log(isBlock);
 
                 response === false && tokenTimeOut(navigate);
 
@@ -52,13 +51,12 @@ const BookList = () => {
                     setfadeIn(true);
                 }, 1);
 
-                if (isBlock) setisUserBlockedState(true);
-                console.log(isUserBlockedState);
+                isBlock && setisUserBlockedState(true);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }
         })();
-    }, [itensPerPage, startIndex, endIndex, category, isUserBlockedState]);
+    }, [itensPerPage, startIndex, endIndex, category]);
 
     function accCurrentPage() {
         setCurrentPage(currentPage + 1);

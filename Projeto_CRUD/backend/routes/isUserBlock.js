@@ -18,7 +18,7 @@ function isUserBlock(app){
                 // }
 
                 res.status(200).send({
-                    isBlock: true
+                    isBlock: false
                 })
                 
             } catch (error) {

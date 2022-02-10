@@ -26,20 +26,17 @@ const MyBorrowedBooks = () => {
         (async () => {
             try {
                 const response = await getMyBorrowedBooks();
+                response === false && tokenTimeOut(navigate);
 
-                if (response === false) {
-                    tokenTimeOut(navigate);
-                } else {
-                    const { userName, responseObject } = response;
-                    setUserNameState(userName);
+                const { userName, responseObject } = response;
+                setUserNameState(userName);
 
-                    if (responseObject.length === 0) {
-                        setNoBookData(true);
-                    }
-
-                    setBorrowedBooks(responseObject);
-                    setloadingState(false);
+                if (responseObject.length === 0) {
+                    setNoBookData(true);
                 }
+
+                setBorrowedBooks(responseObject);
+                setloadingState(false);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }

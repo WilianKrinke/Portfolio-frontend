@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { AiOutlineWarning } from "react-icons/ai";
+import styled from 'styled-components';
 
 export const DivModal = styled.div`    
     height: 500px;
@@ -28,22 +29,43 @@ export const DivModal = styled.div`
     }
 `
 
-export const DivModalBlocked = styled.div`
+export const DivModalUserBlocked = styled.div`
     height: 100vh;
     width: 100vw;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
     position: fixed;
     z-index: 90;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
 `
 
+export const DivWarningUserBlocked = styled.div`
+    height: 300px;
+    width: 600px;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"}; 
+    padding: 10px;   
+
+    @media screen and (max-width: 450px) {
+        width: 100%;
+        height: 300px;
+    }
+`
+
+export const DivInternalUserBlocked = styled.div`
+    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+`
 
 export const DivSTeps = styled.div`
     width: 100%;
@@ -131,5 +153,9 @@ export const Image = styled.img`
         width: 80%;
         height: 80%;
     } 
+`
 
+export const IconWarning = styled(AiOutlineWarning)`
+    color: #FE6B0A; 
+    font-size:40px;
 `

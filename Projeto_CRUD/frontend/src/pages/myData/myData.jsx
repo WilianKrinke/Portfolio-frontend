@@ -23,16 +23,13 @@ const Mydata = () => {
         (async () => {
             try {
                 const response = await getMyDatas();
+                response === false && tokenTimeOut(navigate);
 
-                if (response === false) {
-                    tokenTimeOut(navigate);
-                } else {
-                    const { userName, userDatas } = response;
+                const { userName, userDatas } = response;
 
-                    setuserNameState(userName);
-                    setUserDatasObject(userDatas);
-                    setloadingState(false);
-                }
+                setuserNameState(userName);
+                setUserDatasObject(userDatas);
+                setloadingState(false);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }

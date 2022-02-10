@@ -27,20 +27,17 @@ const Myfavorites = () => {
             try {
                 const response = await getFavorites();
                 const { userName, responseObject } = response;
+                response === false && tokenTimeOut(navigate);
 
-                if (response === false) {
-                    tokenTimeOut(navigate);
+                setUserNameState(userName);
+
+                if (responseObject.length === 0) {
+                    setNoBookData(true);
                 } else {
-                    setUserNameState(userName);
-
-                    if (responseObject.length === 0) {
-                        setNoBookData(true);
-                    } else {
-                        setBookFavorites(responseObject);
-                    }
-
-                    setloadingState(false);
+                    setBookFavorites(responseObject);
                 }
+
+                setloadingState(false);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }
