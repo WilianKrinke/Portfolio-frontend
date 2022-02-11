@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -23,7 +22,6 @@ const BookList = () => {
     const [currentItens, setcurrentItens] = useState([]);
     const [userIdData, setUserIdData] = useState(null);
     const [userName, setUserName] = useState('');
-    const [fadeIn, setfadeIn] = useState(false);
     const [loadingState, setloadingState] = useState(true);
     const [isUserBlockedState, setisUserBlockedState] = useState(false);
 
@@ -47,9 +45,6 @@ const BookList = () => {
                 setPages(Math.ceil(responseBooks.length / itensPerPage));
                 setcurrentItens(responseBooks.slice(startIndex, endIndex));
                 setloadingState(false);
-                setTimeout(() => {
-                    setfadeIn(true);
-                }, 1);
 
                 isBlock && setisUserBlockedState(true);
             } catch (error) {
@@ -85,7 +80,7 @@ const BookList = () => {
                     <HeaderComponent phrase="Book List" />
                     <BookListMain $darkmode={darkMode}>
                         <BookListSection>
-                            <BookArticle fadeIn={fadeIn}>
+                            <BookArticle>
                                 <Ajustbooklist
                                     decCurrentPage={decCurrentPage}
                                     currentPage={currentPage}

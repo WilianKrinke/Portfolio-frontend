@@ -3,7 +3,6 @@ import React, { memo } from 'react';
 import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
@@ -16,17 +15,13 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
     async function handleReturnBook() {
         try {
             const response = await returnBook(objectDatas);
-            if (response === false) {
-                tokenTimeOut(navigate);
-            }
+            response === false && tokenTimeOut(navigate);
 
             const { isReturnTheBook } = response;
+
             if (isReturnTheBook === true) {
-                toast.success('Successfully returned the book!');
                 setModalReturnBook(false);
-                setTimeout(() => {
-                    window.location.reload();
-                }, 3000);
+                window.location.reload();
             } else {
                 throw new Error('Client Error - handleReturnBook');
             }

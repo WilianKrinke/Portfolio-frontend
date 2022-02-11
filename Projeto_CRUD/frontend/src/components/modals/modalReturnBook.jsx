@@ -31,9 +31,7 @@ const ModalReturnBook = ({
     async function handleReturnBook() {
         try {
             const response = await returnBook(objectDatas);
-            if (response === false) {
-                tokenTimeOut(navigate);
-            }
+            response === false && tokenTimeOut(navigate);
 
             const { isReturnTheBook } = response;
 

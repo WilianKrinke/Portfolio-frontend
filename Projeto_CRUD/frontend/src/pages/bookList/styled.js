@@ -33,8 +33,6 @@ export const BookArticle = styled.article`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    transition: all .3s ease-in-out;
-    opacity: ${props => props.fadeIn ? '1' : '0'};
 `
 
 export const BookListArticle = styled.article`

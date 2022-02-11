@@ -21,8 +21,8 @@ const Favoritecard = ({ favoriteItem }) => {
 
     const [changeHeart, setchangeHeart] = useState(false);
     const [isOpen, setisOpen] = useState(false);
-    const navigate = useNavigate();
 
+    const navigate = useNavigate();
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     async function handleRemoveFavorites() {

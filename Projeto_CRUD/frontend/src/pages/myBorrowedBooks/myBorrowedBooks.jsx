@@ -19,7 +19,6 @@ const MyBorrowedBooks = () => {
     const [noBookData, setNoBookData] = useState(false);
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-
     const navigate = useNavigate();
 
     useEffect(() => {
