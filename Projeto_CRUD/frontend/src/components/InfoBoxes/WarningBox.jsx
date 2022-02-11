@@ -16,7 +16,7 @@ const Warningbox = () => {
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
-                <P $darkmode={darkMode}>-In case of delay, a fine will be applied, proportionally to the days late</P>
+                <P $darkmode={darkMode}>-In case of delay, a fine of three days of blocking will be applied</P>
             </div>
         </SubDivModal>
     );

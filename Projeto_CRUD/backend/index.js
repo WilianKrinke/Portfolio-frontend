@@ -20,6 +20,7 @@ const routeAccessUserData = require('./routes/userAccessData')
 const routeContactMessageIntern = require('./routes/contactMessage')
 const routeIsUpDateDatas = require('./routes/isUpDateDatas')
 const routeIsUserBlock = require('./routes/isUserBlock')
+const routeUserPenalty = require('./routes/userPenalty')
 const sanitizationReqBody = require('./validations/sanitization');
 
 
@@ -53,6 +54,7 @@ routeUpdateData(app)
 routeIsUpDateDatas(app)
 routeAccessUserData(app)
 routeContactMessageIntern(app)
+routeUserPenalty(app)
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')

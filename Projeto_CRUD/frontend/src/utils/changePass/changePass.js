@@ -26,7 +26,4 @@ export default async function changePass(newPass, confirmPass, token, idUser){
     } catch (error) {
         return {wasUpdate: false};
     }
-
-
-
 }

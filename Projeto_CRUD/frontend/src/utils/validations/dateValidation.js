@@ -1,5 +1,4 @@
 export default function isLate(today,dateDevolution){
-
     const [dia, mes, ano] = today.split('-')
     const [diaDevolucao, mesDevolucao, anoDevolucao] = dateDevolution.split('-')
 

@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { useSelector } from 'react-redux';
+import applyUserPenalty from '../../utils/applyUserPenalty/applyUserPenalty';
 import isLate from '../../utils/validations/dateValidation';
 import sameDateValidation from '../../utils/validations/sameDateValidation';
 import ModalImage from '../modals/modalImage';
@@ -36,6 +37,9 @@ const Borrowedbookscard = ({ infoDatas }) => {
 
     const isBookLate = isLate(todayFormat, dateDevolutionFormat);
     const isSameDate = sameDateValidation(todayFormat, dateDevolutionFormat);
+
+    isBookLate && applyUserPenalty();
+    !isBookLate && console.log('Não Aplica');
 
     function handleModal() {
         setmodalImageBorrowedCards(!modalImageBorrowedCards);
