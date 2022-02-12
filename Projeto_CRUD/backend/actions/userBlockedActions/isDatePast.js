@@ -5,23 +5,23 @@ function isDatePast(today, returnBookDateArray){
     }
     
     const [dia, mes, ano] = today.split('-')
+    let control;
     
     returnBookDateArray.forEach(item => {
         const [diaRetorno, mesRetorno, anoRetorno] = item.split('-')
-        
-        
+
         if (ano > anoRetorno) {
-            return true
+            control = true
         } else if(ano == anoRetorno && mes > mesRetorno){
-            return true
+            control = true
         } else if(ano == anoRetorno && mes == mesRetorno && dia > diaRetorno){
-            return true
+            control = true
         } else {
-            console.log('Aqui', 'Linha 20')
-            return false
+            control = false
         }
     });
-    
+
+    return control;    
 }
 
 module.exports = isDatePast;
