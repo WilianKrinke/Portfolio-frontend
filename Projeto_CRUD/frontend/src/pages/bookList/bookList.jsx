@@ -36,7 +36,7 @@ const BookList = () => {
         (async () => {
             try {
                 const response = await getBookList(category);
-                const { isBlock, blocked_days } = await isUserBlocked();
+                const { isBlock } = await isUserBlocked();
 
                 response === false && tokenTimeOut(navigate);
 

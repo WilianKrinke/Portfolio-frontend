@@ -19,8 +19,7 @@ const routeUpdateData = require('./routes/upDateData')
 const routeAccessUserData = require('./routes/userAccessData')
 const routeContactMessageIntern = require('./routes/contactMessage')
 const routeIsUpDateDatas = require('./routes/isUpDateDatas')
-const routeIsUserBlock = require('./routes/isUserBlock')
-const routeUserPenalty = require('./routes/userPenalty')
+const routeVerifyUserBlock = require('./routes/verifyUserBlock')
 const sanitizationReqBody = require('./validations/sanitization');
 
 
@@ -41,7 +40,7 @@ routeChangePass(app)
 
 app.use(authValidate)
 routeGetBooks(app)
-routeIsUserBlock(app)
+routeVerifyUserBlock(app)
 routeLendBook(app)
 routeReturnBook(app)
 routeAddFavorite(app)
@@ -54,7 +53,6 @@ routeUpdateData(app)
 routeIsUpDateDatas(app)
 routeAccessUserData(app)
 routeContactMessageIntern(app)
-routeUserPenalty(app)
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')

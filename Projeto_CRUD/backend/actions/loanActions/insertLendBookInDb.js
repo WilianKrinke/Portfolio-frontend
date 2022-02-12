@@ -5,7 +5,7 @@ const getLoanDates = require("../dateActions/getLoanDates");
 async function insertLendBookInDb(bookDatas){    
         const {idBook,bookName,userId,userName, category, author, resume, image, rating} = bookDatas;
         const lendDates = getLoanDates()        
-
+                            
         const insertion = await knex('nodecrud.lendregister').insert({
             idUser: userId,
             userName: userName,

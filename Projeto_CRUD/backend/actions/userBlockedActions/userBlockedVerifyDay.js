@@ -1,17 +1,19 @@
 const { format, addBusinessDays } = require("date-fns");
+const getBookReturnDate = require("./getBookReturnDate");
 const isDatePast = require("./isDatePast");
 
-function userBlockedVerifyDay(blocked_days){
+async function userBlockedVerifyDay(idUser){
     const today = new Date()
     const todayFormat = format(today, 'dd-MM-yyyy')
 
-    const dateBlocked = format(addBusinessDays(today, blocked_days), 'dd-MM-yyyy')
-
-    const isDatePastTest = isDatePast(todayFormat, dateBlocked)
+    const returnBookDateArray = await getBookReturnDate(idUser)
+    
+    const isDatePastTest = isDatePast(todayFormat, returnBookDateArray)
     console.log(isDatePastTest)
 
     if (isDatePastTest) {
-        //Se o dia de hoje for maior que o da multa , limpa os campos do banco de dados responsaveis por bloqueio e retorna true
+        //Se o dia de hoje for maior que os dias de retorno do livro , aplicar multa
+         
     } else {
         //retorna false
     }

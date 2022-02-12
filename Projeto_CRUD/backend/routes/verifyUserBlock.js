@@ -1,24 +1,22 @@
 const userBlockedVerify = require("../actions/userBlockedActions/userBlockedVerify")
 const userBlockedVerifyDay = require("../actions/userBlockedActions/userBlockedVerifyDay")
 
-function isUserBlock(app){
+function verifyUserBlock(app){
     app.route('/is-user-blocked')
         .get(async(req,res) => {
             try {
                 const [idUser] = req.idUser               
-                const {isblock,blocked_days} = await userBlockedVerify(idUser)
+                const isblock = await userBlockedVerify(idUser)
 
-                const isDatePastTest = userBlockedVerifyDay(blocked_days)
+                const isDatePastTest = userBlockedVerifyDay(idUser)
 
                 if (isblock === false) {
                     res.status(200).send({
-                        isBlock: false,
-                        blocked_days
+                        isBlock: false
                     })
                 } else {
                     res.status(200).send({
-                        isBlock: true,
-                        blocked_days
+                        isBlock: true
                     })
                 }                
                 
@@ -31,4 +29,4 @@ function isUserBlock(app){
         })
 }
 
-module.exports = isUserBlock;
+module.exports = verifyUserBlock;

@@ -34,9 +34,7 @@ const ModalLendBook = ({
     async function handleLend() {
         try {
             const response = await lendBook(objectDatas);
-            if (response === false) {
-                tokenTimeOut(navigate);
-            }
+            response === false && tokenTimeOut(navigate);
 
             const { isRegister } = response;
 
