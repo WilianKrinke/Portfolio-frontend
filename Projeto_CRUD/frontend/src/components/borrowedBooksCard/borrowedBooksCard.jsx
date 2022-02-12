@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import propTypes from 'prop-types';
-import React, { memo, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { useSelector } from 'react-redux';
 import applyUserPenalty from '../../utils/applyUserPenalty/applyUserPenalty';
@@ -38,8 +38,9 @@ const Borrowedbookscard = ({ infoDatas }) => {
     const isBookLate = isLate(todayFormat, dateDevolutionFormat);
     const isSameDate = sameDateValidation(todayFormat, dateDevolutionFormat);
 
-    isBookLate && applyUserPenalty();
-    !isBookLate && console.log('Não Aplica');
+    useEffect(() => {
+        isBookLate && applyUserPenalty();
+    }, [isBookLate]);
 
     function handleModal() {
         setmodalImageBorrowedCards(!modalImageBorrowedCards);
