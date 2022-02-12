@@ -1,6 +1,6 @@
 const knex = require('../../connection/connection')
 
-async function isUserBlockedVerify(idUser){
+async function userBlockedVerify(idUser){
     const response = await knex('users').where('idUser', idUser).select('isblock','blocked_days')
 
     if (response[0] === undefined) {
@@ -26,4 +26,4 @@ async function isUserBlockedVerify(idUser){
     }
 }
 
-module.exports = isUserBlockedVerify;
+module.exports = userBlockedVerify;

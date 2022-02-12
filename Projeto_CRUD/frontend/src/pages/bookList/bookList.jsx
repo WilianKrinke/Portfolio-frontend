@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -35,7 +36,7 @@ const BookList = () => {
         (async () => {
             try {
                 const response = await getBookList(category);
-                const isBlock = await isUserBlocked();
+                const { isBlock, blocked_days } = await isUserBlocked();
 
                 response === false && tokenTimeOut(navigate);
 
