@@ -6,9 +6,9 @@ function verifyUserBlock(app){
         .get(async(req,res) => {
             try {
                 const [idUser] = req.idUser               
+                userBlockedVerifyDay(idUser)
+                
                 const isblock = await userBlockedVerify(idUser)
-
-                const isDatePastTest = userBlockedVerifyDay(idUser)
 
                 if (isblock === false) {
                     res.status(200).send({

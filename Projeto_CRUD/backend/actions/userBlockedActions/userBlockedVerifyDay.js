@@ -12,7 +12,7 @@ async function userBlockedVerifyDay(idUser){
     console.log(isDatePastTest)
 
     if (isDatePastTest) {
-        //Se o dia de hoje for maior que os dias de retorno do livro , aplicar multa
+        //Se o dia de hoje for maior que os dias de retorno do livro , aplicar bloqueio
          
     } else {
         //retorna false
