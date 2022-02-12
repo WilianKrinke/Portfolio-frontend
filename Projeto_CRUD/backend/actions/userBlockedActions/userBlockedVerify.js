@@ -8,7 +8,11 @@ async function userBlockedVerify(idUser){
     } else {
         const {isblock} = response[0]
 
-        return isblock
+        if (isblock === 0) {
+            return false
+        } else {
+            return true
+        }
     }
 }
 
