@@ -1,14 +1,14 @@
 const { format } = require("date-fns");
 const blockUser = require("./blockUser");
 const getBookReturnDate = require("./getBookReturnDate");
-const isDatePast = require("./isDatePast");
+const checkReturnDate = require("./checkReturnDate");
 
-async function userBlockedVerifyDay(idUser){
+async function checkingLockDay(idUser){
     const today = new Date()
     const todayFormat = format(today, 'dd-MM-yyyy')
     const returnBookDateArray = await getBookReturnDate(idUser)    
     
-    //const isDatePastTest = isDatePast(todayFormat, returnBookDateArray) 
+    //const isDatePastTest = checkReturnDate(todayFormat, returnBookDateArray) 
     const isDatePastTest = true   
     
     if (isDatePastTest) {
@@ -16,4 +16,4 @@ async function userBlockedVerifyDay(idUser){
     }
 }
 
-module.exports = userBlockedVerifyDay;
+module.exports = checkingLockDay;

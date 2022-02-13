@@ -1,4 +1,4 @@
-function isDatePast(today, returnBookDateArray){ 
+function checkReturnDate(today, returnBookDateArray){ 
     
     if (returnBookDateArray.length === 0) {
         return false
@@ -24,4 +24,4 @@ function isDatePast(today, returnBookDateArray){
     return control;    
 }
 
-module.exports = isDatePast;
+module.exports = checkReturnDate;

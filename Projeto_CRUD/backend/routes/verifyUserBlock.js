@@ -1,19 +1,26 @@
-const returnDateCheck = require("../actions/userBlockedActions/returnDateCheck")
-const userBlockedVerify = require("../actions/userBlockedActions/userBlockedVerify")
-const userBlockedVerifyDay = require("../actions/userBlockedActions/userBlockedVerifyDay")
+const dateIsPassed = require("../actions/userBlockedActions/dateIsPassed")
+const userIsBlocked = require("../actions/userBlockedActions/userIsBlocked")
+const checkingLockDay = require("../actions/userBlockedActions/checkingLockDay")
 
 function verifyUserBlock(app){
-    app.route('/is-user-blocked')
+    app.route('/user-blocked')
         .get(async(req,res) => {
             try {
                 const [idUser] = req.idUser               
-                userBlockedVerifyDay(idUser)
+                checkingLockDay(idUser)
                 
-                const isblock = await userBlockedVerify(idUser)
+                const isblock = await userIsBlocked(idUser)
                 
                 if (isblock) {
-                    //verificar se a data atual é maior que data de bloqueio
-                    const teste = await returnDateCheck(idUser)
+                    const dateIsPassedTest = await dateIsPassed(idUser)
+
+                    if (dateIsPassedTest) {
+                        //retirar block e retirar data de bloqueio e retornar isBlock: false
+                    } else {
+                        res.status(200).send({
+                            isBlock: true
+                        }) 
+                    }
                 } else {
                     res.status(200).send({
                         isBlock: false
