@@ -7,7 +7,6 @@ async function blockUser(idUser){
 
     const response = await knex('users').where('idUser', idUser).update({isblock: 1, blocked_day: dateBlocked})
 
-    console.log(response)
     if (response === 1) {
         return true
     } else {
