@@ -8,7 +8,8 @@ async function userBlockedVerifyDay(idUser){
     const todayFormat = format(today, 'dd-MM-yyyy')
     const returnBookDateArray = await getBookReturnDate(idUser)    
     
-    const isDatePastTest = isDatePast(todayFormat, returnBookDateArray)    
+    //const isDatePastTest = isDatePast(todayFormat, returnBookDateArray) 
+    const isDatePastTest = true   
     
     if (isDatePastTest) {
         blockUser(idUser)         

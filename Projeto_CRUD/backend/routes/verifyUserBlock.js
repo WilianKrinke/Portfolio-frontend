@@ -1,3 +1,4 @@
+const returnDateCheck = require("../actions/userBlockedActions/returnDateCheck")
 const userBlockedVerify = require("../actions/userBlockedActions/userBlockedVerify")
 const userBlockedVerifyDay = require("../actions/userBlockedActions/userBlockedVerifyDay")
 
@@ -12,6 +13,7 @@ function verifyUserBlock(app){
                 
                 if (isblock) {
                     //verificar se a data atual é maior que data de bloqueio
+                    const teste = await returnDateCheck(idUser)
                 } else {
                     res.status(200).send({
                         isBlock: false
