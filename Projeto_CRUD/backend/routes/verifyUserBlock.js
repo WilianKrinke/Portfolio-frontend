@@ -9,16 +9,15 @@ function verifyUserBlock(app){
                 userBlockedVerifyDay(idUser)
                 
                 const isblock = await userBlockedVerify(idUser)
-
-                if (isblock === false) {
+                
+                if (isblock) {
+                    //verificar se a data atual é maior que data de bloqueio
+                } else {
                     res.status(200).send({
                         isBlock: false
                     })
-                } else {
-                    res.status(200).send({
-                        isBlock: true
-                    })
-                }                
+                }
+                
                 
             } catch (error) {
                 console.log(error.message)          
