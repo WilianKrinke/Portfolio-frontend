@@ -25,6 +25,7 @@ const BookList = () => {
     const [userName, setUserName] = useState('');
     const [loadingState, setloadingState] = useState(true);
     const [isUserBlockedState, setisUserBlockedState] = useState(false);
+    const [daysToUnlockState, setdaysToUnlockState] = useState(0);
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
@@ -36,7 +37,7 @@ const BookList = () => {
         (async () => {
             try {
                 const response = await getBookList(category);
-                const { isBlock } = await isUserBlocked();
+                const { isBlock, daysToUnlockNumber } = await isUserBlocked();
 
                 response === false && tokenTimeOut(navigate);
 
@@ -48,6 +49,7 @@ const BookList = () => {
                 setloadingState(false);
 
                 isBlock && setisUserBlockedState(true);
+                setdaysToUnlockState(daysToUnlockNumber);
             } catch (error) {
                 navigate(`/error-page/${error.message}`);
             }
@@ -77,7 +79,7 @@ const BookList = () => {
             ) : (
                 <>
                     <Menu user={userName} />
-                    {isUserBlockedState && <Modalblocked />}
+                    {isUserBlockedState && <Modalblocked daysToUnlockState={daysToUnlockState} />}
                     <HeaderComponent phrase="Book List" />
                     <BookListMain $darkmode={darkMode}>
                         <BookListSection>

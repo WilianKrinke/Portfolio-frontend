@@ -1,5 +1,4 @@
 function checkReturnDate(today, returnBookDateArray){ 
-    
     if (returnBookDateArray.length === 0) {
         return false
     }

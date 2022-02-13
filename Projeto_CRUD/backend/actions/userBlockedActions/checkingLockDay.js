@@ -8,8 +8,7 @@ async function checkingLockDay(idUser){
     const todayFormat = format(today, 'dd-MM-yyyy')
     const returnBookDateArray = await getBookReturnDate(idUser)    
     
-    //const isDatePastTest = checkReturnDate(todayFormat, returnBookDateArray) 
-    const isDatePastTest = true   
+    const isDatePastTest = checkReturnDate(todayFormat, returnBookDateArray)
     
     if (isDatePastTest) {
         blockUser(idUser)         
