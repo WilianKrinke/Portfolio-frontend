@@ -25,7 +25,6 @@ function verifyUserBlock(app){
                         })
                         
                     } else {
-                        removeLock(idUser)
                         res.status(200).send({
                             isBlock: true,
                             daysToUnlockNumber

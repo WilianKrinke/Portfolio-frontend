@@ -8,12 +8,14 @@ async function userIsBlocked(idUser){
     } else {
         const {isblock} = response[0]
 
-        if (isblock === 0) {
-            return false
-        } else {
+        if (isblock === 1) {
             return true
+        } else {
+            return false
         }
     }
+
+    //return true
 }
 
 module.exports = userIsBlocked;

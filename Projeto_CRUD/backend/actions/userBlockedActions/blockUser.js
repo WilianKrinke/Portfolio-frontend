@@ -5,12 +5,13 @@ async function blockUser(idUser){
     const today = new Date()
     const dateBlocked = addBusinessDays(today, 3);
 
-    const response = await knex('users').where('idUser', idUser).update({isblock: 1,blocked_day: dateBlocked})
+    const response = await knex('users').where('idUser', idUser).update({isblock: 1, blocked_day: dateBlocked})
 
-    if (response !== 1) {
-        return false
-    } else {
+    console.log(response)
+    if (response === 1) {
         return true
+    } else {
+        return false
     }
 }
 
