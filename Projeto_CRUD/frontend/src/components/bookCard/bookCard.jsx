@@ -27,7 +27,7 @@ import {
     IconSeeMoreLess,
     P,
     ParagraphResume,
-    SecondContainerInfo
+    SecondContainerInfo,
 } from './styled';
 
 const Bookcard = ({ userName, idUser, bookInfo }) => {
@@ -65,11 +65,9 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
             };
 
             setisLike(true);
-            const response = await addFavorites(objectDatasFavorites);
 
-            if (response === false) {
-                tokenTimeOut(navigate);
-            }
+            const response = await addFavorites(objectDatasFavorites);
+            response === false && tokenTimeOut(navigate);
 
             const { isRegisterFavorite } = response;
 
@@ -89,10 +87,7 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
         try {
             setisLike(false);
             const response = await removeFavorite(objectDatas);
-
-            if (response === false) {
-                tokenTimeOut(navigate);
-            }
+            response === false && tokenTimeOut(navigate);
 
             const { isRemoved } = response;
 
