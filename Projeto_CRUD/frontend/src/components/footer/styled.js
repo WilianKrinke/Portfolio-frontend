@@ -20,12 +20,17 @@ export const ContainerFooter = styled.footer`
         align-items: center;
         justify-content: space-evenly;
         width:100%;
+        
+        @media screen and (max-width: 660px) {
+            flex-direction: column;
+        }
     }
 
     .div_space{
         width:100%;
         height: 60px;
     }
+
 `
 
 export const DivMap = styled.div`
@@ -37,6 +42,12 @@ export const DivMap = styled.div`
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
+
+    @media screen and (max-width: 660px) {
+        border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+        border-right: none;
+        height: 180px;
+    }
 `
 
 export const DivSocialMidia = styled.div`
@@ -49,6 +60,14 @@ export const DivSocialMidia = styled.div`
     flex-direction: column;
     padding: 20px;
 
+    @media screen and (max-width: 660px) {
+        height: 180px;
+        justify-content: space-around;
+        border-bottom: none;
+        border-right: none;
+        border-left: none;
+    }
+
     .div_developed{
         display: flex;
         flex-direction: row;
@@ -56,7 +75,11 @@ export const DivSocialMidia = styled.div`
         justify-content: center;
         width:100%;
         height: 40px;
-        padding: 10px;;
+        padding: 10px;
+
+        @media screen and (max-width: 1000px) {
+            text-align: center;
+        }
     }
 
     .div_icons{
@@ -81,6 +104,14 @@ export const DivTerm = styled.div`
     align-items: flex-start;
     flex-direction: column;
     padding: 20px;
+
+    @media screen and (max-width: 660px) {
+        border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 180px;
+    }
 `
 
 export const LinkStyled = styled(Link)`
