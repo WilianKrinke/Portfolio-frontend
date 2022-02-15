@@ -12,7 +12,7 @@ function generateToken(userDatasFromDb){
     }
 
     const token = jwt.sign(payload,process.env.SECRET,{
-        expiresIn: time
+        expiresIn: 5//time
     })
 
     return token;

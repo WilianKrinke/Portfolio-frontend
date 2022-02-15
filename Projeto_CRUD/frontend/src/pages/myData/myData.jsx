@@ -23,7 +23,7 @@ const Mydata = () => {
         (async () => {
             try {
                 const response = await getMyDatas();
-                response === false && tokenTimeOut(navigate);
+                response === false && tokenTimeOut();
 
                 const { userName, userDatas } = response;
 

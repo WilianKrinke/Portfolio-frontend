@@ -22,7 +22,7 @@ const Errorpage = () => {
             <HeaderComponent phrase="Error" />
             <ErrorMainStyled $darkmode={darkMode}>
                 <StyledSection>
-                    <H3 $darkmode={darkMode}>Error: {error} - Contact The Administrator</H3>
+                    <H3 $darkmode={darkMode}>Error: {error}</H3>
                     <ButtonBackPage onClick={handleBack} $darkmode={darkMode}>
                         Back Home
                     </ButtonBackPage>

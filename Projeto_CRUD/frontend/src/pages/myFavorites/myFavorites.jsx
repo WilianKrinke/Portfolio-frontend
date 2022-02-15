@@ -27,7 +27,7 @@ const Myfavorites = () => {
             try {
                 const response = await getFavorites();
                 const { userName, responseObject } = response;
-                response === false && tokenTimeOut(navigate);
+                response === false && tokenTimeOut();
 
                 setUserNameState(userName);
 

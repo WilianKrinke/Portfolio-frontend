@@ -25,7 +25,7 @@ const MyBorrowedBooks = () => {
         (async () => {
             try {
                 const response = await getMyBorrowedBooks();
-                response === false && tokenTimeOut(navigate);
+                response === false && tokenTimeOut();
 
                 const { userName, responseObject } = response;
                 setUserNameState(userName);

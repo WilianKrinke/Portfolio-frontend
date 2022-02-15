@@ -39,7 +39,7 @@ const BookList = () => {
                 const response = await getBookList(category);
                 const { isBlock, daysToUnlockNumber } = await isUserBlocked();
 
-                response === false && tokenTimeOut(navigate);
+                response === false && tokenTimeOut();
 
                 const { responseBooks, userName, idUser } = response;
                 setUserName(userName);

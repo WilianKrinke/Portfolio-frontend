@@ -69,7 +69,7 @@ const ContactPage = () => {
             };
 
             const response = await userContact(objectMessage);
-            response === false && tokenTimeOut(navigate);
+            response === false && tokenTimeOut();
 
             setLoadingButtonState(false);
             document.getElementById('textarea').value = '';
