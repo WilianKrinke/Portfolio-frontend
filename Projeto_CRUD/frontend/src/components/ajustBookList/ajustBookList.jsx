@@ -16,13 +16,22 @@ import {
     Span,
 } from './styled';
 
-const Ajustbooklist = ({ decCurrentPage, currentPage, pages, accCurrentPage, setItensPerPage, setCategory }) => {
+const Ajustbooklist = ({
+    decCurrentPage,
+    currentPage,
+    pages,
+    accCurrentPage,
+    setItensPerPage,
+    setCategory,
+    setCurrentPage,
+}) => {
     function handleItemPerPage(e) {
         setItensPerPage(e.target.value);
     }
 
     function handleCategory(e) {
         setCategory(e.target.value);
+        setCurrentPage(0);
     }
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
@@ -116,6 +125,7 @@ Ajustbooklist.propTypes = {
     accCurrentPage: propTypes.func,
     setItensPerPage: propTypes.func,
     setCategory: propTypes.func,
+    setCurrentPage: propTypes.func,
 };
 
 export default Ajustbooklist;

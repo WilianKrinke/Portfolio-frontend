@@ -8,16 +8,11 @@ export const UserContainer = styled.div`
     width: 100%;
     height: 50px;
 
-    label{
-        position: relative;
-        top: 10px;
-    }
-
-    i{
-        color: rgba(0, 0, 0, 0.8);
+    #userIcon{
+        color: #0a0a0a;
         position: relative;
         top: 8px;
-        font-size: 18px;
+        left: 5px;
     }
 `
 
@@ -29,16 +24,12 @@ export const PassContainer = styled.div`
     width: 100%;
     height: 50px;
 
-    label{
-        position: relative;
-        top: 10px;
-    }
-
-    i{
-        color: rgba(0, 0, 0, 0.8);
+    #lockUnlock{
+        color: #0a0a0a;
         position: relative;
         top: 8px;
-        font-size: 18px;
+        left: 5px;
+        cursor: pointer;
     }
 `
 

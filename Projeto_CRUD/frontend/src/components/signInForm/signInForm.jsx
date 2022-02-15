@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import React, { memo, useState } from 'react';
+import { FaLock, FaUnlock, FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
@@ -11,6 +13,8 @@ import { ButtonContainer, PassContainer, UserContainer } from './styled';
 const signIn = () => {
     const [userName, setuserName] = useState(null);
     const [pass, setPass] = useState(null);
+    const [lockState, setLockState] = useState(true);
+    const [typeTextState, setTypeTextState] = useState(true);
 
     const navigate = useNavigate();
 
@@ -34,13 +38,16 @@ const signIn = () => {
         }
     }
 
+    function handleLock() {
+        setLockState(!lockState);
+        setTypeTextState(!typeTextState);
+    }
+
     return (
         <>
             <form className="signinForm" autoComplete="false" onSubmit={(e) => handleForm(e)}>
                 <UserContainer>
-                    <label htmlFor="user_name_login">
-                        <i className="fas fa-user" title="User Name"></i>
-                    </label>
+                    <FaUser id="userIcon" title="User Name" />
                     <Box>
                         <TextField
                             required
@@ -56,9 +63,11 @@ const signIn = () => {
                 </UserContainer>
 
                 <PassContainer>
-                    <label htmlFor="pass_login">
-                        <i className="fas fa-lock" title="Password"></i>
-                    </label>
+                    {lockState ? (
+                        <FaLock onClick={handleLock} id="lockUnlock" title="Click to See" />
+                    ) : (
+                        <FaUnlock onClick={handleLock} id="lockUnlock" title="Click to Hide" />
+                    )}
                     <Box>
                         <TextField
                             required
@@ -66,7 +75,7 @@ const signIn = () => {
                             label="Password"
                             variant="standard"
                             className="dark"
-                            type="password"
+                            type={`${typeTextState ? 'password' : 'text'}`}
                             name="pass_login"
                             onChange={(e) => setPass(e.target.value)}
                             autoComplete="off"

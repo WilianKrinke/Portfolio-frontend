@@ -91,6 +91,7 @@ const BookList = () => {
                                     accCurrentPage={accCurrentPage}
                                     setItensPerPage={setItensPerPage}
                                     setCategory={setCategory}
+                                    setCurrentPage={setCurrentPage}
                                 />
                                 <BookListArticle>
                                     {currentItens.map((item) => {
@@ -111,6 +112,7 @@ const BookList = () => {
                                     accCurrentPage={accCurrentPage}
                                     setItensPerPage={setItensPerPage}
                                     setCategory={setCategory}
+                                    setCurrentPage={setCurrentPage}
                                 />
                             </BookArticle>
                         </BookListSection>
