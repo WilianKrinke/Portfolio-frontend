@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import propTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -8,7 +9,7 @@ import { ButtonSignUp } from '../Buttons';
 import './signUpForm.css';
 import { ButtonContainer, ContainerInfoSignUp } from './styled';
 
-const Form = () => {
+const Form = ({ setisLoginVisible }) => {
     const [userName, setuserName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
@@ -25,13 +26,21 @@ const Form = () => {
             };
 
             const response = await sendDatas(objectDatas);
-            const { message } = response;
 
-            toast.success(message);
-            setuserName('');
-            setEmail('');
-            setPass('');
-            setPassConfirmed('');
+            const { isSameUserName, wasRegistered } = response;
+
+            if (isSameUserName) {
+                throw new Error('Username is Already in Use, Choose Another');
+            }
+
+            if (wasRegistered) {
+                toast.success('User Registered Successfully');
+                setuserName('');
+                setEmail('');
+                setPass('');
+                setPassConfirmed('');
+                setisLoginVisible(true);
+            }
         } catch (error) {
             toast.error(error.message);
         }
@@ -163,6 +172,10 @@ const Form = () => {
             </form>
         </>
     );
+};
+
+Form.propTypes = {
+    setisLoginVisible: propTypes.func,
 };
 
 export default memo(Form);

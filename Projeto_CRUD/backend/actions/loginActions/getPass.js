@@ -2,7 +2,7 @@ const knex = require('../../connection/connection')
 
 async function getPass(userName) {
     try {
-        const response = await knex('users').where('userName', userName).select('idUser', 'userName', 'pass')
+        const response = await knex('users').where('userName', userName.toLowerCase()).select('idUser', 'userName', 'pass')
 
         if (response[0] != undefined) {
             return response;            

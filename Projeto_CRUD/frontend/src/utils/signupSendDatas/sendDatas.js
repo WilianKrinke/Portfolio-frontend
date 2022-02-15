@@ -1,8 +1,8 @@
 import baseUrl from '../baseUrl';
 import { doCrypt } from '../crypto/doCrypto';
 import { isValidEmail } from '../validations/validEmail';
-import { isValidPass } from '../validations/validPass'
-import { isValidUser } from '../validations/validUser'
+import { isValidPass } from '../validations/validPass';
+import { isValidUser } from '../validations/validUser';
 
 export async function sendDatas(datas) {
     const wasValidUserName = isValidUser(datas.userName)
@@ -29,13 +29,8 @@ export async function sendDatas(datas) {
             pass: passCrypt,
         });
 
-        const {data} = response;
+       const {data} = response;
+       return data;
         
-        if (data === true) {
-            const objectResponse = {wasRegister: true, message: 'User registered successfully!'}
-            return objectResponse;
-        } else {
-            throw new Error('Cliente Error - sendDatas')
-        }
     }
 }

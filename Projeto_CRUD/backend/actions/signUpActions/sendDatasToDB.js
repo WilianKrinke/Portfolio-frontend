@@ -1,8 +1,10 @@
 const knex = require('../../connection/connection')
 
-async function sendDatasToDB(userDatas){        
+async function sendDatasToDB(userDatas){ 
+    
+    
     const datas = {
-        userName: userDatas.userName,
+        userName: userDatas.userName.toLowerCase(),
         email: userDatas.email,
         pass: userDatas.pass
     }    

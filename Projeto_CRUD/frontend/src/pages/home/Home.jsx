@@ -48,7 +48,7 @@ const Home = () => {
                         </ArticleLogin>
                     ) : (
                         <ArticleSignUp>
-                            <SignUpForm />
+                            <SignUpForm setisLoginVisible={setisLoginVisible} />
                             <ButtonBackToLogin onClick={handleChangeBlock}>Back</ButtonBackToLogin>
                         </ArticleSignUp>
                     )}
