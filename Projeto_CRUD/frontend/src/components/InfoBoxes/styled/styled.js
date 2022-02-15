@@ -17,6 +17,13 @@ export const SubDivModal = styled.div`
     border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
 
+    @media screen and (max-width: 430px) {
+        width: 100%;
+        height: 100%;
+        padding: 0px;
+        justify-content: center;
+    }
+
     .container_buttons_lend_book{
         display: flex;
         justify-content: space-around;
@@ -24,6 +31,12 @@ export const SubDivModal = styled.div`
         flex-direction: row;
         align-items: center;
         width: 60%;
+
+        @media screen and (max-width: 430px) {
+            width: 100%;
+            height: 28%;
+            flex-direction: column-reverse;
+        }
     }
 
     .disclaimer_lend_book{
@@ -35,6 +48,12 @@ export const SubDivModal = styled.div`
         width: 70%;       
         position: relative;
         top: 50px;
+
+        @media screen and (max-width: 430px) {
+            width: 100%;
+            height: 60%;
+            position: static;
+        }
     }
 
     .div_warnings{
@@ -45,6 +64,13 @@ export const SubDivModal = styled.div`
         align-items: center;
         flex-direction: column;
         align-items: center;
+
+        @media screen and (max-width: 430px) {
+            width: 100%;
+            height: 270px;
+            position: relative;
+            top: 30px;
+        }
     }
 
 `

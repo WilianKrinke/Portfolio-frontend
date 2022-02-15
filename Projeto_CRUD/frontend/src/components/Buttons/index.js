@@ -147,12 +147,15 @@ export const ButtonConfirmedLoanBook = styled.button`
   color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   
-
   :hover{
         background: ${props => props.$darkmode ? "#071057" : "#030103"};
         border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
         color: #fff;
         animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+
+  @media screen and (max-width: 430px) {
+        width: 90%;
   }
 
 `
@@ -175,6 +178,10 @@ export const ButtonCancelLoanBook = styled.button`
     border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
     color: #fff;
     animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+  }
+
+  @media screen and (max-width: 430px) {
+        width: 90%;
   }
 
 `

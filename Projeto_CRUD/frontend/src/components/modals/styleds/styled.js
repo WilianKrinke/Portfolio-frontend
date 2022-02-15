@@ -15,6 +15,34 @@ export const DivModal = styled.div`
     border: 1px solid rgba(0, 0, 0, 0.3);
 
     @media screen and (max-width: 430px) {
+        height: 450px;
+        width: 340px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+        background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"}; 
+        border-radius: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+    }
+`
+
+export const DivModalReturnBook = styled.div`    
+    height: 220px;
+    width: 420px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"}; 
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+
+    @media screen and (max-width: 430px) {
         height: 350px;
         width: 350px;
         display: flex;
@@ -23,7 +51,7 @@ export const DivModal = styled.div`
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        background-color: #F9FFF9;
+        background-color: transparent;
         border-radius: 3px;
         border: 1px solid rgba(0, 0, 0, 0.3);
     }
@@ -79,6 +107,20 @@ export const DivSTeps = styled.div`
     border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+
+    @media screen and (max-width: 430px) {
+        height: 50px;
+        width: 338px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 0px 0px 3px 3px;
+        border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+        border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+        border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    }
 
     p{
         cursor: pointer

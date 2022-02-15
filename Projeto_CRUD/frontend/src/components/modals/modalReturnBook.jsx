@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal, P, SubDivModal } from './styleds/styled';
+import { DivModalReturnBook, P, SubDivModal } from './styleds/styled';
 
 const ModalReturnBook = ({
     modalReturnBook,
@@ -85,7 +85,7 @@ const ModalReturnBook = ({
                 style={customStyles}
                 contentLabel="Confirmed Modal"
             >
-                <DivModal $darkmode={darkMode}>
+                <DivModalReturnBook $darkmode={darkMode}>
                     <SubDivModal $darkmode={darkMode}>
                         <div className="disclaimer_lend_book" title="Disclaimer">
                             <P $darkmode={darkMode}>
@@ -101,7 +101,7 @@ const ModalReturnBook = ({
                             </ButtonCancelLoanBook>
                         </div>
                     </SubDivModal>
-                </DivModal>
+                </DivModalReturnBook>
             </Modal>
         </>
     );

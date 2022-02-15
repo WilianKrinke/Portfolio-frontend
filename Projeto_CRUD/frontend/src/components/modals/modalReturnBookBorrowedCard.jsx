@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
-import { DivModal, P, SubDivModal } from './styleds/styled';
+import { DivModalReturnBook, P, SubDivModal } from './styleds/styled';
 
 const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, objectDatas }) => {
     const navigate = useNavigate();
@@ -66,7 +66,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
                 style={customStyles}
                 contentLabel="Confirmed Modal"
             >
-                <DivModal $darkmode={darkMode}>
+                <DivModalReturnBook $darkmode={darkMode}>
                     <SubDivModal $darkmode={darkMode}>
                         <div className="disclaimer_lend_book" title="Disclaimer">
                             <P $darkmode={darkMode}>
@@ -82,7 +82,7 @@ const ModalReturnBookBorrowedCard = ({ isOpen, setModalReturnBook, bookName, obj
                             </ButtonCancelLoanBook>
                         </div>
                     </SubDivModal>
-                </DivModal>
+                </DivModalReturnBook>
             </Modal>
         </>
     );
