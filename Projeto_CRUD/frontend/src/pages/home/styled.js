@@ -26,7 +26,7 @@ export const InfoCard = styled.section`
 
     @media screen and (max-width: 750px) {
        width: 100%;
-       height: 65vh;
+       height: 400px;
        border-radius: 0px 0px 5px 5px;
        border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
        border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
@@ -34,12 +34,15 @@ export const InfoCard = styled.section`
     }
 
     @media screen and (max-width: 525px) {
-       width: 100%;
-       height: 800px;
-       border-radius: 0px 0px 5px 5px;
-       border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
-       border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
-       border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+       height: 500px;       
+    }
+
+    @media screen and (max-width: 440px) {       
+        height: 700px;    
+    }
+
+    @media screen and (max-width: 350px) {       
+        height: 850px;    
     }
 `
 export const SectForm = styled.section`
@@ -62,7 +65,15 @@ export const SectForm = styled.section`
     }
 
     @media screen and (max-width: 525px) {
-        height: 500px;
+       height: 450px;       
+    }
+
+    @media screen and (max-width: 440px) {       
+        height: 500px;    
+    }
+
+    @media screen and (max-width: 350px) {       
+        height: 510px;    
     }
 `
 
