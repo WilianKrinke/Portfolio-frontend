@@ -11,7 +11,7 @@ const Lendbookbox = (objectLendBookBox) => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     const today = format(new Date(), 'dd-MM-yyyy', { locale: ptBR });
-    const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 1), 'dd-MM-yyyy');
+    const threeDaysBusinessAfter = format(addBusinessDays(new Date(), 3), 'dd-MM-yyyy');
 
     return (
         <SubDivModal $darkmode={darkMode}>

@@ -14,8 +14,6 @@ async function userIsBlocked(idUser){
             return false
         }
     }
-
-    //return true
 }
 
 module.exports = userIsBlocked;

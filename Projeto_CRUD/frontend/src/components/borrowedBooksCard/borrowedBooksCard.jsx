@@ -23,7 +23,6 @@ const Borrowedbookscard = ({ infoDatas }) => {
     const [modalReturnBook, setModalReturnBook] = useState(false);
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-
     const { image, bookName, resume, devolutionDate, lendDate, rating } = infoDatas;
 
     const lendDateData = new Date(lendDate);
