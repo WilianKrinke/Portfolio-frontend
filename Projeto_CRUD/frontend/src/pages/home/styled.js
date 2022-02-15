@@ -26,6 +26,16 @@ export const InfoCard = styled.section`
 
     @media screen and (max-width: 750px) {
        width: 100%;
+       height: 65vh;
+       border-radius: 0px 0px 5px 5px;
+       border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+       border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+       border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
+    }
+
+    @media screen and (max-width: 525px) {
+       width: 100%;
+       height: 800px;
        border-radius: 0px 0px 5px 5px;
        border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
        border-bottom: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
@@ -51,9 +61,8 @@ export const SectForm = styled.section`
        border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     }
 
-    @media screen and (max-width: 470px) {
-        height: 70vh;
-
+    @media screen and (max-width: 525px) {
+        height: 500px;
     }
 `
 
@@ -64,22 +73,21 @@ export const ArticleCrud = styled.article`
     justify-content: space-evenly;
     align-items: start;
     flex-direction: column;
-    padding-left: 50px;
     border: 1px solid rgba(0, 0, 0, 0.3);
-
+    padding: 20px;
 
     @media screen and (max-width: 400px) {
-        padding-left: 0px;
         align-items: center;
     }
+`
+
+export const P = styled.p`
+    color: ${props => props.$darkmode ? "#F9FFF9" : "#0a0a0a"}; 
+    transition: all .7s ease-in-out;
+    font-size: 16px;      
     
-    p{
-        display: block;
-        font-family: 'Cormorant Garamond', serif;
-        font-weight: 600;
-        margin: 2px;
-        letter-spacing: 3px;
-        font-size: 70px;
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
 `
 
