@@ -42,6 +42,10 @@ export const InfoCard = styled.section`
     }
 
     @media screen and (max-width: 350px) {       
+        height: 800px;    
+    }
+
+    @media screen and (max-width: 300px) {       
         height: 850px;    
     }
 `
