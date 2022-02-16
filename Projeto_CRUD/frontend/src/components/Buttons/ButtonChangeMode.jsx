@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { memo } from 'react';
 import { BsFillMoonStarsFill, BsSunFill } from 'react-icons/bs';
 import { useDispatch, useSelector } from 'react-redux';
