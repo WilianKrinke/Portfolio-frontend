@@ -21,7 +21,7 @@ const Home = () => {
 
     return (
         <>
-            <I18nProvider locale={locales.portuguese}>
+            <I18nProvider locale={locales.english}>
                 <HeaderComponent phrase={translate('homeTitle')} />
                 <HomeMain $darkmode={darkMode}>
                     <InfoCard $darkmode={darkMode}>
