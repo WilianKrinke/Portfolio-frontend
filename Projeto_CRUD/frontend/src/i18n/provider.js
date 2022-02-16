@@ -1,8 +1,10 @@
 import propTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import { IntlProvider } from 'react-intl'
+import { locales } from './locales'
+import messages from './messages'
 
-const Provider = ({children, locale}) => (    
+const Provider = ({children, locale = locales.english}) => (    
     <IntlProvider 
         locale={locale} 
         textComponent={Fragment}
