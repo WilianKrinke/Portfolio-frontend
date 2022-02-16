@@ -1,6 +1,6 @@
 import lottie from 'lottie-web';
 import React, { memo, useEffect } from 'react';
-import alert from '../../assets/not-found.json';
+import alert from '../../assets/lottiesJson/not-found.json';
 import './styled.css';
 
 const LottieNotFound = () => {

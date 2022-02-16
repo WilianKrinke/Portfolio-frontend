@@ -1,6 +1,6 @@
 import lottie from 'lottie-web';
 import React, { memo, useEffect } from 'react';
-import alert from '../../assets/alert.json';
+import alert from '../../assets/lottiesJson/alert.json';
 import './styled.css';
 
 const LottieAlert = () => {

@@ -2,7 +2,7 @@ import lottie from 'lottie-web';
 import propTypes from 'prop-types';
 import React, { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import noresults from '../../assets/no-results.json';
+import noresults from '../../assets/lottiesJson/no-results.json';
 import { Span } from './styled';
 import './styled.css';
 

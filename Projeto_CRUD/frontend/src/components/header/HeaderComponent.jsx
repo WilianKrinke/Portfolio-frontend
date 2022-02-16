@@ -1,6 +1,7 @@
 import propTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Languagecomponent from '../languageComponent/languageComponent';
 import { H1, HeaderStyled } from './styled';
 
 const HeaderComponent = ({ phrase }) => {
@@ -8,6 +9,7 @@ const HeaderComponent = ({ phrase }) => {
 
     return (
         <HeaderStyled $darkmode={darkMode}>
+            <Languagecomponent />
             <div className="title">
                 <H1 $darkmode={darkMode}>{phrase}</H1>
             </div>
