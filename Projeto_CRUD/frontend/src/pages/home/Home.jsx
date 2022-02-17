@@ -8,7 +8,7 @@ import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import translate from '../../i18n/translate';
 import './home.css';
-import { ArticleCrud, ArticleLogin, ArticleSignUp, HomeMain, InfoCard, P, SectForm } from './styled';
+import { A, ArticleCrud, ArticleLogin, ArticleSignUp, HomeMain, InfoCard, P, SectForm } from './styled';
 
 const Home = () => {
     const [isLoginVisible, setisLoginVisible] = useState(true);
@@ -25,7 +25,20 @@ const Home = () => {
                 <InfoCard $darkmode={darkMode}>
                     <ArticleCrud $darkmode={darkMode}>
                         <P $darkmode={darkMode}>{translate('firstParagraph')}</P>
-                        <P $darkmode={darkMode}>{translate('secondParagraph')}</P>
+                        <P $darkmode={darkMode}>
+                            {translate('secondParagraph', {
+                                path: (
+                                    <A
+                                        href="https://github.com/WilianKrinke/Portfolio/tree/main/Projeto_CRUD"
+                                        target={'_blank'}
+                                        rel="noopener noreferrer"
+                                        $darkmode={darkMode}
+                                    >
+                                        here
+                                    </A>
+                                ),
+                            })}
+                        </P>
                     </ArticleCrud>
                 </InfoCard>
 

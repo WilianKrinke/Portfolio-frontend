@@ -106,6 +106,16 @@ export const P = styled.p`
     }
 `
 
+export const A = styled.a`
+    transition: all .7s ease-in-out;
+    font-size: 16px;
+    color: #2e46ff;     
+    
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
+    }
+`
+
 export const ArticleLogin = styled.article`
     display: flex;
     flex-direction: column;
