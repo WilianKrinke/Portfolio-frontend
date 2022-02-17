@@ -5,6 +5,7 @@ import ReactStars from 'react-rating-stars-component';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../i18n/translate';
 import addFavorites from '../../utils/favorites/addFavorites';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import sendRating from '../../utils/sendRating/sendRating';
@@ -166,12 +167,12 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
                     <SecondContainerInfo>
                         <div className="container_author" title="Author">
                             <P $darkmode={darkMode}>
-                                <B $darkmode={darkMode}>Author:</B> {author}
+                                <B $darkmode={darkMode}>{translate('author')}:</B> {author}
                             </P>
                         </div>
                         <div className="container_category" title="Category">
                             <P $darkmode={darkMode}>
-                                <B $darkmode={darkMode}>Category:</B> {category}
+                                <B $darkmode={darkMode}>{translate('category')}:</B> {category}
                             </P>
                         </div>
                         <div className="container_text_resume">
@@ -190,7 +191,8 @@ const Bookcard = ({ userName, idUser, bookInfo }) => {
                         </div>
                         <div className="container_amount" title="Copies">
                             <P $darkmode={darkMode}>
-                                <B $darkmode={darkMode}>Copies:</B> {amountState === 0 ? 'Not Available' : amountState}
+                                <B $darkmode={darkMode}>{translate('copies')}:</B>{' '}
+                                {amountState === 0 ? 'Not Available' : amountState}
                             </P>
                         </div>
                     </SecondContainerInfo>

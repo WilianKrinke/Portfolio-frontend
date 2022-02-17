@@ -1,21 +1,20 @@
 import { locales } from "../locales"
 
 export default {
-    [locales.english]:{       
+    [locales.english]:{
+        //
+        'languagessetup': 'Language',       
         //Home 
         'homeTitle': 'Project Library',
-        //
         'firstParagraph': 'Initially the library project was developed as a simple Create, Read , Update, Delete, for my portfolio, but as the development phases progressed, I realized that could make a system of borrowing and returning books, of course, as a job of web development practices.',
-        // 
         'secondParagraph': 'The Library Project is inspired by a C.R.U.D. gives college, specifically in the subject of Fundamentals of Web Development, where they were applied only hmtl, css and php, so I can say that it is a "remake" of the work of faculty, which will also be in my portfolio. Finally, I hope you like the project, I encourage you to evaluate the code that I will make available here and if you want you can like and share, follow me on github and recommend skills on linkedin.',
-        //
         'signup':'Sign Up',
         'signin': 'Sign In',
         'forgotyourpassword':'Forgot Your Password?',
         'userName': 'User Name',
         'password': 'Password',
         //
-        //Footer Internal External
+        //Footer Internal External/Menu
         //
         'developedby': 'Developed by Wilian Krinke',
         'sitemapp': 'Site Map:',
@@ -28,6 +27,9 @@ export default {
         'privacypolice': 'Privacy Policy(Fake)',
         'cookiessetting': 'Cookies Settings(Fake)',
         'privacystatement': 'Privacy Statement(Fake)',
+        'logout': 'Logout',
+        'datanotupdate': 'Your Data Is Not Up to Date',
+        'welcome':'Welcome',
         //
         //Book List
         //
@@ -46,9 +48,20 @@ export default {
         'brazilianliterature': 'Brazilian Literature',
         'politics': 'Politics',
         'romance': 'Romance',
-
+        'author': 'Author',
+        'copies': 'Copies',
         //
-        'borrowedBooksTitle':'lorem',
+        //My Borrowed Books
+        //
+        'borrowedBooksTitle':'My Borrowed Books',
+        'noborrowings': 'No Borrowings',
+        'thisbookwasborrowon': 'This book was borrow',
+        'willreturnon': 'and must be returned in',
+        'todayisbookdeliveryday': 'Today is book delivery day',
+        'thisbookislate': 'This book is late.',
+        'thisbookisontime': 'This book is on time.',
+        'returnbook': 'Return Book',
+        //
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',
         'contactTitle': 'lorem',

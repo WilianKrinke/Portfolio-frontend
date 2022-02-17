@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import React from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import {
     AjustBookList,
     DivChangePage,
@@ -41,11 +42,11 @@ const Ajustbooklist = ({
             <AjustBookList>
                 <DivSelectCategory $darkmode={darkMode}>
                     <Label htmlFor="category" $darkmode={darkMode}>
-                        Category:{' '}
+                        {translate('category')}:{' '}
                     </Label>
                     <Select name="category" id="category" onChange={(e) => handleCategory(e)} $darkmode={darkMode}>
                         <Option value="all" defaultValue $darkmode={darkMode}>
-                            All
+                            Todos
                         </Option>
                         <Option value="Aventura" $darkmode={darkMode}>
                             Aventura
@@ -99,7 +100,7 @@ const Ajustbooklist = ({
 
                 <DivSelectQnt $darkmode={darkMode}>
                     <Label htmlFor="item" $darkmode={darkMode}>
-                        Itens per Page:{' '}
+                        {translate('itensperpage')}:{' '}
                     </Label>
                     <Select name="item" id="" onChange={(e) => handleItemPerPage(e)} $darkmode={darkMode}>
                         <Option value="5" defaultValue $darkmode={darkMode}>

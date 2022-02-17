@@ -8,6 +8,7 @@ import Loading from '../../components/loading/Loading';
 import Lottienodata from '../../components/lottieAnimations/lottieNoData.jsx';
 import Menu from '../../components/menu/Menu';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
+import translate from '../../i18n/translate';
 import getMyBorrowedBooks from '../../utils/getMyBorrowedBooks/getMyBorrowedBooks';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { BorrowMain, SectionContainer } from './styled';
@@ -49,7 +50,7 @@ const MyBorrowedBooks = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <HeaderComponent phrase="My Borrowed Books" />
+                    <HeaderComponent phrase={translate('borrowedBooksTitle')} />
                     <BorrowMain $darkmode={darkMode}>
                         <SectionContainer>
                             {noBookData ? (

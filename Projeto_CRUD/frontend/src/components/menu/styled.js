@@ -99,10 +99,6 @@ export const ContainerLinks = styled.nav`
             transition: all .1s ease-in-out;
             text-align: center;
             font-family: 'Zen Kaku Gothic New', sans-serif;
-
-            :hover:not(.change_mode){
-                transform: scale(1.3);
-            }
             
             a{
                 color: antiquewhite;

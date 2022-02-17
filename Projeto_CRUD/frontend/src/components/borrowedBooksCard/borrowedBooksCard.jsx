@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import isLate from '../../utils/validations/dateValidation';
 import sameDateValidation from '../../utils/validations/sameDateValidation';
 import ModalImage from '../modals/modalImage';
@@ -84,21 +85,22 @@ const Borrowedbookscard = ({ infoDatas }) => {
                         $darkmode={darkMode}
                     >
                         <P $darkmode={darkMode}>
-                            This book was borrowed on {lendDateFormat}, with return on {dateDevolutionFormat}.
+                            {translate('thisbookwasborrowon')} {lendDateFormat}, {translate('willreturnon')}{' '}
+                            {dateDevolutionFormat}.
                         </P>
                         <P $darkmode={darkMode}>
                             {isSameDate
-                                ? 'Today is book delivery day.'
+                                ? translate('todayisbookdeliveryday')
                                 : isBookLate
-                                ? 'This book is late.'
-                                : 'This book is on time.'}
+                                ? translate('thisbookislate')
+                                : translate('thisbookisontime')}
                         </P>
                     </DivInfoLendBook>
                 </ContainerResume>
                 <ContainerActions isBookLate={isBookLate} isSameDate={isSameDate} onClick={handleModalReturnBook}>
                     <div className="div_container_icon">
                         <Icon $darkmode={darkMode} title="Return Book" />
-                        <P $darkmode={darkMode}>Return book</P>
+                        <P $darkmode={darkMode}>{translate('returnbook')}</P>
                     </div>
                 </ContainerActions>
             </BorrowedBookCard>

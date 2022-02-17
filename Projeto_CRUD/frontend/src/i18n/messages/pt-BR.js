@@ -1,7 +1,9 @@
 import { locales } from "../locales"
 
 export default {
-    [locales.portuguese]:{       
+    [locales.portuguese]:{  
+        //
+        'languagessetup': 'Idioma',     
         //Home
         'homeTitle': 'Projeto Biblioteca',
         //
@@ -15,12 +17,12 @@ export default {
         'userName': 'Usuário',
         'password': 'Senha',
         //
-        //Footer Internal External
+        //Footer Internal External /Menu
         //
         'developedby': 'Desenvolvido por Wilian Krinke',
         'sitemapp': 'Mapa do Site:',
         'booklist': 'Lista de Livros',
-        'myborrowedbooks': 'Meus Livros Emprestados',
+        'myborrowedbooks': 'Livros Emprestados',
         'myfavorites': 'Meus Favoritos',
         'mydatas': 'Meus Dados',
         'contactus': 'Contate-Nos',
@@ -28,12 +30,43 @@ export default {
         'privacypolice': 'Política de Privacidade(Fake)',
         'cookiessetting': 'Configurações de cookies(Fake)',
         'privacystatement': 'Declaração de privacidade(Fake)',
+        'logout': 'Sair',
+        'datanotupdate': 'Seus dados não estão atualizados',
+        'welcome':'Bem Vindo',
+        //
+        //
         //
         //Book List
         //
         'bookListTitle': 'Lista de Livros',
+        'category': 'Categoria',
+        'itensperpage': 'Itens Por Página',
+        'all': 'All',
+        'adventure': 'Adventure',
+        'dystopian': 'Dystopian',
+        'epic': 'Epic',
+        'fiction': 'Fiction',
+        'philosophy': 'Philosophy',
+        'story': 'Story',
+        'childish': 'Childish',
+        'investigation': 'Investigation',
+        'brazilianliterature': 'Brazilian Literature',
+        'politics': 'Politics',
+        'romance': 'Romance',
+        'author': 'Autor',
+        'copies': 'Copias',
         //
-        'borrowedBooksTitle':'lorem',
+        //My Borrowed Books
+        //
+        'borrowedBooksTitle':'Livros Emprestados',
+        'noborrowings': 'Sem empréstimos',
+        'thisbookwasborrowon': 'Este livro foi emprestado',
+        'willreturnon': 'deve ser devolvido em',
+        'todayisbookdeliveryday': 'Hoje é dia de entrega deste livro',
+        'thisbookislate': 'Este livro está atrasado.',
+        'thisbookisontime': 'Este livro está dentro do prazo',
+        'returnbook': 'Devolver livro',
+        //
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',
         'contactTitle': 'lorem',

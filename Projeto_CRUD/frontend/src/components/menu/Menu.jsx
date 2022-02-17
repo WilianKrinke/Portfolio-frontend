@@ -4,6 +4,7 @@ import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import translate from '../../i18n/translate';
 import logout from '../../utils/Auth/logout';
 import isUpdateDatas from '../../utils/isUpdateDatas/isUpdateDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
@@ -57,28 +58,30 @@ const Menu = ({ user = 'Loading...' }) => {
                 <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} $isopen={isOpen} />
 
                 <ContainerUser>
-                    <p>Welcome {user}!</p>
+                    <p>
+                        {translate('welcome')} {user}!
+                    </p>
                 </ContainerUser>
 
                 <ContainerLinks>
                     <ul>
                         <li>
-                            <Link to="/book-list">Book List</Link>
+                            <Link to="/book-list">{translate('booklist')}</Link>
                         </li>
                         <li>
-                            <Link to="/my-borrowed-books">My Borrowed Books</Link>
+                            <Link to="/my-borrowed-books">{translate('myborrowedbooks')}</Link>
                         </li>
                         <li>
-                            <Link to="/my-favorites">My Favorites</Link>
+                            <Link to="/my-favorites">{translate('myfavorites')}</Link>
                         </li>
                         <li>
-                            <Link to="/my-data">My Data</Link>
+                            <Link to="/my-data">{translate('mydatas')}</Link>
                         </li>
                         <li>
-                            <Link to="/contact">Contact Us</Link>
+                            <Link to="/contact">{translate('contactus')}</Link>
                         </li>
                         <li>
-                            <ButtonLogOut onClick={() => logout(navigate)}>Logout</ButtonLogOut>
+                            <ButtonLogOut onClick={() => logout(navigate)}>{translate('logout')}</ButtonLogOut>
                         </li>
                         <li className="change_mode">
                             <ButtonChangeMode />
@@ -87,7 +90,7 @@ const Menu = ({ user = 'Loading...' }) => {
                 </ContainerLinks>
 
                 <ContainerIsUpDated>
-                    {isUpDatedDatasState === false && <p>Your Data Is Not Up to Date</p>}
+                    {isUpDatedDatasState === false && <p>{translate('datanotupdate')}</p>}
                 </ContainerIsUpDated>
             </ContainerMenu>
         </>

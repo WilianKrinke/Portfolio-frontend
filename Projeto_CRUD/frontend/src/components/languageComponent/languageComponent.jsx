@@ -4,6 +4,7 @@ import FlagBrazil from '../../assets/flags/flag-brazil.png';
 import FlagSpain from '../../assets/flags/flag-spain.png';
 import FlagUSA from '../../assets/flags/flag-usa.jpg';
 import { locales } from '../../i18n/locales';
+import translate from '../../i18n/translate';
 import { toggleLanguage } from '../../store/actions/actions';
 import { DivLanguagesButtons, P } from './styled';
 
@@ -27,7 +28,7 @@ const Languagecomponent = () => {
         <>
             <DivLanguagesButtons>
                 <div className="div_paragraph">
-                    <P $darkmode={darkMode}>Languages:</P>
+                    <P $darkmode={darkMode}>{translate('languagessetup')}:</P>
                 </div>
                 <div className="div_flags">
                     <button className="button_flag" onClick={handleLanguageToEnglish}>
