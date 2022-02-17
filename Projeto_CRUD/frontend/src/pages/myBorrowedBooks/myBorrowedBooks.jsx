@@ -54,7 +54,7 @@ const MyBorrowedBooks = () => {
                     <BorrowMain $darkmode={darkMode}>
                         <SectionContainer>
                             {noBookData ? (
-                                <Lottienodata word="Borrowings" />
+                                <Lottienodata word={translate('borrowings')} />
                             ) : (
                                 borrowedBooks.map((item) => {
                                     return <Borrowedbookscard key={item.idlendRegister} infoDatas={item} />;

@@ -3,6 +3,7 @@ import propTypes from 'prop-types';
 import React, { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import noresults from '../../assets/lottiesJson/no-results.json';
+import translate from '../../i18n/translate';
 import { Span } from './styled';
 import './styled.css';
 
@@ -21,11 +22,11 @@ const Lottienodata = ({ word }) => {
 
     return (
         <>
-            <section className="section" title="No Data to Display">
+            <section className="section">
                 <div id="NoData" style={{ width: '100%', height: 350 }} />
                 <div className="div_words">
                     <Span className="word1" $darkmode={darkMode}>
-                        No
+                        {translate('no')}{' '}
                     </Span>
                     <Span className="word2" $darkmode={darkMode}>
                         {word}
@@ -37,7 +38,7 @@ const Lottienodata = ({ word }) => {
 };
 
 Lottienodata.propTypes = {
-    word: propTypes.string.isRequired,
+    word: propTypes.object,
 };
 
 export default memo(Lottienodata);

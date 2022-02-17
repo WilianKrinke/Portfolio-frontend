@@ -61,6 +61,8 @@ export default {
         'thisbookislate': 'Este libro está retrasado.',
         'thisbookisontime': 'Este libro está a tiempo.',
         'returnbook': 'Devolver libro',
+        'no': 'No ',
+        'borrowings': 'Prestados',
         //
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',

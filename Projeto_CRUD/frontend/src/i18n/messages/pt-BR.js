@@ -34,8 +34,6 @@ export default {
         'datanotupdate': 'Seus dados não estão atualizados',
         'welcome':'Bem Vindo',
         //
-        //
-        //
         //Book List
         //
         'bookListTitle': 'Lista de Livros',
@@ -66,6 +64,9 @@ export default {
         'thisbookislate': 'Este livro está atrasado.',
         'thisbookisontime': 'Este livro está dentro do prazo',
         'returnbook': 'Devolver livro',
+        'no': 'Sem ',
+        'borrowings': ' Empréstimos',
+
         //
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',

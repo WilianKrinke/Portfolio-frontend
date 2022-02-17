@@ -61,6 +61,8 @@ export default {
         'thisbookislate': 'This book is late.',
         'thisbookisontime': 'This book is on time.',
         'returnbook': 'Return Book',
+        'no': 'No',
+        'borrowings': 'Borrowings',
         //
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',
