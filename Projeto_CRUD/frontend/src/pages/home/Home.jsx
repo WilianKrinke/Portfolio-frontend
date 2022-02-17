@@ -39,7 +39,7 @@ const Home = () => {
                     ) : (
                         <ArticleSignUp>
                             <SignUpForm setisLoginVisible={setisLoginVisible} />
-                            <ButtonBackToLogin onClick={handleChangeBlock}>Back</ButtonBackToLogin>
+                            <ButtonBackToLogin onClick={handleChangeBlock}>{translate('back')}</ButtonBackToLogin>
                         </ArticleSignUp>
                     )}
                 </SectForm>

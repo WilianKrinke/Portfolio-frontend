@@ -13,6 +13,9 @@ export default {
         'forgotyourpassword':'Forgot Your Password?',
         'userName': 'User Name',
         'password': 'Password',
+        'confirmpass': 'Confirm the Password',
+        'register': 'Register',
+        'back':'Back',
         //
         //Footer Internal External/Menu
         //

@@ -13,6 +13,9 @@ export default {
         'forgotyourpassword':'¿Olvidaste tu contraseña?',
         'userName': 'Nombre de usuario',
         'password': 'Contraseña',
+        'confirmpass': 'Confirmar la contraseña',
+        'register': 'Registrarse',
+        'back':'Regreso',
         //
         //Footer Internal External/Menu
         //

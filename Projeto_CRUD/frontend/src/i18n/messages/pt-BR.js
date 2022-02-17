@@ -16,6 +16,9 @@ export default {
         'forgotyourpassword':'Esqueceu sua senha?',
         'userName': 'Usuário',
         'password': 'Senha',
+        'confirmpass': 'Confirme a senha',
+        'register': 'Cadastrar',
+        'back':'Voltar',
         //
         //Footer Internal External /Menu
         //

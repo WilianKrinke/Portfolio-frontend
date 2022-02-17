@@ -4,6 +4,7 @@ import propTypes from 'prop-types';
 import React, { memo, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import translate from '../../i18n/translate';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ButtonSignUp } from '../Buttons';
 import './signUpForm.css';
@@ -92,7 +93,7 @@ const Form = ({ setisLoginVisible }) => {
                     <Box>
                         <TextField
                             id="user_name_signup"
-                            label="User Name"
+                            label={translate('userName')}
                             variant="standard"
                             type="text"
                             className="dark"
@@ -133,7 +134,7 @@ const Form = ({ setisLoginVisible }) => {
                     <Box>
                         <TextField
                             id="pass_signup"
-                            label="Password"
+                            label={translate('password')}
                             variant="standard"
                             type="password"
                             className="dark"
@@ -154,7 +155,7 @@ const Form = ({ setisLoginVisible }) => {
                     <Box>
                         <TextField
                             id="confirmed_pass"
-                            label="Confirm the Password"
+                            label={translate('confirmpass')}
                             variant="standard"
                             type="password"
                             className="dark"
@@ -167,7 +168,7 @@ const Form = ({ setisLoginVisible }) => {
                     </Box>
                 </ContainerInfoSignUp>
                 <ButtonContainer>
-                    <ButtonSignUp>Register</ButtonSignUp>
+                    <ButtonSignUp>{translate('register')}</ButtonSignUp>
                 </ButtonContainer>
             </form>
         </>
