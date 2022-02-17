@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { ButtonRecoverPass } from '../../components/Buttons';
 import Externalfooter from '../../components/footer/externalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
+import translate from '../../i18n/translate';
 import reqRecoverPass from '../../utils/recoverPass/reqRecoverPass';
 import './forgetPass.css';
 import { BoxStyled, Container, ContainerInfo, ForgetPassMain, IconLoading, LinkStyled, P } from './styled';
@@ -37,29 +38,29 @@ const ForgetPassword = () => {
 
     return (
         <>
-            <HeaderComponent phrase="Recovery Password" />
+            <HeaderComponent phrase={translate('forgetPassTitle')} />
             <ForgetPassMain $darkmode={darkMode}>
                 <Container>
                     <ContainerInfo $darkmode={darkMode}>
                         <div className="container_disclaimer">
-                            <P $darkmode={darkMode}>Insert username to send password recovery e-mail.</P>
+                            <P $darkmode={darkMode}>{translate('orientation')}</P>
                         </div>
                         <form className="form" onSubmit={(e) => handleForm(e)}>
                             <BoxStyled noValidate>
                                 <TextField
                                     id="standard-basic"
                                     className={darkMode ? 'darkmodeForgetPass' : 'normalForgetPass'}
-                                    label="User Name"
+                                    label={translate('userName')}
                                     variant="standard"
                                     onChange={(e) => setuserName(e.target.value)}
                                 />
                             </BoxStyled>
                             <div className="container_buttons">
                                 <ButtonRecoverPass $darkmode={darkMode}>
-                                    {loadingSendEmailState ? <IconLoading /> : 'Send'}
+                                    {loadingSendEmailState ? <IconLoading /> : translate('send')}
                                 </ButtonRecoverPass>
                                 <LinkStyled to="/" $darkmode={darkMode}>
-                                    Back to Login
+                                    {translate('backtologin')}
                                 </LinkStyled>
                             </div>
                         </form>

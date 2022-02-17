@@ -118,7 +118,18 @@ export default {
         'backhome': 'Back Home',
         'error': 'Error',
         //
-        'forgetPassTitle': 'lorem',
-        'redefinePassTitle': 'lorem'        
+        //RecoveryPass
+        //
+        'forgetPassTitle': 'Password Recovery',
+        'orientation': 'Insert username to send password recovery e-mail.',
+        'backtologin': 'Back to Login',
+        //
+        //Redefine Passoword
+        'redefinePassTitle': 'Redefine Password',
+        'newpassoword': 'New Password',
+        'confirmPassword': 'Confirm Password',
+        'confirm':'Confirm',
+        'cancel':'Cancel',
+        //        
     }
 }

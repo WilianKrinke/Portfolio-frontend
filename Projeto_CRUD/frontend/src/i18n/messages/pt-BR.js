@@ -120,8 +120,18 @@ export default {
         'backhome': 'Para Home',
         'error': 'Error',
         //
-        'forgetPassTitle': 'lorem',
-        'redefinePassTitle': 'lorem'
-        
+        //RecoveryPass
+        //
+        'forgetPassTitle': 'Recuperação de Senha',
+        'orientation': 'Insira o nome de usuário para enviar e-mail de recuperação de senha.',
+        'backtologin': 'Voltar para o Login',
+       //
+        //Redefine Passoword
+        'redefinePassTitle': 'Redefinir Senha',
+        'newpassoword': 'Nova Senha',
+        'confirmPassword': 'Confirmar Senha',
+        'confirm':'Confirmar',
+        'cancel':'Cancelar',
+        //         
     }
 }

@@ -7,6 +7,7 @@ import { ButtonConfirmResetPass } from '../../components/Buttons';
 import Externalfooter from '../../components/footer/externalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
+import translate from '../../i18n/translate';
 import changePass from '../../utils/changePass/changePass';
 import verifyToken from '../../utils/verifyTokenToResetPass/verifyToken';
 import {
@@ -109,7 +110,7 @@ const RedefinePass = () => {
                 <Loading />
             ) : (
                 <>
-                    <HeaderComponent phrase="Reset Your Password" />
+                    <HeaderComponent phrase={translate('redefinePassTitle')} />
                     <RedefinePassMain $darkmode={darkMode}>
                         <SectionResetPass>
                             <ContainerInfo>
@@ -123,7 +124,7 @@ const RedefinePass = () => {
                                             <TextField
                                                 aria-invalid="false"
                                                 id="standard-basic"
-                                                label="New Password"
+                                                label={translate('newpassoword')}
                                                 variant="standard"
                                                 type="password"
                                                 onChange={(e) => setnewPass(e.target.value)}
@@ -149,7 +150,7 @@ const RedefinePass = () => {
                                             <TextField
                                                 aria-invalid="false"
                                                 id="standard-basic2"
-                                                label="Confirm Password"
+                                                label={translate('confirmPassword')}
                                                 variant="standard"
                                                 type="password"
                                                 onChange={(e) => setconfirmPass(e.target.value)}
@@ -159,8 +160,8 @@ const RedefinePass = () => {
                                     </DivConfirmPass>
 
                                     <DivButtons>
-                                        <Link to="/">Cancel</Link>
-                                        <ButtonConfirmResetPass>Confirm</ButtonConfirmResetPass>
+                                        <Link to="/">{translate('cancel')}</Link>
+                                        <ButtonConfirmResetPass>{translate('confirm')}</ButtonConfirmResetPass>
                                     </DivButtons>
                                 </form>
                             </ContainerInfo>
