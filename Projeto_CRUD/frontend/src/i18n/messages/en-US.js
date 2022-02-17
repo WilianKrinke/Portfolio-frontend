@@ -107,7 +107,7 @@ export default {
         'send': 'Send',
         'systemerror': 'System Errors',
         'bookloan': 'Book Loan',
-        'passowrds': 'Passowords',
+        'passowrds': 'Passwords',
         'login': 'Login',
         //
         'notFoundTitle': 'lorem',
