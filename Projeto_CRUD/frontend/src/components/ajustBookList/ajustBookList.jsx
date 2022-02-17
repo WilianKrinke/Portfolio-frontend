@@ -52,16 +52,16 @@ const Ajustbooklist = ({
                             {translate('adventure')}
                         </Option>
                         <Option value="Distopico" $darkmode={darkMode}>
-                            {translate('dystopian')}
+                            Distopico
                         </Option>
                         <Option value="Epico" $darkmode={darkMode}>
-                            {translate('epic')}
+                            Epico
                         </Option>
                         <Option value="Ficcao" $darkmode={darkMode}>
-                            {translate('fiction')}
+                            Ficcao
                         </Option>
                         <Option value="Filosofia" $darkmode={darkMode}>
-                            {translate('philosophy')}
+                            Filosofia
                         </Option>
                         <Option value="Historia" $darkmode={darkMode}>
                             Historia
