@@ -244,7 +244,7 @@ export const ButtonConfirmResetPass = styled.button`
 
 
 export const ButtonUpDate = styled.button`
-  width: 130px;
+  width: 150px;
   height: 55px;
   border-radius: 5px;
   background-color: transparent;

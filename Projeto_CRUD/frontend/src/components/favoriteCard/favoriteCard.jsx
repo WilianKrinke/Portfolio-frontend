@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ReactStars from 'react-rating-stars-component';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import translate from '../../i18n/translate';
 import { removeFavorite } from '../../utils/favorites/removeFavorite';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import ModalImage from '../modals/modalImage';
@@ -80,17 +81,17 @@ const Favoritecard = ({ favoriteItem }) => {
             <ContainerResume>
                 <div className="div_author" title="Author">
                     <P $darkmode={darkMode}>
-                        <b>Author:</b> {author}
+                        <b>{translate('author')}:</b> {author}
                     </P>
                 </div>
                 <div className="div_resume" title="Resume">
                     <P $darkmode={darkMode}>
-                        <b>Resume:</b> {resume}
+                        <b>{translate('resume')}:</b> {resume}
                     </P>
                 </div>
                 <div className="div_category" title="Category">
                     <P $darkmode={darkMode}>
-                        <b>Category:</b> {category}
+                        <b>{translate('category')}:</b> {category}
                     </P>
                 </div>
             </ContainerResume>

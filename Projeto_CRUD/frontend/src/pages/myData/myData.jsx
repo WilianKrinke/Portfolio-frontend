@@ -6,6 +6,7 @@ import InternalFooter from '../../components/footer/InternalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
+import translate from '../../i18n/translate';
 import getMyDatas from '../../utils/getMyDatas/getMyDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ArticleContainer, MyDataMain, SectionContainer } from './styled';
@@ -43,7 +44,7 @@ const Mydata = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <HeaderComponent phrase="My Datas" />
+                    <HeaderComponent phrase={translate('myDataTitle')} />
                     <MyDataMain $darkmode={darkMode}>
                         <SectionContainer>
                             <ArticleContainer>

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Externalfooter from '../../components/footer/externalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import LottieAlert from '../../components/lottieAnimations/lottieError';
+import translate from '../../i18n/translate';
 import { ButtonBackPage, ErrorMainStyled, H3, StyledSection } from './styled';
 
 const Errorpage = () => {
@@ -19,12 +20,14 @@ const Errorpage = () => {
 
     return (
         <>
-            <HeaderComponent phrase="Error" />
+            <HeaderComponent phrase={translate('ErrorTitle')} />
             <ErrorMainStyled $darkmode={darkMode}>
                 <StyledSection>
-                    <H3 $darkmode={darkMode}>Error: {error}</H3>
+                    <H3 $darkmode={darkMode}>
+                        {translate('error')}: {error}
+                    </H3>
                     <ButtonBackPage onClick={handleBack} $darkmode={darkMode}>
-                        Back Home
+                        {translate('backhome')}
                     </ButtonBackPage>
                 </StyledSection>
                 <LottieAlert />

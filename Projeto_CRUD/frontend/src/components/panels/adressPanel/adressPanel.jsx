@@ -3,6 +3,7 @@ import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../../i18n/translate';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
@@ -122,53 +123,53 @@ const Adresspanel = () => {
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressStreet(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Address Street"
+                            label={translate('adressstreet')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Address Street"
                             required
                             onChange={(e) => setEndereco_LogradouroState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressNeighborhood(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="District"
+                            label={translate('adressdistrict')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your District"
                             required
                             onChange={(e) => setEndereco_BairroState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleAdressNumber(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Number"
+                            label={translate('adressnumber')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Address Number"
                             required
                             onChange={(e) => setEndereco_NumeroState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleCityAdress(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="City"
+                            label={translate('adresscity')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your City ​​Address"
                             required
                             onChange={(e) => setEndereco_CidadeState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
                 </ContainerInput>
             </MainContainer>

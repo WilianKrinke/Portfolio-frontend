@@ -3,6 +3,7 @@ import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../../i18n/translate';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
@@ -104,33 +105,33 @@ const Contactpanel = () => {
                             required
                             onChange={(e) => setEmailState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleCellPhone(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Cell Phone"
+                            label={translate('cellphone')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Cell Phone"
                             required
                             onChange={(e) => setTelefone_celularState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleLandLine(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Landline"
+                            label={translate('landline')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Landline"
                             required
                             onChange={(e) => setTelefone_fixoState(e.target.value)}
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
                 </ContainerInput>
             </MainContainer>

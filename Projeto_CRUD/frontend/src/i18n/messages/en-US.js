@@ -53,6 +53,7 @@ export default {
         'romance': 'Romance',
         'author': 'Author',
         'copies': 'Copies',
+        'resume': 'Resume',
         //
         //My Borrowed Books
         //
@@ -67,11 +68,41 @@ export default {
         'no': 'No',
         'borrowings': 'Borrowings',
         //
-        'favoritesTitle': 'lorem',
-        'myDataTitle': 'lorem',
+        //My Favorites
+        'favoritesTitle': 'My Favorites',
+        'favorites': 'Favorites',
+        //
+        //My Datas
+        //
+        'myDataTitle': 'My Datas',
+        'name': 'Name',
+        'age': 'Age',
+        'adressstreet': 'Adress Street',
+        'adressdistrict': 'Adress District',
+        'adressnumber': 'Adress Number',
+        'adresscity': 'Adress City',
+        'cellphone': 'Cell Phone',
+        'landline': 'Landline',
+        'clickrefreshdatas': 'Click to Refresh Datas',
+        'lastupdate': 'Last Update',
+        'update': 'Update',
+        'datanotupdatepanel':'Not update',
+        'showdatas': 'Show All Datas',
+        'personal': 'Personal',
+        'adress': 'Adress',
+        'contact': 'Contact',
+        'firstname': 'First Name',
+        'secondname': 'Second Name',
+        //
         'contactTitle': 'lorem',
         'notFoundTitle': 'lorem',
-        'ErrorTitle': 'lorem',
+        //
+        //Erro Page
+        //
+        'ErrorTitle': 'Error',
+        'backhome': 'Back Home',
+        'error': 'Error',
+        //
         'forgetPassTitle': 'lorem',
         'redefinePassTitle': 'lorem'        
     }

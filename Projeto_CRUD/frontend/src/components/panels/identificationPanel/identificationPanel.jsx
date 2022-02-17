@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-vars */
 import TextField from '@mui/material/TextField';
 import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../../i18n/translate';
 import tokenTimeOut from '../../../utils/tokenTimeOut/tokenTimeOut';
 import upDateNumber from '../../../utils/upDateData/upDateNumber';
 import upDateString from '../../../utils/upDateData/upDateString';
@@ -127,7 +127,7 @@ const Identificationpanel = () => {
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleUserName(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="User Name"
+                            label={translate('userName')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your User Name"
@@ -135,46 +135,46 @@ const Identificationpanel = () => {
                             value={userNameState}
                             required
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleFirstName(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="First Name"
+                            label={translate('firstname')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Name"
                             onChange={(e) => setPrimeiro_NomeState(e.target.value)}
                             required
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleSecondName(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Second Name"
+                            label={translate('secondname')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Second Name"
                             onChange={(e) => setSegundo_NomeState(e.target.value)}
                             required
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
 
                     <FormStyled component="form" autoComplete="off" onSubmit={(e) => handleBirth(e)}>
                         <TextField
                             id="outlined-basic"
-                            label="Age"
+                            label={translate('age')}
                             variant="outlined"
                             className={darkMode ? 'darkmode' : 'normal'}
                             title="Update Your Year Of Birth"
                             onChange={(e) => setIdadeState(e.target.value)}
                             required
                         />
-                        <ButtonUpDate $darkmode={darkMode}>Update</ButtonUpDate>
+                        <ButtonUpDate $darkmode={darkMode}>{translate('update')}</ButtonUpDate>
                     </FormStyled>
                 </ContainerInput>
             </MainContainer>

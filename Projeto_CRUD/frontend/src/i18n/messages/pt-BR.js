@@ -36,6 +36,7 @@ export default {
         'logout': 'Sair',
         'datanotupdate': 'Seus dados não estão atualizados',
         'welcome':'Bem Vindo',
+        'resume': 'Sinopse',
         //
         //Book List
         //
@@ -69,13 +70,41 @@ export default {
         'returnbook': 'Devolver livro',
         'no': 'Sem ',
         'borrowings': ' Empréstimos',
-
+        //My Favorites
+        'favoritesTitle': 'Meus Favoritos',
+        'favorites': 'Favoritos',
         //
-        'favoritesTitle': 'lorem',
-        'myDataTitle': 'lorem',
+        //My Datas
+        //
+        'myDataTitle': 'Meus Dados',
+        'name': 'Nome',
+        'age': 'Idade',
+        'adressstreet': 'Logradouro',
+        'adressdistrict': 'Bairro',
+        'adressnumber': 'Numero',
+        'adresscity': 'Cidade',
+        'cellphone': 'Celular',
+        'landline': 'Fixo',
+        'clickrefreshdatas': 'Click para atualizar',
+        'lastupdate': 'Ultima Atualização',
+        'update': 'Atualizar',
+        'datanotupdatepanel':'Não atualizados',
+        'showdatas': 'Todos os Dados',
+        'personal': 'Pessoais',
+        'adress': 'Endereço',
+        'contact': 'Contato',
+        'firstname': 'Primeiro Nome',
+        'secondname': 'Segundo Nome',
+        //
         'contactTitle': 'lorem',
         'notFoundTitle': 'lorem',
-        'ErrorTitle': 'lorem',
+        //
+        //Erro Page
+        //
+        'ErrorTitle': 'Error',
+        'backhome': 'Para Home',
+        'error': 'Error',
+        //
         'forgetPassTitle': 'lorem',
         'redefinePassTitle': 'lorem'
         

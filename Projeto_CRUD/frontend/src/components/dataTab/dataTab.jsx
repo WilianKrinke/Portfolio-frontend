@@ -5,6 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import PropTypes from 'prop-types';
 import * as React from 'react';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import Adresspanel from '../panels/adressPanel/adressPanel';
 import Contactpanel from '../panels/contactPanel/contactPanel';
 import Identificationpanel from '../panels/identificationPanel/identificationPanel';
@@ -111,7 +112,7 @@ function DataTabs({ userDatasObject }) {
                     sx={{ width: `${matches840w ? '360px' : '100%'}` }}
                 >
                     <Tab
-                        label="Show All Data"
+                        label={translate('showdatas')}
                         {...a11yProps(0)}
                         sx={{
                             fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -121,7 +122,7 @@ function DataTabs({ userDatasObject }) {
                         }}
                     />
                     <Tab
-                        label="Personal"
+                        label={translate('personal')}
                         {...a11yProps(1)}
                         sx={{
                             fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -131,7 +132,7 @@ function DataTabs({ userDatasObject }) {
                         }}
                     />
                     <Tab
-                        label="Address"
+                        label={translate('adress')}
                         {...a11yProps(2)}
                         sx={{
                             fontSize: `${matches840w ? '11px' : '14px'}`,
@@ -141,7 +142,7 @@ function DataTabs({ userDatasObject }) {
                         }}
                     />
                     <Tab
-                        label="Contact"
+                        label={translate('contact')}
                         {...a11yProps(3)}
                         sx={{
                             fontSize: `${matches840w ? '11px' : '14px'}`,

@@ -1,7 +1,7 @@
-/* eslint-disable no-unused-vars */
 import propTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import translate from '../../../i18n/translate';
 import { ButtonRefresh, ContainerStyledShowDatas, MainContainer, TagP } from '../styled/styled';
 
 const Showingdatapanel = ({ userDatasObject }) => {
@@ -31,7 +31,7 @@ const Showingdatapanel = ({ userDatasObject }) => {
             <MainContainer>
                 <ContainerStyledShowDatas>
                     <div className="div_lastupdate_btn" onClick={handleRefresh}>
-                        <ButtonRefresh $darkmode={darkMode}>Click to refresh datas</ButtonRefresh>
+                        <ButtonRefresh $darkmode={darkMode}>{translate('clickrefreshdatas')}</ButtonRefresh>
                     </div>
                     <div className="div_datas">
                         <div className="div_first">
@@ -39,102 +39,125 @@ const Showingdatapanel = ({ userDatasObject }) => {
                                 className="div_name"
                                 title={`${
                                     primeiro_nome === null || segundo_nome === null
-                                        ? 'Data not updated'
+                                        ? translate('datanotupdatepanel')
                                         : primeiro_nome + segundo_nome
                                 }`}
                             >
                                 <TagP isNull={primeiro_nome} $darkmode={darkMode}>
-                                    <b>Name:</b>{' '}
+                                    <b>{translate('name')}:</b>{' '}
                                     {primeiro_nome === null || segundo_nome === null
-                                        ? 'Data not updated'
+                                        ? translate('datanotupdatepanel')
                                         : primeiro_nome + ' ' + segundo_nome}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_userName"
-                                title={`${userName === null ? 'Data not updated' : userName}`}
+                                title={`${userName === null ? translate('datanotupdatepanel') : userName}`}
                             >
                                 <TagP isNull={userName} $darkmode={darkMode}>
-                                    <b>User Name:</b> {userName === null ? 'Data not updated' : userName}
+                                    <b>{translate('userName')}:</b>{' '}
+                                    {userName === null ? translate('datanotupdatepanel') : userName}
                                 </TagP>
                             </div>
 
-                            <div className="div_birth" title={`${idade === null ? 'Data not Updated' : idade}`}>
+                            <div
+                                className="div_birth"
+                                title={`${idade === null ? translate('datanotupdatepanel') : idade}`}
+                            >
                                 <TagP isNull={idade} $darkmode={darkMode}>
-                                    <b>Age:</b> {idade === null ? 'Data not Updated' : idade}
+                                    <b>{translate('age')}:</b>{' '}
+                                    {idade === null ? translate('datanotupdatepanel') : idade}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_adress_street"
-                                title={`${endereco_logradouro === null ? 'Data not Updated' : endereco_logradouro}`}
+                                title={`${
+                                    endereco_logradouro === null ? translate('datanotupdatepanel') : endereco_logradouro
+                                }`}
                             >
                                 <TagP isNull={endereco_logradouro} $darkmode={darkMode}>
-                                    <b>Adress Street:</b>{' '}
-                                    {endereco_logradouro === null ? 'Data not Updated' : endereco_logradouro}
+                                    <b>{translate('adressstreet')}:</b>{' '}
+                                    {endereco_logradouro === null
+                                        ? translate('datanotupdatepanel')
+                                        : endereco_logradouro}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_adress_district"
-                                title={`${endereco_bairro === null ? 'Data not Updated' : endereco_bairro}`}
+                                title={`${
+                                    endereco_bairro === null ? translate('datanotupdatepanel') : endereco_bairro
+                                }`}
                             >
                                 <TagP isNull={endereco_bairro} $darkmode={darkMode}>
-                                    <b>Adress District:</b>{' '}
-                                    {endereco_bairro === null ? 'Data not Updated' : endereco_bairro}
+                                    <b>{translate('adressdistrict')}:</b>{' '}
+                                    {endereco_bairro === null ? translate('datanotupdatepanel') : endereco_bairro}
                                 </TagP>
                             </div>
                         </div>
                         <div className="div_second">
                             <div
                                 className="div_adress_number"
-                                title={`${endereco_numero === null ? 'Data not Updated' : endereco_numero}`}
+                                title={`${
+                                    endereco_numero === null ? translate('datanotupdatepanel') : endereco_numero
+                                }`}
                             >
                                 <TagP isNull={endereco_numero} $darkmode={darkMode}>
-                                    <b>Adress Number:</b>{' '}
-                                    {endereco_numero === null ? 'Data not Updated' : endereco_numero}
+                                    <b>{translate('adressnumber')}:</b>{' '}
+                                    {endereco_numero === null ? translate('datanotupdatepanel') : endereco_numero}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_adress_city"
-                                title={`${endereco_cidade === null ? 'Data not Updated' : endereco_cidade}`}
+                                title={`${
+                                    endereco_cidade === null ? translate('datanotupdatepanel') : endereco_cidade
+                                }`}
                             >
                                 <TagP isNull={endereco_cidade} $darkmode={darkMode}>
-                                    <b>Adress City:</b>{' '}
-                                    {endereco_cidade === null ? 'Data not Updated' : endereco_cidade}
+                                    <b>{translate('adresscity')}:</b>{' '}
+                                    {endereco_cidade === null ? translate('datanotupdatepanel') : endereco_cidade}
                                 </TagP>
                             </div>
 
-                            <div className="div_email" title={`${email === null ? 'Data not Updated' : email}`}>
+                            <div
+                                className="div_email"
+                                title={`${email === null ? translate('datanotupdatepanel') : email}`}
+                            >
                                 <TagP isNull={email} $darkmode={darkMode}>
-                                    <b>E-mail:</b> {email === null ? 'Data not Updated' : email}
+                                    <b>E-mail:</b> {email === null ? translate('datanotupdatepanel') : email}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_cell_phone"
-                                title={`${telefone_celular === null ? 'Data not Updated' : telefone_celular}`}
+                                title={`${
+                                    telefone_celular === null ? translate('datanotupdatepanel') : telefone_celular
+                                }`}
                             >
                                 <TagP isNull={telefone_celular} $darkmode={darkMode}>
-                                    <b>Cell Phone:</b>{' '}
-                                    {telefone_celular === null ? 'Data not Updated' : telefone_celular}
+                                    <b>{translate('cellphone')}:</b>{' '}
+                                    {telefone_celular === null ? translate('datanotupdatepanel') : telefone_celular}
                                 </TagP>
                             </div>
 
                             <div
                                 className="div_landline"
-                                title={`${telefone_fixo === null ? 'Data not Updated' : telefone_fixo}`}
+                                title={`${telefone_fixo === null ? translate('datanotupdatepanel') : telefone_fixo}`}
                             >
                                 <TagP isNull={telefone_fixo} $darkmode={darkMode}>
-                                    <b>Landline:</b> {telefone_fixo === null ? 'Data not Updated' : telefone_fixo}
+                                    <b>{translate('landline')}:</b>{' '}
+                                    {telefone_fixo === null ? translate('datanotupdatepanel') : telefone_fixo}
                                 </TagP>
                             </div>
                         </div>
                     </div>
                     <div className="div_lastupdate_p">
-                        <TagP $darkmode={darkMode}>-Last update: {last_update}.</TagP>
+                        <TagP $darkmode={darkMode}>
+                            {translate('lastupdate')}: {last_update}.
+                        </TagP>
                     </div>
                 </ContainerStyledShowDatas>
             </MainContainer>

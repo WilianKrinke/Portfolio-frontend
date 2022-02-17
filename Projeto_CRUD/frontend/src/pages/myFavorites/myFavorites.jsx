@@ -8,6 +8,7 @@ import Loading from '../../components/loading/Loading';
 import LottieNoData from '../../components/lottieAnimations/lottieNoData';
 import Menu from '../../components/menu/Menu.jsx';
 import ScrollToTop from '../../components/scrollToTop/scrollToTop';
+import translate from '../../i18n/translate';
 import getFavorites from '../../utils/getFavorites/getFavorites';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { FavoriteMain, SectionContainer } from './styled';
@@ -51,11 +52,11 @@ const Myfavorites = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <HeaderComponent phrase="My Favorites" />
+                    <HeaderComponent phrase={translate('favoritesTitle')} />
                     <FavoriteMain $darkmode={darkMode}>
                         <SectionContainer>
                             {noBookData ? (
-                                <LottieNoData word="Favorites" />
+                                <LottieNoData word={translate('favorites')} />
                             ) : (
                                 <>
                                     {bookFavorites.map((item) => {

@@ -11,7 +11,7 @@ export default {
         'signup':'Inscribirse',
         'signin': 'Iniciar Sesión',
         'forgotyourpassword':'¿Olvidaste tu contraseña?',
-        'userName': 'Nombre de usuario',
+        'userName': 'Nombre de Usuario',
         'password': 'Contraseña',
         'confirmpass': 'Confirmar la contraseña',
         'register': 'Registrarse',
@@ -53,6 +53,7 @@ export default {
         'romance': 'Romance',
         'author': 'Autor',
         'copies': 'Copias',
+        'resume': 'Sinopsis',
         //
         //My Borrowed Books
         //
@@ -64,14 +65,43 @@ export default {
         'thisbookislate': 'Este libro está retrasado.',
         'thisbookisontime': 'Este libro está a tiempo.',
         'returnbook': 'Devolver libro',
-        'no': 'No ',
+        'no': 'Sin ',
         'borrowings': 'Prestados',
+        //My Favorites
+        'favoritesTitle': 'Mis Favoritos',
+        'favorites': 'Favoritos',
         //
-        'favoritesTitle': 'lorem',
-        'myDataTitle': 'lorem',
+        //My Datas
+        //
+        'myDataTitle': 'Mis Datos',
+        'name': 'Nombre',
+        'age': 'Años',
+        'adressstreet': 'Direcciones',
+        'adressdistrict': 'Distrito',
+        'adressnumber': 'Número',
+        'adresscity': 'Ciudad',
+        'cellphone': 'Teléfono Celular',
+        'landline': 'Teléfono Fijo',
+        'clickrefreshdatas': 'Presione para actualizar',
+        'lastupdate': 'Última Actualización',
+        'update': 'Actualizar',
+        'datanotupdatepanel':'No actualizados',
+        'showdatas': 'Mostrar Datos',
+        'personal': 'Personal',
+        'adress': 'Habla a',
+        'contact': 'Contacto',
+        'firstname': 'Primer Nombre',
+        'secondname': 'Segundo Nombre',
+        //
         'contactTitle': 'lorem',
         'notFoundTitle': 'lorem',
-        'ErrorTitle': 'lorem',
+        //
+        //Erro Page
+        //
+        'ErrorTitle': 'Error',
+        'backhome': 'Home',
+        'error': 'Error',
+        //
         'forgetPassTitle': 'lorem',
         'redefinePassTitle': 'lorem'        
     }
