@@ -16,6 +16,7 @@ export default {
         'confirmpass': 'Confirm the Password',
         'register': 'Register',
         'back':'Back',
+        'linkhere': 'here',
         //
         //Footer Internal External/Menu
         //

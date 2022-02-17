@@ -34,7 +34,7 @@ const Home = () => {
                                         rel="noopener noreferrer"
                                         $darkmode={darkMode}
                                     >
-                                        here
+                                        {translate('linkhere')}
                                     </A>
                                 ),
                             })}
