@@ -9,6 +9,7 @@ import InternalFooter from '../../components/footer/InternalFooter';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import Loading from '../../components/loading/Loading';
 import Menu from '../../components/menu/Menu';
+import translate from '../../i18n/translate';
 import acessUser from '../../utils/accessUser/acessUser';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import userContact from '../../utils/userContact/userContact';
@@ -81,7 +82,6 @@ const ContactPage = () => {
     }
 
     const arrSubjects = [
-        { Subject: 'System Errors' },
         { Subject: 'Book Loan' },
         { Subject: 'Favorites' },
         { Subject: 'Website Usability' },
@@ -102,13 +102,13 @@ const ContactPage = () => {
             ) : (
                 <>
                     <Menu user={userNameState} />
-                    <HeaderComponent phrase="Contact Us" />
+                    <HeaderComponent phrase={translate('contactTitle')} />
                     <ContactMain $darkmode={darkMode}>
                         <SectionContainer>
                             <ArticleContainer>
                                 <DivPhysicalAddress $darkmode={darkMode}>
                                     <div className="div_title">
-                                        <H2 $darkmode={darkMode}>Our Office</H2>
+                                        <H2 $darkmode={darkMode}>{translate('ouroffice')}</H2>
                                     </div>
                                     <div className="div_adress">
                                         <Adress $darkmode={darkMode}>
@@ -130,16 +130,16 @@ const ContactPage = () => {
                                 </DivPhysicalAddress>
                                 <FormStyled onSubmit={(e) => handleSubmit(e)} $darkmode={darkMode}>
                                     <div className="div_title">
-                                        <H2 $darkmode={darkMode}>Message Us</H2>
+                                        <H2 $darkmode={darkMode}>{translate('messageus')}</H2>
                                     </div>
                                     <div className="div_from">
                                         <P $darkmode={darkMode}>
-                                            <b>From:</b> personalemail@gmail.com/{emailState}
+                                            <b>{translate('from')}:</b> personalemail@gmail.com/{emailState}
                                         </P>
                                     </div>
                                     <div className="div_to">
                                         <P $darkmode={darkMode}>
-                                            <b>To:</b> {emailSupportState}
+                                            <b>{translate('to')}:</b> {emailSupportState}
                                         </P>
                                     </div>
                                     <div className="div_select_subject">
@@ -152,7 +152,7 @@ const ContactPage = () => {
                                             renderInput={(params) => (
                                                 <TextField
                                                     {...params}
-                                                    label="Subjects"
+                                                    label={translate('subjects')}
                                                     variant="standard"
                                                     className={darkMode ? 'darkmode' : 'normal'}
                                                 />
@@ -163,7 +163,7 @@ const ContactPage = () => {
                                     <div className="div_message">
                                         <label htmlFor="textarea">
                                             <P $darkmode={darkMode}>
-                                                <b>Message: </b>
+                                                <b>{translate('message')}: </b>
                                             </P>
                                         </label>
                                         <textarea
@@ -176,11 +176,13 @@ const ContactPage = () => {
                                             maxLength={240}
                                             required
                                         ></textarea>
-                                        <P $darkmode={darkMode}>{messageLength}/240 characters</P>
+                                        <P $darkmode={darkMode}>
+                                            {messageLength}/240 {translate('characters')}
+                                        </P>
                                     </div>
                                     <div className="div_button">
                                         <ButtonSendContact $darkmode={darkMode}>
-                                            {loadingButtonState ? <IconLoading /> : 'Send'}
+                                            {loadingButtonState ? <IconLoading /> : translate('send')}
                                         </ButtonSendContact>
                                     </div>
                                 </FormStyled>

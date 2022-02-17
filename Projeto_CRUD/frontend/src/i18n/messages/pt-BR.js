@@ -96,7 +96,22 @@ export default {
         'firstname': 'Primeiro Nome',
         'secondname': 'Segundo Nome',
         //
-        'contactTitle': 'lorem',
+        //Contact US Page
+        //
+        'contactTitle': 'Contato',
+        'ouroffice': 'Escritório',
+        'messageus': 'Nos Contatar',
+        'from': 'De',
+        'to':'Para',
+        'subjects': 'Assunto',
+        'message': 'Mensagem',
+        'characters': 'Caracteres',
+        'send': 'Enviar',
+        'systemerror': 'Erros de Sistema',
+        'bookloan': 'Emprestimos',
+        'passowrds': 'Senhas',
+        'login': 'Login',
+        //
         'notFoundTitle': 'lorem',
         //
         //Erro Page

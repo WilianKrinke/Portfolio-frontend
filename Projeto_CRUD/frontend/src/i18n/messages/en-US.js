@@ -94,7 +94,22 @@ export default {
         'firstname': 'First Name',
         'secondname': 'Second Name',
         //
-        'contactTitle': 'lorem',
+        //Contact US Page
+        //
+        'contactTitle': 'Contact Us',
+        'ouroffice': 'Our Office',
+        'messageus': 'Message Us',
+        'from': 'From',
+        'to':'To',
+        'subjects': 'Subjects',
+        'message': 'Message',
+        'characters': 'Characters',
+        'send': 'Send',
+        'systemerror': 'System Errors',
+        'bookloan': 'Book Loan',
+        'passowrds': 'Passowords',
+        'login': 'Login',
+        //
         'notFoundTitle': 'lorem',
         //
         //Erro Page
