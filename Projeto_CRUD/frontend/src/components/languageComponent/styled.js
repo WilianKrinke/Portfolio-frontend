@@ -22,8 +22,8 @@ export const DivLanguagesButtons = styled.div`
     .button_flag{
         background-color: transparent;
         border: none;
-        height: 15px;
-        width: 25px;
+        height: 10px;
+        width: 20px;
         cursor: pointer;
     }
 

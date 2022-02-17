@@ -32,13 +32,13 @@ const Languagecomponent = () => {
                 </div>
                 <div className="div_flags">
                     <button className="button_flag" onClick={handleLanguageToEnglish}>
-                        <img src={FlagUSA} alt="flag Usa" title="Flag USA" height={15} width={25} />
+                        <img src={FlagUSA} alt="flag Usa" title="Flag USA" height={13} width={23} />
                     </button>
                     <button className="button_flag" onClick={handleLanguageToSpanish}>
-                        <img src={FlagSpain} alt="flag spain" title="Flag Spain" height={15} width={25} />
+                        <img src={FlagSpain} alt="flag spain" title="Flag Spain" height={13} width={23} />
                     </button>
                     <button className="button_flag" onClick={handleLanguageToPortuguese}>
-                        <img src={FlagBrazil} alt="flag brazil" title="Flag Brazil" height={15} width={25} />
+                        <img src={FlagBrazil} alt="flag brazil" title="Flag Brazil" height={13} width={23} />
                     </button>
                 </div>
             </DivLanguagesButtons>
