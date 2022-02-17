@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { ExternalContainerFooter, H4 } from './styled';
+import translate from '../../i18n/translate';
 
 const Externalfooter = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
@@ -8,7 +9,7 @@ const Externalfooter = () => {
     return (
         <>
             <ExternalContainerFooter $darkmode={darkMode}>
-                <H4 $darkmode={darkMode}>Developed by Wilian Krinke</H4>
+                <H4 $darkmode={darkMode}>{translate('developedby')}</H4>
             </ExternalContainerFooter>
         </>
     );

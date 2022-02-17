@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import {
     ContainerFooter,
     DivMap,
@@ -23,32 +24,32 @@ const InternalFooter = () => {
                 <div className="div_space"></div>
                 <div className="map_footer">
                     <DivMap $darkmode={darkMode}>
-                        <P $darkmode={darkMode}>Site map:</P>
+                        <P $darkmode={darkMode}>{translate('sitemapp')}</P>
                         <LinkStyled to="/book-list" $darkmode={darkMode}>
-                            -Book List
+                            -{translate('booklist')}
                         </LinkStyled>
                         <LinkStyled to="/my-borrowed-books" $darkmode={darkMode}>
-                            -My Borrowed Books
+                            -{translate('myborrowedbooks')}
                         </LinkStyled>
                         <LinkStyled to="/my-favorites" $darkmode={darkMode}>
-                            -My Favorites
+                            -{translate('myfavorites')}
                         </LinkStyled>
                         <LinkStyled to="/my-data" $darkmode={darkMode}>
-                            -My Datas
+                            -{translate('mydatas')}
                         </LinkStyled>
                         <LinkStyled to="/contact" $darkmode={darkMode}>
-                            -Contact Us
+                            -{translate('contactus')}
                         </LinkStyled>
                     </DivMap>
                     <DivTerm $darkmode={darkMode}>
-                        <P $darkmode={darkMode}>Terms(Fake)</P>
-                        <P $darkmode={darkMode}>Privacy Policy(Fake)</P>
-                        <P $darkmode={darkMode}>Cookie Settings(Fake)</P>
-                        <P $darkmode={darkMode}>Privacy Statement(Fake)</P>
+                        <P $darkmode={darkMode}>{translate('terms')}</P>
+                        <P $darkmode={darkMode}>{translate('privacypolice')}</P>
+                        <P $darkmode={darkMode}>{translate('cookiessetting')}</P>
+                        <P $darkmode={darkMode}>{translate('privacystatement')}</P>
                     </DivTerm>
                     <DivSocialMidia $darkmode={darkMode}>
                         <div className="div_developed">
-                            <H4 $darkmode={darkMode}>Developed by Wilian Krinke</H4>
+                            <H4 $darkmode={darkMode}>{translate('developedby')}</H4>
                         </div>
                         <div className="div_icons">
                             <IconGmail

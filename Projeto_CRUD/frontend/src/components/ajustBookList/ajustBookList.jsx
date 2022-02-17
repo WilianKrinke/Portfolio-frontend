@@ -2,6 +2,7 @@ import propTypes from 'prop-types';
 import React from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import {
     AjustBookList,
     DivChangePage,
@@ -48,19 +49,19 @@ const Ajustbooklist = ({
                             All
                         </Option>
                         <Option value="Aventura" $darkmode={darkMode}>
-                            Aventura
+                            {translate('adventure')}
                         </Option>
                         <Option value="Distopico" $darkmode={darkMode}>
-                            Distopico
+                            {translate('dystopian')}
                         </Option>
                         <Option value="Epico" $darkmode={darkMode}>
-                            Epico
+                            {translate('epic')}
                         </Option>
                         <Option value="Ficcao" $darkmode={darkMode}>
-                            Ficcao
+                            {translate('fiction')}
                         </Option>
                         <Option value="Filosofia" $darkmode={darkMode}>
-                            Filosofia
+                            {translate('philosophy')}
                         </Option>
                         <Option value="Historia" $darkmode={darkMode}>
                             Historia

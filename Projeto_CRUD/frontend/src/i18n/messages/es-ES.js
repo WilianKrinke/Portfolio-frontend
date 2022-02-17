@@ -15,7 +15,24 @@ export default {
         'userName': 'Nombre de usuario',
         'password': 'Contraseña',
         //
-        'bookListTitle': 'lorem',
+        //Footer Internal External
+        //
+        'developedby': 'Desarrollado por Wilian Krinke',
+        'sitemapp': 'Mapa del Sitio:',
+        'booklist': 'Lista de Libros',
+        'myborrowedbooks': 'Mis Libros Prestados',
+        'myfavorites': 'Mis Favoritos',
+        'mydatas': 'Mis Datos',
+        'contactus': 'Contacta Con Nosotros',
+        'terms': 'Condiciones(Fake)',
+        'privacypolice': 'Política de privacidad(Fake)',
+        'cookiessetting': 'Configuración de cookies(Fake)',
+        'privacystatement': 'Declaracion de privacidad(Fake)',
+        //
+        //Book List
+        //
+        'bookListTitle': 'Lista de Libros',
+        //
         'borrowedBooksTitle':'lorem',
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',

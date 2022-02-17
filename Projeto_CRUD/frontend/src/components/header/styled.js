@@ -11,6 +11,10 @@ export const HeaderStyled = styled.header`
     transition: all .7s ease-in-out;
     text-align: center;
 
+    @media screen and (max-width: 570px) {
+        padding: 50px 0px;
+    }
+
     .title{
         width: 100%;
         

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router';
@@ -10,6 +9,7 @@ import Loading from '../../components/loading/Loading.jsx';
 import Menu from '../../components/menu/Menu';
 import Modalblocked from '../../components/modals/modalBlocked';
 import Scrolltotop from '../../components/scrollToTop/scrollToTop.jsx';
+import translate from '../../i18n/translate';
 import getBookList from '../../utils/getBookList/getBookList';
 import isUserBlocked from '../../utils/isUserBlocked/isUserBlocked';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
@@ -80,7 +80,7 @@ const BookList = () => {
                 <>
                     <Menu user={userName} />
                     {isUserBlockedState && <Modalblocked daysToUnlockState={daysToUnlockState} />}
-                    <HeaderComponent phrase="Book List" />
+                    <HeaderComponent phrase={translate('bookListTitle')} />
                     <BookListMain $darkmode={darkMode}>
                         <BookListSection>
                             <BookArticle>

@@ -15,7 +15,39 @@ export default {
         'userName': 'User Name',
         'password': 'Password',
         //
-        'bookListTitle': 'lorem',
+        //Footer Internal External
+        //
+        'developedby': 'Developed by Wilian Krinke',
+        'sitemapp': 'Site Map:',
+        'booklist': 'Book List',
+        'myborrowedbooks': 'My Borrowed Books',
+        'myfavorites': 'My Favorites',
+        'mydatas': 'My Datas',
+        'contactus': 'Contact Us',
+        'terms': 'Terms(Fake)',
+        'privacypolice': 'Privacy Policy(Fake)',
+        'cookiessetting': 'Cookies Settings(Fake)',
+        'privacystatement': 'Privacy Statement(Fake)',
+        //
+        //Book List
+        //
+        'bookListTitle': 'Book List',
+        'category': 'Category',
+        'itensperpage': 'Itens Per Page',
+        'all': 'All',
+        'adventure': 'Adventure',
+        'dystopian': 'Dystopian',
+        'epic': 'Epic',
+        'fiction': 'Fiction',
+        'philosophy': 'Philosophy',
+        'story': 'Story',
+        'childish': 'Childish',
+        'investigation': 'Investigation',
+        'brazilianliterature': 'Brazilian Literature',
+        'politics': 'Politics',
+        'romance': 'Romance',
+
+        //
         'borrowedBooksTitle':'lorem',
         'favoritesTitle': 'lorem',
         'myDataTitle': 'lorem',

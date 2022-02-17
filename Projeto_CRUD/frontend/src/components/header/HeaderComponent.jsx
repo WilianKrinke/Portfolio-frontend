@@ -18,7 +18,7 @@ const HeaderComponent = ({ phrase }) => {
 };
 
 HeaderComponent.propTypes = {
-    phrase: propTypes.object,
+    phrase: propTypes.any,
 };
 
 export default HeaderComponent;

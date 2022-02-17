@@ -1,10 +1,10 @@
-/* eslint-disable no-unused-vars */
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import React, { memo, useState } from 'react';
 import { FaLock, FaUnlock, FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../i18n/translate';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
@@ -52,7 +52,7 @@ const signIn = () => {
                         <TextField
                             required
                             id="user_name_login"
-                            label="User Name"
+                            label={translate('userName')}
                             variant="standard"
                             className="dark"
                             type="text"
@@ -72,7 +72,7 @@ const signIn = () => {
                         <TextField
                             required
                             id="pass_login"
-                            label="Password"
+                            label={translate('password')}
                             variant="standard"
                             className="dark"
                             type={`${typeTextState ? 'password' : 'text'}`}
@@ -84,7 +84,7 @@ const signIn = () => {
                 </PassContainer>
 
                 <ButtonContainer>
-                    <ButtonSignin>Sign In</ButtonSignin>
+                    <ButtonSignin>{translate('signin')}</ButtonSignin>
                 </ButtonContainer>
             </form>
         </>
