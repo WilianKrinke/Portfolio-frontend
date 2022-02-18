@@ -78,7 +78,7 @@ const BookList = () => {
                 <Loading />
             ) : (
                 <>
-                    <Menu user={userName} />
+                    <Menu />
                     {isUserBlockedState && <Modalblocked daysToUnlockState={daysToUnlockState} />}
                     <HeaderComponent phrase={translate('bookListTitle')} />
                     <BookListMain $darkmode={darkMode}>

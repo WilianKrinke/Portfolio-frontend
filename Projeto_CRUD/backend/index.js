@@ -5,6 +5,7 @@ const routeSignUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin');
 const routeLendBook = require('./routes/lendBook');
 const routeGetBooks = require('./routes/getBooks')
+const routeGetUserName = require('./routes/getUserName')
 const routeReturnBook = require('./routes/returnBook');
 const routeAddFavorite = require('./routes/addFavorite');
 const routeRemoveFavorite = require('./routes/removeFavorites');
@@ -40,6 +41,7 @@ routeChangePass(app)
 
 app.use(authValidate)
 routeGetBooks(app)
+routeGetUserName(app)
 routeVerifyUserBlock(app)
 routeLendBook(app)
 routeReturnBook(app)

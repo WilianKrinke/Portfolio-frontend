@@ -1,4 +1,3 @@
-import propTypes from 'prop-types';
 import React, { memo, useEffect, useState } from 'react';
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { useSelector } from 'react-redux';
@@ -6,15 +5,18 @@ import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import translate from '../../i18n/translate';
 import logout from '../../utils/Auth/logout';
+import getUserName from '../../utils/getUserName/getUserName';
 import isUpdateDatas from '../../utils/isUpdateDatas/isUpdateDatas';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonLogOut } from '../Buttons';
 import ButtonChangeMode from '../Buttons/ButtonChangeMode';
 import { ContainerIsUpDated, ContainerLinks, ContainerMenu, ContainerUser, IconClose, IconHamburguer } from './styled';
 
-const Menu = ({ user = 'Loading...' }) => {
+const Menu = () => {
     const [isOpen, setisOpen] = useState(false);
     const [isUpDatedDatasState, setisUpDatedDatasState] = useState(true);
+    const [userNameState, setuserNameState] = useState('Loading...');
+
     const navigate = useNavigate();
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
@@ -22,6 +24,9 @@ const Menu = ({ user = 'Loading...' }) => {
         (async () => {
             try {
                 const response = await isUpdateDatas();
+                const { userName } = await getUserName();
+                setuserNameState(userName);
+
                 const { isUpDated } = response;
 
                 if (response === false) {
@@ -59,7 +64,7 @@ const Menu = ({ user = 'Loading...' }) => {
 
                 <ContainerUser>
                     <p>
-                        {translate('welcome')} {user}!
+                        {translate('welcome')} {userNameState}!
                     </p>
                 </ContainerUser>
 
@@ -98,10 +103,6 @@ const Menu = ({ user = 'Loading...' }) => {
             </ContainerMenu>
         </>
     );
-};
-
-Menu.propTypes = {
-    user: propTypes.string,
 };
 
 export default memo(Menu);

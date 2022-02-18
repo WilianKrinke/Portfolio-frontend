@@ -14,7 +14,6 @@ import { ArticleContainer, MyDataMain, SectionContainer } from './styled';
 const Mydata = () => {
     const navigate = useNavigate();
 
-    const [userNameState, setuserNameState] = useState('');
     const [loadingState, setloadingState] = useState(true);
     const [userDatasObject, setUserDatasObject] = useState();
 
@@ -26,9 +25,8 @@ const Mydata = () => {
                 const response = await getMyDatas();
                 response === false && tokenTimeOut();
 
-                const { userName, userDatas } = response;
+                const { userDatas } = response;
 
-                setuserNameState(userName);
                 setUserDatasObject(userDatas);
                 setloadingState(false);
             } catch (error) {
@@ -43,7 +41,7 @@ const Mydata = () => {
                 <Loading />
             ) : (
                 <>
-                    <Menu user={userNameState} />
+                    <Menu />
                     <HeaderComponent phrase={translate('myDataTitle')} />
                     <MyDataMain $darkmode={darkMode}>
                         <SectionContainer>

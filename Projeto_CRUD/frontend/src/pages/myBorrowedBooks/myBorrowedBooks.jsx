@@ -14,7 +14,6 @@ import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { BorrowMain, SectionContainer } from './styled';
 
 const MyBorrowedBooks = () => {
-    const [userNameState, setUserNameState] = useState('');
     const [borrowedBooks, setBorrowedBooks] = useState();
     const [loadingState, setloadingState] = useState(true);
     const [noBookData, setNoBookData] = useState(false);
@@ -28,8 +27,7 @@ const MyBorrowedBooks = () => {
                 const response = await getMyBorrowedBooks();
                 response === false && tokenTimeOut();
 
-                const { userName, responseObject } = response;
-                setUserNameState(userName);
+                const { responseObject } = response;
 
                 if (responseObject.length === 0) {
                     setNoBookData(true);
@@ -49,7 +47,7 @@ const MyBorrowedBooks = () => {
                 <Loading />
             ) : (
                 <>
-                    <Menu user={userNameState} />
+                    <Menu />
                     <HeaderComponent phrase={translate('borrowedBooksTitle')} />
                     <BorrowMain $darkmode={darkMode}>
                         <SectionContainer>

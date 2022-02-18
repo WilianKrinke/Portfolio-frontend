@@ -20,7 +20,6 @@ import { Adress, ArticleContainer, ContactMain, DivPhysicalAddress, FormStyled, 
 const ContactPage = () => {
     const [loadingState, setloadingState] = useState(true);
     const [loadingButtonState, setLoadingButtonState] = useState(false);
-    const [userNameState, setUserNameState] = useState('');
     const [messageState, setMessageState] = useState('');
     const [subjectState, setSubjectState] = useState('');
     const [emailState, setEmailState] = useState('');
@@ -38,8 +37,7 @@ const ContactPage = () => {
                 if (response === false) {
                     tokenTimeOut(navigate);
                 } else {
-                    const { userName, email } = response;
-                    setUserNameState(userName);
+                    const { email } = response;
                     setEmailState(email);
                     setloadingState(false);
                 }
@@ -101,7 +99,7 @@ const ContactPage = () => {
                 <Loading />
             ) : (
                 <>
-                    <Menu user={userNameState} />
+                    <Menu />
                     <HeaderComponent phrase={translate('contactTitle')} />
                     <ContactMain $darkmode={darkMode}>
                         <SectionContainer>

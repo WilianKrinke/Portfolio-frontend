@@ -14,23 +14,19 @@ import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { FavoriteMain, SectionContainer } from './styled';
 
 const Myfavorites = () => {
-    const [userNameState, setUserNameState] = useState('');
     const [loadingState, setloadingState] = useState(true);
     const [noBookData, setNoBookData] = useState(false);
     const [bookFavorites, setBookFavorites] = useState();
 
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-
     const navigate = useNavigate();
 
     useEffect(() => {
         (async () => {
             try {
                 const response = await getFavorites();
-                const { userName, responseObject } = response;
+                const { responseObject } = response;
                 response === false && tokenTimeOut();
-
-                setUserNameState(userName);
 
                 if (responseObject.length === 0) {
                     setNoBookData(true);
@@ -51,7 +47,7 @@ const Myfavorites = () => {
                 <Loading />
             ) : (
                 <>
-                    <Menu user={userNameState} />
+                    <Menu />
                     <HeaderComponent phrase={translate('favoritesTitle')} />
                     <FavoriteMain $darkmode={darkMode}>
                         <SectionContainer>

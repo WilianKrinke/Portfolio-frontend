@@ -9,7 +9,7 @@ const Notfound = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     function handleBack() {
-        window.history.back();
+        history.back();
     }
 
     return (
