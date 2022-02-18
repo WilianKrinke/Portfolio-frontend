@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const DivLanguagesButtons = styled.div`
-    width: 250px;
+    width: 200px;
     position: absolute;
     left: 0px;
     top: 0px;
