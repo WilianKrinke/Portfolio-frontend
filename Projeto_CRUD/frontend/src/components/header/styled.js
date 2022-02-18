@@ -12,7 +12,7 @@ export const HeaderStyled = styled.header`
     text-align: center;
 
     @media screen and (max-width: 570px) {
-        padding: 50px 0px;
+        padding: 50px 0px 0px 0px;
     }
 
     .title{

@@ -37,8 +37,8 @@ export const DivPhysicalAddress = styled.div`
         height: 450px;
         width: 100%;
         padding: 10px;
-        border-right: 2px solid rgba(0, 0, 0, 0.3);
-        border-top: 2px solid rgba(0, 0, 0, 0.3);
+        border-right: 2px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+        border-top: 2px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     }
 
     .div_title{
@@ -107,7 +107,7 @@ export const FormStyled = styled.form`
     @media screen and (max-width: 884px) {
         height: 500px;
         padding: 10px;
-        border-left: 2px solid rgba(0, 0, 0, 0.3);  
+        border-left: 2px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};  
         width: 100%;
     }
 

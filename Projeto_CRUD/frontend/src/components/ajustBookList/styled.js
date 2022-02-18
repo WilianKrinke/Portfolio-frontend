@@ -9,7 +9,7 @@ export const AjustBookList = styled.section`
     height: 100px;
 
     @media screen and (max-width: 808px) {
-        height: 200px;
+        height: 170px;
         width: 95%;
         display: flex;
         align-items: center;
@@ -127,13 +127,13 @@ export const Label = styled.label`
     transition: all .7s ease-in-out;
 
     @media screen and (max-width: 808px) {
-        font-size: 20px;
+        font-size: 17px;
         position: relative;
         bottom: 3px;
     }
 
     @media screen and (max-width: 440px) {        
-        font-size: 20px;
+        font-size: 17px;
         position: relative;
         bottom: 3px;        
     }
@@ -147,7 +147,7 @@ export const Select = styled.select`
 
     @media screen and (max-width: 808px) {
         font-size: 18px;
-        font-weight: 200;
+        font-weight: 170;
     }
 `
 

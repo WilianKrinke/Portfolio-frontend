@@ -33,7 +33,7 @@ export const H2 = styled.h2`
     transition: all .7s ease-in-out;       
 
     @media screen and (max-width: 440px) {        
-        font-size: 22px;        
+        font-size: 18px;        
     }
 `
 

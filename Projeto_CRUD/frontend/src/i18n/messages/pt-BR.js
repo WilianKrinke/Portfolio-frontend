@@ -68,7 +68,7 @@ export default {
         'todayisbookdeliveryday': 'Hoje é dia de entrega deste livro',
         'thisbookislate': 'Este livro está atrasado.',
         'thisbookisontime': 'Este livro está dentro do prazo',
-        'returnbook': 'Devolver livro',
+        'returnbook': 'Devolver Livro',
         'no': 'Sem ',
         'borrowings': ' Empréstimos',
         //My Favorites
