@@ -81,6 +81,9 @@ const Menu = ({ user = 'Loading...' }) => {
                             <Link to="/contact">{translate('contactus')}</Link>
                         </li>
                         <li>
+                            <Link to="/tutorial">Tutorial</Link>
+                        </li>
+                        <li>
                             <ButtonLogOut onClick={() => logout(navigate)}>{translate('logout')}</ButtonLogOut>
                         </li>
                         <li className="change_mode">
