@@ -1,15 +1,21 @@
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from 'react';
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
 import { DivCarousel, DivItem } from './styled';
 
 const Tutorialcarousel = () => {
     return (
         <>
             <DivCarousel>
-                <CarouselProvider totalSlides={3} touchEnabled>
-                    <Slider style={{ height: '400px', width: '90vw', position: 'relative', top: '11px' }}>
+                <CarouselProvider
+                    naturalSlideWidth={100}
+                    naturalSlideHeight={100}
+                    totalSlides={3}
+                    touchEnabled
+                    className="carouselProvider"
+                >
+                    <ButtonBack className="btn_left">Back</ButtonBack>
+                    <Slider className="slider">
                         <Slide index={0}>
                             <DivItem>
                                 <p>Item 1</p>
@@ -26,14 +32,7 @@ const Tutorialcarousel = () => {
                             </DivItem>
                         </Slide>
                     </Slider>
-                    <div>
-                        <ButtonBack style={{ border: 'none', backgroundColor: 'transparent' }}>
-                            {BsChevronCompactLeft}
-                        </ButtonBack>
-                        <ButtonNext style={{ border: 'none', backgroundColor: 'transparent' }}>
-                            {BsChevronCompactRight}
-                        </ButtonNext>
-                    </div>
+                    <ButtonNext className="btn_right">Next</ButtonNext>
                 </CarouselProvider>
             </DivCarousel>
         </>
