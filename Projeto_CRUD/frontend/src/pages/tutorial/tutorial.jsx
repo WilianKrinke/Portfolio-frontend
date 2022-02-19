@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import Tutorialcarousel from '../../components/carousel/tutorialCarousel.jsx';
 import InternalFooter from '../../components/footer/InternalFooter.jsx';
 import HeaderComponent from '../../components/header/HeaderComponent.jsx';
 import Loading from '../../components/loading/Loading.jsx';
@@ -26,7 +27,7 @@ const Tutorial = () => {
                     <Menu />
                     <HeaderComponent $darkmode={darkMode} phrase={translate('Tutorial')} />
                     <TutorialMain $darkmode={darkMode}>
-                        <h1>Tutorial</h1>
+                        <Tutorialcarousel />
                     </TutorialMain>
                     <InternalFooter $darkmode={darkMode} />
                 </>
