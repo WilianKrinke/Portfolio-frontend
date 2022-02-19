@@ -6,13 +6,13 @@ export const DivCarousel = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    height: 400px;
+    height: 500px;
     width: 100vw;
 
     .carouselProvider{
         border: 1px solid #000;
-        height: 400px;
-        width: 100vw;
+        height: 500px;
+        width: 80vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -21,17 +21,19 @@ export const DivCarousel = styled.div`
 
     .slider{
         border: 1px solid #000;
-        height: 400px;
-        width: 90vw;
+        height: 500px;
+        width: 100%;
         
     }
 
     .btn_left{
         /*  */
+        width: 150px;
     }
 
     .btn_right{
         /*  */
+        width: 150px;
     }
 `
 
@@ -41,5 +43,5 @@ border: 1px solid #000;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 400px;
+    height: 500px;
 `
