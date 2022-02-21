@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Tutorialcarousel from '../../components/carousel/tutorialCarousel.jsx';
@@ -11,7 +10,6 @@ import { TutorialMain } from './styled.js';
 
 const Tutorial = () => {
     const [loadingState, setloadingState] = useState(true);
-
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
 
     useEffect(() => {
