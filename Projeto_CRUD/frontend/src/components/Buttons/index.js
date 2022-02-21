@@ -22,7 +22,6 @@ export const ButtonChangeForm = styled.button`
         background: #030103;
         border: 1px solid rgba(0, 0, 0, 0.5);
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
    @media screen and (max-width: 960px) {
@@ -54,7 +53,6 @@ export const ButtonSignin = styled.button`
   :hover{
         background: #030103;
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -84,7 +82,6 @@ export const ButtonSignUp = styled.button`
   :hover{
         background: #030103;
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -118,7 +115,6 @@ export const ButtonBackToLogin = styled.button`
   :hover{
         background: #030103;
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 960px) {
@@ -148,10 +144,8 @@ export const ButtonConfirmedLoanBook = styled.button`
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   
   :hover{
-        background: ${props => props.$darkmode ? "#071057" : "#030103"};
         border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 
   @media screen and (max-width: 430px) {
@@ -173,8 +167,7 @@ export const ButtonCancelLoanBook = styled.button`
   color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 
-  :hover{
-    background: ${props => props.$darkmode ? "#071057" : "#030103"};
+  :hover
     border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
     color: #fff;
     animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -217,7 +210,6 @@ export const ButtonRecoverPass = styled.button`
         background: #030103;
         color: #fff;
         animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
-        background: ${props => props.$darkmode ? "#071057" : "#030103"};
         color: #fff;
   }
 `
@@ -256,7 +248,6 @@ export const ButtonUpDate = styled.button`
   color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
 
   :hover{
-        background: ${props => props.$darkmode ? "#071057" : "#030103"};
         color: #fff;
   }
 
@@ -278,8 +269,7 @@ export const ButtonSendContact = styled.button`
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
 
-  :hover{
-    background: ${props => props.$darkmode ? "#071057" : "#030103"};
+  :hover
     color: #fff;
   }
 `
