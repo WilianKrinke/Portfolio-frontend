@@ -1,18 +1,16 @@
 import styled from 'styled-components';
 
 export const DivCarousel = styled.div`
-    border: 1px solid #000;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: row;
-    height: 500px;
+    height: 600px;
     width: 100vw;
 
     .carouselProvider{
-        border: 1px solid #000;
-        height: 500px;
-        width: 80vw;
+        height: 600px;
+        width: 100vw;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -20,28 +18,53 @@ export const DivCarousel = styled.div`
     }
 
     .slider{
-        border: 1px solid #000;
-        height: 500px;
-        width: 100%;
-        
+        height: 600px;
+        width: 100%;   
     }
 
     .btn_left{
-        /*  */
-        width: 150px;
+        width: 130px;
+        margin: 10px;
     }
 
     .btn_right{
-        /*  */
-        width: 150px;
+        width: 130px;
+        margin: 10px;
     }
 `
 
 export const DivItem = styled.div`
-border: 1px solid #000;
+    height: 600px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    height: 500px;
+    margin: 0px 10px;
+
+    .div_img{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+        
+    }
+
+    .img{
+        height: 500px;
+        width: 100%;
+        object-fit: contain;
+        border-radius: 3px;
+    }
+
+    .div_paragraph{
+        height: 10%;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+    }
 `

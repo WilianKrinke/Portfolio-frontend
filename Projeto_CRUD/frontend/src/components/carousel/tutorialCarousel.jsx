@@ -1,9 +1,15 @@
+/* eslint-disable no-unused-vars */
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from 'react';
+import { useSelector } from 'react-redux';
+import Foto1 from '../../assets/images/languages.PNG';
+import Foto2 from '../../assets/images/login.PNG';
 import { DivCarousel, DivItem } from './styled';
 
 const Tutorialcarousel = () => {
+    const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
+
     return (
         <>
             <DivCarousel>
@@ -18,12 +24,22 @@ const Tutorialcarousel = () => {
                     <Slider className="slider">
                         <Slide index={0}>
                             <DivItem>
-                                <p>Item 1</p>
+                                <div className="div_img">
+                                    <img src={Foto1} alt="Foto 1" loading="lazy" className="img" />
+                                </div>
+                                <div className="div_paragraph">
+                                    <p className="paragraph">Lorem Lorem Lorem Lorem Lorem Lorem</p>
+                                </div>
                             </DivItem>
                         </Slide>
                         <Slide index={1}>
                             <DivItem>
-                                <p>Item 2</p>
+                                <div className="div_img">
+                                    <img src={Foto2} alt="Foto 2" loading="lazy" className="img" />
+                                </div>
+                                <div className="div_paragraph">
+                                    <p className="paragraph">Lorem Lorem Lorem Lorem Lorem Lorem</p>
+                                </div>
                             </DivItem>
                         </Slide>
                         <Slide index={2}>
