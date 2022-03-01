@@ -25,7 +25,7 @@ const Tutorialcarousel = () => {
                             <DivItem>
                                 <div className="div_paragraph">
                                     <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
-                                        Lorem Lorem Lorem Lorem Lorem Lorem
+                                        Set your preferred language
                                     </p>
                                 </div>
                                 <div className="div_img">
@@ -37,7 +37,8 @@ const Tutorialcarousel = () => {
                             <DivItem>
                                 <div className="div_paragraph">
                                     <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
-                                        Lorem Lorem Lorem Lorem Lorem Lorem
+                                        Log in with your username and password. If you don&rsquo;t have an account,
+                                        click sign up. If you forgot your password, click the recovery link.
                                     </p>
                                 </div>
                                 <div className="div_img">
