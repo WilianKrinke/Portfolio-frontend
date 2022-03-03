@@ -38,7 +38,7 @@ const Tutorialcarousel = () => {
                                 <div className="div_paragraph">
                                     <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
                                         Log in with your username and password. If you don&rsquo;t have an account,
-                                        click sign . If you forgot your password, click the recovery link.
+                                        click sign up. If you forgot your password, click the recovery link.
                                     </p>
                                 </div>
                                 <div className="div_img">
