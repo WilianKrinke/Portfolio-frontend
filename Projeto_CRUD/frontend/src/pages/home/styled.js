@@ -108,7 +108,6 @@ export const P = styled.p`
 `
 
 export const A = styled.a`
-    transition: all .7s ease-in-out;
     font-size: 16px;
     color: #2e46ff;     
     
@@ -138,7 +137,6 @@ export const ArticleSignUp = styled.article`
 `
 
 export const LinkTutorialExternal = styled(Link)`
-    transition: all .7s ease-in-out;
     font-size: 16px;
     color: #2e46ff;     
     

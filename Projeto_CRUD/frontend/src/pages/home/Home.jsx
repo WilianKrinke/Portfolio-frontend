@@ -42,7 +42,6 @@ const Home = () => {
                                         href="https://github.com/WilianKrinke/Portfolio/tree/main/Projeto_CRUD"
                                         target={'_blank'}
                                         rel="noopener noreferrer"
-                                        $darkmode={darkMode}
                                     >
                                         {translate('linkhere')}
                                     </A>
@@ -52,7 +51,7 @@ const Home = () => {
                         <P $darkmode={darkMode}>
                             {translate('tutorialexternal', {
                                 tutorialExternal: (
-                                    <LinkTutorialExternal to="/tutorial-external" $darkmode={darkMode}>
+                                    <LinkTutorialExternal to="/tutorial-external">
                                         {translate('linktutorialExternal')}
                                     </LinkTutorialExternal>
                                 ),
