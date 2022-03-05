@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const HomeMain = styled.main`
@@ -136,14 +137,12 @@ export const ArticleSignUp = styled.article`
     border: 1px solid rgba(0, 0, 0, 0.3);    
 `
 
-export const DivTutorial = styled.div`
-    position: relative;
-    bottom: 35px;
-    left: 130px;
+export const LinkTutorialExternal = styled(Link)`
+    transition: all .7s ease-in-out;
+    font-size: 16px;
+    color: #2e46ff;     
     
-
-    @media screen and (max-width: 750px) {
-        
+    @media screen and (max-width: 440px) {       
+        font-size: 18px;       
     }
-
 `
