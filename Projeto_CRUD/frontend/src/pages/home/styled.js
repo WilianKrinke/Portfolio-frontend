@@ -53,7 +53,7 @@ export const InfoCard = styled.section`
     }
 
     @media screen and (max-width: 440px) {       
-        height: 800px;    
+        height: 850px;    
     }
 
     @media screen and (max-width: 350px) {       
