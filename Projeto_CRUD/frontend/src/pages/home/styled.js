@@ -24,9 +24,19 @@ export const InfoCard = styled.section`
     border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
     border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
     transition: all .3s ease-in-out;
+    text-align: left;
+    
+
+    @media screen and (max-width: 1000px) {
+        height: 450px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        height: 500px;
+    }
 
     @media screen and (max-width: 750px) {
-       width: 100%;
+       width: 80%;
        height: 400px;
        border-radius: 0px 0px 5px 5px;
        border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
@@ -34,20 +44,24 @@ export const InfoCard = styled.section`
        border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};;
     }
 
+    @media screen and (max-width: 670px) {
+        width: 90%;
+    }
+
     @media screen and (max-width: 525px) {
-       height: 500px;       
+       height: 600px;       
     }
 
     @media screen and (max-width: 440px) {       
-        height: 700px;    
-    }
-
-    @media screen and (max-width: 350px) {       
         height: 800px;    
     }
 
+    @media screen and (max-width: 350px) {       
+        height: 1000px;    
+    }
+
     @media screen and (max-width: 300px) {       
-        height: 850px;    
+        height: 1250px;    
     }
 `
 export const SectForm = styled.section`
@@ -60,13 +74,25 @@ export const SectForm = styled.section`
     border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
     transition: all .3s ease-in-out;
+
+    @media screen and (max-width: 1000px) {
+        height: 450px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        height: 500px;
+    }
     
     @media screen and (max-width: 750px) {
-       width: 100%;
+       width: 80%;
        border-radius: 5px 5px 0px 0px;
        border-right: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
        border-top: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
        border-left: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.2)"};
+    }
+
+    @media screen and (max-width: 670px) {
+        width: 90%;
     }
 
     @media screen and (max-width: 525px) {
@@ -91,6 +117,8 @@ export const ArticleCrud = styled.article`
     flex-direction: column;
     border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 20px;
+    text-align: left;
+    
 
     @media screen and (max-width: 400px) {
         align-items: center;
