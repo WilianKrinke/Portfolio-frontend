@@ -135,3 +135,15 @@ export const ArticleSignUp = styled.article`
     height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.3);    
 `
+
+export const DivTutorial = styled.div`
+    position: relative;
+    bottom: 35px;
+    left: 130px;
+    
+
+    @media screen and (max-width: 750px) {
+        
+    }
+
+`

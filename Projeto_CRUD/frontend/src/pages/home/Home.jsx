@@ -1,5 +1,6 @@
 import React, { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { ButtonBackToLogin, ButtonChangeForm } from '../../components/Buttons';
 import Externalfooter from '../../components/footer/externalFooter';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
@@ -8,7 +9,7 @@ import SignInForm from '../../components/signInForm/signInForm';
 import SignUpForm from '../../components/signUpForm';
 import translate from '../../i18n/translate';
 import './home.css';
-import { A, ArticleCrud, ArticleLogin, ArticleSignUp, HomeMain, InfoCard, P, SectForm } from './styled';
+import { A, ArticleCrud, ArticleLogin, ArticleSignUp, DivTutorial, HomeMain, InfoCard, P, SectForm } from './styled';
 
 const Home = () => {
     const [isLoginVisible, setisLoginVisible] = useState(true);
@@ -48,6 +49,9 @@ const Home = () => {
                             <SignInForm />
                             <ButtonChangeForm onClick={handleChangeBlock}>{translate('signup')}</ButtonChangeForm>
                             <ForgetPass />
+                            <DivTutorial>
+                                <Link to="/tutorial-external">Tutorial</Link>
+                            </DivTutorial>
                         </ArticleLogin>
                     ) : (
                         <ArticleSignUp>
