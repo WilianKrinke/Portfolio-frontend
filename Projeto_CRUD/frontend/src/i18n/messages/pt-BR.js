@@ -58,6 +58,7 @@ export default {
         'romance': 'Romance',
         'author': 'Autor',
         'copies': 'Copias',
+        'of': 'de',
         //
         //My Borrowed Books
         //

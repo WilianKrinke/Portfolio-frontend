@@ -90,7 +90,7 @@ const Ajustbooklist = ({
                     </IconBack>
                     <InfoPagination>
                         <Span title="Page" $darkmode={darkMode}>
-                            {currentPage + 1}/{pages}
+                            {currentPage + 1} {translate('of')} {pages}
                         </Span>
                     </InfoPagination>
                     <IconForward onClick={accCurrentPage} $darkmode={darkMode}>

@@ -57,6 +57,7 @@ export default {
         'author': 'Autor',
         'copies': 'Copias',
         'resume': 'Sinopsis',
+        'of': 'de',
         //
         //My Borrowed Books
         //
