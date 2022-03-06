@@ -1,3 +1,4 @@
+import Pagination from '@mui/material/Pagination';
 import { ButtonBack, ButtonNext, CarouselProvider, Slide, Slider } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from 'react';
@@ -10,6 +11,7 @@ const Tutorialcarousel = () => {
 
     return (
         <>
+            <Pagination count={10} variant="outlined" shape="rounded" />
             <DivCarousel>
                 <CarouselProvider
                     naturalSlideWidth={100}
