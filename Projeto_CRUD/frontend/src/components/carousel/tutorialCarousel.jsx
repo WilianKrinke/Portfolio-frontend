@@ -11,7 +11,7 @@ const Tutorialcarousel = () => {
 
     return (
         <>
-            <Pagination count={10} variant="outlined" shape="rounded" />
+            <Pagination count={arrayObjectPhotos.length} variant="outlined" shape="rounded" />
             <DivCarousel>
                 <CarouselProvider
                     naturalSlideWidth={100}
