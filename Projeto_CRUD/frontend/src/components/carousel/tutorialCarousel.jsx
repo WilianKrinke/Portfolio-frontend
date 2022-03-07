@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import Pagination from '@mui/material/Pagination';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
@@ -10,18 +9,20 @@ const Tutorialcarousel = () => {
     const [indexState, setIndexState] = useState(1);
 
     function handlePagination(event, value) {
-        setIndexState(value);
+        setIndexState(value - 1);
     }
 
     return (
         <>
             <DivCarousel>
                 <DivItem>
+                    <div className="div_paragraph">
+                        <p className={`${darkMode} ? 'paragraph_dark' : 'paragraph'`}>
+                            {arrayObjectPhotos[indexState].description}
+                        </p>
+                    </div>
                     <div className="div_img">
                         <img src={arrayObjectPhotos[indexState].photo} alt="tutorial-photo" className="img" />
-                    </div>
-                    <div className="div_paragraph">
-                        <p className={`${darkMode} ? 'paragraph_dark' : 'paragraph'`}></p>
                     </div>
                 </DivItem>
                 <Pagination
