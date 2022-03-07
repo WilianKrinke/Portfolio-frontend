@@ -4,7 +4,7 @@ export const DivCarousel = styled.div`
     display: flex;
     justify-content: space-around;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     height: 600px;
     width: 100vw;
 
