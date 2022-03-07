@@ -107,12 +107,12 @@ export const DivItem = styled.div`
 
         .paragraph{
             color: #030103;
-            font-size: 22px;
+            font-size: 18px;
         }
         
         .paragraph_dark{
             color: #F9FFF9;
-            font-size: 22px;
+            font-size: 18px;
         }
     }
 `

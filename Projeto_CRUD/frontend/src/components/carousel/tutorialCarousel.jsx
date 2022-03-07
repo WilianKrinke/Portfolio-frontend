@@ -1,6 +1,7 @@
 import Pagination from '@mui/material/Pagination';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import './pagination.css';
 import arrayObjectPhotos from './staticDatasCarousel';
 import { DivCarousel, DivItem } from './styled';
 
@@ -17,7 +18,7 @@ const Tutorialcarousel = () => {
             <DivCarousel>
                 <DivItem>
                     <div className="div_paragraph">
-                        <p className={`${darkMode} ? 'paragraph_dark' : 'paragraph'`}>
+                        <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
                             {arrayObjectPhotos[indexState].description}
                         </p>
                     </div>
