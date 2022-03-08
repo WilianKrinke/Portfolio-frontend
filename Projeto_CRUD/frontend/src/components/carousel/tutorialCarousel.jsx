@@ -34,6 +34,7 @@ const Tutorialcarousel = () => {
                     showFirstButton
                     showLastButton
                     onChange={handlePagination}
+                    className={darkMode ? 'paginaton_dark' : 'pagination'}
                 />
             </DivCarousel>
         </>

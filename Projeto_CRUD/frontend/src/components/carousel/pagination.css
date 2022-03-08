@@ -1,4 +1,9 @@
-.MuiPagination-ul li button {
+.paginaton_dark .MuiPagination-ul li button {
     color: #fff !important;
-    border: 1px solid rgba(180, 180, 180, 0.7) !important;
+    border: 1px solid rgba(185, 185, 185, 0.5) !important;
+}
+
+.paginaton .MuiPagination-ul li button {
+    color: #fff !important;
+    border: 1px solid rgba(0, 0, 0, 0.2) !important;
 }

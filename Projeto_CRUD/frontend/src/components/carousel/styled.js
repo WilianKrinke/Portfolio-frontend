@@ -93,7 +93,7 @@ export const DivItem = styled.div`
         height: 500px;
         width: 100%;
         object-fit: contain;
-        border-radius: 10px;
+        border-radius: 3px;
     }
 
     .div_paragraph{
@@ -107,12 +107,12 @@ export const DivItem = styled.div`
 
         .paragraph{
             color: #030103;
-            font-size: 18px;
+            font-size: 20px;
         }
         
         .paragraph_dark{
             color: #F9FFF9;
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 `
