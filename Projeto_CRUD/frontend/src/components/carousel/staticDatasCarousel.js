@@ -1,10 +1,10 @@
-import { Foto1, Foto10, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9 } from "../../assets/images";
+import { Foto1, Foto10, Foto11, Foto12, Foto13, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9 } from "../../assets/images";
 
 const arrayObjectPhotos = [
     {
         id: 1,
         photo: Foto1,
-        description: 'You can choose your preferred language.',
+        description: 'You can choose your preferred language, login with your username and password. If you forgot your password, click on forgot password. You can also access the tutorial in the lower left corner.',
     },
     {
         id: 2,
@@ -52,6 +52,24 @@ const arrayObjectPhotos = [
     {
         id: 10,
         photo: Foto10,
+        description:
+            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+    },
+    {
+        id: 11,
+        photo: Foto11,
+        description:
+            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+    },
+    {
+        id: 12,
+        photo: Foto12,
+        description:
+            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+    },
+    {
+        id: 13,
+        photo: Foto13,
         description:
             'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
     },

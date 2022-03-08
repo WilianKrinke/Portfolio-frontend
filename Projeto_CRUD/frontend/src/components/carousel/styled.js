@@ -38,12 +38,13 @@ export const DivItem = styled.div`
 
     .div_paragraph{
         height: 10%;
-        width: 100%;
+        width: 50%;
         text-align: center;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
+        margin: 10px 0px;
 
         .paragraph{
             color: #030103;

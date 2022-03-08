@@ -1,13 +1,18 @@
-import Foto8 from './ajusteBook.PNG';
-import Foto10 from './favorites.PNG';
-import Foto1 from './languages.PNG';
-import Foto5 from './lendBook.PNG';
-import Foto7 from './lendConfirm.PNG';
-import Foto6 from './lendRules.PNG';
-import Foto2 from './login.PNG';
-import Foto9 from './ratingAndSeeMoreAndPhoto.PNG';
-import Foto4 from './recoveryPassword.PNG';
-import Foto3 from './signUp.PNG';
+import Foto1 from './Foto1.png';
+import Foto10 from './Foto10.png';
+import Foto11 from './Foto11.png';
+import Foto12 from './Foto12.png';
+import Foto13 from './Foto13.png';
+import Foto2 from './Foto2.png';
+import Foto3 from './Foto3.png';
+import Foto4 from './Foto4.png';
+import Foto5 from './Foto5.png';
+import Foto6 from './Foto6.png';
+import Foto7 from './Foto7.png';
+import Foto8 from './Foto8.png';
+import Foto9 from './Foto9.png';
 
 
-export { Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10 };
+
+export { Foto1, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9, Foto10, Foto11, Foto12, Foto13 };
+
