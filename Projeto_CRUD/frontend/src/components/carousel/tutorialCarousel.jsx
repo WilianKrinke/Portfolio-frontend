@@ -17,6 +17,16 @@ const Tutorialcarousel = () => {
         <>
             <DivCarousel>
                 <DivItem>
+                    <Pagination
+                        count={arrayObjectPhotos.length}
+                        variant="outlined"
+                        shape="rounded"
+                        color="secondary"
+                        showFirstButton
+                        showLastButton
+                        onChange={handlePagination}
+                        className={darkMode ? 'paginaton_dark' : 'pagination'}
+                    />
                     <div className="div_paragraph">
                         <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
                             {arrayObjectPhotos[indexState].description}
@@ -25,17 +35,17 @@ const Tutorialcarousel = () => {
                     <div className="div_img">
                         <img src={arrayObjectPhotos[indexState].photo} alt="tutorial-photo" className="img" />
                     </div>
+                    <Pagination
+                        count={arrayObjectPhotos.length}
+                        variant="outlined"
+                        shape="rounded"
+                        color="secondary"
+                        showFirstButton
+                        showLastButton
+                        onChange={handlePagination}
+                        className={darkMode ? 'paginaton_dark' : 'pagination'}
+                    />
                 </DivItem>
-                <Pagination
-                    count={arrayObjectPhotos.length}
-                    variant="outlined"
-                    shape="rounded"
-                    color="secondary"
-                    showFirstButton
-                    showLastButton
-                    onChange={handlePagination}
-                    className={darkMode ? 'paginaton_dark' : 'pagination'}
-                />
             </DivCarousel>
         </>
     );
