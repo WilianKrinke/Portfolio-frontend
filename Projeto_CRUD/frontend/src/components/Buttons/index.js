@@ -1,6 +1,5 @@
 
 import styled from 'styled-components';
-import { Pulse } from './keyframes';
 
 export const ButtonChangeForm = styled.button`
   width: 150px;
@@ -19,7 +18,7 @@ export const ButtonChangeForm = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.5);
 
   :hover{
-        background: #030103;
+        background: #050517;
         border: 1px solid rgba(0, 0, 0, 0.5);
         color: #fff;
   }
@@ -51,7 +50,7 @@ export const ButtonSignin = styled.button`
   bottom: 1px;
 
   :hover{
-        background: #030103;
+        background: #050517;
         color: #fff;
   }
 
@@ -80,7 +79,7 @@ export const ButtonSignUp = styled.button`
   color: #222222;
 
   :hover{
-        background: #030103;
+        background: #050517;
         color: #fff;
   }
 
@@ -113,7 +112,7 @@ export const ButtonBackToLogin = styled.button`
   color: #222222;
 
   :hover{
-        background: #030103;
+        background: #050517;
         color: #fff;
   }
 
@@ -140,7 +139,7 @@ export const ButtonConfirmedLoanBook = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   
   :hover{
@@ -164,13 +163,12 @@ export const ButtonCancelLoanBook = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 
   :hover
     border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-    color: #fff;
-    animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+    color: #fff;    
   }
 
   @media screen and (max-width: 430px) {
@@ -203,15 +201,14 @@ export const ButtonRecoverPass = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
 
   :hover{
-        background: #030103;
-        color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
+        background: #050517;
         color: #fff;
   }
+
 `
 
 export const ButtonConfirmResetPass = styled.button`
@@ -227,10 +224,9 @@ export const ButtonConfirmResetPass = styled.button`
   color: #222222;
 
   :hover{
-        background: #030103;
+        background: #050517;
         border: 1px solid rgba(0, 0, 0, 0.1);
         color: #fff;
-        animation: ${Pulse} 1s infinite cubic-bezier(0.66, 0, 0, 1);
   }
 `
 
@@ -245,7 +241,7 @@ export const ButtonUpDate = styled.button`
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
 
   :hover{
         color: #fff;
@@ -267,7 +263,7 @@ export const ButtonSendContact = styled.button`
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
-  color: ${props => props.$darkmode ? "#F9FFF9" : "#030103"};
+  color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
 
   :hover
     color: #fff;
