@@ -7,7 +7,7 @@ import { DivCarousel, DivItem } from './styled';
 
 const Tutorialcarousel = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
-    const [indexState, setIndexState] = useState(1);
+    const [indexState, setIndexState] = useState(0);
 
     function handlePagination(event, value) {
         setIndexState(value - 1);

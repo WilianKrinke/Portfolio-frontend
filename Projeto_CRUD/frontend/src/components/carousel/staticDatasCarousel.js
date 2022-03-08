@@ -4,7 +4,7 @@ const arrayObjectPhotos = [
     {
         id: 1,
         photo: Foto1,
-        description: 'Set your preferred language.',
+        description: 'You can choose your preferred language.',
     },
     {
         id: 2,
