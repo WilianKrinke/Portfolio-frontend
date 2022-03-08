@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import Tutorialcarousel from '../../components/carousel/tutorialCarousel.jsx';
+import Externalfooter from '../../components/footer/externalFooter';
 import InternalFooter from '../../components/footer/InternalFooter.jsx';
 import HeaderComponent from '../../components/header/HeaderComponent.jsx';
 import Loading from '../../components/loading/Loading.jsx';
@@ -14,7 +15,7 @@ const Tutorial = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
     const { sector } = useParams();
 
-    const isExternalTutorial = sector === 'true';
+    const isInternalTutorial = sector === 'true';
 
     useEffect(() => {
         setloadingState(false);
@@ -26,17 +27,17 @@ const Tutorial = () => {
                 <Loading />
             ) : (
                 <>
-                    {isExternalTutorial && <Menu />}
+                    {isInternalTutorial && <Menu />}
                     <HeaderComponent $darkmode={darkMode} phrase={translate('tutorial')} />
                     <TutorialMain $darkmode={darkMode}>
-                        {!isExternalTutorial && (
+                        {!isInternalTutorial && (
                             <LinkStyled to="/" $darkmode={darkMode}>
                                 Back Home
                             </LinkStyled>
                         )}
                         <Tutorialcarousel />
                     </TutorialMain>
-                    <InternalFooter $darkmode={darkMode} />
+                    {isInternalTutorial ? <InternalFooter $darkmode={darkMode} /> : <Externalfooter />}
                 </>
             )}
         </>

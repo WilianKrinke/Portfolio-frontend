@@ -52,7 +52,7 @@ const Home = () => {
                             {translate('tutorialexternal', {
                                 tutorialExternal: (
                                     <LinkTutorialExternal to="/tutorial/false">
-                                        {translate('linktutorialExternal')}
+                                        {translate('tutorial')}
                                     </LinkTutorialExternal>
                                 ),
                             })}

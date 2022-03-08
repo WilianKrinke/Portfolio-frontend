@@ -41,7 +41,7 @@ const InternalFooter = () => {
                             -{translate('contactus')}
                         </LinkStyled>
                         <LinkStyled to="/tutorial" $darkmode={darkMode}>
-                            -{translate('Tutorial')}
+                            -{translate('tutorial')}
                         </LinkStyled>
                     </DivMap>
                     <DivTerm $darkmode={darkMode}>
