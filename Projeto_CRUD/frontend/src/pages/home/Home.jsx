@@ -51,7 +51,7 @@ const Home = () => {
                         <P $darkmode={darkMode}>
                             {translate('tutorialexternal', {
                                 tutorialExternal: (
-                                    <LinkTutorialExternal to="/tutorial-external">
+                                    <LinkTutorialExternal to="/tutorial/false">
                                         {translate('linktutorialExternal')}
                                     </LinkTutorialExternal>
                                 ),

@@ -11,7 +11,6 @@ import Myfavorites from '../pages/myFavorites/myFavorites';
 import NotFound from '../pages/notFound/NotFound';
 import RedefinePass from '../pages/redefinePass/redefinePass';
 import Tutorial from '../pages/tutorial/tutorial';
-import TutorialExternal from '../pages/tutorialExternal/tutorialExternal';
 
 const index = () => {
   return (
@@ -23,8 +22,7 @@ const index = () => {
         <Route exact path='/my-favorites' element={<Myfavorites />}/>
         <Route exact path='/my-data' element={<Mydata />} />
         <Route exact path='/contact' element={<ContactPage />} />
-        <Route exact path='/tutorial' element={<Tutorial />} />
-        <Route exact path='/tutorial-external' element={<TutorialExternal />} />
+        <Route exact path='/tutorial/:sector' element={<Tutorial />} />
         <Route exact path='/forget-pass' element={<ForgetPassword />} />
         <Route exact path='/reset-pass/:token/:idUser' element={<RedefinePass />} />
         <Route exact path='/error-page/:error' element={<Errorpage/>} />

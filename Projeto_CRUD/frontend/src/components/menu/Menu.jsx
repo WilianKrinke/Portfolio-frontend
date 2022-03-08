@@ -86,7 +86,7 @@ const Menu = () => {
                             <Link to="/contact">{translate('contactus')}</Link>
                         </li>
                         <li>
-                            <Link to="/tutorial">Tutorial</Link>
+                            <Link to="/tutorial/true">Tutorial</Link>
                         </li>
                         <li>
                             <ButtonLogOut onClick={() => logout(navigate)}>{translate('logout')}</ButtonLogOut>
