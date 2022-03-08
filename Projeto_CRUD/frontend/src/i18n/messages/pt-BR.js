@@ -134,6 +134,9 @@ export default {
         'confirmPassword': 'Confirmar Senha',
         'confirm':'Confirmar',
         'cancel':'Cancelar',
-        //         
+         //
+        //tutorial
+        //
+        'tutorial': 'Tutorial',           
     }
 }
