@@ -141,5 +141,15 @@ export default {
         'description1': 'You can choose your preferred language, login with your username and password. If you forgot your password, click on forgot password. You can also access the tutorial in the lower left corner.',
         'description2': "If you don't have an account, you can quickly register with your email, just create a secure password.",
         'description3': 'If you forgot your password, click on "forgot your password?". You will receive an email with a password reset instruction.',
+        'description4': 'On every page you will have the menu, with it you can change light/dark mode, browse the site, and exit. At the end it is indicated whether your data is up to date or not.',
+        'description5': 'On the book loan page, you can adjust the display of book quantity, theme and page.',
+        'description6': 'Click borrow book to borrow, click heart to add to favorites, click on the photo to view it larger, click on the rating to rate it, click on the arrow to see more of the summary.',
+        'description7': 'Before borrowing the book, pay attention to the borrowing rules. You can change the frames by clicking on the words "previous" and "next".',
+        'description8': 'If you agree, you can confirm your loan, if not, click "cancel". Pay attention to the book delivery dates.',
+        'description9': 'If you are blocked, or want to see the delivery date, go to the "My Borrow books" page. To return the book, click on "return book". If the book is attracted, the lines will be colored red.',
+        'description10': 'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+        'description11': 'Under "Show All Data", you can see your updated data and refresh the page to see recent updates. In red is data that has not been updated. Just below you can see the last time you updated the data.',
+        'description12': 'In each tab there is an aspect referring to your data that you can update individually.',
+        'description13': 'On the "contact us" page, you can send us a message of any kind. You can consult our physical unit closest to you.',
     }
 }

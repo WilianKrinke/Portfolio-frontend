@@ -20,56 +20,52 @@ const arrayObjectPhotos = [
     {
         id: 4,
         photo: Foto4,
-        description: 'On every page you will have the menu, with it you can change light/dark mode, browse the site, and exit. At the end it is indicated whether your data is up to date or not.',
+        description: translate('description4'),
     },
     {
         id: 5,
         photo: Foto5,
-        description: 'On the book loan page, you can adjust the display of book quantity, theme and page.',
+        description: translate('description5'),
     },
     {
         id: 6,
         photo: Foto6,
-        description: 'Click borrow book to borrow, click heart to add to favorites, click on the photo to view it larger, click on the rating to rate it, click on the arrow to see more of the summary.',
+        description: translate('description6'),
     },
     {
         id: 7,
         photo: Foto7,
-        description: 'Before borrowing the book, pay attention to the borrowing rules. You can change the frames by clicking on the words "previous" and "next".',
+        description: translate('description7'),
     },
     {
         id: 8,
         photo: Foto8,
-        description: 'If you agree, you can confirm your loan, if not, click "cancel". Pay attention to the book delivery dates.',
+        description: translate('description8'),
     },
     {
         id: 9,
         photo: Foto9,
-        description: 'If you are blocked, or want to see the delivery date, go to the "My Borrow books" page. To return the book, click on "return book". If the book is attracted, the lines will be colored red.',
+        description: translate('description9'),
     },
     {
         id: 10,
         photo: Foto10,
-        description:
-            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+        description:translate('description10'),            
     },
     {
         id: 11,
         photo: Foto11,
-        description:
-            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+        description: translate('description11'),            
     },
     {
         id: 12,
         photo: Foto12,
-        description:
-            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+        description: translate('description12'), 
     },
     {
         id: 13,
         photo: Foto13,
-        description:
-            'Click on the heart to add to favorites. A full heart indicates that you have the book on your favorites page.',
+        description: translate('description13'), 
     },
 ];
 
