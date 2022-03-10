@@ -1,21 +1,8 @@
-const returnTheBook = require("../actions/returnBookActions/returnTheBook");
+const returnBookController = require("../controllers/returnBook.controller");
 
 const returnBook = (app) => {
     app.route('/return-book')
-        .post(async (req,res) => {              
-            try {
-                const response = await returnTheBook(req.body)
-
-                if (response.isReturnTheBook === true) {
-                    res.status(200).send(response)                    
-                } else {
-                    throw new Error('Server Error - returnBook')
-                }
-            } catch (error) {
-                console.log(error.message)          
-                res.status(500).send(error.message)
-            }                      
-        })
+        .post(returnBookController)
 }
 
 module.exports = returnBook;

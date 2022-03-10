@@ -1,25 +1,8 @@
-const getBorrowedBooksActions = require("../actions/getBorrowedBooksActions/getBorrowedBooks");
+const getMyBorrowedBooksController = require("../controllers/getMyBorrowedBooks.controller");
 
 function getMyBorrowedBooks(app){
     app.route('/my-borrowed-book-list')
-        .get(async (req, res) => {            
-            try {                
-                const [idUser] = req.idUser
-                const [userName] = req.userName
-
-                const response = await getBorrowedBooksActions(idUser);
-                
-                res.status(200).send({
-                    idUser: idUser,
-                    userName: userName,
-                    responseObject: response
-                })
-                
-            } catch (error) {
-                console.log(error.message)          
-                res.status(500).send(error.message)
-            }
-        })
+        .get(getMyBorrowedBooksController)
 }
 
 module.exports = getMyBorrowedBooks;
