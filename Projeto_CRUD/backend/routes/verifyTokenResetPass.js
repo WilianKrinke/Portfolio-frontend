@@ -1,26 +1,8 @@
-const compareToken = require("../actions/verifyTokenToResetPassActions/compareToken");
+const verifyTokenToChangePassController = require("../controllers/verifyTokenToChangePass.controller");
 
 function verifyTokenResetPass(app){
     app.route('/verify-token')
-        .post(async (req, res) => {
-            try {
-                const wasValid = await compareToken(req.body)
-                
-                if (wasValid) {
-                    res.status(200).send({
-                        wasValid
-                    })
-                } else {
-                    res.status(200).send({
-                        wasValid: false
-                    })
-                }
-            } catch (error) {         
-                res.status(200).send({
-                    wasValid: false
-                })
-            }
-        })
+        .post(verifyTokenToChangePassController)
 }
 
 module.exports = verifyTokenResetPass;

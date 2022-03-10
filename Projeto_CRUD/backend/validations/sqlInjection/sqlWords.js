@@ -68,7 +68,6 @@ const objectSqlInjectionsWords = [
     "%mmer%",
     "mmer%",
     "%mmer",
-    "1",
     "'",
     "pg_sleep()"
 ]
