@@ -138,6 +138,8 @@ export default {
         //tutorial
         //
         'tutorial': 'Tutorial',
-        'Fake': 'fake commit sorry',  
+        'description1': 'You can choose your preferred language, login with your username and password. If you forgot your password, click on forgot password. You can also access the tutorial in the lower left corner.',
+        'description2': "If you don't have an account, you can quickly register with your email, just create a secure password.",
+        'description3': 'If you forgot your password, click on "forgot your password?". You will receive an email with a password reset instruction.',
     }
 }

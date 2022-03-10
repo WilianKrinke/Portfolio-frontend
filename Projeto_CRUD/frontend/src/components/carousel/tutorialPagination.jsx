@@ -2,10 +2,10 @@ import Pagination from '@mui/material/Pagination';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import './pagination.css';
-import arrayObjectPhotos from './staticDatasCarousel';
+import arrayObjectPhotos from './staticDatasPagination';
 import { DivCarousel, DivItem } from './styled';
 
-const Tutorialcarousel = () => {
+const TutorialPagination = () => {
     const darkMode = useSelector((state) => state.toggleDarkModeReducer.darkMode);
     const [indexState, setIndexState] = useState(0);
 
@@ -51,4 +51,4 @@ const Tutorialcarousel = () => {
     );
 };
 
-export default Tutorialcarousel;
+export default TutorialPagination;

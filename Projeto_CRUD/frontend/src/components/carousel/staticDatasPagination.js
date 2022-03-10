@@ -1,20 +1,21 @@
 import { Foto1, Foto10, Foto11, Foto12, Foto13, Foto2, Foto3, Foto4, Foto5, Foto6, Foto7, Foto8, Foto9 } from "../../assets/images";
+import translate from '../../i18n/translate';
 
 const arrayObjectPhotos = [
     {
         id: 1,
         photo: Foto1,
-        description: 'You can choose your preferred language, login with your username and password. If you forgot your password, click on forgot password. You can also access the tutorial in the lower left corner.',
+        description: translate('description1'),
     },
     {
         id: 2,
         photo: Foto2,
-        description: "If you don't have an account, you can quickly register with your email, just create a secure password.",
+        description: translate('description2'),
     },
     {
         id: 3,
         photo: Foto3,
-        description: 'If you forgot your password, click on "forgot your password?". You will receive an email with a password reset instruction.',
+        description:translate('description3'),
     },
     {
         id: 4,

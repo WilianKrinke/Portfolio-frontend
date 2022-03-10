@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import Tutorialcarousel from '../../components/carousel/tutorialCarousel.jsx';
+import TutorialPagination from '../../components/carousel/tutorialPagination.jsx';
 import Externalfooter from '../../components/footer/externalFooter';
 import InternalFooter from '../../components/footer/InternalFooter.jsx';
 import HeaderComponent from '../../components/header/HeaderComponent.jsx';
@@ -35,7 +35,7 @@ const Tutorial = () => {
                                 Back Home
                             </LinkStyled>
                         )}
-                        <Tutorialcarousel />
+                        <TutorialPagination />
                     </TutorialMain>
                     {isInternalTutorial ? <InternalFooter $darkmode={darkMode} /> : <Externalfooter />}
                 </>
