@@ -137,6 +137,7 @@ export default {
         //
         //tutorial
         //
-        'tutorial': 'Tutorial',    
+        'tutorial': 'Tutorial',
+        'Fake': 'fake commit sorry',  
     }
 }
