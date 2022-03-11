@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../i18n/translate';
 import lendBook from '../../utils/lendBooks/lendBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import Lendbookbox from '../InfoBoxes/LendbookBox';
@@ -116,13 +117,13 @@ const ModalLendBook = ({
                     {teste[indexSelected]}
                     <DivSTeps $darkmode={darkMode}>
                         <P onClick={handleDecrementIndex} $darkmode={darkMode} title="Previous">
-                            Previous
+                            {translate('previous')}
                         </P>
                         <P $darkmode={darkMode}>
                             {indexSelected + 1}/{teste.length}
                         </P>
                         <P onClick={handleIncrementIndex} $darkmode={darkMode} title="Next">
-                            Next
+                            {translate('next')}
                         </P>
                     </DivSTeps>
                 </DivModal>

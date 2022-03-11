@@ -58,6 +58,15 @@ export default {
         'copies': 'Copias',
         'resume': 'Sinopsis',
         'of': 'de',
+        'rule1':'En caso de retraso, se aplicará multa de tres días de bloqueo.',
+        'returninfo1': '¿Confirmas el préstamo del libro ',
+        'returninfo2': '"{bookName}"',
+        'returninfo3': ' en el día ',
+        'returninfo4': '"{today}"',
+        'returninfo5': ' con la devolución de en ',
+        'returninfo6': '"{threeDaysBusinessAfter}"',
+        'previous': 'Previo',
+        'next': 'Próximo',
         //
         //My Borrowed Books
         //

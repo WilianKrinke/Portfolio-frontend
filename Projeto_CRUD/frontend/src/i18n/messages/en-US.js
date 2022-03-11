@@ -60,11 +60,13 @@ export default {
         'of': 'of',
         'rule1':'In case of delay, a fine of three days of blocking will be applied.',
         'returninfo1': 'Do you confirm the loan of the book ',
-        'returninfo2': '{bookName}',
+        'returninfo2': '"{bookName}"',
         'returninfo3': ' on the ',
-        'returninfo4': '{today}',
+        'returninfo4': '"{today}"',
         'returninfo5': ' with the return for the ',
-        'returninfo6': '{threeDaysBusinessAfter}',
+        'returninfo6': '"{threeDaysBusinessAfter}"',
+        'previous': 'Previous',
+        'next': 'Next',
         //
         //My Borrowed Books
         //

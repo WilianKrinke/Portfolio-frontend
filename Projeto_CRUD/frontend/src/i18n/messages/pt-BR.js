@@ -59,6 +59,15 @@ export default {
         'author': 'Autor',
         'copies': 'Copias',
         'of': 'de',
+        'rule1':'Em caso de atraso, será aplicada uma multa de três dias de bloqueio.',
+        'returninfo1': 'Você confirma o empréstimo do livro ',
+        'returninfo2': '"{bookName}"',
+        'returninfo3': ' no dia ',
+        'returninfo4': '"{today}"',
+        'returninfo5': ' com a devolução para o dia ',
+        'returninfo6': '"{threeDaysBusinessAfter}"',
+        'previous': 'Anterior',
+        'next': 'Próximo',
         //
         //My Borrowed Books
         //
