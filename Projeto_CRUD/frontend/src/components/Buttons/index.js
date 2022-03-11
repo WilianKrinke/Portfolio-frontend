@@ -196,7 +196,6 @@ export const ButtonRecoverPass = styled.button`
 
   :hover{
         background: #050517;
-        color: #fff;
   }
 
 `
@@ -216,7 +215,6 @@ export const ButtonConfirmResetPass = styled.button`
   :hover{
         background: #050517;
         border: 1px solid rgba(0, 0, 0, 0.1);
-        color: #fff;
   }
 `
 
@@ -233,9 +231,6 @@ export const ButtonUpDate = styled.button`
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
 
-  :hover{
-        color: #fff;
-  }
 
   @media screen and (max-width: 600px) {
     width: 110px;
@@ -254,10 +249,6 @@ export const ButtonSendContact = styled.button`
   transition: all 0.3s ease-in-out;
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
-
-  :hover
-    color: #fff;
-  }
 `
 
 export const DivSemiCircle = styled.div`
