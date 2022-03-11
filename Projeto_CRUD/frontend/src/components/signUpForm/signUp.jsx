@@ -8,13 +8,24 @@ import translate from '../../i18n/translate';
 import { sendDatas } from '../../utils/signupSendDatas/sendDatas';
 import { ButtonSignUp } from '../Buttons';
 import './signUpForm.css';
-import { ButtonContainer, ContainerInfoSignUp } from './styled';
+import {
+    BsFillEyeFillStyled,
+    BsFillEyeSlashFillStyled,
+    ButtonContainer,
+    ContainerInfoSignUp,
+    EmailIcon,
+    UserIcon,
+} from './styled';
 
 const Form = ({ setisLoginVisible }) => {
     const [userName, setuserName] = useState('');
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [passConfirmed, setPassConfirmed] = useState('');
+    const [seePassState, setseePassState] = useState(true);
+    const [seeConfirmedPassState, setseeConfirmedPassState] = useState(true);
+    const [typeTextPassState, setTypeTextPassState] = useState(true);
+    const [typeTextConfirmedPassState, setTypeConfirmedPassTextState] = useState(true);
 
     async function handleSubmitUser(e) {
         try {
@@ -47,40 +58,14 @@ const Form = ({ setisLoginVisible }) => {
         }
     }
 
-    function handleEyePass() {
-        const eyeSlashPass = document.getElementById('eyeSlash');
-        const eyeOpen = document.getElementById('eyeOpen');
-        const textFieldPass = document.getElementById('pass_signup');
-
-        if (eyeOpen.classList.contains('none')) {
-            eyeOpen.classList.remove('none');
-            eyeSlashPass.classList.add('none');
-            textFieldPass.removeAttribute('type');
-            textFieldPass.setAttribute('type', 'text');
-        } else {
-            eyeSlashPass.classList.remove('none');
-            eyeOpen.classList.add('none');
-            textFieldPass.removeAttribute('type');
-            textFieldPass.setAttribute('type', 'password');
-        }
+    function handleSeePass() {
+        setseePassState(!seePassState);
+        setTypeTextPassState(!typeTextPassState);
     }
 
-    function handleEyePassConfirmed() {
-        const eyeSlashPassConfirmed = document.getElementById('eyeSlashConfirmed');
-        const eyeOpenConfirmed = document.getElementById('eyeOpenConfirmed');
-        const textPassConfirmed = document.getElementById('confirmed_pass');
-
-        if (eyeOpenConfirmed.classList.contains('none')) {
-            eyeOpenConfirmed.classList.remove('none');
-            eyeSlashPassConfirmed.classList.add('none');
-            textPassConfirmed.removeAttribute('type');
-            textPassConfirmed.setAttribute('type', 'text');
-        } else {
-            eyeSlashPassConfirmed.classList.remove('none');
-            eyeOpenConfirmed.classList.add('none');
-            textPassConfirmed.removeAttribute('type');
-            textPassConfirmed.setAttribute('type', 'password');
-        }
+    function handleSeeConfirmedPass() {
+        setseeConfirmedPassState(!seeConfirmedPassState);
+        setTypeConfirmedPassTextState(!typeTextConfirmedPassState);
     }
 
     return (
@@ -88,7 +73,7 @@ const Form = ({ setisLoginVisible }) => {
             <form className="signupForm" onSubmit={(e) => handleSubmitUser(e)}>
                 <ContainerInfoSignUp>
                     <label htmlFor="user_name_signup">
-                        <i className="fas fa-user" title="User Name"></i>
+                        <UserIcon title="Enter UserName" />
                     </label>
                     <Box>
                         <TextField
@@ -108,7 +93,7 @@ const Form = ({ setisLoginVisible }) => {
 
                 <ContainerInfoSignUp>
                     <label htmlFor="email_signup">
-                        <i className="fas fa-envelope" title="E-mail"></i>
+                        <EmailIcon title="Enter E-mail" />
                     </label>
                     <Box>
                         <TextField
@@ -127,16 +112,19 @@ const Form = ({ setisLoginVisible }) => {
                 </ContainerInfoSignUp>
 
                 <ContainerInfoSignUp>
-                    <label onClick={() => handleEyePass()}>
-                        <i className="fas fa-eye-slash" id="eyeSlash" title="Password"></i>
-                        <i className="fas fa-eye none" id="eyeOpen" title="Password"></i>
+                    <label onClick={handleSeePass}>
+                        {seePassState ? (
+                            <BsFillEyeSlashFillStyled title="Enter Password" />
+                        ) : (
+                            <BsFillEyeFillStyled title="Enter Password" />
+                        )}
                     </label>
                     <Box>
                         <TextField
                             id="pass_signup"
                             label={translate('password')}
                             variant="standard"
-                            type="password"
+                            type={typeTextPassState ? 'password' : 'text'}
                             className="dark"
                             name="pass_signup"
                             onChange={(e) => setPass(e.target.value)}
@@ -148,16 +136,19 @@ const Form = ({ setisLoginVisible }) => {
                 </ContainerInfoSignUp>
 
                 <ContainerInfoSignUp>
-                    <label onClick={() => handleEyePassConfirmed()}>
-                        <i className="fas fa-eye-slash" id="eyeSlashConfirmed" title="Confirmed Password"></i>
-                        <i className="fas fa-eye none" id="eyeOpenConfirmed" title="Confirmed Password"></i>
+                    <label onClick={handleSeeConfirmedPass}>
+                        {seeConfirmedPassState ? (
+                            <BsFillEyeSlashFillStyled title="Repeat Password" />
+                        ) : (
+                            <BsFillEyeFillStyled title="Repeat Password" />
+                        )}
                     </label>
                     <Box>
                         <TextField
                             id="confirmed_pass"
                             label={translate('confirmpass')}
                             variant="standard"
-                            type="password"
+                            type={typeTextConfirmedPassState ? 'password' : 'text'}
                             className="dark"
                             name="confirmed_pass"
                             onChange={(e) => setPassConfirmed(e.target.value)}

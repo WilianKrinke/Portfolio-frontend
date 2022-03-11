@@ -5,7 +5,7 @@ import Externalfooter from '../../components/footer/externalFooter';
 import ForgetPass from '../../components/forgetPass/forgetPass.jsx';
 import HeaderComponent from '../../components/header/HeaderComponent';
 import SignInForm from '../../components/signInForm/signInForm';
-import SignUpForm from '../../components/signUpForm';
+import SignUpForm from '../../components/signUpForm/signUp';
 import translate from '../../i18n/translate';
 import './home.css';
 import {

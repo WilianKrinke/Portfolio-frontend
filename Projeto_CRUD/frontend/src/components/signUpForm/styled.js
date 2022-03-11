@@ -1,4 +1,7 @@
-import styled from 'styled-components'
+import { BsFillEyeFill, BsFillEyeSlashFill } from 'react-icons/bs';
+import { FaUserAlt } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import styled from 'styled-components';
 
 export const ContainerInfoSignUp = styled.div`
     width: 100%;
@@ -6,16 +9,31 @@ export const ContainerInfoSignUp = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+`
+export const UserIcon = styled(FaUserAlt)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
+`
+export const EmailIcon = styled(MdEmail)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
+`
 
-    i{
-        position: relative;
-        top: 9px;
-        font-size: 18px;
-    }
-
-    .fa-eye-slash{
-        cursor: pointer;
-    }  
+export const BsFillEyeFillStyled = styled(BsFillEyeFill)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
+`
+export const BsFillEyeSlashFillStyled = styled(BsFillEyeSlashFill)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
 `
 
 export const ButtonContainer = styled.div`
