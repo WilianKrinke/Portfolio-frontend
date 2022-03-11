@@ -137,6 +137,19 @@ export default {
          //
         //tutorial
         //
-        'tutorial': 'Tutorial',           
+        'tutorial': 'Tutorial',
+        'description1': 'Você pode escolher seu idioma preferido, fazer login com seu nome de usuário e senha. Se você esqueceu sua senha, clique em esqueci a senha. Você também pode acessar o tutorial no canto inferior esquerdo.',
+        'description2': "Se você não tiver uma conta, você pode se registrar rapidamente com seu e-mail, basta criar uma senha segura.",
+        'description3': 'Se você esqueceu sua senha, clique em "esqueceu sua senha?". Você receberá um e-mail com uma instrução de redefinição de senha.',
+        'description4': 'Em cada página você terá o menu, com ele você pode mudar o modo claro/escuro, navegar no site e sair. No final é indicado se os seus dados estão atualizados ou não.',
+        'description5': 'Na página de empréstimo de livros, você pode ajustar a exibição da quantidade, tema e página do livro.',
+        'description6': 'Clique em emprestar livro para emprestar, clique no coração para adicionar aos favoritos, clique na foto para vê-la maior, clique na classificação para avaliá-la, clique na seta para ver mais do resumo.',
+        'description7': 'Antes de emprestar o livro, preste atenção às regras de empréstimo. Você pode alterar os quadros clicando nas palavras "anterior" e "próximo".',
+        'description8': 'Se concordar, pode confirmar o seu empréstimo, caso contrário, clique em "cancelar". Fique atento às datas de entrega dos livros.',
+        'description9': 'Se você está bloqueado ou deseja ver a data de entrega, acesse a página "Meus livros emprestados". Para devolver o livro, clique em "devolver livro". Se o livro for atraído, as linhas serão coloridas em vermelho.',
+        'description10': 'Clique no coração para adicionar aos favoritos. Um coração cheio indica que você tem o livro em sua página de favoritos.',
+        'description11': 'Em "Mostrar todos os dados", você pode ver seus dados atualizados e atualizar a página para ver as atualizações recentes. Em vermelho estão os dados que não foram atualizados. Logo abaixo você pode ver a última vez que atualizou os dados.',
+        'description12': 'Em cada guia há um aspecto referente aos seus dados que você pode atualizar individualmente.',
+        'description13': 'Na página "fale conosco", você pode nos enviar uma mensagem de qualquer tipo. Você pode consultar nossa unidade física mais próxima de você.',          
     }
 }

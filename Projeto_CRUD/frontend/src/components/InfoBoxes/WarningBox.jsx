@@ -2,6 +2,7 @@
 import propTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import { IconWarning, P, SubDivModal } from './styled/styled';
 
 const Warningbox = () => {
@@ -11,12 +12,12 @@ const Warningbox = () => {
         <SubDivModal $darkmode={darkMode}>
             <IconWarning $darkmode={darkMode} />
             <div className="div_warnings">
+                <P $darkmode={darkMode}>-{translate('rule1')}</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
                 <P $darkmode={darkMode}>-Lorem Ipsum Rule</P>
-                <P $darkmode={darkMode}>-In case of delay, a fine of three days of blocking will be applied</P>
             </div>
         </SubDivModal>
     );

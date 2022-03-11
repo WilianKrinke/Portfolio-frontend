@@ -2,13 +2,12 @@ import { AiOutlineWarning } from "react-icons/ai";
 import styled from 'styled-components';
 
 export const SubDivModal = styled.div`
-    height: 90%;
+    min-height: 90%;
     width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    align-items: center;
     text-align: center;
     padding: 20px;
     background-color: ${props => props.$darkmode ? "#050517" : "#F9FFF9"};      

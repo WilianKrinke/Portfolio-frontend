@@ -3,6 +3,7 @@ import { ptBR } from 'date-fns/locale';
 import propTypes from 'prop-types';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import translate from '../../i18n/translate';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
 import { P, SubDivModal } from './styled/styled';
 
@@ -17,16 +18,20 @@ const Lendbookbox = (objectLendBookBox) => {
         <SubDivModal $darkmode={darkMode}>
             <div className="disclaimer_lend_book" title="Disclaimer">
                 <P $darkmode={darkMode}>
-                    Do you confirm the loan of the book <b>&quot;{bookName}&quot;</b> on the <b>{today}</b> with the
-                    return for the <b>{threeDaysBusinessAfter}</b>?
+                    {translate('returninfo1')}
+                    <b>{translate('returninfo2', { bookName })}</b>
+                    {translate('returninfo3')}
+                    <b>{translate('returninfo4', { today })}</b>
+                    {translate('returninfo5')}
+                    <b>{translate('returninfo6', { threeDaysBusinessAfter })}</b>?
                 </P>
             </div>
             <div className="container_buttons_lend_book">
                 <ButtonCancelLoanBook onClick={closeModal} title="Cancel" $darkmode={darkMode}>
-                    Cancel
+                    {translate('cancel')}
                 </ButtonCancelLoanBook>
                 <ButtonConfirmedLoanBook onClick={handleLend} title="Confirm" $darkmode={darkMode}>
-                    Confirm
+                    {translate('confirm')}
                 </ButtonConfirmedLoanBook>
             </div>
         </SubDivModal>

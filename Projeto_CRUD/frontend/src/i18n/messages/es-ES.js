@@ -136,6 +136,19 @@ export default {
          //
         //tutorial
         //
-        'tutorial': 'Tutorial',          
+        'tutorial': 'Tutorial',
+        'description1': 'Puede elegir su idioma preferido, iniciar sesión con su nombre de usuario y contraseña. Si olvidó su contraseña, haga clic en ¿Olvidó su contraseña? También puede acceder al tutorial en la esquina inferior izquierda.',
+        'description2': "Si no tiene una cuenta, puede registrarse rápidamente con su correo electrónico, simplemente cree una contraseña segura.",
+        'description3': 'Si olvidó su contraseña, haga clic en "¿Olvidó su contraseña?". Recibirá un correo electrónico con una instrucción para restablecer la contraseña.',
+        'description4': 'En cada página tendrá el menú, con él puede cambiar el modo claro/oscuro, navegar por el sitio y salir. Al final se indica si sus datos están actualizados o no.',
+        'description5': 'En la página de préstamo de libros, puede ajustar la visualización de la cantidad de libros, el tema y la página.',
+        'description6': 'Haga clic en el libro prestado para pedirlo prestado, haga clic en el corazón para agregarlo a favoritos, haga clic en la foto para verla más grande, haga clic en la calificación para calificarla, haga clic en la flecha para ver más del resumen.',
+        'description7': 'Antes de tomar prestado el libro, preste atención a las reglas de préstamo. Puede cambiar los marcos haciendo clic en las palabras "anterior" y "siguiente".',
+        'description8': 'Si está de acuerdo, puede confirmar su préstamo, si no, haga clic en "cancelar". Presta atención a las fechas de entrega de libros.',
+        'description9': 'Si está bloqueado o desea ver la fecha de entrega, vaya a la página "Mis libros prestados". Para devolver el libro, haga clic en "devolver libro". Si el libro es atraído, las líneas se colorearán de rojo.',
+        'description10': 'Haga clic en el corazón para agregar a favoritos. Un corazón lleno indica que tienes el libro en tu página de favoritos.',
+        'description11': 'En "Mostrar todos los datos", puede ver sus datos actualizados y actualizar la página para ver las actualizaciones recientes. En rojo son los datos que no han sido actualizados. Justo debajo puede ver la última vez que actualizó los datos.',
+        'description12': 'En cada pestaña hay un aspecto referente a tus datos que puedes actualizar individualmente.',
+        'description13': 'En la página "contáctenos", puede enviarnos un mensaje de cualquier tipo. Puede consultar nuestra unidad física más cercana a usted.',          
     }
 }
