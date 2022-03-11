@@ -1,14 +1,13 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import React, { memo, useState } from 'react';
-import { FaLock, FaUnlock, FaUser } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import translate from '../../i18n/translate';
 import { sendSignIn } from '../../utils/signinSendDatas/sendSignIn';
 import { ButtonSignin } from '../Buttons';
 import './signInForm.css';
-import { ButtonContainer, PassContainer, UserContainer } from './styled';
+import { ButtonContainer, LockIcon, PassContainer, UnLockIcon, UserContainer, UserIcon } from './styled';
 
 const signIn = () => {
     const [userName, setuserName] = useState(null);
@@ -47,7 +46,7 @@ const signIn = () => {
         <>
             <form className="signinForm" autoComplete="false" onSubmit={(e) => handleForm(e)}>
                 <UserContainer>
-                    <FaUser id="userIcon" title="User Name" />
+                    <UserIcon title="Insert UserName" />
                     <Box>
                         <TextField
                             required
@@ -64,9 +63,9 @@ const signIn = () => {
 
                 <PassContainer>
                     {lockState ? (
-                        <FaLock onClick={handleLock} id="lockUnlock" title="Click to See" />
+                        <LockIcon onClick={handleLock} title="Click to See" />
                     ) : (
-                        <FaUnlock onClick={handleLock} id="lockUnlock" title="Click to Hide" />
+                        <UnLockIcon onClick={handleLock} title="Click to Hide" />
                     )}
                     <Box>
                         <TextField

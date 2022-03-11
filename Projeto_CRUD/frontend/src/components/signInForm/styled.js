@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import { FaLock, FaUnlockAlt, FaUserAlt } from "react-icons/fa";
+import styled from 'styled-components';
 
 export const UserContainer = styled.div`
     display: flex;
@@ -7,14 +8,29 @@ export const UserContainer = styled.div`
     justify-content: space-around;
     width: 100%;
     height: 50px;
-
-    #userIcon{
-        color: #0a0a0a;
-        position: relative;
-        top: 8px;
-        left: 5px;
-    }
 `
+
+export const UserIcon = styled(FaUserAlt)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+`
+
+export const LockIcon = styled(FaLock)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
+`
+
+export const UnLockIcon = styled(FaUnlockAlt)`
+    position: relative;
+    top: 11px;
+    font-size: 18px;
+    cursor: pointer;
+`
+
+
 
 export const PassContainer = styled.div`
     display: flex;
@@ -23,14 +39,6 @@ export const PassContainer = styled.div`
     justify-content: space-around;
     width: 100%;
     height: 50px;
-
-    #lockUnlock{
-        color: #0a0a0a;
-        position: relative;
-        top: 8px;
-        left: 5px;
-        cursor: pointer;
-    }
 `
 
 export const ButtonContainer = styled.div`
