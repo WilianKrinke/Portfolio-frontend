@@ -141,11 +141,6 @@ export const ButtonConfirmedLoanBook = styled.button`
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-  
-  :hover{
-        border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-        color: #fff;
-  }
 
   @media screen and (max-width: 430px) {
         width: 90%;
@@ -165,11 +160,6 @@ export const ButtonCancelLoanBook = styled.button`
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-
-  :hover
-    border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-    color: #fff;    
-  }
 
   @media screen and (max-width: 430px) {
         width: 90%;

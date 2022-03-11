@@ -1,0 +1,26 @@
+/* Body Dark*/
+.toasty_css_dark .Toastify__toast {
+    background-color: #050517;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.toasty_css_dark .Toastify__toast--rtl {
+    background-color: #050517;
+}
+.toasty_css_dark .Toastify__toast-body {
+    background-color: #050517;
+}
+
+/* Body Light */
+
+.toasty_css .Toastify__toast {
+    background-color: #f9fff9;
+    color: #0a0a0a;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.toasty_css .Toastify__toast--rtl {
+    background-color: #f9fff9;
+}
+.toasty_css .Toastify__toast-body {
+    background-color: #f9fff9;
+}
