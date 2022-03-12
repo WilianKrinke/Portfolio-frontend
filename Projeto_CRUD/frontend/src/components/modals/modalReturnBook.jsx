@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import translate from '../../i18n/translate';
 import returnBook from '../../utils/returnBooks/returnTheBook';
 import tokenTimeOut from '../../utils/tokenTimeOut/tokenTimeOut';
 import { ButtonCancelLoanBook, ButtonConfirmedLoanBook } from '../Buttons';
@@ -89,15 +90,15 @@ const ModalReturnBook = ({
                     <SubDivModal $darkmode={darkMode}>
                         <div className="disclaimer_lend_book" title="Disclaimer">
                             <P $darkmode={darkMode}>
-                                Do you confirm returning the book <b>&quot;{bookName}&quot;</b>?
+                                {translate('returnbookinfo')} <b>{translate('returnbookname', { bookName })}</b>?
                             </P>
                         </div>
                         <div className="container_buttons_lend_book">
                             <ButtonConfirmedLoanBook title="Confirm" onClick={handleReturnBook} $darkmode={darkMode}>
-                                Confirm
+                                {translate('confirm')}
                             </ButtonConfirmedLoanBook>
                             <ButtonCancelLoanBook onClick={closeModal} title="Cancel" $darkmode={darkMode}>
-                                Cancel
+                                {translate('cancel')}
                             </ButtonCancelLoanBook>
                         </div>
                     </SubDivModal>

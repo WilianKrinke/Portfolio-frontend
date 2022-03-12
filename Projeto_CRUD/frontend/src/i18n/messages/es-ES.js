@@ -59,14 +59,16 @@ export default {
         'resume': 'Sinopsis',
         'of': 'de',
         'rule1':'En caso de retraso, se aplicará multa de tres días de bloqueo.',
-        'returninfo1': '¿Confirmas el préstamo del libro ',
-        'returninfo2': '"{bookName}"',
-        'returninfo3': ' en el día ',
-        'returninfo4': '"{today}"',
-        'returninfo5': ' con la devolución de en ',
-        'returninfo6': '"{threeDaysBusinessAfter}"',
+        'loaninfo1': '¿Confirmas el préstamo del libro ',
+        'loaninfo2': '"{bookName}"',
+        'loaninfo3': ' en el día ',
+        'loaninfo4': '"{today}"',
+        'loaninfo5': ' con la devolución de en ',
+        'loaninfo6': '"{threeDaysBusinessAfter}"',
         'previous': 'Previo',
         'next': 'Próximo',
+        'returnbookinfo': '¿Confirmas la devolución del libro', 
+        'returnbookname': '"{bookName}"',
         //
         //My Borrowed Books
         //

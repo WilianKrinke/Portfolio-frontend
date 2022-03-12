@@ -18,12 +18,12 @@ const Lendbookbox = (objectLendBookBox) => {
         <SubDivModal $darkmode={darkMode}>
             <div className="disclaimer_lend_book" title="Disclaimer">
                 <P $darkmode={darkMode}>
-                    {translate('returninfo1')}
-                    <b>{translate('returninfo2', { bookName })}</b>
-                    {translate('returninfo3')}
-                    <b>{translate('returninfo4', { today })}</b>
-                    {translate('returninfo5')}
-                    <b>{translate('returninfo6', { threeDaysBusinessAfter })}</b>?
+                    {translate('loaninfo1')}
+                    <b>{translate('loaninfo2', { bookName })}</b>
+                    {translate('loaninfo3')}
+                    <b>{translate('loaninfo4', { today })}</b>
+                    {translate('loaninfo5')}
+                    <b>{translate('loaninfo6', { threeDaysBusinessAfter })}</b>?
                 </P>
             </div>
             <div className="container_buttons_lend_book">

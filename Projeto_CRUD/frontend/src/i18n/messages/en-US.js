@@ -59,14 +59,16 @@ export default {
         'resume': 'Resume',
         'of': 'of',
         'rule1':'In case of delay, a fine of three days of blocking will be applied.',
-        'returninfo1': 'Do you confirm the loan of the book ',
-        'returninfo2': '"{bookName}"',
-        'returninfo3': ' on the ',
-        'returninfo4': '"{today}"',
-        'returninfo5': ' with the return for the ',
-        'returninfo6': '"{threeDaysBusinessAfter}"',
+        'loaninfo1': 'Do you confirm the loan of the book ',
+        'loaninfo2': '"{bookName}"',
+        'loaninfo3': ' on the ',
+        'loaninfo4': '"{today}"',
+        'loaninfo5': ' with the return for the ',
+        'loaninfo6': '"{threeDaysBusinessAfter}"',
         'previous': 'Previous',
         'next': 'Next',
+        'returnbookinfo': 'Do you confirm returning the book', 
+        'returnbookname': '"{bookName}"',       
         //
         //My Borrowed Books
         //
