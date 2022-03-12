@@ -1,8 +1,8 @@
-const lockDateIsPast = require("../actions/userBlockedActions/lockDateIsPast")
-const userIsBlocked = require("../actions/userBlockedActions/userIsBlocked")
-const checkingLockDay = require("../actions/userBlockedActions/checkingLockDay")
-const removeLock = require("../actions/userBlockedActions/removeLock")
-const daysToUnlock = require("../actions/userBlockedActions/daysToUnlock")
+const lockDateIsPast = require("../services/userBlockedServices/lockDateIsPast")
+const userIsBlocked = require("../services/userBlockedServices/userIsBlocked")
+const checkingLockDay = require("../services/userBlockedServices/checkingLockDay")
+const removeLock = require("../services/userBlockedServices/removeLock")
+const daysToUnlock = require("../services/userBlockedServices/daysToUnlock")
 
 async function verifyUserBlockController(req, res, next) {
     try {

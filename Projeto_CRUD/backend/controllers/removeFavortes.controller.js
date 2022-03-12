@@ -1,4 +1,4 @@
-const removeFavoriteFromDb = require("../actions/favoritesActions/removeFavoriteFromDb");
+const removeFavoriteFromDb = require("../services/insertFavoritesServices/removeFavoriteFromDb");
 
 async function removeFavoritoController(req, res, next) {
     try {

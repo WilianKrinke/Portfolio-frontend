@@ -1,5 +1,5 @@
-const controllerUpdateData = require("../actions/upDateActions/controllerUpdateData")
-const decryptData = require("../actions/upDateActions/decryptData")
+const decryptData = require("../services/decryptServices/decryptData")
+const controllerUpdateData = require("../services/upDateServices/controllerUpdateData")
 
 async function upDateUserDataController(res, res, next) {
     try {

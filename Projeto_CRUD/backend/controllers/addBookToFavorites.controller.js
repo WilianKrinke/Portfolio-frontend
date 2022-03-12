@@ -1,4 +1,4 @@
-const addFavoritesAction = require("../actions/favoritesActions/addFavoritesAction");
+const addFavoritesAction = require("../services/insertFavoritesServices/addFavoritesAction");
 
 async function addBookToFavoritesController(req, res, next) {
     try {

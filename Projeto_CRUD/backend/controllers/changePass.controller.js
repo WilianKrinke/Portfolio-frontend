@@ -1,4 +1,5 @@
-const insertPassIntoDb = require("../actions/resetPassActions/insertPassIntoDb");
+const insertPassIntoDb = require("../services/resetPassServices/insertPassIntoDb")
+
 
 async function changePassController(req, res, next) {
     try {

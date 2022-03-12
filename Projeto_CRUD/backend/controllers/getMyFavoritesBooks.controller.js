@@ -1,4 +1,4 @@
-const getMyFavoritesFromDb = require('../actions/getFavoritesActions/getFavoritesFromDb');
+const getMyFavoritesFromDb = require('../services/getFavoritesServices/getFavoritesFromDb')
 
 async function getMyFavoritesBookController(req, res, next) {
     try {

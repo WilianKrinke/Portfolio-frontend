@@ -1,4 +1,4 @@
-const userAccess = require("../actions/userAccessActions/userAccess")
+const userAccess = require("../services/userAccessServices/userAccess")
 
 async function userAccessDataController(req, res, next) {
     try {

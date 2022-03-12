@@ -1,8 +1,7 @@
 const knex = require("../../connection/connection");
-const deleteTokenFromDb = require('../resetPassActions/deleteTokenFromDb')
+const deleteTokenFromDb = require("./deleteTokenFromDb");
 
-async function compareToken(objectDatas){
-          
+async function compareToken(objectDatas){          
     const {token, idUser, todayTimeStamp} = objectDatas;
     const response = await knex('resetpass').where('idUser', idUser).select('hash', 'timeExpired')
     

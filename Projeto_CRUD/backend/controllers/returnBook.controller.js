@@ -1,4 +1,4 @@
-const returnTheBook = require("../actions/returnBookActions/returnTheBook")
+const returnTheBook = require("../services/returnBookServices/returnTheBook")
 
 async function returnBookController(req, res, next) {
     try {

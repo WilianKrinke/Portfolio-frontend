@@ -1,6 +1,6 @@
-const getDataBooks = require("../actions/getBookDatasActions/getDataBooks")
-const hasborrowBooksFromUser = require("../actions/getBookDatasActions/hasborrowBooksFromUser")
-const hasFavoriteBooks = require("../actions/getBookDatasActions/hasFavoriteBooks")
+const getDataBooks = require("../services/getBookDatasServices/getDataBooks")
+const hasborrowBooksFromUser = require("../services/getBookDatasServices/hasborrowBooksFromUser")
+const hasFavoriteBooks = require("../services/getBookDatasServices/hasFavoriteBooks")
 const isValidWords = require("../validations/isValidWords/isValidWords")
 
 async function getBookListController(req, res, next) {

@@ -1,5 +1,5 @@
 const knex = require('../../connection/connection')
-const incrementCopies = require('../copiesActions/incrementCopies')
+const incrementCopies = require('../stockSharesServices/incrementCopies')
 
 async function returnBookToDb(bookData){
     const {userId,idBook} = bookData

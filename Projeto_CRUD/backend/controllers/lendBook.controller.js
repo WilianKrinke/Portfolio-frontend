@@ -1,4 +1,4 @@
-const lendBookDb = require("../actions/loanActions/lendBookDb")
+const lendBookDb = require("../services/loanBookServices/lendBookDb")
 
 async function lendBookController(req, res, next) {
     try {

@@ -1,6 +1,6 @@
 const knex = require("../../connection/connection");
-const decrementCopies = require("../copiesActions/decrementCopies");
-const getLoanDates = require("../dateActions/getLoanDates");
+const getLoanDates = require("../getDatesServices/getLoanDates");
+const decrementCopies = require("../stockSharesServices/decrementCopies");
 
 async function insertLendBookInDb(bookDatas){    
         const {idBook,bookName,userId,userName, category, author, resume, image, rating} = bookDatas;

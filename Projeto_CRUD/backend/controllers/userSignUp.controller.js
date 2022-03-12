@@ -1,4 +1,4 @@
-const { sendDatasToDB } = require("../actions/signUpActions/sendDatasToDB")
+const { sendDatasToDB } = require("../services/signUpServices/sendDatasToDB")
 const checkSameUserName = require("../validations/checkSameUserName/checkSameUserName")
 
 async function userSignUpController(req, res, next) {

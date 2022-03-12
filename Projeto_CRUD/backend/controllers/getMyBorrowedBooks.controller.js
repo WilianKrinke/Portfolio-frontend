@@ -1,4 +1,4 @@
-const getBorrowedBooksActions = require("../actions/getBorrowedBooksActions/getBorrowedBooks");
+const getBorrowedBooksActions = require("../services/getBorrowedBooksServices/getBorrowedBooks");
 
 async function getMyBorrowedBooksController(req, res, next) {
     try {                

@@ -1,4 +1,4 @@
-const compareToken = require("../actions/verifyTokenToResetPassActions/compareToken")
+const compareToken = require("../services/verifyTokenToResetPassServices/compareToken")
 
 async function verifyTokenToChangePassController(req, res, next) {
     try {

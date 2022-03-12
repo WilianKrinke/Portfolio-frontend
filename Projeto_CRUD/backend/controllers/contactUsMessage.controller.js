@@ -1,4 +1,4 @@
-const sendContactEmail = require("../actions/contacMessageAction/sendEmail")
+const sendContactEmail = require("../services/contacMessageServices/sendEmail")
 
 async function contactUsMessageController(req, res, next) {
     try {

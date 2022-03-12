@@ -1,4 +1,4 @@
-const changeRatingBook = require("../actions/ratingActions/changeRatingBook");
+const changeRatingBook = require("../services/chanceRatingServices/changeRatingBook");
 
 async function changeBookRatingController(req, res, next) {
     try {                

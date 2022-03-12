@@ -1,8 +1,8 @@
-const getEmailFromUser = require("../actions/forgotPass/getEmailFromUser")
-const haveTokenValid = require("../actions/forgotPass/haveTokenValid")
-const persistDatas = require("../actions/forgotPass/persistDatas")
-const sendEmail = require("../actions/forgotPass/sendEmail")
-const tokenToEmail = require("../actions/forgotPass/tokenToEmail")
+const getEmailFromUser = require("../services/forgotPassServices/getEmailFromUser")
+const haveTokenValid = require("../services/forgotPassServices/haveTokenValid")
+const persistDatas = require("../services/forgotPassServices/persistDatas")
+const sendEmail = require("../services/forgotPassServices/sendEmail")
+const tokenToEmail = require("../services/forgotPassServices/tokenToEmail")
 
 async function forgotPassController(req, res, next) {
     try {
