@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Slide, ToastContainer } from 'react-toastify';
-import { I18nProvider } from '../i18n/index.js';
-import Routes from '../routes/index.js';
 import './app.css';
+import { I18nProvider } from './i18n/index';
+import Routes from './routes/index';
 
 function App() {
     const languageStateReduxObject = useSelector((state) => state.changeLanguageReducer.languageObject);
