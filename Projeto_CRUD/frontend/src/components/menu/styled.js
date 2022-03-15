@@ -52,7 +52,7 @@ export const IconClose = styled(VscChromeClose)`
     cursor: pointer;
     position: fixed; 
     top: 18px;
-    right: ${props => !props.$isopen ? '-50px' : '25px'};   
+    right: ${props => !props.$isopen ? '-50px' : '5px'};   
     transition: all .3s ease-in-out;
     animation: ${props => !props.$isopen ? turnOn : turnOff} .3s ease-in-out forwards;
 `
@@ -62,7 +62,7 @@ export const IconHamburguer = styled(BiMenuAltRight)`
     position: fixed;
     cursor: pointer;
     top: 15px;
-    right: 25px;
+    right: 5px;
     transition: all .5s ease-in-out;
     color: ${props => !props.$darkmode ? "#030303" : "#F9FFF9"};
     animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
