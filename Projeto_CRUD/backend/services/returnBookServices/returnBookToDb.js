@@ -1,14 +1,10 @@
-const knex = require('../../connection/connection')
-const incrementCopies = require('../stockSharesServices/incrementCopies')
+const returnBook = require('../../repository/returnBookRepository/returnBook.repository')
+const incrementCopies = require('../../repository/stockSharesRepository/incrementCopies')
 
 async function returnBookToDb(bookData){
-    const {userId,idBook} = bookData
+    const {idBook} = bookData
     
-    const response = await knex('lendregister')
-        .where('idUser',userId)
-        .andWhere('idBook',idBook)
-        .del()
-        
+    const response = await returnBook(bookData)        
     const responseIncrementCopies = await incrementCopies(idBook)
 
     if (response === 1 && responseIncrementCopies === true) {

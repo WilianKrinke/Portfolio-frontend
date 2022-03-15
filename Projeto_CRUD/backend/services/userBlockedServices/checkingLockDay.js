@@ -1,6 +1,6 @@
 const { format } = require("date-fns");
-const blockUser = require("./blockUser");
-const getBookReturnDate = require("./getBookReturnDate");
+const blockUser = require("../../repository/userBlockUserRepository/blockUser");
+const getBookReturnDate = require("../../repository/userBlockUserRepository/getBookReturnDate");
 const checkReturnDate = require("./checkReturnDate");
 
 async function checkingLockDay(idUser){

@@ -1,5 +1,5 @@
+const insertLendBookInDb = require("../../repository/lendBookRepository/insertLendBookInDb.repository");
 const decryptLendDatas = require("../decryptServices/decryptLendDatas");
-const insertLendBookInDb = require("./insertLendBookInDb");
 
 async function lendBookDb(datas){ 
     const bookDatas = decryptLendDatas(datas)                     

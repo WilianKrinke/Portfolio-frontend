@@ -3,7 +3,6 @@ const CryptoJS = require("crypto-js");
 function decryptLendDatas(datas){
     const {idBookC, bookNameC, userIdC, userNameC} = datas
     const { author,resume,rating,category, image} = datas
-    //verificar a possibilidade de iterações automaticas
 
     const idBookCBytes  = CryptoJS.AES.decrypt(idBookC, process.env.SALT2);
     const bookNameCBytes  = CryptoJS.AES.decrypt(bookNameC, process.env.SALT2);
@@ -21,7 +20,7 @@ function decryptLendDatas(datas){
     const idBook = idBookArray[0];
     const userId = userIdArray[0];
 
-    const decryptDatas = {
+    return {
         idBook,
         bookName,
         userId,
@@ -32,8 +31,6 @@ function decryptLendDatas(datas){
         category,
         image
     }
-
-    return decryptDatas;    
 }
 
 module.exports = decryptLendDatas;

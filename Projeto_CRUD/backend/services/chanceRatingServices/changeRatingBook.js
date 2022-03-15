@@ -1,6 +1,6 @@
 const averageRating = require("./averageRating");
-const getRatingBook = require("./getRatingBook");
-const insertRatingDb = require("./insertRatingDb");
+const getRatingBook = require("../../repository/ratingRepository/getRatingBook");
+const insertRatingDb = require("../../repository/ratingRepository/insertRatingDb");
 
 async function changeRatingBook(datas){
     const bookRating = await getRatingBook(datas)

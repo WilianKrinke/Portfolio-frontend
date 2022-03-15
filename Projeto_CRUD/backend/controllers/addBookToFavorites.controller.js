@@ -1,8 +1,8 @@
-const addFavoritesAction = require("../services/insertFavoritesServices/addFavoritesAction");
+const addFavoritesService = require("../services/insertFavoritesServices/addFavoritesService");
 
 async function addBookToFavoritesController(req, res, next) {
     try {
-        const response = await addFavoritesAction(req.body)
+        const response = await addFavoritesService(req.body)
         res.status(200).send(response)
     } catch (error) {
         console.log(error.message)          

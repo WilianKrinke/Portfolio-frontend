@@ -1,6 +1,6 @@
 const { format } = require("date-fns");
 const compareDatesToUnlock = require("./compareDatesToUnlock");
-const getUserBlockDate = require("./getUserBlockDate");
+const getUserBlockDate = require("../../repository/userBlockUserRepository/getUserBlockDate");
 
 async function lockDateIsPast(idUser){
     const blockedDayFormat = await getUserBlockDate(idUser);
