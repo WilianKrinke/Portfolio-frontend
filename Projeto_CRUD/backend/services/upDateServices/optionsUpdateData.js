@@ -1,7 +1,8 @@
-const lastUpdate = require('./lastUpdate')
-const upDateClass = require('./upDateClass')
+const lastUpdate = require('../../repository/upDatesDatasRepository/lastUpdate')
+const upDateClass = require('../../repository/upDatesDatasRepository/upDateClass')
 
-async function controllerUpdateData(objectDatas){
+
+async function optionsUpdateData(objectDatas){
     const {data,option,idUser,last_update} = objectDatas
     const upDateObject = new upDateClass(idUser)
 
@@ -47,4 +48,4 @@ async function controllerUpdateData(objectDatas){
     }
 }
 
-module.exports = controllerUpdateData;
+module.exports = optionsUpdateData;

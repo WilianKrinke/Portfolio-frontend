@@ -1,11 +1,11 @@
-const getBorrowedBooksActions = require("../services/getBorrowedBooksServices/getBorrowedBooks");
+const getBorrowedBooks = require("../repository/getMyBorrowedBooksRepository/getBorrowedBooks");
 
 async function getMyBorrowedBooksController(req, res, next) {
     try {                
         const [idUser] = req.idUser
         const [userName] = req.userName
 
-        const response = await getBorrowedBooksActions(idUser);
+        const response = await getBorrowedBooks(idUser);
         
         res.status(200).send({
             idUser: idUser,

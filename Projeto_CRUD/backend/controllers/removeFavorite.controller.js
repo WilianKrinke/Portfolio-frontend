@@ -1,6 +1,6 @@
 const removeFavoriteFromDb = require("../repository/removeFavoritesRepository/removeFavoriteFromDb");
 
-async function removeFavoritoController(req, res, next) {
+async function removeFavoriteController(req, res, next) {
     try {
         const response = await removeFavoriteFromDb(req.body)
         res.status(200).send(response);                
@@ -10,4 +10,4 @@ async function removeFavoritoController(req, res, next) {
     }
 }
 
-module.exports = removeFavoritoController;
+module.exports = removeFavoriteController;

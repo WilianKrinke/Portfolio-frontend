@@ -1,4 +1,4 @@
-const verifyUpDateData = require("../services/isUpdateServices/verifyUpDateData")
+const verifyUpDateData = require("../repository/verfyUpDatesDataRepository/verifyUpDateData")
 
 async function isUpDateUserDataController(req, res, next) {
     try {

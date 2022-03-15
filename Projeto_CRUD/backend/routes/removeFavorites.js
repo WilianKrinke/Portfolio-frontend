@@ -1,8 +1,8 @@
-const removeFavoritoController = require("../controllers/removeFavortes.controller");
+const removeFavoriteController = require("../controllers/removeFavorite.controller");
 
 function removeFavorite(app){
     app.route('/remove-favorite')
-        .post(removeFavoritoController)
+        .post(removeFavoriteController)
 }
 
 module.exports = removeFavorite;

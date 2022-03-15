@@ -1,4 +1,4 @@
-const getDatas = require("../services/getDatasServices/getDatas")
+const getDatas = require("../repository/getMyDatasRepository/getDatas")
 
 async function getMyDatasController(req, res, next) {
     try {

@@ -1,5 +1,5 @@
 const decryptData = require("../services/decryptServices/decryptData")
-const controllerUpdateData = require("../services/upDateServices/controllerUpdateData")
+const optionsUpdateData = require("../services/upDateServices/optionsUpdateData")
 
 async function upDateUserDataController(res, res, next) {
     try {
@@ -14,7 +14,7 @@ async function upDateUserDataController(res, res, next) {
             last_update
         }   
 
-        const response = await controllerUpdateData(objectDatas)
+        const response = await optionsUpdateData(objectDatas)
                        
         if (response === true) {
             res.status(200).send(true)
