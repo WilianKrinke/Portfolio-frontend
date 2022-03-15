@@ -1,20 +1,20 @@
-const getEmailFromUser = require("../services/forgotPassServices/getEmailFromUser")
-const haveTokenValid = require("../services/forgotPassServices/haveTokenValid")
-const persistDatas = require("../services/forgotPassServices/persistDatas")
-const sendEmail = require("../services/forgotPassServices/sendEmail")
-const tokenToEmail = require("../services/forgotPassServices/tokenToEmail")
+const sendEmail = require("../repository/forgetPassRepository/emails/sendEmail")
+const getEmailByUserName = require("../repository/forgetPassRepository/getEmailByUserName.repository")
+const haveTokenValid = require("../repository/forgetPassRepository/haveTokenValid.repository")
+const generateTokenToEmail = require("../services/forgotPassServices/generateTokenToEmail")
+const wasTokenRegistered = require("../services/forgotPassServices/wasTokenRegistered")
 
 async function forgotPassController(req, res, next) {
     try {
-        const response = await getEmailFromUser(req.body.userName)
-        const userHaveTokenValid = await haveTokenValid(response)
+        const userDatas = await getEmailByUserName(req.body.userName)
+        const userHaveTokenValid = await haveTokenValid(userDatas)
         
         if (userHaveTokenValid === false) {
-            const token = tokenToEmail(response)    
-            const objectResponse = await persistDatas(response,token)     
+            const token = generateTokenToEmail()    
+            const objectResponse = await wasTokenRegistered(userDatas,token)     
             
             const wasSent = await sendEmail(objectResponse)    
-            const {email} = objectResponse    
+            const {email} = userDatas    
             
             res.status(200).send({
                 wasSent,
@@ -22,9 +22,10 @@ async function forgotPassController(req, res, next) {
             })                    
 
         } else {
+            const {email} = userDatas 
             res.status(200).send({
                 wasSent: null,
-                email: null
+                email: email
             })
         }
 

@@ -1,5 +1,5 @@
+const getPass = require("../../repository/signInRepository/getPass.repository");
 const comparePass = require("./comparePass");
-const getPass = require("./getPass");
 
 async function login (datas){
     const userDatasFromDb = await getPass(datas.userName)

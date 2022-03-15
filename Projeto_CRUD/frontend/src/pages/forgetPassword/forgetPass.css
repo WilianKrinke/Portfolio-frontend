@@ -15,6 +15,10 @@
     border-bottom: 2px solid #f9fff9;
 }
 
+.darkmodeForgetPass input:-internal-autofill-selected {
+    color: #f9fff9 !important;
+}
+
 .normalForgetPass label {
     color: #0a0a0a;
 }

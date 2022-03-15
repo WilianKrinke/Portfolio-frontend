@@ -1,4 +1,4 @@
-const { sendDatasToDB } = require("../services/signUpServices/sendDatasToDB")
+const sendDatasToRepository = require("../services/signUpServices/sendDatasToRepository")
 const checkSameUserName = require("../validations/checkSameUserName/checkSameUserName")
 
 async function userSignUpController(req, res, next) {
@@ -12,7 +12,7 @@ async function userSignUpController(req, res, next) {
                 wasRegistered: false
             })
         } else {
-            sendDatasToDB(req.body)
+            sendDatasToRepository(req.body)
             res.status(200).send({
                 isSameUserName: false, 
                 wasRegistered: true

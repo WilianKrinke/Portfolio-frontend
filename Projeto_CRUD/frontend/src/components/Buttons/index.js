@@ -193,11 +193,6 @@ export const ButtonRecoverPass = styled.button`
   cursor: pointer;
   color: ${props => props.$darkmode ? "#F9FFF9" : "#050517"};
   border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
-
-  :hover{
-        background: #050517;
-  }
-
 `
 
 export const ButtonConfirmResetPass = styled.button`
@@ -213,8 +208,7 @@ export const ButtonConfirmResetPass = styled.button`
   color: #222222;
 
   :hover{
-        background: #050517;
-        border: 1px solid rgba(0, 0, 0, 0.1);
+        border: 1px solid rgb(0, 0, 0);
   }
 `
 
