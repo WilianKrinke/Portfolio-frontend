@@ -14,10 +14,12 @@ async function verifyTokenToChangePassController(req, res, next) {
                 wasValid: false
             })
         }
-    } catch (error) {         
+    } catch (error) {  
+        console.log(error.message)       
         res.status(200).send({
             wasValid: false
         })
+        next(error)
     }
 }
 

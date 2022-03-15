@@ -13,6 +13,7 @@ async function lendBookController(req, res, next) {
     } catch (error) {
         console.log(error.message)          
         res.status(500).send(error.message)
+        next(error)
     }
 }
 

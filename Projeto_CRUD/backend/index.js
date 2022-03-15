@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express');
+const loggerWinston = require('./log/logs') 
 const authValidate = require('./auth/authMiddleware');
 const routeSignUpUser = require('./routes/signUpUser');
 const routeUserLogin = require('./routes/userLogin.route');
@@ -54,6 +55,10 @@ routeUpdateData(app)
 routeIsUpDateDatas(app)
 routeAccessUserData(app)
 routeContactMessageIntern(app)
+
+app.use((err, req, res, next) => {
+    loggerWinston.error(`${req.method} | ${req.baseUrl}: ${err.message}`)
+})
 
 app.listen(process.env.EXPRESS_PORT, () => {
     console.log('Server On-Line')

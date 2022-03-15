@@ -4,7 +4,7 @@ function generateToken(userDatasFromDb){
 
     const idUser = userDatasFromDb.map(item => item.idUser)
     const userName = userDatasFromDb.map(item => item.userName)
-    const time = parseInt(process.env.TIME)
+    const time = process.env.TIME
     
     const payload = {
         idUser,
