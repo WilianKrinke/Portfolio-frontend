@@ -11,6 +11,10 @@
     background-color: #050517;
 }
 
+.toasty_css_dark .Toastify__close-button > svg {
+    color: #fff;
+}
+
 /* Body Light */
 
 .toasty_css .Toastify__toast {
