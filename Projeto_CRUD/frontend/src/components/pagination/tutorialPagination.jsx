@@ -17,34 +17,43 @@ const TutorialPagination = () => {
         <>
             <DivCarousel>
                 <DivItem>
-                    <Pagination
-                        count={arrayObjectPhotos.length}
-                        variant="outlined"
-                        shape="rounded"
-                        color="secondary"
-                        showFirstButton
-                        showLastButton
-                        onChange={handlePagination}
-                        className={darkMode ? 'pagination_dark' : 'pagination'}
-                    />
+                    <div className="div_pagination">
+                        <Pagination
+                            count={arrayObjectPhotos.length}
+                            variant="outlined"
+                            shape="rounded"
+                            color="secondary"
+                            showFirstButton
+                            showLastButton
+                            onChange={handlePagination}
+                            className={darkMode ? 'pagination_dark' : 'pagination'}
+                        />
+                    </div>
                     <div className="div_paragraph">
                         <p className={darkMode ? 'paragraph_dark' : 'paragraph'}>
                             {arrayObjectPhotos[indexState].description}
                         </p>
                     </div>
                     <div className="div_img">
-                        <img src={arrayObjectPhotos[indexState].photo} alt="tutorial-photo" className="img" />
+                        <img
+                            src={arrayObjectPhotos[indexState].photo}
+                            alt="tutorial-photo"
+                            className="img"
+                            loading="lazy"
+                        />
                     </div>
-                    <Pagination
-                        count={arrayObjectPhotos.length}
-                        variant="outlined"
-                        shape="rounded"
-                        color="secondary"
-                        showFirstButton
-                        showLastButton
-                        onChange={handlePagination}
-                        className={darkMode ? 'pagination_dark' : 'pagination'}
-                    />
+                    <div className="div_pagination">
+                        <Pagination
+                            count={arrayObjectPhotos.length}
+                            variant="outlined"
+                            shape="rounded"
+                            color="secondary"
+                            showFirstButton
+                            showLastButton
+                            onChange={handlePagination}
+                            className={darkMode ? 'pagination_dark' : 'pagination'}
+                        />
+                    </div>
                 </DivItem>
             </DivCarousel>
         </>

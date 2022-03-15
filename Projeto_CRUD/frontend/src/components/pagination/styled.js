@@ -5,7 +5,7 @@ export const DivCarousel = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    height: 800px;
+    height: 100%;
     width: 100vw;
 `
 
@@ -13,38 +13,48 @@ export const DivItem = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     margin: 10px 10px;
-    padding: 20px 0px;
+
+    .div_pagination{
+
+    }
 
     .div_img{
-        height: 100%;
+        height: 70%;
         width: 100%;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
-        padding: 10px;        
+        padding: 10px; 
+
+
+        .img{           
+            width: 100%;
+            object-fit: contain;
+            border-radius: 3px;
+        }
     }
 
-    .img{
-        height: 500px;
-        width: 100%;
-        object-fit: contain;
-        border-radius: 3px;
-    }
 
     .div_paragraph{
-        height: 10%;
-        width: 50%;
+        height: 150px;
+        width: 500px;
         text-align: center;
         display: flex;
         justify-content: space-around;
         align-items: center;
         flex-direction: row;
         margin: 10px 0px;
+
+
+        @media screen and (max-width: 540px) {
+            height: 200px;
+            width: 95%;
+        }
 
         .paragraph{
             color: #030103;
