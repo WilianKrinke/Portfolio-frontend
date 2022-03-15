@@ -1,12 +1,14 @@
-import {keyframes} from 'styled-components'
+import { keyframes } from 'styled-components'
 
-export const FirstLetterFrames = keyframes`
+export const ReflexDiv = keyframes`
     from{
-        color: #222;
+        left: -200px;
+        top: -350px;
     }
 
     to{
-        color: #FE6B0A;
+        left: 200%;
+        top: 0px;
     }
 
 `
