@@ -19,11 +19,11 @@ const authValidate = async (req, res, next) => {
     } catch (error) {
         if (error.message === 'jwt expired') {
             res.status(200).send(false)
-            
+            next(error)            
         } else {
             res.status(401).send(null)
         }
-        next(error)
+       
     }
 }
 

@@ -28,14 +28,12 @@ export const ButtonBackPage = styled.button`
     font-size: 14px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
+    padding: 0px auto;
+    
     font-size: 16px;
+   
 
         :hover{
-            background: ${props => props.$darkmode ? "#071057" : "#030103"};
             border: 1px solid ${props => props.$darkmode ? "rgba(185, 185, 185, 0.5)" : "rgba(0, 0, 0, 0.5)"};
             color: #fff;
         }
