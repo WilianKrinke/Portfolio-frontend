@@ -54,13 +54,17 @@ const Menu = () => {
                 <IconHamburguer
                     aria-label="Menu"
                     title="Menu"
-                    className="fas fa-bars fa-2x"
                     $isopen={isOpen}
                     onClick={() => setisOpen(!isOpen)}
                     $darkmode={darkMode}
                 />
 
-                <IconClose title="Close Menu" onClick={() => setisOpen(!isOpen)} $isopen={isOpen} />
+                <IconClose
+                    title="Close Menu"
+                    aria-label="Close Menu"
+                    $isopen={isOpen}
+                    onClick={() => setisOpen(!isOpen)}
+                />
 
                 <ContainerUser>
                     <p>

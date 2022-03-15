@@ -1,3 +1,4 @@
+import { BiMenuAltRight } from "react-icons/bi";
 import { VscChromeClose } from "react-icons/vsc";
 import styled from 'styled-components';
 import { HideHamb, ShowHamb, turnOff, turnOn } from './keyframes';
@@ -9,11 +10,12 @@ export const ContainerMenu = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #030303;
+    background-color: #050517;
     transition: all .3s ease-in-out;
     position: fixed;
     right: ${props => props.$isopen ? '0px' : '-400px'};
     z-index: 100;
+    border-left: 1px solid rgba(185, 185, 185, 0.1);
 
     @media screen and (max-width: 440px) {
         position: fixed;
@@ -55,11 +57,12 @@ export const IconClose = styled(VscChromeClose)`
     animation: ${props => !props.$isopen ? turnOn : turnOff} .3s ease-in-out forwards;
 `
 
-export const IconHamburguer = styled.i`
-    font-size: 48px;
+export const IconHamburguer = styled(BiMenuAltRight)`
+    font-size: 56px;
     position: fixed;
-    top: 20px;
-    right: 30px;
+    cursor: pointer;
+    top: 15px;
+    right: 25px;
     transition: all .5s ease-in-out;
     color: ${props => !props.$darkmode ? "#030303" : "#F9FFF9"};
     animation:${props => props.$isopen? HideHamb : ShowHamb} .3s ease-in-out forwards;
