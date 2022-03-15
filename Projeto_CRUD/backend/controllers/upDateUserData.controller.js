@@ -1,7 +1,7 @@
 const decryptData = require("../services/decryptServices/decryptData")
 const optionsUpdateData = require("../services/upDateServices/optionsUpdateData")
 
-async function upDateUserDataController(res, res, next) {
+async function upDateUserDataController(req, res, next) {
     try {
         const {encryptedData, option, last_update} = req.body
         const data = decryptData(encryptedData)

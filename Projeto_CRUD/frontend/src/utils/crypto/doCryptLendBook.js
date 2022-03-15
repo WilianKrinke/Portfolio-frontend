@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import CryptoJS from "crypto-js";
 
 export default function cryptLendBook(lendDatas){
