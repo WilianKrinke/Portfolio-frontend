@@ -25,9 +25,9 @@ export const DivLanguagesButtons = styled.div`
         height: 10px;
         width: 20px;
         cursor: pointer;
+        position: relative;
+        bottom:2px;
     }
-
-
 `
 
 export const P = styled.p`
