@@ -2,8 +2,8 @@ const getBorrowedBooks = require("../repository/getMyBorrowedBooksRepository/get
 
 async function getMyBorrowedBooksController(req, res, next) {
     try {                
-        const [idUser] = req.idUser
-        const [userName] = req.userName
+        const idUser = req.idUser
+        const userName = req.userName
 
         const response = await getBorrowedBooks(idUser);
         

@@ -1,7 +1,7 @@
 const knex = require('../../connection/connection')
 
 async function signUpRepository(datas){
-    const response = await knex.insert(datas).into("users")
+    const response = await knex.insert(datas).into("nodecrud.users")
 
     if (response[0] != undefined) {
         return true

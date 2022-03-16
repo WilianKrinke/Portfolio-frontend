@@ -2,8 +2,8 @@ const getMyFavoritesFromDb = require('../repository/getMyFavoritesBooksRepositor
 
 async function getMyFavoritesBookController(req, res, next) {
     try {
-        const [idUser] = req.idUser
-        const [userName] = req.userName
+        const idUser = req.idUser
+        const userName = req.userName
 
         const response = await getMyFavoritesFromDb(idUser)                
         res.status(200).send({userName: userName, responseObject: response})

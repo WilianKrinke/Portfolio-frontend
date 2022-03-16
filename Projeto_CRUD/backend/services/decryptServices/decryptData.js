@@ -1,9 +1,9 @@
 const CryptoJS = require('crypto-js')
 
-function decryptData(encryptData){
-    const decypherText = CryptoJS.AES.decrypt(encryptData, process.env.SALT2).toString(CryptoJS.enc.Utf8)
-
-    return decypherText;
+function decryptData(encryptPass){    
+    const decypherText = CryptoJS.AES.decrypt(encryptPass, process.env.SECRET3)    
+    const originalText = decypherText.toString(CryptoJS.enc.Utf8)    
+    return originalText;
 }
 
 module.exports = decryptData;

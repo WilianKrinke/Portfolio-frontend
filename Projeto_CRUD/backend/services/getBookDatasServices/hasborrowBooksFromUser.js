@@ -1,7 +1,7 @@
 const knex = require("../../connection/connection");
 
 async function hasborrowBooksFromUser (dataBooks, idUser){
-    const results = await knex('lendregister').where('idUser', idUser);
+    const results = await knex('nodecrud.lendregister').where('idUser', idUser);
 
     for (let index = 0; index < results.length; index++) {
         

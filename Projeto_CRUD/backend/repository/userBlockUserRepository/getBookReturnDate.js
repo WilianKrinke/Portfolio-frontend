@@ -2,7 +2,7 @@ const knex = require("../../connection/connection")
 const { format } = require("date-fns");
 
 async function getBookReturnDate(idUser){
-    const response = await knex('lendregister').where('idUser', idUser).select('devolutionDate')
+    const response = await knex('nodecrud.lendregister').where('idUser', idUser).select('devolutionDate')
 
     let arrayDevolutionDateFormat = []    
 

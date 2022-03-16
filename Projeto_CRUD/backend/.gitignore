@@ -12,9 +12,6 @@
 /build
 
 # misc
-./utils/env.js
-comparePass.js
-env.js
 .DS_Store
 .env
 .env.local

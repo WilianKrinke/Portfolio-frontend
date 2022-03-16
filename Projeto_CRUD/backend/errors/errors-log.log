@@ -1,2 +1,74 @@
 
 2022-03-15T05:07:35.561Z | Project Library | error: POST | : req is not defined
+
+2022-03-16T03:56:58.018Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T03:59:26.570Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T04:00:00.067Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T04:02:50.743Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T04:05:24.195Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T04:07:02.313Z | Project Library | error: POST | : select `userName` from `users` - No database selected
+
+2022-03-16T04:33:11.275Z | Project Library | error: POST | : Malformed UTF-8 data
+
+2022-03-16T04:41:45.326Z | Project Library | error: POST | : pass is not defined
+
+2022-03-16T04:41:49.571Z | Project Library | error: POST | : pass is not defined
+
+2022-03-16T04:42:19.115Z | Project Library | error: POST | : pass is not defined
+
+2022-03-16T05:21:12.056Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:22:06.865Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:22:37.574Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:23:15.781Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:23:41.083Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:25:32.182Z | Project Library | error: POST | : Cannot read properties of undefined (reading 'map')
+
+2022-03-16T05:26:15.836Z | Project Library | error: POST | : userDatasFromDb.map is not a function
+
+2022-03-16T05:26:22.023Z | Project Library | error: POST | : userDatasFromDb.map is not a function
+
+2022-03-16T05:26:59.724Z | Project Library | error: POST | : userDatasFromDb.map is not a function
+
+2022-03-16T05:27:57.224Z | Project Library | error: POST | : userDatasFromDb.map is not a function
+
+2022-03-16T05:30:57.354Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:33:45.480Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:36:22.824Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:36:42.102Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:37:25.254Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:37:45.776Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:38:34.327Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:39:12.545Z | Project Library | error: GET | : select * from `books` - No database selected
+
+2022-03-16T05:41:39.573Z | Project Library | error: GET | : select * from `lendregister` where `idUser` = 3 - No database selected
+
+2022-03-16T05:42:37.368Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:44:41.028Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:46:10.935Z | Project Library | error: POST | : Incorrect username or password
+
+2022-03-16T05:54:42.803Z | Project Library | error: GET | : select `isblock` from `users` where `idUser` = 3 - No database selected
+
+2022-03-16T05:56:04.165Z | Project Library | error: GET | : select `blocked_day` from `users` where `idUser` = 3 - No database selected
+
+2022-03-16T05:56:42.248Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))
+
+2022-03-16T05:57:44.802Z | Project Library | error: GET | : number 3 is not iterable (cannot read property Symbol(Symbol.iterator))

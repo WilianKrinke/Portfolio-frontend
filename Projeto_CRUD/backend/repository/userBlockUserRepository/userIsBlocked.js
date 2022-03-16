@@ -1,7 +1,7 @@
 const knex = require('../../connection/connection')
 
 async function userIsBlocked(idUser){
-    const response = await knex('users').where('idUser', idUser).select('isblock')
+    const response = await knex('nodecrud.users').where('idUser', idUser).select('isblock')
 
     if (response[0] === undefined) {
         throw new Error('Server Error - response is undefined - userIsBlocked')

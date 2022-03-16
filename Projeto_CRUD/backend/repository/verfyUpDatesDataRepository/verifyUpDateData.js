@@ -1,7 +1,7 @@
 const knex = require('../../connection/connection')
 
 async function verifyUpDateData(idUser){
-    const response = await knex('users').where('idUser', idUser).select('email','idade','endereco_logradouro','endereco_numero','endereco_bairro','endereco_cidade', 'telefone_fixo', 'telefone_celular', 'primeiro_nome','segundo_nome')
+    const response = await knex('nodecrud.users').where('idUser', idUser).select('email','idade','endereco_logradouro','endereco_numero','endereco_bairro','endereco_cidade', 'telefone_fixo', 'telefone_celular', 'primeiro_nome','segundo_nome')
 
     let control = true
 

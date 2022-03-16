@@ -2,7 +2,7 @@ const verifyUpDateData = require("../repository/verfyUpDatesDataRepository/verif
 
 async function isUpDateUserDataController(req, res, next) {
     try {
-        const [idUser] = req.idUser
+        const idUser = req.idUser
         const response = await verifyUpDateData(idUser)
         
         if (response === false) {

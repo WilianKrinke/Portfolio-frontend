@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken')
 
 function generateToken(userDatasFromDb){
-
-    const idUser = userDatasFromDb.map(item => item.idUser)
-    const userName = userDatasFromDb.map(item => item.userName)
+    const idUser = userDatasFromDb.idUser
+    const userName = userDatasFromDb.userName
     const time = parseInt(process.env.TIME)
     
     const payload = {

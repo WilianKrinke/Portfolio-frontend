@@ -1,15 +1,23 @@
-const getPass = require("../../repository/signInRepository/getPass.repository");
 const comparePass = require("./comparePass");
+const getPass = require("../../repository/signInRepository/getPass.repository");
+const generateToken = require("../../auth/generateToken");
 
 async function login (datas){
     const userDatasFromDb = await getPass(datas.userName)
-    const objectAuth = comparePass(datas.pass, userDatasFromDb)
+    const test = await comparePass(datas.pass, userDatasFromDb)
 
-    if  (objectAuth.authenticate === true) {
+    if (test) {
+        const token = generateToken(userDatasFromDb)
+
+        const objectAuth = {
+            authenticate: test,
+            token: token
+        }
         return objectAuth
+
     } else {
-        return objectAuth
-    }
+        throw new Error('Incorrect username or password')
+    }   
 }
 
 module.exports = login;

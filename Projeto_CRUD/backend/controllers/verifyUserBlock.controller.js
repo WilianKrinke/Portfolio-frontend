@@ -6,7 +6,7 @@ const daysToUnlock = require("../repository/userBlockUserRepository/daysToUnlock
 
 async function verifyUserBlockController(req, res, next) {
     try {
-        const [idUser] = req.idUser               
+        const idUser = req.idUser               
         checkingLockDay(idUser)
         
         const isblock = await userIsBlocked(idUser)

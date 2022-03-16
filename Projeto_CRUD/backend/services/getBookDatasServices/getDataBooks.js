@@ -3,7 +3,6 @@ const getBooksByCategory = require('../../repository/getBooksRepository/getBooks
 
 async function getDataBooks(category){
     if (category === 'all') {
-
         const response = await getAllBooks()
 
         if (response[0] !== undefined) {
