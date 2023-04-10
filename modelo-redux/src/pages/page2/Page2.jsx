@@ -6,6 +6,7 @@ const Page2 = () => {
 
   const count = useSelector((state) => state.counter.value);
   const boolValueString = String(useSelector((state) => state.boolState.value));
+  const {string, number, lista, objeto} = useSelector((state) => state.objectState.value);
 
   return (
     <>
@@ -13,6 +14,10 @@ const Page2 = () => {
       <main>
         <section>{count}</section>
         <section>{boolValueString}</section>
+        <section>{string}</section>
+        <section>{number}</section>
+        <section>{lista}</section> 
+        <section>{objeto.um}</section>       
       </main>
     </>
   );
