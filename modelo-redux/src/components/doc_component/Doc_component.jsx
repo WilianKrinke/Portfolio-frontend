@@ -3,6 +3,8 @@ import "./doc.css"
 import ProviderPrint from "../../assets/print-provider-wrapper.PNG"
 import StorePrint from "../../assets/store.PNG"
 import Features from "../../assets/features.PNG"
+import FeaturesState from "../../assets/features-states.PNG"
+import FeaturesCode from "../../assets/features-code.PNG"
 
 const DocComponent = () => {
   return (
@@ -19,7 +21,13 @@ const DocComponent = () => {
           <li>Inserir em index.js, o wrapper provider, como segue o modelo:</li>
           <img src={ProviderPrint} alt="Wrapper Provider" loading="lazy"/>
           <li>Criar a pasta features, dentro dela crie pastas que represente algum estado, como no código fonte a seguir:</li>
-          <img src={Features} alt="" />
+          <img src={Features} alt="features" />
+          <li>Dentro de cada pasta feature, crie seus respectivos arquivos de estado e insira o código de inicio de estado e manipulação de estado, como a seguir no código fonte: </li>
+          <div className="div_img">
+            <img src={FeaturesState} alt="features states" />
+            <img src={FeaturesCode} alt="features code" />
+          </div>
+          
         </ol>
       </section>
     </>
