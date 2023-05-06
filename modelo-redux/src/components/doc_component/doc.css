@@ -1,0 +1,18 @@
+.section_doc_class{
+    border: 1px solid #000;
+    min-height: 100px;
+    padding: 20px;
+}
+
+li{
+    margin: 5px 0px;
+    font-weight: bold;
+}
+
+.div_img{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    flex-direction: column;
+    min-height: 700px;
+}
